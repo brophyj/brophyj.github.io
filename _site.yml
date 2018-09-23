@@ -1,0 +1,22 @@
+name: "James (Jay) Brophy"
+output_dir: "."
+navbar:
+  title: "TC4"
+  left:
+    - text: "Info on Principal Investigator (PI)"
+      href: pi.html
+    - text: "TC4 Protocol & consent"
+      href: forms.html
+    - text: "FAQ"
+      href: faq.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: faq.html
+    - icon: fa-github fa-lg
+      href: http://github.com/brophyj
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/brophyj
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
