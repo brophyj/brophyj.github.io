@@ -9,7 +9,7 @@ output:
 
 ## Protocol as submitted to CIHR
       
-Protocol can be found [here](files/proposall.pdf)
+Protocol can be found [here](files/proposal.pdf)
 
 ## Consent forms
           
