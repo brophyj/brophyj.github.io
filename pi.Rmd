@@ -7,7 +7,7 @@ output:
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-## McGill University
+## James (Jay) Brophy
 
 I am a full professor with a joint appointment in the Departments of Medicine and Epidemiology, Biostatistics and Occupational Health. I am a practicing cardiologist with research interests in cardiovascular epidemiology. Specific research interest are in drug safety (pharmacoepidemiology), systematic reviews, health technology assessment (cost-effectiveness), and Bayesian approaches to clinical decision making. 
 
