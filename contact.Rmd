@@ -1,0 +1,16 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+James (Jay) Brophy MEng MD FRCP(c) FACC FCCS FCAHS PhD<br>
+Professor of Medicine & Epidemiology (McGill)<br>
+Royal Victoria Hospital<br>
+1001 Decarie Blvd Room C04.1410<br>
+Montreal (Qc) H4A 3J1<br>
+Telephone: 514 934-1934 ext. 36771, Fax: 514 843-1493<br>
+e-mail: james.brophy@mcgill.ca<br>
+website:james brophy<br>
+twitter: @brophyj<br>
+
+

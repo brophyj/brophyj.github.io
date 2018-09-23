@@ -1,0 +1,15 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<img src="images/scale.png" style="width:25%; border:10px solid; margin-right: 20px" align="left">
+
+This is the website for      
+**Ticagrelor compared to clopidogrel in acute coronary syndromes - the TC4 comparative effectiveness study**  
+
+This site will answer some frequently asked questions (FAQ).
+
+A pdf of a presentation explaining the justification and functionning of the trial is available [here](files/ticagrelor.pdf).
+
+

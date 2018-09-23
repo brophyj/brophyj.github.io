@@ -1,0 +1,29 @@
+---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+## McGill University
+
+I am a full professor with a joint appointment in the Departments of Medicine and Epidemiology, Biostatistics and Occupational Health. I am a practicing cardiologist with research interests in cardiovascular epidemiology. Specific research interest are in drug safety (pharmacoepidemiology), systematic reviews, health technology assessment (cost-effectiveness), and Bayesian approaches to clinical decision making. 
+
+### Selected publications from 2018
+
+1.	Bally M, Nadeau L, Brophy JM. Studying additive interaction in a healthcare database: Case study of NSAIDs, cardiovascular profiles, and acute myocardial infarction. PLoS One. 2018 Aug 10;13(8):e0201884 
+2.	Ruel I, Brisson D, Aljenedil S, Awan Z, Baass A, Bélanger A, Bergeron J, Bewick D, Brophy JM, Brunham LR, Couture P, Dufour R, Francis GA, Frohlich J, Gagné C, Gaudet D, Grégoire JC, Gupta M, Hegele RA, Mancini GBJ, McCrindle BW, Pang J, Raggi P, Tu JV, Watts GF, Genest J. Simplified Canadian Definition for Familial Hypercholesterolemia. Can J Cardiol. 2018 May 19
+3.	Brophy JM. Sodium, Chloride, and Cardiovascular Mortality-Open Access Data Is Worth Its Salt. Can J Cardiol. 2018 Aug;34(8):968-969
+4.	Skeldon SC, Carleton B, Brophy JM, Sodhi M, Etminan M. Statin medications and the risk of gynecomastia. Clin Endocrinol (Oxf). 2018 Jun 19
+5.	Loo SY, Coulombe J, Dell'Aniello S, Brophy JM, Suissa S, Renoux C. Comparative effectiveness of novel oral anticoagulants in UK patients with non-valvular atrial fibrillation and chronic kidney disease: a matched cohort study. BMJ Open. 2018 Jan 24;8(1):e019638 
+6.	Lee TC, Cavalcanti RB, McDonald EG, Pilote L, Brophy JM. Diastolic hypotension may attenuate benefits from intensive systolic targets: secondary analysis of a randomized controlled trial. Am J Med. 2018 Jun 12. [Epub ahead of print]
+7.	Buteau S, Goldberg MS, Burnett RT, Gasparrini A, Valois MF, Brophy JM, Crouse DL, Hatzopoulou M. Associations between ambient air pollution and daily mortality in a cohort of congestive heart failure: Case-crossover and nested case-control analyses using a distributed lag nonlinear model. Environ Int. 2018 Jan 17. 
+
+
+## [Google scholar](https://scholar.google.ca/citations?user=IXoZb4wAAAAJ&hl=en&oi=ao)
+
+A full list of publications is available at the above Google scholar link.
+
+
