@@ -1,4 +1,8 @@
 ---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
@@ -22,9 +26,9 @@ While the CCS guidelines (2012) recommend ticagrelor over clopidogrel,
 
 ## As a MD what do I have to do?
         
-* We ask you simply to continue the DAPT your initiated during thier MUHC    
+* We ask you simply to continue the DAPT initiated during your patient's MUHC stay   
 * You decide on the duration of the therapy according to your usual criteria. Generally, DAPT is continued for 12 months unless there are special circumstances     
-* Obviously if you feel strongly that a different DAPT is in your patients’ best interest then you are free to make the change.      
+* Obviously if you feel strongly that a different DAPT is in your patient's best interest then you are free to make the change.      
 
 ## As a patient what do I have to do?       
 
