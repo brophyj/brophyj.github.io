@@ -1,19 +1,93 @@
 project:
   type: website
+  output-dir: docs
+  pre-render:
+    - publications.r
+  resources:
+    - _headers
 
 website:
-  title: "brophyj.github.io"
+  title: "jay's website"
+  description: "my online persona"
+  favicon: images/logo.png
+  image: images/brophy.png
+  site-url: https://brophyj.com
+  repo-url: https://github.com/brophyj
+  repo-actions: [edit, issue]
+  open-graph: true
+  twitter-card: true
+  page-navigation: true
+  page-footer:
+    border: true
+    left: |
+      Powered by [Quarto](https://quarto.org).
+    center: |
+      &copy; 2024 Jay Brophy 
+    right: |
+      License: [CC BY NC SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).
   navbar:
+    title: "jay's website"
+    search: true
+    logo: images/logo.png
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: About
+        href: index.qmd
+      - text: Blog
+        href: blog.qmd
+      - text: Projects
+        href: projects.qmd
+      - text: Talks
+        href: talks.qmd
+      - text: Publications
+        href: publications.qmd
+    right:
+      - text: "{{< iconify fa6-brands orcid >}}"
+        href: "https://orcid.org/my-orcid?orcid=0000-0001-8049-6875"
+        aria-label: "ORCID logo linking to ORCID account"
+      - text: "{{< iconify fa6-brands mastodon >}}"
+        href: "https://mastodon.social/@brophyj"
+        aria-label: "Mastodon logo linking to account"
+        rel: me
+      - text: "{{< iconify fa6-brands twitter >}}"
+        href: "https://twitter.com/brophyjl"
+        aria-label: "Twitter logo linking to account"
+      - text: "{{< iconify fa6-brands linkedin >}}"
+        href: "https://www.linkedin.com/in/brophyj/"
+        aria-label: "LinkedIn logo linking to account"
+      - text: "{{< iconify fa6-brands github >}}"
+        href: "https://github.com/brophyj"
+        aria-label: "GitHub logo linking to account"
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
-    toc: true
+    theme:
+      - cosmos
+    lang: en
+    date-format: 'dddd[, the] Do [of] MMMM, YYYY'
+    highlight-style: github-light
+    code-copy: true
+    code-link: true
+    anchor-sections: true
+    email-obfuscation: javascript
+    link-external-newwindow: true
+    fig-align: left
+    code-tools:
+      source: false
+      toggle: false
+      caption: none
+    include-after-body:
+      - text: |
+          <script type="text/javascript">
+          const dateElements = document.querySelectorAll("p.date, div.listing-date, div.listing-file-modified");
+          dateElements.forEach((el) => {
+            el.innerHTML = el.innerHTML.replace(
+              /(\d+)(st|nd|rd|th)/g,
+              "$1<sup style='font-size:0.5em;font-style:italic;'>$2</sup>"
+            );
+          });
+          </script>
 
-editor: visual
+lightbox: auto
 
+execute:
+  freeze: true
