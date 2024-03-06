@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.310">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Jay Brophy">
+<meta name="description" content="What counts?">
+<title>jay’s website - Endotoxin exposure in asthmatic children and matched healthy controls</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/iconify-1.0.8/iconify-icon.min.js"></script><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<meta property="og:title" content="jay’s website - Endotoxin exposure in asthmatic children and matched healthy controls">
+<meta property="og:description" content="What counts?">
+<meta property="og:image" content="https://brophyj.com/posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/featured.png">
+<meta property="og:site-name" content="jay's website">
+<meta property="og:image:height" content="512">
+<meta property="og:image:width" content="512">
+<meta name="twitter:title" content="jay’s website - Endotoxin exposure in asthmatic children and matched healthy controls">
+<meta name="twitter:description" content="What counts?">
+<meta name="twitter:image" content="https://brophyj.com/posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/featured.png">
+<meta name="twitter:image-height" content="512">
+<meta name="twitter:image-width" content="512">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">jay’s website</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html" rel="" target="">
+ <span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html" rel="" target="">
+ <span class="menu-text">Publications</span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/my-orcid?orcid=0000-0001-8049-6875" rel="" target="">
+ <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:orcid"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mastodon.social/@brophyj" rel="me" target="">
+ <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:mastodon"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/brophyjl" rel="" target="">
+ <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:twitter"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/brophyj/" rel="" target="">
+ <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:linkedin"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/brophyj" rel="" target="">
+ <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:github"></iconify-icon></span></a>
+  </li>  
+</ul>
+<div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title">Endotoxin exposure in asthmatic children and matched healthy controls</h1>
+                  <div>
+        <div class="description">
+          What counts?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">bias</div>
+                <div class="quarto-category">misclassification</div>
+                <div class="quarto-category">selection bias</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://brophyj.github.io/">Jay Brophy</a> <a href="https://orcid.org/0000-0001-8049-6875" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://mcgill.ca">
+              McGill University Dept Medince, Epidemiology &amp; Biostatistics
+              </a>
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Monday, the 19th of February, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content"><section id="background" class="level3"><h3 class="anchored" data-anchor-id="background">Background</h3>
+<p>Recall that the goal of the course is to not only improve critical appraisal skills but also to think about research questions, designs, and the necessary compromises that are often required in research. Hopefully this adds another dimension to typical journal clubs where either an article in uncritically endorsed enthusiastically or trashed unmercifully, although this is sometimes quite merited<br><br> For reasons I am somewhat unclear about, this week’s selected article was the 2005 publication <a href="https://pubmed.ncbi.nlm.nih.gov/15926941/">Endotoxin exposure in asthmatic children and matched healthy controls: results of IPEADAM study</a>. Although not described as such, this was apparently a nested case-control study from a 1999 crosssectional study by the same <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1313925/">authors</a>, of over 1500 completed questionnaires. Cases were children between the ages of 4 and 17 who had a study diagnosis of probable asthma. These <span style="color: red;"><em>asthmatic</em></span> children were matched for sex, age and sib-ship size with children living in asthma free households and the following main conclusions reported. <br><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/conclusions.png" class="img-fluid" style="width:125.0%"></p>
+</div>
+</div>
+<p>A critical analysis should consider bias and statistical issues</p>
+</section><section id="biases" class="level3"><h3 class="anchored" data-anchor-id="biases">Biases</h3>
+<p>It is helpful to consider biases in observational studies according to the following grouping<br>
+- selection<br>
+- misinformation<br>
+- confounding</p>
+<section id="selection-bias" class="level4"><h4 class="anchored" data-anchor-id="selection-bias">Selection bias</h4>
+<p><a href="https://en.wikipedia.org/wiki/Selection_bias">Selection bias</a> is a distortion in the measure of association due to a sample selection such the measured association is not representative of what exists in the target population.<br>
+If the selection of cases and controls is not done independently of the exposure, then when you compare exposure distributions any observed differences are a combination of a true effect and an artifact of the way the data was collected.<br>
+This figure may help explain. Where would you put the reinforcements?</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/airplane.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>After identification of the research question, the next step is to distinguish among the various populations, including the<br>
+- target population (all children in the UK)<br>
+- study population (all those with a chance of being in the study, ie the 1500 children who completed the original questionnaire)<br>
+- sample population (the 200 children in Figure 1)<br>
+- analyzed sample population (the 90 matched pairs of children)</p>
+<p>In their previous <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1313925/">work</a>, the authors report an asthma prevalence of approximately 20%, or about 300 children based on their study population of 1500. The following questions need answering.<br>
+- Does the study population (?1500) reflect the target population?<br>
+- Do the 200 sample children reflect the total study population ?<br>
+- Do the 90 matched pairs, the <em>analytical sample</em> population reflect the overall sample population? What about the missing cases?<br><br><span style="color: red;">Many reasons to be concerned about possible selection bias in this study.</span><br>
+Let’s begin by examining their Figure 1 which is reproduced below. <br><br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/fig1.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br><br></p>
+<p>How many asthma cases (and controls) did they identify in this Figure?</p>
+<p>The figure shows 105 cases and 93 controls, a total of 198 children. Yet the authors claim this figure shows the age distribution of 200 children. While the difference is small, it does raise further concerns about the reliability of their data analysis when there is a discordance in a simple counting of individuals.</p>
+<p>Why do they only use 90 cases? Presumably to meet their matching criteria, age (+/- 1 year). Below is the best matching I could create from their data.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/fig2.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br><br></p>
+<p>The question then becomes why match?<br>
+Most people think matching is to control for confounding but this is only partly true (and indeed may be more than offset by potential selection bias) and the best reason is to improve precision in situations of sparse data.<br>
+Moreover, in this case a better alternative would have been not to match but to control for age in regression analysis as this would have allowed an estimation of the effect of age on the detection of asthma, while using the whole study sample of 198 children, including all 105 cases.</p>
+<p>Performing logistic regression <code>glm(stat~ages, data = data_long_uncount, family = "binomial")</code> shows that each year of additional age is associated with a odds ration decrease in asthma diagnosis = OR = 0.92, 95%CI 0.89 - 0.96</p>
+</section><section id="misclassification" class="level4"><h4 class="anchored" data-anchor-id="misclassification">Misclassification</h4>
+<p>The authors don’t report the raw data for the endotoxin exposure but assuming the following distribution among cases and controls gives an OR that approximates their results</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>--Observed data-- 
+         Outcome: Exposed+ 
+       Comparing: Cases vs. Controls 
+
+         Cases Controls
+Exposed+    40       50
+Exposed-    27       63
+
+                            2.5% 97.5%
+Observed Relative Risk: 1.3  1.0   1.8
+   Observed Odds Ratio: 1.9  1.0   3.4
+---
+                                                   
+Misclassification Bias Corrected Relative Risk: 1.3
+   Misclassification Bias Corrected Odds Ratio: 1.9</code></pre>
+</div>
+</div>
+<p>As the authors report from their previous work that their asthma detection questionnaire has only a 70% sensitivity and 91% specificity <span style="color: red;">misclassification</span> is present.<br>
+The effect of misclassification can be quantified using quantitative bias analysis (QBA) via the <code>episensr</code> package and <code>misclassification</code> function. This seems an improvement over purely qualitative heuristics, such as “non-differential misclassification biases toward the null”.</p>
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dhaine/episensr">episensr</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://dhaine.github.io/episensr/reference/misclassification.html">misclassification</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">40</span>, <span class="fl">50</span>, <span class="fl">27</span>, <span class="fl">63</span><span class="op">)</span>,</span>
+<span>                          dimnames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Exposed+"</span>, <span class="st">"Exposed-"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Cases"</span>, <span class="st">"Controls"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>                         nrow <span class="op">=</span> <span class="fl">2</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>                  type <span class="op">=</span> <span class="st">"outcome"</span>,</span>
+<span>                  bias_parms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.70</span>,<span class="fl">.70</span>,<span class="fl">.91</span>,<span class="fl">.91</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>--Observed data-- 
+         Outcome: Exposed+ 
+       Comparing: Cases vs. Controls 
+
+         Cases Controls
+Exposed+    40       50
+Exposed-    27       63
+
+                            2.5% 97.5%
+Observed Relative Risk: 1.3  1.0   1.8
+   Observed Odds Ratio: 1.9  1.0   3.4
+---
+                                                   
+Misclassification Bias Corrected Relative Risk: 1.4
+   Misclassification Bias Corrected Odds Ratio: 3.6</code></pre>
+</div>
+</div>
+<p>Conceptually, this misclassification of cases and controls suggest any association between indoor air pollutants and asthma will likely be underestimated and this analysis permits an estimate of the order of magnitude.</p>
+</section><section id="confounding" class="level4"><h4 class="anchored" data-anchor-id="confounding">Confounding</h4>
+<p>How much residual or unmeasured confounding would be required to wipe out the observed effect? This can be determined using the <code>EValue</code> package as described in this <a href="https://pubmed.ncbi.nlm.nih.gov/28693043/">paper</a>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>         point lower upper
+RR         1.4   1.1   1.8
+E-values   2.1   1.3    NA</code></pre>
+</div>
+</div>
+<p>This suggests that a moderate confounder with a risk of 2.1 fold to exposure and a 2.1 fold increase in the outcome would be required to eliminate the observed risk. Of course if the true OR is greater due to misclassification bias the size of unmeasured confounder needed to eradicate the observed association would be even larger.<br>
+In conclusion, there are multiple potential biases (selection, misclassification and confounding) associated with this study. Unmeasured confounding is unlikely to explain the observed association and misclassification suggest the association may be underestimated, but the inability to evaluate the magnitude and direction of the selection bias limits definitive determination of the overall direction of the bias assessment.</p>
+</section></section><section id="analyses" class="level3"><h3 class="anchored" data-anchor-id="analyses">Analyses</h3>
+<p>The authors they performed a logistic regression where presumably probable asthma is the dependent variable. In this case understanding their table 2 is difficult.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/table2.png" class="img-fluid" style="width:90.0%"></p>
+</div>
+</div>
+<p><br> From Table 2 the authors make causal statements not only about endotoxins and asthma but also about other variables, including for example, dampness and single parent home.<br>
+Making assertions based on regression coefficients from a multivariable analysis is subject to <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3626058/">Table 2 Fallacy</a>. These covariate effect estimates may also be confounded even though the effect estimate for the main exposure is not confounded and their proper interpretation far from obvious.<br><br> The authors state “There was no difference in the levels of exposure to house dust major allergen Der p 1, expressed in quartiles of exposure between asthmatic and non-asthmatic matched controls (Table 3)”</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/table3.png" class="img-fluid" style="width:90.0%"></p>
+</div>
+</div>
+<p><br> Looking at the confidence intervals we see they are very wide and, for example, don’t exclude that for quartile 2 there is a 180% increase or 64% decrease in asthma prevalence compared to quartile 1. The authors have conflated <a href="https://pubmed.ncbi.nlm.nih.gov/7647644/">“<strong>an absence of evidence with evidence of absence</strong>”</a>. Aslo see this <a href="https://www.brophyj.com/post/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/">previous post</a>.<br>
+The authors make the same error in Table 4</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/table4.png" class="img-fluid" style="width:90.0%"></p>
+</div>
+</div>
+<p><br> when they conclude there are no interactions. The more reasonable conclusion being even if one ignores the potential biases, they lack sufficient power to draw conclusions about interactions.</p>
+</section><section id="conclusion" class="level3"><h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>A critical appraisal of this publication has shown several interesting avenues for discussion, perhaps explaining why it was suggested for review. Based on the critical appraisal it would seem there is little to support their original conclusions.</p>
+
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brophy2024,
+  author = {Brophy, Jay},
+  title = {Endotoxin Exposure in Asthmatic Children and Matched Healthy
+    Controls},
+  date = {2024-02-19},
+  url = {https://brophyj.github.io/posts/2024-02-19-my-blog-post/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brophy2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Brophy, Jay. 2024. <span>“Endotoxin Exposure in Asthmatic Children and
+Matched Healthy Controls.”</span> February 19, 2024. <a href="https://brophyj.github.io/posts/2024-02-19-my-blog-post/">https://brophyj.github.io/posts/2024-02-19-my-blog-post/</a>.
+</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/brophyj\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">Powered by <a href="https://quarto.org">Quarto</a>.</div>   
+    <div class="nav-footer-center">© 2024 Jay Brophy<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/brophyj/edit/main/posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.Rmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/brophyj/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY NC SA 4.0</a>.</div>
+  </div>
+</footer><script type="text/javascript">
+const dateElements = document.querySelectorAll("p.date, div.listing-date, div.listing-file-modified");
+dateElements.forEach((el) => {
+  el.innerHTML = el.innerHTML.replace(
+    /(\d+)(st|nd|rd|th)/g,
+    "$1<sup style='font-size:0.5em;font-style:italic;'>$2</sup>"
+  );
+});
+</script>
+
+
+</body></html>
