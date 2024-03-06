@@ -1,0 +1,119 @@
+---
+title: What is the prevalence of depression in medical students
+subtitle: ""
+summary: ""
+authors: []
+tags: []
+categories: []
+date: 2024-01-31T14:39:55-05:00
+lastmod: 2024-01-31T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+
+
+<div id="background" class="section level3">
+<h3>Background</h3>
+<p>I am again this year teaching a small group learning course on critical appraisal for MPH students using a unique format.
+Each group is divided into three smaller subgroups of four or five students.
+The first subgroup received only an introduction to the problem, and without looking at the chosen article, discusses their choice of study design to address the problem.
+The second subgroup received only the published abstract and comments on what details they would expect to see in the full article.
+The third subgroup read the whole article and in addition to highlighting its strengths and limitations tried to answer queries raised by the first 2 groups.
+The goal is to not only improve critical appraisal skills but also to think about research questions, designs and the necessary compromises that are often required in research.
+Hopefully this adds another dimension to typical journal clubs where either an article in uncritically endorsed enthusiastically or trashed unmercifully.<br />
+<br> One of the articles was this <a href="https://jamanetwork.com/journals/jama/fullarticle/2589340">2016 JAMA article</a> was a systematic review of the prevalence of depression or depressive symptoms among medical students.
+The data were extracted from 167 cross-sectional studies (n=116628) and 16 longitudinal studies (n=5728) from 43 countries.
+The authors state they followed the Preferred Reporting Items for Systematic Reviews andMeta-analyses and Meta-analysis of Observational Studies in Epidemiology reporting guidelines.
+They reported overall pooled crude prevalence of depression or depressive symptoms was 27.2% (37933/122356 individuals; 95% CI, 24.7% to 29.9%, <span class="math inline">\(I^2\)</span>=98.9%) and concluded the following <br> <br></p>
+<p><img src="images/conclusions.png" width="110%" /></p>
+<p>Leaving aside some contextual issues such as<br />
+- the reliability of self reporting as opposed to a structured diagnostic interview<br />
+- the ability of screening tools to accurately diagnosis depression (low positive predictive values)<br />
+<br> I think it is important to take the time to reflect on the statistical models and their proper interpretation.</p>
+</div>
+<div id="statistical-models-in-meta-analysis" class="section level3">
+<h3>Statistical models in meta-analysis</h3>
+<p>The authors reported using a random effects model.
+What does this mean and what the implications?<br />
+A meta-analysis is actually nothing more than a mixed model, which is itself an extension of simple regression model that contains both explained (fixed) and unexplained (random) elements through the use of variance components.<br />
+First the fixed effect, where the variance is the sampling variance for each study where the studies are assumed to all arise from one common distribution.
+Graphically, this is displayed as follows where the distribution remains centered for each study and its spread it determined by the respective variances.
+<br> <br></p>
+<p><img src="images/FE.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><br> <br> A typically more realistic random effects model considers not only this <strong>within</strong> sample variation but acknowledges it is unlikely that individual studies are identical and consequently also exhibit <strong>between</strong> study variation, as measured by the <span class="math inline">\(I^2\)</span> statistic, as shown below <br> <br></p>
+<p><img src="images/I2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>IOW, the individual studies may be considered as drawn from a supra-population distribution of potential studies, as indicated by the green curve above and blue curve below<br />
+<br> <br></p>
+<p><img src="images/RE.PNG" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="return-to-the-jama-article" class="section level3">
+<h3>Return to the JAMA article</h3>
+<p>Recall the results of an overall pooled crude prevalence of depression or depressive symptoms was 27.2% (37933/122356 individuals; 95% CI, 24.7% to 29.9%, <span class="math inline">\(I^2\)</span>=98.9%).</p>
+<div id="some-general-caveats" class="section level4">
+<h4>Some general caveats</h4>
+<p>A rough guide to <span class="math inline">\(I^2\)</span> interpretations is as follows:<br />
+0% to 40%: might not be important;<br />
+30% to 60%: may represent moderate heterogeneity<br />
+50% to 90%: may represent substantial heterogeneity<br />
+75% to 100%: considerable heterogeneity<br />
+What does this mean?<br />
+It means if we are combining studies to compare apples to oranges and start including studies that are comparing apples to bananas, apples to grapes and oranges to pineapples, etc we are to end up with a fruit salad rather than an understanding of the original comparison being sought (leaving aside the possibility of performing a network meta-analysis).
+Even if only apple versus orange studies are included, if they are of poor quality where perhaps the “appleness” or “orangeness” has been poorly measured we are unlikely to get reliable results.
+Summarizing,<br />
+<span style="color: red;">- GIGO (garbage in - garbage out)<br />
+- excessive unexplained heterogeneity = fruit salad<br />
+</span></p>
+</div>
+<div id="analyses" class="section level4">
+<h4>Analyses</h4>
+<p>Consider their Figure 7 (chosen since the 183 studies have been grouped into 23 groups making data extraction more manageable).
+<br> <br></p>
+<p><img src="images/Fig7.png" width="90%" style="display: block; margin: auto;" /></p>
+<p><span style="color: red;">Question:</span> Does this Figure represent a meta-analysis?<br />
+<span style="color: red;">Answer:</span> Given that a meta-analysis is the statistical combination of the results of multiple studies to quantify the effect size across all of the studies, and given its absence (as well as any measure of the combined variation), it is hard to label this Figure a meta-analysis.<br />
+Here is a Figure that does include the desired measures.</p>
+<p><img src="images/forest.png" width="100%" /></p>
+<p>The combined effect shows a results that is comparable with the reported depression prevalence of 27.2% (95% CI, 24.7% to 29.9%) with the difference due to the original analysis not grouping the 183 studies.<br />
+<span style="color: red;">Question:</span> What is the dotted line and what does it represent?<br />
+<span style="color: red;">Answer:</span> This is known as the prediction interval.
+Remember that in a random effects model the studies come from an over-riding population distribution and the 95% CI of this distribution is the prediction interval.
+Therefore the next study would come from a draw from this distribution and <strong>NOT</strong> from a draw of distribution of the mean effect shown in the line above.</p>
+<p><img src="images/metaplot.png" width="150%" style="display: block; margin: auto;" /></p>
+<p><span style="color: red;">Question:</span> What is probability of the prevalence of depression in the next study (or in your medical school)?<br />
+<span style="color: red;">Answer:</span> Although 95% CI are often interpreted as probability intervals, this is actually incorrect.
+To obtain probability statements one needs to switch to a Bayesian paradigm.
+This is beyond the scope of this presentation but fortunately, given the large amount of available data, little error is introduced by not doing the formal Bayesian analysis.
+This is shown by the figure below, produced by a Bayesian analysis with vague priors, which gives essential the same result as the frequentist analysis.</p>
+<p><img src="images/out_all.png" width="90%" style="display: block; margin: auto;" /></p>
+<p>The blue areas represent the probability distributions and the thin and thick black lines the 80% and 95% credible intervals (CrI).
+The mean and 95% CrI are 0.314, 0.250 - 0.379, very close to the previous confidence intervals.<br />
+Since we are interested in the next study we need the prediction interval distribution which follows</p>
+<p><img src="images/bayes_next.png" width="60%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="conclusions" class="section level3">
+<h3>Conclusions</h3>
+<p>What to think about the authors’ conclusion “the prevalence of depression among medical students is 27%”?<br />
+Ignoring the non-trivial limitations of depression screening tools as diagnostic tools and the lack of validity for self administration, a proper understanding of the statistical model suggests that this meta-analysis of these diverse publications reveals the next study is likely to show at least some medical students have depressive symptoms but this is likely less than 75%!<br />
+IOW, this study is not very informative and its implied precision is a misrepresentation.</p>
+<p><span style="color: red;"><strong>Caveat lector</strong></span><br />
+<br>
+Figure on the top is often presented but figure on the bottom better reflects reality</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<img src="images/Hierarchy_of_Evidence.png" alt="Caveat lector" width="90%" height="20%" /><img src="images/pyramid_good.png" alt="Caveat lector" width="90%" height="20%" />
+<p class="caption">
+Figure 1: Caveat lector
+</p>
+</div>
+</div>

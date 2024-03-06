@@ -8,7 +8,7 @@ author:
     affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
     affiliation-url: https://mcgill.ca 
 tags: []
-categories: [bias, stats]
+categories: [Bias, Statistical analysis]
 image: preview-image.jpg
 citation: 
   url: https://brophyj.github.io/posts/2024-02-19-my-blog-post/ 

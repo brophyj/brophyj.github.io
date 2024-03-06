@@ -1,0 +1,138 @@
+---
+title: Misinformed conclusions
+description: "caveat lector"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Evidence based medicine, Bayesian stats]
+image: featured.jpg
+format: 
+  html:
+    fig-height: 1
+citation: 
+  url: https://brophyj.github.io/posts/2023-04-15-my-blog-post/ 
+date: 2023-04-15T14:39:55-05:00
+lastmod: 2023-04-15T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+## Likely unintentional (but misinformation nevertheless)
+
+In three papers that I read this week, I believe that each suffers from misinterpretations in their conclusions[@RN6772][@RN6776][@RN6773].
+
+## Example 1
+
+```{r echo=FALSE, out.width = "75%", fig.align = "center"}
+knitr::include_graphics("featured1.png")
+```
+
+In the first paper[@RN6772], the authors conclude
+
+> "In Medicare patients with pure native AR, TAVR with the current commercially available transcatheter valves has comparable short-term outcomes. Although long-term outcomes were inferior to SAVR, the possibility of residual confounding, biasing long-term outcomes, given older and frailer TAVR patients, cannot be excluded."
+
+While acknowledging that TAVR was associated with higher unadjusted (HR, 1.90; 95% CI, 1.59-2.26; P \< .001) and adjusted risk of all-cause mortality compared with SAVR (adjusted HR, 1.41; 95% CI, 1.03-1.93; P = .02) with long term follow-up (which may indeed be at least partially explained by residual confounding), the authors interpret the results as being comparable for the two techniques at one year. They report one year propensity score adjusted mortality as 5.7% and 6.9% mortality in the TAVR and SAVR patient, respectively (p=0.3).
+
+Drawing conclusions based on p values is known to be dangerous and a proposed, albeit perhaps minor, improvement is to use confidence intervals[@RN5420]. The following shows the risk difference with the 95% CI for the two mortality outcomes.
+
+```{r}
+prop.test(c(round(c(.057*9880,.069*1147))),c(9980,1147))
+```
+
+The implies that even ignoring any biases, concluding that the two approaches have similar short term outcomes is only reasonable if one believes that a possible 2.8% absolute mortality reduction with SAVR from sampling variation alone is not clinically important. Others might consider that the conclusion is another example of conflating **absence of evidence with evidence of absence** and that additional data is required before drawing firm conclusions. This underscores the problem with dichotomized p values and risk ratios (as opposed to risk differences) as decision making tools.
+
+## Example 2
+
+A NEJM article[@RN6776] reported P that
+
+> "the prophylactic use of tranexamic acid during cesarean delivery did not lead to a significantly lower risk of a composite outcome of maternal death or blood transfusion than placebo" (RR 0.89; 95% CI 0.74 to 1.07; P=0.19 for the primary outcome)."
+
+These results could also be expressed as risk differences and attributable risks.
+
+```{r}
+mat1 <- matrix(c(233,201,5238,5328), nrow = 2, 
+              dimnames = list(c("placebo","tranexamic acid"),c("Outcome +","Outcome -")))
+mat1
+epiR::epi.2by2(mat1)
+
+```
+
+The risk difference is 6 fewer outcomes /1000 treated (95% CI-13.5, 1.0) and the attributable fraction is 14.6% (95% CI -2.70, 29.05) of outcomes being eliminated by treatment.  While these measures do not reach statistical significance, they may provide some additional insights into the trial's interpretation as the associated sampling variations suggest an effect size as large as 13 fewer outcomes / 1000 treated and an attributable fraction as large as 29% have not been eliminated. If one believes these potential measures are of clinical importance, then continuing research with this agent may be indicated.
+
+## Example 3
+
+The third paper is entitled " Effect of a Run-In Period on Estimated Treatment Effects in Cardiovascular Randomized Clinical Trials: A Meta-Analytic Review"[@RN6773] and the authors concluded "The use of a run-in period was not associated with a difference in the magnitude of treatment effect among cardiovascular prevention trials".
+
+I found this result to be a priori very surprising. However without the raw data it is difficult to completely reproduce and assess what the authors have done. Nevertheless working with the aggregate data from the last column in Figure 1, I have performed a Bayesian analysis, with a vaguely informative prior such that the results are completely dominated by the published data.
+
+The posterior probability is displayed below.
+
+```{r brms, cache=TRUE, warning=FALSE, message=FALSE,echo=FALSE, out.width="60%"}
+suppressPackageStartupMessages({
+library(brms)
+library(tidyverse)
+library(metafor)
+})
+
+# get data from right column of Figure 1
+id <- c("HOPE","CAMELOT","E-COST","EUROPA","EWPHE","HOPE-3-BP", "HYVET","I-PERSERVE","MERIT-HF","ORIENT","SAVE","STONE","STOP","SYST","TRANSCEND", "VAL-HEFT","DREAM","LEADER","REWIND","4D","AFCAPS","CIAUS","CARDS","HOPE-3-CHOL","HPS","LIPID","PROSPER","FOURIER","ODYSSEY-A","ODYSSEY-O","ODYSSEY-N","SPIRE")
+TE <- c(.82,.85,.71,.80,1.04,1.19,.88,1.08,.89,.82,.88,.42,.80,3.50,.96,.96,1.44,1.12,.96,
+      1.02,.91,2.28,5.05,1.18,1.65,.89,1.02,1.08,8.48,3.68,.36,.80)
+lci <- c(.70,.66,.54,.68,.73,.96,.66,.93,.76,.55,.71,.26,.48,.77,.85,.79,.99,.87,.84,.85,.67,.38,1.14,.88,.45,.78,.84,.80,.91,.13,.01,.47)
+uci <- c(.96,1.10,.94,.94,1.47,1.48,1.17,1.24,1.04,1.22,1.10,.67,1.34,15.89,1.09,1.17,2.09,  1.31,1.10,1.23,1.22,13.83,22.4,1.57,6.01,1.02,1.23,1.46,79.20,101.79,8.81,1.34)
+
+dat <- data.frame(id=id,TE=TE,lci=lci,uci=uci)
+dat <- dat |> mutate(seTE=(uci-lci)/3.92)
+
+priors <- c(prior(normal(0,1), class = Intercept),
+            prior(cauchy(0,0.5), class = sd))
+
+suppressMessages(
+             m.brm <- brm(TE|se(seTE) ~ 1 + (1|id),
+             data = dat,
+             prior = priors, refresh=0,
+             iter = 4000)
+)
+# summary(m.brm)
+
+post.samples <- posterior_samples(m.brm, c("^b", "^sd"))
+# names(post.samples)
+plot(m.brm, variable = "^b", regex=TRUE)
+# post.samples <- as_draws(m.brm)
+
+names(post.samples) <- c("RR", "tau")
+CIs <- mean(post.samples$RR) +c(-1,1)*1.96*sd(post.samples$RR)
+
+
+```
+
+### ggplot version
+
+```{r echo=FALSE }
+# ggplot for RR
+library(ggplot2)
+ggplot(aes(x = RR), data = post.samples) +
+  geom_density(fill = "lightblue", color = "lightblue", alpha = 0.7) +
+  geom_point(y = 0, x = mean(post.samples$RR)) +
+  labs(x = expression(italic(RR)),
+       y = element_blank()) +
+  geom_segment(y=0,yend=0,x=CIs[1],xend=CIs[2]) +
+  ggtitle("Probability of run-in trials having exaggerated effects (RR<1) \ncompared to non run-in trials") +
+  theme_minimal()
+
+res <- pnorm(c(.9,.95,1),mean(post.samples$RR),sd(post.samples$RR))
+```
+
+Based on this analysis, the probability that run-in trials has a larger treatment effect than non-run-in trials was `r round(res[3]*100,0)` %. There was an `r round(res[2]*100,0)` % probability that the effect size was at least 5% greater in the run-in trials. While this effect is not large, it is more in keeping with face validity that would suggest that run-in trials, by excluding non-compilers and those developing side effects, would be expected to yield a larger effect size than a comparable trial without a run-in period. \newpage
+
+## References

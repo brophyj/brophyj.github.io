@@ -1,0 +1,104 @@
+---
+title: "Absence of evidence is not evidence of absence"
+subtitle: ""
+summary: ""
+authors: []
+tags: []
+categories: []
+date: 2023-03-19T14:39:55-05:00
+lastmod: 2023-03-19T14:39:55-05:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+---
+
+
+
+<p>A previous post referred to the difficulty some researchers / reviewers have in distinguishing between <strong>absence of evidence and evidence of absence</strong>, even though this issue has been well discussed for almost 30 years (see <a href="https://www.bmj.com/content/311/7003/485">here</a> and <a href="http://www.stat.columbia.edu/~gelman/research/published/signif4.pdf">here</a>). Despite the fact that these publications have several thousand citations, this remains an important problem, even in high impact medical journals.</p>
+<p>For example, I recently read a <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2204511">NEJM</a> randomized clinical trial (RCT) investigating whether the addition of extracorporeal cardiopulmonary resuscitation (eCPR) to standard conventional CPR (cCPR) can improve survival and diminish anoxic brain injury. Out-of-hospital cardiac arrest is a frequent event and its devastating
+consequences are only partially mitigated by rapid commencement of basic life
+support with high-quality cCPR. There
+remains a substantial subset of individuals who do not respond rapidly
+to these measures and whether eCPR
+can improve outcomes is an important clinical question.
+In this trial, the primary outcome, 30 day survival without significant neurological
+deficit, was an odds ratio of 1.4 (95% confidence interval, 0.5 to 3.5; P =
+0.52) in favor eCPR. This lead to the abstract
+conclusion “In patients with refractory out-of-hospital cardiac arrest,
+extracorporeal CPR and conventional CPR had similar effects on survival
+with a favorable neurological outcome”.</p>
+<p>This trial addressed an important
+clinical question in the most challenging of research environments and the authors
+are to be congratulated on their trial design, its execution, and a
+nuanced discussion in the body of the article. However the constraints of standard statistical
+analyses limits the quantitative appreciation of their data, and
+prevents a full and comprehensive data exploitation and updating of past
+knowledge. Trials that fail to meet
+statistical significance and are often incorrectly thought of as
+“negative” trials, and the null hypothesis significance testing (NHST) paradigm favors this confusion
+between “<em>absence of evidence and evidence of absence</em>”.</p>
+<p>The goal of this post is to demonstrate that a Bayesian
+perspective, by concentrating on posterior probabilities, permits additional insights into the specific clinical
+question and intrinsically avoids these misinterpretations.</p>
+<p>The post does not reiterate the many other reasons to be wary of
+null hypothesis significance testing (NHST), p values and confidence
+intervals (see <a href="https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913">here</a>). Rather it assumes the reader has perhaps heard that
+Bayesian methods mirror our intuitive learning and diagnostic processes
+and is curious about its potential application to RCT analyses and
+interpretations. Bayesian approaches provide benefits over standard
+statistical analyses by avoiding dichotomizing results into statistical significance or not, with an
+obligatory loss of information and understanding. This is accomplished by concentrating on direct estimation of the parameters of interest and providing direct probability statements regarding their uncertainty (herein the
+risk of survival with intact neurological status). The price to be paid for these benefits is the need to specify a prior distribution before seeing the current data.</p>
+<p>These probability statements arise from the posterior distribution
+according to the Bayes Thereom, expressed as follows:
+<span class="math display">\[ \text{Posterior}  = \frac{\text{Probability of the data} * \text{Prior}}{\text{Normalizing Constant}} \]</span></p>
+<p>Therefore, in addition to the current data summarized by the probability
+of the data (likelihood function), prior probability distributions are
+required. Because our main focus is the analysis and interpretation of
+the current RCT alone, an initial analysis may use a
+default vague parameter prior <span class="math display">\[log(\theta) \sim Normal [0, 2.50]\]</span>,
+thereby assuring that the posterior distribution is dominated by the
+observed data.</p>
+<p>Posterior distributions are summarized with medians and 95%
+highest-density intervals (credible intervals (CrI)), defined as the
+narrowest interval containing 95% of the probability density function. Bayesian analyses permit not only calculations of the
+posterior probability of any additional survival with eCPR (OR &gt;1.00),
+but also of clinically meaningful benefits. While there is no universal
+definition for a clinically meaningful benefit, a survival OR &gt;1.10 may
+be an acceptable threshold for many. Bayesian analyses also allows
+calculation of the probability between any two points. For example,
+rather than simply comparing if the survival of one treatment is better
+than another, one can calculate a range of practical equivalence (ROPE)
+between treatments. While different ranges may be proposed, +/- 10%
+seems a reasonable small difference that many would consider as
+equivalent.</p>
+<p>The graphical presentation of these results is shown below
+<img src="featured1.png" /></p>
+<p>This Bayesian analysis, using a default
+vague prior, produces an odds ratio (OR) 1.32 with 95% CrI 0.54 - 3.22) which aligns with the original analysis (OR, 1.4; 95% CI
+0.5 - 3.5) confirms the minimal impact of the default vague prior and
+reveals a Bayesian analysis completely dominated by the observed data. The eCPR probability density function for improved survival with eCPR
+is 73% with a 66% probability that this exceeds the clinically defined meaningful cutpoint of at least a 10% survival benefit. The probability of equivalence between the two techniques is 13%.</p>
+<p>The “take home” message from this Bayesian reanalysis is that standard statistical analyses resulting in a conclusion
+of “similar survival effects of eCPR to cCPR” may be overly simplified and potentially inaccurate. This
+Bayesian analysis demonstrates that at present definitive conclusions regarding the superiority, inferiority,
+or equivalence of either approach are impossible. Rather the possibility of a clinically meaningful benefit,
+or less likely the possibility of clinically meaningful harm, has not been reasonably excluded and continued
+research is necessary to clarify the residual uncertainties. The final dilemma confronting clinicians is that
+even Bayesian analyses of randomized trials provide only probability estimates for average treatment effects
+and not for the more elusive individual treatment effect.</p>
+<p>Of course, an added benefit of the Bayesian analysis is its ability to incorporate previous knowledge. The statistical code for this analysis can be found <a href="https://github.com/brophyj/eCPR">here</a> and a more detailed non-peer reviewed manuscript may be found <a href="https://www.medrxiv.org/content/10.1101/2023.02.13.23285890v2">here</a>.</p>

@@ -1,0 +1,32 @@
+---
+title: EXCEL - clearing the haze with Bayes
+description: "Adding clarity?"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Bayesian stats]
+image: featured.jpeg
+format: 
+  html:
+    fig-height: 1
+citation: 
+  url: https://brophyj.github.io/posts/2021-01-15-my-blog-post/ 
+date: 2021-01-15T14:39:55-05:00
+lastmod: 2021-01-15T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+Yesterday I saw a MEDSCAPE article published last fall ["Is the Tide Turning on the 'Grubby' Affair of EXCEL and the European Guidelines?"]( https://www.medscape.com/viewarticle/939944?src=WNL_infoc_210114_MSCPEDIT_excel2&uac=96111DV&impID=2963154&faf=1) which chronicles this saga rather well. In fact, I was interviewed for the article but had missed its publication. The authors of the MEDSCAPE article detail some additional obfuscation of the data by the EXCEL authors which I, like most readers and even the NEJM editors, were unaware of.     
+In October 2017 I was asked by the European Society of Cardiology to perform a statistical review of their proposed left main revascularization guidelines and recommendation that percutaneous coronary stenting (PCI) was equivalent to coronary artery bypass grafting (CABG) for patients with left main disease. Despite being unaware of the recently reported shenanigans by the EXCEL authors, I concluded, largely based on Bayesian inference, that the evidence supporting their recommendation for equivalence of the 2 techniques was weak and their recommendation was misleading. For example, there remained an approximately 10% probability that the composite endpoint of death/MI could be augmented by at least 2 persons / 100 treated with PCI. As I believed most patients would find these differences to be clinically meaningful, I did not think that both procedures should receive the same class of recommendation. Nevertheless, as the evidence was not absolutely definitive, I recognized that others might reach a different conclusion and so was not completely surprised when the guideline recommendation was not modified.      
+The additional information in this [MEDSCAPE article]( https://www.medscape.com/viewarticle/939944?src=WNL_infoc_210114_MSCPEDIT_excel2&uac=96111DV&impID=2963154&faf=1)  only strengthens my previous opinion as to the non-equivalence of these 2 techniques and the need for the ESC to revisit their guidelines. What I find most interesting is that the Bayesian approach brought [clarity to this issue](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2766594) even before the most recent revelations. 
