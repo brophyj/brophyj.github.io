@@ -1,0 +1,15 @@
+{
+  "hash": "be536f26270d18573ad9498f728d6e21",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Virtual Learning & Corporate Sponsorship\ndescription: \"Time to worry?\"\nauthor:\n  - name: Jay Brophy\n    url: https://brophyj.github.io/\n    orcid: 0000-0001-8049-6875\n    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics\n    affiliation-url: https://mcgill.ca \ntags: []\ncategories: [Bias]\nimage: featured.jpeg\nformat: \n  html:\n    fig-height: 1\ncitation: \n  url: https://brophyj.github.io/posts/2020-05-15-my-blog-post/ \ndate: 2020-05-15T14:39:55-05:00\nlastmod: 2020-05-15T14:39:55-05:00\nfeatured: true\ndraft: false\n# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.\nprojects: []\ncode-fold: true\neditor_options: \n  markdown: \n    wrap: sentence\n---\n\n\n\nOne positive from the **Covid-19** pandemic, is we have had to learn more techniques about online or virtual learning. The proliferation of these tools, such as Zoom, and our increased familiarity with their use will perhaps have a lasting impact on our learning processes. For example, with increased ease of online learning, perhaps we will reduce our carbon footprint for small, medium and even large medical conferences as we reduce our traveling and need for physical presence at these venues.     \n\nCertainly in the academic world, we had to rapidly adapt (within a 2 week period) from giving standard onsite lectures to the virtual teaching world. Surprisingly, the transition was relatively painless. For example,  I gave the last 12 hours of the winter semester of my intermediate epidemiology course to 71 MSc students via Zoom. The cost of this is farily trivial. I believe the price of a premium Zoom subscription is about $20 / month.    \n      \n          \n          \nGiven these facts I was not surprised to receive a recent email about an upcoming virtual course on heart failure.      \n      \n      \n      \n![](ScreenShot_1.png){width=\"75%\" fig-align=\"center\"}\n\nHowever, what did surprise me was seeing that this symposium had **12 corporate sponsors**!     \n     \n          \n          \n![](ScreenShot_2.png){width=\"75%\" fig-align=\"center\"}   \n\n\n\nThis raises several questions:        \n- Why are academics so tied in with coroporate interests?      \n- Are academics only willing to participate if personal financial rewards are present?     \n- Coroporations are not philatrophic organizations, so what is the payoff for them?     \n- Is it a quasi guarantee that their products will be highlighted in a positive manner?     \n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

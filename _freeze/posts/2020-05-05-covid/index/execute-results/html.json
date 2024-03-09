@@ -1,0 +1,17 @@
+{
+  "hash": "ce93bdc6a9ea3b52cbad7a800487147b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Covid visualizations\ndescription: \"An aid to understanding\"\nauthor:\n  - name: Jay Brophy\n    url: https://brophyj.github.io/\n    orcid: 0000-0001-8049-6875\n    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics\n    affiliation-url: https://mcgill.ca \ntags: []\ncategories: [Visualizations]\nimage: covid_area.png\nformat: \n  html:\n    fig-height: 1\ncitation: \n  url: https://brophyj.github.io/posts/2020-05-05-my-blog-post/ \ndate: 2020-05-05T14:39:55-05:00\nlastmod: 2020-05-05T14:39:55-05:00\nfeatured: true\ndraft: false\n# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.\nprojects: []\ncode-fold: true\neditor_options: \n  markdown: \n    wrap: sentence\n---\n\n\n\nThe majority of Covid-19 cases in Quebec are on the island of Montreal. Using daily reports from Quebec public health, I have made a few graphs that explore the rate of infections during the month of April for the different Montreal neighbourhoods.     \nData visualizations help to appreciate the time and geographic variations of Covid-19 infections. Infections started in central higher SES areas (? areas with more spring break travel) before spreading to predominately lower SES areas \n[click here for interactive Montreal maps](/post/Combined_map.html)      \n      \n \n      \n![](covid_area.png)    \n\n\nObviously inferences of Montreal cases are limited by the uncertain quality of the data. With this caveat, here are some personal observations    \n* Early in the month, cases were highest in higher SES areas, likely highlighting ^ travel exposure in these areas    \n*  As month progressed, saw the usual gradient of more cases in areas with lower SES and higher population densities    \n* No region has definitively “turned the corner”, but the majority of areas seems to be leveling off, giving some hope that the announced progressive easing of current restrictions will not lead to a complete disaster\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

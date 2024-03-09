@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.310">
+<meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jay Brophy">
 <meta name="description" content="What counts?">
@@ -21,7 +21,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -72,13 +72,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/iconify-1.0.8/iconify-icon.min.js"></script><script id="quarto-search-options" type="application/json">{
+<script src="../../site_libs/quarto-contrib/iconify-1.0.8/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -87,14 +96,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <meta property="og:title" content="jay’s website - Endotoxin exposure in asthmatic children and matched healthy controls">
 <meta property="og:description" content="What counts?">
 <meta property="og:image" content="https://brophyj.com/posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/featured.png">
-<meta property="og:site-name" content="jay's website">
+<meta property="og:site_name" content="jay's website">
 <meta property="og:image:height" content="512">
 <meta property="og:image:width" content="512">
 <meta name="twitter:title" content="jay’s website - Endotoxin exposure in asthmatic children and matched healthy controls">
@@ -107,8 +118,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../images/logo.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../index.html">
@@ -122,51 +133,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html" rel="" target="">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../talks.html" rel="" target="">
- <span class="menu-text">Talks</span></a>
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../example.html"> 
+<span class="menu-text">Art</span></a>
   </li>  
 </ul>
 <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
-    <a class="nav-link" href="https://orcid.org/my-orcid?orcid=0000-0001-8049-6875" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:orcid"></iconify-icon></span></a>
+    <a class="nav-link" href="https://orcid.org/my-orcid?orcid=0000-0001-8049-6875"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:orcid"></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mastodon.social/@brophyj" rel="me" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:mastodon"></iconify-icon></span></a>
+    <a class="nav-link" href="https://mastodon.social/@brophyj" rel="me"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:mastodon"></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/brophyjl" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:twitter"></iconify-icon></span></a>
+    <a class="nav-link" href="https://twitter.com/brophyjl"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:twitter"></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://www.linkedin.com/in/brophyj/" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:linkedin"></iconify-icon></span></a>
+    <a class="nav-link" href="https://www.linkedin.com/in/brophyj/"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:linkedin"></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/brophyj" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:github"></iconify-icon></span></a>
+    <a class="nav-link" href="https://github.com/brophyj"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:github"></iconify-icon></span></a>
   </li>  
 </ul>
-<div class="quarto-navbar-tools">
+</div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page">
@@ -182,23 +197,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                   </div>
   </div>
     
-  <div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-author column-page">
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
       <p class="author"><a href="https://brophyj.github.io/">Jay Brophy</a> <a href="https://orcid.org/0000-0001-8049-6875" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
     </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
           <p class="affiliation">
               <a href="https://mcgill.ca">
               McGill University Dept Medince, Epidemiology &amp; Biostatistics
               </a>
             </p>
         </div>
-      </div>
+    </div>
 
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page">
 
         
       <div>
@@ -221,7 +236,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Recall that the goal of the course is to not only improve critical appraisal skills but also to think about research questions, designs, and the necessary compromises that are often required in research. Hopefully this adds another dimension to typical journal clubs where either an article in uncritically endorsed enthusiastically or trashed unmercifully, although this is sometimes quite merited<br><br> For reasons I am somewhat unclear about, this week’s selected article was the 2005 publication <a href="https://pubmed.ncbi.nlm.nih.gov/15926941/">Endotoxin exposure in asthmatic children and matched healthy controls: results of IPEADAM study</a>. Although not described as such, this was apparently a nested case-control study from a 1999 crosssectional study by the same <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1313925/">authors</a>, of over 1500 completed questionnaires. Cases were children between the ages of 4 and 17 who had a study diagnosis of probable asthma. These <span style="color: red;"><em>asthmatic</em></span> children were matched for sex, age and sib-ship size with children living in asthma free households and the following main conclusions reported. <br><br></p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/conclusions.png" class="img-fluid" style="width:125.0%"></p>
+<div>
+<figure class="figure"><p><a href="images/conclusions.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/conclusions.png" class="img-fluid figure-img" style="width:125.0%"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p>A critical analysis should consider bias and statistical issues</p>
@@ -237,7 +255,7 @@ This figure may help explain. Where would you put the reinforcements?</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/airplane.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figure class="figure"><p><a href="images/airplane.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/airplane.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -256,7 +274,7 @@ Let’s begin by examining their Figure 1 which is reproduced below. <br><br></p
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/fig1.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figure class="figure"><p><a href="images/fig1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/fig1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -268,7 +286,7 @@ Let’s begin by examining their Figure 1 which is reproduced below. <br><br></p
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/fig2.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figure class="figure"><p><a href="images/fig2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/fig2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a></p>
 </figure>
 </div>
 </div>
@@ -302,7 +320,7 @@ Misclassification Bias Corrected Relative Risk: 1.3
 <p>As the authors report from their previous work that their asthma detection questionnaire has only a 70% sensitivity and 91% specificity <span style="color: red;">misclassification</span> is present.<br>
 The effect of misclassification can be quantified using quantitative bias analysis (QBA) via the <code>episensr</code> package and <code>misclassification</code> function. This seems an improvement over purely qualitative heuristics, such as “non-differential misclassification biases toward the null”.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dhaine/episensr">episensr</a></span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dhaine/episensr">episensr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://dhaine.github.io/episensr/reference/misclassification.html">misclassification</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">40</span>, <span class="fl">50</span>, <span class="fl">27</span>, <span class="fl">63</span><span class="op">)</span>,</span>
 <span>                          dimnames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Exposed+"</span>, <span class="st">"Exposed-"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Cases"</span>, <span class="st">"Controls"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>                         nrow <span class="op">=</span> <span class="fl">2</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
@@ -342,21 +360,30 @@ In conclusion, there are multiple potential biases (selection, misclassification
 <p>The authors they performed a logistic regression where presumably probable asthma is the dependent variable. In this case understanding their table 2 is difficult.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/table2.png" class="img-fluid" style="width:90.0%"></p>
+<div>
+<figure class="figure"><p><a href="images/table2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/table2.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p><br> From Table 2 the authors make causal statements not only about endotoxins and asthma but also about other variables, including for example, dampness and single parent home.<br>
 Making assertions based on regression coefficients from a multivariable analysis is subject to <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3626058/">Table 2 Fallacy</a>. These covariate effect estimates may also be confounded even though the effect estimate for the main exposure is not confounded and their proper interpretation far from obvious.<br><br> The authors state “There was no difference in the levels of exposure to house dust major allergen Der p 1, expressed in quartiles of exposure between asthmatic and non-asthmatic matched controls (Table 3)”</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/table3.png" class="img-fluid" style="width:90.0%"></p>
+<div>
+<figure class="figure"><p><a href="images/table3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/table3.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p><br> Looking at the confidence intervals we see they are very wide and, for example, don’t exclude that for quartile 2 there is a 180% increase or 64% decrease in asthma prevalence compared to quartile 1. The authors have conflated <a href="https://pubmed.ncbi.nlm.nih.gov/7647644/">“<strong>an absence of evidence with evidence of absence</strong>”</a>. Aslo see this <a href="https://www.brophyj.com/post/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/">previous post</a>.<br>
 The authors make the same error in Table 4</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/table4.png" class="img-fluid" style="width:90.0%"></p>
+<div>
+<figure class="figure"><p><a href="images/table4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/table4.png" class="img-fluid figure-img" style="width:90.0%"></a></p>
+</figure>
+</div>
 </div>
 </div>
 <p><br> when they conclude there are no interactions. The more reasonable conclusion being even if one ignores the potential biases, they lack sufficient power to draw conclusions about interactions.</p>
@@ -364,7 +391,7 @@ The authors make the same error in Table 4</p>
 <p>A critical appraisal of this publication has shown several interesting avenues for discussion, perhaps explaining why it was suggested for review. Based on the critical appraisal it would seem there is little to support their original conclusions.</p>
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brophy2024,
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brophy2024,
   author = {Brophy, Jay},
   title = {Endotoxin Exposure in Asthmatic Children and Matched Healthy
     Controls},
@@ -505,10 +532,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/brophyj\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -518,8 +567,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -531,7 +589,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -575,6 +756,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -600,6 +782,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -657,27 +865,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/brophyj\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">Powered by <a href="https://quarto.org">Quarto</a>.</div>   
-    <div class="nav-footer-center">© 2024 Jay Brophy<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/brophyj/edit/main/posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.Rmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/brophyj/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
-    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY NC SA 4.0</a>.</div>
+    <div class="nav-footer-left">
+<p>Powered by <a href="https://quarto.org">Quarto</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+<p>© 2024 Jay Brophy</p>
+<div class="toc-actions"><ul><li><a href="https://github.com/brophyj/edit/main/posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.Rmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/brophyj/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY NC SA 4.0</a>.</p>
+</div>
   </div>
 </footer><script type="text/javascript">
 const dateElements = document.querySelectorAll("p.date, div.listing-date, div.listing-file-modified");
@@ -687,7 +887,31 @@ dateElements.forEach((el) => {
     "$1<sup style='font-size:0.5em;font-style:italic;'>$2</sup>"
   );
 });
-</script>
+</script><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 </body></html>

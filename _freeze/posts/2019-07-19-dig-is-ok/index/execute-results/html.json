@@ -1,0 +1,15 @@
+{
+  "hash": "7290b12f4009b857fdc5dd5707cbd306",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Dig is OK\nauthor:\n  - name: Jay Brophy\n    url: https://brophyj.github.io/\n    orcid: 0000-0001-8049-6875\n    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics\n    affiliation-url: https://mcgill.ca \ntags: []\ncategories: [Evidence based medicine]\nimage: featured.jpeg\nformat: \n  html:\n    fig-height: 1\ncitation: \n  url: https://brophyj.github.io/posts/2019-07-19-my-blog-post/ \ndate: 2019-07-19T14:39:55-05:00\nlastmod: 2019-07-19T14:39:55-05:00\nfeatured: true\ndraft: false\n# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.\nprojects: []\ncode-fold: true\neditor_options: \n  markdown: \n    wrap: sentence\n\n---\n\n\n\nThis is from a tweetorial looking at the safety and efficacy of digitalis in heart failure.    \n![](dig_post_Page_1.png){#id .class width=100% height=10% align=center}   \n![](dig_post_Page_2.png){#id .class width=100% height=10% align=center}\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

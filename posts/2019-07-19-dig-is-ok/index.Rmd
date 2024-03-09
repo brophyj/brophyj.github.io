@@ -1,0 +1,36 @@
+---
+title: Dig is OK
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Evidence based medicine]
+image: featured.jpeg
+format: 
+  html:
+    fig-height: 1
+citation: 
+  url: https://brophyj.github.io/posts/2019-07-19-my-blog-post/ 
+date: 2019-07-19T14:39:55-05:00
+lastmod: 2019-07-19T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+This is from a tweetorial looking at the safety and efficacy of digitalis in heart failure.    
+![](dig_post_Page_1.png){#id .class width=100% height=10% align=center}   
+![](dig_post_Page_2.png){#id .class width=100% height=10% align=center}
+

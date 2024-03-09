@@ -1,3 +1,40 @@
 ---
-title: "projects"
+title: " "
 ---
+
+<p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold"> Selected projects <iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon>
+</p>
+
+# Aortic stenosis
+
+
+![Aortic stenosis treatments](photos/images/as.jpg){fig-align="center"}
+
+A CIHR funded project investigating the impact of patient, institutional, physician, and regional data on the trajectory of aortic stenosis (AS) treatment choices, outcomes, and cost effectiveness
+
+**Overview**\
+Aortic stenosis (AS) is the most prevalent heart valve disorder in developed countries. Historically, surgical aortic valve replacement (SAVR) has been the standard treatment for symptomatic AS. Trans-catheter aortic valve replacement (TAVR) has now been demonstrated to significantly reduce mortality for inoperable AS patients compared to medical treatment, and to have comparable or improved outcomes compared across a spectrum of SAVR candidates. The most recent randomized trial has shown TAVR to be noninferior to surgery with respect to the composite end point of death or disabling stroke at 24 months follow-up in patients at low surgical risk. TAVR has, and will continue to, dramatically change the way patients with AS are managed and may be seen as “disruptive” technology.
+
+It is important to have a clear understanding of the diagnostic, treatment and outcomes experienced by these patients. This is necessary to be sure the appropriate resources are available to meet these demands in a fair, transparent, and equitable manner.
+
+
+# Comparative effectiveness studies of dual antiplatelet therapy (DAPT)
+
+
+![DAPT](photos/images/TC4_scales.png){fig-align="center"}
+
+TC4 Ticagrelor compared to clopidogrel in acute coronary syndromes - the TC4 comparative effectiveness study
+
+CIHR funded project (2019-2023) looking at the comparative effectiveness of ticagrelor versus clopidogrel in acute coronary syndromes.     
+
+**Overview**
+Cardiovascular diseases, especially acute coronary syndromes (ACS) are a leading cause of mortality and morbidity. Antiplatelet medications have a long history of improving ACS survival and for the prevention of a secondary cardiac event. Based on the consistency and strength of multiple randomized controlled trials (RCTs), the dual antiplatelet therapy (DAPT), clopidogrel and aspirin, following an ACS event, had long been considered the gold standard in the leading clinical guidelines. More recently, a new DAPT regimen, ticagrelor and aspirin, has become the recommended strategy. However this is based largely on one large RCT with a limited number of North American patients (who did not show any incremental benefit). This project aimed to further explore the comparative effectiveness of these different treatments by performing a    
+i) [Bayesian network meta-analysis of all previous RCTs](https://www.medrxiv.org/content/10.1101/2023.08.12.23294021v1)     
+ii) Pharmacoepidemiology study using Quebec administrative databases (manuscript in progress)     
+iii) time clustered, randomized registry trial of 1,000 ACS patients (manuscript in progress)    
+
+
+# (Mostly) Clinical Epidemiology with R      
+
+This is some introductory teaching material related to [clinical epidemiology using R](https://bookdown.org/jbrophy115/bookdown-clinepi/).     
+Hopefully at some point this material will be updated, expanded and repackaged using **Quarto** 

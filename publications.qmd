@@ -1,3 +1,38 @@
 ---
-title: "publications"
+title: " "
 ---
+
+<p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
+      Selected publications   <iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon>
+</p>
+
+
+
+```{=html}
+<div  style="margin: 30px; text-align: left;">
+<a class="btn btn-primary" href="https://drive.google.com/file/d/12X8674xGMcmUkersqxY_7l3ypc1JSjQg/view?usp=drive_link" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a>
+</div>
+```
+# 2024
+
+-   Miceline Mésidor, Caroline Sirois, Jason Robert Guertin, Mireille E Schnitzer, Bernard Candas, Claudia Blais, Benoit Cossette, Paul Poirier, **James M Brophy**, Lisa Lix, Mina Tadrous, Awa Diop, Denis Hamel, Denis Talbot. Effect of statin use for the primary prevention of cardiovascular disease among older adults: A cautionary tale concerning target trials emulation. [Journal of Clinical Epidemiology](https://www.jclinepi.com/article/S0895-4356(24)00039-8/fulltext)      
+
+- **James M Brophy** Is science really self correcting? Something old and older. [Medium](https://medium.com/p/64b829ec7935).      
+Non peer review article based on a previous blog. Although I think this contains much interesting material, including the value of teaching,an exploration of immortal time bias, and its historical perspective, it was refused by > 6 (I lost count of exactly how many!) medical journals for "not meeting their priorities".
+
+# 2023
+
+-   **James M Brophy**. A Bayesian Perspective-Extracorporeal CPR for Refractory Out-of-Hospital Cardiac Arrest [medRxiv, 2023.02. 13.23285890](https://www.medrxiv.org/content/10.1101/2023.02.13.23285890v3)
+
+# 2022
+
+-   Todd C Lee, Srinivas Murthy, Olivier Del Corpo, Julien Senécal, Guillaume Butler-Laporte, Zahra N Sohani, **James M Brophy**, Emily G McDonald. Remdesivir for the treatment of COVID-19: a systematic review and meta-analysis. [Clinical Microbiology and Infection 28 (9), 1203-1210](https://www.sciencedirect.com/science/article/pii/S1198743X22002300)
+
+# 2021
+
+-   **James M Brophy**. Bayesian analyses of cardiovascular trials—bringing added value to the table. [Canadian Journal of Cardiology 37 (9), 1415-1427 2021](https://www.sciencedirect.com/science/article/abs/pii/S0828282X2100163X)\
+-   **James M Brophy**. Key Issues in the Statistical Interpretation of Randomized Clinical Trials. [Canadian Journal of Cardiology 37 (9), 1312-1321](https://www.sciencedirect.com/science/article/abs/pii/S0828282X20311806)
+
+# 2020
+
+-   **James M Brophy**. Bayesian interpretation of the EXCEL trial and other randomized clinical trials of left main coronary artery revascularization. [JAMA Internal Medicine 180 (7), 986-992](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2766594)

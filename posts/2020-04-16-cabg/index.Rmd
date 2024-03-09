@@ -1,0 +1,41 @@
+---
+title: "CABG vs. PCI in LM"
+description: "Good enough?"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Evidence based medicine]
+image: PCI_CABG.jpg
+format: 
+  html:
+    fig-height: 1
+citation: 
+  url: https://brophyj.github.io/posts/2020-04-16-my-blog-post/ 
+date: 2020-04-16T14:39:55-05:00
+lastmod: 2020-04-16T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is a blog post about a recent [NEJM article](https://www.nejm.org/doi/full/10.1056/NEJMoa1909406).
+![](PCI_CABG.jpg){#id .class width=75% height=75% align=right}
+
+
+Based on the primary outcome result (difference, 2.8 percentage
+points; 95% confidence interval [CI], −0.9 to 6.5; P = 0.13), the EXCEL authors conclude “In patients with left main coronary artery disease of low or intermediate anatomical complexity, there was no significant difference between PCI and CABG”. Leaving aside that CABG was statistically superior in terms of total mortality, ischemia driven revascularization, and non-procedural myocardial infarction, it is questionable that the primary outcome data actually support their conclusion. EXCEL was originally designed as a non-inferiority (NI) study with a margin of 4.2%, which en passant many would consider too liberal. Even accepting that margin, how can a primary outcome with a 95% upper CI of 6.5%, exceeding the original NI margin be used to support their conclusion?
+
+Did you find this page helpful? Consider sharing it 🙌

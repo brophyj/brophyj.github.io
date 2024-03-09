@@ -1,0 +1,15 @@
+{
+  "hash": "3adf892d587aef2229fd71d390b92ea3",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Art\"\ntitle-block-banner: true\npage-layout: full\nfreeze: true\nfilters:\n   - lightbox\nlightbox: auto\necho: false\n---\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n\n## Barney watercolors\n\n::: {style=\"display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));grid-gap: 1em;\"}\n![Greater flamingo](images/20240211_0325.jpg){description=\"SONY ILCE-6400 Lens E 70-350mm F4.5-6.3 G OSS <br>\n350mm f/6.3 1/2500 ISO 800 <br>\n2024-02-11 08:21:16 UTC\" desc-position=\"left\" group=\"barnwc\"}\n\n![Barney](images/barn1.jpg){description=\"Apple iPhone 15 Lens iPhone 15 back dual wide camera 5.96mm f/1.6 <br>\n5.96mm f/1.6 1/60 ISO 500 <br>\n2024-01-31 14:01:21 UTC\" desc-position=\"left\" group=\"barnwc\"}\n\n\n:::\n## Iceland\n\n::: {style=\"display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));grid-gap: 1em;\"}\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

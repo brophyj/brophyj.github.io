@@ -1,3 +1,76 @@
 ---
-title: "talks"
+title: ""
+engine: knitr
+freeze: false
+cv:
+  pdf: "upload/JGH.pdf"
+muhc:
+  pdf: "upload/MUHC_DAPT1.pdf"
+tau:
+  pdf: "upload/TAU.pdf"
+med:
+  pdf: "upload/MA.pdf"
 ---
+
+<p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
+Presentations <iconify-icon icon="et:presentation"></iconify-icon>
+</p>
+
+# 2023
+
+-  **An introduction to systematic reviews and (sometimes) meta-analysis**                 
+McGill University Medical School Lecture, Montreal QC, Nov 30 2023   
+**Summary** - Review of basic systematic review and meta-analysis techniques for 2nd year medical students        
+
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$med$pdf`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download slides
+  </a>
+</p>
+
+<div>
+  <iframe src="`r rmarkdown::metadata$med$pdf`" style="border: 0.5px"></iframe>
+</div>
+
+-  **A Bayesian view of contemporary randomized clinical trials – New reflections from an old lens**           
+Montreal Jewish General Hospital, Clinical Epidemiology Rounds, Montreal QC, Nov 15 2023   
+**Summary** - Review of Bayesian principles and their advantages highlighted by re-analyses of several randomized trials recently published in the NEJM     
+
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download slides
+  </a>
+</p>
+
+<div>
+  <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>
+</div>
+
+- **Dual antiplatelet therapy (DAPT) in 2023 - The McGill Experience**          
+McGill University Health Centre, Department of Medicine Grand Rounds, Montreal QC, Oct 30 2023          
+**Summary** - Review of three research studies performed at McGill - i) Bayesian network meta-analysis ii) pharmacoepidemiology study iii) cluster randomized registry trial        
+
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$muhc$pdf`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download slides
+  </a>
+</p>
+
+<div>
+  <iframe src="`r rmarkdown::metadata$muhc$pdf`" style="border: 0.5px"></iframe>
+</div>
+
+- **L'experience de l’unité d'évaluation des technologies (TAU) de CUSM - Regarder dans le rétroviseur pour mieux voir l’avenir**  (The Experience of McGill's Technology Assessment Unit - Looking back to better see the future)          
+Symposium en évaluation des technologies et modes d’intervention en santé, Centre hospitalier de l’Université de Montréal (CHUM), Montreal QC, Oct 19 2023      
+**Summary** - Review of TAU's lessons learned, the first hospital based technology assessment unit
+
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$tau$pdf`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download slides (english)
+  </a>
+</p>
+
+<div>
+  <iframe src="`r rmarkdown::metadata$tau$pdf`" style="border: 0.5px"></iframe>
+</div>
+

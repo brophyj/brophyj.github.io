@@ -1,0 +1,78 @@
+---
+title: "Art"
+title-block-banner: true
+page-layout: full
+freeze: true
+echo: false
+lightbox: true
+---
+
+(Click on image to enlarge)
+
+## Barney watercolours
+
+Barney (2011-)  my great friend, running partner and favorite muse
+
+::: {layout="[[1, 1, 1], [1]]"} 
+![Resting after a busy day](photos/images/BA2F5DDA-A4BB-404F-8013-02EC29CEA548_1_105_c.jpeg){group="elsewhere" description="Resting after a busy day."}
+
+
+![Pround profile](photos/images/barn.jpg){group="elsewhere"description="Pround profile"}
+
+
+
+![Enjoying the sunshine](photos/images/barn1.jpg){group="elsewhere"description="Enjoying the sunshine"}
+:::
+
+::: {layout="[[1, 1, 1], [1]]"} 
+
+![With a friend](photos/images/barn2.jpg){group="elsewhere" description="Resting after a busy day."}
+
+
+![Snoozing](photos/images/barn3.jpeg){group="elsewhere"description="Pround profile"}
+
+
+
+![Snoozing with a friend](photos/images/barn4.jpeg){group="elsewhere"description="Enjoying the sunshine"}
+:::
+
+## Barney iPad drawings
+
+::: { layout-ncol=3}
+
+![Stately](photos/images/barni.png){group="ipad" description="Barney" width=200}
+
+![Where is everyone?](photos/images/barni1.jpeg){group="ipad" description="Barney}
+
+![Waiting for ...](photos/images/barni2.jpg){fig-alt="A drawing of an elephant." }
+:::
+
+## Barney photos
+
+
+![In action](photos/images/barney_collage.jpg)
+
+## Other paintings
+
+::: { layout-ncol=3}
+
+![Flowers](photos/images/flowers.jpg){group="ipad" description="other" width=200}
+
+![Poppies](photos/images/poppies.jpg){group="ipad" description="other" width=200}
+
+![Sheep](photos/images/sheep.jpeg){group="ipad" description="other" width=200}
+
+![Flowers1](photos/images/flowers1.jpeg){group="ipad" description="other" width=200}
+
+![Bunny](photos/images/Bunny.jpeg){group="ipad" description="other" width=200}
+
+![From Sargent](photos/images/sargent.jpg){group="ipad" description="other" width=200}
+
+![Winter](photos/images/winter1.jpeg){group="ipad" description="other" width=200}
+
+![Winter1](photos/images/winter2.jpeg){group="ipad" description="other" width=200}
+
+![Zuna](photos/images/zuna.jpg){group="ipad" description="other" width=200}
+
+
+:::

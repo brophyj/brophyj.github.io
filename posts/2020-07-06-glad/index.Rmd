@@ -1,0 +1,42 @@
+---
+title: Glad to be at the back of the queue
+description: "How good is th evidence?"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Evidence based medicine]
+image: pills_header.jpg
+format: 
+  html:
+    fig-height: 1
+citation: 
+  url: https://brophyj.github.io/posts/2020-07-06-my-blog-post/ 
+date: 2020-07-06T14:39:55-05:00
+lastmod: 2020-07-06T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+
+```{r setup, include=FALSE, fig.width= 12}
+knitr::opts_chunk$set(echo = TRUE)
+```
+![](pills_header.jpg)   
+
+[June 30 headlines](https://www.theguardian.com/us-news/2020/jun/30/us-buys-up-world-stock-of-key-covid-19-drug?CMP=share_btn_tw) reported that the US had bought all the reserves of remdesivir, leaving none 
+for “the next three months of one of the two drugs proven to work against covid-19, leaving none for the UK, Europe, or most of the rest of the world.” 
+
+In a [BMJ opinion piece](https://blogs.bmj.com/bmj/2020/07/03/as-the-us-purchases-world-stocks-of-remdesivir-why-the-rest-of-the-world-should-be-glad-to-be-at-the-back-of-the-queue/), I outline why, contrary to many current sentiments, this action, although reflective of the apotheosis of a self centered nation with no appreciation for international collaboration, is not necessarily bad for the rest of the world. Basically, I summarize the many scientific limitations of current studies and their likely over-exaggeration of any meaningful benefits. Also not to be ignored are remdesivir’s lack of clinical success in treating other viral diseases, its exorbitant price, and cognitive biases about its purported benefits stemming from the overhyping of initial results.
+
+I argue that it is better to have the plutocratic American healthcare system dominate this market with an expenditure of $1.5 billion for such uncertain benefits. The money other countries save can surely be better spent on further research for this and other drugs as well as for public health measures, including testing, contact tracing, and maintaining universal healthcare, all notable lacunae in the American system.
+

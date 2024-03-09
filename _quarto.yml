@@ -1,8 +1,6 @@
 project:
   type: website
   output-dir: docs
-  pre-render:
-    - publications.r
   resources:
     - _headers
 
@@ -40,6 +38,8 @@ website:
         href: talks.qmd
       - text: Publications
         href: publications.qmd
+      - text: Art
+        href: example.qmd
     right:
       - text: "{{< iconify fa6-brands orcid >}}"
         href: "https://orcid.org/my-orcid?orcid=0000-0001-8049-6875"

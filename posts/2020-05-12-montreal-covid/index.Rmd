@@ -1,0 +1,47 @@
+---
+title: Montreal, a global Covid perspective
+description: "Good enough?"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Visualizations]
+image: covid_global.png
+format: 
+  html:
+    fig-height: 1
+citation: 
+  url: https://brophyj.github.io/posts/2020-05-12-my-blog-post/ 
+date: 2020-05-12T14:39:55-05:00
+lastmod: 2020-05-12T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I was curious to see where Montreal placed in the global Covid-19 perspective.   
+![](covid_global.png)    
+
+Looking at these figures, Montreal data looks very concerning but some caveats must be acknowledged.  
+
+More testing would most likely help. If we were doing more testing and detecting less serious cases, our case fatality rate would not look so alarming. More importantly, more testing may lead to earlier identification of asymptomatic cases decreasing potential exposure to our more vulnerable populations thereby hopefully improving our overall death rates.     
+
+However, it is unlikely that > 10-15 fold differences observed can be explained by differences in testing, respecting public health measures, Covid virulence, genetics, or health care delivery. Information bias from  variable and questionable data collection probably explains a lot of the variations. With questionable data, prediction models are associated with so much uncertainty their public health utility will be  limited.    
+
+In addition to increased testing, we therefore need to enhance the reliability of data collection. This will be essential to better understanding our current and future positions and informing public policy.   
+
+ 
+      

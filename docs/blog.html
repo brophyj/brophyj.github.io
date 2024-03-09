@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.310">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,8 +64,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -95,9 +103,36 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta property="og:title" content="jay’s website - Blog">
 <meta property="og:image" content="https://brophyj.com/images/brophy.png">
-<meta property="og:site-name" content="jay's website">
+<meta property="og:site_name" content="jay's website">
 <meta property="og:image:height" content="613">
 <meta property="og:image:width" content="603">
 <meta name="twitter:title" content="jay’s website - Blog">
@@ -110,10 +145,10 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     <img src="./images/logo.png" alt="" class="navbar-logo">
     </a>
@@ -128,51 +163,55 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html" rel="" target="">
- <span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./talks.html" rel="" target="">
- <span class="menu-text">Talks</span></a>
+    <a class="nav-link" href="./talks.html"> 
+<span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications.html" rel="" target="">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./example.html"> 
+<span class="menu-text">Art</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://orcid.org/my-orcid?orcid=0000-0001-8049-6875" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:orcid"></iconify-icon></span></a>
+    <a class="nav-link" href="https://orcid.org/my-orcid?orcid=0000-0001-8049-6875"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:orcid"></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mastodon.social/@brophyj" rel="me" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:mastodon"></iconify-icon></span></a>
+    <a class="nav-link" href="https://mastodon.social/@brophyj" rel="me"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:mastodon"></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/brophyjl" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:twitter"></iconify-icon></span></a>
+    <a class="nav-link" href="https://twitter.com/brophyjl"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:twitter"></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://www.linkedin.com/in/brophyj/" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:linkedin"></iconify-icon></span></a>
+    <a class="nav-link" href="https://www.linkedin.com/in/brophyj/"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:linkedin"></iconify-icon></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/brophyj" rel="" target="">
- <span class="menu-text"><iconify-icon inline="" icon="fa6-brands:github"></iconify-icon></span></a>
+    <a class="nav-link" href="https://github.com/brophyj"> 
+<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:github"></iconify-icon></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -185,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -198,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(17)</span></div><div class="category" data-category="AI">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Bayesian stats">Bayesian stats <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Bias">Bias <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Evidence based medicine">Evidence based medicine <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Guidelines">Guidelines <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Statistical analysis">Statistical analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="meta-analysis">meta-analysis <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(25)</span></div><div class="category" data-category="AI">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Bayesian stats">Bayesian stats <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Bias">Bias <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Evidence based medicine">Evidence based medicine <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Guidelines">Guidelines <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Statistical analysis">Statistical analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Visualizations">Visualizations <span class="quarto-category-count">(2)</span></div><div class="category" data-category="meta-analysis">meta-analysis <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -209,21 +248,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Bias,Statistical analysis" data-listing-date-sort="1709667595000" data-listing-file-modified-sort="1709740178784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="0" data-categories="Bias,Statistical analysis" data-listing-date-sort="1709667595000" data-listing-file-modified-sort="1709740178000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1513">
 <div class="thumbnail">
-<p><a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html"> <img src="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/preview-image.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html" class="no-external"></a></p><a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html" class="no-external">
+<p><img src="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/preview-image.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html">
 <h3 class="no-anchor listing-title">
-Does it make a difference - sedentary break
+<a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html" class="no-external">Does it make a difference - sedentary break</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Bias'); return false;">
 Bias
@@ -232,14 +272,12 @@ Bias
 Statistical analysis
 </div>
 </div>
-<a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html">
 <div class="listing-description">
-<p>What counts?</p>
+<a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html" class="no-external">What counts?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html">
+<a href="./posts/2024-02-19-does-it-make-a-difference-sedentary-break/index.html" class="no-external">
 <div class="listing-date">
 Tuesday, the 5th of March, 2024
 </div>
@@ -249,32 +287,30 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Bias" data-listing-date-sort="1708371595000" data-listing-file-modified-sort="1709740263660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="1" data-categories="Bias" data-listing-date-sort="1708371595000" data-listing-file-modified-sort="1709740263000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1728">
 <div class="thumbnail">
-<p><a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html"> <img src="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html" class="no-external"></a></p><a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html" class="no-external">
+<p><img src="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/featured.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html">
 <h3 class="no-anchor listing-title">
-Endotoxin exposure in asthmatic children and matched healthy controls
+<a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html" class="no-external">Endotoxin exposure in asthmatic children and matched healthy controls</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Bias'); return false;">
 Bias
 </div>
 </div>
-<a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html">
 <div class="listing-description">
-<p>What counts?</p>
+<a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html" class="no-external">What counts?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html">
+<a href="./posts/2024-02-12-endotoxin-exposure-in-asthmatic-children-and-matched-healthy-controls/index.html" class="no-external">
 <div class="listing-date">
 Monday, the 19th of February, 2024
 </div>
@@ -284,19 +320,19 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Evidence based medicine,meta-analysis" data-listing-date-sort="1707161995000" data-listing-file-modified-sort="1709733118973" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="2" data-categories="Evidence based medicine,meta-analysis" data-listing-date-sort="1707161995000" data-listing-file-modified-sort="1709733118000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2207">
 <div class="thumbnail">
-<p><a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html"> <img src="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html" class="no-external"></a></p><a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html" class="no-external">
+<p><img src="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/featured.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html">
 <h3 class="no-anchor listing-title">
-What is the prevalence of depression in medical students?
+<a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html" class="no-external">What is the prevalence of depression in medical students?</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
 Evidence based medicine
@@ -305,14 +341,12 @@ Evidence based medicine
 meta-analysis
 </div>
 </div>
-<a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html">
 <div class="listing-description">
-<p>No reliable answer from this study</p>
+<a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html" class="no-external">No reliable answer from this study</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html">
+<a href="./posts/2024-02-05-what-is-the-prevalence-of-depression-in-medical-students/index.html" class="no-external">
 <div class="listing-date">
 Monday, the 5th of February, 2024
 </div>
@@ -322,32 +356,30 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="AI" data-listing-date-sort="1681846795000" data-listing-file-modified-sort="1709733267767" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="3" data-categories="AI" data-listing-date-sort="1681846795000" data-listing-file-modified-sort="1709733267000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1041">
 <div class="thumbnail">
-<p><a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html"> <img src="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html" class="no-external"></a></p><a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html" class="no-external">
+<p><img src="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/featured.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html">
 <h3 class="no-anchor listing-title">
-A personal (and disturbing) conversation with ChatGPT
+<a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html" class="no-external">A personal (and disturbing) conversation with ChatGPT</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('AI'); return false;">
 AI
 </div>
 </div>
-<a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html">
 <div class="listing-description">
-<p>Honest but troubling</p>
+<a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html" class="no-external">Honest but troubling</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html">
+<a href="./posts/2023-04-18-a-personal-and-disturbing-conversation-with-chatgpt/index.html" class="no-external">
 <div class="listing-date">
 Tuesday, the 18th of April, 2023
 </div>
@@ -357,19 +389,19 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Evidence based medicine,Bayesian stats" data-listing-date-sort="1681587595000" data-listing-file-modified-sort="1709740057694" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="4" data-categories="Evidence based medicine,Bayesian stats" data-listing-date-sort="1681587595000" data-listing-file-modified-sort="1709740057000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="876">
 <div class="thumbnail">
-<p><a href="./posts/2023-04-15-misinformed-conclusions/index.html"> <img src="./posts/2023-04-15-misinformed-conclusions/featured.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-04-15-misinformed-conclusions/index.html" class="no-external"></a></p><a href="./posts/2023-04-15-misinformed-conclusions/index.html" class="no-external">
+<p><img src="./posts/2023-04-15-misinformed-conclusions/featured.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-04-15-misinformed-conclusions/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-04-15-misinformed-conclusions/index.html">
 <h3 class="no-anchor listing-title">
-Misinformed conclusions
+<a href="./posts/2023-04-15-misinformed-conclusions/index.html" class="no-external">Misinformed conclusions</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-04-15-misinformed-conclusions/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
 Evidence based medicine
@@ -378,14 +410,12 @@ Evidence based medicine
 Bayesian stats
 </div>
 </div>
-<a href="./posts/2023-04-15-misinformed-conclusions/index.html">
 <div class="listing-description">
-<p>caveat lector</p>
+<a href="./posts/2023-04-15-misinformed-conclusions/index.html" class="no-external">caveat lector</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-04-15-misinformed-conclusions/index.html">
+<a href="./posts/2023-04-15-misinformed-conclusions/index.html" class="no-external">
 <div class="listing-date">
 Saturday, the 15th of April, 2023
 </div>
@@ -395,19 +425,19 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="Bias,Evidence based medicine" data-listing-date-sort="1679513995000" data-listing-file-modified-sort="1709737184335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="5" data-categories="Bias,Evidence based medicine" data-listing-date-sort="1679513995000" data-listing-file-modified-sort="1709737184000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1269">
 <div class="thumbnail">
-<p><a href="./posts/2023-03-22-something-old-and-something-older/index.html"> <img src="./posts/2023-03-22-something-old-and-something-older/featured.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-03-22-something-old-and-something-older/index.html" class="no-external"></a></p><a href="./posts/2023-03-22-something-old-and-something-older/index.html" class="no-external">
+<p><img src="./posts/2023-03-22-something-old-and-something-older/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-03-22-something-old-and-something-older/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-03-22-something-old-and-something-older/index.html">
 <h3 class="no-anchor listing-title">
-Something old and something older
+<a href="./posts/2023-03-22-something-old-and-something-older/index.html" class="no-external">Something old and something older</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-03-22-something-old-and-something-older/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Bias'); return false;">
 Bias
@@ -416,14 +446,12 @@ Bias
 Evidence based medicine
 </div>
 </div>
-<a href="./posts/2023-03-22-something-old-and-something-older/index.html">
 <div class="listing-description">
-<p>Immortal time bias, longstanding and persistent</p>
+<a href="./posts/2023-03-22-something-old-and-something-older/index.html" class="no-external">Immortal time bias, longstanding and persistent</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-03-22-something-old-and-something-older/index.html">
+<a href="./posts/2023-03-22-something-old-and-something-older/index.html" class="no-external">
 <div class="listing-date">
 Wednesday, the 22nd of March, 2023
 </div>
@@ -433,32 +461,30 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="Bayesian stats" data-listing-date-sort="1679254795000" data-listing-file-modified-sort="1709739471081" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="6" data-categories="Bayesian stats" data-listing-date-sort="1679254795000" data-listing-file-modified-sort="1709739471000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="906">
 <div class="thumbnail">
-<p><a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html"> <img src="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html" class="no-external"></a></p><a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html" class="no-external">
+<p><img src="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/featured.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html">
 <h3 class="no-anchor listing-title">
-Absence of evidence is not evidence of absence
+<a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html" class="no-external">Absence of evidence is not evidence of absence</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Bayesian stats'); return false;">
 Bayesian stats
 </div>
 </div>
-<a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html">
 <div class="listing-description">
-<p>Bayes to the rescue?</p>
+<a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html" class="no-external">Bayes to the rescue?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html">
+<a href="./posts/2023-03-19-absence-of-evidence-is-not-evidence-of-absence/index.html" class="no-external">
 <div class="listing-date">
 Sunday, the 19th of March, 2023
 </div>
@@ -468,19 +494,19 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="Evidence based medicine,Bayesian stats" data-listing-date-sort="1670269195000" data-listing-file-modified-sort="1709739613518" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="7" data-categories="Evidence based medicine,Bayesian stats" data-listing-date-sort="1670269195000" data-listing-file-modified-sort="1709739613000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="516">
 <div class="thumbnail">
-<p><a href="./posts/2022-12-05-scientific-authorship/index.html"> <img src="./posts/2022-12-05-scientific-authorship/featured.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2022-12-05-scientific-authorship/index.html" class="no-external"></a></p><a href="./posts/2022-12-05-scientific-authorship/index.html" class="no-external">
+<p><img src="./posts/2022-12-05-scientific-authorship/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2022-12-05-scientific-authorship/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-12-05-scientific-authorship/index.html">
 <h3 class="no-anchor listing-title">
-What does scientific authorship mean?
+<a href="./posts/2022-12-05-scientific-authorship/index.html" class="no-external">What does scientific authorship mean?</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-12-05-scientific-authorship/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
 Evidence based medicine
@@ -489,14 +515,12 @@ Evidence based medicine
 Bayesian stats
 </div>
 </div>
-<a href="./posts/2022-12-05-scientific-authorship/index.html">
 <div class="listing-description">
-<p>Sometimes, not much</p>
+<a href="./posts/2022-12-05-scientific-authorship/index.html" class="no-external">Sometimes, not much</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-12-05-scientific-authorship/index.html">
+<a href="./posts/2022-12-05-scientific-authorship/index.html" class="no-external">
 <div class="listing-date">
 Monday, the 5th of December, 2022
 </div>
@@ -506,32 +530,30 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="Evidence based medicine" data-listing-date-sort="1639769995000" data-listing-file-modified-sort="1709731739759" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="8" data-categories="Evidence based medicine" data-listing-date-sort="1639769995000" data-listing-file-modified-sort="1709731739000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="992">
 <div class="thumbnail">
-<p><a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html"> <img src="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/featured.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html" class="no-external"></a></p><a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html" class="no-external">
+<p><img src="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html">
 <h3 class="no-anchor listing-title">
-Medication Withdrawal - When Reasonable People Disagree
+<a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html" class="no-external">Medication Withdrawal - When Reasonable People Disagree</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
 Evidence based medicine
 </div>
 </div>
-<a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html">
 <div class="listing-description">
-<p>Understanding the past</p>
+<a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html" class="no-external">Understanding the past</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html">
+<a href="./posts/2021-12-17-medication-withdrawal-when-reasonable-people-disagree/index.html" class="no-external">
 <div class="listing-date">
 Friday, the 17th of December, 2021
 </div>
@@ -541,19 +563,19 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Evidence based medicine,Guidelines,Bayesian stats" data-listing-date-sort="1639337995000" data-listing-file-modified-sort="1709732332711" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="9" data-categories="Evidence based medicine,Guidelines,Bayesian stats" data-listing-date-sort="1639337995000" data-listing-file-modified-sort="1709732332000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="940">
 <div class="thumbnail">
-<p><a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html"> <img src="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html" class="no-external"></a></p><a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html" class="no-external">
+<p><img src="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/featured.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html">
 <h3 class="no-anchor listing-title">
-Inaccurate References; Guile, Duplicity, and Perfidious Publications
+<a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html" class="no-external">Inaccurate References; Guile, Duplicity, and Perfidious Publications</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
 Evidence based medicine
@@ -565,14 +587,12 @@ Guidelines
 Bayesian stats
 </div>
 </div>
-<a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html">
 <div class="listing-description">
-<p>Trusting the guidelines?</p>
+<a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html" class="no-external">Trusting the guidelines?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html">
+<a href="./posts/2021-12-12-inaccurate-references-guile-duplicity-and-perfidious-publications/index.html" class="no-external">
 <div class="listing-date">
 Sunday, the 12th of December, 2021
 </div>
@@ -582,19 +602,19 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="Bias,Evidence based medicine" data-listing-date-sort="1637955595000" data-listing-file-modified-sort="1709738118749" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="10" data-categories="Bias,Evidence based medicine" data-listing-date-sort="1637955595000" data-listing-file-modified-sort="1709738118000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="791">
 <div class="thumbnail">
-<p><a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html"> <img src="./posts/2021-11-26-trade-offs-versus-obfuscation/featured.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html" class="no-external"></a></p><a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html" class="no-external">
+<p><img src="./posts/2021-11-26-trade-offs-versus-obfuscation/featured.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html">
 <h3 class="no-anchor listing-title">
-Trade-Offs Versus Obfuscation
+<a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html" class="no-external">Trade-Offs Versus Obfuscation</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Bias'); return false;">
 Bias
@@ -603,14 +623,12 @@ Bias
 Evidence based medicine
 </div>
 </div>
-<a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html">
 <div class="listing-description">
-<p>Reporting biases?</p>
+<a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html" class="no-external">Reporting biases?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html">
+<a href="./posts/2021-11-26-trade-offs-versus-obfuscation/index.html" class="no-external">
 <div class="listing-date">
 Friday, the 26th of November, 2021
 </div>
@@ -620,32 +638,30 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="Statistical analysis" data-listing-date-sort="1637211600000" data-listing-file-modified-sort="1709740990578" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="11" data-categories="Statistical analysis" data-listing-date-sort="1637211600000" data-listing-file-modified-sort="1709740990000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="571">
 <div class="thumbnail">
-<p><a href="./posts/2021-11-18-covid-testing-in-travellers/index.html"> <img src="./posts/2021-11-18-covid-testing-in-travellers/featured.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-11-18-covid-testing-in-travellers/index.html" class="no-external"></a></p><a href="./posts/2021-11-18-covid-testing-in-travellers/index.html" class="no-external">
+<p><img src="./posts/2021-11-18-covid-testing-in-travellers/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-11-18-covid-testing-in-travellers/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-11-18-covid-testing-in-travellers/index.html">
 <h3 class="no-anchor listing-title">
-Covid testing in travellers
+<a href="./posts/2021-11-18-covid-testing-in-travellers/index.html" class="no-external">Covid testing in travellers</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-11-18-covid-testing-in-travellers/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Statistical analysis'); return false;">
 Statistical analysis
 </div>
 </div>
-<a href="./posts/2021-11-18-covid-testing-in-travellers/index.html">
 <div class="listing-description">
-<p>Worthwhile, I think not</p>
+<a href="./posts/2021-11-18-covid-testing-in-travellers/index.html" class="no-external">Worthwhile, I think not</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-11-18-covid-testing-in-travellers/index.html">
+<a href="./posts/2021-11-18-covid-testing-in-travellers/index.html" class="no-external">
 <div class="listing-date">
 Thursday, the 18th of November, 2021
 </div>
@@ -655,32 +671,30 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="Statistical analysis" data-listing-date-sort="1634067595000" data-listing-file-modified-sort="1709733555486" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="12" data-categories="Statistical analysis" data-listing-date-sort="1634067595000" data-listing-file-modified-sort="1709733555000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="427">
 <div class="thumbnail">
-<p><a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html"> <img src="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/featured.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html" class="no-external"></a></p><a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html" class="no-external">
+<p><img src="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html">
 <h3 class="no-anchor listing-title">
-Heparin in hospitalized COVID-19 patients
+<a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html" class="no-external">Heparin in hospitalized COVID-19 patients</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Statistical analysis'); return false;">
 Statistical analysis
 </div>
 </div>
-<a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html">
 <div class="listing-description">
-<p>Faulty stats?</p>
+<a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html" class="no-external">Faulty stats?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html">
+<a href="./posts/2021-10-12-heparin-in-hospitalized-covid-19-patients/index.html" class="no-external">
 <div class="listing-date">
 Tuesday, the 12th of October, 2021
 </div>
@@ -690,32 +704,30 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="Evidence based medicine" data-listing-date-sort="1633376395000" data-listing-file-modified-sort="1709736491364" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="13" data-categories="Evidence based medicine" data-listing-date-sort="1633376395000" data-listing-file-modified-sort="1709736491000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1671">
 <div class="thumbnail">
-<p><a href="./posts/2021-10-04-new-covid-drug/index.html"> <img src="./posts/2021-10-04-new-covid-drug/featured.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-10-04-new-covid-drug/index.html" class="no-external"></a></p><a href="./posts/2021-10-04-new-covid-drug/index.html" class="no-external">
+<p><img src="./posts/2021-10-04-new-covid-drug/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-10-04-new-covid-drug/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-10-04-new-covid-drug/index.html">
 <h3 class="no-anchor listing-title">
-New Covid drug
+<a href="./posts/2021-10-04-new-covid-drug/index.html" class="no-external">New Covid drug</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-10-04-new-covid-drug/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
 Evidence based medicine
 </div>
 </div>
-<a href="./posts/2021-10-04-new-covid-drug/index.html">
 <div class="listing-description">
-<p>Heavy on the hype?</p>
+<a href="./posts/2021-10-04-new-covid-drug/index.html" class="no-external">Heavy on the hype?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-10-04-new-covid-drug/index.html">
+<a href="./posts/2021-10-04-new-covid-drug/index.html" class="no-external">
 <div class="listing-date">
 Monday, the 4th of October, 2021
 </div>
@@ -725,19 +737,19 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="Evidence based medicine,Guidelines,Bayesian stats" data-listing-date-sort="1632944395000" data-listing-file-modified-sort="1709732912878" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="14" data-categories="Evidence based medicine,Guidelines,Bayesian stats" data-listing-date-sort="1632944395000" data-listing-file-modified-sort="1709732912000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="953">
 <div class="thumbnail">
-<p><a href="./posts/2021-09-29-covid-myocarditis/index.html"> <img src="./posts/2021-09-29-covid-myocarditis/featured.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-09-29-covid-myocarditis/index.html" class="no-external"></a></p><a href="./posts/2021-09-29-covid-myocarditis/index.html" class="no-external">
+<p><img src="./posts/2021-09-29-covid-myocarditis/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-09-29-covid-myocarditis/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-09-29-covid-myocarditis/index.html">
 <h3 class="no-anchor listing-title">
-Covid vaccine myocarditis
+<a href="./posts/2021-09-29-covid-myocarditis/index.html" class="no-external">Covid vaccine myocarditis</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-09-29-covid-myocarditis/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
 Evidence based medicine
@@ -749,14 +761,12 @@ Guidelines
 Bayesian stats
 </div>
 </div>
-<a href="./posts/2021-09-29-covid-myocarditis/index.html">
 <div class="listing-description">
-<p>Where is the common sense?</p>
+<a href="./posts/2021-09-29-covid-myocarditis/index.html" class="no-external">Where is the common sense?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-09-29-covid-myocarditis/index.html">
+<a href="./posts/2021-09-29-covid-myocarditis/index.html" class="no-external">
 <div class="listing-date">
 Wednesday, the 29th of September, 2021
 </div>
@@ -766,32 +776,30 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="Bayesian stats" data-listing-date-sort="1610739595000" data-listing-file-modified-sort="1709731025211" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="15" data-categories="Bayesian stats" data-listing-date-sort="1610739595000" data-listing-file-modified-sort="1709731025000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="303">
 <div class="thumbnail">
-<p><a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html"> <img src="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/featured.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html" class="no-external"></a></p><a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html" class="no-external">
+<p><img src="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html">
 <h3 class="no-anchor listing-title">
-EXCEL - clearing the haze with Bayes
+<a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html" class="no-external">EXCEL - clearing the haze with Bayes</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Bayesian stats'); return false;">
 Bayesian stats
 </div>
 </div>
-<a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html">
 <div class="listing-description">
-<p>Adding clarity?</p>
+<a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html" class="no-external">Adding clarity?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html">
+<a href="./posts/2021-01-15-excel-clearing-the-haze-with-bayes/index.html" class="no-external">
 <div class="listing-date">
 Friday, the 15th of January, 2021
 </div>
@@ -801,34 +809,296 @@ Jay Brophy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="Bayesian stats" data-listing-date-sort="1606246795000" data-listing-file-modified-sort="1709730578031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="16" data-categories="Bayesian stats" data-listing-date-sort="1606246795000" data-listing-file-modified-sort="1709730578000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="351">
 <div class="thumbnail">
-<p><a href="./posts/2020-11-24-the-science-behind-masks/index.html"> <img src="./posts/2020-11-24-the-science-behind-masks/featured.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/2020-11-24-the-science-behind-masks/index.html" class="no-external"></a></p><a href="./posts/2020-11-24-the-science-behind-masks/index.html" class="no-external">
+<p><img src="./posts/2020-11-24-the-science-behind-masks/featured.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2020-11-24-the-science-behind-masks/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-11-24-the-science-behind-masks/index.html">
 <h3 class="no-anchor listing-title">
-Update on the science behind masks
+<a href="./posts/2020-11-24-the-science-behind-masks/index.html" class="no-external">Update on the science behind masks</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-11-24-the-science-behind-masks/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Bayesian stats'); return false;">
 Bayesian stats
 </div>
 </div>
-<a href="./posts/2020-11-24-the-science-behind-masks/index.html">
 <div class="listing-description">
-<p>Good enough?</p>
+<a href="./posts/2020-11-24-the-science-behind-masks/index.html" class="no-external">Good enough?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-11-24-the-science-behind-masks/index.html" class="no-external">
+<div class="listing-date">
+Tuesday, the 24th of November, 2020
+</div>
+<div class="listing-author">
+Jay Brophy
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="Bias" data-listing-date-sort="1595014795000" data-listing-file-modified-sort="1710010931351" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="139">
+<div class="thumbnail">
+<p><a href="./posts/2020-07-17-covid-poor/index.html" class="no-external"></a></p><a href="./posts/2020-07-17-covid-poor/index.html" class="no-external">
+<p><img src="./Users/jay/Documents/CV/cv_new/cv_new/static/img/mask.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2020-07-17-covid-poor/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-07-17-covid-poor/index.html" class="no-external">COVID, masks and poor science</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-07-17-covid-poor/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Bias'); return false;">
+Bias
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2020-07-17-covid-poor/index.html" class="no-external">Good enough?</a>
+</div>
+</div>
 <div class="metadata">
-<a href="./posts/2020-11-24-the-science-behind-masks/index.html">
+<a href="./posts/2020-07-17-covid-poor/index.html" class="no-external">
 <div class="listing-date">
-Tuesday, the 24th of November, 2020
+Friday, the 17th of July, 2020
+</div>
+<div class="listing-author">
+Jay Brophy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-categories="Bias" data-listing-date-sort="1594237195000" data-listing-file-modified-sort="1710010699748" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="166">
+<div class="thumbnail">
+<p><a href="./posts/2020-07-08-bribes/index.html" class="no-external"></a></p><a href="./posts/2020-07-08-bribes/index.html" class="no-external">
+<p><img src="./posts/2020-07-08-bribes/COI.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2020-07-08-bribes/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-07-08-bribes/index.html" class="no-external">Pharma, bribes and MDs</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-07-08-bribes/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Bias'); return false;">
+Bias
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2020-07-08-bribes/index.html" class="no-external">Good enough?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-07-08-bribes/index.html" class="no-external">
+<div class="listing-date">
+Wednesday, the 8th of July, 2020
+</div>
+<div class="listing-author">
+Jay Brophy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-categories="Evidence based medicine" data-listing-date-sort="1594064395000" data-listing-file-modified-sort="1710009599347" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="212">
+<div class="thumbnail">
+<p><a href="./posts/2020-07-06-glad/index.html" class="no-external"></a></p><a href="./posts/2020-07-06-glad/index.html" class="no-external">
+<p><img src="./posts/2020-07-06-glad/pills_header.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2020-07-06-glad/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-07-06-glad/index.html" class="no-external">Glad to be at the back of the queue</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-07-06-glad/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
+Evidence based medicine
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2020-07-06-glad/index.html" class="no-external">How good is th evidence?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-07-06-glad/index.html" class="no-external">
+<div class="listing-date">
+Monday, the 6th of July, 2020
+</div>
+<div class="listing-author">
+Jay Brophy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="Bias" data-listing-date-sort="1589571595000" data-listing-file-modified-sort="1710002498153" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="365">
+<div class="thumbnail">
+<p><a href="./posts/2020-04-15-virtual/index.html" class="no-external"></a></p><a href="./posts/2020-04-15-virtual/index.html" class="no-external">
+<p><img src="./posts/2020-04-15-virtual/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2020-04-15-virtual/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-04-15-virtual/index.html" class="no-external">Virtual Learning &amp; Corporate Sponsorship</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-04-15-virtual/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Bias'); return false;">
+Bias
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2020-04-15-virtual/index.html" class="no-external">Time to worry?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-04-15-virtual/index.html" class="no-external">
+<div class="listing-date">
+Friday, the 15th of May, 2020
+</div>
+<div class="listing-author">
+Jay Brophy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-categories="Visualizations" data-listing-date-sort="1589312395000" data-listing-file-modified-sort="1710004146387" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="203">
+<div class="thumbnail">
+<p><a href="./posts/2020-05-12-montreal-covid/index.html" class="no-external"></a></p><a href="./posts/2020-05-12-montreal-covid/index.html" class="no-external">
+<p><img src="./posts/2020-05-12-montreal-covid/covid_global.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2020-05-12-montreal-covid/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-05-12-montreal-covid/index.html" class="no-external">Montreal, a global Covid perspective</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-05-12-montreal-covid/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Visualizations'); return false;">
+Visualizations
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2020-05-12-montreal-covid/index.html" class="no-external">Good enough?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-05-12-montreal-covid/index.html" class="no-external">
+<div class="listing-date">
+Tuesday, the 12th of May, 2020
+</div>
+<div class="listing-author">
+Jay Brophy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-categories="Visualizations" data-listing-date-sort="1588707595000" data-listing-file-modified-sort="1710004223296" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220">
+<div class="thumbnail">
+<p><a href="./posts/2020-05-05-covid/index.html" class="no-external"></a></p><a href="./posts/2020-05-05-covid/index.html" class="no-external">
+<p><img src="./posts/2020-05-05-covid/covid_area.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/2020-05-05-covid/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-05-05-covid/index.html" class="no-external">Covid visualizations</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-05-05-covid/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Visualizations'); return false;">
+Visualizations
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2020-05-05-covid/index.html" class="no-external">An aid to understanding</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-05-05-covid/index.html" class="no-external">
+<div class="listing-date">
+Tuesday, the 5th of May, 2020
+</div>
+<div class="listing-author">
+Jay Brophy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="23" data-categories="Evidence based medicine" data-listing-date-sort="1587065995000" data-listing-file-modified-sort="1710003052556" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="152">
+<div class="thumbnail">
+<p><a href="./posts/2020-04-16-cabg/index.html" class="no-external"></a></p><a href="./posts/2020-04-16-cabg/index.html" class="no-external">
+<p><img src="./posts/2020-04-16-cabg/PCI_CABG.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2020-04-16-cabg/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2020-04-16-cabg/index.html" class="no-external">CABG vs.&nbsp;PCI in LM</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2020-04-16-cabg/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
+Evidence based medicine
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2020-04-16-cabg/index.html" class="no-external">Good enough?</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2020-04-16-cabg/index.html" class="no-external">
+<div class="listing-date">
+Thursday, the 16th of April, 2020
+</div>
+<div class="listing-author">
+Jay Brophy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="24" data-categories="Evidence based medicine" data-listing-date-sort="1563565195000" data-listing-file-modified-sort="1710000678043" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="35">
+<div class="thumbnail">
+<p><a href="./posts/2019-07-19-dig-is-ok/index.html" class="no-external"></a></p><a href="./posts/2019-07-19-dig-is-ok/index.html" class="no-external">
+<p><img src="./posts/2019-07-19-dig-is-ok/featured.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/2019-07-19-dig-is-ok/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2019-07-19-dig-is-ok/index.html" class="no-external">Dig is OK</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2019-07-19-dig-is-ok/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Evidence based medicine'); return false;">
+Evidence based medicine
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2019-07-19-dig-is-ok/index.html" class="no-external">This is from a tweetorial looking at the safety and efficacy of digitalis in heart failure.<br><br></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2019-07-19-dig-is-ok/index.html" class="no-external">
+<div class="listing-date">
+Friday, the 19th of July, 2019
 </div>
 <div class="listing-author">
 Jay Brophy
@@ -971,10 +1241,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/brophyj\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -984,8 +1276,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -997,7 +1298,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1041,6 +1465,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1066,6 +1491,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1123,28 +1574,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/brophyj\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Powered by <a href="https://quarto.org">Quarto</a>.</div>   
-    <div class="nav-footer-center">© 2024 Jay Brophy<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/brophyj/edit/main/blog.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/brophyj/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
-    <div class="nav-footer-right">License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY NC SA 4.0</a>.</div>
+    <div class="nav-footer-left">
+<p>Powered by <a href="https://quarto.org">Quarto</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+<p>© 2024 Jay Brophy</p>
+<div class="toc-actions"><ul><li><a href="https://github.com/brophyj/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/brophyj/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY NC SA 4.0</a>.</p>
+</div>
   </div>
 </footer>
 <script type="text/javascript">
@@ -1156,6 +1599,7 @@ dateElements.forEach((el) => {
   );
 });
 </script>
+
 
 
 

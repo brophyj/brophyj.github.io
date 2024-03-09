@@ -1,0 +1,17 @@
+{
+  "hash": "051fc27eff97e8fd6a75a230be962097",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"CABG vs. PCI in LM\"\ndescription: \"Good enough?\"\nauthor:\n  - name: Jay Brophy\n    url: https://brophyj.github.io/\n    orcid: 0000-0001-8049-6875\n    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics\n    affiliation-url: https://mcgill.ca \ntags: []\ncategories: [Evidence based medicine]\nimage: PCI_CABG.jpg\nformat: \n  html:\n    fig-height: 1\ncitation: \n  url: https://brophyj.github.io/posts/2020-04-16-my-blog-post/ \ndate: 2020-04-16T14:39:55-05:00\nlastmod: 2020-04-16T14:39:55-05:00\nfeatured: true\ndraft: false\n# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.\nprojects: []\ncode-fold: true\neditor_options: \n  markdown: \n    wrap: sentence\n---\n\n\n\n\nThis is a blog post about a recent [NEJM article](https://www.nejm.org/doi/full/10.1056/NEJMoa1909406).\n![](PCI_CABG.jpg){#id .class width=75% height=75% align=right}\n\n\nBased on the primary outcome result (difference, 2.8 percentage\npoints; 95% confidence interval [CI], −0.9 to 6.5; P = 0.13), the EXCEL authors conclude “In patients with left main coronary artery disease of low or intermediate anatomical complexity, there was no significant difference between PCI and CABG”. Leaving aside that CABG was statistically superior in terms of total mortality, ischemia driven revascularization, and non-procedural myocardial infarction, it is questionable that the primary outcome data actually support their conclusion. EXCEL was originally designed as a non-inferiority (NI) study with a margin of 4.2%, which en passant many would consider too liberal. Even accepting that margin, how can a primary outcome with a 95% upper CI of 6.5%, exceeding the original NI margin be used to support their conclusion?\n\nDid you find this page helpful? Consider sharing it 🙌\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

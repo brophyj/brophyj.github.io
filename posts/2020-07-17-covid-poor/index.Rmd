@@ -1,0 +1,49 @@
+---
+title: COVID, masks and poor science
+description: "Good enough?"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Bias]
+image: /Users/jay/Documents/CV/cv_new/cv_new/static/img/mask.png
+format: 
+  html:
+    fig-height: 1
+citation: 
+  url: https://brophyj.github.io/posts/2020-07-17-my-blog-post/ 
+date: 2020-07-17T14:39:55-05:00
+lastmod: 2020-07-17T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+
+```{r setup, include=FALSE, fig.width= 12}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+A CDC [report](https://wwwnc.cdc.gov/eid/article/26/5/19-0994_article) that concludes     
+*“face masks, evidence from randomized controlled trials of these measures did not support a substantial effect on transmission of laboratory-confirmed influenza”*     
+is just WRONG.    
+
+It uses an incorrect fixed effects statistical model, thereby ignoring between study variations.Moreover its  interpretation is plagued by the common null hypothesis statistical testing cognitive biases of dichotomania and nullism.          
+
+
+
+Proper analysis (see Figure below) shows average benefit could be as great as 56% reduction and next study could show a benefit of up to 82% reduction.     
+
+Unlikely any increased risk so more reasonable conclusion **“MASK UP while awaiting more studies to refine the exact size of any benefit.”**
+
+![](mask.png)
+
+

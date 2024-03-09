@@ -1,0 +1,15 @@
+{
+  "hash": "11af982d32341cbf5377851265674b3f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Pharma, bribes and MDs\ndescription: \"Good enough?\"\nauthor:\n  - name: Jay Brophy\n    url: https://brophyj.github.io/\n    orcid: 0000-0001-8049-6875\n    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics\n    affiliation-url: https://mcgill.ca \ntags: []\ncategories: [Bias]\nimage: COI.png\nformat: \n  html:\n    fig-height: 1\ncitation: \n  url: https://brophyj.github.io/posts/2020-07-08-my-blog-post/ \ndate: 2020-07-08T14:39:55-05:00\nlastmod: 2020-07-08T14:39:55-05:00\nfeatured: true\ndraft: false\n# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.\nprojects: []\ncode-fold: true\neditor_options: \n  markdown: \n    wrap: sentence\n---\n\n\n\n\n[\\$678 million fine](https://www.nbcnews.com/business/economy/it-was-his-dream-job-he-never-thought-he-d-n1232971) testifies to how well these pharma bribes work, including the so-called CME events.\nAny bets that this is continuing today?\nMaybe more sophisticated and better camouflaged but still very present.\n\n::: callout-note\n## IMHO\n\n**Biggest bang for pharma’s buck is to target guideline writers.**\n:::\n\nHere is an empirical example that may, or may not, be related to this story.\nIn 2012 Canadian, European and US guideline writers offered guidelines on dual antiplatelet therapy (DAPT) for acute coronary syndromes.\nThe comparison is straightforward as there was only 1 published RCT (PLATO), examining the standard clopidogrel therapy and the newer ticagrelor as so all guideline writers were working from the same evidence base.\nCDN and European guideline writers \"recommended ticagrelor over clopidogrel\" while the US writers (0 of 9 writers had a conflict of interest), looking at the same data concluded \"does not endorse one over the other\".\nLook at the 2X2table below between conflicts of interest among the different guideline writers and the ticagrelor manufacturer.\n\nPlay of chance or ...?\n\n![](COI.png)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
