@@ -1,6 +1,6 @@
 ---
 title: Does it make a difference - sedentary break
-description: "What counts?"
+description: "Who counts?"
 author:
   - name: Jay Brophy
     url: https://brophyj.github.io/

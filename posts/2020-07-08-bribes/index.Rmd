@@ -1,6 +1,6 @@
 ---
 title: Pharma, bribes and MDs
-description: "Good enough?"
+description: "Correlation or causality?"
 author:
   - name: Jay Brophy
     url: https://brophyj.github.io/

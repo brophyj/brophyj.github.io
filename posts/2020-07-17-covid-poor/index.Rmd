@@ -1,6 +1,6 @@
 ---
 title: COVID, masks and poor science
-description: "Good enough?"
+description: "Questionable interpretation?"
 author:
   - name: Jay Brophy
     url: https://brophyj.github.io/
@@ -8,8 +8,8 @@ author:
     affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
     affiliation-url: https://mcgill.ca 
 tags: []
-categories: [Bias]
-image: /Users/jay/Documents/CV/cv_new/cv_new/static/img/mask.png
+categories: [Bias, Statistical analysis]
+image: mask.png
 format: 
   html:
     fig-height: 1
