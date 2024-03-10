@@ -10,7 +10,7 @@ title: " "
 
 ```{=html}
 <div  style="margin: 30px; text-align: left;">
-<a class="btn btn-primary" href="https://drive.google.com/file/d/12X8674xGMcmUkersqxY_7l3ypc1JSjQg/view?usp=drive_link" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a>
+<a class="btn btn-primary" href="https://drive.google.com/file/d/12f_2COkmeCfoIughbtM7pxZqwlMkg4A7/view?usp=drive_link" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a>
 </div>
 ```
 # 2024
