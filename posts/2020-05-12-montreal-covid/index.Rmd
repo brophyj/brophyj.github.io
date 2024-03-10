@@ -1,6 +1,6 @@
 ---
 title: Montreal, a global Covid perspective
-description: "Good enough?"
+description: "Information bias?"
 author:
   - name: Jay Brophy
     url: https://brophyj.github.io/

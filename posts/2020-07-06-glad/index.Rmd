@@ -1,6 +1,6 @@
 ---
 title: Glad to be at the back of the queue
-description: "How good is th evidence?"
+description: "How good is the evidence?"
 author:
   - name: Jay Brophy
     url: https://brophyj.github.io/

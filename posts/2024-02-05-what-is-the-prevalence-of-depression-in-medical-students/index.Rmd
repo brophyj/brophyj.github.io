@@ -8,7 +8,7 @@ author:
     affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
     affiliation-url: https://mcgill.ca 
 tags: []
-categories: [Evidence based medicine, meta-analysis]
+categories: [Evidence based medicine, Meta-analysis]
 image: featured.png
 format: 
   html:
