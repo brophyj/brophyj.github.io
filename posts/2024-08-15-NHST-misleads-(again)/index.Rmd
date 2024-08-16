@@ -1,0 +1,291 @@
+---
+title: TAVR vs. surgery - NHST gets it wrong (again)
+description: "Making intelligent inferences"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Bias, Statistical analysis]
+image: preview-image.jpg
+citation: 
+  url: https://brophyj.github.io/posts/2024-02-19-my-blog-post/ 
+date: 2024-08-05T14:39:55-05:00
+lastmod: 2024-08-105T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+bibliography: [bib.bib]
+biblio-style: apalike
+---
+
+
+```{r setup, echo=FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.align = "center")
+
+library(magrittr)
+library(dplyr)
+library(tidyr)
+library(metafor)
+library(ggdist)
+library(tidybayes)
+library(ggplot2)
+library(cowplot)
+library(rstan)
+library(rstanarm)
+library(cmdstanr)
+library(brms)
+library(RColorBrewer)
+library(here)
+library(knitr)
+library(grid)
+library(tidyverse)
+library(broom)
+library(ggdag)
+library(baymedr) # devtools::install_github("maxlinde/baymedr")
+library(gt) 
+options(knitr.table.format = "html")
+options(knitr.kable.NA = '   ')
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+options(scipen = 1, digits = 2) #set to two decimal 
+
+```
+
+## Background
+
+The Notion-2 trial[@RN12215] was recently fast tracked for publication in the [European Heart Journal](https://pubmed.ncbi.nlm.nih.gov/38747246/). This study randomized low risk patients (≤75 years of age and median Society of Thoracic Surgeons (STS) risk score of 1.1%) with severe aortic stenosis (AS) to Transcatheter Aortic Valve Implantation (TAVI) or to conventional aortic valve surgery. The study population included both tricuspid and bicuspid AS.
+
+The primary endpoint was a composite of all-cause mortality, stroke, or rehospitalization (related to the procedure, valve, or heart failure) at 12 months.
+
+A total of 370 patients were enrolled and 1-year incidence of the primary endpoint was 10.2% in the TAVI group and 7.1% in the surgery group [absolute risk difference 3.1%; 95% confidence interval (CI), −2.7% to 8.8%; hazard ratio (HR) 1.4; 95% CI, 0.7–2.9; P = .3]. The authors concluded
+
+[> "Among low-risk patients aged ≤75 years with severe symptomatic AS, the rate of the composite of death, stroke, or rehospitalization at 1 year was similar between TAVI and surgery."]{style="color: red;"}
+
+## How was the study designed?
+
+The study was designed assuming a sample of 372 patients would provide the trial 90% power to show the non-inferiority of TAVI to surgery with regard to the primary endpoint at 1 year, assuming a Kaplan–Meier estimate of the primary endpoint of 10% in the TAVI group and 15% in the surgery group.  The authors stated "**To test for non-inferiority, we determined whether the upper boundary of the 95% confidence interval (CI) for the difference in the rate of the primary endpoint between the TAVI and surgery group was less than the pre-specified non-inferiority margin of 5% points.**"   
+
+In other words, the null hypothesis ($H_O$) is $\theta_{TAVI} - \theta_{surgery} > 5%$ where $\theta$ is the proportion of outcomes in the respective treatment arms. One hopes to reject this null hypothesis and accept the alternative hypothesis ($H_A$) that the difference is < 5% and therefore claim non-inferiority. Although the authors did claim non-inferiority, their data does not support this conclusions as the null hypothesis can't be rejected as the upper limit of the 95% confidence interval for the difference in outcomes between TAVR and surgery is 8.8% exceeding the prespecified non-inferiority margin of 5% points.    
+
+## How then did the authors reach their conclusion?
+
+The authors apparently ignored their non-inferiority design and analysed their study with  conventional null hypothesis significance testing (NHST) and a null hypothesis $\theta_{TAVI} - \theta_{surgery} = 0$ which they were unable to reject it since the p value (0.3) exceeded the conventional  $\alpha$ level (0.05)      
+NHST limitations and its tendency to cause cognitive errors has been described countless times in the medical literature[@RN3995][@RN5017]. This particular cognitive has even been described with the pithy aphorism **absence of evidence is not evidence of absence**[@RN4395].   
+
+## What is the strength of this conclusion?
+
+With the NHST paradigm, it is impossible to quantify the evidence in favor of the null hypothesis. A non-significant finding can occur due to low power or a truly absent effect and the reporting of a p value simply can't  disentangled these two possibilities. An alternative to NHST is Null hypothesis Bayesian testing (NHBT) which allows the strength of evidence for (or against) $H_O$ and $H_A$ to be directly compared. This is most commonly achieved with Bayes factors, which quantifies the relative probabilities of the data under $H_O$ and $H_A$.    
+
+### BFs
+The relationship between BFs and the relative support for for (or against) $H_O$ and $H_A$ is reflected in the following graphic.    
+
+```{r eval=FALSE}
+# Load necessary libraries
+library(ggplot2)
+library(grid)
+
+g <- rasterGrob(c("lightgreen", "yellow", "orange", "red"), 
+                width=unit(1,"npc"), height = unit(1,"npc"), 
+                interpolate = TRUE) 
+# Create a continuous range for the y-axis
+y_values <- seq(0.01, 1000, length.out = 10000)
+
+# Create data frame for plotting
+data <- data.frame(
+  BayesFactor = y_values
+)
+
+# Define a continuous color gradient from a deeper yellow to green to blue
+color_gradient <- c("#FFD700", "#00B300", "#0000FF")
+
+# Plot the data
+ggplot(data, aes(y = BayesFactor, fill = BayesFactor)) +
+  geom_tile(aes(x = 0.5), width = 0.2) +  # Greatly reduce the x-direction plot area
+  scale_y_continuous(trans = "log10", 
+                     breaks = c(0.01, 1/3, 1, 3, 10, 30, 100, 1000), 
+                     labels = c("0", "1/3", "1", "3", "10", "30", "100", "∞"),
+                     expand = c(0, 0)) +
+  #scale_fill_gradientn(colors = color_gradient, name = NULL) +
+  geom_segment(aes(x = 0.4, xend = 0.6, y = 1/3, yend = 1/3), linetype = "dashed", color = "black") +
+  geom_segment(aes(x = 0.4, xend = 0.6, y = 3, yend = 3), linetype = "dashed", color = "black") +
+  geom_segment(aes(x = 0.4, xend = 0.6, y = 10, yend = 10), linetype = "dashed", color = "black") +
+  geom_segment(aes(x = 0.4, xend = 0.6, y = 30, yend = 30), linetype = "dashed", color = "black") +
+  annotate("text", x = 0.5, y = sqrt(0.01 * 1/3), label = "Evidence against\ntreatment effect", size = 4.5, hjust = 0.5, vjust = 0.5) +
+  annotate("text", x = 0.5, y = 2, label = "Not enough data to\nknow if the drug works", size = 4.5, hjust = 0.5, vjust = 0.5) +
+  annotate("text", x = 0.5, y = 20, label = "Evidence for\ntreatment effect", size = 4.5, hjust = 0.5, vjust = 0.5) +
+  annotate("text", x = 0.65, y = sqrt(30 * 500), label = "{very strong pro-alternative}", hjust = 0, size = 4.5) +
+  annotate("text", x = 0.65, y = sqrt(10 * 30), label = "{strong pro-alternative}", hjust = 0, size = 4.5) +
+  annotate("text", x = 0.65, y = sqrt(3 * 10), label = "{moderate pro-alternative}", hjust = 0, size = 4.5) +
+  annotate("text", x = 0.65, y = sqrt(1/3 * 3), label = "{ambiguous}", hjust = 0, size = 4.5) +
+  annotate("text", x = 0.65, y = sqrt(0.01 * 1/3), label = "{pro-null}", hjust = 0, size = 4.5) +
+  coord_cartesian(xlim = c(0.4, 1), ylim = c(0.01, 1000), clip = "off") +  # Limit x-axis and ensure no clipping of text
+  theme_minimal() +
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
+    axis.text.x = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    legend.position = "none",
+    plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")  # Reduced overall plot area
+  ) +
+  labs(y = "Bayes Factor") +
+  annotation_custom(g, xmin=0.4, xmax=0.6, ymin=-2, ymax=Inf) +
+  ggtitle("Bayes factors and evidential strength")
+
+ggsave("output/BF.pdf", dpi = 600, device = "pdf")
+ggsave("output/BF.png", dpi = 600, device = "png")
+
+```
+
+![](output/BF.png){width=70%}     
+
+### What is the Bayes Factor for the Notion-2 survival data? 
+An approach to calculating BFs within Cox proportional hazards survival models has been developed by Linde[@RN12229] and operationalized with the `baymedr` package[@baymedr].
+
+```{r eval=FALSE}
+# simulate Notion-2 dataset
+sim_data <- coxph_data_sim( # See ?coxph_data_sim for details
+  n_data = 100, # Number of data sets to be simulated
+  ns_c = 183, # Sample size (control condition)
+  ns_e = 187, # Sample size (experimental condition)
+  ne_c = 13, # Number of events (control condition)
+  ne_e = 19, # Number of events (experimental
+  # condition)
+  cox_hr = c(1.4, 0.7, 2.9), # HR, lower bound CI, upper bound CI
+  cox_hr_ci_level = 0.95, # Confidence level CI
+  maxit = 300, # Max number of PSO iterations (for
+  # psoptim())
+  maxit.stagnate = ceiling(300 / 5), # Max number of PSO iterations without
+  # reduction in loss (for psoptim())
+  cores = 5 # Number of cores to be used
+)
+save(sim_data, file = "output/sim_data.RData")
+```
+
+```{r message = FALSE, warning = FALSE}
+load("~/Desktop/current/notion2/output/sim_data.RData")
+
+sim_bf <- coxph_bf( # See ?coxph_bf for details
+  data = sim_data, # Object containing the data
+  null_value = 0, # H0 value
+  alternative = "two.sided", # H1 type (one- or two-sided)
+  direction = NULL, # H1 direction (low or high)
+  prior_mean = 0, # Beta prior mean
+  prior_sd = 1 # Beta prior SD
+)
+
+sim_bf
+```
+
+The median BF is 0.511 falls in the "ambiguous" range revealing that there is little evidence to support the null hypothesis of no difference between the two treatments.    
+
+This result can be checked (approximately) by ignoring any time dependency and  simply considering  the outcome data in the form of a 2X2 contingency table. Here is the Notion-2 data in tabular form for the primary outcome.      
+```{r message = FALSE, warning = FALSE}
+#deaths
+#TAVR 187, 19
+#SAVR 183,
+dat <- matrix(c(19,168,13,170), nrow = 2, byrow = TRUE,
+              dimnames = list(c("TAVR", "SAVR"),
+                              c("E+", "E-")))
+kable(dat)
+```
+
+The BF for this data structure is available with the `contingencyTableBF` function from the `BayesFactor` package[@bf]
+```{r message = FALSE, warning = FALSE}
+library(BayesFactor)
+bf = contingencyTableBF(dat, sampleType = "indepMulti", fixedMargin = "cols")
+bf
+```
+The result is, as expected, consistent with the earlier result again underlining the lack of any strong evidence to support the null hypothesis.    
+Of course, a close and proper interpretation of a standard statistical analysis provides the same inferences as shown by the binomial risk ratios and their 95% confidence intervals as shown below and published in the original manuscript.
+```{r message = FALSE, warning = FALSE}
+library(epiR)
+epi.2by2(dat, method = "cohort.count", digits = 2, conf.level = 0.95, 
+         units = 100, interpret = FALSE, outcome = "as.columns")
+```
+
+## Full Bayesian analysis
+The BF approach has the advantage of not requiring a prior belief on the the relative risk of two interventions. However this comes at the expense of not being able to calculate the posterior probability distribution for the risk difference or ratio.     
+As an initial approach one can assume a non-informative prior with a Beta(1,1) distribution so that the posterior distribution is completely determined by the observed Notion2 data.
+```{r eval=FALSE}
+pacman::p_load(brms, tidyverse, tidybayes, ggdist)
+data_bin <- data.frame(N = c(183,187), y = c(13,19), grp2 = as.factor(c("Surgery","TAVR"))) 
+f = bf(y | trials(N) ~ 0 + grp2)
+
+#get_prior(formula = f,data = data_bin,family = binomial(link = "identity"))
+
+m <- brm(
+  formula = f,
+  data = data_bin,
+  family = binomial(link = "identity"),
+  prior = c(prior(beta(1, 1), class = b, lb = 0, ub = 1)), # gets rid of a bunch of unhelpful warnings
+  chains = 4, warmup = 1000, iter = 2000, seed = 123,
+  refresh = 0
+)
+
+save(m, file = "output/m_brms")
+```
+
+This produces the following results for the risk differences
+```{r message=FALSE, warning=FALSE}
+load("output/m_brms")
+summary(m)
+```
+These results can also be shown graphically
+```{r message=FALSE, warning=FALSE}
+draws <- brms::as_draws_df(m)
+draws <- draws %>% 
+  # rename and drop the unneeded columns
+  transmute(p0 = b_grp2Surgery,
+            p1 = b_grp2TAVR) %>% 
+  # compute the OR
+  mutate(rr = p1 / p0, diff = p1-p0 )
+
+library(tidyverse)
+library(RColorBrewer)
+
+
+# function that approximates the density at the provided values
+approxdens <- function(x) {
+  dens <- density(x)
+  f <- with(dens, approxfun(x, y))
+  f(x)
+}
+
+probs <- c(0.145, 1) # sum(draws$diff>0)/4000
+
+draws1 <- draws %>%
+  mutate(dy = approxdens(diff),                         # calculate density
+         p = percent_rank(diff),                        # percentile rank 
+         pcat = as.factor(cut(p, breaks = probs,         # percentile category based on probs
+                              include.lowest = TRUE)))
+
+ggplot(draws1, aes(diff, dy) ) +
+  geom_ribbon(aes(ymin = 0, ymax = dy, fill = pcat), alpha=.2) +
+  geom_line() +
+  scale_fill_brewer(guide = "none", palette = "Set2") +
+  labs(x = "Risk difference (TAVR - surgery))",
+       y = NULL) +
+  theme_classic() +
+  labs(title = "Notion2 trial results with vague non-informative prior", subtitle = "Shaded area = probability increased TAVR risk (85.5%)") 
+
+```
+
+This Bayesian analysis has provided a quantitative answer to the risk differences between TAVR and surgery and highlights the uncertainty that was missing from the original published conclusion. The BF approach to hypothesis testing provides an improvement over the traditional NHST by calculating the strength of the evidence, very weak support of the null hypothesis of no difference in this case.   
+
+Of course, rather than fixating on the p value, an examination of the 95% confidence interval (0.73, 2.81) shows that while this contains the null effect of 1, it is also compatible with a possible 27% reduction or 181% increase in risk with TAVR compared to SAVR. As these are meaningful differences, if becomes obvious that a claim of similarity in outcomes between the two procedures is not supported by the data, both from a frequentist and Bayesian viewpoints.   
+
+    
+## References
