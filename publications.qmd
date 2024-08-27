@@ -10,9 +10,9 @@ title: " "
 
 ```{=html}
 <div  style="margin: 30px; text-align: left;">
-<a class="btn btn-primary" href="https://drive.google.com/open?id=1-0nBKdAJXLGnHrtO9S2iybH7kDbJ7FIY&usp=drive_fs" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a>
+<a class="btn btn-primary" href="https://drive.google.com/file/d/1yXEE3vclt6l4IfivbPl4HWjOlaI6wsaT/view?usp=drive_link" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a>
 </div>
-```
+
 # 2024
 
 -   Miceline Mésidor, Caroline Sirois, Jason Robert Guertin, Mireille E Schnitzer, Bernard Candas, Claudia Blais, Benoit Cossette, Paul Poirier, **James M Brophy**, Lisa Lix, Mina Tadrous, Awa Diop, Denis Hamel, Denis Talbot. Effect of statin use for the primary prevention of cardiovascular disease among older adults: A cautionary tale concerning target trials emulation. [Journal of Clinical Epidemiology](https://www.jclinepi.com/article/S0895-4356(24)00039-8/fulltext)      

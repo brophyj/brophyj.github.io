@@ -43,12 +43,11 @@ James (Jay) Brophy is a tenured (full) professor with a joint appointment in the
    <br>
     He is a fellow of the [Canadian Academy of Health Sciences](https://cahs-acss.ca) and the [Canadian Cardiovascular Society](https://ccs.ca).
 
-Have a look at my {{< iconify fa6-regular file-lines >}} [curriculum vitae](https://drive.google.com/open?id=1-0nBKdAJXLGnHrtO9S2iybH7kDbJ7FIY&usp=drive_fs)
- 
-    
+Have a look at my {{< iconify fa6-regular file-lines >}} [curriculum vitae](https://drive.google.com/file/d/1yXEE3vclt6l4IfivbPl4HWjOlaI6wsaT/view?usp=drive_link)
+   
 ```{=html}
 <div  style="margin: 30px; text-align: left;">
-<a class="btn btn-primary" href="https://drive.google.com/open?id=1-0nBKdAJXLGnHrtO9S2iybH7kDbJ7FIY&usp=drive_fs" target="_blank" style="padding: 15px 30px;">Download current CV</a>
+<a class="btn btn-primary" href="https://drive.google.com/file/d/1yXEE3vclt6l4IfivbPl4HWjOlaI6wsaT/view?usp=drive_link" target="_blank" style="padding: 15px 30px;">Download current CV</a>
 </div>
 ```
 
