@@ -1,0 +1,208 @@
+---
+title: Mortality following post operative atrial fibrillation
+description: "Does sex matter?"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Bias, Statistical analysis]
+image: preview-image.jpg
+citation: 
+  url: https://brophyj.github.io/posts/2024-02-19-my-blog-post/ 
+date: 2024-08-26T14:39:55-05:00
+lastmod: 2024-08-26T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+bibliography: [bib.bib]
+biblio-style: apalike
+---
+
+```{r echo=FALSE,  message=FALSE, warning=FALSE, include=FALSE, results='hide'}
+
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.align = "center",
+  message = FALSE,
+  warning = FALSE,
+  dev = "svg")
+
+options(scipen = 1, digits = 3)
+pander::panderOptions('keep.trailing.zeros', TRUE)
+
+library(tidyverse)
+
+```
+
+## Does sex matter?
+
+[A recent publication](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2822552?guestAccessKey=af52dc60-d01e-4a68-a8b7-fe9b1bb84230&utm_source=silverchair&utm_campaign=jama_network&utm_content=car_weekly_highlights&utm_medium=email&adv=000001541280#google_vignette) concluded  
+ <br>      
+  <span style="color:red">"In this retrospective cohort study of 21 568 patients who underwent cardiac surgery, women were less likely to develop poAF than men when controlling for other relevant characteristics; however, women who did develop poAF had a higher risk of long-term mortality than men who developed poAF. This observed elevated risk calls for a tailored approach to perioperative care in women undergoing cardiac surgery."</span>[@RN7004]    
+  <br>
+  The results were as follows:      
+  <span style="color:red">"Compared with same-sex individuals without poAF, men with poAF had a 17% higher mortality hazard (hazard ratio [HR], 1.17; 95% CI, 1.11-1.25; P < .001), and women with poAF had a 31% higher mortality hazard (HR, 1.31; 95% CI, 1.21-1.42; P < .001).]." </span>        
+  <br>    
+  Do these results support the authors conclusions calling for "a tailored approach to perioperative care **in women** undergoing cardiac surgery"?    
+  
+## Why might one be concerned about this conclusion? 
+A quick look at the results shows some overlap in the confidence intervals for mortality in men and women and so it is difficult to ascertain without a formal statistical interaction test whether the  differences in sex specific hazard rates are beyond the play of chance. Such a test doesn't appear to have been reported in the publication.       
+Altman and Bland[@RN5623] discuss this issue of interaction and provide a simple method of calculation.  
+```{r}
+inter_action <- function(rr1, l1, u1, rr2, l2, u2){
+  log_rr1 <- log(rr1)
+  log_l1 <- log(l1)
+  log_u1 <- log(u1)
+  log_rr2 <- log(rr2)
+  log_l2 <- log(l2)
+  log_u2 <- log(u2)
+  se1 <- (log_u1-log_l1)/3.92
+  se2 <- (log_u2-log_l2)/3.92
+  diff_rr <- log_rr1 - log_rr2
+  diff_se <- sqrt(se1^2 + se2^2)
+  z <- abs(diff_rr) / diff_se
+  p <- 2*(1-pnorm(z))
+  ldiff <- diff_rr - 1.96*diff_se
+  udiff <- diff_rr +1.96*diff_se
+  RRR <- exp(diff_rr)
+  lCI_RRR <- exp(ldiff)
+  uCI_RRR <- exp(udiff)
+  ans <- paste0("The ratio of the relative risks is ", round(RRR,2), ", 95% CI ",
+               round(lCI_RRR,2), " - ", round(uCI_RRR,2), " p = " , round(p,2))
+  list(ans)
+}
+
+inter_action(1.31,1.21,1.42,1.17,1.11,1.25)
+
+```
+
+The interaction test is indeed statistically positive but with the lower limit of the confience interval approaching 1, the statistical significance of this association is likely not terribly robust. For example, a very small amount of residual or unmeasured confounding could make the statistical significance vanish as shown in the following calculation. 
+```{r}
+library(EValue)
+evalues.HR(1.12,1.01,1.24,rare = 0)
+
+```
+Also statistical significance and p values provide no information about the strength of the evidence as the same p value can arise from a large effect size in a moderate sample or a small effect size in a very large sample.   
+
+## A Bayesian approach
+
+Rather than concentrating on directional hypothesis testing, i.e. drawing inferences based on the (in)compatability of the data with a null hypothesis  upon repeated sampling, a richer deeper understanding of the data can be obtained with quantitative hypothesis testing. This involves estimating the probabilities of women and men dying and then making direct comparisons with probability statements and represents a Bayesian approach to data analysis.    
+
+Let  y represent the observations and let the corresponding data generating mechanism be described by a distribution (likelihood) function $f(y|p)$, where *p* is a parameter of interest. In Bayesian statistics, the unknown parameter of interest *p* is not considered fixed but instead has a distribution. Before the experiment, the prior distribution *f(p)* is obtained from any previous knowledge about the parameter. The more knowledge is available, the more informative will this prior distribution be.
+
+The object of Bayesian inference is the posterior distribution  *f(p|y)* after observing the data and is evaluated with Bayes’ theorem as follows:  
+$$f(p|y) = \frac{f(y|p)f(p)}{\int_{p}f(y|p)f(p)dp}$$
+
+The response variable *y*, death in this case, has a binomial distribution with the total number of binomial trials, n, and the probability of the outcome, p:
+$$y \sim Bin(n,p)$$
+In the absence of any other information, a uniform or non-informative prior *Beta*(𝑎=1,𝑏=1) distribution is often assumed. When the prior is a *Beta* distribution and the data in the form of a binomial, the posterior distribution follows the same form as the prior, a *Beta* distribution, known as a congugate analysis which is expressed as  
+$$ p|y\sim Beta(a+y,b+n-y)$$
+
+with the posterior mean
+$$E(p|y) =
+\frac{a+y}{a+y+b+n-y} = \frac{a+y}{a+b+n} =
+\frac{a+n\bar{y}}{a+b+n}$$  
+
+In this specific example, one can calaculate the probability of mortality for both men and women by combining the data from the publication (the likelihood) with our prior information (here assumed to be non-informative). Once the posterior probability functions for women and men become available, summary statistics and plots comparing them are easily obtained and interpreted.
+
+```{r}
+# deaths for men and women
+d_w <- 1294           # women deaths
+n_w <- 2567           # women at risk
+p_w <-d_w/n_w         # probability women dying
+sd_w <- sqrt(n_w*p_w*(1-p_w)) # sd women dying
+d_m <- 2376           # men deaths
+n_m <- 4859           #men at risk
+p_m <- d_m/n_m       # probability men dying
+sd_m <- sqrt(n_m*p_m*(1-p_m))  # sd men dying
+
+# create a data frame of 10,000 men and 10,0000 women each with their respective probabilities 
+df <- data.frame(sex = factor(rep(c("F", "M"), each=10000)),
+                   death_prop = c(rbinom(n=10000, size=n_w, prob=p_w)/n_w,
+                   rbinom(n=10000, size=n_m, prob=p_m)/n_m))
+
+q_f <- quantile(df[df$sex=="F",]$death_prop, c(.025,.5,0.975))
+q_m <- quantile(df[df$sex=="M",]$death_prop, c(.025,.5,0.975))
+
+ggplot(df, aes(x = death_prop)) + 
+   geom_density(aes(fill = sex), alpha = 0.4) +
+  labs(title = "Mean probability of (wo)men with post-operative atrial fibrillation dying", subtitle = "Based on 10,000 simulations", caption = "Horizontal lines = 95% confidence intervals \nDashed vertical lines = mean") +
+  xlab("Mean probability dying") +
+  geom_vline(aes(xintercept = mean(death_prop), color = sex), data = df[df$sex=="F",], linetype = "dashed") +
+  geom_vline(aes(xintercept = mean(death_prop), color = sex), data = df[df$sex=="M",], linetype = "dashed") +
+  theme_classic() +
+  geom_segment(aes(x=.485,xend=.523,y=0,yend=0), color="#F8766D",linewidth = 2) +
+  geom_segment(aes(x=.475,xend=.503,y=1,yend=1), color="#00BFC4", linewidth = 2)
+   
+```
+
+Therefore mean probability of a woman dying is `r  q_f[2]` with 95% CI `r  q_f[1]` to `r  q_f[3]`.          
+While the mean probability of a man dying is `r  q_m[2]` with 95% CI `r  q_m[1]` to `r  q_m[3]`.    
+
+### What then is the probability that the mean mortality for women is greater than the mean mortality for men?
+
+```{r}
+mean_prob <- sum(df[df$sex=="F",]$death_prop > df[df$sex=="M",]$death_prop) / 10000
+```
+
+**The probability that the mean mortailty for women is greater than the mean probability for men is `r mean_prob`.**   
+
+This analysis suggests that while the mean mortality for women is likely greater than for men, there remains a 1 in 10 chance that the reverse is true.   
+
+### What is the right research (clinical) question?
+
+Moreover, rather than comparing means what is arguably the more important research question is **whether the probability that the mortality for the next women with POAF will be greater than for the next man with POAF**. This involves calculating and comparing the posterior predictive distributions for each sex .
+```{r}
+#To obtain the posterior predictive distribution for next woman
+p_w_next <- rbeta(10^4,d_w+1,n_w-d_w+1)
+y_w_next <- rbinom(length(p_w_next),1000,p_w_next) / 1000
+ob_f <- quantile(y_w_next, c(0.025,.5,0.975))
+
+p_m_next <- rbeta(10^4,d_m+1,n_m-d_m+1)
+y_m_next <- rbinom(length(p_m_next),1000,p_m_next) / 1000
+ob_m <- quantile(y_m_next, c(0.025,.5,0.975))
+
+next_0 <- sum(y_w_next > y_m_next) /10000
+
+next_01 <- sum(y_w_next - y_m_next > 0.01) /10000
+```
+
+In contrast to comparisons of the sex specific means, there will be increased uncertainty about the probability about the next observed woman or man dying.    
+The probability of the next observed woman dying is `r  ob_f[2]` with 95% CI `r  ob_f[1]` to `r  ob_f[3]`.          
+The  probability of the next observed man dying is `r  ob_m[2]` with 95% CI `r  ob_m[1]` to `r  ob_m[3]`.   
+This is displayed graphically below.
+
+```{r}
+df1 <- data.frame(sex = factor(rep(c("F", "M"), each=10000)),
+                 death_prop = c(rbinom(n=10000, size=n_w, prob=y_w_next)/n_w,
+                                rbinom(n=10000, size=n_m, prob=y_m_next)/n_m))
+ggplot(df1, aes(x = death_prop)) + 
+  geom_density(aes(fill = sex), alpha = 0.4) +
+  labs(title = "Probability of the next (wo)man with post-operative atrial fibrillation dying", 
+       subtitle = "Based on 10,000 simulations from a binomial model", 
+       caption = "Horizontal lines = 95% confidence intervals \nDashed vertical lines = mean") +
+  xlab("Probability dying") +
+  geom_vline(aes(xintercept = mean(death_prop), color = sex), data = df[df$sex=="F",], linetype = "dashed") +
+  geom_vline(aes(xintercept = mean(death_prop), color = sex), data = df[df$sex=="M",], linetype = "dashed") +
+  theme_classic() +
+  geom_segment(aes(x=.467,xend=.540,y=0,yend=0), color="#F8766D",linewidth = 2) +
+  geom_segment(aes(x=.456,xend=.523,y=.5,yend=.5), color="#00BFC4", linewidth = 2)
+```
+
+
+**Therefore the probability that the mortality of the next observed woman exceeds that of the next observed man is `r next_0`.**     
+
+Finally with these posterior predictive distributions, one can the probability that the the mortality for next observed women exceeds the male mortality by any specified amount. For example, the probability that the mortality for the next observed woman exceeds that of a man by at least 1% is barely beyond that of a coin toss, `r next_01`.    
+<br>
+**In conclusion, this analysis suggests the strength of the evidence in favor of an increased mortality for the next woman with POAF compared to a man is only moderate at best (71% probability) and that an approach that targets both sexes seems more reasonable than targeting only women.**
+
+## References
+  

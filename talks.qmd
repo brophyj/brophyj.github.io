@@ -48,7 +48,9 @@ Montreal Jewish General Hospital, Clinical Epidemiology Rounds, Montreal QC, Nov
 
 - **Dual antiplatelet therapy (DAPT) in 2023 - The McGill Experience**          
 McGill University Health Centre, Department of Medicine Grand Rounds, Montreal QC, Oct 30 2023          
-**Summary** - Review of three research studies performed at McGill - i) Bayesian network meta-analysis ii) pharmacoepidemiology study iii) cluster randomized registry trial        
+**Summary** - Review of three research studies performed at McGill - i) Bayesian network meta-analysis ii) pharmacoepidemiology study iii) cluster randomized registry trial     
+
+[**YouTube presentation**](https://www.youtube.com/watch?v=0OqPSr8Q208)
 
 <p class="text-center">
   <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$muhc$pdf`" target="_blank">
