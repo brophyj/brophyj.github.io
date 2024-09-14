@@ -1,5 +1,5 @@
 ---
-title: Something old with lots of spin spin (FAME-2)
+title: Something old with spin (FAME-2)
 description: "Cherry picking with the best"
 author:
   - name: Jay Brophy
