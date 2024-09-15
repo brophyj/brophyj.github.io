@@ -20,7 +20,7 @@ about:
       aria-label: "Mastodon logo linking to account"
       rel: me
     - text: "{{< iconify fa6-brands twitter >}}"
-      href: "https://twitter.com/brophyjl"
+      href: "https://twitter.com/brophyj"
       aria-label: "Twitter logo linking to account"
     - text: "{{< iconify fa6-brands linkedin >}}"
       href: "https://www.linkedin.com/in/brophyj/"
