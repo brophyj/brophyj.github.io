@@ -10,7 +10,7 @@ test
 
 ```{=html}
 <div  style="margin: 30px; text-align: left;">
-<a class="btn btn-primary" href="https://drive.google.com/file/d/1yXEE3vclt6l4IfivbPl4HWjOlaI6wsaT/view?usp=sharing" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a>
+<a class="btn btn-primary" href="https://drive.google.com/file/d/194YvTwbxkplaJ2V3bmbAkbVMbUBjGZ9V/view?usp=drive_link" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a>
 </div>
 
 # 2024
