@@ -65,7 +65,7 @@ options(scipen = 1, digits = 2) #set to two decimal
 ## Background
 
 I recently read an article entitled "One-Year Outcomes of Transseptal
-Mitral Valvein- Valve in Intermediate Surgical Risk Patients"[@MVIV]
+Mitral Valve in- Valve in Intermediate Surgical Risk Patients"[@MVIV]
 [paper](https://www.ahajournals.org/doi/10.1161/CIRCINTERVENTIONS.123.013782).
 After examining 50 patients from 12 sites that underwent mitral
 valve-in-valve from 2018 to 2021 the authors concluded
@@ -76,7 +76,7 @@ valve-in-valve from 2018 to 2021 the authors concluded
 > performance, and no mortality or stroke at 1-year follow-up."
 
 This prompted me to wonder how probable would it be to observe 0 deaths
-in the 50 patients at 1 year if the annual transcather mitral valve
+in the 50 patients at 1 year if the annual transcather mitral valve in valve (MVIV) 
 mortality was actually the same as their expected value with a surgical
 redo, 4%. I also wondered how well my colleagues would estimate this
 uncertainty (probability) and therefore created and circulated the
