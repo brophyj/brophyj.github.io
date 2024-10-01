@@ -180,7 +180,7 @@ Selected projects <iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon>
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="photos/images/as.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Aortic stenosis treatments"><img src="photos/images/as.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Aortic stenosis treatments"></a></p>
+<p><a href="photos/images/as.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Aortic stenosis treatments"><img src="photos/images/as.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Aortic stenosis treatments"></a></p>
 </figure>
 </div>
 <figcaption>Aortic stenosis treatments</figcaption>
@@ -197,18 +197,23 @@ Aortic stenosis (AS) is the most prevalent heart valve disorder in developed cou
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="photos/images/TC4_scales.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="DAPT"><img src="photos/images/TC4_scales.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="DAPT"></a></p>
+<p><a href="photos/images/TC4_scales.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="DAPT"><img src="photos/images/TC4_scales.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="DAPT"></a></p>
 </figure>
 </div>
 <figcaption>DAPT</figcaption>
 </figure>
 </div>
-<p>TC4 Ticagrelor compared to clopidogrel in acute coronary syndromes - the TC4 comparative effectiveness study</p>
+<p>Ticagrelor compared to clopidogrel in acute coronary syndromes (TC4) - the TC4 comparative effectiveness study</p>
 <p>CIHR funded project (2019-2023) looking at the comparative effectiveness of ticagrelor versus clopidogrel in acute coronary syndromes.</p>
-<p><strong>Overview</strong> Cardiovascular diseases, especially acute coronary syndromes (ACS) are a leading cause of mortality and morbidity. Antiplatelet medications have a long history of improving ACS survival and for the prevention of a secondary cardiac event. Based on the consistency and strength of multiple randomized controlled trials (RCTs), the dual antiplatelet therapy (DAPT), clopidogrel and aspirin, following an ACS event, had long been considered the gold standard in the leading clinical guidelines. More recently, a new DAPT regimen, ticagrelor and aspirin, has become the recommended strategy. However this is based largely on one large RCT with a limited number of North American patients (who did not show any incremental benefit). This project aimed to further explore the comparative effectiveness of these different treatments by performing a<br>
+<p><strong>Overview</strong> Cardiovascular diseases, especially acute coronary syndromes (ACS) are a leading cause of mortality and morbidity. Antiplatelet medications have a long history of improving ACS survival and for the prevention of a secondary cardiac event. Based on the consistency and strength of multiple randomized controlled trials (RCTs), the dual antiplatelet therapy (DAPT), clopidogrel and aspirin, following an ACS event, had long been considered the gold standard in the leading clinical guidelines. More recently, a new DAPT regimen, ticagrelor and aspirin, has become the recommended strategy. However this is based largely on one large RCT with a limited number of North American patients (who did not show any incremental benefit).<br>
+The Ticagrelor Compared to Clopidogrel in aCute coronary syndromes – the TC4 trial (NCT04057300) – is a pragmatic, open-label, active control, time clustered randomized clinical trial designed to assess the effectiveness and safety of ticagrelor versus clopidogrel as DAPT therapy in a ACS population undergoing percutaneous coronary intervention (PCI) in a single tertiary academic center in Montreal, Canada.</p>
+<div style="color: red">
+<p><strong>In addition to a standalone analysis, our main Bayesian analysis will incorporate the 1800 PLATO NA patients as our prior distribution, essentially providing a &gt; 50% safety margin for our sample size calculations (see next section).</strong></p>
+</div>
+<p>The complete funding protocol is found <a href="upload/TC4protocol.pdf">here</a>.</p>
+<p>This research program will also explore the comparative effectiveness of these different treatments by performing a<br>
 i) <a href="https://www.medrxiv.org/content/10.1101/2023.08.12.23294021v1">Bayesian network meta-analysis of all previous RCTs</a><br>
-ii) Pharmacoepidemiology study using Quebec administrative databases (manuscript in progress)<br>
-iii) time clustered, randomized registry trial of 1,000 ACS patients (manuscript in progress)</p>
+ii) Pharmacoepidemiology study using Quebec administrative databases (manuscript in progress)</p>
 </section>
 <section id="mostly-clinical-epidemiology-with-r" class="level1">
 <h1>(Mostly) Clinical Epidemiology with R</h1>
@@ -711,7 +716,7 @@ dateElements.forEach((el) => {
   );
 });
 </script>
-<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

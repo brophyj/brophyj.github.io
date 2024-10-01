@@ -275,7 +275,7 @@ window.Quarto = {
     
 <!-- main -->
 <main class="content quarto-banner-title-block column-page" id="quarto-document-content"><section id="background" class="level2"><h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>I recently read an article entitled “One-Year Outcomes of Transseptal Mitral Valve in- Valve in Intermediate Surgical Risk Patients”<span class="citation" data-cites="MVIV">(<a href="#ref-MVIV" role="doc-biblioref">Malaisrie et al. 2024</a>)</span> <a href="https://www.ahajournals.org/doi/10.1161/CIRCINTERVENTIONS.123.013782">paper</a>. After examining 50 patients from 12 sites that underwent mitral valve-in-valve from 2018 to 2021 the authors concluded</p>
+<p>I recently read an article entitled “One-Year Outcomes of Transseptal Mitral Valve in Valve in Intermediate Surgical Risk Patients”<span class="citation" data-cites="MVIV">(<a href="#ref-MVIV" role="doc-biblioref">Malaisrie et al. 2024</a>)</span> <a href="https://www.ahajournals.org/doi/10.1161/CIRCINTERVENTIONS.123.013782">paper</a>. After examining 50 patients from 12 sites that underwent mitral valve-in-valve from 2018 to 2021 the authors concluded</p>
 <blockquote class="blockquote">
 <p>“Mitral valve-in-valve with a balloon-expandable valve via transseptal approach in intermediate-risk patients was associated with improved symptoms and quality of life, adequate transcatheter valve performance, and no mortality or stroke at 1-year follow-up.”</p>
 </blockquote>
@@ -474,17 +474,13 @@ The Poisson distribution is perhaps better appreciated by plotting the above equ
 <span>                            <span class="st">"76-95%"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">q3</span>, group <span class="op">=</span> <span class="va">id</span>, color<span class="op">=</span><span class="va">id</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_bar</span><span class="op">(</span>stat<span class="op">=</span><span class="st">"count"</span>, width<span class="op">=</span><span class="fl">0.7</span>, fill<span class="op">=</span><span class="st">"lightblue"</span><span class="op">)</span><span class="op">+</span></span>
-<span>  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">guides</span><span class="op">(</span>color <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span> <span class="va">q4</span>, labeller <span class="op">=</span> <span class="va">label_both</span>, axes <span class="op">=</span> <span class="st">"all_y"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">xlab</span><span class="op">(</span><span class="st">"Questions 3"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ylab</span><span class="op">(</span><span class="st">"Counts"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Responses for Questions 3"</span>, subtitle <span class="op">=</span> <span class="st">"Probability MVIV is as safe or safer than standard redo OR"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_ggdist</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>Warning: The `&lt;scale&gt;` argument of `guides()` cannot be `FALSE`. Use "none" instead as
-of ggplot2 3.3.4.</code></pre>
-</div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></a></p>
 </figure>
@@ -495,7 +491,7 @@ of ggplot2 3.3.4.</code></pre>
 <p>To appreciate the uncertainty associated with observing 0 deaths in 50 patients if the expected rate was 4%, one can use either a Poisson distribution (counts) or a binomial distribution (independent Bernouilli trials) where each of the 50 subjects is considered as alive or dead with a probability of 4%. These calculations can be done with the above equations or more easily with any software that includes Poisson or Binomial distributions.</p>
 <p><span style="color:red">Q1. If mortality rates with transcatheter MVIV are assumed the same as with a standard redo, what is the probability of observing 0 deaths asthese authors did?</span></p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co"># calculate the probability of 0 to 6 deaths among 50 patients with an expected rate of 4%</span></span>
 <span><span class="co"># binomial distribution</span></span>
 <span><span class="va">db</span> <span class="op">&lt;-</span> <span class="fl">100</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span>,<span class="fl">50</span>, <span class="fl">.04</span><span class="op">)</span> <span class="co"># expected 4% probability of death</span></span>
@@ -510,7 +506,7 @@ of ggplot2 3.3.4.</code></pre>
 <p>Assuming a binomial distribution with an event (death) probability of 4%, the probability for 0, 1, 2, 3, 4, 5, 6 events is 13%, 27.1%, 27.6%, 18.4%, 9%, 3.5%, respectively.<br><br> Assuming a Poisson distribution with an event (death) rate of 2 (# deaths in 50 individual in 1 year with 4% expected mortality), the probability for 0, 1, 2, 3, 4, 5, 6 events is 13.5%, 27.1%, 27.1%, 18%, 9%, 3.6%, respectively.</p>
 <p>This data can also be visualized as shown here</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Build Poisson distributions</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Build Poisson distributions</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">p_dat</span> <span class="op">&lt;-</span> <span class="fu">map_df</span><span class="op">(</span><span class="fl">2</span>, <span class="op">~</span> <span class="fu">tibble</span><span class="op">(</span></span>
 <span>  l <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span>,</span>
@@ -536,7 +532,7 @@ of ggplot2 3.3.4.</code></pre>
 </div>
 <p>The similarity between the Poisson and Binomial distributions is shown graphically below</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">rbinom</a></span><span class="op">(</span><span class="fl">50000</span>,<span class="fl">50</span>,<span class="fl">.04</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">g</span> <span class="op">=</span> <span class="fu">ggplot</span><span class="op">(</span><span class="va">df</span>, <span class="fu">aes</span><span class="op">(</span>x<span class="op">=</span><span class="va">y</span><span class="op">)</span><span class="op">)</span> </span>
@@ -545,22 +541,18 @@ of ggplot2 3.3.4.</code></pre>
 <span></span>
 <span><span class="va">g</span> <span class="op">+</span> <span class="fu">geom_histogram</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y<span class="op">=</span><span class="fu">after_stat</span><span class="op">(</span><span class="va">density</span><span class="op">)</span><span class="op">)</span>, binwidth<span class="op">=</span><span class="fl">1</span>, <span class="co"># density</span></span>
 <span>                   fill<span class="op">=</span><span class="st">"grey60"</span>, color<span class="op">=</span><span class="st">"red"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">geom_density</span><span class="op">(</span>adjust<span class="op">=</span><span class="fl">5</span>, color<span class="op">=</span><span class="st">"red"</span>, size<span class="op">=</span><span class="fl">1.1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_density</span><span class="op">(</span>adjust<span class="op">=</span><span class="fl">5</span>, color<span class="op">=</span><span class="st">"red"</span>, linewidth<span class="op">=</span><span class="fl">1.1</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">xlab</span><span class="op">(</span><span class="st">"counts"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_x_continuous</span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggtitle</span><span class="op">(</span><span class="st">"Histogram (and kernal density) of count from a </span></span>
 <span><span class="st">  \nBinomial (50, 0.04) probability distribution"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></a></p>
 </figure>
 </div>
 </div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># same code for Poisson</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># same code for Poisson</span></span>
 <span><span class="co"># df1 &lt;- data.frame(y=round(rpois(50000,2)))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
@@ -570,7 +562,7 @@ of ggplot2 3.3.4.</code></pre>
 </div>
 <p>In other words what is the probability of observing 0 deaths if the expected rate was 5.6% (4*1.4).</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>digits<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co"># calculate the probability of 0 to 6 deaths among 50 patients with an expected rate of 4%</span></span>
 <span><span class="co"># binomial distribution</span></span>
 <span><span class="va">db1</span> <span class="op">&lt;-</span> <span class="fl">100</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span>,<span class="fl">50</span>, <span class="fl">.056</span><span class="op">)</span> <span class="co"># expected 4% probability of death</span></span>
@@ -582,7 +574,7 @@ of ggplot2 3.3.4.</code></pre>
 <p>Assuming a binomial distribution with an event (death) probability of 5.6%, the probability for 0, 1, 2, 3, 4, 5, 6 events is 5.6%, 16.6%, 24.2%, 22.9%, 16%, 8.7%, respectively.<br><br> Assuming a Poisson distribution with an event (death) rate of 2.8 (# deaths in 50 individual in 1 year with 5.6% expected mortality), the probability for 0, 1, 2, 3, 4, 5, 6 events is 6.1%, 17%, 23.8%, 22.2%, 15.6%, 8.7%, respectively.</p>
 <p>This may be easier to appreciate visually</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_dat</span> <span class="op">&lt;-</span> <span class="fu">map_df</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2.8</span><span class="op">)</span>, <span class="op">~</span> <span class="fu">tibble</span><span class="op">(</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_dat</span> <span class="op">&lt;-</span> <span class="fu">map_df</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2.8</span><span class="op">)</span>, <span class="op">~</span> <span class="fu">tibble</span><span class="op">(</span></span>
 <span>  l <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span>,</span>
 <span>  x <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">10</span>,</span>
 <span>  y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html">dpois</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">10</span>, <span class="va">.</span><span class="op">)</span></span>
@@ -602,13 +594,13 @@ of ggplot2 3.3.4.</code></pre>
 </div>
 </div>
 </div>
-<p>Clearly, if the expected death rate is higher the curves shift left meaning the probability of observing 0 deaths will fall with increasing mortality rates, so<br><strong>The answer to Q2 is 5 - 9.9%</strong></p>
+<p>Clearly, if the expected death rate is higher the curves shift right meaning the probability of observing 0 deaths will fall with increasing mortality rates, so<br><strong>The answer to Q2 is 5 - 9.9%</strong></p>
 <div style="color: red">
 <p>Q3. Given the above information (and that there is probably not a lot of other of good quality available evidence), what is your probability (belief) that MVIV is as safe or safer than a standard redo operation in this population?</p>
 </div>
 <p>Iideally one would like to know the outcome with both interventions in the same patient but such counterfactuals unfortunately don’t exist. As an alternative we perform randomized trials, where we hope that subjects in the two treatment arms are exchangeable. In this case, we lack a proper comparative arm but can assume that if the STS model is accurate and that the MVIV patients would have had a 4% mortality if instead of MVIV they had had a surgical redo. Therefore our data are the 50 observed MVIV results and 50 results under a redo operation with a 4% mortality rate.</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># create data frame</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># create data frame</span></span>
 <span><span class="va">dat1</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="op">(</span>Trial <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"study"</span>, <span class="st">"study"</span><span class="op">)</span>, Tx <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"redo"</span>, <span class="st">"MVIV"</span><span class="op">)</span>,</span>
 <span>               fail <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0</span><span class="op">)</span>,</span>
 <span>               success <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">48</span>,<span class="fl">50</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
@@ -623,7 +615,7 @@ of ggplot2 3.3.4.</code></pre>
 </details>
 </div>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"fit4.RDS"</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"fit4.RDS"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">fit4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stderr">
 <pre><code>Warning: There were 15936 divergent transitions after warmup. Increasing
@@ -650,23 +642,19 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 </div>
 <p>As expected the mean mortality difference (MVIV - redo) is - 4% with 95% credible intervals -13% -to 3% This probability density for this mortality difference is shown graphically below</p>
 <div class="cell" data-layout-align="center">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">draws</span> <span class="op">&lt;-</span> <span class="fu">as_draws_df</span><span class="op">(</span><span class="va">fit4</span><span class="op">)</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">draws</span> <span class="op">&lt;-</span> <span class="fu">as_draws_df</span><span class="op">(</span><span class="va">fit4</span><span class="op">)</span></span>
 <span><span class="va">p_gt_0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">draws</span><span class="op">$</span><span class="va">b_Txredo</span> <span class="op">&gt;</span><span class="fl">0</span><span class="op">)</span> <span class="op">/</span> <span class="fl">20000</span></span>
 <span><span class="va">draws</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">b_Txredo</span>, fill <span class="op">=</span> <span class="fu">stat</span><span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">b_Txredo</span>, fill <span class="op">=</span> <span class="fu">after_stat</span><span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">stat_halfeye</span><span class="op">(</span>point_interval <span class="op">=</span> <span class="va">mean_qi</span>, .width <span class="op">=</span> <span class="fl">.95</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gray85"</span>, <span class="st">"skyblue"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_y_continuous</span><span class="op">(</span><span class="cn">NULL</span>, breaks <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">xlab</span><span class="op">(</span><span class="st">"Mortality differece (Redo - MVIV)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Mortality difference (surgical redo - catheter MVIV)"</span>,</span>
+<span>  <span class="fu">xlab</span><span class="op">(</span><span class="st">"Mortality difference (MVIV - Redo)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Mortality difference (catheter MVIV - surgical redo)"</span>,</span>
 <span>       subtitle <span class="op">=</span> <span class="st">"Blue area = probability increased mortality with MVIV (23.5%)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_ggdist</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>Warning: `stat(x &gt; 0)` was deprecated in ggplot2 3.4.0.
-ℹ Please use `after_stat(x &gt; 0)` instead.</code></pre>
-</div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a></p>
 </figure>
@@ -689,12 +677,12 @@ Malaisrie, S. Chris, Mayra Guerrero, Charles Davidson, Mathew Williams, Fábio S
   author = {Brophy, Jay},
   title = {Estimating {Uncertainties}},
   date = {2024-09-29},
-  url = {https://brophyj.github.io/posts/2024-09-14-my-blog-post/},
+  url = {https://brophyj.com/posts/2024-09-14-my-blog-post/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brophy2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 Brophy, Jay. 2024. <span>“Estimating Uncertainties.”</span> September
-29, 2024. <a href="https://brophyj.github.io/posts/2024-09-14-my-blog-post/">https://brophyj.github.io/posts/2024-09-14-my-blog-post/</a>.
+29, 2024. <a href="https://brophyj.com/posts/2024-09-14-my-blog-post/">https://brophyj.com/posts/2024-09-14-my-blog-post/</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1180,7 +1168,7 @@ dateElements.forEach((el) => {
     "$1<sup style='font-size:0.5em;font-style:italic;'>$2</sup>"
   );
 });
-</script><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+</script><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

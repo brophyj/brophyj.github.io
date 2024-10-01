@@ -11,7 +11,7 @@ tags: []
 categories: [Uncertainty, Probability distributions]
 image: preview-image.jpg
 citation: 
-  url: https://brophyj.github.io/posts/2024-09-14-my-blog-post/ 
+  url: https://brophyj.com/posts/2024-09-14-my-blog-post/ 
 date: 2024-09-29T14:39:55-05:00
 lastmod: 2024-09-29T14:39:55-05:00
 featured: true
@@ -65,7 +65,7 @@ options(scipen = 1, digits = 2) #set to two decimal
 ## Background
 
 I recently read an article entitled "One-Year Outcomes of Transseptal
-Mitral Valve in- Valve in Intermediate Surgical Risk Patients"[@MVIV]
+Mitral Valve in Valve in Intermediate Surgical Risk Patients"[@MVIV]
 [paper](https://www.ahajournals.org/doi/10.1161/CIRCINTERVENTIONS.123.013782).
 After examining 50 patients from 12 sites that underwent mitral
 valve-in-valve from 2018 to 2021 the authors concluded
@@ -331,7 +331,7 @@ dat2 %>%
                             "76-95%")) |> 
   ggplot(aes(x = q3, group = id, color=id)) +
   geom_bar(stat="count", width=0.7, fill="lightblue")+
-  guides(color = FALSE) +
+  guides(color = "none") +
   facet_wrap(~ q4, labeller = label_both, axes = "all_y") +
   xlab("Questions 3") +
   ylab("Counts") +
@@ -413,7 +413,7 @@ g = ggplot(df, aes(x=y))
 
 g + geom_histogram(aes(y=after_stat(density)), binwidth=1, # density
                    fill="grey60", color="red") +
-  geom_density(adjust=5, color="red", size=1.1) +
+  geom_density(adjust=5, color="red", linewidth=1.1) +
   xlab("counts") +
   scale_x_continuous(breaks = seq(0, 10, by = 1)) +
   ggtitle("Histogram (and kernal density) of count from a 
@@ -476,7 +476,7 @@ ggplot(p_dat, aes(x, y, color = factor(l, levels = c(2,2.8)))) +
   theme_minimal()
 ```
 
-Clearly, if the expected death rate is higher the curves shift left
+Clearly, if the expected death rate is higher the curves shift right
 meaning the probability of observing 0 deaths will fall with increasing
 mortality rates, so\
 **The answer to Q2 is 5 - 9.9%**
@@ -527,12 +527,12 @@ mortality difference is shown graphically below
 draws <- as_draws_df(fit4)
 p_gt_0 <- sum(draws$b_Txredo >0) / 20000
 draws %>% 
-  ggplot(aes(x = b_Txredo, fill = stat(x > 0))) +
+  ggplot(aes(x = b_Txredo, fill = after_stat(x > 0))) +
   stat_halfeye(point_interval = mean_qi, .width = .95) +
   scale_fill_manual(values = c("gray85", "skyblue")) +
   scale_y_continuous(NULL, breaks = NULL) +
-  xlab("Mortality differece (Redo - MVIV)") +
-  labs(title = "Mortality difference (surgical redo - catheter MVIV)",
+  xlab("Mortality difference (MVIV - Redo)") +
+  labs(title = "Mortality difference (catheter MVIV - surgical redo)",
        subtitle = "Blue area = probability increased mortality with MVIV (23.5%)") +
   theme_ggdist() +
   theme(legend.position = "none")

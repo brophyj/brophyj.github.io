@@ -23,15 +23,24 @@ It is important to have a clear understanding of the diagnostic, treatment and o
 
 ![DAPT](photos/images/TC4_scales.png){fig-align="center"}
 
-TC4 Ticagrelor compared to clopidogrel in acute coronary syndromes - the TC4 comparative effectiveness study
+Ticagrelor compared to clopidogrel in acute coronary syndromes (TC4) - the TC4 comparative effectiveness study
 
 CIHR funded project (2019-2023) looking at the comparative effectiveness of ticagrelor versus clopidogrel in acute coronary syndromes.     
 
 **Overview**
-Cardiovascular diseases, especially acute coronary syndromes (ACS) are a leading cause of mortality and morbidity. Antiplatelet medications have a long history of improving ACS survival and for the prevention of a secondary cardiac event. Based on the consistency and strength of multiple randomized controlled trials (RCTs), the dual antiplatelet therapy (DAPT), clopidogrel and aspirin, following an ACS event, had long been considered the gold standard in the leading clinical guidelines. More recently, a new DAPT regimen, ticagrelor and aspirin, has become the recommended strategy. However this is based largely on one large RCT with a limited number of North American patients (who did not show any incremental benefit). This project aimed to further explore the comparative effectiveness of these different treatments by performing a    
+Cardiovascular diseases, especially acute coronary syndromes (ACS) are a leading cause of mortality and morbidity. Antiplatelet medications have a long history of improving ACS survival and for the prevention of a secondary cardiac event. Based on the consistency and strength of multiple randomized controlled trials (RCTs), the dual antiplatelet therapy (DAPT), clopidogrel and aspirin, following an ACS event, had long been considered the gold standard in the leading clinical guidelines. More recently, a new DAPT regimen, ticagrelor and aspirin, has become the recommended strategy. However this is based largely on one large RCT with a limited number of North American patients (who did not show any incremental benefit).     
+The Ticagrelor Compared to Clopidogrel in aCute coronary syndromes – the TC4 trial (NCT04057300) – is a pragmatic, open-label, active control, time clustered randomized clinical trial designed to assess the effectiveness and safety of ticagrelor versus clopidogrel as DAPT therapy in a ACS population undergoing percutaneous coronary intervention (PCI) in a single tertiary academic center in Montreal, Canada.    
+  
+::: {style="color: red"}
+**In addition to a standalone analysis, our main Bayesian analysis will incorporate the 1800 PLATO NA patients as our prior distribution, essentially providing a \> 50% safety margin for our sample size calculations (see next section).**
+:::
+
+The complete funding protocol is found [here](upload/TC4protocol.pdf).  
+
+This research program will also explore the comparative effectiveness of these different treatments by performing a    
 i) [Bayesian network meta-analysis of all previous RCTs](https://www.medrxiv.org/content/10.1101/2023.08.12.23294021v1)     
 ii) Pharmacoepidemiology study using Quebec administrative databases (manuscript in progress)     
-iii) time clustered, randomized registry trial of 1,000 ACS patients (manuscript in progress)    
+    
 
 
 # (Mostly) Clinical Epidemiology with R      
