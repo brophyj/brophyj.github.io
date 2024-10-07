@@ -68,5 +68,5 @@ Barney (2011-) my great friend, running partner and favorite muse
 
 ![Sintra Portugal](photos/images/Portugal.jpeg){group="ipad" description="other" width="200"}
 
-![Westmount library](photos/images/westmount.jpeg){group="ipad" description="other" width="200" height="200"}
+![Westmount library](photos/images/westmount.jpeg){group="ipad" description="other" width="200" height="300"}
 :::
