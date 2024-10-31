@@ -1,0 +1,15 @@
+{
+  "hash": "d0efed4fa938c0b972ef7edd7f785c43",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Reflections on peer review - part 2\"\ndescription: \"How bad must it be before retraction is appropriate\"\nauthor:\n  - name: Jay Brophy\n    url: https://brophyj.github.io/\n    orcid: 0000-0001-8049-6875\n    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics\n    affiliation-url: https://mcgill.ca \ntags: []\ncategories: [Peer review, Transparency]\nimage: preview-image.jpg\ncitation: \n  url: https://brophyj.com/posts/2024-10-31-my-blog-post/ \ndate: 2024-10-31T14:39:55-05:00\nlastmod: 2024-10-31T14:39:55-05:00\nfeatured: true\ndraft: false\n# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.\nprojects: []\ncode-fold: true\neditor_options: \n  markdown: \n    wrap: sentence\nbibliography: [bib.bib]\nbiblio-style: apalike\n---\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

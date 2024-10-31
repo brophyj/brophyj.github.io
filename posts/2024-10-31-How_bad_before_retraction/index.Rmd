@@ -1,0 +1,240 @@
+---
+title: "Reflections on peer review - part 2"
+description: "How bad must it be before retraction?"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Peer review, Transparency]
+image: preview-image.jpg
+citation: 
+  url: https://brophyj.com/posts/2024-10-31-my-blog-post/ 
+date: 2024-10-31T14:39:55-05:00
+lastmod: 2024-10-31T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+bibliography: [bib.bib]
+biblio-style: apalike
+---
+
+```{r setup, echo=FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.align = "center")
+
+pacman::p_load(rio, # to import/export files
+               tidyverse, # Data wrangling and plotting
+               kableExtra, # To create tables
+               flextable, # To create tables
+               here, # To find file paths within R project
+               metafor, # To create priors from meta-analysis
+               janitor, # To change column names
+               ggdist, # To plot distributions
+               patchwork, # To arrange plots
+               bayesmeta,
+               dplyr,
+               brms,
+               rstan,
+               rstanarm,
+               tidybayes,
+               ggridges,
+               distributional,
+               cmdstanr, 
+               modelsummary,
+               knitr
+               )
+
+options(knitr.table.format = "html")
+options(knitr.kable.NA = '   ')
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+options(scipen = 1, digits = 2) #set to two decimal 
+
+```
+
+## Background
+
+One of the news feeds I subscribe to (**ACC CV news**) reported the headline ["Ketogenic Diet Could Reduce The Risk For All-Cause Mortality By Up To 24%"]{style="color: red"} with a reference to an article published in [Nature Scientific Reports](https://www.nature.com/articles/s41598-024-73384-x)[@RN12246].
+Moreover it was reported that the results “suggest the keto diet did not increase the risk for cardiovascular disease-related death despite its content possibly contributing to a higher risk for cardiovascular diseases.” Sounds too good to be true so I had a look.
+
+## The journal
+
+I had previously heard of the journal, principally through its Nature branding but was quite unaware of much else, including its overall quality.
+Their [website](https://www.nature.com/srep/about) claims ["Scientific Reports is the 5th most-cited journal in the world, with more than 734,000 citations in 2023"]{style="color: red"}.
+Impressive!
+I also found their impact factor (IF) was 3.8.
+Now we are all aware of the quality limitations of IF but these numbers do raise some questions.
+$$Impact\,Factor = \frac{
+  Number\,of\,Citations\,in\,2023\,to\,articles\,from\,2021\,and\,2022}{
+    Number\,of\,Articles\,published\,in\,2021\,and\,2022}$$ Thus while the number of reported citations does seem impressive, the IF suggests either many of these citations refer to reports prior to 2021, these citations wouldn't count in the IF, or that the journal publishes an extraordinary high number of articles each year that dilutes the IF.
+
+## The authors
+
+Authors and Affiliations
+
+Xiaolong Qu Department of Cardiovascular Medicine, Renji Hospital, Shanghai Jiaotong University School of Medicine, 160 Pujian Road, Pudong New Area, Shanghai, 200120, China
+
+Lei Huang & Jiacheng Rong
+
+Department of Cardiology, Renji Hospital Ningbo Branch, Shanghai Jiao Tong University School of Medicine, 1155 Binhai 2nd Road, Hangzhou Bay New District, Ningbo, 315336, China
+
+According to [Google Scholar](https://scholar.google.co.uk/scholar?hl=en&as_sdt=0%2C5&inst=8527805794314243738&q=author%3A%22Lei+Huang%22+AND+author%3A%22Jiacheng+Rong%22+&btnG=) they have previously published 8 articles together.
+
+## The data
+
+This study used 43,776 adults from the National Health and Nutrition Examination Survey [(NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm) conducted between 2001 and 2018 to investigate the potential association between dietary ketogenic ratio (DKR) and both all-cause mortality and cardiovascular disease (CVD) mortality.
+
+## Their results
+
+Using an adjusted Cox proportional hazards regression analysis the authors report a significant inverse association was observed between the dietary ketogenic ratio (DKR) and all-cause mortality (HR = 0.76, 95% CI = 0.63–0.9, P = 0.003).
+However, no significant association with cardiovascular mortality was found (HR = 1.13; CI = 0.79–1.6; P = 0.504).
+
+## Their conclusions
+
+"In the adult population of the United States, adherence to a KD exhibits potential in reducing all-cause mortality risk while not posing an increased threat of CVD-related fatalities."
+
+## My issues (in no particular order)
+
+1.  Measurement error: The exposure variable DKR is never measured.
+    The authors report DKR is calculated based on an equation proposed in a 1980 publication entitled "The ketogenic diet: mechanism of anticonvulsant action"[@RN12245].
+    The exact equation and the population is was derived from and relationship to the study population is unknown.
+    This is in addition to the usual measurement errors associated with dietary 24 hour recall studies.
+
+2.  Selection bias: The study population of eligible adults was 50,201 and 43,776 were analysed.
+    It is unknown in this missing 13% resulted in selection bias but the possibility certainly exists.
+
+3.  Inferential errors: i) The authors report "no significant association with cardiovascular mortality was found (HR = 1.13; CI = 0.79–1.6; P = 0.504)." Classic error of "absence of evidence is not evidence of absence". The data is compatible upon repeated sampling with a potential 60% increase in cardiovascular mnortality. ii) Questionable causal inferences "Additional investigations are warranted to comprehensively comprehend the mechanisms underlying these observed associations and ascertain the feasibility and long-term sustainability of implementing a ketogenic diet for population-wide health benefits."
+
+4.  Poor reporting: i) The actual DKR values are not provided.
+    Instead we are only given quartile distributions among the deceased and survivors.ii) no discussion of the impact of researcher degrees of freedom in the choice of the 2 adjusted models iii) no discussion of model mis-specification iv) no verification of the Cox model assumptions.
+
+5.  Questionable data analysis: Here is a summary of the key elements of the baseline data according to survival status.
+
+```{r warning=FALSE}
+library(gt)
+
+# Create the data frame
+data <- data.frame(
+  Characteristic = c("Gender", "Gender", "Age, y", "Age, y", "Age, y", "DKR", "DKR", "DKR", "DKR"),
+  Category = c("Male", "Female", "< 40", "40–60", "≥ 60", "Q1", "Q2", "Q3", "Q4"),
+  Deceased = c("3,388 (56.0%)", "2,666 (44.0%)", "251 (4.1%)", "947 (15.6%)", "4,856 (80.2%)", 
+               "1,563 (25.8%)", "1,540 (25.4%)", "1,498 (24.7%)", "1,453 (24.0%)"),
+  Survival = c("17,758 (47.1%)", "19,964 (52.9%)", "14,908 (39.5%)", "13,121 (34.8%)", 
+               "9,693 (25.7%)", "9,374 (24.9%)", "9,414 (25.0%)", "9,443 (25.0%)", "9,491 (25.2%)"),
+  p_value = c("< 0.001", "", "< 0.001", "", "", "0.045", "", "", "")
+)
+
+# Create the gt table
+gt_table <- gt(data) %>%
+  tab_header(
+    title = "Study Characteristics and Outcomes"
+  ) %>%
+  cols_label(
+    Characteristic = "Characteristic",
+    Category = "Category",
+    Deceased = "Deceased (N = 6,054)",
+    Survival = "Survival (N = 37,722)",
+    p_value = "p-value"
+  ) %>%
+  fmt_markdown(columns = c(Deceased, Survival)) %>%
+  tab_options(
+    column_labels.border.bottom.width = px(1),
+    column_labels.border.bottom.style = "solid",
+    column_labels.border.bottom.color = "#D3D3D3",
+    table.width = pct(100),
+    data_row.padding = px(10)
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "gray95"),
+      cell_borders(sides = "bottom", color = "gray90", style = "solid", weight = px(1))
+    ),
+    locations = cells_body(
+      columns = everything(),
+      rows = TRUE
+    )
+  ) %>%
+  tab_style(
+    style = cell_text(align = "left"),
+    locations = cells_body(columns = vars(Characteristic, Category))
+  ) %>%
+  tab_style(
+    style = cell_text(align = "center"),
+    locations = cells_body(columns = vars(Deceased, Survival, p_value))
+  )
+
+gt_table
+
+```
+
+It is not clear where the p = 0.045 for DKR variable comes from.
+
+```{r}
+dkr_table <- matrix(c(1563, 1540, 1498, 1453, 9374, 9414, 9443, 9491), ncol = 2, byrow = TRUE)
+colnames(dkr_table) <- c("Deceased", "Survival")
+rownames(dkr_table) <- c("Q1", "Q2", "Q3", "Q4")
+chisq.test(dkr_table)
+```
+
+This is worrisome and provides stimulus to look at the outcomes.
+Obviously without the raw data, we are very limited to the unadjusted models.
+The authors report the following for the unadjusted model
+
+| Unadjusted model | Q1  | Q2               | Q3                | Q4               |
+|----------------|-----------|----------------|----------------|----------------|
+|                  | 1   | 1.03(0.96, 1.10) | 1.05(0.97, 1.12)  | 1.05(0.98, 1.13) |
+
+Now this can be verified using the baseline data provided
+Here's the calculation for each quartile:
+
+Q1: Risk = 1563 / (1563 + 9374)    
+ 
+Q2: Risk = 1540 / (1540 + 9414)         
+
+Q3: Risk = 1498 / (1498 + 9443)    
+
+Q4: Risk = 1453 / (1453 + 9491)  
+
+$$Risk\,ratio_{Q1,Q2} = \frac{Q1\,risk}{Q2\,risk} = 0.984$$
+Results for the other RR and 95%CI are easily calculated 
+```{r message=FALSE, warning=FALSE}
+library(epiR)
+
+# Define the counts of deceased and survival for each quartile
+deceased <- c(1563, 1540, 1498, 1453)
+survival <- c(9374, 9414, 9443, 9491)
+
+# Calculating the risk ratio and 95% CI using Q1 as the exposed control
+results <- lapply(2:4, function(i) {
+  # Create the 2x2 table for each comparison with correct exposure designation
+  # Exposed (Q1) first, then Unexposed (Q2, Q3, Q4)
+  table <- matrix(c(deceased[i], survival[i], deceased[1], survival[1]), nrow = 2, byrow = TRUE)
+  colnames(table) <- c("Deceased", "Survival")
+  rownames(table) <- c(sprintf("Q%d (Unexposed)", i), "Q1 (Exposed)")
+  
+  # Calculate the risk ratios using epi.2by2
+  epiR::epi.2by2(table, method = "cohort.count", conf.level = 0.95)
+})
+results
+```
+ So if the unadjusted results are totally different from what has been reported, how could anyone have the slightest confidence in a magically derived adjusted model, especially when considered in the context of the reservations noted above?           
+ 
+ Should the authors maintain their confidence in their findings they should share the dataset and the statistical code that generated these findings.     
+ 
+ The problems herein are aggravated by the imprimatur provided by publication in a Nature journal and of using a highly recognizable dataset which has historically been analyzed with much rigour and care.        
+ 
+ According to Altmetric, this article is in the 98th percentile (ranked 3,956th) of the 209,240 tracked articles of a similar age in all journals!
+
+
+::: {style="color: red"}
+Now that I have vented, it is time to get back to more enjoyable weekend activities.
+:::

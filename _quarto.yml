@@ -41,23 +41,21 @@ website:
       - text: Art
         href: example.qmd
     right:
-      - text: "{{< iconify fa6-brands orcid >}}"
+      - text: "<i class='fab fa-orcid'></i>"
         href: "https://orcid.org/my-orcid?orcid=0000-0001-8049-6875"
         aria-label: "ORCID logo linking to ORCID account"
-      - text: "{{< iconify fa6-brands mastodon >}}"
+      - text: "<i class='fab fa-mastodon'></i>"
         href: "https://mastodon.social/@brophyj"
         aria-label: "Mastodon logo linking to account"
-        rel: me
-      - text: "{{< iconify fa6-brands twitter >}}"
-        href: "https://twitter.com/brophyjl"
+      - text: "<i class='fab fa-twitter'></i>"
+        href: "https://twitter.com/brophyj"
         aria-label: "Twitter logo linking to account"
-      - text: "{{< iconify fa6-brands linkedin >}}"
+      - text: "<i class='fab fa-linkedin-in'></i>"
         href: "https://www.linkedin.com/in/brophyj/"
         aria-label: "LinkedIn logo linking to account"
-      - text: "{{< iconify fa6-brands github >}}"
+      - text: "<i class='fab fa-github'></i>"
         href: "https://github.com/brophyj"
         aria-label: "GitHub logo linking to account"
-
 format:
   html:
     theme:
