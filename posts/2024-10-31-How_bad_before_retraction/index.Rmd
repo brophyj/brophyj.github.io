@@ -1,6 +1,6 @@
 ---
 title: "Reflections on peer review - part 2"
-description: "How bad must it be before retraction?"
+description: "How bad must it be before retraction"
 author:
   - name: Jay Brophy
     url: https://brophyj.github.io/
@@ -236,5 +236,5 @@ results
 
 
 ::: {style="color: red"}
-Now that I have vented, it is time to get back to more enjoyable weekend activities.
+Now that I have vented, it is time to get back to other activities.
 :::
