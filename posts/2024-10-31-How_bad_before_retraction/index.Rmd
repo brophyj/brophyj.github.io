@@ -1,6 +1,6 @@
 ---
 title: "Reflections on peer review - part 2"
-description: "How bad must it be before retraction"
+description: "How bad must it be before retraction?"
 author:
   - name: Jay Brophy
     url: https://brophyj.github.io/
@@ -110,9 +110,9 @@ However, no significant association with cardiovascular mortality was found (HR 
     This is in addition to the usual measurement errors associated with dietary 24 hour recall studies.
 
 2.  Selection bias: The study population of eligible adults was 50,201 and 43,776 were analysed.
-    It is unknown in this missing 13% resulted in selection bias but the possibility certainly exists.
+    It is unknown if this missing 13% resulted in selection bias but the possibility certainly exists.
 
-3.  Inferential errors: i) The authors report "no significant association with cardiovascular mortality was found (HR = 1.13; CI = 0.79–1.6; P = 0.504)." Classic error of "absence of evidence is not evidence of absence". The data is compatible upon repeated sampling with a potential 60% increase in cardiovascular mnortality. ii) Questionable causal inferences "Additional investigations are warranted to comprehensively comprehend the mechanisms underlying these observed associations and ascertain the feasibility and long-term sustainability of implementing a ketogenic diet for population-wide health benefits."
+3.  Inferential errors: i) The authors report "no significant association with cardiovascular mortality was found (HR = 1.13; CI = 0.79–1.6; P = 0.504)." Classic error of "absence of evidence is not evidence of absence"[@RN4395][@RN4841]. The data is compatible upon repeated sampling with a potential 60% increase in cardiovascular mortality. ii) Questionable causal inferences "Additional investigations are warranted to comprehensively comprehend the mechanisms underlying these observed associations and ascertain the feasibility and long-term sustainability of implementing a ketogenic diet for population-wide health benefits."
 
 4.  Poor reporting: i) The actual DKR values are not provided.
     Instead we are only given quartile distributions among the deceased and survivors.ii) no discussion of the impact of researcher degrees of freedom in the choice of the 2 adjusted models iii) no discussion of model mis-specification iv) no verification of the Cox model assumptions.
@@ -186,7 +186,7 @@ chisq.test(dkr_table)
 ```
 
 This is worrisome and provides stimulus to look at the outcomes.
-Obviously without the raw data, we are very limited to the unadjusted models.
+Obviously without the raw data, we are limited to looking at the unadjusted models.
 The authors report the following for the unadjusted model
 
 | Unadjusted model | Q1  | Q2               | Q3                | Q4               |
@@ -204,7 +204,7 @@ Q3: Risk = 1498 / (1498 + 9443)
 
 Q4: Risk = 1453 / (1453 + 9491)  
 
-$$Risk\,ratio_{Q1,Q2} = \frac{Q1\,risk}{Q2\,risk} = 0.984$$
+$$Risk\,ratio_{Q2,Q1} = \frac{Q2\,risk}{Q1\,risk} = \frac{1540 / (1540 + 9414)}{1563/(1563 + 9374) } = 0.984$$
 Results for the other RR and 95%CI are easily calculated 
 ```{r message=FALSE, warning=FALSE}
 library(epiR)
