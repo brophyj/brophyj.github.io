@@ -11,7 +11,7 @@ tau:
 med:
   pdf: "upload/MA.pdf"
 quarto_html:
-  revealjs: "upload/Quarto_Presentation.html"
+  revealjs: "upload/cardiology1_nov2024.html"
 ---
 
 <p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
