@@ -8,7 +8,7 @@ author:
     affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
     affiliation-url: https://mcgill.ca 
 tags: []
-categories: [Peer review, Transparency]
+categories: [Bayesian, RCTs]
 image: preview-image.jpg
 citation: 
   url: https://brophyj.com/posts/2024-11-03-my-blog-post/ 
