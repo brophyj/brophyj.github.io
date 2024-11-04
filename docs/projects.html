@@ -40,7 +40,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/iconify-1.0.8/iconify-icon.min.js"></script>
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -135,23 +134,23 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="https://orcid.org/my-orcid?orcid=0000-0001-8049-6875"> 
-<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:orcid"></iconify-icon></span></a>
+<span class="menu-text"><i class="fab fa-orcid"></i></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mastodon.social/@brophyj" rel="me"> 
-<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:mastodon"></iconify-icon></span></a>
+    <a class="nav-link" href="https://mastodon.social/@brophyj"> 
+<span class="menu-text"><i class="fab fa-mastodon"></i></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/brophyjl"> 
-<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:twitter"></iconify-icon></span></a>
+    <a class="nav-link" href="https://twitter.com/brophyj"> 
+<span class="menu-text"><i class="fab fa-twitter"></i></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://www.linkedin.com/in/brophyj/"> 
-<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:linkedin"></iconify-icon></span></a>
+<span class="menu-text"><i class="fab fa-linkedin-in"></i></span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/brophyj"> 
-<span class="menu-text"><iconify-icon inline="" icon="fa6-brands:github"></iconify-icon></span></a>
+<span class="menu-text"><i class="fab fa-github"></i></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -716,7 +715,7 @@ dateElements.forEach((el) => {
   );
 });
 </script>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
