@@ -733,5 +733,96 @@
     "title": "Personal beliefs",
     "section": "Graphical presentation",
     "text": "Graphical presentation\nUnderstanding these results is facilitated with graphical presentations\n\nCode# Assuming rr_vector is already defined\nd &lt;- density(rr_vector)\ndensity_df &lt;- data.frame(x = d$x, y = d$y)\n\n# Assign categories based on the x values\ndensity_df$category &lt;- ifelse(density_df$x &lt; 0.9, \"benefit\",\n                              ifelse(density_df$x &lt;= 1.1, \"equivalence\", \"harm\"))\n\np &lt;- ggplot(density_df, aes(x = x, y = y)) +\n  geom_area(data = subset(density_df, category == \"benefit\"), fill = \"green\", alpha = 0.5) +\n  geom_area(data = subset(density_df, category == \"equivalence\"), fill = \"yellow\", alpha = 0.5) +\n  geom_area(data = subset(density_df, category == \"harm\"), fill = \"red\", alpha = 0.5) +\n  geom_vline(xintercept = 0.9, linetype = \"dashed\", color = \"black\") +\n  geom_vline(xintercept = 1.1, linetype = \"dashed\", color = \"black\") +\n  labs(title=\"Density Plot of Relative Risk based on CLEAR OASIS\",\n       subtitle = \"with an informative (COLCOT) prior\") +\n  theme_classic() +\n  scale_x_continuous(expand = c(0, 0)) +  # No expansion on x-axis\n  scale_y_continuous(expand = c(0, 0)) +  # No expansion on y-axis\n  xlab(\"Relative Risk\") +\n  ylab(\"Density\")\n\np &lt;- p + \n  annotate(\"text\", x = 0.80, y = max(density_df$y, na.rm = TRUE) * 0.6, label = \"Green\", color = \"green\", size = 5, fontface = \"bold\") +\n  annotate(\"text\", x = 0.86, y = max(density_df$y, na.rm = TRUE) * 0.56, label = \" = region of clinical benefit\", color = \"black\", size = 5) +\n  annotate(\"text\", x = 0.8, y = max(density_df$y, na.rm = TRUE) * 0.8, label = \"Yellow\", color = \"yellow\", size = 5, fontface = \"bold\") +\n  annotate(\"text\", x = .90, y = max(density_df$y, na.rm = TRUE) * 0.76, label = \" = region of practical equivalence\", color = \"black\", size = 5) +\n  annotate(\"text\", x = 1.00, y = max(density_df$y, na.rm = TRUE) * 0.4, label = \"Red\", color = \"red\", size = 5, fontface = \"bold\") +\n  annotate(\"text\", x = 1.07, y = max(density_df$y, na.rm = TRUE) * 0.33, label = \" = region of clinical harm\", color = \"black\", size = 5)\n\np\n\n\n\n\n\n\n\nThe PI who was a “believer” prior to his study now claims after the study to be a non-believer (to the extent that he apparently stopped the medication that was previously prescribed to his father). Yet based on his positive prior beliefs (if these can be approximated by the COLCOT RCT positive result) there is a suggestion that there remains a 42% probability of a clinically meaningful decrease in CV risk with colchicine, a 58% probability of clinical equivalence with placebo and no probability of increased cardiovascular outcomes.\nMany clinicians do seem overly influenced by the last trial, particularly if they were intimately involved in it. This of course does not imply that I would prescribe colchicine for this condition as any decision should also consider cost, other side effects, and patient preferences incuding there personalized choices about what represents a clinically meaningful thresholds. For the current PI to now be a disbeliever, perhaps his cutpoint for efficacy was RR &lt; 0.80 and indeed this posterior probability is indeed very small. However this would imply that his prior efficacy belief based on COLCOT should also be based on the a probability of RR &lt; 0.80 which was only 60%. This seems a fairly modest probability to have been a strong “believer” in this therapy before the current study. The reconciliation of these different beliefs is somewhat difficult. My main point is dichotomizing beliefs is about as useful as the dichotomization of p values according to &lt; or &gt; 0.05,IOW not very useful at all. Bayesian reasoning can help avoid the cognitive difficulties that are often present in interpreting RCTs, especially in the context of previous knowledge."
+  },
+  {
+    "objectID": "upload/libs/reveal.js/examples/markdown.html",
+    "href": "upload/libs/reveal.js/examples/markdown.html",
+    "title": "Markdown Demo",
+    "section": "",
+    "text": "Content 1.1\nNote: This will only appear in the speaker notes window.\n\n\n\nContent 1.2\n\n\n\nContent 2.1\n\n\n\nContent 3.1\n\n\n\nContent 3.2\n\n\n\n\n\n\nExternal Image\n\n\n\n\n\nExternal Image"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/examples/markdown.html#external-1.1",
+    "href": "upload/libs/reveal.js/examples/markdown.html#external-1.1",
+    "title": "Markdown Demo",
+    "section": "",
+    "text": "Content 1.1\nNote: This will only appear in the speaker notes window."
+  },
+  {
+    "objectID": "upload/libs/reveal.js/examples/markdown.html#external-1.2",
+    "href": "upload/libs/reveal.js/examples/markdown.html#external-1.2",
+    "title": "Markdown Demo",
+    "section": "",
+    "text": "Content 1.2"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/examples/markdown.html#external-2",
+    "href": "upload/libs/reveal.js/examples/markdown.html#external-2",
+    "title": "Markdown Demo",
+    "section": "",
+    "text": "Content 2.1"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/examples/markdown.html#external-3.1",
+    "href": "upload/libs/reveal.js/examples/markdown.html#external-3.1",
+    "title": "Markdown Demo",
+    "section": "",
+    "text": "Content 3.1"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/examples/markdown.html#external-3.2",
+    "href": "upload/libs/reveal.js/examples/markdown.html#external-3.2",
+    "title": "Markdown Demo",
+    "section": "",
+    "text": "Content 3.2"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/examples/markdown.html#external-3.3",
+    "href": "upload/libs/reveal.js/examples/markdown.html#external-3.3",
+    "title": "Markdown Demo",
+    "section": "",
+    "text": "External Image\n\n\n\n\n\nExternal Image"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/test/simple.html",
+    "href": "upload/libs/reveal.js/test/simple.html",
+    "title": "jay's website",
+    "section": "",
+    "text": "var a = 1;"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/test/simple.html#slide-1.1",
+    "href": "upload/libs/reveal.js/test/simple.html#slide-1.1",
+    "title": "jay's website",
+    "section": "",
+    "text": "var a = 1;"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/test/simple.html#slide-1.2",
+    "href": "upload/libs/reveal.js/test/simple.html#slide-1.2",
+    "title": "jay's website",
+    "section": "Slide 1.2",
+    "text": "Slide 1.2"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/test/simple.html#slide-2",
+    "href": "upload/libs/reveal.js/test/simple.html#slide-2",
+    "title": "jay's website",
+    "section": "Slide 2",
+    "text": "Slide 2"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/CONTRIBUTING.html",
+    "href": "upload/libs/reveal.js/CONTRIBUTING.html",
+    "title": "jay's website",
+    "section": "",
+    "text": "Please keep the issue tracker limited to bug reports, feature requests and pull requests.\n\n\nIf you have personal support or setup questions the best place to ask those are StackOverflow.\n\n\n\nWhen reporting a bug make sure to include information about which browser and operating system you are on as well as the necessary steps to reproduce the issue. If possible please include a link to a sample presentation where the bug can be tested.\n\n\n\n\nShould follow the coding style of the file you work in, most importantly:\n\nTabs to indent\nSingle-quoted strings\n\nShould be made towards the dev branch\nShould be submitted from a feature/topic branch (not your master)\n\n\n\n\nPlease do not submit plugins as pull requests. They should be maintained in their own separate repository. More information here: https://github.com/hakimel/reveal.js/wiki/Plugin-Guidelines"
+  },
+  {
+    "objectID": "upload/libs/reveal.js/CONTRIBUTING.html#contributing",
+    "href": "upload/libs/reveal.js/CONTRIBUTING.html#contributing",
+    "title": "jay's website",
+    "section": "",
+    "text": "Please keep the issue tracker limited to bug reports, feature requests and pull requests.\n\n\nIf you have personal support or setup questions the best place to ask those are StackOverflow.\n\n\n\nWhen reporting a bug make sure to include information about which browser and operating system you are on as well as the necessary steps to reproduce the issue. If possible please include a link to a sample presentation where the bug can be tested.\n\n\n\n\nShould follow the coding style of the file you work in, most importantly:\n\nTabs to indent\nSingle-quoted strings\n\nShould be made towards the dev branch\nShould be submitted from a feature/topic branch (not your master)\n\n\n\n\nPlease do not submit plugins as pull requests. They should be maintained in their own separate repository. More information here: https://github.com/hakimel/reveal.js/wiki/Plugin-Guidelines"
   }
 ]

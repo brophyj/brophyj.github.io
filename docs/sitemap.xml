@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://brophyj.com/publications.html</loc>
-    <lastmod>2024-09-29T23:27:28.839Z</lastmod>
+    <lastmod>2024-11-27T20:36:19.624Z</lastmod>
   </url>
   <url>
     <loc>https://brophyj.com/projects.html</loc>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://brophyj.com/index.html</loc>
-    <lastmod>2024-10-30T21:10:56.263Z</lastmod>
+    <lastmod>2024-11-27T20:35:37.940Z</lastmod>
   </url>
   <url>
     <loc>https://brophyj.com/example.html</loc>
@@ -167,5 +167,17 @@
   <url>
     <loc>https://brophyj.com/posts/2024-11-04-Personal_beliefs/index.html</loc>
     <lastmod>2024-11-04T00:24:36.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brophyj.com/upload/libs/reveal.js/examples/markdown.html</loc>
+    <lastmod>2020-10-12T09:51:04.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brophyj.com/upload/libs/reveal.js/test/simple.html</loc>
+    <lastmod>2020-10-12T09:51:04.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://brophyj.com/upload/libs/reveal.js/CONTRIBUTING.html</loc>
+    <lastmod>2020-10-12T09:51:04.000Z</lastmod>
   </url>
 </urlset>
