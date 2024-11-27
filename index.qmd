@@ -27,12 +27,19 @@ about:
     - text: "<i class='fab fa-github'></i>"
       href: "https://github.com/brophyj"
       aria-label: "GitHub logo linking to account"
+    - text: "<i class='fab fa-bluesky'></i>"
+      href: "https://bsky.app/profile/brophyj.bsky.social"
+      aria-label: "Bluesky logo linking to account"
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-    fig-align: center    
+    fig-align: center 
+    header-includes:
+      - "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>"
+
+ 
 ---
 
 ::: {#edu-exp}
