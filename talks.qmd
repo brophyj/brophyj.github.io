@@ -28,7 +28,7 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 <p class="text-center">
 
-<a class="btn btn-primary btn-lg cv-download" href="upload/cardiology1_nov2024.html" target="_blank"> <i class="fa-solid fa-file-arrow-down"></i>View Presentation (opens in new tab) </a>
+<a class="btn btn-primary btn-lg cv-download" href="upload/hier_lecture.html" target="_blank"> <i class="fa-solid fa-file-arrow-down"></i>View Presentation (opens in new tab) </a>
 
 </p>
 
@@ -42,15 +42,7 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 </p>
 
-<div>
-
-<iframe src="`r rmarkdown::metadata$quarto_html$revealjs`" style="border: 0.5px">
-
-</iframe>
-
-</div>
-
--   2023
+#  2023
 
 <!-- -->
 
