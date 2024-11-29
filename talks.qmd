@@ -22,17 +22,37 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 # 2024
 
+-   **Hierarchical models**\
+    McGill University, Department of Epidemiology, Nov 2024\
+    **Summary** - Lecture to PhD students (EPIB706) of the benefits of and procedures for performing hierarchical modelling
+
+<p class="text-center">
+
+<a class="btn btn-primary btn-lg cv-download" href="upload/cardiology1_nov2024.html" target="_blank"> <i class="fa-solid fa-file-arrow-down"></i>View Presentation (opens in new tab) </a>
+
+</p>
+
 -   **An Introduction to Statistics for Cardiologists**\
     McGill University Health Centre, Division of Cardiology Grand Rounds, Nov 2024\
     **Summary** - Some not so random reflections on statistical concepts tailored for cardiologists
 
 <p class="text-center">
-    <a class="btn btn-primary btn-lg cv-download" href="upload/cardiology1_nov2024.html" target="_blank">
-        <i class="fa-solid fa-file-arrow-down"></i>View Presentation (opens in new tab)
-    </a>
+
+<a class="btn btn-primary btn-lg cv-download" href="upload/cardiology1_nov2024.html" target="_blank"> <i class="fa-solid fa-file-arrow-down"></i>View Presentation (opens in new tab) </a>
+
 </p>
 
-# 2023
+<div>
+
+<iframe src="`r rmarkdown::metadata$quarto_html$revealjs`" style="border: 0.5px">
+
+</iframe>
+
+</div>
+
+-   2023
+
+<!-- -->
 
 -   **An introduction to systematic reviews and (sometimes) meta-analysis**\
     McGill University Medical School Lecture, Montreal QC, Nov 30 2023\
@@ -46,7 +66,9 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 <div>
 
-<iframe src="`r rmarkdown::metadata$med$pdf`" style="border: 0.5px"></iframe>
+<iframe src="`r rmarkdown::metadata$med$pdf`" style="border: 0.5px">
+
+</iframe>
 
 </div>
 
@@ -62,7 +84,9 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 <div>
 
-<iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>
+<iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px">
+
+</iframe>
 
 </div>
 
@@ -80,7 +104,9 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 <div>
 
-<iframe src="`r rmarkdown::metadata$muhc$pdf`" style="border: 0.5px"></iframe>
+<iframe src="`r rmarkdown::metadata$muhc$pdf`" style="border: 0.5px">
+
+</iframe>
 
 </div>
 
@@ -96,6 +122,8 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 <div>
 
-<iframe src="`r rmarkdown::metadata$tau$pdf`" style="border: 0.5px"></iframe>
+<iframe src="`r rmarkdown::metadata$tau$pdf`" style="border: 0.5px">
+
+</iframe>
 
 </div>
