@@ -24,7 +24,7 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 -   **Hierarchical models**\
     McGill University, Department of Epidemiology, Nov 2024\
-    **Summary** - Lecture to PhD students (EPIB706) of the benefits of and procedures for performing hierarchical modelling
+    **Summary** - Lecture to PhD students (EPIB704) on the benefits of and procedures for performing hierarchical modelling
 
 <p class="text-center">
 
