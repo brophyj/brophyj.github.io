@@ -20,6 +20,18 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 </p>
 
+# 2025
+
+-   **Doctoral seminar - Epidemiology 706**\
+    McGill University, Department of Epidemiology, Winter 2025\
+    **Summary** - 706 is a PhD-level seminar aimed at providing space for students to engage with over-arching concepts critical to the theory and practice of epidemiology, as well to explore recent controversies and debates in the field. The purpose of this course to reinforce your formal methodological coursework by making space to develop and sharpen your critical thinking skills.
+
+<p class="text-center">
+
+<a class="btn btn-primary btn-lg cv-download" href="upload/epib706.html" target="_blank"> <i class="fa-solid fa-file-arrow-down"></i>Syllabus (opens in new tab) </a>
+
+</p>
+
 # 2024
 
 -   **Hierarchical models**\
