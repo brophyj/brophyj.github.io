@@ -11,9 +11,9 @@ tags: []
 categories: [Bayesian, RCTs]
 image: preview-image.jpg
 citation: 
-  url: https://brophyj.com/posts/2024-11-03-my-blog-post/ 
-date: 2024-11-03T14:39:55-05:00
-lastmod: 2024-11-03T14:39:55-05:00
+  url: https://brophyj.com/posts/2024-11-04-my-blog-post/ 
+date: 2024-11-04T14:39:55-05:00
+lastmod: 2024-11-04T14:39:55-05:00
 featured: true
 draft: false
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
