@@ -32,6 +32,17 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 </p>
 
+
+-   **Statistics, uncertainty and the physician**\
+    McGill University Health Centre, Department of Medicine Grand Rounds, Jan 7 2025\
+    **Summary** - Some not so random reflections on statistical concepts tailored for general internists and cardiologists
+
+<p class="text-center">
+
+<a class="btn btn-primary btn-lg cv-download" href="upload/Jan7Rounds.html" target="_blank"> <i class="fa-solid fa-file-arrow-down"></i>View Presentation (opens in new tab) </a>
+
+</p>
+
 # 2024
 
 -   **Hierarchical models**\
