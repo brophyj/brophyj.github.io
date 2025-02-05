@@ -146,4 +146,12 @@ One of the main advantages of this approach is that it assists in differentiatin
 <br>
 In conclusion from my perspective, although these initial trial results are very promising, it would seem prudent to request a confirmation study, ideally mainly in a North American population, before committing a large amount of resources to this drug. In most healthcare systems, resources are not a continually expanding commodity and a commitment to this drug will come with a reduction of resources elsewhere and hence the need to make maximally informed decisions.
 
+## Update 2/2025    
+
+[MOVe-OUT](https://www.ncbi.nlm.nih.gov/pubmed/34914868) was published in the NEJM \       
+\    
+\    
+Interestingly, later RCTs comparing molnupiravir tp placebo, [PANORAMIC](https://www.ncbi.nlm.nih.gov/pubmed/36566761)(n > 25000), [MOVe-AHEAD](https://www.ncbi.nlm.nih.gov/pubmed/37690669)(n > 1500), showed no benefit for their primary outcome measures!
+
+
 
