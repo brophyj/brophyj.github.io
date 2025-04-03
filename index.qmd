@@ -54,7 +54,7 @@ Have a look at my {{< iconify fa6-regular file-lines >}} \
 
 <details>
   <summary>curriculum vitae - html version</summary>
-  <iframe src="https://drive.google.com/file/d/1QrGbteOqLGFgH3nBBm1i1RSs-lNyTjiq/view?usp=drive_link" style="width: 100%; height: 800px; border: none;"></iframe>
+  <iframe src="https://github.com/brophyj/brophyj.github.io/blob/master/CV_quarto.html" style="width: 100%; height: 800px; border: none;"></iframe>
 </details>
 
 
