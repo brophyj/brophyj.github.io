@@ -51,7 +51,8 @@ James (Jay) Brophy is a tenured (full) professor with a joint appointment in the
 
 Have a look at my {{< iconify fa6-regular file-lines >}} \   
 [curriculum vitae - pdf version](https://drive.google.com/file/d/1SJT-nKQFrQVx7kbf9bsnt9hWMQ1fHQR-/view?usp=drive_link) \    
-[curriculum vitae - html version]<iframe src="https://drive.google.com/file/d/1QrGbteOqLGFgH3nBBm1i1RSs-lNyTjiq/view?usp=drive_link" style="width: 100%; height: 800px; border: none;"></iframe>
+
+[curriculum vitae - html version](https://drive.google.com/file/d/1QrGbteOqLGFgH3nBBm1i1RSs-lNyTjiq/view?usp=drive_link){target="_blank"}
 
 
    
