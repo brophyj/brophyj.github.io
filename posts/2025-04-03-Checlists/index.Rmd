@@ -72,11 +72,11 @@ No consideration about the novelty or scientific merit of the manuscript, just a
 After a couple of days reflecting, I decided to share my thoughts with BMJ Open and sent them the following email.\    
 
 ![](images/stroke/s7.png)
-I received a very nice acknowledgement informing me that my email would be forwarded to the Editor.
+<font size="3">I received a very nice acknowledgement informing me that my email would be forwarded to the Editor.</font>
 
 ## Checklists, more emails and how not to get published 
 Of course, I didn't expect to hear from the editor and haven't been disappointed. After relaying this story in a seminar course that was discussing checklists and critical thinking, a student challenged me to follow-up with an additional email which follows\    
 
 ![](images/stroke/s8.png)
 
-I still have no reply to this email and the paper has been submitted to another journal. I do remain a bit saddened to realize that even editors of highly reputable journals seem all too ready to abandon critical thinking for the facility of anodyne checklists.
+<font size="5">I still have no reply to this email and the paper has been submitted to another journal. I do remain a bit saddened to realize that even editors of highly reputable journals seem all too ready to abandon critical thinking for the facility of anodyne checklists.</font>

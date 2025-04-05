@@ -14,29 +14,43 @@ lightbox: true
 Barney (2011-) my great friend, running partner and favorite muse
 
 ::: {layout="[[1, 1, 1], [1]]"}
-![Resting after a busy day](photos/images/BA2F5DDA-A4BB-404F-8013-02EC29CEA548_1_105_c.jpeg){group="elsewhere" description="Resting after a busy day."}
+![Resting after a busy day](photos/images/BA2F5DDA-A4BB-404F-8013-02EC29CEA548_1_105_c.jpeg){group="elsewhere" description=""}
 
-![Pround profile](photos/images/barn.jpg){group="elsewhere" description="Pround profile"}
+![Pround profile](photos/images/barn.jpg){group="elsewhere" description=""}
 
-![Enjoying the sunshine](photos/images/barn1.jpg){group="elsewhere" description="Enjoying the sunshine"}
+![Enjoying the sunshine](photos/images/barn1.jpg){group="elsewhere" description=""}
 :::
 
 ::: {layout="[[1, 1, 1], [1]]"}
-![With a friend](photos/images/barn2.jpg){group="elsewhere" description="Resting after a busy day."}
+![Waiting for Santa](photos/images/barn5.jpeg){group="elsewhere" description=""}
 
-![Snoozing](photos/images/barn3.jpeg){group="elsewhere" description="Pround profile"}
+![Still waiting](photos/images/barn6.jpeg){group="elsewhere" description=""}
 
-![Snoozing with a friend](photos/images/barn4.jpeg){group="elsewhere" description="Enjoying the sunshine"}
+![Looking good](photos/images/barn7.jpeg){group="elsewhere" description=""}
+
+
+:::
+
+::: {layout="[[1, 1, 1], [1]]"}
+![With a friend](photos/images/barn2.jpg){group="elsewhere" description=""}
+
+![Snoozing](photos/images/barn3.jpeg){group="elsewhere" description=""}
+
+![Snoozing with a friend](photos/images/barn4.jpeg){group="elsewhere" description=""}
 :::
 
 ## Barney iPad drawings
 
-::: {layout-ncol="3"}
-![Stately](photos/images/barni.png){group="ipad" description="Barney" width="200"}
+::: {layout-ncol="4"}
+![Stately](photos/images/barni.png){group="ipad" description="iPad drawings" width="200"}
 
-![Where is everyone?](photos/images/barni1.jpeg){group="ipad" description="\"Barney"}
+![Where is everyone?](photos/images/barni1.jpeg){group="ipad" description="iPad drawings"}
 
-![Waiting for ...](photos/images/barni2.jpg){fig-alt="A drawing of an elephant."}
+
+![Waiting for ...](photos/images/barni2.jpg){group="ipad" description="iPad drawings"}
+
+![Hiking](photos/images/barney_ipad.jpeg){group="ipad" description="iPad drawings" width="200"}
+
 :::
 
 ## Barney photos
@@ -46,27 +60,65 @@ Barney (2011-) my great friend, running partner and favorite muse
 ## Other paintings
 
 ::: {layout-ncol="3"}
-![Flowers](photos/images/flowers.jpg){group="ipad" description="other" width="200"}
+![Flowers](photos/images/flowers.jpg){group="ipad" description="" width="200"}
 
-![Poppies](photos/images/poppies.jpg){group="ipad" description="other" width="200"}
+![Poppies](photos/images/poppies.jpg){group="ipad" description="" width="200"}
 
-![Sheep](photos/images/sheep.jpeg){group="ipad" description="other" width="200"}
+![Flowers1](photos/images/flowers1.jpeg){group="ipad" description="" width="200"}
 
-![Flowers1](photos/images/flowers1.jpeg){group="ipad" description="other" width="200"}
 
-![Bunny](photos/images/Bunny.jpeg){group="ipad" description="other" width="200"}
 
-![From Sargent](photos/images/sargent.jpg){group="ipad" description="other" width="200"}
 
-![Winter](photos/images/winter1.jpeg){group="ipad" description="other" width="200"}
 
-![Winter1](photos/images/winter2.jpeg){group="ipad" description="other" width="200"}
+![Sheep](photos/images/sheep.jpeg){group="ipad" description="" width="200"}
 
-![Zuna](photos/images/zuna.jpg){group="ipad" description="other" width="200"}
+![Sheep1](photos/images/sheep1.jpg){group="ipad" description="" width="200"}
 
-![Venice](photos/images/Venice.jpeg){group="ipad" description="other" width="200"}
 
-![Sintra Portugal](photos/images/Portugal.jpeg){group="ipad" description="other" width="200"}
+![Sheep2](photos/images/sheep2.jpeg){group="ipad" description="" width="200"}
 
-![Westmount library](photos/images/westmount.jpeg){group="ipad" description="other" width="200" height="300"}
+
+![Sons & grandsons](photos/images/sons.jpeg){group="ipad" description="" width="200"}
+
+![Sons & grandsons1](photos/images/sons2.jpeg){group="ipad" description="" width="200"}
+
+![Grandson](photos/images/jake.jpeg){group="ipad" description="" width="200"}
+
+![Bunny](photos/images/Bunny.jpeg){group="ipad" description="" width="200"}
+
+![From Sargent](photos/images/sargent.jpg){group="ipad" description="" width="200"}
+
+![Waterfall](photos/images/waterfall.jpeg)
+
+
+
+![Winter](photos/images/winter1.jpeg){group="ipad" description="" width="200"}
+
+![Winter1](photos/images/winter2.jpeg){group="ipad" description="" width="200"}
+
+![Winter2](photos/images/winter3.jpeg){group="ipad" description="" width="200"}
+
+
+
+![Zuna](photos/images/zuna.jpg){group="ipad" description="" width="200"}
+
+
+![Zuna1](photos/images/zuna2.jpeg){group="ipad" description="" width="200"}
+
+
+![Zuna2](photos/images/zuna3.jpeg){group="ipad" description="" width="200"}
+
+
+![Zuna & Barney](photos/images/zuna_barney.jpeg){group="ipad" description="" width="200"}
+
+
+![Venice](photos/images/Venice.jpeg){group="ipad" description="" width="200"}
+
+![Venice1](photos/images/venice1.jpeg){group="ipad" description="" width="200"}
+
+
+![Sintra Portugal](photos/images/Portugal.jpeg){group="ipad" description="" width="200"}
+
+
+![Westmount library](photos/images/westmount.jpeg){group="ipad" description="" width="200" height="300"}
 :::
