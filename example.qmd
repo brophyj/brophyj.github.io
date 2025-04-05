@@ -31,7 +31,7 @@ Barney (2011-) my great friend, running partner and favorite muse
 
 :::
 
-::: {layout="[[1, 1, 1], [1]]"}
+::: {layout="[[1, 1, 1,1], [1]]"}
 ![With a friend](photos/images/barn2.jpg){group="elsewhere" description=""}
 
 ![Snoozing](photos/images/barn3.jpeg){group="elsewhere" description=""}
@@ -39,7 +39,9 @@ Barney (2011-) my great friend, running partner and favorite muse
 ![Snoozing with a friend](photos/images/barn4.jpeg){group="elsewhere" description=""}
 :::
 
+
 ## Barney iPad drawings
+(Click on image to enlarge)
 
 ::: {layout-ncol="4"}
 ![Stately](photos/images/barni.png){group="ipad" description="iPad drawings" width="200"}
