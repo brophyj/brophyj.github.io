@@ -1,0 +1,15 @@
+{
+  "hash": "ad7e71949f4ae21cc92c9219e1f73c22",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"What to believe?\"\ndescription: \"Where do beliefs come from?\"\nauthor:\n  - name: Jay Brophy\n    url: https://brophyj.github.io/\n    orcid: 0000-0001-8049-6875\n    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics\n    affiliation-url: https://mcgill.ca \ntags: []\ncategories: [Bias, RCTs]\nimage: preview-image.jpg\ncitation: \n  url: https://brophyj.com/posts/2024-12-30-my-blog-post/ \ndate: 2025-05-05T14:39:55-05:00\nlastmod: 2025-05-05T14:39:55-05:00\nfeatured: true\ndraft: false\n# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.\nprojects: []\ncode-fold: true\neditor_options: \n  markdown: \n    wrap: sentence\nbibliography: [bib.bib]\nbiblio-style: apalike\n---\n\n\n\n## Background\n\nOne of the reasons the public may mistrust science and scientists is the very mixed messages they may send.\nThe principal investigator of a large (N=7062) randomized trial of colchicine for the secondary prevention of cardiovascular events (CLEAR[@CLEAR]) declared that before the results of his trial “I was a believer in colchicine but after CLEAR I decided to stop it in my parent”[@RN7043]. The conclusion from the NEJM CLEAR[@CLEAR] publication was “Among patients who had myocardial infarction, treatment with colchicine, when started soon after myocardial infarction and continued for a median of 3 years, did not reduce the incidence of the composite primary outcome”. Three months after the NEJM publication, and with no additional trials having been performed in the interim, CLEAR investigators were part of a meta-analysis[@MA] that concluded “In patients with prior coronary disease or stroke, colchicine reduced the composite of cardiovascular death, myocardial infarction, or stroke by 12%.”\n\n## Questions\n\nSeveral questions naturally arise.\n1.\tHow is a “believer” defined? Apparently, it is sufficient to prescribe a medication to a family member but insufficient to perturb the clinical equipoise required for randomization.\n2.\tWhat is sufficient evidence to shift beliefs? In a few months the lead investigator of a large RCT has gone from being a believer to a non-believer and back to a reborn believer, with no change in the evidence base between being a non-believer and the reborn believer. \n3.\tIs it any wonder that the public (and clinicians) are sometimes confused about the value of interventions when the lead principal investigator of a major trial vacillates in a difficult to follow manner.?\n\n## How does this situation arise? \n\nMy own “belief” is it arises from a combination of a lack of solid statistical (i.e Bayesian) training and perverse academic incentives that favour promotion of individual studies and a maximization of publications. Maybe I’m just being a tiresome quibbler and am interested in your thoughts\n\n\n## References\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
