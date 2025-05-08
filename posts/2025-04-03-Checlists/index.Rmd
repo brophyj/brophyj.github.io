@@ -1,5 +1,5 @@
 ---
-title: "Checlists vs. Critical Thinking"
+title: "Checklists vs. Critical Thinking"
 description: "It should be obvious but..."
 author:
   - name: Jay Brophy

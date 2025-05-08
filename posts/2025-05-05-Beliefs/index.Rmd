@@ -40,7 +40,10 @@ Several questions naturally arise.
 
 ## How does this situation arise? 
 
-My own “belief” is it arises from a combination of a lack of solid statistical (i.e Bayesian) training and perverse academic incentives that favour promotion of individual studies and a maximization of publications. Maybe I’m just being a tiresome quibbler and am interested in your thoughts
+My own “belief” is it arises from a combination of a lack of solid statistical (i.e Bayesian) training and perverse academic incentives that favour promotion of individual studies and a maximization of publications.I have developed this line of reasoning in the following [preprint](https://www.medrxiv.org/content/10.1101/2025.05.04.25326946v1)  with the result summarized in the following graphic.\      
+![](images/prior_posterior_plot_RR.png)\   
+
+Maybe I’m just being a tiresome quibbler and am interested in your thoughts
 
 
 ## References
