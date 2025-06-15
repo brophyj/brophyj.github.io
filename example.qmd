@@ -11,7 +11,7 @@ lightbox: true
 
 ## Barney watercolours
 
-Barney (2011-) my great friend, running partner and favorite muse
+Barney (4/2011 - 6/2025) my great friend, running partner, and favorite muse
 
 ::: {layout="[[1, 1, 1], [1]]"}
 ![Resting after a busy day](photos/images/BA2F5DDA-A4BB-404F-8013-02EC29CEA548_1_105_c.jpeg){group="elsewhere" description=""}
@@ -39,6 +39,12 @@ Barney (2011-) my great friend, running partner and favorite muse
 ![Snoozing with a friend](photos/images/barn4.jpeg){group="elsewhere" description=""}
 :::
 
+::: {layout="[[1, 1, 1,1], [1]]"}
+![Post swim at 3 months](photos/images/barney_3months.jpg){group="elsewhere" description=""}
+![Just relaxing](photos/images/barn8.jpeg){group="elsewhere" description=""}
+![Proud portrait (one of dozens)](photos/images/barn9.jpeg){group="elsewhere" description=""}
+
+:::
 
 ## Barney iPad drawings
 (Click on image to enlarge)
