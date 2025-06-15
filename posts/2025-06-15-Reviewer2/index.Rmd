@@ -1,0 +1,46 @@
+---
+title: "Reviewer #2"
+description: "Sometimes you just got to do it"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Scientific review, Bayesian]
+image: preview-image.jpg
+citation: 
+  url: https://brophyj.com/posts/2025-06-15-my-blog-post/ 
+date: 2025-06-15T14:39:55-05:00
+lastmod: 2025-06-15T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+bibliography: [bib.bib]
+biblio-style: apalike
+---
+
+## Reviewer # 2
+
+A Google search defined Reviewer # 2 as “symbolizes the peer reviewer who is rude, vague, smug, committed to pet issues, theories, and methodologies, and unwilling to treat the authors as peers. But sometimes you have no choice but to be the problematic Reviewer # 2.   
+<br>
+I was recently asked to review a meta-analysis and at the end of the process the editor sent me a copy of their decision and the comments from the other reviewer. Reviewer # 1 stated “Their methodological approach is sound and their use of both the frequentist and Bayesian meta-analytic methods are quite complementary. I do not have any major comments but have listed my minor comments.”    
+<br>
+This contrast rather sharply with my Reviewer # 2 position. Readers of this blog will know I am a sometimes-fervent Bayesian so one might assume I would be biased in favor of a manuscript that uses a Bayesian approach. My general comments were;    
+<br>
+1.	The authors claim to have followed frequentist (PRISMA) guidelines. An assiduous reader may have some doubts as the first PRIMA statement is to assure the title reflects the systematic review and this is not the case. It makes this reader wonder how carefully the remaining elements were checked. Ideally the PRISMA checklist would be presented in the supplemental material to facilitate this verification.     
+2.	The authors claim to have followed Bayesian reporting guidelines and provide a reference from 2005. There are much more current reporting guidelines that should be followed (1. van de Schoot R, Depaoli S, King R, et al. Bayesian statistics and modelling. Nature Reviews Methods Primers. 2021/01/14 2021;1(1):1. doi:10.1038/s43586-020-00001-2 2. Kruschke JK. Bayesian Analysis Reporting Guidelines. Nature Human Behaviour. 2021/10/01 2021;5(10):1282-1291. doi:10.1038/s41562-021-01177-7) Reference 2 is recommended by the EQUATOR group. Among other elements these guidelines recommend sharing all data and code to best assure reproducibility.     
+3.	However my main issue is with the authors’ conclusions that differences can be ascribed to the different statistical paradigms. Bayesian methods do offer benefits including more intuitive probabilistic interpretations (e.g., a 86.5% chance of benefit) and the possibility of incorporating prior evidence. However, interpretations should remain consistent with the observed data and model assumptions, whether the assumptions pertain to Bayesian or frequentist methods. For example, when vague or weakly informative priors are used, the Bayesian posterior is largely driven by the likelihood and should yield conclusions broadly consistent with frequentist inference, as both rely on the same data and effectively similar assumptions.      
+4.	The authors are reporting results in an asymmetric or inconsistent manner. They’re interpreting the frequentist result in a binary way (significant/not significant), while interpreting the Bayesian result on a graded continuum (e.g., 86.5% = "probable"). Leaving aside the lack of a formal definition of “probable”, that’s inconsistent.      
+5.	Claiming there’s a 71.5% or 86.5% posterior probability of benefit is not equivalent to showing a convincing effect. These are not strong probabilities in the Bayesian decision-making sense. Yet words like “probable” are rhetorically powerful and can imply clinical or scientific certainty that is not supported. Reporting posterior probabilities (e.g., 71–87%) as if they are decisive or actionable evidence, creates a false sense of certainty by inflating the evidentiary value of the Bayesian result without having added real information.       
+6.	The authors used their Bayesian approach to conclude these findings support consideration of the intervention to reduce stroke, particularly in high-risk patients. A more logical and consistent interpretation of the data would be “Both frequentist and Bayesian analyses suggest a potential benefit of the intervention on disabling stroke, but the evidence is highly uncertain. Further research is required to better define if the intervention provides meaningful clinical benefits.”       
+<br>
+The editor reached a decision of rejection. It remains to be seen if the manuscript will appear in a different journal, in its original format or modified according to these comments.      
+<br>
+A suivre.
