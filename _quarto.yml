@@ -32,6 +32,8 @@ website:
         href: index.qmd
       - text: Blog
         href: blog.qmd
+      - text: CV
+        href: cv.qmd
       - text: Projects
         href: projects.qmd
       - text: Talks
@@ -56,6 +58,7 @@ website:
       - text: "<i class='fab fa-github'></i>"
         href: "https://github.com/brophyj"
         aria-label: "GitHub logo linking to account"
+
 format:
   html:
     theme:
@@ -85,6 +88,9 @@ format:
             );
           });
           </script>
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 lightbox: auto
 

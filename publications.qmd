@@ -5,13 +5,15 @@ title: " "
 <p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
       Selected publications   <iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon>
 </p>
-test
 
 
 ```{=html}
 <div  style="margin: 30px; text-align: left;">
 <a class="btn btn-primary" href="https://drive.google.com/file/d/1q4Et5IPH59D0KQ2o2jUS9S0q4RJseb4s/view?usp=drive_link" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a>
 </div>
+
+# 2025
+-   Kutcher SA, Dendukuri N, Dandona S, Nadeau L, **Brophy JM**. Ticagrelor Compared to Clopidogrel in Acute Coronary Syndromes trial (TC4): a Bayesian pragmatic cluster randomized controlled trial. CMAJ 2025;197(12):E309-E318. DOI: 10.1503/cmaj.241862.
 
 # 2024
 

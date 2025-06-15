@@ -1,0 +1,256 @@
+---
+title: "James (Jay) Brophy"
+format: html
+editor: visual
+---
+
+::: {style="color: red"}
+## Curriculum Vitae `r   Sys.Date()`
+:::
+
+## Professor of Medicine
+
+## Epidemiology, Biostatistics and Occupational Health
+
+## [McGill University](https://www.mcgill.ca/)
+
+::: column-margin
+![](images/brophy.png)
+:::
+
+### Contact info: [Personal website](https://www.brophyj.com/)
+
+<br> 
+
+<a href="https://twitter.com/brophyj" style="color: blue;"><i class="fab fa-twitter fa-2x"></i> @brophyj</a>  
+<a href="https://github.com/brophyj"><i class="fab fa-github fa-2x"></i> brophyj</a>  
+<a href="https://www.linkedin.com/in/brophyj/"><i class="fab fa-linkedin fa-2x"></i> brophyj</a>  
+<a href="https://orcid.org/0000-0001-8049-6875"><i class="fab fa-orcid fa-2x"></i> brophyj</a>  
+<a href="mailto:james.brophy@mcgill.ca"><i class="fas fa-envelope fa-2x"></i> james.brophy@mcgill.ca</a>
+
+::: {style="color: red"}
+### Education
+:::
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(tinytex.verbose = TRUE)
+
+# ref https://github.com/ropenscilabs/vitae
+library(tidyverse)
+library(RefManageR)
+library(vitae) # devtools::install_github("ropenscilabs/vitae")
+library(knitr)
+library(rorcid)
+Sys.setenv(ORCID_TOKEN = "ff837659-6cab-4980-bc45-51d836e4fd6b") #may need to run this line separate first before knitting
+```
+
+```{r education, echo=FALSE}
+library(rorcid)
+library(vitae)
+library(gt)
+x <- orcid_auth()
+
+# seems to get right info
+# x
+#[1] "Bearer ff837659-6cab-4980-bc45-51d836e4fd6b"
+
+Sys.setenv(ORCID_TOKEN = "ff837659-6cab-4980-bc45-51d836e4fd6b") #may need to run this line separate first before knitting
+
+edu <- rorcid::orcid_educations("0000-0001-8049-6875")
+
+edu <- do.call("bind_rows",
+  rorcid::orcid_educations("0000-0001-8049-6875")$`0000-0001-8049-6875`$`affiliation-group`$summaries
+)
+edu$`education-summary.organization.address.region`[2] <- "QC"
+edu$loc <- paste0(c(edu$`education-summary.organization.address.city`), " ",c(edu$`education-summary.organization.address.region`))
+
+edu1 <- edu %>%
+  rename( Degree = "education-summary.role-title", Institution = "education-summary.organization.name", Department = "education-summary.department-name", Location = "loc") %>%
+  select("Degree", "Institution", "Department", "Location")
+edu1[3,3] <- "Medicine"
+edu1[4,3] <- "Chemical engineering"
+
+gt(edu1) 
+
+```
+
+::: {style="color: red"}
+# Awards
+:::
+
+```{r, awards, echo=FALSE}
+
+awards <- data.frame(Award = c("Fellow Canadian Academy of Health Sciences",  
+  "Fellow Canadian Cardiovascular Society"), Date = c("Sept 2018","May 2017")) 
+
+gt(awards)
+```
+
+::: {style="color: red"}
+# Recent Research Funding
+:::
+
+```{r funding,  echo=FALSE, out.width=8}
+library(webshot2)
+#| column: page-right
+funding <- data.frame(Title = c("Appui à la recherche en évaluation des technologies et des pratiques de pointe dans les CHU (Health Technology and Evidence Based Medicine)",  "Ticagrelor compared to clopidogrel in acute coronary syndromes - the TC4 comparative effectiveness study", "Evaluating the Trajectory of Aortic Stenosis (AS) in Quebec patients - Diagnosis, Treatments, and Outcomes", "The S. aureus Network Adaptive Platform Trial (SNAP) Canada: A Randomized Controlled Trial for Penicillin-susceptible, Methicillin-susceptible, and Methicillin resistant Staphylococcus aureus Bloodstream Infections in Hospitalized Patients", "Comparative Effectiveness of Long-acting Insulins and Neutral Protamine Hagedorn (NPH) Insulin for the Prevention of Micro- and Macrovascular Complications Among Patients with Type 1 Diabetes", "Assessing the interpretability of cardiovascular trials"), Agency = c("Fonds de Recherche Quebec Sante","Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Heart & Stroke Fondation"), Date = c("July 2018-23","April 2019-23", "Sept 2020 - 23", "July 2021 - 2026", "April 2023-2026", "July 2025-2028"), Role = c("PI", "PI", "PI", "co-A", "co-A", "PI")) 
+
+funding <- funding[nrow(funding):1, ]
+
+gt(funding) %>%
+  gtsave("images/funding.png") #to make image for use in pdf documents gt_preview() %>%
+# knitr::kable(funding) 
+gt(funding)
+```
+
+::: {style="color: red"}
+# Publications
+:::
+
+```{r echo=FALSE}
+library(rvest)
+html <- read_html("https://scholar.google.com/citations?user=IXoZb4wAAAAJ&hl=en")
+
+html1 <- html %>% 
+  html_element("tr:nth-child(1) .gsc_rsb_std:nth-child(2)") %>% 
+  html_text2() %>% 
+  as.integer()
+
+html2 <- html %>% 
+  html_element("tr:nth-child(2) .gsc_rsb_std:nth-child(2)") %>% 
+  html_text2()  %>% 
+  as.integer()
+
+
+```
+
+All publications (`r nrow(brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>%      filter( !grepl('Response|reply|Renewed|Reply', title)))` on `r Sys.Date()`) as recorded in Google Scholar can be found [**here**](https://scholar.google.com/citations?user=IXoZb4wAAAAJ&hl=en)\
+Citations `r html1`, h-index `r html2`
+
+```{r fig.height=3}
+#plot over time from 2004-
+library(ggplot2)
+brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>% 
+    filter( !grepl('Response|reply|Renewed|Reply', title))
+
+trend <- brophy %>%
+  filter(year >2007 & year <2026) %>% # filter out 2024, too early in the year
+  group_by(year) %>%
+  summarise(n=n())
+ggplot(trend,aes(year,n)) +
+  geom_point() +
+  geom_line() +
+  # ggtitle("Publications according to Google Scholar") +
+    labs(subtitle=" Includes letters, editorials as well as original articles") +
+    ylab("Number of Publications") +
+    xlab("Year") +
+    scale_x_continuous(breaks = scales::pretty_breaks(n = 8)) +
+    theme_bw()
+
+```
+
+::: panel-tabset
+#### 2025
+
+```{r,  echo=FALSE}
+# for future years copy code chunk from 2023, 2024 slightly modified to include non-perer review articles
+brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>% 
+    filter(year == 2025   & !grepl('Response|reply|Renewed|Reply', title)) %>%
+    arrange(desc(year))
+
+bb <- paste0(brophy$author,". ", brophy$title, ". ", brophy$journal, ". ", brophy$number, ". ", brophy$year,". ")
+  # knitr::kable(as.data.frame(bb), col.names = "")
+ # kableExtra::kable()
+
+bb <- as.data.frame(bb)
+#bb[4,1] <- "JM Brophy Is science really self correcting? Something old and older. Medium (https://medium.com/@jbrophy115/is-science-really-self-correcting-64b829ec7935)."
+bb[[1]] <- gsub("\\bB JM\\b\\.*", "JM Brophy", bb[[1]]) # fix author
+
+gt(bb) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=20) %>%
+  gtsave("images/pub2023.png")
+gt(bb) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=20)
+```
+
+#### 2024
+
+```{r,  echo=FALSE}
+# for future years copy code chunk from 2023, 2024 slightly modified to include non-perer review articles
+brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>% 
+    filter(year == 2024   & !grepl('Response|reply|Renewed|Reply', title)) %>%
+    arrange(desc(year))
+
+bb <- paste0(brophy$author,". ", brophy$title, ". ", brophy$journal, ". ", brophy$number, ". ", brophy$year,". ")
+  # knitr::kable(as.data.frame(bb), col.names = "")
+ # kableExtra::kable()
+
+bb <- as.data.frame(bb)
+bb[4,1] <- "JM Brophy Is science really self correcting? Something old and older. Medium (https://medium.com/@jbrophy115/is-science-really-self-correcting-64b829ec7935)."
+gt(bb) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=20) %>%
+  gtsave("images/pub2023.png")
+gt(bb) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=20)
+```
+
+#### 2023
+
+```{r,  echo=FALSE}
+brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>% 
+    filter(year == 2023   & !grepl('Response|reply|Renewed|Reply', title)) %>%
+    arrange(desc(year))
+
+bb <- paste0(brophy$author,". ", brophy$title, ". ", brophy$journal, ". ", brophy$number, ". ", brophy$year,". ")
+  # knitr::kable(as.data.frame(bb), col.names = "")
+ # kableExtra::kable()
+
+gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=20) %>%
+  gtsave("images/pub2023.png")
+gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=20)
+```
+
+#### 2022
+
+```{r,  echo=FALSE}
+brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>% 
+    filter(year == 2022   & !grepl('Response|reply|Renewed|Reply', title)) %>%
+    arrange(desc(year))
+
+bb <- paste0(brophy$author,". ", brophy$title, ". ", brophy$journal, ". ", brophy$number, ". ", brophy$year,". ")
+ #  knitr::kable(as.data.frame(bb), col.names = "")
+ # kableExtra::kable()
+
+gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=10) %>%
+  gtsave("images/pub2022.png")
+gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=10)
+```
+
+#### 2021
+
+```{r,  echo=FALSE}
+
+brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>% 
+    filter(year == 2021   & !grepl('Response|reply|Renewed|Reply', title)) %>%
+    arrange(desc(year))
+
+bb <- paste0(brophy$author,". ", brophy$title, ". ", brophy$journal, ". ", brophy$number, ". ", brophy$year,".")
+ # knitr::kable(as.data.frame(bb), col.names = "")
+ # kableExtra::kable()
+gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=10) %>%
+  gtsave("images/pub2021.png")
+gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=10)
+```
+
+#### Top citations (excluding guideline, multicentre RCTs)
+
+```{r top}
+brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>%
+    arrange(desc(cites)) %>%
+    slice(4,6,7,8,9)  # sort google scholar by cites to get indices
+
+bb <- paste0(brophy$author,". ", brophy$title, ". ", brophy$journal, ". ", brophy$number, ". ", brophy$year,". ", "cites = ", brophy$cites)
+ # knitr::kable(as.data.frame(bb), col.names = "")
+ # kableExtra::kable()
+gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=10) %>%
+  gtsave("images/top.png")
+gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=10)
+```
+:::
