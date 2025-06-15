@@ -39,9 +39,11 @@ Barney (4/2011 - 6/2025) my great friend, running partner, and favorite muse
 ![Snoozing with a friend](photos/images/barn4.jpeg){group="elsewhere" description=""}
 :::
 
-::: {layout="[[1, 1, 1,1], [1]]"}
+::: {layout="[[1, 1, 1], [1]]"}
 ![Post swim at 3 months](photos/images/barney_3months.jpg){group="elsewhere" description=""}
+
 ![Just relaxing](photos/images/barn8.jpeg){group="elsewhere" description=""}
+
 ![Proud portrait (one of dozens)](photos/images/barn9.jpeg){group="elsewhere" description=""}
 
 :::
