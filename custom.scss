@@ -1,0 +1,202 @@
+/*-- scss:defaults --*/
+
+//@import url(./fonts/league-gothic/league-gothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;600;700&display=swap');
+
+.my-custom-image {
+  max-width: 350px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border: 2px solid red;
+}
+
+// fonts
+$font-family-sans-serif:  'Open Sans' !default;
+
+// large text
+
+.large-text {
+  font-size: 30px; /* Adjust as needed */
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+.small-text {
+  font-size: 12px; /* Adjust as needed */
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+// center
+.center-xy {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translateY(-50%), translateX(-50%);
+          transform: translateY(-50%), translateX(-50%);
+        }
+
+// Ensure all Reveal.js slides use the same font size
+.reveal {
+  font-size: 24px !important;  // This sets the font size for all elements
+}
+
+// large font
+.large-text {
+  font-size: 30px; /* Adjust as needed */
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+
+// colors
+$body-bg: #FFFBEB !default;
+$body-color: #041E42 !default;
+$link-color: #830065 !default;
+$selection-bg: #D50032 !default;
+
+
+// headings
+$presentation-heading-font: "Montserrat", sans-serif !default;
+$presentation-heading-color: #041E42 !default;
+
+
+// code blocks
+$code-block-border-color: #93a1a1 !default;
+
+
+/*-- scss:defaults --*/
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
+
+.reveal .footer {
+  font-size: 14px;
+  color: #830065 !important;
+
+}
+
+$link-color: #39729E;
+$text-muted: #6a737b;
+
+/*-- scss:rules --*/
+.hero-banner h2 {
+  color: #39729E;
+  font-size: 1.5rem;
+}
+
+.layout-example {
+  background: #00539B;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: $font-family-monospace;
+  font-size: .875em;
+  font-weight: 600;
+  padding-top: 1em;
+  border-radius: 3px;
+}
+
+.left {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.right {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.hello-quarto-banner h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+#quarto-announcement {
+  padding: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #00539B; 
+}
+
+#quarto-announcement a {
+  color: #FFFFFF;
+}
+
+/* Global Reveal slide settings */
+.reveal {
+  font-weight: normal;
+  line-height: 1.3;
+  font-size: 1.2em;
+}
+
+/* Allow proper bold and italic styling */
+.reveal strong,
+.reveal b {
+  font-weight: bold !important;
+}
+
+.reveal em,
+.reveal i {
+  font-style: italic !important;
+}
+
+.big-text {
+  font-size: 1.8em;
+}
+
+.red-text {
+  color: #d62728;
+}
+
+.mecir-box {
+  background-color: #e8f4f8;
+  padding: 1em;
+  border-left: 5px solid #0072B2;
+  border-radius: 8px;
+  font-size: 1.1em;
+}
+
+/* Ensure bold tags and inline styles actually render as bold */
+b, strong, span[style*="font-weight:bold"] {
+  font-weight: bold !important;
+}
+
+/* Ensure bold text inside .large-text class is preserved */
+.large-text b,
+.large-text strong,
+.large-text span[style*="font-weight:bold"] {
+  font-weight: bold !important;
+}
+
+/* Utility classes for styling inside HTML tags */
+.bold {
+  font-weight: bold !important;
+}
+
+.italic {
+  font-style: italic !important;
+}
+
+.reveal h2 {
+  color: purple !important;
+}
+
+/*      extra content      */
+.Large       , .Large .remark-code, .Large .remark-inline-code { font-size: 144%; }
+.large       , .large .remark-code, .large .remark-inline-code { font-size: 120%; }
+.small       , .small .remark-code, .small .remark-inline-code { font-size: 90%; }
+.footnotesize, .footnotesize .remark-code, .footnotesize .remark-inline-code { font-size: 80%; }
+.scriptsize  , .scriptsize .remark-code, .scriptsize .remark-inline-code { font-size: 70%; }
+.tiny        , .tiny .remark-code, .tiny .remark-inline-code { font-size: 60%; }
+
+.red { color: red; }
+.blue { color: blue; }
+.green { color: green; }
+.yellow { color: yellow; }
+.orange { color: orange; }
+.purple { color: purple; }
+.gray { color: gray; }
+.grey { color: gray; }
+.brown { color: brown; }

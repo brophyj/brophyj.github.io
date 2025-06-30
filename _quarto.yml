@@ -62,7 +62,8 @@ website:
 format:
   html:
     theme:
-      - cosmos
+      - default
+    css: custom.scss 
     lang: en
     date-format: 'dddd[, the] Do [of] MMMM, YYYY'
     highlight-style: github-light
