@@ -10,7 +10,7 @@ format:
     toc: true
     number-sections: true
     number-depth: 2
-    css: ../custom.css
+    css: custom.css
   pdf:
     documentclass: scrartcl
     xelatex: true
