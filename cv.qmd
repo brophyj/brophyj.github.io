@@ -20,13 +20,7 @@ editor: visual
 
 ### Contact info: [Personal website](https://www.brophyj.com/)
 
-<br> 
-
-<a href="https://twitter.com/brophyj" style="color: blue;"><i class="fab fa-twitter fa-2x"></i> @brophyj</a>  
-<a href="https://github.com/brophyj"><i class="fab fa-github fa-2x"></i> brophyj</a>  
-<a href="https://www.linkedin.com/in/brophyj/"><i class="fab fa-linkedin fa-2x"></i> brophyj</a>  
-<a href="https://orcid.org/0000-0001-8049-6875"><i class="fab fa-orcid fa-2x"></i> brophyj</a>  
-<a href="mailto:james.brophy@mcgill.ca"><i class="fas fa-envelope fa-2x"></i> james.brophy@mcgill.ca</a>
+<br> [{{< fa brands twitter size=2x >}}]{style="color:blue"} [\@brophyj](https://twitter.com/brophyj) {{< fa brands github size =4x >}} [brophyj](https://github.com/brophyj) {{< fa brands linkedin size=2x >}} [brophyj](https://www.linkedin.com/in/brophyj/) {{< fa brands orcid size=2x >}} [brophyj](https://orcid.org/0000-0001-8049-6875) <i class="fa-solid fa-envelope" ></i> [james.brophy\@mcgill.ca](mailto:james.brophy@mcgill.ca)
 
 ::: {style="color: red"}
 ### Education
@@ -154,7 +148,7 @@ ggplot(trend,aes(year,n)) +
 #### 2025
 
 ```{r,  echo=FALSE}
-# for future years copy code chunk from 2023, 2024 slightly modified to include non-perer review articles
+# for future years copy code chunk from 2023, 2024 slightly modified to include non-peer review articles
 brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>% 
     filter(year == 2025   & !grepl('Response|reply|Renewed|Reply', title)) %>%
     arrange(desc(year))
@@ -168,7 +162,7 @@ bb <- as.data.frame(bb)
 bb[[1]] <- gsub("\\bB JM\\b\\.*", "JM Brophy", bb[[1]]) # fix author
 
 gt(bb) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=20) %>%
-  gtsave("images/pub2023.png")
+  gtsave("images/pub2025.png")
 gt(bb) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=20)
 ```
 
@@ -222,6 +216,7 @@ gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hl
   gtsave("images/pub2022.png")
 gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=10)
 ```
+
 
 #### 2021
 

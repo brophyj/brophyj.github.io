@@ -22,6 +22,19 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 # 2025
 
+-   **Knowledge synthesis - Epidemiology 629**\
+    McGill University, Department of Epidemiology, Fall 2025\
+    **Summary** - 629 is a graduate level course providing a detailed description of the systematic review process, discusses the strengths and limitations of the method, including a step-by-step guidance on how to perform a systematic review, and how to critically appraise systematic reviews. Specific topics to be covered include: formulation of the review question, searching of literature, quality assessment of studies, data extraction, meta-analytic methods, and report writing. The course will extensively cover statistical issues of meta-analysis.
+
+
+<p class="text-center">
+
+<a class="btn btn-primary btn-lg cv-download" href="upload/epib629.html" target="_blank"> <i class="fa-solid fa-file-arrow-down"></i>Syllabus (opens in new tab) </a>
+
+</p>
+
+
+
 -   **Doctoral seminar - Epidemiology 706**\
     McGill University, Department of Epidemiology, Winter 2025\
     **Summary** - 706 is a PhD-level seminar aimed at providing space for students to engage with over-arching concepts critical to the theory and practice of epidemiology, as well to explore recent controversies and debates in the field. The purpose of this course to reinforce your formal methodological coursework by making space to develop and sharpen your critical thinking skills.
