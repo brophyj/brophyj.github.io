@@ -12,6 +12,8 @@ med:
   pdf: "upload/MA.pdf"
 quarto_html:
   revealjs: "upload/cardiology1_nov2024.html"
+cardio2025:
+  pdf: "upload/cardio2025.pdf"
 ---
 
 <p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
@@ -22,17 +24,16 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 
 # 2025
 
--   **Knowledge synthesis - Epidemiology 629**\
-    McGill University, Department of Epidemiology, Fall 2025\
-    **Summary** - 629 is a graduate level course providing a detailed description of the systematic review process, discusses the strengths and limitations of the method, including a step-by-step guidance on how to perform a systematic review, and how to critically appraise systematic reviews. Specific topics to be covered include: formulation of the review question, searching of literature, quality assessment of studies, data extraction, meta-analytic methods, and report writing. The course will extensively cover statistical issues of meta-analysis.
+-   **Meta-analysis to meta-cognition - The Bayesian Highway in Cardiology**\
+    McGill University Hospital Center, Department of Medicine, Cardiology Grand Rounds, Sept 11 2025\
+    **Summary** - Meta-analysis is powerful, but not infallible technique. Many of its limitations are tied to the traditional frequentist framework in which it is most often performed. A Bayesian approach to meta-analysis can address many of these limitations, and ofers a more intuitive and flexible framework for evidence synthesis. This talk will review the principles of Bayesian meta-analysis, its advantages over traditional approaches, and its potential to enhance clinical decision-making in cardiology.
 
 
 <p class="text-center">
-
-<a class="btn btn-primary btn-lg cv-download" href="upload/epib629.html" target="_blank"> <i class="fa-solid fa-file-arrow-down"></i>Syllabus (opens in new tab) </a>
-
+<a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cardio2025$pdf`" target="_blank">
+  <i class="fa-solid fa-file-arrow-down"></i> Slides (opens in new tab)
+</a>
 </p>
-
 
 
 -   **Doctoral seminar - Epidemiology 706**\
