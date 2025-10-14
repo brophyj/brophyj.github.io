@@ -14,6 +14,8 @@ quarto_html:
   revealjs: "upload/cardiology1_nov2024.html"
 cardio2025:
   pdf: "upload/cardio2025.pdf"
+IM2025:
+  pdf: "upload/IM2025.pdf"
 ---
 
 <p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
@@ -23,6 +25,16 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 </p>
 
 # 2025
+
+-   **Meta-analysis to meta-cognition - The Bayesian Highway in Internal Medicine**\
+    McGill University Hospital Center, Department of Medicine, Cardiology Grand Rounds, Oct 25 2025\
+    **Summary** - Meta-analysis is powerful, but not infallible technique. Many of its limitations are tied to the traditional frequentist framework in which it is most often performed. This talk is an updated version of the previous talk in Sept 2025 but addresses new examples including the principles of Bayesian meta-analysis as applied to extended thrombolysis for ischemic stroke and dexmedetomidine for post-operative delirium.
+
+<p class="text-center">
+<a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$IM2025$pdf`" target="_blank">
+  <i class="fa-solid fa-file-arrow-down"></i> Slides (opens in new tab)
+</a>
+</p>
 
 -   **Meta-analysis to meta-cognition - The Bayesian Highway in Cardiology**\
     McGill University Hospital Center, Department of Medicine, Cardiology Grand Rounds, Sept 11 2025\
