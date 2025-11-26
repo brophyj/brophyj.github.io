@@ -47,6 +47,11 @@ Presentations <iconify-icon icon="et:presentation"></iconify-icon>
 </a>
 </p>
 
+<p class="text-center">
+<a class="btn btn-primary btn-lg cv-download" href="https://www.youtube.com/watch?v=IL_w5293Hz0" target="_blank">
+  <i class="fa-solid fa-file-arrow-down"></i> Video (opens in new tab)
+</a>
+</p>
 
 -   **Doctoral seminar - Epidemiology 706**\
     McGill University, Department of Epidemiology, Winter 2025\
