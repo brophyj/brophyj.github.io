@@ -1,5 +1,5 @@
 ---
-title: "Collider stratification"
+title: "Collider stratification (again!)"
 description: "Smoking protective for repeat revascularizations!???"
 author:
   - name: Jay Brophy
