@@ -1,0 +1,12 @@
+sex,group,study,yi,lower,upper
+Male,1500-3000,Aengevaeren 2017,11.50,2.92,20.08
+Male,1500-3000,Pavlovic 2024,16.50,-0.16,33.16
+Male,1500-3000,Defina 2019,-27.12,-47.05,-6.99
+Male,>3000,Bosscher 2023,19.80,8.84,30.76
+Male,>3000,Mohlenkamp 2008,9.08,-18.88,37.04
+Male,>3000,Pavlovic 2024,25.06,13.55,37.57
+Male,>3000,Defina 2019,42.50,12.08,72.92
+Female,1500-3000,Pavlovic 2024,-1.10,-7.03,9.23
+Female,1500-3000,Defina 2019,-17.90,-27.55,-8.25
+Female,>3000,Pavlovic 2024,-6.20,-13.26,0.86
+Female,>3000,Defina 2019,-18.00,-33.47,-2.53
