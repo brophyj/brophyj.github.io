@@ -217,7 +217,6 @@ gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hl
 gt(as.data.frame(bb)) %>% tab_options(column_labels.hidden = TRUE, table_body.hlines.width=10)
 ```
 
-
 #### 2021
 
 ```{r,  echo=FALSE}
