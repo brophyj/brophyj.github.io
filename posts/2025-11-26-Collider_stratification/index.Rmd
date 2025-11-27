@@ -1,0 +1,209 @@
+---
+title: "Collider stratification"
+description: "Smoking protective for repeat revascularizations!???"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medince, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca 
+tags: []
+categories: [Scientific review, statistical methods]
+image: preview-image.jpg
+citation: 
+  url: https://brophyj.com/posts/2025-11-26-my-blog-post/ 
+date: 2025-11-26T14:39:55-05:00
+lastmod: 2025-11-26T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
+code-fold: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+bibliography: [bib.bib]
+biblio-style: apalike
+---
+
+## A recent study
+
+Smoking is a well-established risk factor for endothelial damage, increased thrombogenesis, and adverse cariac events including the need for revascularizations. Yet Presch[@RN7087] reports paradoxically that smoking is associated with a lower risk of repeat revascularization.  It is hard to conceive why the endothelium would react differently if it had experienced a previous revascularization procedure.  More likely the observed protective role is due to collider risk stratification bias which has successfully explained the obesity, aspirin, and previous smoking paradoxes among many others[@RN6478][@RN7085][@RN7086]. 
+
+## Background on collider risk stratification
+
+Consider a simplified data generating mechanism (DGM) for the development of coronary artery disease, reequiring revascularizaion, in the general population. Let's assume that causal factors are smoking and all other risk factors are combined into one other variable. The causal diagram is therefore as follows
+
+```{r}
+#| message: false
+library(ggplot2)
+library(ggdag)
+
+revasc_dag <- collider_triangle(
+  x = "Smoking",
+  y = "Other (unmeasured) risk factors",
+  m = "Revascularization"
+)
+
+ggdag(revasc_dag, text = FALSE, use_labels = "label")
+```
+
+Here for the general population we have assumed that smoking and the other risk factors are independent (no connecting arrow). But look what happens if we select (stratify or condition) on receiving a revascularization procedure.
+
+```{r}
+collid <- ggdag_dseparated(revasc_dag,
+                 controlling_for = "m",
+                 text = FALSE, use_labels = "label"
+)
+collid
+ggsave("collider.png", collid, width = 5, height = 4)
+```
+
+This has induced a relationship between smoking and the other risk factors. If the patient is a non-smoker then they must have other (unmeasured) risk factors since they required an initial revascularization procedure. Therefore among those have received an initial revascularization procedure, the non-smokers will, in the expectation, be sicker than the smokers and these higher levels of other (unmeasured) risk factors are strong predictors for future revascularization. From the oppositer perspective, the smokers will look to be protected by their smoking even though the underlying data generating mechanism (an increased risk due to smoking) has not been altered. \
+
+To demonstrate this let's perform a simulation study.  
+
+
+
+
+
+## Simulation study
+
+To concretely demonstrate this spurious association we will perform a numerical simulation. Assume 10,000 individuals with a 30% smoking prevalence and a normal disribution of the other (unmeasured) risk factors, (U). The probability of receiving a percutaneous coronary intervention (PCI) is modeled using a logistic model where both smoking and U increase the chance of PCI. 
+
+```{r}
+# Set a seed for reproducibility
+options(digits = 2)
+# ---------------------------
+# Chunk 1: Generate Full Population Data
+# ---------------------------
+set.seed(123)
+
+# Population parameters for outcome data generating model (DGM):
+n <- 100000               # Total individuals
+p_smoking <- 0.3          # Smoking prevalence
+beta_smoking <- 0.3       # True effect of smoking (log-odds); OR ≈ exp(0.3) ≈ 1.35
+beta_U <- 1               # Effect of U on outcome
+intercept_outcome <- -2   # Outcome intercept for repeat PCI
+
+# Simulate predictors:
+smoking <- rbinom(n, 1, p_smoking)
+U <- rnorm(n)             # Unobserved risk factor
+
+# Generate outcome (repeat PCI) for full population using the same DGM:
+logit_outcome <- intercept_outcome + beta_smoking * smoking + beta_U * U
+p_outcome <- exp(logit_outcome) / (1 + exp(logit_outcome))
+repeat_PCI <- rbinom(n, 1, p_outcome)
+
+# ---------------------------
+# Chunk 2: Generate PCI via a Deterministic (Threshold) Rule
+# ---------------------------
+# Define PCI as follows:
+#   For smokers (smoking == 1): PCI = 1 if U > 0.5.
+#   For non-smokers (smoking == 0): PCI = 1 if U > 1.5.
+PCI <- ifelse(smoking == 1, as.numeric(U > 0.5), as.numeric(U > 1.1))
+
+# Combine into one data frame:
+df <- data.frame(smoking, U, PCI, repeat_PCI)
+
+# ---------------------------
+# Chunk 3: Full Population Analysis
+# ---------------------------
+# Fit a logistic regression for repeat PCI on smoking (ignoring U) in the full population:
+model_full <- glm(repeat_PCI ~ smoking, data = df, family = binomial)
+temp <- summary(model_full)
+summary(model_full)
+# exp(coef(model_full))  # Display odds ratios
+
+smoke_est <- exp(temp$coefficients[2,1])
+smoke_CI <-exp(temp$coefficients[2,1] + c(-1,1)*1.96*temp$coefficients[2,2])
+```
+
+This confirms the DGM is performing as expected with an increased smoking risk = `r smoke_est` (exp(0.2717)) with 95% CI (`r smoke_CI[1]` to `r smoke_CI[2]`)  Note in this illustrative case, a deterministic model for PCI with non-smokers having higher (non-measured) risk factors has been used. In the real world this world, a probabilistic mnodel would be employed\
+ \
+Now let's see the effect of smoking on the study population, i.e. only those that underwent an initial revascularization procedure. Here we assume the same DGM for a future repeat PCI as initially applied to the general population i.e. smoking risk = 1.3
+
+```{r}
+# ---------------------------
+# Chunk 4: Analysis in PCI-Selected Sample
+# ---------------------------
+# Restrict the data to individuals with PCI == 1:
+data_PCI <- subset(df, PCI == 1)
+
+# Fit the logistic regression model for repeat PCI on smoking in the PCI-selected sample:
+model_PCI <- glm(repeat_PCI ~ smoking, data = data_PCI, family = binomial)
+temp1 <- summary(model_PCI)
+summary(model_PCI)
+# exp(coef(model_PCI))  # Display odds ratios in the selected sample
+
+
+smoke_est_sample <- exp(temp1$coefficients[2,1])
+smoke_CI_sample <- exp(temp1$coefficients[2,1] + c(-1,1)*1.96*temp1$coefficients[2,2])
+
+```
+
+Using the exact same data generating mechanism, with increased risk with smoking (RR =1.3) for a repeat revascularization procedure, the smoking parameter in the study sample has been reduced to `r smoke_est_sample` (exp(-.1367)) with 95% CI (`r smoke_CI_sample[1]` to `r smoke_CI_sample[2]`) due to collider risk stratification bias \    
+
+This simulation illustrates collider-stratification bias: even though the true effect of smoking in the full population is harmful (OR ≈ 1.35) and remains harmful for a repeat procedure, when you condition on PCI smoking looks protective simply because the non-smokers are otherwise at increased risk due to the spurious induced associated between the other (unmeasured) risk factors and smoking. 
+
+## Visual interpretation
+
+This spurious results can be shown visually as follows. The following two density plots show the distribution of the unobserved risk factor U in the full population (left plot) and in the PCI-selected sample (right plot). In both plots the distributions are stratified by smoking status (red = smokers, blue = non-smokers).
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(patchwork)  # for side-by-side plots
+
+# Assume df and data_PCI already exist, with columns:
+#   U: unobserved risk factor
+#   smoking: 0/1
+#   PCI: 0/1
+#   repeat_PCI: outcome
+
+# Create a "Group" variable to label each dataset
+df$Group <- "Full Population"
+data_PCI$Group <- "PCI Selected"
+
+# Plot 1: Full population
+p1 <- ggplot(filter(df, Group == "Full Population"),
+             aes(x = U, fill = factor(smoking))) +
+  geom_density(alpha = 0.5) +
+  coord_cartesian(xlim = c(-3, 3)) +  # adjust as needed
+  labs(
+    title = "Distribution of U in the Full Population",
+    x = "U (Unobserved Risk Factor)",
+    y = "Density",
+    fill = "Smoking\n(0=No,1=Yes)"
+  ) +
+  theme_minimal()
+
+# Plot 2: PCI-selected, x-axis starting at 0
+p2 <- ggplot(filter(data_PCI, Group == "PCI Selected"),
+             aes(x = U, fill = factor(smoking))) +
+  geom_density(alpha = 0.5) +
+  coord_cartesian(xlim = c(0, NA)) +  # start x-axis at 0
+  labs(
+    title = "Distribution of U in PCI-Selected Sample",
+    x = "U (Unobserved Risk Factor)",
+    y = "Density",
+    fill = "Smoking\n(0=No,1=Yes)"
+  ) +
+  theme_minimal()
+
+# Display plots side by side
+p1 + p2
+
+```
+
+Full Population (left plot) shows how the unobserved risk factor 
+U is distributed equally among both smokers (red) and non-smokers (blue) in the entire dataset. In the study sample, PCI-selected sample (right plot) because of the selection mechanism you can more clearly see that non-smokers in the PCI sample have U-values > the values in smokers. Hence the false impression that smoking is protective.
+
+
+
+## Conclusion
+
+Despite a data generating mechanism that assigned an increased risk with smoking (HR = 1.36), this risk appears to be protective (HR 0.87 95% CI [0.82 to 0.92]) when the  population is conditioned on the performance of an initial revascularization (the collider)[@RN7088]. This reversal is a classic example of collider bias, where conditioning on a collider variable, influenced by both the exposure and an unmeasured confounder distorts the true effect.
+
+
+## References
