@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Jay Brophy">
+<meta name="description" content="Heads, I win; tails, you lose: on the perils of the medical literature">
+<title>Covering your bases – jay’s website</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1f7fd168c3a2bd1f3385ec7b3b313676.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../custom.scss">
+<meta property="og:title" content="Covering your bases – jay’s website">
+<meta property="og:description" content="Heads, I win; tails, you lose: on the perils of the medical literature">
+<meta property="og:image" content="https://brophyj.com/posts/2025-11-29-Cover_bases/preview-image.jpg">
+<meta property="og:site_name" content="jay's website">
+<meta name="twitter:title" content="Covering your bases – jay’s website">
+<meta name="twitter:description" content="Heads, I win; tails, you lose: on the perils of the medical literature">
+<meta name="twitter:image" content="https://brophyj.com/posts/2025-11-29-Cover_bases/preview-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">jay’s website</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks.html"> 
+<span class="menu-text">Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../example.html"> 
+<span class="menu-text">Art</span></a>
+  </li>  
+</ul>
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="https://orcid.org/my-orcid?orcid=0000-0001-8049-6875"> 
+<span class="menu-text"><i class="fab fa-orcid"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mastodon.social/@brophyj"> 
+<span class="menu-text"><i class="fab fa-mastodon"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/brophyj"> 
+<span class="menu-text"><i class="fab fa-twitter"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/brophyj/"> 
+<span class="menu-text"><i class="fab fa-linkedin-in"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/brophyj"> 
+<span class="menu-text"><i class="fab fa-github"></i></span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <div class="quarto-title-block"><div><h1 class="title">Covering your bases</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+                  <div>
+        <div class="description">
+          Heads, I win; tails, you lose: on the perils of the medical literature
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">meta-analysis</div>
+                <div class="quarto-category">bias</div>
+                <div class="quarto-category">Bayesian</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://brophyj.github.io/">Jay Brophy</a> <a href="https://orcid.org/0000-0001-8049-6875" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://mcgill.ca">
+              McGill University Dept Medince, Epidemiology &amp; Biostatistics
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Saturday, the 29th of November, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content"><section id="a-recent-article" class="level2"><h2 class="anchored" data-anchor-id="a-recent-article">A recent article</h2>
+<p>In February 2025, the CLEAR investigators<span class="citation" data-cites="RN7633">(<a href="#ref-RN7633" role="doc-biblioref">Jolly et al. 2025</a>)</span> published the results of their large randomized controlled trial (RCT) of colchicine (n = 3528) versus placebo (n = 3534) in post myocardial infarction patients. The rationale for the study was that colchicine, an anti-inflammatory drug, might reduce major adverse cardiovascular events (MACE) by reducing inflammation after myocardial infarction. Previous smaller trials and meta-analyses had suggested a benefit, but the evidence was not definitive.</p>
+<p>The primary outcome was MACE, a composite of cardiovascular death, myocardial infarction, stroke, or ischemia-driven revascularization. With a median 3-year follow-up, there were 9.1% events in the colchicine group and 9.3% in the placebo arm (hazard ratio, 0.99; 95% CI, 0.85-1.16). Because of the high-quality study design, execution, and large number of primary outcome events (n = 649), the authors reasoned that the probability of a spurious result was low. Thus, they concluded</p>
+<p><font color="red"> &gt; “…treatment with colchicine, when started soon after myocardial infarction and continued for a median of 3 years, did not reduce the incidence of the composite primary outcome.”</font></p>
+<p></p>
+<p>CLEAR investigators<span class="citation" data-cites="RN7633">(<a href="#ref-RN7633" role="doc-biblioref">Jolly et al. 2025</a>)</span> acknowledge a previous large COLCOT trial<span class="citation" data-cites="RN5451">(<a href="#ref-RN5451" role="doc-biblioref">Tardif et al. 2019</a>)</span> (n = 4745), reported a significant reduction in MACE with colchicine (HR 0.77, 95% CI 0.61-0.96, p = 0.02) but make no attempt to reconcile the conflicting results or to provide a synthesis of the totality of evidence.</p>
+</section><section id="a-recent-meta-analysis" class="level2"><h2 class="anchored" data-anchor-id="a-recent-meta-analysis">A recent meta-analysis</h2>
+<p>Only one month after the CLEAR publication a formal meta-analysis of all available colchicine trials for secondary prevention of vascular events was fast tracked for publication in the European Heart Journal[RN7658], one of the top three most influential general cardiology journals worldwide (impact factor 35.6). They concluded</p>
+<p><font color="red"> &gt; “In patients with prior coronary disease or stroke, colchicine reduced the composite of cardiovascular death, myocardial infarction, or stroke by 12%.”</font></p>
+<p></p>
+<p>What is mot interesting about this meta-analysis, ignoring the lack of any measure of uncertainty surrounding their benefit estimate, is that that first and senior authors of this meta-analysis are CLEAR investigators who one month earlier reaches a directly contradictory conclusion. Given the absence of any additional evidence between these two publications, how can this be?<br>
+I attribute this to a blind adhesion to <strong>frequentist statistics</strong> which</p>
+<p><font color="red"> &gt; apparently allows investigators to declare both that the treatment does not, and simultaneously does work, all with same available evidence!!!</font></p>
+<p></p>
+</section><section id="a-path-forward" class="level2"><h2 class="anchored" data-anchor-id="a-path-forward">A path forward</h2>
+<p>Bayesian statistics provide several advantages over more traditional methods,specifically helping to decide when additional research is required, how to interpret the new results, and how to synthesize and communicate the totality of the evidence are presented. Let’s consider each of these possible advantages in the context of colchicine and cardiovascular disease prevention.</p>
+<ol type="1">
+<li>
+<strong>Deciding when additional research is required.</strong> Bayesian methods can formally and principally incorporate prior knowledge / beliefs and their associated uncertainty into the analysis, according to the laws of probability, providing meaningful advantages over frequentist analyses. Consider in 2022, before the CLEAR trial was conducted, a meta-analysis of the existing colchicine evidence was published<span class="citation" data-cites="RN7092">(<a href="#ref-RN7092" role="doc-biblioref">Aw et al. 2022</a>)</span> and concluded</li>
+</ol>
+<p><font color="red"> &gt; “Colchicine significantly reduced the risk of MACE in patients with CAD who underwent PCI, mostly in the reduction of repeat vessel revascularisation, stroke and stent thrombosis (risk ratio 0.73 (95% CI 0.61 to 0.87); p=0.0003).</font></p>
+<p></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/meta_2022.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Forest plot from 2022 meta-analysis [@RN7092]"><img src="images/meta_2022.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600" alt="Forest plot from 2022 meta-analysis (Aw et al. 2022)"></a></p>
+</figure>
+</div>
+<figcaption>Forest plot from 2022 meta-analysis <span class="citation" data-cites="RN7092">(<a href="#ref-RN7092" role="doc-biblioref">Aw et al. 2022</a>)</span></figcaption></figure>
+</div>
+</div>
+</div>
+<p>Given the magnitude of the effect and its statistical significance, this frequentist analysis might have been interpreted as providing definitive evidence for colchicine’s benefit and that further trials are unnecessary, ethically dubious and potentially a waste of time and resources. Had the CLEAR investigators relied on the pooled summary estimate from this meta-analysis, they would have prematurely abandoned their trial.</p>
+<p>However, this meta-analysis conclusion is based on frequentist statistics and ignores the uncertainty in the estimates of the individual trials and in their between study heterogeneity. Consequently despite the appearance of little heterogeneity, this has been under-estimated and lacks power, given the small number of studies. Moreover the published analysis provides only a point estimate and confidence interval for the average pooled effect, and the prediction interval for the true effect in a new trial might be much wider. Although the utility of prediction intervals has been stressed<span class="citation" data-cites="RN2435 RN6702">(<a href="#ref-RN2435" role="doc-biblioref">Riley, Higgins, and Deeks 2011</a>; <a href="#ref-RN6702" role="doc-biblioref">IntHout et al. 2016</a>)</span> they rarely are included in standard meta-analyses.</p>
+<p>A Bayesian meta-analysis of this pre-CLEAR data would have avoided these issues and avoided the cognitive biases often associated with the frequentist null hypothesis significance testing paradigm[<span class="citation" data-cites="RN5257">Rafi and Greenland (<a href="#ref-RN5257" role="doc-biblioref">2020</a>)</span>.</p>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># setup</span></span>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span>echo <span class="op">=</span> <span class="cn">TRUE</span>, message <span class="op">=</span> <span class="cn">FALSE</span>, warning <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/message.html">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/cmdstanr/">cmdstanr</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mjskay.github.io/ggdist/">ggdist</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/posterior/">posterior</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.metafor-project.org">metafor</a></span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># data </span></span>
+<span></span>
+<span><span class="va">df_raw</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
+<span>  <span class="op">~</span><span class="va">study</span>, <span class="op">~</span><span class="va">evt_trt</span>, <span class="op">~</span><span class="va">N_trt</span>, <span class="op">~</span><span class="va">evt_ctl</span>, <span class="op">~</span><span class="va">N_ctl</span>,</span>
+<span>  <span class="st">"CISR"</span>, <span class="fl">1</span>, <span class="fl">30</span>, <span class="fl">8</span>, <span class="fl">60</span>,</span>
+<span>  <span class="st">"COLCHICINE-PCI"</span>, <span class="fl">24</span>, <span class="fl">206</span>, <span class="fl">25</span>, <span class="fl">194</span>,</span>
+<span>  <span class="st">"COLCOT"</span>, <span class="fl">131</span>, <span class="fl">2366</span>, <span class="fl">170</span>, <span class="fl">2379</span>,</span>
+<span>  <span class="st">"COPS"</span>, <span class="fl">24</span>, <span class="fl">396</span>, <span class="fl">41</span>, <span class="fl">399</span>,</span>
+<span>  <span class="st">"Deftereos_2013"</span>, <span class="fl">16</span>, <span class="fl">100</span>, <span class="fl">32</span>, <span class="fl">96</span>,</span>
+<span>  <span class="st">"Lodoc_MI"</span>, <span class="fl">0.5</span>, <span class="fl">120</span>, <span class="fl">2</span>, <span class="fl">118</span>,</span>
+<span>  <span class="st">"Okeefe"</span>, <span class="fl">41</span>, <span class="fl">130</span>, <span class="fl">25</span>, <span class="fl">67</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df_raw</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
+<span>    p_t <span class="op">=</span> <span class="va">evt_trt</span> <span class="op">/</span> <span class="va">N_trt</span>,</span>
+<span>    p_c <span class="op">=</span> <span class="va">evt_ctl</span> <span class="op">/</span> <span class="va">N_ctl</span>,</span>
+<span>    log_rr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">p_t</span> <span class="op">/</span> <span class="va">p_c</span><span class="op">)</span>,</span>
+<span>    se_rr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">p_t</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="va">p_t</span> <span class="op">*</span> <span class="va">N_trt</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">-</span> <span class="va">p_c</span><span class="op">)</span> <span class="op">/</span> <span class="op">(</span><span class="va">p_c</span> <span class="op">*</span> <span class="va">N_ctl</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Write Stan model</span></span>
+<span><span class="va">meta_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>  <span class="st">"data {"</span>,</span>
+<span>  <span class="st">"  int&lt;lower=0&gt; J;"</span>,</span>
+<span>  <span class="st">"  vector[J] y;"</span>,</span>
+<span>  <span class="st">"  vector&lt;lower=0&gt;[J] sigma;"</span>,</span>
+<span>  <span class="st">"}"</span>,</span>
+<span>  <span class="st">"parameters {"</span>,</span>
+<span>  <span class="st">"  real mu;"</span>,</span>
+<span>  <span class="st">"  real&lt;lower=0&gt; tau;"</span>,</span>
+<span>  <span class="st">"  vector[J] theta;"</span>,</span>
+<span>  <span class="st">"}"</span>,</span>
+<span>  <span class="st">"model {"</span>,</span>
+<span>  <span class="st">"  mu ~ normal(0, 1);"</span>,</span>
+<span>  <span class="st">"  tau ~ normal(0, 1);"</span>,       <span class="co"># Half-normal due to lower=0 , another choice truncated cauchy(0, 1) T[0, 2];</span></span>
+<span>  <span class="st">"  theta ~ normal(mu, tau);"</span>,</span>
+<span>  <span class="st">"  y ~ normal(theta, sigma);"</span>,</span>
+<span>  <span class="st">"}"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/writeLines.html">writeLines</a></span><span class="op">(</span><span class="va">meta_code</span>, <span class="st">'model/meta_model.stan'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">log_rr</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">$</span><span class="va">log_rr</span></span>
+<span><span class="va">se</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">$</span><span class="va">se_rr</span></span>
+<span><span class="va">study_labels</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">$</span><span class="va">study</span></span>
+<span><span class="va">data_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>J <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">log_rr</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">log_rr</span>, sigma <span class="op">=</span>  <span class="va">se</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/cmdstanr/reference/cmdstan_model.html">cmdstan_model</a></span><span class="op">(</span><span class="st">'model/meta_model.stan'</span><span class="op">)</span></span>
+<span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="va">mod</span><span class="op">$</span><span class="fu">sample</span><span class="op">(</span>data <span class="op">=</span> <span class="va">data_list</span>, chains <span class="op">=</span> <span class="fl">4</span>, iter_warmup <span class="op">=</span> <span class="fl">1000</span>, iter_sampling <span class="op">=</span>            <span class="fl">2000</span>, seed <span class="op">=</span> <span class="fl">1234</span>, refresh <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">draws</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/posterior/reference/draws_df.html">as_draws_df</a></span><span class="op">(</span><span class="va">fit</span><span class="op">$</span><span class="fu">draws</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mu"</span>, <span class="st">"tau"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Draws for each theta and mu</span></span>
+<span><span class="va">theta_draws</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/posterior/reference/draws_df.html">as_draws_df</a></span><span class="op">(</span><span class="va">fit</span><span class="op">$</span><span class="fu">draws</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mu"</span>, <span class="st">"theta"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 95% CI for observed RR</span></span>
+<span><span class="va">obs_lower</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">log_rr</span> <span class="op">-</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">se</span><span class="op">)</span></span>
+<span><span class="va">obs_upper</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">log_rr</span> <span class="op">+</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="va">se</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Posterior mean and 95% CI for each study</span></span>
+<span><span class="va">post_rr_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">theta_draws</span><span class="op">[[</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"theta["</span>, <span class="va">i</span>, <span class="st">"]"</span><span class="op">)</span><span class="op">]</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">post_rr_lower</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">theta_draws</span><span class="op">[[</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"theta["</span>, <span class="va">i</span>, <span class="st">"]"</span><span class="op">)</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>, <span class="fl">0.025</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">post_rr_upper</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">theta_draws</span><span class="op">[[</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"theta["</span>, <span class="va">i</span>, <span class="st">"]"</span><span class="op">)</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>, <span class="fl">0.975</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Overall posterior mean and CI</span></span>
+<span><span class="va">overall_rr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">theta_draws</span><span class="op">$</span><span class="va">mu</span><span class="op">)</span></span>
+<span><span class="va">overall_rr_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">overall_rr</span><span class="op">)</span></span>
+<span><span class="va">overall_rr_ci</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">overall_rr</span>, probs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.025</span>, <span class="fl">0.975</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Predictive RR</span></span>
+<span><span class="va">mu_vals</span> <span class="op">&lt;-</span> <span class="va">theta_draws</span><span class="op">$</span><span class="va">mu</span></span>
+<span><span class="va">tau_vals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://mc-stan.org/posterior/reference/draws_df.html">as_draws_df</a></span><span class="op">(</span><span class="va">fit</span><span class="op">$</span><span class="fu">draws</span><span class="op">(</span><span class="st">"tau"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">tau</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span><span class="va">pred_draws</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">4000</span>, <span class="va">mu_vals</span>, <span class="va">tau_vals</span><span class="op">)</span></span>
+<span><span class="va">pred_rr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">pred_draws</span><span class="op">)</span></span>
+<span><span class="va">pred_rr_mean</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">pred_rr</span><span class="op">)</span></span>
+<span><span class="va">pred_rr_ci</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">pred_rr</span>, probs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.025</span>, <span class="fl">0.975</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class="co"># Forest plot</span></span>
+<span><span class="va">plot_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>  Study <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">study_labels</span>, <span class="st">"Overall"</span>, <span class="st">"Predicted"</span><span class="op">)</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">study_labels</span>, <span class="st">"Overall"</span>, <span class="st">"Predicted"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  Observed_RR <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">log_rr</span><span class="op">)</span>, <span class="fl">2</span><span class="op">)</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>  Observed_Lower <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">obs_lower</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>  Observed_Upper <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">obs_upper</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>  Borrowed_RR <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">post_rr_mean</span>, <span class="va">overall_rr_mean</span>, <span class="va">pred_rr_mean</span><span class="op">)</span>,</span>
+<span>  Borrowed_Lower <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">post_rr_lower</span>, <span class="va">overall_rr_ci</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">pred_rr_ci</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>  Borrowed_Upper <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">post_rr_upper</span>, <span class="va">overall_rr_ci</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="va">pred_rr_ci</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">offset</span> <span class="op">&lt;-</span> <span class="fl">0.15</span>  <span class="co"># adjust for spacing</span></span>
+<span></span>
+<span><span class="va">gg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">plot_data</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="co"># Observed (blue)</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Observed_RR</span>, y <span class="op">=</span> <span class="va">Study</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_errorbar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="va">Observed_Lower</span>, xmax <span class="op">=</span> <span class="va">Observed_Upper</span>, y <span class="op">=</span> <span class="va">Study</span><span class="op">)</span>,</span>
+<span>                 height <span class="op">=</span> <span class="fl">0.2</span>, color <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="co"># Borrowed (red) shifted down</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Borrowed_RR</span>, y <span class="op">=</span> <span class="va">Study</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"red"</span>,</span>
+<span>             position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_nudge.html">position_nudge</a></span><span class="op">(</span>y <span class="op">=</span> <span class="op">-</span><span class="va">offset</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_errorbarh</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="va">Borrowed_Lower</span>, xmax <span class="op">=</span> <span class="va">Borrowed_Upper</span>, y <span class="op">=</span> <span class="va">Study</span><span class="op">)</span>,</span>
+<span>                 height <span class="op">=</span> <span class="fl">0.2</span>, color <span class="op">=</span> <span class="st">"red"</span>,</span>
+<span>                 position <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/position_nudge.html">position_nudge</a></span><span class="op">(</span>y <span class="op">=</span> <span class="op">-</span><span class="va">offset</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">1</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>trans <span class="op">=</span> <span class="st">"log"</span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">1</span>, <span class="fl">1.5</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Forest Plot: Bayesian Meta-Analysis (Risk Ratios)"</span>,</span>
+<span>    x <span class="op">=</span> <span class="st">"Risk Ratio (RR)"</span>, y <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>    caption <span class="op">=</span> <span class="st">"Blue = Observed; Red = Bayesian Shrinkage Estimate from Meta-Analysis"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">gg</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"output/forest_bayes_preCLEAR.png"</span>, plot <span class="op">=</span> <span class="va">gg</span>, width <span class="op">=</span> <span class="fl">8</span>, height <span class="op">=</span> <span class="fl">5</span>, dpi <span class="op">=</span> <span class="fl">300</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/meta_2022_bayes.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Bayesian forest plot based on 2022 meta-analysis"><img src="images/meta_2022_bayes.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600" alt="Bayesian forest plot based on 2022 meta-analysis"></a></p>
+</figure>
+</div>
+<figcaption>Bayesian forest plot based on 2022 meta-analysis</figcaption></figure>
+</div>
+</div>
+</div>
+<p>This analysis does allow a more nuanced assessment of the need for further research as while the overall (pooled average) 95% credible interval is &lt; 1, the clinical significance is not assured and the wide prediction interval for the next study justifies the need for a future (CLEAR) trial. An advantage of the Bayesian approach is that it improves the estimates for each individual study by the borrowing of strength from the other studies, shrinking extreme estimates towards the overall mean. This is particularly useful for small studies with large uncertainty, as seen in the forest plot above.</p>
+<ol start="2" type="1">
+<li>
+<strong>Interpreting new results.</strong> After the CLEAR trial<span class="citation" data-cites="RN7633">(<a href="#ref-RN7633" role="doc-biblioref">Jolly et al. 2025</a>)</span> was published, a frequentist meta-analysis<span class="citation" data-cites="RN7658">(<a href="#ref-RN7658" role="doc-biblioref">d’Entremont et al. 2025</a>)</span> including CLEAR concluded that colchicine reduced MACE by 12%. This conclusion seems at odds with the CLEAR findings and raises questions about the validity of either the CLEAR trial or the meta-analysis. The frequentist approach does not provide a formal mechanism to reconcile these conflicting results. A Bayesian analysis could have incorporated the new CLEAR data with prior knowledge to obtain a posterior (updated) probability distribution.<br>
+The question then becomes the choice of prior knowledge. The 2022 meta-anlysis results seem a most reasonable prior evidence although a prior based uniquely on COLCOT, the largest and most similar trial, as acknowledged by the CLEAR investigators<span class="citation" data-cites="RN7633">(<a href="#ref-RN7633" role="doc-biblioref">Jolly et al. 2025</a>)</span> would be another reasonable choice. Finally one could also use a vague prior which allows the analysis to be dominated uniquely by the CLEAR results. Graphically these priors and the corresponding posterior distributions after updating with CLEAR<span class="citation" data-cites="RN7633">(<a href="#ref-RN7633" role="doc-biblioref">Jolly et al. 2025</a>)</span> are shown below.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/prior_posterior_plot_RR.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Prior and posterior distributions on risk ratio scale. Lines indicate prior distributions; shaded areas indicate posterior distributions; and blue posterior approximates CLEAR data alone."><img src="images/prior_posterior_plot_RR.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="600" alt="Prior and posterior distributions on risk ratio scale. Lines indicate prior distributions; shaded areas indicate posterior distributions; and blue posterior approximates CLEAR data alone."></a></p>
+</figure>
+</div>
+<figcaption>Prior and posterior distributions on risk ratio scale. Lines indicate prior distributions; shaded areas indicate posterior distributions; and blue posterior approximates CLEAR data alone.</figcaption></figure>
+</div>
+</div>
+</div>
+<p>This figure shows that in contrast with the CLEAR frequentist NHST interpretation of no effect there is a 58% probability (blue shaded area under the curve (AUC) &lt; 1) of a positive effect, using a vague prior (blue line) allowing the CLEAR data alone to dominate. If one considers the prior knowledge as summarized by the meta-analysis (green line), the posterior distribution (green curve) provides strong evidence that colchicine has an effect on MACE (AUC &lt; 1, ~ 100%). The COLCOT prior (red line) leads to a posterior (red shaded area) that is shifted left, compatible with a 92% probability of a colchicine benefit (red shaded AUC &lt; 1). Overall, all three posteriors suggest that colchicine may reduce MACE. This Bayesian approach provides a coherent framework to integrate prior knowledge with new evidence, leading to more informed conclusions.</p>
+<ol start="3" type="1">
+<li>
+<strong>Synthesizing and communicating the totality of evidence.</strong> The frequentist meta-analysis<span class="citation" data-cites="RN7658">(<a href="#ref-RN7658" role="doc-biblioref">d’Entremont et al. 2025</a>)</span> concluded that colchicine reduced MACE by 12%, with little mention of the uncertainty surrounding this estimate. The Bayesian approach assures the uncertainty is an integral part of the analysis, being formally incorporated into it. Rather than focusing on a point estimate, the Bayesian approach produces a posterior probability distribution thereby providing the possibility of reporting a full range of possible effect sizes. The Bayesian median effect with the meta-analysis prior is 14%, approximating well the frequentist 12% point estimate, but with the accompanying 95% credible intervals (4% to 22% reduction) providing a more comprehensive understanding of the uncertainty surrounding the effect size. Moreover rather than simply examining the probability of any benefit (RR &lt; 1), one can also assess the probability of a clinically meaningful benefit, for example a &gt; 10% or &gt; 15% reduction in MACE (AUC &lt; 0.9, ~ 78%, AUC &lt; 0.85, ~ 40%).</li>
+</ol></section><section id="conclusions" class="level2"><h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>Conventional frequentist statistical analyses combined with NHST encourages a piecemeal, one off apporach to scientific discovery and publication. In contrast, Bayesian statistics provide a coherent and principled framework to address several challenges in clinical research, including deciding when additional research is required, interpreting new results in the context of prior knowledge, and synthesizing and communicating the totality of evidence.</p>
+<p>Ultimately this Bayesian approach do not support the CLEAR conclusion that colchicine has no benefit in secondary prevention of cardiovascular events. Nor does it fully support the frequentist meta-analysis conclusion of a definitive colchicine benefit. Rather, the Bayesian analysis suggest that while a large colchicine benefit is unlikely, a modest benefit remains possible and further research may be warranted to clarify this uncertainty. This nuanced interpretation avoids the pitfalls of binary thinking inherent in NHST and encourages a more comprehensive understanding of the evidence.</p>
+<p>As I concluded in a recent publication<span class="citation" data-cites="RN3">(<a href="#ref-RN3" role="doc-biblioref">Brophy 2025</a>)</span>:</p>
+<p><font color="red"> &gt; “This example of colchicine for the secondary prevention of cardiovascular events shows that the probabilistically correct harmonization of all available evidence with a Bayesian analysis can improve individual trial interpretation as well as the interpretation of any ensuing meta-analyses while minimizing cognitive errors. An increased emphasis on teaching these methods and expanding their application in clinical research would seem appropriate.”</font></p>
+<p></p>
+</section><section id="references" class="level2">
+
+
+<!-- -->
+
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-RN7092" class="csl-entry" role="listitem">
+Aw, K. L., A. Koh, H. L. Lee, A. Kudzinskas, and R. De Palma. 2022. <span>“Colchicine for Symptomatic Coronary Artery Disease After Percutaneous Coronary Intervention.”</span> Journal Article. <em>Open Heart</em> 9 (1). <a href="https://doi.org/10.1136/openhrt-2021-001887">https://doi.org/10.1136/openhrt-2021-001887</a>.
+</div>
+<div id="ref-RN3" class="csl-entry" role="listitem">
+Brophy, J. M. 2025. <span>“The Trials of Interpreting Clinical Trials-a Bayesian Perspective on Colchicine After an Acute Coronary Syndrome.”</span> Journal Article. <em>Can J Cardiol</em> 41 (10): 1929–35. <a href="https://doi.org/10.1016/j.cjca.2025.06.008">https://doi.org/10.1016/j.cjca.2025.06.008</a>.
+</div>
+<div id="ref-RN7658" class="csl-entry" role="listitem">
+d’Entremont, M. A., M. H. F. Poorthuis, A. T. L. Fiolet, P. Amarenco, K. E. Boczar, I. Buysschaert, N. C. Chan, et al. 2025. <span>“Colchicine for Secondary Prevention of Vascular Events: A Meta-Analysis of Trials.”</span> Journal Article. <em>Eur Heart J</em> 46 (26): 2564–75. <a href="https://doi.org/10.1093/eurheartj/ehaf210">https://doi.org/10.1093/eurheartj/ehaf210</a>.
+</div>
+<div id="ref-RN6702" class="csl-entry" role="listitem">
+IntHout, J., J. P. Ioannidis, M. M. Rovers, and J. J. Goeman. 2016. <span>“Plea for Routinely Presenting Prediction Intervals in Meta-Analysis.”</span> Journal Article. <em>BMJ Open</em> 6 (7): e010247. <a href="https://doi.org/10.1136/bmjopen-2015-010247">https://doi.org/10.1136/bmjopen-2015-010247</a>.
+</div>
+<div id="ref-RN7633" class="csl-entry" role="listitem">
+Jolly, S. S., M. A. d’Entremont, S. F. Lee, R. Mian, J. Tyrwhitt, S. Kedev, G. Montalescot, et al. 2025. <span>“Colchicine in Acute Myocardial Infarction.”</span> Journal Article. <em>N Engl J Med</em> 392 (7): 633–42. <a href="https://doi.org/10.1056/NEJMoa2405922">https://doi.org/10.1056/NEJMoa2405922</a>.
+</div>
+<div id="ref-RN5257" class="csl-entry" role="listitem">
+Rafi, Z., and S. Greenland. 2020. <span>“Semantic and Cognitive Tools to Aid Statistical Science: Replace Confidence and Significance by Compatibility and Surprise.”</span> Journal Article. <em>BMC Med Res Methodol</em> 20 (1): 244. <a href="https://doi.org/10.1186/s12874-020-01105-9">https://doi.org/10.1186/s12874-020-01105-9</a>.
+</div>
+<div id="ref-RN2435" class="csl-entry" role="listitem">
+Riley, R. D., J. P. Higgins, and J. J. Deeks. 2011. <span>“Interpretation of Random Effects Meta-Analyses.”</span> Journal Article. <em>BMJ</em> 342: d549. <a href="https://doi.org/10.1136/bmj.d549">https://doi.org/10.1136/bmj.d549</a>.
+</div>
+<div id="ref-RN5451" class="csl-entry" role="listitem">
+Tardif, J. C., S. Kouz, D. D. Waters, O. F. Bertrand, R. Diaz, A. P. Maggioni, F. J. Pinto, et al. 2019. <span>“Efficacy and Safety of Low-Dose Colchicine After Myocardial Infarction.”</span> Journal Article. <em>N Engl J Med</em> 381 (26): 2497–2505. <a href="https://doi.org/10.1056/NEJMoa1912388">https://doi.org/10.1056/NEJMoa1912388</a>.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brophy2025,
+  author = {Brophy, Jay},
+  title = {Covering Your Bases},
+  date = {2025-11-29},
+  url = {https://brophyj.com/posts/2025-11-29-my-blog-post/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-brophy2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Brophy, Jay. 2025. <span>“Covering Your Bases.”</span> November 29,
+2025. <a href="https://brophyj.com/posts/2025-11-29-my-blog-post/">https://brophyj.com/posts/2025-11-29-my-blog-post/</a>.
+</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/brophyj\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Covering your bases"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Heads, I win; tails, you lose: on the perils of the medical literature"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - name: Jay Brophy</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    url: https://brophyj.github.io/</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    orcid: 0000-0001-8049-6875</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    affiliation: McGill University Dept Medince, Epidemiology &amp; Biostatistics</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    affiliation-url: https://mcgill.ca </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span><span class="co"> []</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [meta-analysis, bias, Bayesian]</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> preview-image.jpg</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> </span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">  url: https://brophyj.com/posts/2025-11-29-my-blog-post/ </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2025-11-29T14:39:55-05:00</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="an">lastmod:</span><span class="co"> 2025-11-29T14:39:55-05:00</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="an">featured:</span><span class="co"> true</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="an">projects:</span><span class="co"> []</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true   # optional: adds copy/download buttons</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">    keep_md: true</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">    self_contained: true</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">  markdown: </span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">    wrap: sentence</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> [bib.bib]</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="an">biblio-style:</span><span class="co"> apalike</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## A recent article</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>In February 2025, the CLEAR investigators<span class="co">[</span><span class="ot">@RN7633</span><span class="co">]</span> published the results of their large randomized controlled trial (RCT) of colchicine (n = 3528) versus placebo (n = 3534) in post myocardial infarction patients.</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>The rationale for the study was that colchicine, an anti-inflammatory drug, might reduce major adverse cardiovascular events (MACE) by reducing inflammation after myocardial infarction.</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>Previous smaller trials and meta-analyses had suggested a benefit, but the evidence was not definitive.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>The primary outcome was MACE, a composite of cardiovascular death, myocardial infarction, stroke, or ischemia-driven revascularization.</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>With a median 3-year follow-up, there were 9.1% events in the colchicine group and 9.3% in the placebo arm (hazard ratio, 0.99; 95% CI, 0.85-1.16).</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>Because of the high-quality study design, execution, and large number of primary outcome events (n = 649), the authors reasoned that the probability of a spurious result was low.</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>Thus, they concluded   </span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">"red"</span><span class="dt">&gt;</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; “...treatment with colchicine, when started soon after myocardial infarction and continued for a median of 3 years, did not reduce the incidence of the composite primary outcome.”</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>CLEAR investigators<span class="co">[</span><span class="ot">@RN7633</span><span class="co">]</span> acknowledge a previous large COLCOT trial<span class="co">[</span><span class="ot">@RN5451</span><span class="co">]</span> (n = 4745), reported a significant reduction in MACE with colchicine (HR 0.77, 95% CI 0.61-0.96, p = 0.02) but make no attempt to reconcile the conflicting results or to provide a synthesis of the totality of evidence.     </span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## A recent meta-analysis</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>Only one month after the CLEAR publication a formal meta-analysis of all available colchicine trials for secondary prevention of vascular events was fast tracked for publication in the European Heart Journal<span class="co">[</span><span class="ot">RN7658</span><span class="co">]</span>, one of the top three most influential general cardiology journals worldwide (impact factor 35.6). They concluded</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">"red"</span><span class="dt">&gt;</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; “In patients with prior coronary disease or stroke, colchicine reduced the composite of cardiovascular death, myocardial infarction, or stroke by 12%.”</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>What is mot interesting about this meta-analysis, ignoring the lack of any measure of uncertainty surrounding their benefit estimate, is that that first and senior authors of this meta-analysis are CLEAR investigators who one month earlier reaches a directly contradictory conclusion. Given the absence of any additional evidence between these two publications, how can this be?    </span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>I attribute this to a blind adhesion to **frequentist statistics** which   </span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">"red"</span><span class="dt">&gt;</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; apparently allows investigators to declare both that the treatment does not, and simultaneously does work, all with same available evidence!!!</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## A path forward</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>Bayesian statistics provide several advantages over more traditional methods,specifically helping to decide when additional research is required, how to interpret the new results,</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>and how to synthesize and communicate the totality of the evidence are presented. Let's consider each of these possible advantages in the context of colchicine and cardiovascular disease prevention.</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Deciding when additional research is required.** Bayesian methods can formally and principally incorporate prior knowledge / beliefs and their associated uncertainty into the analysis, according to the laws of probability, providing meaningful advantages over frequentist analyses. Consider in 2022, before the CLEAR trial was conducted, a meta-analysis of the existing colchicine evidence was published<span class="co">[</span><span class="ot">@RN7092</span><span class="co">]</span> and concluded   </span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">"red"</span><span class="dt">&gt;</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Colchicine significantly reduced the risk of MACE in patients with CAD who underwent PCI, mostly in the reduction of repeat vessel revascularisation, stroke and stent thrombosis (risk ratio 0.73 (95% CI 0.61 to 0.87); p=0.0003).</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig_meta_2022, echo=FALSE, fig.cap='Forest plot from 2022 meta-analysis [@RN7092]', out.width='600px', fig.align='center'}</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">'images/meta_2022.png'</span>)</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>Given the magnitude of the effect and its statistical significance, this frequentist analysis might have been interpreted as providing definitive evidence for colchicine's benefit and that further trials are unnecessary, ethically dubious and potentially a waste of time and resources. Had the CLEAR investigators relied on the pooled summary estimate from this meta-analysis, they would have prematurely abandoned their trial.  </span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>However, this meta-analysis conclusion is based on frequentist statistics and ignores the uncertainty in the estimates of the individual trials and in their between study heterogeneity. Consequently despite the appearance of little heterogeneity, this has been under-estimated and lacks power, given the small number of studies. Moreover the published analysis provides only a point estimate and confidence interval for the average pooled effect, and the prediction interval for the true effect in a new trial might be much wider. Although the utility of prediction intervals has been stressed<span class="co">[</span><span class="ot">@RN2435; @RN6702</span><span class="co">]</span> they rarely are included in standard meta-analyses.</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>A Bayesian meta-analysis of this pre-CLEAR data would have avoided these issues and avoided the cognitive biases often associated with the frequentist null hypothesis significance testing paradigm[@RN5257.  </span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="co"># setup</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>({</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(readr)</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(cmdstanr)</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(ggdist)</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(dplyr)</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(posterior)</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(metafor)</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="co"># data </span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>df_raw <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>study, <span class="sc">~</span>evt_trt, <span class="sc">~</span>N_trt, <span class="sc">~</span>evt_ctl, <span class="sc">~</span>N_ctl,</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>  <span class="st">"CISR"</span>, <span class="dv">1</span>, <span class="dv">30</span>, <span class="dv">8</span>, <span class="dv">60</span>,</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>  <span class="st">"COLCHICINE-PCI"</span>, <span class="dv">24</span>, <span class="dv">206</span>, <span class="dv">25</span>, <span class="dv">194</span>,</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>  <span class="st">"COLCOT"</span>, <span class="dv">131</span>, <span class="dv">2366</span>, <span class="dv">170</span>, <span class="dv">2379</span>,</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>  <span class="st">"COPS"</span>, <span class="dv">24</span>, <span class="dv">396</span>, <span class="dv">41</span>, <span class="dv">399</span>,</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Deftereos_2013"</span>, <span class="dv">16</span>, <span class="dv">100</span>, <span class="dv">32</span>, <span class="dv">96</span>,</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Lodoc_MI"</span>, <span class="fl">0.5</span>, <span class="dv">120</span>, <span class="dv">2</span>, <span class="dv">118</span>,</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Okeefe"</span>, <span class="dv">41</span>, <span class="dv">130</span>, <span class="dv">25</span>, <span class="dv">67</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df_raw <span class="sc">%&gt;%</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_t =</span> evt_trt <span class="sc">/</span> N_trt,</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">p_c =</span> evt_ctl <span class="sc">/</span> N_ctl,</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>    <span class="at">log_rr =</span> <span class="fu">log</span>(p_t <span class="sc">/</span> p_c),</span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>    <span class="at">se_rr =</span> <span class="fu">sqrt</span>((<span class="dv">1</span> <span class="sc">-</span> p_t) <span class="sc">/</span> (p_t <span class="sc">*</span> N_trt) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> p_c) <span class="sc">/</span> (p_c <span class="sc">*</span> N_ctl))</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="co"># Write Stan model</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>meta_code <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data {"</span>,</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  int&lt;lower=0&gt; J;"</span>,</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  vector[J] y;"</span>,</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  vector&lt;lower=0&gt;[J] sigma;"</span>,</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>  <span class="st">"}"</span>,</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>  <span class="st">"parameters {"</span>,</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  real mu;"</span>,</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  real&lt;lower=0&gt; tau;"</span>,</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  vector[J] theta;"</span>,</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>  <span class="st">"}"</span>,</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>  <span class="st">"model {"</span>,</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  mu ~ normal(0, 1);"</span>,</span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  tau ~ normal(0, 1);"</span>,       <span class="co"># Half-normal due to lower=0 , another choice truncated cauchy(0, 1) T[0, 2];</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  theta ~ normal(mu, tau);"</span>,</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>  <span class="st">"  y ~ normal(theta, sigma);"</span>,</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>  <span class="st">"}"</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(meta_code, <span class="st">'model/meta_model.stan'</span>)</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>log_rr <span class="ot">&lt;-</span> df<span class="sc">$</span>log_rr</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> df<span class="sc">$</span>se_rr</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>study_labels <span class="ot">&lt;-</span> df<span class="sc">$</span>study</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">J =</span> <span class="fu">length</span>(log_rr), <span class="at">y =</span> log_rr, <span class="at">sigma =</span>  se)</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">cmdstan_model</span>(<span class="st">'model/meta_model.stan'</span>)</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> mod<span class="sc">$</span><span class="fu">sample</span>(<span class="at">data =</span> data_list, <span class="at">chains =</span> <span class="dv">4</span>, <span class="at">iter_warmup =</span> <span class="dv">1000</span>, <span class="at">iter_sampling =</span>            <span class="dv">2000</span>, <span class="at">seed =</span> <span class="dv">1234</span>, <span class="at">refresh =</span> <span class="dv">0</span>)</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>draws <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fit<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"tau"</span>)))</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="co"># Draws for each theta and mu</span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>theta_draws <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fit<span class="sc">$</span><span class="fu">draws</span>(<span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"theta"</span>)))</span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="co"># 95% CI for observed RR</span></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>obs_lower <span class="ot">&lt;-</span> <span class="fu">exp</span>(log_rr <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se)</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>obs_upper <span class="ot">&lt;-</span> <span class="fu">exp</span>(log_rr <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se)</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="co"># Posterior mean and 95% CI for each study</span></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>post_rr_mean <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="cf">function</span>(i) <span class="fu">mean</span>(<span class="fu">exp</span>(theta_draws[[<span class="fu">paste0</span>(<span class="st">"theta["</span>, i, <span class="st">"]"</span>)]])))</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>post_rr_lower <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="cf">function</span>(i) <span class="fu">quantile</span>(<span class="fu">exp</span>(theta_draws[[<span class="fu">paste0</span>(<span class="st">"theta["</span>, i, <span class="st">"]"</span>)]]), <span class="fl">0.025</span>))</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>post_rr_upper <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="cf">function</span>(i) <span class="fu">quantile</span>(<span class="fu">exp</span>(theta_draws[[<span class="fu">paste0</span>(<span class="st">"theta["</span>, i, <span class="st">"]"</span>)]]), <span class="fl">0.975</span>))</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a><span class="co"># Overall posterior mean and CI</span></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>overall_rr <span class="ot">&lt;-</span> <span class="fu">exp</span>(theta_draws<span class="sc">$</span>mu)</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>overall_rr_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(overall_rr)</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>overall_rr_ci <span class="ot">&lt;-</span> <span class="fu">quantile</span>(overall_rr, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a><span class="co"># Predictive RR</span></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>mu_vals <span class="ot">&lt;-</span> theta_draws<span class="sc">$</span>mu</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>tau_vals <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fit<span class="sc">$</span><span class="fu">draws</span>(<span class="st">"tau"</span>))<span class="sc">$</span>tau</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>pred_draws <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">4000</span>, mu_vals, tau_vals)</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>pred_rr <span class="ot">&lt;-</span> <span class="fu">exp</span>(pred_draws)</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>pred_rr_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(pred_rr)</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>pred_rr_ci <span class="ot">&lt;-</span> <span class="fu">quantile</span>(pred_rr, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a><span class="co"># Forest plot</span></span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>  <span class="at">Study =</span> <span class="fu">factor</span>(<span class="fu">c</span>(study_labels, <span class="st">"Overall"</span>, <span class="st">"Predicted"</span>), <span class="at">levels =</span> <span class="fu">rev</span>(<span class="fu">c</span>(study_labels, <span class="st">"Overall"</span>, <span class="st">"Predicted"</span>))),</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>  <span class="at">Observed_RR =</span> <span class="fu">c</span>(<span class="fu">round</span>(<span class="fu">exp</span>(log_rr), <span class="dv">2</span>), <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>  <span class="at">Observed_Lower =</span> <span class="fu">c</span>(obs_lower, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>  <span class="at">Observed_Upper =</span> <span class="fu">c</span>(obs_upper, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>  <span class="at">Borrowed_RR =</span> <span class="fu">c</span>(post_rr_mean, overall_rr_mean, pred_rr_mean),</span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>  <span class="at">Borrowed_Lower =</span> <span class="fu">c</span>(post_rr_lower, overall_rr_ci[<span class="dv">1</span>], pred_rr_ci[<span class="dv">1</span>]),</span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>  <span class="at">Borrowed_Upper =</span> <span class="fu">c</span>(post_rr_upper, overall_rr_ci[<span class="dv">2</span>], pred_rr_ci[<span class="dv">2</span>])</span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>offset <span class="ot">&lt;-</span> <span class="fl">0.15</span>  <span class="co"># adjust for spacing</span></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(plot_data) <span class="sc">+</span></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Observed (blue)</span></span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Observed_RR, <span class="at">y =</span> Study), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> Observed_Lower, <span class="at">xmax =</span> Observed_Upper, <span class="at">y =</span> Study),</span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a>                 <span class="at">height =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Borrowed (red) shifted down</span></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Borrowed_RR, <span class="at">y =</span> Study), <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a>             <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="sc">-</span>offset)) <span class="sc">+</span></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> Borrowed_Lower, <span class="at">xmax =</span> Borrowed_Upper, <span class="at">y =</span> Study),</span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>                 <span class="at">height =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="sc">-</span>offset)) <span class="sc">+</span></span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">trans =</span> <span class="st">"log"</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Forest Plot: Bayesian Meta-Analysis (Risk Ratios)"</span>,</span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Risk Ratio (RR)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Blue = Observed; Red = Bayesian Shrinkage Estimate from Meta-Analysis"</span></span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gg)</span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"output/forest_bayes_preCLEAR.png"</span>, <span class="at">plot =</span> gg, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r fig_meta_2022_bayes, echo=FALSE, fig.cap='Bayesian forest plot based on 2022  meta-analysis', out.width='600px', fig.align='center'}</span></span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">'images/meta_2022_bayes.png'</span>)</span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a>This analysis does allow a more nuanced assessment of the need for further research as while the overall (pooled average) 95% credible interval is &lt; 1, the clinical significance is not assured and the wide prediction interval for the next study justifies the need for a future (CLEAR) trial. An advantage of the Bayesian approach is that it improves the estimates for each individual study by the borrowing of strength from the other studies, shrinking extreme estimates towards the overall mean. This is particularly useful for small studies with large uncertainty, as seen in the forest plot above.      </span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Interpreting new results.** After the CLEAR trial<span class="co">[</span><span class="ot">@RN7633</span><span class="co">]</span> was published, a frequentist meta-analysis<span class="co">[</span><span class="ot">@RN7658</span><span class="co">]</span> including CLEAR concluded that colchicine reduced MACE by 12%. This conclusion seems at odds with the CLEAR findings and raises questions about the validity of either the CLEAR trial or the meta-analysis. The frequentist approach does not provide a formal mechanism to reconcile these conflicting results. A Bayesian analysis could have incorporated the new CLEAR data with  prior knowledge to obtain a posterior (updated) probability distribution.     </span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a>The question then becomes the choice of prior knowledge. The 2022 meta-anlysis results seem a most reasonable prior evidence although a prior based uniquely on COLCOT, the largest and most similar trial, as acknowledged by the CLEAR investigators<span class="co">[</span><span class="ot">@RN7633</span><span class="co">]</span> would be another reasonable choice. Finally one could also use a vague prior which allows the analysis to be dominated uniquely by the CLEAR results. Graphically these priors and the corresponding posterior distributions after updating with CLEAR<span class="co">[</span><span class="ot">@RN7633</span><span class="co">]</span> are shown below.</span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{r prior_posterior, echo=FALSE, fig.cap='Prior and posterior distributions on risk ratio scale. Lines indicate prior distributions; shaded areas indicate posterior distributions; and blue posterior approximates CLEAR data alone.', out.width='600px', fig.align='center'}</span></span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a><span class="co"># code to create Figure found at https://github.com/brophyj/colchicine/02_sequential_normal.qmd</span></span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">'images/prior_posterior_plot_RR.png'</span>)</span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a><span class="co"># quantile(draws_rr2[draws_rr2$prior == "Meta-analysis prior", ]$RR, c(0.025, 0.5, 0.975))</span></span>
+<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a>This figure shows that in contrast with the CLEAR frequentist NHST interpretation of no effect there is a 58% probability (blue shaded area under the curve (AUC) &lt; 1) of a positive effect, using a vague prior (blue line) allowing the CLEAR data alone to dominate. If one considers the prior knowledge as summarized by the meta-analysis (green line), the posterior distribution (green curve) provides strong evidence that colchicine has an effect on MACE (AUC &lt; 1, ~ 100%).  The COLCOT prior (red line) leads to a posterior (red shaded area) that is shifted left, compatible with a 92% probability of a colchicine benefit (red shaded AUC &lt; 1). Overall, all three posteriors suggest that colchicine may reduce MACE. This Bayesian approach provides a coherent framework to integrate prior knowledge with new evidence, leading to more informed conclusions. </span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Synthesizing and communicating the totality of evidence.** The frequentist meta-analysis<span class="co">[</span><span class="ot">@RN7658</span><span class="co">]</span> concluded that colchicine reduced MACE by 12%, with little mention of the uncertainty surrounding this estimate. The Bayesian approach assures the uncertainty is an integral part of the analysis, being formally incorporated into it. Rather than focusing on a point estimate, the Bayesian approach produces a posterior probability distribution thereby providing the possibility of reporting a full range of possible effect sizes. The Bayesian median effect with the meta-analysis prior is 14%, approximating well the frequentist 12% point estimate, but with the accompanying 95% credible intervals (4% to 22% reduction) providing a more comprehensive understanding of the uncertainty surrounding the effect size. Moreover rather than simply examining the probability of any benefit (RR &lt; 1), one can also assess the probability of a clinically meaningful benefit, for example a &gt; 10% or &gt; 15% reduction in MACE (AUC &lt; 0.9, ~ 78%, AUC &lt; 0.85, ~ 40%). </span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusions</span></span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a>Conventional frequentist statistical analyses combined with NHST encourages a piecemeal, one off apporach to scientific discovery and publication. In contrast, Bayesian statistics provide a coherent and principled framework to address several challenges in clinical research, including deciding when additional research is required, interpreting new results in the context of prior knowledge, and synthesizing and communicating the totality of evidence.      </span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a>Ultimately this Bayesian approach do not support the CLEAR conclusion that colchicine has no benefit in secondary prevention of cardiovascular events. Nor does it fully support the frequentist meta-analysis conclusion of a definitive colchicine benefit. Rather, the Bayesian analysis suggest that while a large colchicine benefit is unlikely, a modest benefit remains possible and further research may be warranted to clarify this uncertainty. This nuanced interpretation avoids the pitfalls of binary thinking inherent in NHST and encourages a more comprehensive understanding of the evidence.      </span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a>As I concluded in a recent publication<span class="co">[</span><span class="ot">@RN3</span><span class="co">]</span>:</span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">"red"</span><span class="dt">&gt;</span></span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; “This example of colchicine for the secondary prevention of cardiovascular events shows that the probabilistically correct harmonization of all available evidence with a Bayesian analysis can improve individual trial interpretation as well as the</span></span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a><span class="at">interpretation of any ensuing meta-analyses while minimizing cognitive errors. An increased emphasis on teaching these methods and expanding their application in clinical research would seem appropriate.”</span></span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">font</span><span class="dt">&gt;</span></span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Powered by <a href="https://quarto.org">Quarto</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+<p>© 2025 Jay Brophy</p>
+<div class="toc-actions"><ul><li><a href="https://github.com/brophyj/edit/main/posts/2025-11-29-Cover_bases/index.Rmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/brophyj/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY NC SA 4.0</a>.</p>
+</div>
+  </div>
+</footer><script type="text/javascript">
+const dateElements = document.querySelectorAll("p.date, div.listing-date, div.listing-file-modified");
+dateElements.forEach((el) => {
+  el.innerHTML = el.innerHTML.replace(
+    /(\d+)(st|nd|rd|th)/g,
+    "$1<sup style='font-size:0.5em;font-style:italic;'>$2</sup>"
+  );
+});
+</script><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+</body></html>
