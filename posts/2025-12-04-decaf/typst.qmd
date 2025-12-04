@@ -1,0 +1,63 @@
+---
+title: Your Title Here
+subtitle: Optional Subtitle
+running-head: Short Title
+author:
+  - name: First Author
+    email: author1@example.com
+    orcid: 0000-0000-0000-0000
+    url: https://example.com
+    corresponding: true
+    affiliation:
+      - ref: 1
+  - name: Second Author
+    affiliation:
+      - ref: 2
+affiliations:
+  - id: 1
+    name: First University
+    department: Department Name
+  - id: 2
+    name: Second University
+abstract: |
+  Your abstract goes here. This will appear prominently at the top of your document.
+categories: [keyword1, keyword2, keyword3]
+authornote: |
+  Author notes go here.
+date: last-modified
+bibliography: bib.bib
+format:
+  preprint-typst:
+    wordcount: true
+    citeproc: true
+    # Common options - uncomment to use
+    # theme: jou                   # Journal theme (2-column)
+    # line-number: true            # Line numbering
+    # fontsize: 11pt               # Font size
+    # leading: 0.6em               # Line spacing
+    # first-line-indent: 1.8em     # Paragraph indent
+---
+
+# Introduction
+
+# Methods
+
+# Results
+
+:::: {.place arguments='top, scope: "parent", float: true'}
+
+Full page width content goes here.
+
+::::
+
+# Discussion
+
+# References
+
+:::{#refs}
+:::
+
+```{=typst}
+#show: appendix.with()
+```
+# Appendix content here

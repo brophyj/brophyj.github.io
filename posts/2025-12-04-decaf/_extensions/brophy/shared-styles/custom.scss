@@ -1,0 +1,188 @@
+/*-- scss:defaults --*/
+
+// @import url(./fonts/league-gothic/league-gothic.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:ital@0;1&display=swap');
+
+.my-custom-image {
+    height: 50% !important;
+    width: auto !important;  // Set width as needed
+}
+
+// fonts
+$font-family-sans-serif:  'Open Sans' !default;
+
+// large text
+
+.large-text {
+  font-size: 30px; /* Adjust as needed */
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+.small-text {
+  font-size: 12px; /* Adjust as needed */
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+// center
+.center-xy {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translateY(-50%), translateX(-50%);
+          transform: translateY(-50%), translateX(-50%);
+        }
+
+// Ensure all Reveal.js slides use the same font size
+.reveal {
+  font-size: 24px !important;  // This sets the font size for all elements
+}
+
+// large font
+.large-text {
+  font-size: 30px; /* Adjust as needed */
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+.bold {
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+// colors
+$body-bg: #FFFBEB !default;
+$body-color: #041E42 !default;
+$link-color: #830065 !default;
+$selection-bg: #D50032 !default;
+
+
+// headings
+$presentation-heading-font: "Montserrat", sans-serif !default;
+$presentation-heading-color: #041E42 !default;
+
+
+// code blocks
+$code-block-border-color: #93a1a1 !default;
+
+
+/*-- scss:defaults --*/
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
+
+.reveal .footer {
+  font-size: 14px;
+  color: #830065 !important;
+
+}
+
+.red-text { 
+  color: red !important; 
+}
+
+.reveal .red-text { color: red !important; }
+.reveal .green-text { color: green !important; }
+.reveal .orange-text { color: orange !important; }
+.reveal .blue-text { color: blue !important; }
+.reveal .large-text { font-size: 1.35em; line-height: 1.25; }
+
+
+$link-color: #39729E;
+$text-muted: #6a737b;
+
+/*-- scss:rules --*/
+.hero-banner h2 {
+  color: #39729E;
+  font-size: 1.5rem;
+}
+
+.layout-example {
+  background: #00539B;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: $font-family-monospace;
+  font-size: .875em;
+  font-weight: 600;
+  padding-top: 1em;
+  border-radius: 3px;
+}
+
+.left {
+  text-align: left;
+  padding-left: 1em;
+}
+
+.right {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.hello-quarto-banner h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+#quarto-announcement {
+  padding: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #00539B; 
+}
+
+#quarto-announcement a {
+  color: #FFFFFF;
+}
+
+/* make any block scroll within the slide viewport */
+.scroll {
+  max-height: 70vh;      /* adjust to taste */
+  overflow-y: auto;
+  padding-right: .5rem;  /* keeps scrollbar off text */
+}
+
+/* center any container you mark with {.image-center} */
+.reveal .slides section .image-center {
+  text-align: center;
+}
+
+/* center images you mark with {.img-center} */
+.reveal .slides section img.img-center {
+  display: inline-block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Add safe bottom padding only when you tag the slide .has-ref */
+.reveal .slides section.has-ref { padding-bottom: 2.6rem; }
+
+/* Flow footnote: small, left-aligned, sits in normal flow (no overlap) */
+.reveal .slides section .ref-note-flow{
+  font-size: 0.75em;
+  opacity: 0.85;
+  text-align: left !important;   /* overrides {.center} on the slide */
+  margin-top: 0.75rem;
+}
+
+
+/* ensure bullets are visible and have room */
+ul.colored-bullets { list-style: disc; margin-left: 1.4em; }
+
+/* color the bullet (marker) per item */
+ul.colored-bullets li.blue::marker   { color: #2563eb; } /* blue  */
+ul.colored-bullets li.green::marker  { color: #16a34a; } /* green */
+ul.colored-bullets li.yellow::marker { color: #eab308; } /* yellow */
+
+/* (optional) also tint the text itself */
+ul.colored-bullets li.blue   { color: #2563eb; }
+ul.colored-bullets li.green  { color: #16a34a; }
+ul.colored-bullets li.yellow { color: #eab308; }
+
+/* reusable scroll box */
+.reveal .scroll-box {
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  padding-right: .5rem; /* room for scrollbar */
+}
+

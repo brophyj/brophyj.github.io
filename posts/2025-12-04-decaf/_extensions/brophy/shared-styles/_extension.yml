@@ -1,0 +1,9 @@
+title: "Brophy Shared Styles"
+version: "1.0.0"
+quarto-required: ">=1.5.0"
+
+contributes:
+  formats:
+    html:
+      # Use theme: (not css:) so Quarto compiles SCSS via the Sass pipeline
+      theme: custom.scss

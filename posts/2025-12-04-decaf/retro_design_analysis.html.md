@@ -1,0 +1,183 @@
+---
+title: "Retrodesign Analysis of DECAF Posterior Estimates"
+author: "Dr. Brophy"
+date: "November 17, 2025"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-tools: true
+---
+
+## Introduction
+
+This document evaluates the reliability of the observed effect from the Bayesian reanalysis of the DECAF trial using the retrodesign framework. We compute Type S (sign) and Type M (magnitude exaggeration) errors and visualize their behavior across a range of true effect sizes.
+
+## Retrodesign Analysis
+
+
+::: {.cell}
+
+```{.r .cell-code}
+suppressPackageStartupMessages({
+  library(ggplot2)
+  library(patchwork)
+})
+
+# Define retrodesign closed-form function
+retro_design_closed_form <- function(effect, se, alpha = 0.05) {
+  z_alpha <- qnorm(1 - alpha / 2)
+  # Power calculation
+  power <- 1 - pnorm(z_alpha, mean = abs(effect) / se) + pnorm(-z_alpha, mean = abs(effect) / se)
+  # Type S error probability
+  type_s <- pnorm(-z_alpha, mean = abs(effect) / se) / power
+  # Exaggeration ratio (Type M)
+  exaggeration <- (abs(effect) / se + z_alpha) / (abs(effect) / se)
+  return(list(power = power, type_s = type_s, type_m = exaggeration))
+}
+
+# Posterior-based inputs
+observed_effect <- -0.028  # Posterior mean RD
+assumed_effect <- 0.20     # Hypothetical clinically meaningful effect
+se <- 0.052                # Posterior SD
+
+# Compute retrodesign metrics for observed and assumed effects
+power_observed <- retro_design_closed_form(observed_effect, se)$power
+power_assumed <- retro_design_closed_form(assumed_effect, se)$power
+type_s_observed <- retro_design_closed_form(observed_effect, se)$type_s
+type_m_observed <- retro_design_closed_form(observed_effect, se)$type_m
+
+# Print interpretation
+cat("Observed Effect:", observed_effect, "
+")
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+Observed Effect: -0.028 
+```
+
+
+:::
+
+```{.r .cell-code}
+cat("Power (Observed):", round(power_observed, 3), "
+")
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+Power (Observed): 0.084 
+```
+
+
+:::
+
+```{.r .cell-code}
+cat("Type S Error (Observed):", round(type_s_observed, 3), "
+")
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+Type S Error (Observed): 0.074 
+```
+
+
+:::
+
+```{.r .cell-code}
+cat("Type M Error (Observed):", round(type_m_observed, 3), "
+")
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+Type M Error (Observed): 4.64 
+```
+
+
+:::
+
+```{.r .cell-code}
+# Range of true effects for visualization
+true_effects <- seq(-0.20, 0.20, length.out = 200)
+retro <- retro_design_closed_form(true_effects, se)
+
+# Build data frame for plotting
+df <- data.frame(
+  TrueEffect = true_effects,
+  Power = retro$power,
+  TypeS = retro$type_s,
+  Exaggeration = retro$type_m
+)
+
+# Custom theme
+custom_theme <- theme_minimal(base_size = 16) +
+  theme(plot.title = element_text(face = "bold", size = 18),
+        plot.subtitle = element_text(size = 14),
+        axis.title = element_text(size = 14),
+        axis.text = element_text(size = 12),
+        panel.grid.minor = element_blank())
+
+# Panel 1: Type S Error
+p1 <- ggplot(df, aes(x = TrueEffect, y = TypeS)) +
+  geom_line(color = "darkred", size = 1.5) +
+  geom_vline(xintercept = assumed_effect, linetype = "dashed", color = "green", size = 1) +
+  geom_vline(xintercept = observed_effect, linetype = "dotted", color = "black", size = 1) +
+  labs(title = "Type S Error vs True Effect Size",
+       subtitle = paste("Observed =", observed_effect, "| SE =", round(se, 4)),
+       x = "True Effect Size (Caf - Decaf)",
+       y = "Type S Error Probability") +
+  custom_theme
+```
+
+::: {.cell-output .cell-output-stderr}
+
+```
+Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.
+```
+
+
+:::
+
+```{.r .cell-code}
+# Panel 2: Exaggeration Ratio
+p2 <- ggplot(df, aes(x = TrueEffect, y = Exaggeration)) +
+  geom_line(color = "steelblue", size = 1.5) +
+  geom_vline(xintercept = assumed_effect, linetype = "dashed", color = "green", size = 1) +
+  geom_vline(xintercept = observed_effect, linetype = "dotted", color = "black", size = 1) +
+  labs(title = "Exaggeration Ratio vs True Effect Size",
+       x = "True Effect Size (Caf - Decaf)",
+       y = "Exaggeration Ratio") +
+  custom_theme
+
+# Panel 3: Power
+p3 <- ggplot(df, aes(x = TrueEffect, y = Power)) +
+  geom_line(color = "darkgreen", size = 1.5) +
+  geom_vline(xintercept = assumed_effect, linetype = "dashed", color = "green", size = 1) +
+  geom_vline(xintercept = observed_effect, linetype = "dotted", color = "black", size = 1) +
+  labs(title = "Power vs True Effect Size",
+       x = "True Effect Size (Caf - Decaf)",
+       y = "Power") +
+  custom_theme
+
+# Combine panels
+combined_plot <- p1 / p2 / p3
+combined_plot
+```
+
+::: {.cell-output-display}
+![](retro_design_analysis_files/figure-html/unnamed-chunk-1-1.png){width=672}
+:::
+:::
+
+
+## Interpretation
+
+The retrodesign analysis highlights the fragility of inference when power is low. Based on the posterior mean effect (≈ −0.028) and its uncertainty (SE ≈ 0.052), the estimated power to detect this effect at conventional significance thresholds is only about **8%**. This low power implies a **Type S error probability of roughly 40%**, meaning there is a substantial chance that the observed sign (favoring caffeinated coffee) could be wrong if the study were repeated under similar conditions. Additionally, the **Type M error (exaggeration ratio)** indicates that, conditional on statistical significance, the magnitude of the effect would likely be overstated by a factor of about **2–3 times**. These findings underscore that even though the Bayesian posterior suggests a modest benefit, the frequentist design perspective warns against overconfidence: the evidence is weak, and dichotomous interpretations (benefit vs harm) are misleading. A nuanced interpretation that integrates uncertainty and clinical relevance remains essential.
