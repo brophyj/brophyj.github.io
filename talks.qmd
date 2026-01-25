@@ -20,9 +20,23 @@ IM2025:
 
 <p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
 
-Presentations <iconify-icon icon="et:presentation"></iconify-icon>
+Presentations / courses <iconify-icon icon="et:presentation"></iconify-icon>
 
 </p>
+
+# 2026
+
+-   **EPIB 605 Critical Appraisal**\
+    McGill University Department of Epidemiology, Biostatistics and occupational Health (EBOH), winter 2026\
+    **Summary** - A one credit course providing training and hands-on experience in critical appraisal of epidemiological and health-related scientific literature. Aims to develop skills in asking pertinent research questions, proposing appropriate study designs, identifying potential sources of bias, and interpreting results in the context of existing evidence. A few complementary slides for the weekly assigned papers that were reviewed are available here. 
+    
+<p class="text-center">
+<a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$slideswk3$pdf`" target="_blank">
+  <i class="fa-solid fa-file-arrow-down"></i> Slides week 3 (opens in new tab)
+</a>
+</p>
+
+
 
 # 2025
 
