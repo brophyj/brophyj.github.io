@@ -16,6 +16,10 @@ cardio2025:
   pdf: "upload/cardio2025.pdf"
 IM2025:
   pdf: "upload/IM2025.pdf"
+slidesWK1:
+  pdf: "upload/slidesWK1.pdf"
+slidesWK2:
+  pdf: "upload/slidesWK2.pdf"
 slidesWK3:
   pdf: "upload/slidesWK3.pdf"
 ---
@@ -33,11 +37,22 @@ Presentations / courses <iconify-icon icon="et:presentation"></iconify-icon>
     **Summary** - A one credit course providing training and hands-on experience in critical appraisal of epidemiological and health-related scientific literature. Aims to develop skills in asking pertinent research questions, proposing appropriate study designs, identifying potential sources of bias, and interpreting results in the context of existing evidence. A few complementary slides for the weekly assigned papers that were reviewed are available here. 
     
 <p class="text-center">
+<a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$slidesWK1$pdf`" target="_blank">
+  <i class="fa-solid fa-file-arrow-down"></i> Slides week 1 (opens in new tab)
+</a>
+</p>
+
+<p class="text-center">
+<a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$slidesWK2$pdf`" target="_blank">
+  <i class="fa-solid fa-file-arrow-down"></i> Slides week 2 (opens in new tab)
+</a>
+</p>
+
+<p class="text-center">
 <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$slidesWK3$pdf`" target="_blank">
   <i class="fa-solid fa-file-arrow-down"></i> Slides week 3 (opens in new tab)
 </a>
 </p>
-
 
 
 # 2025
