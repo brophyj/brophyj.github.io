@@ -16,6 +16,8 @@ cardio2025:
   pdf: "upload/cardio2025.pdf"
 IM2025:
   pdf: "upload/IM2025.pdf"
+slidesWK3:
+  pdf: "upload/slidesWK3.pdf"
 ---
 
 <p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
