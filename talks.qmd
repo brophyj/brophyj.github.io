@@ -22,6 +22,10 @@ slidesWK2:
   pdf: "upload/slidesWK2.pdf"
 slidesWK3:
   pdf: "upload/slidesWK3.pdf"
+slidesWK5:
+  pdf: "upload/slidesWK5.pdf"
+slidesWK6:
+  pdf: "upload/slidesWK6.pdf"
 ---
 
 <p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
@@ -54,6 +58,17 @@ Presentations / courses <iconify-icon icon="et:presentation"></iconify-icon>
 </a>
 </p>
 
+<p class="text-center">
+<a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$slidesWK5$pdf`" target="_blank">
+  <i class="fa-solid fa-file-arrow-down"></i> Slides week 5 (opens in new tab)
+</a>
+</p>
+
+<p class="text-center">
+<a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$slidesWK6$pdf`" target="_blank">
+  <i class="fa-solid fa-file-arrow-down"></i> Slides week 6 (opens in new tab)
+</a>
+</p>
 
 # 2025
 
