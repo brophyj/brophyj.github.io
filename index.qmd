@@ -3,44 +3,49 @@ title: James (Jay) Brophy
 subtitle: |
   Cardiologist, epidemiologist, Bayesian, watercolour and Gordon Setter enthusiast
 image: images/brophy.png
+
 about:
   id: edu-exp
   template: jolla
   image-width: 12em
   image-shape: round
   links:
-    - text: "<i class='fas fa-envelope'></i>"
+    - text: "{{< iconify fa6-solid:envelope >}}"
       href: "mailto:james.brophy@mcgill.ca"
       aria-label: "envelope logo for email"
-    - text: "<i class='fab fa-orcid'></i>"
+
+    - text: "{{< iconify fa6-brands:orcid >}}"
       href: "https://orcid.org/my-orcid?orcid=0000-0001-8049-6875"
       aria-label: "ORCID logo linking to ORCID account"
-    - text: "<i class='fab fa-mastodon'></i>"
+
+    - text: "{{< iconify fa6-brands:mastodon >}}"
       href: "https://mastodon.social/@brophyj"
       aria-label: "Mastodon logo linking to account"
-    - text: "<i class='fab fa-twitter'></i>"
+
+    - text: "{{< iconify fa6-brands:twitter >}}"
       href: "https://twitter.com/brophyj"
       aria-label: "Twitter logo linking to account"
-    - text: "<i class='fab fa-linkedin-in'></i>"
+
+    - text: "{{< iconify fa6-brands:linkedin-in >}}"
       href: "https://www.linkedin.com/in/brophyj/"
       aria-label: "LinkedIn logo linking to account"
-    - text: "<i class='fab fa-github'></i>"
+
+    - text: "{{< iconify fa6-brands:github >}}"
       href: "https://github.com/brophyj"
       aria-label: "GitHub logo linking to account"
-    - text: "<i class='fab fa-bluesky'></i>"
+
+    - text: "{{< iconify simple-icons:bluesky >}}"
       href: "https://bsky.app/profile/brophyj.bsky.social"
       aria-label: "Bluesky logo linking to account"
+
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-    fig-align: center 
-    header-includes:
-      - "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>"
-
- 
+    fig-align: center
 ---
+
 
 ::: {#edu-exp}
 :::
