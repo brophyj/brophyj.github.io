@@ -16,7 +16,12 @@ editor: visual
 
 ### Contact info: [Personal website](https://www.brophyj.com/)
 
-<br> {{< fa brands twitter size=2x >}} [\@brophyj](https://twitter.com/brophyj) {{< fa brands github size=2x >}} [brophyj](https://github.com/brophyj) {{< fa brands linkedin size=2x >}} [brophyj](https://www.linkedin.com/in/brophyj/) {{< fa brands orcid size=2x >}} [brophyj](https://orcid.org/0000-0001-8049-6875) <i class="fa-brands fa-bluesky fa-2x"></i> [brophyj](https://bsky.app/profile/brophyj.bsky.social) <i class="fa-solid fa-envelope fa-2x"></i> [james.brophy\@mcgill.ca](mailto:james.brophy@mcgill.ca)
+<i class="fa-brands fa-twitter fa-lg"></i> [\@brophyj](https://twitter.com/brophyj) &ensp;
+<i class="fa-brands fa-github fa-lg"></i> [brophyj](https://github.com/brophyj) &ensp;
+<i class="fa-brands fa-linkedin fa-lg"></i> [brophyj](https://www.linkedin.com/in/brophyj/) &ensp;
+<i class="fa-brands fa-orcid fa-lg"></i> [brophyj](https://orcid.org/0000-0001-8049-6875) &ensp;
+<i class="fa-brands fa-bluesky fa-lg"></i> [brophyj](https://bsky.app/profile/brophyj.bsky.social) &ensp;
+<i class="fa-solid fa-envelope fa-lg"></i> [james.brophy\@mcgill.ca](mailto:james.brophy@mcgill.ca)
 
 ### Education
 
@@ -66,10 +71,8 @@ gt(awards)
 
 ## Selected Research Funding
 
-```{r funding,  echo=FALSE, out.width=8}
-library(webshot2)
-#| column: page-right
-funding <- data.frame(Title = c("Appui à la recherche en évaluation des technologies et des pratiques de pointe dans les CHU (Health Technology and Evidence Based Medicine)",  "Ticagrelor compared to clopidogrel in acute coronary syndromes - the TC4 comparative effectiveness study", "Evaluating the Trajectory of Aortic Stenosis (AS) in Quebec patients - Diagnosis, Treatments, and Outcomes", "The S. aureus Network Adaptive Platform Trial (SNAP) Canada: A Randomized Controlled Trial for Penicillin-susceptible, Methicillin-susceptible, and Methicillin resistant Staphylococcus aureus Bloodstream Infections in Hospitalized Patients", "Comparative Effectiveness of Long-acting Insulins and Neutral Protamine Hagedorn (NPH) Insulin for the Prevention of Micro- and Macrovascular Complications Among Patients with Type 1 Diabetes", "Assessing the interpretability of cardiovascular trials"), Agency = c("Fonds de Recherche Quebec Sante","Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Heart & Stroke Fondation"), Date = c("July 2018-23","April 2019-23", "Sept 2020 - 23", "July 2021 - 2026", "April 2023-2026", "July 2025-2028"), Role = c("PI", "PI", "PI", "co-A", "co-A", "PI")) 
+```{r funding, echo=FALSE}
+funding <- data.frame(Title = c("Appui à la recherche en évaluation des technologies et des pratiques de pointe dans les CHU (Health Technology and Evidence Based Medicine)",  "Ticagrelor compared to clopidogrel in acute coronary syndromes - the TC4 comparative effectiveness study", "Evaluating the Trajectory of Aortic Stenosis (AS) in Quebec patients - Diagnosis, Treatments, and Outcomes", "The S. aureus Network Adaptive Platform Trial (SNAP) Canada: A Randomized Controlled Trial for Penicillin-susceptible, Methicillin-susceptible, and Methicillin resistant Staphylococcus aureus Bloodstream Infections in Hospitalized Patients", "Comparative Effectiveness of Long-acting Insulins and Neutral Protamine Hagedorn (NPH) Insulin for the Prevention of Micro- and Macrovascular Complications Among Patients with Type 1 Diabetes", "Assessing the interpretability of cardiovascular trials"), Agency = c("Fonds de Recherche Quebec Sante","Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Canadian Institutes of Health Research ", "Heart & Stroke Foundation"), Date = c("2018\u20132023","2019\u20132023", "2020\u20132023", "2021\u20132026", "2023\u20132026", "2025\u20132028"), Role = c("PI", "PI", "PI", "co-A", "co-A", "PI")) 
 
 funding <- funding[nrow(funding):1, ]
 
@@ -79,20 +82,9 @@ gt(funding)
 ## Publications
 
 ```{r echo=FALSE}
-library(rvest)
-html <- read_html("https://scholar.google.com/citations?user=IXoZb4wAAAAJ&hl=en")
-
-html1 <- html %>% 
-  html_element("tr:nth-child(1) .gsc_rsb_std:nth-child(2)") %>% 
-  html_text2() %>% 
-  as.integer()
-
-html2 <- html %>% 
-  html_element("tr:nth-child(2) .gsc_rsb_std:nth-child(2)") %>% 
-  html_text2()  %>% 
-  as.integer()
-
-
+profile <- scholar::get_profile("IXoZb4wAAAAJ")
+html1 <- profile$total_cites
+html2 <- profile$h_index
 ```
 
 All publications (`r nrow(brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>%      filter( !grepl('Response|reply|Renewed|Reply', title)))` on `r Sys.Date()`) as recorded in Google Scholar can be found [**here**](https://scholar.google.com/citations?user=IXoZb4wAAAAJ&hl=en)\
@@ -105,7 +97,7 @@ brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>%
     filter( !grepl('Response|reply|Renewed|Reply', title))
 
 trend <- brophy %>%
-  filter(year >2007 & year <2026) %>% # filter out 2024, too early in the year
+  filter(year > 2007 & year < as.integer(format(Sys.Date(), "%Y"))) %>%
   group_by(year) %>%
   summarise(n=n())
 ggplot(trend,aes(year,n)) +
