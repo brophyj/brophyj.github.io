@@ -2,7 +2,8 @@
 title: " "
 ---
 
-<p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold"> Selected projects <iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon>
+<p class="page-banner">
+Selected projects <iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon>
 </p>
 
 # Assessing clinical trial interpretability    
@@ -56,9 +57,7 @@ CIHR funded project (2019-2023) looking at the comparative effectiveness of tica
 Cardiovascular diseases, especially acute coronary syndromes (ACS) are a leading cause of mortality and morbidity. Antiplatelet medications have a long history of improving ACS survival and for the prevention of a secondary cardiac event. Based on the consistency and strength of multiple randomized controlled trials (RCTs), the dual antiplatelet therapy (DAPT), clopidogrel and aspirin, following an ACS event, had long been considered the gold standard in the leading clinical guidelines. More recently, a new DAPT regimen, ticagrelor and aspirin, has become the recommended strategy. However this is based largely on one large RCT with a limited number of North American patients (who did not show any incremental benefit).     
 The Ticagrelor Compared to Clopidogrel in aCute coronary syndromes – the TC4 trial (NCT04057300) – is a pragmatic, open-label, active control, time clustered randomized clinical trial designed to assess the effectiveness and safety of ticagrelor versus clopidogrel as DAPT therapy in a ACS population undergoing percutaneous coronary intervention (PCI) in a single tertiary academic center in Montreal, Canada.    
   
-::: {style="color: red"}
 **In addition to a standalone analysis, our main Bayesian analysis will incorporate the 1800 PLATO NA patients as our prior distribution, essentially providing a \> 50% safety margin for our sample size calculations (see next section).**
-:::
 
 The complete funding protocol is found [here](upload/TC4protocol.pdf).  
 

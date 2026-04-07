@@ -5,8 +5,8 @@ project:
     - _headers
 
 website:
-  title: "jay's website"
-  description: "my online persona"
+  title: "James (Jay) Brophy"
+  description: "Cardiologist, epidemiologist, and professor at McGill University"
   favicon: images/logo.png
   image: images/brophy.png
   site-url: https://brophyj.com
@@ -20,11 +20,11 @@ website:
     left: |
       Powered by [Quarto](https://quarto.org).
     center: |
-      &copy; 2025 Jay Brophy 
+      &copy; 2026 Jay Brophy 
     right: |
       License: [CC BY NC SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).
   navbar:
-    title: "jay's website"
+    title: "James (Jay) Brophy"
     search: true
     logo: images/logo.png
     left:
@@ -58,6 +58,9 @@ website:
       - text: "<i class='fab fa-github'></i>"
         href: "https://github.com/brophyj"
         aria-label: "GitHub logo linking to account"
+      - text: "<i class='fa-brands fa-bluesky'></i>"
+        href: "https://bsky.app/profile/brophyj.bsky.social"
+        aria-label: "Bluesky logo linking to account"
 
 format:
   html:

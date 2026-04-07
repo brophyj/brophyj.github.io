@@ -41,17 +41,11 @@ $font-family-sans-serif:  'Open Sans' !default;
   font-size: 24px !important;  // This sets the font size for all elements
 }
 
-// large font
-.large-text {
-  font-size: 30px; /* Adjust as needed */
-  font-weight: bold; /* Optional: make the text bold */
-}
-
-
 // colors
 $body-bg: #FFFBEB !default;
 $body-color: #041E42 !default;
-$link-color: #830065 !default;
+$link-color: #39729E !default;
+$text-muted: #6a737b;
 $selection-bg: #D50032 !default;
 
 
@@ -64,7 +58,6 @@ $presentation-heading-color: #041E42 !default;
 $code-block-border-color: #93a1a1 !default;
 
 
-/*-- scss:defaults --*/
 html * {
   color-profile: sRGB;
   rendering-intent: auto;
@@ -72,12 +65,8 @@ html * {
 
 .reveal .footer {
   font-size: 14px;
-  color: #830065 !important;
-
+  color: #39729E !important;
 }
-
-$link-color: #39729E;
-$text-muted: #6a737b;
 
 /*-- scss:rules --*/
 .hero-banner h2 {
@@ -200,3 +189,13 @@ b, strong, span[style*="font-weight:bold"] {
 .gray { color: gray; }
 .grey { color: gray; }
 .brown { color: brown; }
+
+.page-banner {
+  font-size: xx-large;
+  background-color: #041E42;
+  display: inline-block;
+  color: #f1f1f1;
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+}

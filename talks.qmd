@@ -28,10 +28,8 @@ slidesWK6:
   pdf: "upload/slidesWK6.pdf"
 ---
 
-<p style="font-size: xx-large; background-color: crimson; display: inline-block;color: #f1f1f1; font-weight: bold">
-
+<p class="page-banner">
 Presentations / courses <iconify-icon icon="et:presentation"></iconify-icon>
-
 </p>
 
 # 2026
@@ -90,7 +88,7 @@ Presentations / courses <iconify-icon icon="et:presentation"></iconify-icon>
 
 -   **Meta-analysis to meta-cognition - The Bayesian Highway in Cardiology**\
     McGill University Hospital Center, Department of Medicine, Cardiology Grand Rounds, Sept 11 2025\
-    **Summary** - Meta-analysis is powerful, but not infallible technique. Many of its limitations are tied to the traditional frequentist framework in which it is most often performed. A Bayesian approach to meta-analysis can address many of these limitations, and ofers a more intuitive and flexible framework for evidence synthesis. This talk will review the principles of Bayesian meta-analysis, its advantages over traditional approaches, and its potential to enhance clinical decision-making in cardiology.
+    **Summary** - Meta-analysis is powerful, but not infallible technique. Many of its limitations are tied to the traditional frequentist framework in which it is most often performed. A Bayesian approach to meta-analysis can address many of these limitations, and offers a more intuitive and flexible framework for evidence synthesis. This talk will review the principles of Bayesian meta-analysis, its advantages over traditional approaches, and its potential to enhance clinical decision-making in cardiology.
 
 
 <p class="text-center">
