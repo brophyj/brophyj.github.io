@@ -7,3 +7,8 @@
 .quarto
 
 /.quarto/
+
+# Keep DECAF reanalysis local only
+posts/2025-12-05-decaf-reanalysis/
+_freeze/posts/2025-12-05-decaf-reanalysis/
+docs/posts/2025-12-05-decaf-reanalysis/
