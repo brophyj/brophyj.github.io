@@ -76,8 +76,15 @@ Maggie (10/2021 - arrived here 4/2026) new friend, running partner, and muse
 
 ![Second portrait](photos/images/Maggie2.jpeg){group="gallery" description=""}
 
-![First portrait](photos/images/Maggie3.jpg){group="gallery" description=""}
+![Third portrait](photos/images/Maggie3.jpg){group="gallery" description=""}
+:::
 
+::: {layout="[[1, 1, 1], [1]]"}
+![Standing tall](photos/images/MaggieChecking1.jpeg){group="gallery" description=""}
+
+![Checking it out](photos/images/MaggieChecking2.jpg){group="gallery" description=""}
+
+![Snoozing post run](photos/images/MaggieChecking3.jpeg){group="gallery" description=""}
 :::
 
 
