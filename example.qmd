@@ -67,6 +67,20 @@ Barney (4/2011 - 6/2025) my great friend, running partner, and favorite muse
 
 ![In action](photos/images/barney_collage.jpg){group="gallery"}
 
+## Maggie watercolours
+
+Maggie (10/2021 - arrived here 4/2026) new friend, running partner, and muse
+
+::: {layout="[[1, 1, 1], [1]]"}
+![First portrait](photos/images/Maggie1.jpeg){group="gallery" description=""}
+
+![Second portrait](photos/images/Maggie2.jpeg){group="gallery" description=""}
+
+![First portrait](photos/images/Maggie3.jpg){group="gallery" description=""}
+
+:::
+
+
 ## Other paintings
 
 ::: {layout-ncol="3"}
