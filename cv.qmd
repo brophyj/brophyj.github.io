@@ -16,12 +16,7 @@ editor: visual
 
 ### Contact info: [Personal website](https://www.brophyj.com/)
 
-<i class="fa-brands fa-twitter fa-lg"></i> [\@brophyj](https://twitter.com/brophyj) &ensp;
-<i class="fa-brands fa-github fa-lg"></i> [brophyj](https://github.com/brophyj) &ensp;
-<i class="fa-brands fa-linkedin fa-lg"></i> [brophyj](https://www.linkedin.com/in/brophyj/) &ensp;
-<i class="fa-brands fa-orcid fa-lg"></i> [brophyj](https://orcid.org/0000-0001-8049-6875) &ensp;
-<i class="fa-brands fa-bluesky fa-lg"></i> [brophyj](https://bsky.app/profile/brophyj.bsky.social) &ensp;
-<i class="fa-solid fa-envelope fa-lg"></i> [james.brophy\@mcgill.ca](mailto:james.brophy@mcgill.ca)
+<i class="fa-brands fa-twitter fa-lg"></i> [\@brophyj](https://twitter.com/brophyj)   <i class="fa-brands fa-github fa-lg"></i> [brophyj](https://github.com/brophyj)   <i class="fa-brands fa-linkedin fa-lg"></i> [brophyj](https://www.linkedin.com/in/brophyj/)   <i class="fa-brands fa-orcid fa-lg"></i> [brophyj](https://orcid.org/0000-0001-8049-6875)   <i class="fa-brands fa-bluesky fa-lg"></i> [brophyj](https://bsky.app/profile/brophyj.bsky.social)   <i class="fa-solid fa-envelope fa-lg"></i> [james.brophy\@mcgill.ca](mailto:james.brophy@mcgill.ca)
 
 ### Education
 
