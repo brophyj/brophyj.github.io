@@ -23,6 +23,7 @@ editor: visual
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 options(tinytex.verbose = TRUE)
+options(scipen = 999)
 
 # ref https://github.com/ropenscilabs/vitae
 library(tidyverse)
@@ -92,7 +93,7 @@ brophy <- scholar::get_publications("IXoZb4wAAAAJ") %>%
     filter( !grepl('Response|reply|Renewed|Reply', title))
 
 trend <- brophy %>%
-  filter(year > 2007 & year < as.integer(format(Sys.Date(), "%Y"))) %>%
+  filter(year > 2007 & year <= as.integer(format(Sys.Date(), "%Y"))) %>%
   group_by(year) %>%
   summarise(n=n())
 ggplot(trend,aes(year,n)) +
@@ -125,6 +126,14 @@ render_year_pubs <- function(year, scholar_id = "IXoZb4wAAAAJ", hlines_width = 2
 ```
 
 ::: panel-tabset
+
+#### 2026
+
+```{r, echo=FALSE}
+render_year_pubs(2026)
+```
+
+
 #### 2025
 
 ```{r, echo=FALSE}
