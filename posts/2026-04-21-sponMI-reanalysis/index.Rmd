@@ -10,19 +10,24 @@ author:
     affiliation-url: https://mcgill.ca
 categories: [RCT, Bayesian]
 image: preview-image.jpg
-date: 2026-04-21
-draft: true
+citation: 
+  url: https://brophyj.com/posts/2026-04-21-my-blog-post/ 
+date: 2026-04-20T14:39:55-05:00
+lastmod: 2026-04-20T14:39:55-05:00
+featured: true
+draft: false
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+projects: []
 format:
   html:
-    toc: true
-    toc-depth: 3
     code-fold: true
-    code-tools: true
-    fig-width: 8
-    fig-height: 6
-execute:
-  warning: false
-  message: false
+    code-tools: true   # optional: adds copy/download buttons
+    keep_md: true
+    self_contained: true
+editor_options: 
+  markdown: 
+    wrap: sentence
+biblio-style: apalike
 bibliography: references.bib
 ---
 
