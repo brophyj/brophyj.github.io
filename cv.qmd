@@ -126,13 +126,11 @@ render_year_pubs <- function(year, scholar_id = "IXoZb4wAAAAJ", hlines_width = 2
 ```
 
 ::: panel-tabset
-
 #### 2026
 
 ```{r, echo=FALSE}
 render_year_pubs(2026)
 ```
-
 
 #### 2025
 
