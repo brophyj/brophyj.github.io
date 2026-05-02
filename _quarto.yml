@@ -36,6 +36,8 @@ website:
         href: cv.qmd
       - text: Projects
         href: projects.qmd
+      - text: Apps
+        href: apps.qmd
       - text: Talks
         href: talks.qmd
       - text: Publications

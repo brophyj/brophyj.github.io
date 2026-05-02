@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-input23c66371b8833d1 – James (Jay) Brophy</title>
+<title>Bayesian (and frequentist) re-analyses of published RCTs – James (Jay) Brophy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,13 +107,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="custom.scss">
-<meta property="og:title" content="– James (Jay) Brophy">
+<meta property="og:title" content="Bayesian (and frequentist) re-analyses of published RCTs – James (Jay) Brophy">
 <meta property="og:description" content="Cardiologist, epidemiologist, and professor at McGill University">
 <meta property="og:image" content="https://brophyj.com/images/brophy.png">
 <meta property="og:site_name" content="James (Jay) Brophy">
 <meta property="og:image:height" content="613">
 <meta property="og:image:width" content="603">
-<meta name="twitter:title" content="– James (Jay) Brophy">
+<meta name="twitter:title" content="Bayesian (and frequentist) re-analyses of published RCTs – James (Jay) Brophy">
 <meta name="twitter:description" content="Cardiologist, epidemiologist, and professor at McGill University">
 <meta name="twitter:image" content="https://brophyj.com/images/brophy.png">
 <meta name="twitter:image-height" content="613">
@@ -123,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./apps.html"> 
+    <a class="nav-link active" href="./apps.html" aria-current="page"> 
 <span class="menu-text">Apps</span></a>
   </li>  
   <li class="nav-item">
@@ -131,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./publications.html" aria-current="page"> 
+    <a class="nav-link" href="./publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
@@ -177,56 +212,82 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Bayesian (and frequentist) re-analyses of published RCTs</h1>
+</div>
 
 
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p class="page-banner">
-Selected publications <iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon>
+Interactive apps <iconify-icon icon="fluent-mdl2:diagnostic"></iconify-icon>
 </p>
-<div style="margin: 30px; text-align: left;">
-<p><a class="btn btn-primary" href="https://drive.google.com/file/d/1q7i9a6lY3tpMLsAbEUASpAKA_jUSHIN1/view?usp=drive_link" target="_blank" style="padding: 15px 30px;">Download full (current) CV</a></p>
+<p>These Shiny apps provide interactive Bayesian (and frequentist) re-analyses of published randomized controlled trials. They are part of the <a href="./projects.html#assessing-clinical-trial-interpretability">Assessing clinical trial interpretability</a> research project funded by Heart &amp; Stroke Canada.</p>
+<p>Enter the 2×2 event counts from any RCT, choose an effect measure (relative risk or risk difference), and explore how different prior assumptions shape posterior conclusions.</p>
+<hr>
+<section id="bayesian-rct-re-analysis-bayes-only" class="level1">
+<h1>Bayesian RCT Re-analysis (Bayes only)</h1>
+<p>A focused Bayesian app with four priors — <strong>Weak</strong>, <strong>Enthusiastic</strong>, <strong>Skeptical</strong>, and <strong>Empirical Bayes</strong> (van Zwet et al.&nbsp;2021/2025) — on either the relative risk (RR) or risk difference (RD) scale.</p>
+<p><strong>Features</strong></p>
+<ul>
+<li>Three likelihood options: Normal (analytic), Binomial (Laplace), MCMC (brms)</li>
+<li>RR and RD effect measures via tabbed prior panels (priors entered in natural units)</li>
+<li>MCID-aware posterior summaries, predictive distributions, and forest plots</li>
+<li>Prior vs Likelihood vs Posterior facet plots</li>
+<li>CSV export of all summaries</li>
+</ul>
+<!-- Once deployed to shinyapps.io, replace with the live URL:
+[**Launch app**](https://brophyj.shinyapps.io/bayes_alone/){.btn .btn-primary}
+-->
+<p><a href="https://github.com/brophyj/shiny_light/blob/main/app_bayes_alone.r"><strong>Source code</strong></a> on GitHub</p>
+<hr>
+</section>
+<section id="full-bayesian-frequentist-re-analysis" class="level1">
+<h1>Full Bayesian + Frequentist Re-analysis</h1>
+<p>Everything in the Bayesian app, plus frequentist calibration metrics and an optional Design-informed prior.</p>
+<p><strong>Additional features</strong></p>
+<ul>
+<li>Greenland S-values (vs RR = 1 and vs RR = MCID)</li>
+<li>Gelman–Carlin Type-S and Type-M error analysis</li>
+<li>Per-prior posterior calibration table (Type-S, Type-M, coverage, replication probability)</li>
+<li>Empirical-Bayes mixture component decomposition (B<sub>k</sub>, B̄)</li>
+<li>Optional 5th Design-informed prior centred on the trial’s protocol target (RR mode)</li>
+</ul>
+<!-- Once deployed to shinyapps.io, replace with the live URL:
+[**Launch app**](https://brophyj.shinyapps.io/full/){.btn .btn-primary}
+-->
+<p><a href="https://github.com/brophyj/shiny_light/blob/main/app_full.r"><strong>Source code</strong></a> on GitHub</p>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<section id="section" class="level1">
-<h1>2025</h1>
-<ul>
-<li>Kutcher SA, Dendukuri N, Dandona S, Nadeau L, <strong>Brophy JM</strong>. Ticagrelor Compared to Clopidogrel in Acute Coronary Syndromes trial (TC4): a Bayesian pragmatic cluster randomized controlled trial. CMAJ 2025;197(12):E309-E318. DOI: 10.1503/cmaj.241862.</li>
-</ul>
-</section>
-<section id="section-1" class="level1">
-<h1>2024</h1>
-<ul>
-<li><p>Miceline Mésidor, Caroline Sirois, Jason Robert Guertin, Mireille E Schnitzer, Bernard Candas, Claudia Blais, Benoit Cossette, Paul Poirier, <strong>James M Brophy</strong>, Lisa Lix, Mina Tadrous, Awa Diop, Denis Hamel, Denis Talbot. Effect of statin use for the primary prevention of cardiovascular disease among older adults: A cautionary tale concerning target trials emulation. <a href="https://www.jclinepi.com/article/S0895-4356(24)00039-8/fulltext">Journal of Clinical Epidemiology</a></p></li>
-<li><p><strong>James M Brophy</strong> Is science really self correcting? Something old and older. <a href="https://medium.com/p/64b829ec7935">Medium</a>.<br>
-Non peer review article based on a previous blog. Although I think this contains much interesting material, including the value of teaching,an exploration of immortal time bias, and its historical perspective, it was refused by &gt; 6 (I lost count of exactly how many!) medical journals for “not meeting their priorities”.</p></li>
-</ul>
-</section>
-<section id="section-2" class="level1">
-<h1>2023</h1>
-<ul>
-<li><strong>James M Brophy</strong>. A Bayesian Perspective-Extracorporeal CPR for Refractory Out-of-Hospital Cardiac Arrest <a href="https://www.medrxiv.org/content/10.1101/2023.02.13.23285890v3">medRxiv, 2023.02. 13.23285890</a></li>
-</ul>
-</section>
-<section id="section-3" class="level1">
-<h1>2022</h1>
-<ul>
-<li>Todd C Lee, Srinivas Murthy, Olivier Del Corpo, Julien Senécal, Guillaume Butler-Laporte, Zahra N Sohani, <strong>James M Brophy</strong>, Emily G McDonald. Remdesivir for the treatment of COVID-19: a systematic review and meta-analysis. <a href="https://www.sciencedirect.com/science/article/pii/S1198743X22002300">Clinical Microbiology and Infection 28 (9), 1203-1210</a></li>
-</ul>
-</section>
-<section id="section-4" class="level1">
-<h1>2021</h1>
-<ul>
-<li><strong>James M Brophy</strong>. Bayesian analyses of cardiovascular trials—bringing added value to the table. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0828282X2100163X">Canadian Journal of Cardiology 37 (9), 1415-1427 2021</a><br>
-</li>
-<li><strong>James M Brophy</strong>. Key Issues in the Statistical Interpretation of Randomized Clinical Trials. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0828282X20311806">Canadian Journal of Cardiology 37 (9), 1312-1321</a></li>
-</ul>
-</section>
-<section id="section-5" class="level1">
-<h1>2020</h1>
-<ul>
-<li><strong>James M Brophy</strong>. Bayesian interpretation of the EXCEL trial and other randomized clinical trials of left main coronary artery revascularization. <a href="https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2766594">JAMA Internal Medicine 180 (7), 986-992</a></li>
-</ul>
+<div class="callout-title-container flex-fill">
+Running locally
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Clone the <a href="https://github.com/brophyj/shiny_light">shiny_light</a> repository and run either app in RStudio or from the command line:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>shiny<span class="sc">::</span><span class="fu">runApp</span>(<span class="st">"app_bayes_alone.r"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>shiny<span class="sc">::</span><span class="fu">runApp</span>(<span class="st">"app_full.r"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Requires R ≥ 4.1 with <code>shiny</code>, <code>ggplot2</code>, <code>dplyr</code>, <code>ggdist</code>, <code>tibble</code>, <code>bslib</code>, and <code>rlang</code>. The MCMC backend additionally requires <code>brms</code> and <code>cmdstanr</code> (or <code>rstan</code>).</p>
+</div>
+</div>
 
 
 </section>
@@ -695,7 +756,7 @@ Non peer review article based on a previous blog. Although I think this contains
 </div>   
     <div class="nav-footer-center">
 <p>© 2026 Jay Brophy</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/brophyj/edit/main/publications.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/brophyj/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/brophyj/edit/main/apps.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/brophyj/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>License: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY NC SA 4.0</a>.</p>
 </div>
