@@ -8,8 +8,11 @@ Interactive apps <iconify-icon icon="fluent-mdl2:diagnostic"></iconify-icon>
 
 These Shiny apps provide interactive Bayesian (and frequentist) re-analyses of published randomized controlled trials. They are part of the [Assessing clinical trial interpretability](projects.qmd#assessing-clinical-trial-interpretability) research project funded by Heart & Stroke Canada.
 
-Enter the 2×2 event counts from any RCT, choose an effect measure (relative risk or risk difference), and explore how different prior assumptions shape posterior conclusions.
+Enter the 2×2 event counts from any RCT, choose an effect measure (relative risk or risk difference), and explore how different prior assumptions shape posterior conclusions.     
 
+Static entry image.
+
+![Static entry image](images/shiny1.jpg)
 ---
 
 # Bayesian RCT Re-analysis (Bayes only)
@@ -24,6 +27,9 @@ A focused Bayesian app with four priors — **Weak**, **Enthusiastic**, **Skepti
 - Prior vs Likelihood vs Posterior facet plots
 - CSV export of all summaries
 
+Sample static output image.
+
+![Static output image](images/shiny2.jpg)
 <!-- Once deployed to shinyapps.io, replace with the live URL:
 [**Launch app**](https://brophyj.shinyapps.io/bayes_alone/){.btn .btn-primary}
 -->
