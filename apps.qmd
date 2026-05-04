@@ -67,5 +67,12 @@ shiny::runApp("app_bayes_alone.r")
 shiny::runApp("app_full.r")
 ```
 
-Requires R ≥ 4.1 with `shiny`, `ggplot2`, `dplyr`, `ggdist`, `tibble`, `bslib`, and `rlang`. The MCMC backend additionally requires `brms` and `cmdstanr` (or `rstan`).
+Requires R ≥ 4.1 with `shiny`, `ggplot2`, `dplyr`, `ggdist`, `tibble`, `bslib`, and `rlang`. The MCMC backend additionally requires `brms` and `cmdstanr` (or `rstan`).    
 :::
+
+
+::: {.callout-note}
+## Running on the web
+Use the [shiny.io link](https://jb-apps.shinyapps.io/Bayes_for_RCTs/)
+:::
+
