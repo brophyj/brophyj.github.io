@@ -1,0 +1,339 @@
+---
+title: "Correcting the Scientific Record — A Comedy of Errors"
+subtitle: "Or: what happens when you ask a different question of the same data"
+description: "A reanalysis of the EXCEL spontaneous MI paper illustrates how estimand choice drives clinical conclusions — and how institutional gatekeeping makes it nearly impossible to say so in public."
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medicine, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca
+categories: [RCT, Bayesian, Bias, Statistical analysis, Evidence based medicine]
+image: preview-image.png
+citation:
+  url: https://brophyj.com/posts/2026-05-10-correcting-the-record/
+date: 2026-05-10
+lastmod: 2026-05-10
+featured: true
+draft: false
+projects: []
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    keep_md: true
+    self_contained: true
+editor_options:
+  markdown:
+    wrap: sentence
+biblio-style: apalike
+
+---
+
+```{r}
+#| label: setup
+#| include: false
+suppressPackageStartupMessages({
+  library(tidyverse)
+  library(brms)
+  library(posterior)
+})
+
+set.seed(20251109)
+knitr::opts_chunk$set(fig.align = "center")
+
+theme_set(
+  theme_minimal(base_size = 13) +
+    theme(
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(face = "bold"),
+      plot.subtitle = element_text(color = "grey40")
+    )
+)
+
+```
+
+## The paper that prompted this
+
+A [recent *Circulation* paper](https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.125.075875) [@RN9201] analysed spontaneous myocardial infarction data from the EXCEL trial[@RN9202], which randomized patients with left main coronary artery disease to percutaneous coronary intervention (PCI) or coronary artery bypass grafting (CABG).
+Their implicit message — and the one likely to circulate in cardiology rounds — is that the higher rate of spontaneous MI after PCI compared to CABG doesn't really matter for long-term survival, since the post-MI mortality hazard is the same regardless of which procedure the patient originally received.
+
+My dissenting opinions about the this clinical inferences was discussed in detail in the [previous blog post](https://www.brophyj.com/posts/2026-04-21-sponmi-reanalysis/).
+Basically, I don't think their conclusion is completely wrong, as it answers their question.
+The trouble is simply that it's the wrong question if you're a patient or clinician deciding between PCI and CABG.
+When you ask "among patients who had a spontaneous MI, was mortality worse in PCI versus CABG patients?", you are conditioning on on a post-randomization event.
+This is a legitimate prognostic question, but it is *not* the question relevant to treatment choice.
+The clinically relevant question is a joint one: what is the probability of suffering a spontaneous MI *and* subsequently dying, as a function of initial revascularization strategy?
+That estimand combines both the incidence and the lethality of spontaneous MI, and it's the one I estimated [previously](https://brophyj.com/posts/2026-04-21-sponmi-reanalysis/)).
+
+## What the reanalysis found
+
+Using an estimand-driven Bayesian framework and the aggregate trial data, the most clinically relevant estimand, the joint probability of spontaneous MI followed by death was estimated over the 5-year follow-up horizon.
+When these two sources of uncertainty are propagated and combined multiplicatively, the 5-year joint MI-associated mortality risk was 6.9 per 1,000 (95% CrI 1.5–13.2) after PCI versus 2.1 per 1,000 (95% CrI 0.0–6.2) after CABG.
+The posterior probability that PCI confers a higher overall burden was approximately **0.90**.
+The absolute risk difference — 4.7 deaths per 1,000 treated — is modest and imprecisely estimated, but the directional conclusion is robust.
+
+The figure below shows the posterior distribution of this joint difference.
+
+```{r}
+#| label: models
+#| cache: true
+#| message: false
+#| warning: false
+
+dat_mi <- data.frame(
+  arm = factor(c("CABG", "PCI")),
+  mi  = c(29, 60),
+  n   = c(930, 952)
+)
+
+quiet_brms <- function(expr) {
+  invisible(capture.output(suppressMessages(expr)))
+}
+
+quiet_brms(
+  fit_mi <- brm(
+    mi | trials(n) ~ arm,
+    data   = dat_mi,
+    family = binomial(link = "logit"),
+    prior  = c(
+      prior(normal(0, 1), class = "Intercept"),
+      prior(normal(0, 1), class = "b")
+    ),
+    chains = 4, iter = 4000, refresh = 0
+  )
+)
+
+post_mi  <- as_draws_df(fit_mi)
+p_mi_cabg <- plogis(post_mi$b_Intercept)
+p_mi_pci  <- plogis(post_mi$b_Intercept + post_mi$b_armPCI)
+diff_mi   <- p_mi_pci - p_mi_cabg
+ci_diff_mi <- quantile(diff_mi, c(0.025, 0.975))
+
+dat_death <- data.frame(
+  arm = factor(c("CABG", "PCI")),
+  yi  = c(8.22, 11.73),
+  sei = c(5.83, 4.56)
+)
+
+quiet_brms(
+  fit_death <- brm(
+    yi | se(sei) ~ arm,
+    data   = dat_death,
+    family = gaussian(),
+    prior  = prior(normal(0, 10), class = "Intercept"),
+    chains = 4, iter = 4000, refresh = 0
+  )
+)
+
+post_d   <- as_draws_df(fit_death)
+
+n_draw    <- min(nrow(post_mi), nrow(post_d))
+post_mi   <- post_mi[1:n_draw, ]
+post_d    <- post_d[1:n_draw, ]
+
+p_mi_cabg <- plogis(post_mi$b_Intercept)
+p_mi_pci  <- plogis(post_mi$b_Intercept + post_mi$b_armPCI)
+
+p_d_cabg  <- pmin(pmax(post_d$b_Intercept / 100, 0), 1)
+p_d_pci   <- pmin(pmax((post_d$b_Intercept + post_d$b_armPCI) / 100, 0), 1)
+
+risk_cabg    <- p_mi_cabg * p_d_cabg
+risk_pci     <- p_mi_pci  * p_d_pci
+diff_overall <- risk_pci - risk_cabg
+p_combined   <- mean(diff_overall > 0)
+ci_diff_overall <- quantile(diff_overall, c(0.025, 0.5, 0.975))
+```
+
+```{r}
+#| label: fig-posterior
+#| fig-cap: "Posterior distribution of the difference in joint MI-associated mortality risk (PCI − CABG). The shaded red area represents the posterior probability that PCI confers a higher overall burden (P ≈ 0.90)."
+
+library(ggplot2)
+
+plot_df      <- data.frame(diff = diff_overall)
+density_data <- ggplot_build(
+  ggplot(plot_df, aes(x = diff)) + geom_density()
+)$data[[1]]
+
+ggplot() +
+  geom_line(data = density_data, aes(x = x, y = density), linewidth = 1) +
+  geom_area(
+    data  = subset(density_data, x <= 0),
+    aes(x = x, y = density),
+    fill  = "lightblue", alpha = 0.6
+  ) +
+  geom_area(
+    data  = subset(density_data, x > 0),
+    aes(x = x, y = density),
+    fill  = "red", alpha = 0.6
+  ) +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  annotate(
+    "text",
+    x = Inf, y = Inf,
+    label = sprintf("P(PCI > CABG) == %.2f", p_combined),
+    parse = TRUE, hjust = 1.1, vjust = 1.4,
+    color = "red", size = 5
+  ) +
+  labs(
+    title    = "Posterior Distribution of Joint MI-Associated Mortality Difference",
+    subtitle = "Difference = PCI − CABG",
+    x        = "Difference in joint MI–death probability",
+    y        = "Posterior density"
+  )
+```
+
+The contrast with the original paper's framing is stark.
+Madhavan et al. emphasize that the *conditional* hazard ratio for post-MI mortality shows no significant treatment interaction ($P_{interaction}$ = 0.23), suggesting the procedures are equivalent in this regard.
+The joint estimand says something different: there is a 0.90 posterior probability that PCI patients carry a higher *overall* 5-year burden of spontaneous MI followed by death.
+Same data.
+Very different clinical message.
+The difference is entirely in the estimand.
+
+## Trying to say this out loud
+
+At this point the reanalysis existed.
+It was short, reproducible (code at [GitHub](https://github.com/brophyj/SpontaneousMI)), and made what I considered a clinically important point.
+What followed was a dispiriting tour through the institutional machinery that governs scientific discourse.
+
+**Step 1: The publishing journal.** I sumbitted the [manuscript]((https://github.com/brophyj/SpontaneousMI)) to *Circulation* — the journal that published the original paper — and received this response -
+
+    
+> *"After editorial review, we have determined that the manuscript will not be published in Circulation. Editorial decisions for your article type are influenced by priorities and programming considerations in addition to topic relevance and timeliness."*
+
+
+**Step 2: A sister journal.** *Circulation: Cardiovascular Quality and Outcomes* also declined and suggested a letter to the editor of Circulation which are capped at 500 words. Explaining estimands, Bayesian inference, and joint versus conditional probabilities to a cardiology readership that may not be deeply familiar with any of those concepts in \< 500 words seemed an impossible task so I declined to follow-up on this suggestion as an incomplete explanation would likely confuse more than illuminate.
+
+**Step 3: medRxiv.** Preprint servers exist precisely for situations like this — work that is methodologically sound, reproducible, and contributes to scientific discourse, but which journals decline for reasons unrelated to merit.\
+Or so one might think - but MedRxiv rejected the submission with the following:
+
+> *"medRxiv is intended for full clinical research papers that include new data and sufficient methodological details. Simple automated/computational analyses of public data, molecular modeling, facile database searches, and results of facile analyses are generally not sufficient and therefore, your submission was considered out of scope."*
+
+Someone with a thinner skin would have been rather stung by the comment, "Simple automated/computational analyses of public data", even if the assessment is totally inaccurate. 
+A Bayesian reanalysis with explicitly pre-specified estimands, full posterior inference, and reproducible code is many things, but *facile* is not the word that comes to mind.
+The implicit assumption embedded in this rejection is that originality requires new data — that the only legitimate form of scientific contribution is a new dataset, preferably obtained at some expense and difficulty.
+Re-analysis, methodological critique, and alternative inference from existing data are, apparently, beneath the preprint server's dignity or comprehension of what represents a meaningful scientific contribution.
+
+I appealed, pointing out that meta-analyses — which medRxiv happily hosts — routinely re-analyse previously published data, sometimes from a single trial.
+I noted that a [recent paper in *Statistical Methods in Medical Research*](https://doi.org/10.1177/09622802251380628)[@RN9207] makes exactly this case for single-study meta-analysis.
+I noted that my manuscript proposed a new hypothesis (a different estimand) and examined it with data.
+The appeal was rejected without substantive engagement.
+
+## What this episode illustrates
+
+This is not primarily a story about my manuscript, which is, after all, sitting comfortably on this blog and will survive the indifference of journals and preprint servers alike.
+It is a story about the structural incentives that govern scientific communication — and how those incentives actively impede the self-correcting function that science is supposed to perform.
+
+The problem is not malice.
+I don't believe anyone at *Circulation*, *Circ: CQVO*, or medRxiv is trying to suppress methodological critique.
+The problem is institutional inertia and a shared, largely unexamined assumption: that scientific value is synonymous with new data.
+This assumption shapes journal scope policies, preprint criteria, funding priorities, and promotion decisions.
+It creates a strong disincentive for anyone to invest serious effort in reanalysis, methodological critique, or re-examination of published work.
+Why spend your time critically assessing published work and crafting a careful Bayesian reanalysis that reveals important clinical nuances, if the output will be summarily dismissed as "not new data" by every venue you approach?
+The incentive is overwhelmingly toward producing new, publishable, primary data — regardless of whether the inferences about the existing data are valid.
+
+The EXCEL trial[@RN9202] alone has generated [an extraordinary volume of controversy](https://brophyj.com/posts/2021-01-15-excel-clearing-the-haze-with-bayes/) about definitions, adjudication, and analysis choices.
+The spontaneous MI paper is a thoughtful contribution to that literature.
+But it made a specific analytical choice — conditioning on MI occurrence — that leads to a conclusion meaningfully different from what a joint estimand would support.
+That difference matters clinically.
+Patients and cardiologists deciding between PCI and CABG for left main disease deserve to see it aired.
+
+The current system makes that surprisingly hard.
+
+One concrete consequence: the original paper's framing — "the poor prognosis after spontaneous MI is independent of revascularization strategy" — will propagate through guidelines, reviews, and clinical practice, largely unchallenged.
+Not because the methodological critique is wrong, but because the venues for making it are either too small (letters to the editor, with no guarantee of acceptance) or too gatekept (preprint servers with an implicit new-data requirement) to accommodate it.
+
+The sensitivity of conclusions to analytical choices is not, of course, unique to the EXCEL spontaneous MI paper or to cardiovascular medicine.
+Silberzahn et al. [@silberzahn2018] provided perhaps the most vivid empirical demonstration of this phenomenon: 29 independent teams, comprising 61 analysts, were given the same dataset and asked the same research question — whether soccer referees were more likely to give red cards to darker-skinned players.
+The resulting effect size estimates ranged from 0.89 to 2.93 in odds-ratio units, with some teams finding a statistically significant effect and others finding none, all from identical data.
+The authors' conclusion — that "the best defense against subjectivity in science is to expose it" — applies directly here.
+The conditional versus joint estimand distinction in the spontaneous MI analysis is not a subtle technical quibble; it is a choice about what question is being answered.
+Transparent pre-specification of the estimand, before model selection and before analysis, is the most effective antidote to the kind of result-contingent framing that the Silberzahn study so memorably illustrated.
+
+## The estimand-first principle
+
+The broader methodological point is worth stating plainly, independent of the publication saga.
+
+Choosing an estimand — the specific quantity you want to estimate, encoding the precise clinical question you want to answer — should come *before* choosing a statistical model.
+Models are tools; estimands are commitments to a question.
+The same data, the same trial, the same patients will yield very different answers depending on which question you ask.
+
+A 0.90 posterior probability that PCI confers a higher joint burden of spontaneous MI and death is not a definitive indictment of PCI for left main disease — the absolute differences are modest and uncertain, and there are many other considerations.
+But it is a materially different framing than "no significant interaction," and any clinician or patient who encountered only the original paper would not know it existed.
+
+That is the problem.
+And the difficulty in publishing it is a secondary problem that compounds the first.
+
+## Code and reproducibility
+
+Full statistical code for the reanalysis is available at <https://github.com/brophyj/SpontaneousMI>.
+All analyses were conducted in R using `brms`, `posterior`, and `ggplot2`.
+Aggregate-level data were taken directly from the published trial report.
+
+```{r}
+#| label: tbl-results
+#| echo: false
+#| message: false
+#| warning: false
+#| tbl-cap: "Summary of posterior estimates across three estimands."
+
+library(gt)
+library(dplyr)
+
+ci_cabg  <- quantile(p_mi_cabg, c(0.025, 0.975))
+ci_pci   <- quantile(p_mi_pci,  c(0.025, 0.975))
+
+p_d_cabg_raw <- pmin(pmax(post_d$b_Intercept / 100, 0), 1)
+p_d_pci_raw  <- pmin(pmax((post_d$b_Intercept + post_d$b_armPCI) / 100, 0), 1)
+
+ci_p_d_cabg <- quantile(p_d_cabg_raw, c(0.025, 0.975))
+ci_p_d_pci  <- quantile(p_d_pci_raw,  c(0.025, 0.975))
+
+ci_risk_cabg <- quantile(risk_cabg, c(0.025, 0.5, 0.975))
+ci_risk_pci  <- quantile(risk_pci,  c(0.025, 0.5, 0.975))
+
+fmt <- function(m, lo, hi, scale = 1)
+  sprintf("%.1f (%.1f–%.1f)", m * scale, lo * scale, hi * scale)
+
+tibble(
+  Estimand = c(
+    "5-yr MI risk — CABG (%)",
+    "5-yr MI risk — PCI (%)",
+    "Post-MI mortality — CABG (%)",
+    "Post-MI mortality — PCI (%)",
+    "Joint MI–death risk — CABG (per 1,000)",
+    "Joint MI–death risk — PCI (per 1,000)",
+    "Joint risk difference, PCI − CABG (per 1,000)"
+  ),
+  `Posterior mean (95% CrI)` = c(
+    fmt(mean(p_mi_cabg),     ci_cabg[1],      ci_cabg[2],      100),
+    fmt(mean(p_mi_pci),      ci_pci[1],       ci_pci[2],       100),
+    fmt(mean(p_d_cabg_raw),  ci_p_d_cabg[1],  ci_p_d_cabg[2],  100),
+    fmt(mean(p_d_pci_raw),   ci_p_d_pci[1],   ci_p_d_pci[2],   100),
+    fmt(ci_risk_cabg[2],     ci_risk_cabg[1], ci_risk_cabg[3], 1000),
+    fmt(ci_risk_pci[2],      ci_risk_pci[1],  ci_risk_pci[3],  1000),
+    fmt(ci_diff_overall[2],  ci_diff_overall[1], ci_diff_overall[3], 1000)
+  ),
+  `P(PCI > CABG)` = c(
+    sprintf("%.2f", mean(diff_mi > 0)),
+    "—", "—",
+    sprintf("%.2f", mean((p_d_pci_raw - p_d_cabg_raw) > 0)),
+    "—", "—",
+    sprintf("%.2f", p_combined)
+  )
+) |>
+  gt() |>
+  tab_header(
+    title    = "Bayesian posterior summaries by estimand",
+    subtitle = "EXCEL trial, 5-year follow-up"
+  ) |>
+  tab_row_group(label = "Estimand 1: MI incidence",   rows = 1:2) |>
+  tab_row_group(label = "Estimand 2: Post-MI mortality", rows = 3:4) |>
+  tab_row_group(label = "Estimand 3: Joint MI–death burden", rows = 5:7) |>
+  cols_align("left",   1) |>
+  cols_align("center", 2:3) |>
+  tab_source_note("CrI = credible interval. P(PCI > CABG) = posterior probability that PCI confers higher risk.")
+```
+
+## References
