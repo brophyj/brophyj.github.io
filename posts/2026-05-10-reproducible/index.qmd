@@ -22,7 +22,7 @@ format:
     code-fold: true
     code-tools: true
     keep_md: true
-    self_contained: true
+    embed-resources: true   # replaces self_contained: true
 editor_options:
   markdown:
     wrap: sentence
