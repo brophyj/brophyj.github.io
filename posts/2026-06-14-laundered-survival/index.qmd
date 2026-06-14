@@ -1,0 +1,88 @@
+---
+title: "Laundered Survival"
+subtitle: "Another Example of Immortal Time Bias in the GLP-1 Cancer Literature"
+description: "A description of the pernicious effect of immortal time bias"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medicine, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca
+categories: [Simulation study, Statistical analysis, Immortal time bias]
+image: preview-image.jpeg
+citation:
+  url: https://brophyj.com/posts/2026-05-14-laundered-survival/
+date: 2026-06-14
+lastmod: 2026-06-14
+featured: true
+draft: false
+projects: []
+format:
+  html:
+    theme: [simple, ../../custom.scss]
+    code-fold: true
+    code-tools: true
+    keep_md: true
+    embed-resources: true   # replaces self_contained: true
+bibliography: ../../references.bib
+csl: ../../vancouver.csl
+editor_options:
+  markdown:
+    wrap: sentence
+biblio-style: apalike
+
+---
+
+## Background
+[My previous blog](https://www.brophyj.com/posts/2026-06-08-peer_review/) concerned an [observational cohort study](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2848788) reporting a hazard ratio (HR) for all-cause mortality of 0.35 (95% CI 0.21–0.58) in patients with breast cancer (GLP-1 RA vs. no treatment) and 0.09 (95% CI 0.06–0.15) in patients with type 2 diabetes (GLP-1 RA vs. insulin or metformin). These effect sizes are an order of magnitude larger than what has been observed with adjunctive therapy in randomised controlled trials and a simulation study confirmed that this magnitude of bias can be explained completely by immortal time.     
+This post concerns [GLP-1 receptor agonist use and cancer risk in obese nondiabetic adults](https://www.annalsofoncology.org/article/S0923-7534(26)00157-2/abstract), where the effect sizes are similarly implausible and the immortal time bias is likely driving the results. The recurrent nature of this bias and its ability to surface in journals with an impact factor of 65 merits another post on this pernicious bias.
+
+## Immortal time bias
+Immortal time bias may have both misclassification and selection bias components as discussed in detail in my [previous blog](https://www.brophyj.com/posts/2026-06-08-peer_review/).
+The exposure definition in this study is identical to the previous study, classified as GLP-1RA users if they had ≥2 prescriptions, with follow-up starting at the index date (first prescription). This lack of alignment leads to thesame structural error, but even arguably more severe than previous. Consider a patient who fills their first prescription in January 2023 and their second in March 2023 has two months of immortal time — they could not have developed cancer in that window and still been classified as exposed. Critically, the follow-up is only a median of 2 years with an IQR of 1–2 years. This is a very short window, which means the immortal time between prescription 1 and prescription 2 represents a much larger fraction of total follow-up time than it would in a 10-year study. 
+
+ 
+##  A target trial emulation claim 
+The authors prominently invoke the target trial emulation framework[@RN9223] as a means to control for immortal time, yet they do not actually implement it correctly. A genuine target trial emulation requires explicit alignment of eligibility, treatment assignment, and time zero. Here, as with the previous study, patients are classified as exposed after the index date based on accumulating a second prescription. The authors cite the framework as a methodological strength while committing the exact error the framework is designed to prevent. This is more than an oversight — invoking target trial emulation as a quality marker while not implementing it correctly misleads readers and reviewers.
+
+    
+# The effect sizes again fail the sniff test — spectacularly
+
+The overall HR of 0.59 is implausible enough. But the subgroup results are extraordinary:     
+•	Men: HR 0.32 (PSM), 0.27 (IPTW)        
+•	Tirzepatide: HR 0.31 (PSM), 0.26 (IPTW)     
+•	Tirzepatide in IPTW: HR 0.26 (95% CI 0.17–0.39)     
+An HR of 0.26 means a 74% reduction in cancer incidence. No chemoprevention agent in the history of oncology has ever demonstrated anything approaching this magnitude for a composite of 13 cancers in a 2-year follow-up window. Tamoxifen reduces breast cancer incidence by roughly 38% in high-risk women after 5 years of use. Aspirin reduces colorectal cancer incidence by perhaps 20–30% after a decade. The claim that tirzepatide reduces all obesity-associated cancer incidence by 74% in 2 years, in a non-diabetic population, is not biologically credible and should immediately signal methodological artefact.    
+
+[**Where is the common sense (sniff test) of the reviewers and editors of a medical journal with an impact factor 65?**]{.red-text}
+
+## The 2-year follow-up is a fatal design flaw for a cancer incidence outcome   
+
+Cancer has a long latency. The authors themselves acknowledge this in the limitations. Most of the 13 obesity-associated cancers in their composite — colorectal, endometrial, kidney, pancreatic, breast — take years to decades to develop from the initiating biological events. A 2-year window cannot capture any genuine chemopreventive effect of GLP-1 RAs, because even if these drugs were genuinely suppressing carcinogenesis, the tumours prevented would not have appeared clinically for many more years. What the 2-year window can capture is:     
+1.	Immortal time artefact (as above)     
+2.	Detection bias — GLP-1 RA users are more engaged with the healthcare system and may have more cancer screening, paradoxically increasing detected cancers unless carefully controlled for     
+3.	Reverse causation — patients with early undiagnosed cancer may feel unwell and be less likely to initiate or persist with GLP-1 RA therapy, artificially reducing cancer incidence in the exposed group    
+The authors attempt to address reverse causation with 6- and 12-month exclusion sensitivity analyses, but this does not fix the structural problem. If a patient has an undiagnosed pancreatic cancer at month 3 and dies at month 8, they were never going to accumulate 2 GLP-1 RA prescriptions — they are silently pushed into the comparator arm. This is simultaneously immortal time bias and reverse causation operating together, and the 6-month exclusion window does not break that link.   
+
+[**Where is the common sense (sniff test) of the reviewers and editors of a medical journal with an impact factor 65?**]{.red-text}
+
+## The comparator group choice introduces its own bias   
+
+The authors compare GLP-1 RA users against patients receiving diet or exercise counselling, arguing this reduces healthy user bias relative to a no-treatment comparator. This is a reasonable argument in principle. However, patients who receive and persist with diet/exercise counselling and those who receive GLP-1 RA prescriptions are likely to differ in ways that propensity scoring cannot fully capture — specifically in how intensively they engage with preventive healthcare. GLP-1 RA users were substantially more likely to have had cancer screening at baseline (17.6% vs 9.2% before matching, still 13.5% vs 12.3% after matching — an SMD of 0.04 that looks balanced but represents a meaningful absolute difference in a cancer incidence study). More screening in the GLP-1 RA group would, if anything, increase detected cancers — so if the observed effect is real it is despite this, not because of it. 
+
+## The tirzepatide vs semaglutide discrepancy is itself a red flag
+
+Tirzepatide HR 0.31 vs semaglutide HR 0.80. The authors acknowledge they cannot statistically compare these groups. But the magnitude of the difference is telling. Tirzepatide use expanded dramatically from mid-2023 onward — meaning tirzepatide users in this dataset have substantially shorter follow-up than semaglutide users. Shorter follow-up means less time for cancer to be detected in the exposed group, which mechanically reduces the observed cancer incidence rate in the tirzepatide arm. Shorter follow-up also means the immortal time assumes a larger proportion of the follow-up. The apparent superiority of tirzepatide over semaglutide is almost certainly a follow-up time artefact, not a biological signal.   
+
+[**Where is the common sense (sniff test) of the reviewers and editors of a medical journal with an impact factor 65?**]{.red-text}
+
+## The E-value argument is unconvincing 
+
+The authors report an E-value of 2.81, interpreted as reassuring. But the E-value quantifies the strength of an unmeasured confounder needed to explain the result. It does not account for measured biases arising from the study design itself — immortal time, reverse causation, and surveillance bias are not confounders in the traditional sense; they are structural features of the study design that propensity scoring cannot address and that E-values do not capture. Reporting an E-value as evidence of robustness when the primary threats to validity are design-based rather than confounder-based is misleading.
+
+[**Where is the common sense (sniff test) of the reviewers and editors of a medical journal with an impact factor 65?**]{.red-text}
+
+## Bottom line
+This paper combines immortal time bias with reverse causation, a 2-year follow-up window that is biologically incoherent for cancer prevention, potential surveillance bias from differential healthcare contact, and a comparator-timing problem in the tirzepatide subgroup. The effect sizes are not just implausible — they are impossible given what we know about cancer biology and latency. The invocation of target trial emulation as a methodological strength, while failing to implement it correctly on the key dimension that matters, makes this more concerning rather than less. The authors and journal reviewers appear to have been persuaded by the framework's name rather than its substance.
+
+[**Where is the common sense (sniff test) of the reviewers and editors of a medical journal with an impact factor 65?**]{.red-text} 
