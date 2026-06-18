@@ -1,0 +1,232 @@
+---
+title: "Targeted trial emulation"
+subtitle: "A better (sort of) example"
+description: ""
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medicine, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca
+categories: [Simulation study, Statistical analysis, Immortal time bias]
+image: preview-image.png
+citation:
+  url: https://brophyj.com/posts/2026-05-17-targeted trial emulation/
+date: 2026-06-17
+lastmod: 2026-06-17
+featured: true
+draft: false
+projects: []
+format:
+  html:
+    theme: [simple, ../../custom.scss]
+    code-fold: true
+    code-tools: true
+    keep_md: true
+    embed-resources: true   # replaces self_contained: true
+# bibliography: ../../references.bib
+# csl: ../../vancouver.csl
+editor_options:
+  markdown:
+    wrap: sentence
+biblio-style: apalike
+---
+
+# Background
+
+My two previous blogs [here](https://www.brophyj.com/posts/2026-06-08-peer_review/) and [here](https://www.brophyj.com/posts/2026-06-14-laundered-survival/) concerned the improper execution of the target trial emulation (TTE) providing egregious examples of the pernicious immortal time bias they were supposed to avoid or at least minimize.
+Here is a good TTE [example](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2850241?utm_campaign=articlePDF&utm_medium=articlePDFlink&utm_source=articlePDF&utm_content=jamainternmed.2026.1929) of an association study between 2024-2025 COVID-19 vaccine and major adverse cardiovascular event (MACE).\
+The authors reported the following:
+
+::: callout-note
+## Results
+
+Among 1 039 659 participants who received influenza vaccine (mean \[SD\] age, 70.1 \[12.4\] years; 954 341 \[91.8%\] men), 349 085 received COVID-19 vaccine and 690 574 did not.
+At 8 months, the COVID-19 vaccine was associated with lower risk of COVID-19–associated MACE (VE, 37.7% \[95% CI, 18.2%-54.9%\]; risk difference per 10 000 persons, 2.0 \[95% CI, 0.9-3.7\]).
+VE for COVID-19−associated MACE was statistically significant only in individuals older than 75 years (VE, 50.7% \[95% CI, 31.8%-65.6%\]), a group that also experienced the largest absolute risk reduction (5.5 fewer events per 10 000 individuals).
+No statistically significant vaccine effectiveness was observed among those younger than 65 years or aged 65 to 75 years.
+While VE for COVID-19−associated MACE on the relative scale was statistically significant across subgroups of participants with and without comorbid health conditions, the absolute benefit was consistently and substantially greater for individuals with the comorbid health condition.
+Secondary analyses of all-cause MACE, all-cause hospitalization, and all-cause death suggested substantially larger absolute risk reductions (risk difference for all-cause MACE, 23.7 \[95% CI, 14.1 to 34.7\]).
+:::
+
+which lead them to this:
+
+::: callout-note
+**Conclusions**\
+In this cohort study, receipt of the 2024-2025 COVID-19 vaccine was associated with reduced risk of COVID-19–associated MACE, with reductions most prominent in those 75 years or older and those with comorbidities.
+While the reduction in COVID-19–associated MACE was modest, the substantially larger reduction in all-cause MACE suggests that the vaccine’s protective association extends to the hidden burden of undetected SARS-CoV-2 and its sequelae.
+:::
+
+# TTE is well executed here but ...
+
+In this paper, TTE elements are indeed well executed.
+TTE is genuinely valuable by forcing explicit specification of estimands (see [here](https://www.brophyj.com/posts/2026-04-21-sponmi-reanalysis/)), aligning eligibility, assignment and follow-up time (time zero) thereby avoiding selection and immortal time biases.\
+
+However, TTE is increasingly being treated as a credential (“this is causal”) rather than a framework resulting in confusion between methodological sophistication with causal certainty.
+To be clear, TTE does not solve confounding but does clarify the structure in which confounding operates, thereby moving from implicit bias (bad observational studies) to explicit but still unresolved bias (good observational studies).
+
+[That's progress but not resolution.]{.red-text}
+
+While TTE improves design clarity, but it does not eliminate\
+a) model dependencies (different specifications, weights, censoring) b) measurement limitations (missing or poorly measured confounders) c) researcher degrees of freedom including the choice of estimand (in this example “COVID-associated MACE” vs “all-cause MACE”)
+
+# The key philosophical point
+
+Inference is not determined solely by design—it arises from the interaction of design, data, and assumptions.
+So even with a well-specified TTE, there still are multiple defensible interpretations, especially when effect sizes are small.
+
+The specific estimand choices and their interpretations for this study is summarized as follows:
+
+| Outcome               | Estimand type | Interpretation               |
+|-----------------------|---------------|------------------------------|
+| COVID-associated MACE | Mechanistic   | Effect via infection pathway |
+| All-cause MACE        | Pragmatic     | Total population effect      |
+
+In what appears to be a researchers' degrees of freedom (as I didn't see a prespecified protcol), the authors then privilege the all-cause estimand concluding “the vaccine’s protective association extends to the hidden burden of undetected SARS-CoV-2”.    
+
+While TTE + causal inference tools (IPW, IPCW, doubly robust models) can feel procedural, reproducible, objective and lead to causal thinking, in reality several assumptions about the exclusivity of covariate selection, the and exchangeability are unverifiable. Sensitivity to confounding bias can be verified via E-values.
+
+```{r evalues, warning=FALSE, message=FALSE}
+library(EValue)
+library(gt)
+library(dplyr)
+library(tibble)
+
+### -------------------------
+### Table 2: COVID-associated MACE
+### -------------------------
+
+rr_covid <- 0.623
+rr_covid_lo <- 0.451   # from 54.9% VE
+rr_covid_hi <- 0.818   # from 18.2% VE
+
+### -------------------------
+### Table 3: All-cause MACE
+### -------------------------
+
+rr_all <- 0.938
+rr_all_lo <- 0.911   # from 8.9% VE
+rr_all_hi <- 0.962   # from 3.8% VE
+
+
+res_all <- evalues.RR(est = rr_all, lo = rr_all_lo, hi = rr_all_hi)
+
+res_all_df <- as.data.frame(res_all) |>
+  rownames_to_column("Metric") |>
+  mutate(across(where(is.numeric), ~ round(.x, 2)))
+
+
+res_all_df |>
+  mutate(
+    Interpretation = case_when(
+      Metric == "RR" ~ "Risk ratio (estimate & CI)",
+      Metric == "E-values" ~ "E-value (point and CI-limit)"
+    )
+  ) |>
+  gt()
+```
+
+
+The 1.33 E-value reflects the strength needed to eliminate the point estimate, whereas the 1.24 reflects the strength needed to render the result statistically non-significant. In this case, both are small, underscoring the fragility of the finding especially  for the larger absolute finding.    
+
+
+```{r gplots, message=FALSE, warning=FALSE, fig.width=10}
+library(EValue)
+library(dplyr)
+library(tibble)
+library(gt)
+library(ggplot2)
+library (patchwork)
+
+plot_df <- data.frame(
+  Outcome = c("COVID-associated ", "All-cause "),
+  RR = c(0.623, 0.938),
+  E_point = c(2.59, 1.33),
+  E_CI = c(1.74, 1.24),
+  RD = c(2.0, 23.7)   # per 10,000
+)
+
+g1 <- ggplot(plot_df, aes(x = RR, y = E_point)) +
+  
+  # vertical line between CI-limit and point E-value
+  geom_segment(aes(xend = RR, y = E_CI, yend = E_point),
+               linewidth = 1, color = "grey40") +
+  
+  # CI-limit (triangle)
+  geom_point(aes(y = E_CI), shape = 17, size = 3, color = "black") +
+  
+  # point estimate (circle)
+  geom_point(size = 3.5, color = "black") +
+  
+  # labels
+  geom_text(aes(label = Outcome), nudge_x = 0.05,
+            nudge_y = 0.12, size = 4) +
+  
+  # vertical reference line at RR = 1
+  geom_vline(xintercept = 1, linetype = "dashed", color = "grey60") +
+  
+  labs(
+    x = "Risk Ratio (closer to 1 = weaker effect)",
+    y = "E-value (higher = more robust)",
+    title = "MACE Effect Size vs Robustness \nto Unmeasured Confounding",
+    subtitle = "Circle = point estimate; Triangle = CI-limit"
+  ) +
+  
+  coord_cartesian(xlim = c(0.6, 1.0), ylim = c(1.2, 2.7)) +
+  
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+g2 <- ggplot(plot_df, aes(x = RR, y = E_point)) +
+  
+  geom_segment(aes(xend = RR, y = E_CI, yend = E_point),
+               linewidth = 1, color = "grey40") +
+  
+  geom_point(
+    aes(size = RD),   # absolute effect shown as size
+    shape = 21, fill = "black", color = "black"
+  ) +
+  
+  geom_point(aes(y = E_CI), shape = 17, size = 3) +
+  
+  geom_text(
+    aes(label = paste0(Outcome, "\nRD=", RD)),
+    nudge_x = 0.05,
+    nudge_y = 0.12, size = 4
+  ) +
+  
+  geom_vline(xintercept = 1, linetype = "dashed", color = "grey60") +
+  
+  scale_size(range = c(3, 8), guide = "none") +
+  
+  labs(
+    x = "Risk Ratio",
+    y = "E-value",
+    title = "Absolute MACE Effect vs Robustness",
+    subtitle = "Larger absolute effects can arise from weaker \nand more fragile relative effects"
+  ) +
+  
+  coord_cartesian(xlim = c(0.6, 1.0), ylim = c(1.2, 2.7)) +
+  
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+g1+g2
+```
+
+Consequently, the authors' interpretation is but one and equally plausible is a non-causal signal influenced by residual confounding. So
+there is no escaping interpretive inferences, only making them more transparent. Good causal design does not eliminate epistemic uncertainty, it merely makes interpretive inferences more transparent by clarifying where the uncertainty resides. Even under “ideal” observational conditions, we most often arrive only at probabilistic, not definitive, causal claims. An under appreciated paradox, as illustrated in the plots, is that large absolute effects from small relative effects are more epistemically fragile than small absolute effects from large relative effects. An important corrective to how clinicians intuitively read results is to recognize that absolute magnitude is not a proxy for causal robustness.     
+
+TTE improves transparency and reduces certain biases, but it does not eliminate residual confounding nor ensure a single valid causal interpretation. As illustrated here, different estimands and small effect sizes permit multiple plausible inferences. Thus, causal inference remains an exercise in critical judgment rather than an algorithmic output of design.    
+
+I'm certainly not not arguing against TTE's methodological rigor but rather for an appreciation that while it may reduce uncertainty it does not eliminate it and the current movement overcorrecting from “observational studies are unreliable” to "well-done causal inference from observational studies can approximate trials" must be meet with critical analyses.      
+
+A summary of the above was submitted as a comment on the JAMA Internal Medicine [article website](https://jamanetwork-com.proxy3.library.mcgill.ca/journals/jamainternalmedicine/fullarticle/2850241) by then clicking supplemental content.
+
+
