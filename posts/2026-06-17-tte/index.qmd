@@ -52,7 +52,7 @@ Secondary analyses of all-cause MACE, all-cause hospitalization, and all-cause d
 which lead them to this:
 
 ::: callout-note
-##Conclusions     
+## Conclusions     
 
 In this cohort study, receipt of the 2024-2025 COVID-19 vaccine was associated with reduced risk of COVID-19–associated MACE, with reductions most prominent in those 75 years or older and those with comorbidities.
 While the reduction in COVID-19–associated MACE was modest, the substantially larger reduction in all-cause MACE suggests that the vaccine’s protective association extends to the hidden burden of undetected SARS-CoV-2 and its sequelae.
