@@ -52,7 +52,8 @@ Secondary analyses of all-cause MACE, all-cause hospitalization, and all-cause d
 which lead them to this:
 
 ::: callout-note
-**Conclusions**\
+##Conclusions     
+
 In this cohort study, receipt of the 2024-2025 COVID-19 vaccine was associated with reduced risk of COVID-19–associated MACE, with reductions most prominent in those 75 years or older and those with comorbidities.
 While the reduction in COVID-19–associated MACE was modest, the substantially larger reduction in all-cause MACE suggests that the vaccine’s protective association extends to the hidden burden of undetected SARS-CoV-2 and its sequelae.
 :::
@@ -84,7 +85,7 @@ The specific estimand choices and their interpretations for this study is summar
 
 In what appears to be a researchers' degrees of freedom (as I didn't see a prespecified protcol), the authors then privilege the all-cause estimand concluding “the vaccine’s protective association extends to the hidden burden of undetected SARS-CoV-2”.    
 
-While TTE + causal inference tools (IPW, IPCW, doubly robust models) can feel procedural, reproducible, objective and lead to causal thinking, in reality several assumptions about the exclusivity of covariate selection, the and exchangeability are unverifiable. Sensitivity to confounding bias can be verified via E-values.
+While TTE + causal inference tools (IPW, IPCW, doubly robust models) can feel procedural, reproducible, objective and lead to causal thinking, in reality several assumptions about the exclusivity of covariate selection and exchangeability, to name but two, are unverifiable. Sensitivity to confounding bias can be verified via E-values.
 
 ```{r evalues, warning=FALSE, message=FALSE}
 library(EValue)
@@ -127,7 +128,7 @@ res_all_df |>
 ```
 
 
-The 1.33 E-value reflects the strength needed to eliminate the point estimate, whereas the 1.24 reflects the strength needed to render the result statistically non-significant. In this case, both are small, underscoring the fragility of the finding especially  for the larger absolute finding.    
+The 1.33 E-value reflects the strength needed to eliminate the point estimate, whereas the 1.24 reflects the strength needed to render the result statistically non-significant. In this case, both are small, underscoring the fragility of the finding especially  for the larger absolute all-cause MACE.        
 
 
 ```{r gplots, message=FALSE, warning=FALSE, fig.width=10}
@@ -220,13 +221,12 @@ g2 <- ggplot(plot_df, aes(x = RR, y = E_point)) +
 g1+g2
 ```
 
-Consequently, the authors' interpretation is but one and equally plausible is a non-causal signal influenced by residual confounding. So
-there is no escaping interpretive inferences, only making them more transparent. Good causal design does not eliminate epistemic uncertainty, it merely makes interpretive inferences more transparent by clarifying where the uncertainty resides. Even under “ideal” observational conditions, we most often arrive only at probabilistic, not definitive, causal claims. An under appreciated paradox, as illustrated in the plots, is that large absolute effects from small relative effects are more epistemically fragile than small absolute effects from large relative effects. An important corrective to how clinicians intuitively read results is to recognize that absolute magnitude is not a proxy for causal robustness.     
+Consequently, the authors' interpretation is but one and an equally plausible is a non-causal signal influenced by residual confounding. There is no escaping interpretive inferences with observational designs, TTE only makes them more transparent. Good causal design does not eliminate epistemic uncertainty, it merely makes interpretive inferences more transparent by clarifying where the uncertainty resides. Even under “ideal” observational conditions, we most often arrive only at probabilistic, not definitive, causal claims. An under appreciated paradox, as illustrated in the plots, is that large absolute effects from small relative effects are more epistemically fragile than small absolute effects from large relative effects. An important corrective to how clinicians intuitively read results is to recognize that absolute magnitude is not a proxy for causal robustness.     
 
 TTE improves transparency and reduces certain biases, but it does not eliminate residual confounding nor ensure a single valid causal interpretation. As illustrated here, different estimands and small effect sizes permit multiple plausible inferences. Thus, causal inference remains an exercise in critical judgment rather than an algorithmic output of design.    
 
 I'm certainly not not arguing against TTE's methodological rigor but rather for an appreciation that while it may reduce uncertainty it does not eliminate it and the current movement overcorrecting from “observational studies are unreliable” to "well-done causal inference from observational studies can approximate trials" must be meet with critical analyses.      
 
-A summary of the above was submitted as a comment on the JAMA Internal Medicine [article website](https://jamanetwork-com.proxy3.library.mcgill.ca/journals/jamainternalmedicine/fullarticle/2850241) by then clicking supplemental content.
+A summary of the above was submitted as a comment on the JAMA Internal Medicine [article website](https://jamanetwork-com.proxy3.library.mcgill.ca/journals/jamainternalmedicine/fullarticle/2850241) and then clicking on supplemental content.
 
 
