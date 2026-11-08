@@ -1,0 +1,199 @@
+---
+title: "PARAGON-HF revisited"
+subtitle: "Reproducible, but one prior is not enough"
+description: "Five years on, a Bayesian re-analysis of PARAGON-HF from my 2021 Canadian Journal of Cardiology review is easily reproduced. What has changed is how I would present it: not with a single prior, but with a community of priors that tests how robust the conclusions are."
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medicine, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca
+categories: [Bayesian inference, RCTs, priors, reproducibility]
+image: preview-image.png
+citation:
+  url: https://brophyj.com/posts/2026-11-08-paragon-revisited/
+date: 2026-11-08
+lastmod: 2026-11-08
+featured: true
+draft: false
+projects: []
+format:
+  html:
+    theme: [simple, ../../custom.scss]
+    code-fold: true
+    code-tools: true
+    embed-resources: true
+    toc: true
+execute:
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| include: false
+library(tidyverse)
+library(knitr)
+
+# PARAGON-HF published result: sacubitril-valsartan vs valsartan
+y  <- log(0.87)                                          # log rate ratio
+se <- (log(1.01) - log(0.75)) / (2 * qnorm(0.975))      # SE from the 95% CI
+z  <- y / se
+
+# normal-normal (conjugate) updating: prior N(m0, s0^2) x likelihood N(y, se^2)
+post_norm <- function(m0, s0) {
+  w0 <- 1 / s0^2; w1 <- 1 / se^2
+  c(m = (w0 * m0 + w1 * y) / (w0 + w1), s = sqrt(1 / (w0 + w1)))
+}
+summ <- function(m, s) {
+  m <- unname(m); s <- unname(s)
+  c(RR = exp(m), lo = exp(m - 1.96 * s), hi = exp(m + 1.96 * s),
+    P_benefit = pnorm(0, m, s), P_mcid = pnorm(log(0.85), m, s),
+    P_harm = 1 - pnorm(0, m, s))
+}
+f2 <- function(x) sprintf("%.2f", x)
+```
+
+## Background
+
+In 2021 I published a review in the *Canadian Journal of Cardiology* arguing that Bayesian re-analyses add value to the interpretation of cardiovascular trials ([Brophy, *Can J Cardiol* 2021](https://doi.org/10.1016/j.cjca.2021.03.014); code at [github.com/brophyj/cjc_bayes](https://github.com/brophyj/cjc_bayes)). One of the six examples was PARAGON-HF ([Solomon *et al.*, *NEJM* 2019](https://doi.org/10.1056/NEJMoa1908655)), which compared sacubitril-valsartan with valsartan in 4822 patients with heart failure and an ejection fraction of 45% or more. The primary outcome, total heart failure hospitalisations and cardiovascular death, gave a rate ratio of **0.87 (95% CI 0.75–1.01), P = 0.06**, and the authors concluded that the drug "did not result in a significantly lower rate" of the outcome. Despite this, an FDA advisory committee voted 12–1 in favour, and in February 2021 the indication was extended to chronic heart failure, with "benefits most clearly evident in patients with LVEF below normal".
+
+My re-analysis reported a 97% probability that sacubitril-valsartan reduced the primary outcome, a 38% probability that the reduction was at least 15% (a clinically meaningful threshold, slightly more modest than the 19% the trial was powered for), and a 3% probability of harm. These figures have since been quoted in commentaries, and I was recently asked exactly how they were obtained. This post answers that question, and then asks a second one: five years later, would I present the analysis the same way?
+
+## Part 1: The 2021 analysis is easy to reproduce
+
+The analysis needs only the published estimate and its confidence interval. On the log scale these define a normal likelihood, log RR ~ N(y, SE²), with SE recovered from the width of the CI:
+
+```{r data}
+#| code-fold: show
+y  <- log(0.87)
+se <- (log(1.01) - log(0.75)) / (2 * qnorm(0.975))
+round(c(logRR = y, SE = se, z = y / se, p = 2 * pnorm(-abs(y / se))), 3)
+```
+
+The 2021 analysis used a flat ("non-informative") prior on the log rate ratio, so the posterior is simply this likelihood. The probabilities are areas under a normal curve:
+
+```{r flat}
+#| code-fold: show
+round(c(`P(RR < 1)`    = pnorm(0, y, se),
+        `P(RR < 0.85)` = pnorm(log(0.85), y, se),
+        `P(0.85 < RR < 1)` = pnorm(0, y, se) - pnorm(log(0.85), y, se),
+        `P(RR > 1)`    = 1 - pnorm(0, y, se)), 2)
+```
+
+These are the published 97%, 38%, 58% (59% here, a rounding difference) and 3%. Anyone with the NEJM abstract and a few lines of R can reproduce them.
+
+The paper also reported a **minimum Bayes factor**, the strongest possible evidence against "no effect" that the data can provide ([Goodman, *Ann Intern Med* 1999](https://doi.org/10.7326/0003-4819-130-12-199906150-00019)): $e^{-z^2/2}$ = `r f2(exp(-z^2/2))` here (the paper gave 0.17, using z ≈ 1.89; with the rounded CI, z = `r f2(abs(z))`). Since posterior odds = Bayes factor × prior odds, someone who started 50:50 between "no effect" and "some effect" would still give about a `r round(100 * exp(-z^2/2) / (1 + exp(-z^2/2)))`% probability to no effect after the trial, and this is a *lower bound*.
+
+### Why a lower bound?
+
+A Bayes factor compares how well two hypotheses predict the data. "No effect" (H₀) makes a single prediction, but "some effect" (H₁) has to say *which* effects it considers plausible, and its prediction is the average of P(data | effect) over those effects. The minimum Bayes factor cheats in favour of H₁: it lets H₁ be, after the fact, exactly the effect that was observed (RR = 0.87), the value at which P(data | effect) is highest. Any honest alternative, one that spreads its belief over a range of effects *before* seeing the data, must average in effects that predict the data less well, so P(data | H₁) can only be smaller, the Bayes factor for H₀ larger, and the posterior probability of no effect higher.
+
+```{r bf-bound}
+# Bayes factor for H0 when H1 says: log RR ~ N(0, tau^2) (a range of plausible effects)
+# P(data | H1) integrates the likelihood over that range: y ~ N(0, se^2 + tau^2)
+tau <- c(0.05, 0.1, 0.2, 0.5, 1)
+bf  <- dnorm(y, 0, se) / dnorm(y, 0, sqrt(se^2 + tau^2))
+tibble(`H1: spread of plausible effects (SD of log RR)` = c(sprintf("%.2f", tau), "none"),
+       `95% of H1's RRs between` = c(sprintf("%.2f and %.2f", exp(-1.96 * tau), exp(1.96 * tau)), "RR = 0.87 exactly (minimum BF)"),
+       `Bayes factor for H0` = f2(c(bf, exp(-z^2 / 2))),
+       `P(no effect), starting 50:50` = f2(c(bf / (1 + bf), exp(-z^2 / 2) / (1 + exp(-z^2 / 2))))) |>
+  kable(align = "cccc")
+```
+
+Every realistic alternative leaves a probability of no effect of `r round(100 * min(bf / (1 + bf)))`% or more, more than twice the `r round(100 * exp(-z^2/2) / (1 + exp(-z^2/2)))`% from the minimum Bayes factor. The rows with SD 0.5 and 1 also show a less obvious point: the *vaguer* the alternative (SD 0.5 or 1, i.e. effects as large as halving or doubling the event rate taken seriously), the *more* the data favour no effect, because H₁ wastes its predictions on implausibly large effects. Vagueness is not neutral, a theme that returns below.
+
+### Both numbers are right
+
+The 97% and the 38% are not in conflict: they answer **different questions**. "Is there any benefit?" is very probably yes. "Is the benefit large enough to matter?" is more likely no than yes. The P value of 0.06 answers neither, and the dichotomised conclusion "not significant" hides both.
+
+## Part 2: What I would do differently today
+
+The analysis is reproducible, but it rests on **one** prior, and a flat one at that. Over time I have come to appreciate that other priors are, if not preferable, at least necessary to present alongside it, so that readers can see how robust the conclusions are. Two strands of Andrew Gelman's work have shaped this view.
+
+First, "non-informative" priors are not as harmless as their name suggests. A prior can only be understood in the context of the likelihood ([Gelman, Simpson & Betancourt, *Entropy* 2017](https://doi.org/10.3390/e19100555)): a flat prior says that enormous effects are as plausible as modest ones, and when the data are weak (a small trial, a rare outcome, a noisy estimate) the posterior inherits that implausibility and overstates both the size of the effect and our certainty about its sign ([van Zwet & Gelman, *Am Stat* 2022](https://doi.org/10.1080/00031305.2021.1938225)). PARAGON-HF, with nearly 2000 events, is *not* such a case, which is why the flat prior does little harm here, but the habit is a bad one to carry to smaller trials.
+
+Second, a Bayesian analysis is not one model fitted once but a **workflow**: building the model, checking it, and comparing alternatives, including alternative priors, to understand what in the conclusions comes from the data and what from the assumptions ([Gelman *et al.*, *Bayesian Workflow*, 2020](https://arxiv.org/abs/2011.01808)). Prior sensitivity analysis is part of a competent Bayesian analysis, not an optional extra.
+
+Four changes follow:
+
+**1. A vague rather than a flat prior.** A flat prior is improper (it does not integrate to 1) and treats a rate ratio of 100 as plausible as 0.9. A vague prior, N(0, 1²) on the log RR, still covers every plausible effect (95% of its mass on RR 0.14 to 7.1) but is an honest, proper probability distribution. Here it carries 0.6% of the weight and changes nothing, but it is the natural starting point for the priors that follow.
+
+**2. A sceptical prior.** Many drugs have failed in HFpEF. A prior centred on no effect, with only a 5% probability of an effect as large as the trial's design assumption (RR 0.81), formalises that scepticism ([Spiegelhalter *et al.*, *JRSS A* 1994](https://doi.org/10.2307/2983527)).
+
+**3. An empirical prior.** Rather than being chosen by judgement, this prior is estimated from data: the distribution of signal-to-noise ratios in 23,551 trials from the Cochrane Database, a mixture of four normal distributions ([van Zwet *et al.*, *NEJM Evid* 2024](https://doi.org/10.1056/EVIDoa2300003); [van Zwet, Schwab & Senn, *Stat Med* 2021](https://doi.org/10.1002/sim.9173)). It answers the question: given what trials like this usually find, how much of the observed effect is likely to be real? It corrects for the tendency of trials that "almost" reach significance to overestimate their effect. Why should they overestimate it? Every observed result is the true effect plus random noise. Most trials have modest power for their true effect (median power across the Cochrane trials is only about 13%), so a trial whose result lands near or beyond the significance threshold has usually been helped by noise that happened to point in the favourable direction. Its estimate is therefore, on average, larger than the true effect: the "winner's curse" or Type M (magnitude) error ([Gelman & Carlin, *Perspect Psychol Sci* 2014](https://doi.org/10.1177/1745691614551642)). The empirical prior quantifies how much shrinkage, on average, undoes this exaggeration for a trial with PARAGON-HF's z of `r f2(abs(z))`: as the table below shows, the observed RR of 0.87 becomes about 0.92, i.e. roughly 40% of the observed reduction is expected to be noise.
+
+**4. An informative prior.** PARADIGM-HF tested sacubitril-valsartan against enalapril in heart failure with *reduced* ejection fraction: HR 0.80 (0.73–0.87) ([McMurray *et al.*, *NEJM* 2014](https://doi.org/10.1056/NEJMoa1409077)). Because the population and comparator differ, I down-weight it by half (a power prior with a₀ = 0.5). Even so, this should be read as a **very enthusiastic, and not necessarily secure, prior**. PARADIGM-HF enrolled patients with ejection fractions of 40% or less, compared sacubitril-valsartan with an ACE inhibitor rather than with valsartan (and with an enalapril dose, a target of 10 mg twice daily, that has been criticised as less than optimal, which may have contributed to the apparent benefit of sacubitril-valsartan), and used a first-event outcome; HFpEF is a different and more heterogeneous condition in which drugs that work in HFrEF have repeatedly failed. Whether HFrEF results should inform HFpEF at all is a clinical judgement, not a statistical one, and a reader who doubts the exchangeability should give this prior little weight. It is included to show how far an optimist's conclusion can move, not as a recommended analysis.
+
+```{r priors}
+# sceptical prior: centred at 0, P(RR < 0.81) = 5%
+s_sk  <- -log(0.81) / qnorm(0.95)
+# PARADIGM-HF, half weight
+se_pd <- (log(0.87) - log(0.73)) / (2 * qnorm(0.975))
+
+# van Zwet empirical prior: SNR ~ mixture of 4 normals (Cochrane)
+sd_z  <- c(1.17, 1.74, 2.38, 5.73); p_mix <- c(0.32, 0.31, 0.30, 0.07)
+sd_snr <- sqrt(sd_z^2 - 1)
+post_w <- p_mix * dnorm(z, 0, sd_z); post_w <- post_w / sum(post_w)  # re-weight components
+Bk  <- sd_snr^2 / (sd_snr^2 + 1)                                    # shrinkage per component
+m_k <- Bk * z * se; s_k <- sqrt(Bk) * se                            # back to log RR scale
+F_eb <- \(q) sum(post_w * pnorm(q, m_k, s_k))                       # exact mixture CDF
+Q_eb <- \(p) uniroot(\(q) F_eb(q) - p, c(-2, 2))$root
+
+pv <- post_norm(0, 1)
+res <- rbind(
+  `Flat (2021 paper)`              = summ(y, se),
+  `Vague N(0, 1²)`                 = summ(pv["m"], pv["s"]),
+  `Sceptical`                      = do.call(summ, as.list(post_norm(0, s_sk))),
+  `Empirical (van Zwet, Cochrane)` = c(RR = exp(Q_eb(.5)), lo = exp(Q_eb(.025)), hi = exp(Q_eb(.975)),
+                                       P_benefit = F_eb(0), P_mcid = F_eb(log(0.85)), P_harm = 1 - F_eb(0)),
+  `PARADIGM-HF, half weight`       = do.call(summ, as.list(post_norm(log(0.80), se_pd * sqrt(2)))))
+
+as_tibble(res, rownames = "Prior") |>
+  transmute(Prior, `RR (95% CrI)` = sprintf("%.2f (%.2f–%.2f)", RR, lo, hi),
+            `P(RR < 1)` = f2(P_benefit), `P(RR < 0.85)` = f2(P_mcid), `P(RR > 1)` = f2(P_harm)) |>
+  kable(align = "lcccc", caption = "PARAGON-HF primary outcome: posterior summaries under five priors")
+```
+
+```{r plot}
+#| fig-width: 8
+#| fig-height: 4.5
+#| fig-cap: "Posterior distributions of the PARAGON-HF rate ratio under five priors. Dotted lines: RR 0.85 (15% reduction) and RR 1."
+xx <- seq(-0.45, 0.2, length.out = 600)
+dens <- list(
+  `Flat (2021 paper)`              = dnorm(xx, y, se),
+  `Vague N(0, 1²)`                 = dnorm(xx, pv["m"], pv["s"]),
+  `Sceptical`                      = { p <- post_norm(0, s_sk); dnorm(xx, p["m"], p["s"]) },
+  `Empirical (van Zwet, Cochrane)` = sapply(xx, \(q) sum(post_w * dnorm(q, m_k, s_k))),
+  `PARADIGM-HF, half weight`       = { p <- post_norm(log(0.8), se_pd * sqrt(2)); dnorm(xx, p["m"], p["s"]) })
+p_post <- imap_dfr(dens, \(d, nm) tibble(x = xx, d = d, Prior = nm)) |>
+  mutate(Prior = fct_inorder(Prior)) |>
+  ggplot(aes(exp(x), d, colour = Prior, linetype = Prior)) +
+  geom_line(linewidth = 1) +
+  geom_vline(xintercept = c(0.85, 1), linetype = 3, colour = "grey40") +
+  scale_colour_manual(values = c("grey60", "black", "#3182bd", "#31a354", "#e6550d")) +
+  scale_linetype_manual(values = c(1, 2, 1, 1, 1)) +
+  scale_x_log10(breaks = c(0.7, 0.8, 0.85, 0.9, 1, 1.1)) +
+  labs(x = "Rate ratio, sacubitril-valsartan vs valsartan (log scale)", y = "Posterior density",
+       colour = NULL, linetype = NULL) +
+  theme_minimal(base_size = 13) + theme(legend.position = "bottom") +
+  guides(colour = guide_legend(nrow = 2))
+ggsave("preview-image.png", p_post, width = 8, height = 4.5, dpi = 150, bg = "white")
+p_post
+```
+
+## What the community of priors says
+
+- **The flat and vague priors** simply restate the trial: RR 0.87, P(any benefit) 0.97, P(≥ 15% reduction) 0.38.
+- **The sceptical and empirical priors agree closely**, although one is a judgement and the other is estimated from thousands of trials: RR about 0.90–0.92, P(any benefit) still above 0.9, but P(≥ 15% reduction) falls to `r f2(res["Empirical (van Zwet, Cochrane)", "P_mcid"])`–`r f2(res["Sceptical", "P_mcid"])`.
+- **Only by borrowing from HFrEF** does a meaningful benefit become likely (`r f2(res["PARADIGM-HF, half weight", "P_mcid"])`), and that rests on the questionable assumption that HFrEF and HFpEF patients respond alike, and on an indirect comparison across trials with different control treatments (enalapril in PARADIGM-HF, valsartan in PARAGON-HF).
+
+So the 2021 conclusion that a benefit is probable but its size uncertain holds under every prior. What changes is the answer to the more important question, **how large is the benefit?** With a flat prior, a meaningful benefit looked roughly a 40% proposition; calibrated against what trials usually find, it is closer to 15%. Had I shown only the empirical prior in 2021, the message would have been the same in direction but more sober in magnitude. Showing several priors lets readers see this, and lets them choose the prior closest to their own beliefs.
+
+## Lessons
+
+1. **Re-analyses from published summaries are reproducible** by anyone: an estimate and a 95% CI define the likelihood.
+2. **"Any benefit" and "a meaningful benefit" are different questions**, and the P value answers neither.
+3. **A single prior, even a "non-informative" one, is a choice.** A flat prior implicitly says large effects are as plausible as small ones, which experience says is false.
+4. **Present a range of priors.** When they agree, the conclusion is robust; when they disagree, the disagreement is itself the finding, and it tells us what further evidence is needed.
+
+All the code for this post is in the folded chunks above, and the original 2021 code is at [github.com/brophyj/cjc_bayes](https://github.com/brophyj/cjc_bayes).
