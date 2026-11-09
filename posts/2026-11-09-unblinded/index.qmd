@@ -1,0 +1,138 @@
+---
+title: "Measurement error"
+subtitle: "Can it help detect ascertainment bias?"
+description: "Critical analysis of a recent unblinded RCT from the NEJM"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medicine, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca
+categories: [Measurement error, RCTs, biases]
+image: preview-image.png
+citation:
+  url: https://brophyj.com/posts/2026-11-09-unblinded/
+date: 2026-11-09
+lastmod: 2026-11-09
+featured: true
+draft: false
+projects: []
+format:
+  html:
+    theme: [simple, ../../custom.scss]
+    code-fold: true
+    code-tools: true
+    embed-resources: true
+    toc: true
+execute:
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| include: true
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+
+## Background
+
+On November 8 2026, the NEJM published ["Left Bundle-Branch Pacing versus Right Ventricular Pacing for Atrioventricular Block"](https://www.nejm.org/doi/full/10.1056/NEJMoa2612972?query=featured_home). This open-label, randomized, controlled trial assigned patients with atrioventricular block in a 1:1 ratio to receive left bundle-branch pacing or right ventricular pacing. The primary outcome was a composite of death from any cause, hospitalization for heart failure, or pacing-induced cardiomyopathy. At a median follow-up of 35.1 months (interquartile range, 23.6 to 40.7), the authors reported a primary-outcome event had occurred in 16 patients in the left bundle-branch pacing group and in 35 patients in the right ventricular pacing group (Kaplan–Meier 4-year cumulative incidence, 8.5% and 19.2%, respectively; hazard ratio, 0.41; 95% confidence interval, 0.23 to 0.75; P=0.003 by a stratified log-rank test). This lead the authors to conclude
+
+::: callout-note
+## Conclusion
+"*Among patients with atrioventricular block, left bundle-branch pacing was superior to right ventricular pacing in reducing the risk of a composite of death from any cause, hospitalization for heart failure, or pacing-induced cardiomyopathy.*"
+:::
+
+## Nuances to the conclusion
+
+The conclusion regarding the composite outcome certainly appears well supported by the reported data and statistical testing. However, the trial was [unblinded](https://pubmed.ncbi.nlm.nih.gov/22371859/) and [stopped early](https://pubmed.ncbi.nlm.nih.gov/20332404/), features associated with exaggerated effect estimates. This matters because deaths (15 vs. 13) and heart-failure hospitalizations (2 vs. 7 as first events) were both rare and similar and the benefit thus rests on a substantial increase in unblinded, adjudicated echocardiographic cardiomyopathy (0 vs. 19). Inconsistent with this, atrial fibrillation, stroke, 6-minute walk distance, quality of life, and NYHA class did not differ between the groups. Moreover, zero cardiomyopathy events, as defined as a drop in ejection fraction of at least 10 points to below 50%, among 342 LBBP patients is surprising as temporal variability of 2D ejection fraction can exceed [10 points](https://pubmed.ncbi.nlm.nih.gov/23199515/).      
+
+Simulating five protocol mandated follow-up echo-cardiograms per patient with a measurement SD of 4 points, measurement error alone would be expected to produce about five qualifying declines, even with no true change in ventricular function (Poisson probability of zero events ≈ 0.004). 
+
+
+```{r}
+#| label: tbl-sim
+#| tbl-cap: "Expected false-positive PICM events among 342 LBBP patients with perfectly stable true LVEF, by echo measurement SD (5000 simulations each)"
+
+## How surprising are 0 pacing-induced cardiomyopathy (PICM) events
+## among 342 LBBP patients (OptimPacing, NEJM 2026)?
+##
+## Question: if every patient's TRUE ejection fraction were perfectly stable,
+## how many would still meet the PICM echo definition through measurement
+## variability alone?
+## PICM definition: decrease >= 10 points from post-implant baseline,
+## with resulting LVEF < 50%.
+## Protocol (Table 1): pre-discharge baseline echo + 5 follow-up echoes
+## (3, 6, 12, 24, 36 months).
+
+set.seed(2026)
+n      <- 342     # LBBP patients
+n_fu   <- 5       # follow-up echoes per protocol
+ef_mu  <- 63.2    # baseline mean LVEF, LBBP arm (Table 1)
+ef_sd  <- 5.9     # observed baseline SD (includes measurement error)
+nsim   <- 5000
+
+sim_noise <- function(sd_meas) {
+  sd_true <- sqrt(ef_sd^2 - sd_meas^2)   # true between-patient SD
+  ev <- replicate(nsim, {
+    ef_true <- rnorm(n, ef_mu, sd_true)                                 # true EF
+    base    <- ef_true + rnorm(n, 0, sd_meas)                           # baseline = true + error
+    fu      <- ef_true + matrix(rnorm(n * n_fu, 0, sd_meas), n, n_fu)   # 342 x 5 follow-up measurements
+    sum(apply((base - fu >= 10) & (fu < 50), 1, any))
+  })
+  lambda <- mean(ev)                     # expected number of false events
+  c(sd_meas         = sd_meas,
+    p_per_patient   = lambda / n,
+    expected_events = lambda,
+    P0_simulated    = mean(ev == 0),
+    P0_poisson      = exp(-lambda))      # Poisson P(0) = exp(-lambda)
+}
+
+res <- as.data.frame(t(sapply(c(3, 3.5, 4, 4.5, 5), sim_noise)))
+
+kable(signif(res, 3),
+      col.names = c("Measurement SD", "P(event) per patient", "Expected events",
+                    "P(0 events), simulated", "P(0 events), Poisson")) |>
+  kable_styling(full_width = FALSE)
+
+## Preview image for the blog listing: must be a ggplot object, saved
+## relative to this post's folder (Quarto renders from the post's directory)
+p_prev <- ggplot(res, aes(sd_meas, expected_events)) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "firebrick") +
+  annotate("text", x = 3, y = 0.4, hjust = 0, colour = "firebrick",
+           label = "Observed in LBBP arm: 0 events") +
+  labs(x = "Echo measurement SD (LVEF points)",
+       y = "Expected false PICM events (n = 342)",
+       title = "Events expected from echo measurement error alone") +
+  theme_minimal(base_size = 13)
+
+ggsave("preview-image.png", p_prev, width = 8, height = 4.5, dpi = 150, bg = "white")
+
+## Note: a 2D-echo temporal variability >10 points (Thavendiranathan et al.,
+## JACC 2013) corresponds to a per-measurement SD of roughly 3.5-5 points.
+## Any true intercurrent decline (ischemia, AF, valve disease) would only add
+## events, so these probabilities of zero are upper bounds.
+```
+
+```{r preview}
+#| fig-cap: "Expected number of false-positive PICM events from measurement error alone"
+p_prev
+```
+
+
+Differential ascertainment or adjudication therefore seems a plausible explanation. A trial with blinded adjudication and clinical end points would seem needed.
+
+
+## Lessons     
+
+I wrote this up in a Letter to the NEJM, although their 175  word format means it is impossible to articulate the fill content of this blog and explains why I bothered with this post. Yet another reason is my NEJM letters' acceptance rate is probably less than one in five. 
+
+1.  **Composite endpoints** increase statistical power but with different health impacts the individual components should also be examined
+2.  **Unblinded** assessments of of judgmental (soft) outcomes may be subject to unintended ascertainment bias
+3.  **Measurement** error is a fact of clinical research and should not be overlooked. Here measurement error paradoxically  provided additional support for the existence of ascertainment bias.
+
