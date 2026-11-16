@@ -1,0 +1,150 @@
+---
+title: "Iron Repletion in HFpEF"
+subtitle: "Credit for the analysis, caution for the interpretation — beware of the winner's curse"
+description: "A critical look at the IRONMET-HFpEF trial: ANCOVA, Bayesian re-analysis and the winner's curse"
+author:
+  - name: Jay Brophy
+    url: https://brophyj.github.io/
+    orcid: 0000-0001-8049-6875
+    affiliation: McGill University Dept Medicine, Epidemiology & Biostatistics
+    affiliation-url: https://mcgill.ca
+categories: [Bayesian inference, RCTs, winner's curse, heart failure]
+image: preview-image.png
+citation:
+  url: https://brophyj.com/posts/2026-11-16-iron-hfpef/
+date: 2026-11-16
+lastmod: 2026-11-16
+featured: true
+draft: false
+projects: []
+bibliography: iron.bib
+csl: vancouver.csl
+format:
+  html:
+    theme: [simple, ../../custom.scss]
+    code-fold: true
+    code-tools: true
+    embed-resources: true
+    toc: true
+execute:
+  warning: false
+  message: false
+---
+
+
+
+Lewis and colleagues recently published the IRONMET-HFpEF (Impact of Intravenous Iron Repletion on Mechanisms of
+Exercise Intolerance in HFpEF) trial [@lewis2026ironmet] seeking to determine whether ferric derisomaltose (FDI) compared with placebo improves exercise capacity as objectively measured by peak oxygen uptake (Vo2) at 12 weeks in heart failure with preserved ejection fraction and iron deficiency. The authors deserve credit for prespecifying covariance (ANCOVA) as their primary analytic method since baseline and 12-week peak V̇O₂ are highly correlated (r ≈ 0.94, derivable from their Table 2), so ANCOVA is about three times more precise than simply comparing week-12 values (1.2 mL·kg⁻¹·min⁻¹, 95% CI −1.3 to 3.7). 
+
+```{r}
+#| eval: true
+#| include: true
+#| label: data-ancova
+# Inputs: Lewis et al., Circulation 2026, Table 2 (peak VO2, mL/kg/min)
+n_f <- 43; n_p <- 21; k <- sqrt(1 / n_f + 1 / n_p); df <- n_f + n_p - 3
+anc   <- c(est = 1.1, lo = 0.2, hi = 1.9)                     # published ANCOVA difference
+se_an <- unname((anc["hi"] - anc["lo"]) / (2 * qt(0.975, df)))
+s_e   <- se_an / k                                            # residual SD (about 1.6)
+s_b   <- sqrt((43 * 4.2^2 + 20 * 4.1^2) / 63)                 # pooled SD, baseline
+s_f   <- sqrt((42 * 5.0^2 + 20 * 3.7^2) / 62)                 # pooled SD, week 12
+r_hat <- sqrt(1 - s_e^2 / s_f^2)                              # implied correlation (about 0.94)
+# week-12 values only: difference and 95% CI
+fu <- 14.9 - 13.7; se_fu <- s_f * k
+round(c(r = r_hat, fu = fu, lo = fu - qt(0.975, df) * se_fu, hi = fu + qt(0.975, df) * se_fu,
+        precision_ratio = se_fu / se_an), 2)
+```
+
+
+However I am less persuaded by their interpretation.     
+
+First, the Abstract leads with within-group changes: peak V̇O₂ "improved" with ferric derisomaltose (FDI) and was "unchanged" with placebo. Such comparisons against baseline are not randomized and can be highly misleading [@bland2011within]; only the between-group difference tests the treatment.
+
+Second, the difference of 1.1 mL·kg⁻¹·min⁻¹ (0.2 to 1.9) is said to "exceed" the minimal clinically important difference (MCID) of 1.0. In a Bayesian re-analysis with a vague prior, so that the data dominate the posterior distribution, the probability that the true effect exceeds the MCID is 59%. With an empirical Bayes prior based on 23,551 Cochrane trials [@vanzwet2024pvalues], the estimate shrinks to 0.76 mL·kg⁻¹·min⁻¹ and the probability of exceeding the MCID to 29%.
+
+```{r}
+#| eval: true
+#| include: true
+#| label: bayes
+y <- 1.1; s <- se_an; z_obs <- y / s; N <- 2e5; mcid <- 1
+# vague prior N(0, 10^2): conjugate normal update
+w0 <- 1 / 10^2; w <- 1 / s^2
+m1 <- (w * y) / (w0 + w); s1 <- sqrt(1 / (w0 + w))
+p_vague <- 1 - pnorm(mcid, m1, s1)                           # about 0.59
+# empirical Bayes: van Zwet et al. (NEJM Evid 2024) mixture for Cochrane trials
+sd_z <- c(1.17, 1.74, 2.38, 5.73); p_mix <- c(0.32, 0.31, 0.30, 0.07)
+sd_snr <- sqrt(sd_z^2 - 1); Bk <- sd_snr^2 / (sd_snr^2 + 1)
+wp <- p_mix * dnorm(z_obs, 0, sd_z); wp <- wp / sum(wp)
+set.seed(2026)
+cc <- sample.int(4, N, TRUE, wp)
+eb <- rnorm(N, Bk[cc] * z_obs, sqrt(Bk[cc])) * s             # back to mL/kg/min
+round(c(p_vague = p_vague, eb_median = median(eb), p_eb = mean(eb > mcid)), 2)
+```
+
+
+Third, the trial had less power than planned: the residual SD (≈1.6) exceeded the 1.25 assumed, giving about 64% power for the MCID. When power is modest, the trials that reach statistical significance are disproportionately those in which chance inflated the effect, the "winner's curse" [@gelman2014typesm]. Estimating the effect from a likelihood that accounts for this selection [@zhong2008winners] gives 0.58 mL·kg⁻¹·min⁻¹ (95% CI −0.15 to 1.80); with a vague prior, the probability that this effect exceeds the MCID is 31%.
+
+```{r}
+#| eval: true
+#| include: true
+#| label: power-winners-curse
+power_mcid <- 1 - pt(qt(0.975, df) - 1 / se_an, df) + pt(-qt(0.975, df) - 1 / se_an, df)  # about 0.64
+# likelihood conditional on statistical significance (Zhong & Prentice 2008)
+z_crit <- qt(0.975, df)
+cond_ll <- function(th) dt((y - th) / se_an, df, log = TRUE) -
+  log(1 - pt(z_crit - th / se_an, df) + pt(-z_crit - th / se_an, df))
+th <- seq(-2, 3, by = 0.001); ll <- sapply(th, cond_ll)
+mle <- th[which.max(ll)]                                     # about 0.58
+ci  <- range(th[ll > max(ll) - qchisq(0.95, 1) / 2])         # about -0.15 to 1.80
+pc  <- exp(ll - max(ll)); pc <- pc / sum(pc)                 # vague (flat) prior posterior
+round(c(power = power_mcid, mle = mle, lo = ci[1], hi = ci[2], p_mcid = sum(pc[th > mcid])), 2)
+```
+
+```{r}
+#| eval: true
+#| include: true
+#| label: fig-winners-curse
+#| fig-cap: !expr |
+#|   sprintf(paste(
+#|     "The winner's curse in trials the size of IRONMET-HFpEF. Each bar counts simulated results from",
+#|     "10,000 trials with 43 FDI and 21 placebo patients, the observed residual SD (%.1f mL/kg/min) and",
+#|     "a true difference of %.1f mL/kg/min (green line), half the MCID. Only %.0f%% of these trials reach",
+#|     "P < 0.05 (purple); their mean estimate is %.2f mL/kg/min, %.1f times the true effect (Type M error).",
+#|     "IRONMET's observed 1.1 (dashed orange line) sits in the middle of the significant results.",
+#|     "The preceding code chunk asks the reverse question, which true effect best explains an observed",
+#|     "and significant 1.1, and answers %.2f mL/kg/min (95%% CI %.2f to %.2f)."),
+#|     s_e, true_d, 100 * mean(sims$sig), mean(abs(sims$d[sims$sig])),
+#|     mean(abs(sims$d[sims$sig])) / true_d, mle, ci[1], ci[2])
+# Winner's curse: 10,000 trials like IRONMET-HFpEF (43 FDI, 21 placebo,
+# residual SD as observed) with a true difference of 0.5 mL/kg/min (half the MCID)
+library(tidyverse)
+clr_post <- "#31a354"; clr_lik <- "#e6550d"; clr_sig <- "#756bb1"
+set.seed(629)
+true_d <- 0.5
+sims <- tibble(m1 = rnorm(1e4, true_d, s_e / sqrt(n_f)),          # mean change, FDI
+               m0 = rnorm(1e4, 0,      s_e / sqrt(n_p)),          # mean change, placebo
+               sp = s_e * sqrt(rchisq(1e4, df) / df)) |>          # estimated residual SD
+  mutate(d   = m1 - m0,
+         se  = sp * k,
+         sig = abs(d / se) > qt(0.975, df))
+round(c(power = mean(sims$sig), mean_sig = mean(abs(sims$d[sims$sig])),
+        type_m = mean(abs(sims$d[sims$sig])) / true_d), 2)
+ggplot(sims, aes(d, fill = sig)) +
+  geom_histogram(binwidth = 0.05, colour = "white", boundary = 0) +
+  geom_vline(xintercept = true_d, linewidth = 1, colour = clr_post) +
+  geom_vline(xintercept = 1.1, linetype = 2, colour = clr_lik, linewidth = 1) +
+  annotate("text", x = c(true_d, 1.1), y = Inf, vjust = 1.5, hjust = -0.05, size = 3.5,
+           label = c("true effect 0.5", "IRONMET 1.1"), colour = c(clr_post, clr_lik)) +
+  scale_fill_manual(values = c(`FALSE` = "grey70", `TRUE` = clr_sig),
+                    labels = c("p > 0.05", "p < 0.05"), name = NULL) +
+  labs(x = "Observed difference in peak VO2 (mL/kg/min)", y = "Simulated trials") +
+  theme_minimal(base_size = 12) + theme(legend.position = "top")
+```
+
+
+Fourth, the secondary outcomes that "also improved" are correlated measures of one construct, without multiplicity control, while the only patient-reported outcome, the KCCQ, did not differ (4.4, −2.4 to 11.2). With 21 controls, randomization ensures exchangeability only on average; the placebo group was older and had more diabetes. Randomizing 65 of 89 assessed patients over 52 months suggests a highly selected population, and generalizing these results to an unselected population may be problematic.
+
+Given that these data are consistent with a modest increase in peak V̇O₂ of uncertain clinical importance, a more cautious conclusion than “FDI improved multiple measures of exercise capacity” would better reflect the evidence and better inform readers.      
+
+**Disclosures:** None.
+
+## References
