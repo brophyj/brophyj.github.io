@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>15&nbsp; Publication Bias – Knowledge Synthesis in Health Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./16-ipd-meta-analysis.html" rel="next">
+<link href="./14-missing-data.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ef126021e9ff1ef5a96e4bd190a6c277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-missing-data.html">Threats and extensions</a></li><li class="breadcrumb-item"><a href="./15-publication-bias.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Knowledge Synthesis in Health Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-finding-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-question-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualising-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualising Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appraisal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-bias-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk of Bias and GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-certainty-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rating Certainty with GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-appraising-reviews.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reporting and Appraising Systematic Reviews</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Meta-analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-effect-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-meta-analysis-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Meta-Analysis Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-heterogeneity-robustness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Heterogeneity and Robustness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-bias-bridge-bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bayesian-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Threats and extensions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-publication-bias.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-ipd-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-network-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-nma-in-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-observational-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-diagnostic-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">From evidence to decisions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-cochrane-single-trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-hta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-correcting-literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-agentic-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Agentic Systematic Reviews and Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-pubbias-problem" id="toc-sec-pubbias-problem" class="nav-link active" data-scroll-target="#sec-pubbias-problem"><span class="header-section-number">15.1</span> The problem</a>
+  <ul class="collapse">
+  <li><a href="#sec-pubbias-scale" id="toc-sec-pubbias-scale" class="nav-link" data-scroll-target="#sec-pubbias-scale"><span class="header-section-number">15.1.1</span> How large is it?</a></li>
+  </ul></li>
+  <li><a href="#sec-pubbias-detect" id="toc-sec-pubbias-detect" class="nav-link" data-scroll-target="#sec-pubbias-detect"><span class="header-section-number">15.2</span> Detecting small-study effects</a>
+  <ul class="collapse">
+  <li><a href="#sec-pubbias-funnel" id="toc-sec-pubbias-funnel" class="nav-link" data-scroll-target="#sec-pubbias-funnel"><span class="header-section-number">15.2.1</span> The funnel plot</a></li>
+  <li><a href="#sec-pubbias-tests" id="toc-sec-pubbias-tests" class="nav-link" data-scroll-target="#sec-pubbias-tests"><span class="header-section-number">15.2.2</span> Tests for asymmetry</a></li>
+  <li><a href="#sec-pubbias-trimfill" id="toc-sec-pubbias-trimfill" class="nav-link" data-scroll-target="#sec-pubbias-trimfill"><span class="header-section-number">15.2.3</span> Trim-and-fill</a></li>
+  </ul></li>
+  <li><a href="#sec-pubbias-petpeese" id="toc-sec-pubbias-petpeese" class="nav-link" data-scroll-target="#sec-pubbias-petpeese"><span class="header-section-number">15.3</span> Correcting for small-study effects: PET-PEESE</a></li>
+  <li><a href="#sec-pubbias-lits" id="toc-sec-pubbias-lits" class="nav-link" data-scroll-target="#sec-pubbias-lits"><span class="header-section-number">15.4</span> Two simulated literatures</a></li>
+  <li><a href="#sec-pubbias-selection" id="toc-sec-pubbias-selection" class="nav-link" data-scroll-target="#sec-pubbias-selection"><span class="header-section-number">15.5</span> Selection models</a></li>
+  <li><a href="#sec-pubbias-pcurve" id="toc-sec-pubbias-pcurve" class="nav-link" data-scroll-target="#sec-pubbias-pcurve"><span class="header-section-number">15.6</span> The distribution of significant <em>P</em> values</a>
+  <ul class="collapse">
+  <li><a href="#sec-pubbias-pcurve-test" id="toc-sec-pubbias-pcurve-test" class="nav-link" data-scroll-target="#sec-pubbias-pcurve-test"><span class="header-section-number">15.6.1</span> P-curve</a></li>
+  <li><a href="#sec-pubbias-puniform" id="toc-sec-pubbias-puniform" class="nav-link" data-scroll-target="#sec-pubbias-puniform"><span class="header-section-number">15.6.2</span> P-uniform</a></li>
+  </ul></li>
+  <li><a href="#sec-pubbias-sensitivity" id="toc-sec-pubbias-sensitivity" class="nav-link" data-scroll-target="#sec-pubbias-sensitivity"><span class="header-section-number">15.7</span> How much selection would it take?</a></li>
+  <li><a href="#sec-pubbias-robma" id="toc-sec-pubbias-robma" class="nav-link" data-scroll-target="#sec-pubbias-robma"><span class="header-section-number">15.8</span> Robust Bayesian meta-analysis</a></li>
+  <li><a href="#sec-pubbias-together" id="toc-sec-pubbias-together" class="nav-link" data-scroll-target="#sec-pubbias-together"><span class="header-section-number">15.9</span> Putting it together</a>
+  <ul class="collapse">
+  <li><a href="#sec-pubbias-works" id="toc-sec-pubbias-works" class="nav-link" data-scroll-target="#sec-pubbias-works"><span class="header-section-number">15.9.1</span> Does correction work?</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-missing-data.html">Threats and extensions</a></li><li class="breadcrumb-item"><a href="./15-publication-bias.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-pubbias" class="quarto-section-identifier"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>explain how publication and related reporting biases arise, and why they distort meta-analyses;</li>
+<li>draw and interpret a funnel plot, choose an appropriate asymmetry test, and recognise causes of asymmetry other than publication bias;</li>
+<li>apply trim-and-fill, PET-PEESE and a step-function selection model, and explain what each assumes;</li>
+<li>use the distribution of significant <em>P</em> values (p-curve, p-uniform) to test for evidential value and estimate a corrected effect;</li>
+<li>ask how much selection would be needed to explain away a result;</li>
+<li>explain what robust Bayesian meta-analysis adds, and combine several methods into a sensitivity analysis.</li>
+</ul>
+<p><strong>R packages:</strong> <code>dplyr</code>, <code>tidyr</code>, <code>purrr</code>, <code>ggplot2</code>, <code>metafor</code>, <code>knitr</code>; <code>puniform</code>, <code>zcurve</code>, <code>PublicationBias</code> and <code>RoBMA</code> for code that runs where they are installed.</p>
+</div>
+</div>
+<p><a href="14-missing-data.html" class="quarto-xref"><span>Chapter 14</span></a> dealt with participants missing from studies. This chapter deals with studies missing from the literature. When the chance that a study is published depends on its result, the published studies are a biased sample, and a meta-analysis of them is biased however well it is done. No statistical method can recover data that were never released, so the first defence is searching (<a href="02-finding-evidence.html" class="quarto-xref"><span>Chapter 2</span></a>): registers, regulatory documents and clinical study reports. The methods in this chapter detect the signature of missing studies and estimate how much they might matter.</p>
+<section id="sec-pubbias-problem" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="sec-pubbias-problem"><span class="header-section-number">15.1</span> The problem</h2>
+<p>Several related biases push in the same direction. <strong>Publication bias</strong>: studies with significant or “positive” results are more likely to be published at all. <strong>Time-lag bias</strong>: positive studies are published faster, so early meta-analyses over-represent them. <strong>Language and location bias</strong>: negative results are more often published in non-English journals or the grey literature. <strong>Selective outcome reporting</strong>: studies are published, but unfavourable outcomes are omitted (RoB 2 domain 5). All of them make the published literature look more favourable than the evidence.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n_st <span class="ot">&lt;-</span> <span class="dv">200</span>; true_effect <span class="ot">&lt;-</span> <span class="fl">0.15</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>study_se <span class="ot">&lt;-</span> <span class="fu">runif</span>(n_st, <span class="fl">0.05</span>, <span class="fl">0.40</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_st, true_effect, study_se)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>p_value  <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fu">abs</span>(observed <span class="sc">/</span> study_se))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>published <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n_st, <span class="dv">1</span>, <span class="fu">ifelse</span>(p_value <span class="sc">&lt;</span> <span class="fl">0.05</span>, <span class="fl">0.95</span>, <span class="fl">0.30</span>)) <span class="sc">==</span> <span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df_pub <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(observed, study_se, <span class="at">status =</span> <span class="fu">ifelse</span>(published, <span class="st">"Published"</span>, <span class="st">"Unpublished"</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_pub, <span class="fu">aes</span>(observed, <span class="dv">1</span> <span class="sc">/</span> study_se, <span class="at">colour =</span> status)) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> true_effect, <span class="at">colour =</span> <span class="st">"#2E7D32"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Published =</span> <span class="st">"#041E42"</span>, <span class="at">Unpublished =</span> <span class="st">"#B22222"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Observed log OR"</span>, <span class="at">y =</span> <span class="st">"Precision (1/SE)"</span>, <span class="at">title =</span> <span class="st">"All 200 studies"</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">filter</span>(df_pub, status <span class="sc">==</span> <span class="st">"Published"</span>), <span class="fu">aes</span>(observed, <span class="dv">1</span> <span class="sc">/</span> study_se)) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#041E42"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> true_effect, <span class="at">colour =</span> <span class="st">"#2E7D32"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(observed[published]), <span class="at">colour =</span> <span class="st">"#B22222"</span>) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Observed log OR"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">title =</span> <span class="st">"Published studies only"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(p1, p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-pub-mechanism" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pub-mechanism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="15-publication-bias_files/figure-html/fig-pub-mechanism-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pub-mechanism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.1: Two hundred simulated studies of a small true effect (log OR 0.15, dashed green line). Significant studies are published with probability 0.95, others with probability 0.30. Left: all studies, with the unpublished in red. Right: the published studies alone, whose mean (red line) overstates the truth.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="sec-pubbias-scale" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="sec-pubbias-scale"><span class="header-section-number">15.1.1</span> How large is it?</h3>
+<p>The clearest evidence comes from comparisons of published literatures with complete regulatory records. <span class="citation" data-cites="turner2008">(<a href="references.html#ref-turner2008" role="doc-biblioref">1</a>)</span> obtained the US Food and Drug Administration reviews of 74 registered trials of 12 antidepressants. Of the 38 trials the FDA judged positive, 37 were published. Of the 36 judged negative or questionable, 22 were not published, 11 were published in a way that conveyed a positive result, and only 3 were published as not positive. In the journals, 94% of the trials appeared positive; in the FDA’s analysis, 51% were. The published literature overstated the standardised mean difference by 32% on average (0.41 against 0.31), from 11% to 69% for individual drugs.</p>
+<p>Other cases show the consequences for decisions.</p>
+<ul>
+<li><strong>Rosiglitazone.</strong> A Cochrane review of the 18 published trials in 2007 could say nothing about cardiovascular safety. Two months later, a meta-analysis of 42 trials, 26 of them unpublished and obtained from the manufacturer’s register, reported an increase in myocardial infarction, OR 1.43 (95% CI 1.03 to 1.98) <span class="citation" data-cites="nissen2007">(<a href="references.html#ref-nissen2007" role="doc-biblioref">2</a>)</span>. The analysis was debated (<a href="09-meta-analysis-models.html#sec-models-zero" class="quarto-xref"><span>Section 9.6.4</span></a>), but the debate was possible only because the unpublished data had become available.</li>
+<li><strong>Reboxetine.</strong> When the manufacturer’s unpublished data were obtained, data from 74% of the patients in the trials had never been published. The published trial suggested a large benefit; with all trials the benefit was small and uncertain, and more patients on reboxetine than on placebo withdrew because of adverse events <span class="citation" data-cites="eyding2010">(<a href="references.html#ref-eyding2010" role="doc-biblioref">3</a>)</span>. The published record overstated benefit and hid harm.</li>
+<li><strong>Oseltamivir.</strong> Reviewers who obtained the full clinical study reports found that the drug shortened symptoms in adults by less than a day but did not reduce hospital admissions, a less favourable picture than the published trials had supported for national stockpiling <span class="citation" data-cites="jefferson2014">(<a href="references.html#ref-jefferson2014" role="doc-biblioref">4</a>)</span>.</li>
+</ul>
+<p>Of 677 completed trials registered in ClinicalTrials.gov between 2000 and 2007, only 46% had been published in a journal <span class="citation" data-cites="ross2009pub">(<a href="references.html#ref-ross2009pub" role="doc-biblioref">5</a>)</span>. Even published trials are incompletely reported: information is lost at every step from protocol and clinical study report to journal article <span class="citation" data-cites="chan2014waste">(<a href="references.html#ref-chan2014waste" role="doc-biblioref">6</a>)</span>, and Chalmers and Glasziou estimated that, through poor design, non-publication and poor reporting, up to 85% of research investment is wasted <span class="citation" data-cites="chalmers2009waste">(<a href="references.html#ref-chalmers2009waste" role="doc-biblioref">7</a>)</span>. The <strong>ROB-ME</strong> tool assesses the risk of bias due to missing evidence in a synthesis <span class="citation" data-cites="page2023robme">(<a href="references.html#ref-page2023robme" role="doc-biblioref">8</a>)</span>.</p>
+</section>
+</section>
+<section id="sec-pubbias-detect" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="sec-pubbias-detect"><span class="header-section-number">15.2</span> Detecting small-study effects</h2>
+<section id="sec-pubbias-funnel" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="sec-pubbias-funnel"><span class="header-section-number">15.2.1</span> The funnel plot</h3>
+<p>A <strong>funnel plot</strong> shows each study’s effect against its precision (usually its standard error, plotted with the most precise studies at the top). Without bias, small studies scatter widely and symmetrically around the pooled effect, large studies narrowly, forming an inverted funnel. If small studies with unfavourable results are missing, one corner of the funnel is empty.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>se_f <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="fl">0.05</span>, <span class="fl">0.50</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y_f  <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="fl">0.3</span>, se_f)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>fun_df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">y =</span> y_f, <span class="at">se =</span> se_f, <span class="at">data =</span> <span class="st">"No bias"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                    tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">y =</span> y_f, <span class="at">se =</span> se_f, <span class="at">data =</span> <span class="st">"Small negative studies missing"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">filter</span>(<span class="sc">!</span>(y <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> se <span class="sc">&gt;</span> <span class="fl">0.25</span>)))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>pools <span class="ot">&lt;-</span> fun_df <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">.by =</span> data, <span class="at">pool =</span> <span class="fu">weighted.mean</span>(y, <span class="dv">1</span> <span class="sc">/</span> se<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>cones <span class="ot">&lt;-</span> pools <span class="sc">|&gt;</span> <span class="fu">crossing</span>(<span class="at">se =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">50</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lo =</span> pool <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se, <span class="at">hi =</span> pool <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fun_df, <span class="fu">aes</span>(y, se)) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> cones, <span class="fu">aes</span>(lo, se), <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> cones, <span class="fu">aes</span>(hi, se), <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#041E42"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">data =</span> pools, <span class="fu">aes</span>(<span class="at">xintercept =</span> pool), <span class="at">colour =</span> <span class="st">"#B22222"</span>) <span class="sc">+</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> data) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_reverse</span>() <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Effect size"</span>, <span class="at">y =</span> <span class="st">"Standard error"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-funnel-theory" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-funnel-theory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="15-publication-bias_files/figure-html/fig-funnel-theory-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-funnel-theory-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.2: Simulated funnel plots of 30 studies with a true effect of 0.3. Left: all studies. Right: small studies (SE &gt; 0.25) with negative results suppressed. Red line: inverse-variance pooled estimate.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Funnel plots need care. With fewer than about 10 studies they are uninterpretable <span class="citation" data-cites="sterne2011">(<a href="references.html#ref-sterne2011" role="doc-biblioref">9</a>)</span>. And asymmetry shows only that smaller studies report different effects, a <strong>small-study effect</strong>; publication bias is one cause, but others include genuine differences (small trials often enrol higher-risk patients or deliver the intervention more intensively), poorer methods in small trials, artefacts of the effect measure, and chance. Contour-enhanced funnel plots, which shade the regions of statistical significance, help distinguish asymmetry caused by missing non-significant studies from other causes.</p>
+</section>
+<section id="sec-pubbias-tests" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="sec-pubbias-tests"><span class="header-section-number">15.2.2</span> Tests for asymmetry</h3>
+<p><strong>Egger’s test</strong> regresses the standardised effect on precision (equivalently, the effect on its standard error); an intercept away from zero indicates asymmetry. Because the tests have little power, a threshold of <em>P</em> &lt; 0.10 is often used. For odds ratios, Egger’s test has inflated false-positive rates, because the log odds ratio and its standard error are correlated; <strong>Peters’ test</strong>, which regresses the effect on the inverse of the total sample size, and Harbord’s test are preferred for binary outcomes. Begg’s rank correlation test has lower power.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>bcg   <span class="ot">&lt;-</span> <span class="fu">escalc</span>(<span class="st">"RR"</span>, <span class="at">ai =</span> tpos, <span class="at">n1i =</span> tpos <span class="sc">+</span> tneg, <span class="at">ci =</span> cpos, <span class="at">n2i =</span> cpos <span class="sc">+</span> cneg, <span class="at">data =</span> dat.bcg)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>m_bcg <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> bcg, <span class="at">method =</span> <span class="st">"REML"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>eg <span class="ot">&lt;-</span> <span class="fu">regtest</span>(m_bcg, <span class="at">model =</span> <span class="st">"lm"</span>, <span class="at">predictor =</span> <span class="st">"sei"</span>)      <span class="co"># Egger</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>bg <span class="ot">&lt;-</span> <span class="fu">ranktest</span>(m_bcg)                                      <span class="co"># Begg</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pt <span class="ot">&lt;-</span> <span class="fu">regtest</span>(m_bcg, <span class="at">model =</span> <span class="st">"lm"</span>, <span class="at">predictor =</span> <span class="st">"ninv"</span>)     <span class="co"># Peters: effect on 1/n</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>pt_wrong <span class="ot">&lt;-</span> <span class="fu">regtest</span>(m_bcg, <span class="at">model =</span> <span class="st">"lm"</span>, <span class="at">predictor =</span> <span class="st">"ni"</span>) <span class="co"># a common error: effect on n</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="at">Egger =</span> eg<span class="sc">$</span>pval, <span class="at">Begg =</span> bg<span class="sc">$</span>pval, <span class="at">Peters =</span> pt<span class="sc">$</span>pval, <span class="st">`</span><span class="at">Peters on n (wrong)</span><span class="st">`</span> <span class="ot">=</span> pt_wrong<span class="sc">$</span>pval), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>              Egger                Begg              Peters Peters on n (wrong) 
+              0.189               0.952               0.175               0.001 </code></pre>
+</div>
+</div>
+<p>The three tests agree that the 13 BCG trials show no detectable asymmetry. Regressing on <em>n</em> rather than 1/<em>n</em> gives a spurious signal: the trials range from 262 to more than 176 000 participants, and on the <em>n</em> scale the single huge trial acts as a lever. “No asymmetry” is not “no bias”: with 13 heterogeneous trials (I² over 90%, largely explained by latitude, <a href="10-heterogeneity-robustness.html#sec-hetero-metareg" class="quarto-xref"><span>Section 10.1</span></a>) these tests have little power, and heterogeneity can create or hide asymmetry on its own.</p>
+</section>
+<section id="sec-pubbias-trimfill" class="level3" data-number="15.2.3">
+<h3 data-number="15.2.3" class="anchored" data-anchor-id="sec-pubbias-trimfill"><span class="header-section-number">15.2.3</span> Trim-and-fill</h3>
+<p><strong>Trim-and-fill</strong> estimates how many studies are missing from the sparse side of the funnel, imputes their mirror images, and recomputes the pooled estimate <span class="citation" data-cites="duval2000">(<a href="references.html#ref-duval2000" role="doc-biblioref">10</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tf <span class="ot">&lt;-</span> <span class="fu">trimfill</span>(m_bcg)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">funnel</span>(tf, <span class="at">xlab =</span> <span class="st">"Log risk ratio (BCG vs control)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-trimfill" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trimfill-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="15-publication-bias_files/figure-html/fig-trimfill-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trimfill-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.3: Trim-and-fill applied to the BCG trials. Filled points would be imputed studies.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here trim-and-fill imputes 1 missing study, and the RR moves from 0.49 to 0.52 (0.37 to 0.74). Trim-and-fill is easy to explain but is a sensitivity analysis, not a correction: it assumes that the asymmetry is entirely due to missing studies and that those studies mirror the observed ones. It is misleading when heterogeneity causes the asymmetry, and in simulations it usually corrects too little <span class="citation" data-cites="carter2019">(<a href="references.html#ref-carter2019" role="doc-biblioref">11</a>)</span>.</p>
+</section>
+</section>
+<section id="sec-pubbias-petpeese" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="sec-pubbias-petpeese"><span class="header-section-number">15.3</span> Correcting for small-study effects: PET-PEESE</h2>
+<p>PET-PEESE treats the small-study pattern as a regression and extrapolates it to a study of infinite size <span class="citation" data-cites="stanley2014">(<a href="references.html#ref-stanley2014" role="doc-biblioref">12</a>)</span>. The <strong>precision-effect test</strong> (PET) fits a weighted meta-regression of each study’s effect on its standard error:</p>
+<p><span class="math display">\[\hat\theta_i = \beta_0 + \beta_1 SE_i .\]</span></p>
+<p>The slope β₁ is the small-study effect (essentially Egger’s test). The intercept β₀ is the predicted effect of a study with SE = 0, which would always be published and has no small-study quirks: the effect with the small-study pattern removed. When there is a true effect, a straight line over-corrects, so the <strong>precision-effect estimate with standard error</strong> (PEESE) uses <span class="math inline">\(SE_i^2\)</span> instead. The conventional two-step rule reports the PEESE intercept if the PET intercept differs significantly from zero, and the PET intercept otherwise.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>se_i <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">25</span>, <span class="fl">0.08</span>, <span class="fl">0.45</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>yi   <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="fl">0.20</span>, se_i)                      <span class="co"># true effect 0.20</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>pub  <span class="ot">&lt;-</span> <span class="sc">!</span>(yi <span class="sc">&lt;</span> <span class="fl">0.05</span> <span class="sc">&amp;</span> se_i <span class="sc">&gt;</span> <span class="fl">0.25</span>)                 <span class="co"># small, disappointing trials stay in the drawer</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>d_pp <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">yi =</span> yi[pub], <span class="at">sei =</span> se_i[pub], <span class="at">vi =</span> sei<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>m_naive <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> d_pp)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>m_pet   <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">mods =</span> <span class="sc">~</span> sei, <span class="at">data =</span> d_pp)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>m_peese <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">mods =</span> <span class="sc">~</span> vi, <span class="at">data =</span> d_pp)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>p_pet   <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">summary</span>(m_pet))[<span class="st">"intrcpt"</span>, <span class="st">"pval"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>b_pet <span class="ot">&lt;-</span> <span class="fu">coef</span>(m_pet); b_peese <span class="ot">&lt;-</span> <span class="fu">coef</span>(m_peese)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d_pp, <span class="fu">aes</span>(sei, yi)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> \(x) b_pet[<span class="dv">1</span>] <span class="sc">+</span> b_pet[<span class="dv">2</span>] <span class="sc">*</span> x, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.45</span>), <span class="at">colour =</span> <span class="st">"#B22222"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> \(x) b_peese[<span class="dv">1</span>] <span class="sc">+</span> b_peese[<span class="dv">2</span>] <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.45</span>), <span class="at">colour =</span> <span class="st">"#E69F00"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.20</span>, <span class="at">colour =</span> <span class="st">"#2E7D32"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> m_naive<span class="sc">$</span>b[<span class="dv">1</span>], <span class="at">colour =</span> <span class="st">"grey50"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#041E42"</span>, <span class="at">size =</span> <span class="fl">2.3</span>) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="fu">c</span>(b_pet[<span class="dv">1</span>], b_peese[<span class="dv">1</span>]), <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">colour =</span> <span class="fu">c</span>(<span class="st">"#B22222"</span>, <span class="st">"#E69F00"</span>)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Standard error (larger = smaller study)"</span>, <span class="at">y =</span> <span class="st">"Observed effect"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-pet-peese" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet-peese-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="15-publication-bias_files/figure-html/fig-pet-peese-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet-peese-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.4: PET (red, straight line in SE) and PEESE (orange, curve in SE²) fitted to the published trials and extrapolated to SE = 0. Green dashed: the true effect (0.20); grey dotted: naive pooled estimate.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Of 25 trials, 20 were published, and the naive pooled estimate, 0.31, overstates the truth by 54%. The PET slope is 1.05, a clear small-study effect. The PET intercept, 0.11 (<em>P</em> = 0.29), is not significantly different from zero, so the two-step rule would report it and conclude that the data are consistent with no effect. That is wrong here; the PEESE intercept, 0.22, is close to the truth. With few studies PET has little power, and its straight line over-corrects when a real effect exists. PET-PEESE is a sensitivity analysis, not an oracle, and like every funnel-based method it cannot tell publication bias from other causes of small-study effects.</p>
+</section>
+<section id="sec-pubbias-lits" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="sec-pubbias-lits"><span class="header-section-number">15.4</span> Two simulated literatures</h2>
+<p>PET-PEESE was tested above on a small literature. To test the remaining methods we need larger literatures whose truth we know. Each of the two below runs 150 trials with 15 to 120 patients per arm; the outcome is a standardised mean difference with true value 0.30 in one literature and 0 in the other, with slight heterogeneity. Every trial significant in favour of treatment is published, and 15% of the rest: a non-significant trial is about 6.7 times less likely to be published.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>make_lit <span class="ot">&lt;-</span> <span class="cf">function</span>(delta, <span class="at">k_all =</span> <span class="dv">150</span>, <span class="at">seed =</span> <span class="dv">629</span>) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  n     <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">runif</span>(k_all, <span class="dv">15</span>, <span class="dv">120</span>))                    <span class="co"># patients per arm</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  sei   <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">2</span> <span class="sc">/</span> n)                                     <span class="co"># approximate SE of an SMD</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  theta <span class="ot">&lt;-</span> delta <span class="sc">+</span> <span class="fu">rnorm</span>(k_all, <span class="dv">0</span>, <span class="fl">0.05</span>)                   <span class="co"># each trial's true effect</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  yi    <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(k_all, theta, sei)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  p     <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fu">abs</span>(yi <span class="sc">/</span> sei))</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  sig   <span class="ot">&lt;-</span> p <span class="sc">&lt;</span> <span class="fl">0.05</span> <span class="sc">&amp;</span> yi <span class="sc">&gt;</span> <span class="dv">0</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  keep  <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">which</span>(<span class="sc">!</span>sig), <span class="fu">round</span>(<span class="fl">0.15</span> <span class="sc">*</span> <span class="fu">sum</span>(<span class="sc">!</span>sig)))    <span class="co"># 15% of the rest are published</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  all   <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(yi, sei, <span class="at">vi =</span> sei<span class="sc">^</span><span class="dv">2</span>, <span class="at">z =</span> yi <span class="sc">/</span> sei, p, theta,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">published =</span> sig <span class="sc">|</span> <span class="fu">seq_len</span>(k_all) <span class="sc">%in%</span> keep)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">structure</span>(all[all<span class="sc">$</span>published, ], <span class="at">all =</span> all)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>lit  <span class="ot">&lt;-</span> <span class="fu">make_lit</span>(<span class="fl">0.30</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>lit0 <span class="ot">&lt;-</span> <span class="fu">make_lit</span>(<span class="dv">0</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>naive  <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> lit)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>naive0 <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> lit0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Of the trials with a true SMD of 0.30, 80 are published, and the naive pooled estimate is 0.41, about 36% too high. With no true effect, only 27 trials are published and the naive estimate is 0.03: with no effect, few trials reach significance, so selection removes most of the evidence rather than creating a large false effect.</p>
+</section>
+<section id="sec-pubbias-selection" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="sec-pubbias-selection"><span class="header-section-number">15.5</span> Selection models</h2>
+<p>Funnel-plot methods see only a pattern. A <strong>selection model</strong> writes down a model of the publication process, the probability <span class="math inline">\(w(p)\)</span> that a study with <em>P</em> value <em>p</em> is published, and estimates it together with the pooled effect <span class="citation" data-cites="vevea1995">(<a href="references.html#ref-vevea1995" role="doc-biblioref">13</a>)</span>:</p>
+<p><span class="math display">\[L(\mu, \tau^2, w) = \prod_{i=1}^k \frac{f(y_i \mid \mu, \tau^2)\, w(p_i)}{\int f(y \mid \mu, \tau^2)\, w(p(y))\, dy} .\]</span></p>
+<p>The denominator, the probability that any study is published, normalises the likelihood for the selected sample. In the step-function model of Vevea and Hedges, one-sided <em>P</em> values are divided into bands (for example 0 to 0.025, 0.025 to 0.05, 0.05 to 0.10, 0.10 to 0.50, 0.50 to 1); the first band has weight 1 and the others are estimated. A one-sided <em>P</em> of 0.025 is a two-sided <em>P</em> of 0.05 in the favourable direction. <code>metafor</code> fits these models with <code>selmodel()</code>; <code>weightr</code> is an alternative.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>m_ml <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> lit, <span class="at">method =</span> <span class="st">"ML"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p_one <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(lit<span class="sc">$</span>yi <span class="sc">/</span> lit<span class="sc">$</span>sei, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)            <span class="co"># one-sided P values</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">cut</span>(p_one, <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.50</span>, <span class="dv">1</span>)))               <span class="co"># published studies per band</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   (0,0.025] (0.025,0.05]   (0.05,0.1]    (0.1,0.5]      (0.5,1] 
+          68            2            3            4            3 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sel  <span class="ot">&lt;-</span> <span class="fu">selmodel</span>(m_ml, <span class="at">type =</span> <span class="st">"stepfun"</span>, <span class="at">steps =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.10</span>, <span class="fl">0.50</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sel3 <span class="ot">&lt;-</span> <span class="fu">selmodel</span>(m_ml, <span class="at">type =</span> <span class="st">"stepfun"</span>, <span class="at">steps =</span> <span class="fl">0.025</span>)           <span class="co"># one cut-point: "3PSM"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Naive (ML)"</span>, <span class="st">"Step function, four cut-points"</span>, <span class="st">"Step function, one cut-point (3PSM)"</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">Pooled SMD (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                                               <span class="fu">c</span>(m_ml<span class="sc">$</span>b[<span class="dv">1</span>], sel<span class="sc">$</span>b[<span class="dv">1</span>], sel3<span class="sc">$</span>b[<span class="dv">1</span>]),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                                               <span class="fu">c</span>(m_ml<span class="sc">$</span>ci.lb, sel<span class="sc">$</span>ci.lb, sel3<span class="sc">$</span>ci.lb),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                                               <span class="fu">c</span>(m_ml<span class="sc">$</span>ci.ub, sel<span class="sc">$</span>ci.ub, sel3<span class="sc">$</span>ci.ub)),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">Relative publication weights</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="fu">paste</span>(<span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, sel<span class="sc">$</span>delta), <span class="at">collapse =</span> <span class="st">", "</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                                                  <span class="fu">paste</span>(<span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, sel3<span class="sc">$</span>delta), <span class="at">collapse =</span> <span class="st">", "</span>)),</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">LRT for selection, P</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="fu">format.pval</span>(sel<span class="sc">$</span>LRTp, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">eps =</span> <span class="fl">0.001</span>),</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                                          <span class="fu">format.pval</span>(sel3<span class="sc">$</span>LRTp, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">eps =</span> <span class="fl">0.001</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 19%">
+<col style="width: 27%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: center;">Pooled SMD (95% CI)</th>
+<th style="text-align: center;">Relative publication weights</th>
+<th style="text-align: center;">LRT for selection, P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Naive (ML)</td>
+<td style="text-align: center;">0.41 (0.37 to 0.44)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Step function, four cut-points</td>
+<td style="text-align: center;">0.28 (0.15 to 0.40)</td>
+<td style="text-align: center;">1.00, 0.10, 0.13, 0.07, 0.18</td>
+<td style="text-align: center;">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Step function, one cut-point (3PSM)</td>
+<td style="text-align: center;">0.26 (0.15 to 0.36)</td>
+<td style="text-align: center;">1.00, 0.09</td>
+<td style="text-align: center;">&lt;0.001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Allowing for selection moves the estimate from 0.41 towards the truth of 0.30, and the estimated weights recover the selection built into the simulation: studies that were not significant were published about 0.09 times as often as significant ones (the true value is 0.15). The bands between 0.025 and 0.50 contain only a handful of studies, so their individual weights are imprecise.</p>
+<p>Selection models are data-hungry: every band needs studies in it (<code>selmodel()</code> stops with an error if a band is empty, as it would for the 20 published trials of the PET-PEESE example), and with modest numbers of studies it is better to use few cut-points (a single cut at 0.025, the “three-parameter selection model”), or fix the weights at plausible values and report how the estimate changes <span class="citation" data-cites="vevea2005">(<a href="references.html#ref-vevea2005" role="doc-biblioref">14</a>)</span>.</p>
+</section>
+<section id="sec-pubbias-pcurve" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="sec-pubbias-pcurve"><span class="header-section-number">15.6</span> The distribution of significant <em>P</em> values</h2>
+<p>A different family of methods looks not at effects versus precision but at the shape of the statistically significant <em>P</em> values. Under the null hypothesis, <em>P</em> values are uniform (<a href="11-p-values.html#sec-pvalues-uniform" class="quarto-xref"><span>Section 11.2.1</span></a>), so among significant results each 0.01-wide slice from 0 to 0.05 is equally likely: a <strong>flat</strong> p-curve. With a real effect, small <em>P</em> values are more likely: a <strong>right-skewed</strong> curve, more so as power increases. With no effect but <em>P</em>-hacking (adding participants, dropping outliers or switching outcomes until <em>P</em> dips below 0.05), results bunch just below 0.05: a <strong>left-skewed</strong> curve <span class="citation" data-cites="simonsohn2014">(<a href="references.html#ref-simonsohn2014" role="doc-biblioref">15</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>p_null <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">20000</span>)))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>p_true <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fu">abs</span>(<span class="fu">rnorm</span>(<span class="dv">20000</span>, <span class="fl">2.8</span>, <span class="dv">1</span>)))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>p_hack <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">4000</span>, {</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">70</span>); y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">70</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (n <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">20</span>, <span class="dv">70</span>, <span class="at">by =</span> <span class="dv">10</span>)) {</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">t.test</span>(x[<span class="dv">1</span><span class="sc">:</span>n], y[<span class="dv">1</span><span class="sc">:</span>n], <span class="at">var.equal =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>p.value</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (p <span class="sc">&lt;</span> <span class="fl">0.05</span>) <span class="cf">break</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  p</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">p =</span> <span class="fu">c</span>(p_null, p_true, p_hack),</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">scenario =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"No effect"</span>, <span class="st">"Real effect, 80% power"</span>, <span class="st">"No effect + p-hacking"</span>),</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                              <span class="fu">c</span>(<span class="dv">20000</span>, <span class="dv">20000</span>, <span class="dv">4000</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(p <span class="sc">&lt;</span> <span class="fl">0.05</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">cut</span>(p, <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.05</span>, <span class="fl">0.01</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">".01"</span>, <span class="st">".02"</span>, <span class="st">".03"</span>, <span class="st">".04"</span>, <span class="st">".05"</span>)),</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">scenario =</span> <span class="fu">factor</span>(scenario, <span class="fu">c</span>(<span class="st">"No effect"</span>, <span class="st">"Real effect, 80% power"</span>, <span class="st">"No effect + p-hacking"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(scenario, bin) <span class="sc">|&gt;</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">.by =</span> scenario, <span class="at">pct =</span> <span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bin, pct, <span class="at">group =</span> scenario)) <span class="sc">+</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">20</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">"#041E42"</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#041E42"</span>) <span class="sc">+</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> scenario) <span class="sc">+</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"P value bin (significant results only)"</span>, <span class="at">y =</span> <span class="st">"% of significant results"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-pcurves" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pcurves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="15-publication-bias_files/figure-html/fig-pcurves-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pcurves-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.5: Distribution of significant P values in 0.01 bins. No effect: flat. A real effect with 80% power: right-skewed. No effect plus optional stopping (start with 20 per arm, add 10 up to five times until P &lt; 0.05): left-skewed. Dashed line: 20% per bin.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Publication bias filters <em>which</em> significant studies are seen, but it cannot make a null effect produce right-skewed <em>P</em> values. A right-skewed curve is therefore evidence that the literature contains a real effect.</p>
+<section id="sec-pubbias-pcurve-test" class="level3" data-number="15.6.1">
+<h3 data-number="15.6.1" class="anchored" data-anchor-id="sec-pubbias-pcurve-test"><span class="header-section-number">15.6.1</span> P-curve</h3>
+<p>P-curve keeps only the significant results and asks whether their <em>P</em> values are right-skewed. Each significant <em>P</em> value is converted to a “pp-value”, its probability under the null given significance (<span class="math inline">\(p/0.05\)</span>), and the pp-values are combined with Stouffer’s method; a significant result indicates <strong>evidential value</strong>. A second test asks whether the curve is flatter than one produced by studies with only 33% power, which would suggest the evidence is too weak to trust.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pcurve_tests <span class="ot">&lt;-</span> <span class="cf">function</span>(d) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  s   <span class="ot">&lt;-</span> <span class="fu">subset</span>(d, p <span class="sc">&lt;</span> <span class="fl">0.05</span> <span class="sc">&amp;</span> yi <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  z   <span class="ot">&lt;-</span> s<span class="sc">$</span>yi <span class="sc">/</span> s<span class="sc">$</span>sei</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  pp0 <span class="ot">&lt;-</span> s<span class="sc">$</span>p <span class="sc">/</span> <span class="fl">0.05</span>                                         <span class="co"># uniform under no effect</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  ncp <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">-</span> <span class="fu">qnorm</span>(<span class="dv">2</span> <span class="sc">/</span> <span class="dv">3</span>)                        <span class="co"># z-shift giving 33% power</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  pp33 <span class="ot">&lt;-</span> (<span class="fu">pnorm</span>(z, ncp, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">pnorm</span>(<span class="sc">-</span>z, ncp)) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">/</span> <span class="dv">3</span>)  <span class="co"># uniform under 33% power</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  Z_rs <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">qnorm</span>(pp0)) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">nrow</span>(s))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  Z_fl <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">qnorm</span>(<span class="fu">pmin</span>(pp33, <span class="dv">1</span> <span class="sc">-</span> <span class="fl">1e-12</span>))) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">nrow</span>(s))</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">k_significant =</span> <span class="fu">nrow</span>(s), <span class="st">`</span><span class="at">share P &lt; 0.025</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(s<span class="sc">$</span>p <span class="sc">&lt;</span> <span class="fl">0.025</span>),</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">right-skew test P</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">pnorm</span>(Z_rs), <span class="st">`</span><span class="at">flatness (33% power) test P</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">pnorm</span>(Z_fl, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">rbind</span>(<span class="st">`</span><span class="at">True SMD 0.30</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">pcurve_tests</span>(lit), <span class="st">`</span><span class="at">True SMD 0</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">pcurve_tests</span>(lit0)), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>              k_significant share P &lt; 0.025 right-skew test P
+True SMD 0.30            68           0.735             0.000
+True SMD 0                5           0.600             0.453
+              flatness (33% power) test P
+True SMD 0.30                       0.941
+True SMD 0                          0.116</code></pre>
+</div>
+</div>
+<p>With a real effect the curve is strongly right-skewed and not flatter than a 33%-power literature; with no effect it is not right-skewed. P-curve tests for evidential value but does not give a good corrected estimate, needs several independent significant results, and is misleading if the studies test different hypotheses <span class="citation" data-cites="simonsohn2014">(<a href="references.html#ref-simonsohn2014" role="doc-biblioref">15</a>)</span>. <code>dmetar::pcurve()</code> and the online p-curve app implement the full method.</p>
+</section>
+<section id="sec-pubbias-puniform" class="level3" data-number="15.6.2">
+<h3 data-number="15.6.2" class="anchored" data-anchor-id="sec-pubbias-puniform"><span class="header-section-number">15.6.2</span> P-uniform</h3>
+<p>P-uniform turns the same idea into an estimate <span class="citation" data-cites="vanassen2015 vanaert2016">(<a href="references.html#ref-vanassen2015" role="doc-biblioref">16</a>,<a href="references.html#ref-vanaert2016" role="doc-biblioref">17</a>)</span>. For a candidate effect δ, compute each significant study’s <em>conditional</em> <em>P</em> value: the probability, given δ and given that the study was significant, of a result at least as large as the one observed. At the true δ these conditional <em>P</em> values are uniform. If δ is too small, the observed effects look surprisingly large and the conditional <em>P</em> values pile up near 0; if δ is too large, they pile up near 1. P-uniform finds the δ at which they look uniform, here using the simple criterion that their sum equals its expectation, <em>k</em>/2.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>puniform_simple <span class="ot">&lt;-</span> <span class="cf">function</span>(d) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">subset</span>(d, p <span class="sc">&lt;</span> <span class="fl">0.05</span> <span class="sc">&amp;</span> yi <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  crit <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">*</span> s<span class="sc">$</span>sei                             <span class="co"># smallest significant effect</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  cond_p <span class="ot">&lt;-</span> \(delta) <span class="fu">pnorm</span>((s<span class="sc">$</span>yi <span class="sc">-</span> delta) <span class="sc">/</span> s<span class="sc">$</span>sei, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">/</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">pnorm</span>((crit <span class="sc">-</span> delta) <span class="sc">/</span> s<span class="sc">$</span>sei, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">nrow</span>(s); half_w <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(k <span class="sc">/</span> <span class="dv">12</span>)      <span class="co"># normal approximation to Irwin-Hall</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> \(delta, target) <span class="fu">sum</span>(<span class="fu">cond_p</span>(delta)) <span class="sc">-</span> target</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">estimate =</span> <span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>), <span class="at">target =</span> k <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">$</span>root,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower =</span> <span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>), <span class="at">target =</span> k <span class="sc">/</span> <span class="dv">2</span> <span class="sc">-</span> half_w)<span class="sc">$</span>root,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper =</span> <span class="fu">uniroot</span>(f, <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>), <span class="at">target =</span> k <span class="sc">/</span> <span class="dv">2</span> <span class="sc">+</span> half_w)<span class="sc">$</span>root)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">rbind</span>(<span class="st">`</span><span class="at">True SMD 0.30</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">puniform_simple</span>(lit), <span class="st">`</span><span class="at">True SMD 0</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">puniform_simple</span>(lit0)), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>              estimate lower upper
+True SMD 0.30     0.30  0.22  0.36
+True SMD 0        0.06 -1.76  0.38</code></pre>
+</div>
+</div>
+<p>The corrected estimates are close to the truth. P-uniform uses only significant studies and assumes homogeneous effects; with large heterogeneity it overestimates. The <code>puniform</code> package implements the exact method and p-uniform*, an extension that uses all studies and allows heterogeneity:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(puniform)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">puniform</span>(<span class="at">yi =</span> lit<span class="sc">$</span>yi, <span class="at">vi =</span> lit<span class="sc">$</span>vi, <span class="at">side =</span> <span class="st">"right"</span>, <span class="at">method =</span> <span class="st">"P"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Method: P
+
+Effect size estimation p-uniform
+
+       est     ci.lb     ci.ub       L.0    pval      ksig
+    0.2951     0.216    0.3642   -5.7787   &lt;.001        68
+
+===
+
+Publication bias test p-uniform
+
+      L.pb    pval
+    3.2639   &lt;.001
+
+===
+
+Fixed-effect meta-analysis
+
+    est.fe     se.fe   zval.fe pval.fe  ci.lb.fe  ci.ub.fe     Qstat     Qpval
+    0.4072    0.0184   22.1055   &lt;.001    0.3711    0.4433   71.8838    0.7022</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">puni_star</span>(<span class="at">yi =</span> lit<span class="sc">$</span>yi, <span class="at">vi =</span> lit<span class="sc">$</span>vi, <span class="at">side =</span> <span class="st">"right"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Method: ML (k = 80; ksig = 68)
+
+Estimating effect size p-uniform*
+
+       est     ci.lb     ci.ub       L.0      pval
+    0.2388    0.1053    0.3324    9.8745    0.0017
+
+===
+
+Estimating between-study variance p-uniform*
+
+      tau2   tau2.lb   tau2.ub     L.het      pval
+    0.0113         0    0.0329    2.8951    0.0444</code></pre>
+</div>
+</div>
+<p><strong>Z-curve</strong> applies related ideas to whole literatures, estimating the average power of the studies from their significant <em>z</em> statistics, and from that the expected rates of discovery and replication <span class="citation" data-cites="bartos2022zcurve">(<a href="references.html#ref-bartos2022zcurve" role="doc-biblioref">18</a>)</span>. It is designed for large, heterogeneous literatures rather than single meta-analyses (package <code>zcurve</code>).</p>
+</section>
+</section>
+<section id="sec-pubbias-sensitivity" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="sec-pubbias-sensitivity"><span class="header-section-number">15.7</span> How much selection would it take?</h2>
+<p>Instead of estimating the selection, <span class="citation" data-cites="mathur2020pubbias">(<a href="references.html#ref-mathur2020pubbias" role="doc-biblioref">19</a>)</span> ask how severe it would have to be to explain away the result. Suppose that affirmative studies (significant and favouring treatment) are η times more likely to be published than non-affirmative ones. Each non-affirmative study then stands for η studies in the full literature, and a corrected estimate up-weights non-affirmative studies by η. The question is how large η must be to bring the estimate to zero. A simple fixed-effect version of the calculation:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>eta_fit <span class="ot">&lt;-</span> <span class="cf">function</span>(d, eta) {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  aff <span class="ot">&lt;-</span> d<span class="sc">$</span>p <span class="sc">&lt;</span> <span class="fl">0.05</span> <span class="sc">&amp;</span> d<span class="sc">$</span>yi <span class="sc">&gt;</span> <span class="dv">0</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  w   <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(aff, <span class="dv">1</span>, eta) <span class="sc">/</span> d<span class="sc">$</span>vi</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  est <span class="ot">&lt;-</span> <span class="fu">sum</span>(w <span class="sc">*</span> d<span class="sc">$</span>yi) <span class="sc">/</span> <span class="fu">sum</span>(w)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  se  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>(w<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> d<span class="sc">$</span>vi)) <span class="sc">/</span> <span class="fu">sum</span>(w)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">eta =</span> eta, <span class="at">est =</span> est, <span class="at">lo =</span> est <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se, <span class="at">hi =</span> est <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>etas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="fl">6.7</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">200</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>sens <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(etas, \(e) <span class="fu">eta_fit</span>(lit, e))</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sens, <span class="fu">aes</span>(eta, est)) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">fill =</span> <span class="st">"#041E42"</span>, <span class="at">alpha =</span> <span class="fl">0.15</span>) <span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"#041E42"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#041E42"</span>) <span class="sc">+</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.30</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"#2E7D32"</span>) <span class="sc">+</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="fl">0.15</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">colour =</span> <span class="st">"#B22222"</span>) <span class="sc">+</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">50</span>, <span class="dv">200</span>)) <span class="sc">+</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Selection ratio η (log scale)"</span>, <span class="at">y =</span> <span class="st">"Corrected pooled SMD (95% CI)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-eta" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="15-publication-bias_files/figure-html/fig-eta-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.6: Corrected pooled SMD as the assumed selection ratio η increases (fixed-effect version: non-affirmative studies up-weighted by η). Green dashed: the truth (0.30). Red dotted: the selection ratio used in the simulation (6.7).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>At the true selection ratio the corrected estimate is close to 0.30, and no plausible η brings it to zero, because the non-affirmative published studies themselves point to a positive effect. When the corrected estimate stays away from zero for any plausible degree of selection, publication bias alone cannot explain the result. The <code>PublicationBias</code> package implements the method with robust random-effects estimation and reports the η needed to reduce the estimate to zero or to any chosen value.</p>
+</section>
+<section id="sec-pubbias-robma" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="sec-pubbias-robma"><span class="header-section-number">15.8</span> Robust Bayesian meta-analysis</h2>
+<p>Each method so far assumes one model of bias, and simulations show that every method fails in some realistic scenario <span class="citation" data-cites="carter2019">(<a href="references.html#ref-carter2019" role="doc-biblioref">11</a>)</span>. <strong>Robust Bayesian meta-analysis</strong> (RoBMA) averages over models instead of choosing one <span class="citation" data-cites="maier2023robma bartos2023robmapsma">(<a href="references.html#ref-maier2023robma" role="doc-biblioref">20</a>,<a href="references.html#ref-bartos2023robmapsma" role="doc-biblioref">21</a>)</span>. It fits models that cross three questions (is there an effect? do the effects vary? is there publication bias, modelled by several selection models and by PET and PEESE?) and weights each model by how well it predicts the data. The output includes Bayes factors for the presence of an effect, of heterogeneity and of bias, and a model-averaged estimate whose uncertainty includes the uncertainty about which model is right.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RoBMA)                     <span class="co"># requires JAGS</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">RoBMA</span>(<span class="at">d =</span> lit<span class="sc">$</span>yi, <span class="at">se =</span> lit<span class="sc">$</span>sei, <span class="at">algorithm =</span> <span class="st">"ss"</span>, <span class="at">seed =</span> <span class="dv">1</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+RoBMA(d = lit$yi, se = lit$sei, algorithm = "ss", seed = 1)
+
+Robust Bayesian meta-analysis
+Components summary:
+              Prior prob. Post. prob. Inclusion BF
+Effect              0.500       1.000          Inf
+Heterogeneity       0.500       0.343        0.521
+Bias                0.500       1.000          Inf
+
+Model-averaged estimates:
+                   Mean Median 0.025 0.975
+mu                0.301  0.304 0.222 0.364
+tau               0.028  0.000 0.000 0.125
+omega[0,0.025]    1.000  1.000 1.000 1.000
+omega[0.025,0.05] 0.177  0.155 0.060 0.425
+omega[0.05,0.5]   0.143  0.132 0.053 0.298
+omega[0.5,0.95]   0.142  0.131 0.053 0.297
+omega[0.95,0.975] 0.156  0.139 0.054 0.360
+omega[0.975,1]    0.834  1.000 0.072 1.000
+PET               0.000  0.000 0.000 0.000
+PEESE             0.000  0.000 0.000 0.000
+The estimates are summarized on the Cohen's d scale (priors were specified on the Cohen's d scale).
+(Estimated publication weights omega correspond to one-sided p-values.)</code></pre>
+</div>
+</div>
+<p>A well-known test case is a series of experiments that claimed evidence of precognition <span class="citation" data-cites="bem2011">(<a href="references.html#ref-bem2011" role="doc-biblioref">22</a>)</span>. A naive meta-analysis finds a small, highly significant effect; RoBMA, allowing for publication bias, finds the evidence weak (the data are in the package as <code>Bem2011</code>). RoBMA is computationally heavier, depends on its priors, and like every method cannot recover studies whose results were never released.</p>
+</section>
+<section id="sec-pubbias-together" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="sec-pubbias-together"><span class="header-section-number">15.9</span> Putting it together</h2>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>pet_l   <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">mods =</span> <span class="sc">~</span> sei, <span class="at">data =</span> lit)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>peese_l <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">mods =</span> <span class="sc">~</span> vi,  <span class="at">data =</span> lit)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>pp_l    <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="fu">coef</span>(<span class="fu">summary</span>(pet_l))[<span class="st">"intrcpt"</span>, <span class="st">"pval"</span>] <span class="sc">&lt;</span> <span class="fl">0.10</span>) peese_l <span class="cf">else</span> pet_l</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>sel_l   <span class="ot">&lt;-</span> <span class="fu">selmodel</span>(<span class="fu">rma</span>(yi, vi, <span class="at">data =</span> lit, <span class="at">method =</span> <span class="st">"ML"</span>), <span class="at">type =</span> <span class="st">"stepfun"</span>, <span class="at">steps =</span> <span class="fl">0.025</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>tf_l    <span class="ot">&lt;-</span> <span class="fu">trimfill</span>(naive)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>pu_l    <span class="ot">&lt;-</span> <span class="fu">puniform_simple</span>(lit)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>eta_l   <span class="ot">&lt;-</span> <span class="fu">eta_fit</span>(lit, <span class="dv">1</span> <span class="sc">/</span> <span class="fl">0.15</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>method,                               <span class="sc">~</span>est,          <span class="sc">~</span>lo,              <span class="sc">~</span>hi,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Naive random effects"</span>,                naive<span class="sc">$</span>b[<span class="dv">1</span>],    naive<span class="sc">$</span>ci.lb,      naive<span class="sc">$</span>ci.ub,</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Trim-and-fill"</span>,                       tf_l<span class="sc">$</span>b[<span class="dv">1</span>],     tf_l<span class="sc">$</span>ci.lb,       tf_l<span class="sc">$</span>ci.ub,</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PET-PEESE (two-step)"</span>,                pp_l<span class="sc">$</span>b[<span class="dv">1</span>],     pp_l<span class="sc">$</span>ci.lb[<span class="dv">1</span>],    pp_l<span class="sc">$</span>ci.ub[<span class="dv">1</span>],</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Selection model (3PSM)"</span>,              sel_l<span class="sc">$</span>b[<span class="dv">1</span>],    sel_l<span class="sc">$</span>ci.lb[<span class="dv">1</span>],   sel_l<span class="sc">$</span>ci.ub[<span class="dv">1</span>],</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"p-uniform (simple)"</span>,                  pu_l[<span class="dv">1</span>],       pu_l[<span class="dv">2</span>],          pu_l[<span class="dv">3</span>],</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Selection ratio η = 6.7 (fixed effect)"</span>, eta_l[<span class="st">"est"</span>], eta_l[<span class="st">"lo"</span>],   eta_l[<span class="st">"hi"</span>]) <span class="sc">|&gt;</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">method =</span> <span class="fu">factor</span>(method, <span class="at">levels =</span> <span class="fu">rev</span>(method))) <span class="sc">|&gt;</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(est, method)) <span class="sc">+</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.30</span>, <span class="at">colour =</span> <span class="st">"#2E7D32"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> lo, <span class="at">xmax =</span> hi), <span class="at">colour =</span> <span class="st">"#041E42"</span>) <span class="sc">+</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Estimated SMD (95% interval)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-all-methods" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-all-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="15-publication-bias_files/figure-html/fig-all-methods-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-all-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.7: Several methods applied to the same published literature (true SMD 0.30, green dashed line).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="tbl-pubbias-methods" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-pubbias-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;15.1: Methods for publication bias (after <span class="citation" data-cites="carter2019">(<a href="references.html#ref-carter2019" role="doc-biblioref">11</a>)</span> and <span class="citation" data-cites="bartos2023robmapsma">(<a href="references.html#ref-bartos2023robmapsma" role="doc-biblioref">21</a>)</span>).
+</figcaption>
+<div aria-describedby="tbl-pubbias-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Type</th>
+<th>Known behaviour in simulations</th>
+<th>Studies needed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trim-and-fill</td>
+<td>Detect and correct</td>
+<td>Corrects too little; misleading with heterogeneity</td>
+<td>≥ 10</td>
+</tr>
+<tr class="even">
+<td>Egger’s test</td>
+<td>Detect</td>
+<td>False positives for odds ratios</td>
+<td>≥ 10</td>
+</tr>
+<tr class="odd">
+<td>Peters’ test</td>
+<td>Detect</td>
+<td>Better calibrated for binary outcomes</td>
+<td>≥ 10</td>
+</tr>
+<tr class="even">
+<td>PET-PEESE</td>
+<td>Correct</td>
+<td>Over-corrects small effects; erratic with few studies</td>
+<td>≥ 20</td>
+</tr>
+<tr class="odd">
+<td>Selection models</td>
+<td>Correct</td>
+<td>Close to unbiased if the selection model is right</td>
+<td>≥ 20</td>
+</tr>
+<tr class="even">
+<td>p-curve, p-uniform</td>
+<td>Test, correct</td>
+<td>Good with low heterogeneity; overestimate with high</td>
+<td>≥ 5 significant</td>
+</tr>
+<tr class="odd">
+<td>RoBMA</td>
+<td>Correct</td>
+<td>Good across many scenarios; no method wins everywhere</td>
+<td>≥ 10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>A practical sequence: search registers and regulatory sources first; draw a funnel plot if there are at least 10 studies; test for asymmetry with a test suited to the outcome; then, as sensitivity analyses, apply at least two correction methods that make different assumptions (a regression method and a selection model, or RoBMA). If corrected estimates differ meaningfully from the naive one, rate down the certainty of evidence for publication bias.</p>
+<section id="sec-pubbias-works" class="level3" data-number="15.9.1">
+<h3 data-number="15.9.1" class="anchored" data-anchor-id="sec-pubbias-works"><span class="header-section-number">15.9.1</span> Does correction work?</h3>
+<p>The antidepressant trials offer a rare test, because the FDA records provide the complete evidence. <span class="citation" data-cites="moreno2009">(<a href="references.html#ref-moreno2009" role="doc-biblioref">23</a>)</span> used only the published papers, fitted a regression line to the funnel plot and extrapolated it to a study of infinite size. Their adjusted estimate (0.29, 95% CI 0.23 to 0.35) was close to the FDA value (0.31), while the naive estimate from the journals was 0.41. It worked here because the bias came mainly from selective publication of small negative trials, there were many trials, and the true effects were similar. With few studies, high heterogeneity, or small studies that are genuinely different, corrections can be badly wrong, and usually there is no FDA record to check them against. Corrected estimates show how sensitive a naive result is to publication bias; they do not replace it.</p>
+</section>
+</section>
+<section id="key-points" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-points">Key points</h2>
+<ol type="1">
+<li>Publication, time-lag, language and outcome-reporting biases all make the published literature look more favourable; the antidepressant, rosiglitazone and reboxetine cases show the consequences.</li>
+<li>Searching registers, regulatory documents and clinical study reports is the main defence; statistical methods cannot recover unreleased data.</li>
+<li>A funnel plot shows small-study effects, which have causes other than publication bias; interpret it only with at least 10 studies, and use Peters’ or Harbord’s test for odds ratios.</li>
+<li>Trim-and-fill corrects too little and is misleading with heterogeneity; PET-PEESE and selection models make explicit, different assumptions and are better treated as sensitivity analyses.</li>
+<li>The shape of significant <em>P</em> values tests for evidential value (p-curve) and supports a corrected estimate (p-uniform).</li>
+<li>Ask how much selection would be needed to explain a result away; use RoBMA, or several methods, to reflect uncertainty about the bias model.</li>
+</ol>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Re-run <code>lit-sim</code> with heterogeneity SD 0.20 instead of 0.05. How do PET-PEESE, the selection model and p-uniform perform?</li>
+<li>Draw a contour-enhanced funnel plot of the BCG trials with <code>funnel(m_bcg, level = c(90, 95, 99), shade = c("white", "grey80", "grey60"), refline = 0)</code>. Where do the trials fall?</li>
+<li>Fit the three-parameter selection model to <code>lit</code> with the weight for non-significant studies fixed at 0.5, 0.25 and 0.10 (<code>selmodel(..., delta = c(1, w))</code>). How sensitive is the estimate?</li>
+<li>Compute the p-curve tests for the published studies of <code>lit0</code> after adding five “p-hacked” studies with <em>P</em> values between 0.04 and 0.05.</li>
+<li>Find a meta-analysis in your field and compare its pooled estimate with PET-PEESE and a three-parameter selection model.</li>
+</ol>
+</section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><span class="citation" data-cites="turner2008">(<a href="references.html#ref-turner2008" role="doc-biblioref">1</a>)</span> and <span class="citation" data-cites="moreno2009">(<a href="references.html#ref-moreno2009" role="doc-biblioref">23</a>)</span> on the antidepressant trials.</li>
+<li><span class="citation" data-cites="sterne2011">(<a href="references.html#ref-sterne2011" role="doc-biblioref">9</a>)</span> for recommendations on funnel plots and asymmetry tests.</li>
+<li><span class="citation" data-cites="stanley2014">(<a href="references.html#ref-stanley2014" role="doc-biblioref">12</a>)</span> on PET-PEESE; <span class="citation" data-cites="vevea1995">(<a href="references.html#ref-vevea1995" role="doc-biblioref">13</a>)</span> and <span class="citation" data-cites="vevea2005">(<a href="references.html#ref-vevea2005" role="doc-biblioref">14</a>)</span> on selection models.</li>
+<li><span class="citation" data-cites="simonsohn2014">(<a href="references.html#ref-simonsohn2014" role="doc-biblioref">15</a>)</span>, <span class="citation" data-cites="vanaert2016">(<a href="references.html#ref-vanaert2016" role="doc-biblioref">17</a>)</span> and <span class="citation" data-cites="bartos2022zcurve">(<a href="references.html#ref-bartos2022zcurve" role="doc-biblioref">18</a>)</span> on p-curve, p-uniform and z-curve.</li>
+<li><span class="citation" data-cites="mathur2020pubbias">(<a href="references.html#ref-mathur2020pubbias" role="doc-biblioref">19</a>)</span> on sensitivity analysis for publication bias; <span class="citation" data-cites="maier2023robma">(<a href="references.html#ref-maier2023robma" role="doc-biblioref">20</a>)</span> on RoBMA.</li>
+<li><span class="citation" data-cites="carter2019">(<a href="references.html#ref-carter2019" role="doc-biblioref">11</a>)</span> for a comparison of correction methods by simulation.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-turner2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Turner EH, Matthews AM, Linardatos E, Tell RA, Rosenthal R. <a href="https://doi.org/10.1056/NEJMsa065779">Selective publication of antidepressant trials and its influence on apparent efficacy</a>. N Engl J Med. 2008;358:252–60. </div>
+</div>
+<div id="ref-nissen2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Nissen SE, Wolski K. <a href="https://doi.org/10.1056/NEJMoa072761">Effect of rosiglitazone on the risk of myocardial infarction and death from cardiovascular causes</a>. New England Journal of Medicine. 2007;356(24):2457–71. </div>
+</div>
+<div id="ref-eyding2010" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Eyding D, Lelgemann M, Grouven U, et al. <a href="https://doi.org/10.1136/bmj.c4737">Reboxetine for acute treatment of major depression: Systematic review and meta-analysis of published and unpublished placebo and selective serotonin reuptake inhibitor controlled trials</a>. BMJ. 2010;341:c4737. </div>
+</div>
+<div id="ref-jefferson2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Jefferson T, Jones M, Doshi P, Spencer EA, Onakpoya I, Heneghan CJ. <a href="https://doi.org/10.1136/bmj.g2545">Oseltamivir for influenza in adults and children: Systematic review of clinical study reports and summary of regulatory comments</a>. BMJ. 2014;348:g2545. </div>
+</div>
+<div id="ref-ross2009pub" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Ross JS, Mulvey GK, Hines EM, Nissen SE, Krumholz HM. <a href="https://doi.org/10.1371/journal.pmed.1000144">Trial publication after registration in <span>ClinicalTrials.Gov</span>: A cross-sectional analysis</a>. PLoS Medicine. 2009;6(9):e1000144. </div>
+</div>
+<div id="ref-chan2014waste" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Chan AW, Song F, Vickers A, et al. <a href="https://doi.org/10.1016/S0140-6736(13)62296-5">Increasing value and reducing waste: Addressing inaccessible research</a>. Lancet. 2014;383:257–66. </div>
+</div>
+<div id="ref-chalmers2009waste" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Chalmers I, Glasziou P. <a href="https://doi.org/10.1016/S0140-6736(09)60329-9">Avoidable waste in the production and reporting of research evidence</a>. Lancet. 2009;374:86–9. </div>
+</div>
+<div id="ref-page2023robme" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Page MJ, Sterne JAC, Boutron I, et al. <a href="https://doi.org/10.1136/bmj-2023-076754"><span>ROB-ME</span>: A tool for assessing risk of bias due to missing evidence in systematic reviews with meta-analysis</a>. BMJ. 2023;383:e076754. </div>
+</div>
+<div id="ref-sterne2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Sterne JAC, Sutton AJ, Ioannidis JPA, et al. <a href="https://doi.org/10.1136/bmj.d4002">Recommendations for examining and interpreting funnel plot asymmetry in meta-analyses of randomised controlled trials</a>. BMJ. 2011;343:d4002. </div>
+</div>
+<div id="ref-duval2000" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Duval S, Tweedie R. <a href="https://doi.org/10.1111/j.0006-341X.2000.00455.x">Trim and fill: A simple funnel-plot-based method of testing and adjusting for publication bias in meta-analysis</a>. Biometrics. 2000;56:455–63. </div>
+</div>
+<div id="ref-carter2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Carter EC, Schönbrodt FD, Gervais WM, Hilgard J. <a href="https://doi.org/10.1177/2515245919847196">Correcting for bias in psychology: A comparison of meta-analytic methods</a>. Advances in Methods and Practices in Psychological Science. 2019;2(2):115–44. </div>
+</div>
+<div id="ref-stanley2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Stanley TD, Doucouliagos H. <a href="https://doi.org/10.1002/jrsm.1095">Meta-regression approximations to reduce publication selection bias</a>. Research Synthesis Methods. 2014;5(1):60–78. </div>
+</div>
+<div id="ref-vevea1995" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Vevea JL, Hedges LV. <a href="https://doi.org/10.1007/BF02294384">A general linear model for estimating effect size in the presence of publication bias</a>. Psychometrika. 1995;60(3):419–35. </div>
+</div>
+<div id="ref-vevea2005" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Vevea JL, Woods CM. <a href="https://doi.org/10.1037/1082-989X.10.4.428">Publication bias in research synthesis: Sensitivity analysis using a priori weight functions</a>. Psychological Methods. 2005;10(4):428–43. </div>
+</div>
+<div id="ref-simonsohn2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Simonsohn U, Nelson LD, Simmons JP. <a href="https://doi.org/10.1037/a0033242">P-curve: A key to the file-drawer</a>. Journal of Experimental Psychology: General. 2014;143(2):534–47. </div>
+</div>
+<div id="ref-vanassen2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Assen MALM van, Aert RCM van, Wicherts JM. <a href="https://doi.org/10.1037/met0000025">Meta-analysis using effect size distributions of only statistically significant studies</a>. Psychological Methods. 2015;20(3):293–309. </div>
+</div>
+<div id="ref-vanaert2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Aert RCM van, Wicherts JM, Assen MALM van. <a href="https://doi.org/10.1177/1745691616650874">Conducting meta-analyses based on p values: Reservations and recommendations for applying p-uniform and p-curve</a>. Perspectives on Psychological Science. 2016;11(5):713–29. </div>
+</div>
+<div id="ref-bartos2022zcurve" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Bartoš F, Schimmack U. <a href="https://doi.org/10.15626/MP.2021.2720">Z-curve 2.0: Estimating replication rates and discovery rates</a>. Meta-Psychology. 2022;6. </div>
+</div>
+<div id="ref-mathur2020pubbias" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Mathur MB, VanderWeele TJ. <a href="https://doi.org/10.1111/rssc.12440">Sensitivity analysis for publication bias in meta-analyses</a>. Journal of the Royal Statistical Society: Series C. 2020;69(5):1091–119. </div>
+</div>
+<div id="ref-maier2023robma" class="csl-entry" role="listitem">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Maier M, Bartoš F, Wagenmakers EJ. <a href="https://doi.org/10.1037/met0000405">Robust <span>Bayesian</span> meta-analysis: Addressing publication bias with model-averaging</a>. Psychological Methods. 2023;28(1):107–22. </div>
+</div>
+<div id="ref-bartos2023robmapsma" class="csl-entry" role="listitem">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Bartoš F, Maier M, Wagenmakers EJ, Doucouliagos H, Stanley TD. <a href="https://doi.org/10.1002/jrsm.1594">Robust <span>Bayesian</span> meta-analysis: Model-averaging across complementary publication bias adjustment methods</a>. Research Synthesis Methods. 2023;14(1):99–116. </div>
+</div>
+<div id="ref-bem2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Bem DJ. <a href="https://doi.org/10.1037/a0021524">Feeling the future: Experimental evidence for anomalous retroactive influences on cognition and affect</a>. Journal of Personality and Social Psychology. 2011;100(3):407–25. </div>
+</div>
+<div id="ref-moreno2009" class="csl-entry" role="listitem">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Moreno SG, Sutton AJ, Turner EH, Abrams KR, Cooper NJ, Palmer TM, et al. <a href="https://doi.org/10.1136/bmj.b2981">Novel methods to deal with publication biases: Secondary analysis of antidepressant trials in the <span>FDA</span> trial registry database and related journal publications</a>. BMJ. 2009;339:b2981. </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./14-missing-data.html" class="pagination-link" aria-label="Missing Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./16-ipd-meta-analysis.html" class="pagination-link" aria-label="Individual Participant Data">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

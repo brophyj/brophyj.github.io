@@ -93,7 +93,7 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1f7fd168c3a2bd1f3385ec7b3b313676.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0bb832c8c54435e969c1d0c4d5849237.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
@@ -148,7 +148,7 @@ const typesetMath = (el) => {
 window.Quarto = {
   typesetMath
 };
-</script><link rel="stylesheet" href="../../custom.scss">
+</script>
 <meta property="og:title" content="TAVR vs.&nbsp;surgery - NHST gets it wrong (again) – James (Jay) Brophy">
 <meta property="og:description" content="Making intelligent inferences">
 <meta property="og:image" content="https://brophyj.com/posts/2024-08-15-NHST-misleads-(again)/preview-image.jpg">
@@ -447,7 +447,7 @@ Normal prior:    Mean = 0.000
 <p>The BF for this data structure is available with the <code>contingencyTableBF</code> function from the <code>BayesFactor</code> package<span class="citation" data-cites="bf">(<a href="#ref-bf" role="doc-biblioref">Morey and Rouder 2024</a>)</span></p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://richarddmorey.github.io/BayesFactor/">BayesFactor</a></span><span class="op">)</span></span>
-<span><span class="va">bf</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/BayesFactor/man/contingencyTableBF.html">contingencyTableBF</a></span><span class="op">(</span><span class="va">dat</span>, sampleType <span class="op">=</span> <span class="st">"indepMulti"</span>, fixedMargin <span class="op">=</span> <span class="st">"cols"</span><span class="op">)</span></span>
+<span><span class="va">bf</span> <span class="op">=</span> <span class="fu">contingencyTableBF</span><span class="op">(</span><span class="va">dat</span>, sampleType <span class="op">=</span> <span class="st">"indepMulti"</span>, fixedMargin <span class="op">=</span> <span class="st">"cols"</span><span class="op">)</span></span>
 <span><span class="va">bf</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>Bayes factor analysis

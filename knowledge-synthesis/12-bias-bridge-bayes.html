@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Bias and a Bridge to Bayes – Knowledge Synthesis in Health Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./13-bayesian-meta-analysis.html" rel="next">
+<link href="./11-p-values.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ef126021e9ff1ef5a96e4bd190a6c277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-effect-measures.html">Meta-analysis</a></li><li class="breadcrumb-item"><a href="./12-bias-bridge-bayes.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Knowledge Synthesis in Health Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-finding-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-question-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualising-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualising Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appraisal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-bias-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk of Bias and GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-certainty-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rating Certainty with GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-appraising-reviews.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reporting and Appraising Systematic Reviews</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Meta-analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-effect-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-meta-analysis-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Meta-Analysis Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-heterogeneity-robustness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Heterogeneity and Robustness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-bias-bridge-bayes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bayesian-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Threats and extensions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-publication-bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-ipd-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-network-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-nma-in-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-observational-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-diagnostic-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">From evidence to decisions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-cochrane-single-trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-hta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-correcting-literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-agentic-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Agentic Systematic Reviews and Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-bias-bayes-avr" id="toc-sec-bias-bayes-avr" class="nav-link active" data-scroll-target="#sec-bias-bayes-avr"><span class="header-section-number">12.1</span> A bias that the checklists miss</a>
+  <ul class="collapse">
+  <li><a href="#sec-bias-bayes-conventional" id="toc-sec-bias-bayes-conventional" class="nav-link" data-scroll-target="#sec-bias-bayes-conventional"><span class="header-section-number">12.1.1</span> Step 1: the conventional meta-analysis</a></li>
+  <li><a href="#sec-bias-bayes-crossover" id="toc-sec-bias-bayes-crossover" class="nav-link" data-scroll-target="#sec-bias-bayes-crossover"><span class="header-section-number">12.1.2</span> Step 2: a signature of bias</a></li>
+  <li><a href="#sec-bias-bayes-landmark" id="toc-sec-bias-bayes-landmark" class="nav-link" data-scroll-target="#sec-bias-bayes-landmark"><span class="header-section-number">12.1.3</span> Step 3: a landmark analysis on reconstructed data</a></li>
+  </ul></li>
+  <li><a href="#sec-bias-bayes-first" id="toc-sec-bias-bayes-first" class="nav-link" data-scroll-target="#sec-bias-bayes-first"><span class="header-section-number">12.2</span> A first Bayesian model</a>
+  <ul class="collapse">
+  <li><a href="#sec-bias-bayes-nn" id="toc-sec-bias-bayes-nn" class="nav-link" data-scroll-target="#sec-bias-bayes-nn"><span class="header-section-number">12.2.1</span> The Bayesian random-effects model</a></li>
+  <li><a href="#sec-bias-bayes-reanalysis" id="toc-sec-bias-bayes-reanalysis" class="nav-link" data-scroll-target="#sec-bias-bayes-reanalysis"><span class="header-section-number">12.2.2</span> Step 4: the Bayesian re-analysis</a></li>
+  <li><a href="#sec-bias-bayes-differ" id="toc-sec-bias-bayes-differ" class="nav-link" data-scroll-target="#sec-bias-bayes-differ"><span class="header-section-number">12.2.3</span> Why the frequentist and Bayesian results differ</a></li>
+  <li><a href="#sec-bias-bayes-lessons" id="toc-sec-bias-bayes-lessons" class="nav-link" data-scroll-target="#sec-bias-bayes-lessons"><span class="header-section-number">12.2.4</span> Lessons</a></li>
+  </ul></li>
+  <li><a href="#sec-bias-bayes-lead" id="toc-sec-bias-bayes-lead" class="nav-link" data-scroll-target="#sec-bias-bayes-lead"><span class="header-section-number">12.3</span> Do the two frameworks give the same answer?</a>
+  <ul class="collapse">
+  <li><a href="#sec-bias-bayes-lead-fits" id="toc-sec-bias-bayes-lead-fits" class="nav-link" data-scroll-target="#sec-bias-bayes-lead-fits"><span class="header-section-number">12.3.1</span> Frequentist and Bayesian fits</a></li>
+  <li><a href="#sec-bias-bayes-meaning" id="toc-sec-bias-bayes-meaning" class="nav-link" data-scroll-target="#sec-bias-bayes-meaning"><span class="header-section-number">12.3.2</span> Same numbers, different meaning</a></li>
+  <li><a href="#sec-bias-bayes-smallk" id="toc-sec-bias-bayes-smallk" class="nav-link" data-scroll-target="#sec-bias-bayes-smallk"><span class="header-section-number">12.3.3</span> With few studies, the frameworks diverge</a></li>
+  <li><a href="#sec-bias-bayes-prior" id="toc-sec-bias-bayes-prior" class="nav-link" data-scroll-target="#sec-bias-bayes-prior"><span class="header-section-number">12.3.4</span> Sensitivity to the prior on τ</a></li>
+  <li><a href="#sec-bias-bayes-why" id="toc-sec-bias-bayes-why" class="nav-link" data-scroll-target="#sec-bias-bayes-why"><span class="header-section-number">12.3.5</span> Why Bayes is worth the bother</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-effect-measures.html">Meta-analysis</a></li><li class="breadcrumb-item"><a href="./12-bias-bridge-bayes.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-bias-bayes" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>recognise a trial-specific bias that risk-of-bias tools rate as “low”, by looking for its signature in the data;</li>
+<li>use reconstructed individual patient data and a landmark analysis to test whether a pooled effect survives removal of a biased period;</li>
+<li>compute a normal-normal Bayesian update by hand, and fit the Bayesian random-effects model by grid approximation and with <code>brms</code>;</li>
+<li>explain why frequentist and Bayesian meta-analyses of the same data agree in some settings and not in others;</li>
+<li>read a credible interval and posterior probabilities, and explain how they differ from a confidence interval;</li>
+<li>check the sensitivity of a Bayesian meta-analysis to the prior on the between-study standard deviation τ.</li>
+</ul>
+<p><strong>R packages:</strong> <code>dplyr</code>, <code>tidyr</code>, <code>purrr</code>, <code>ggplot2</code>, <code>metafor</code>, <code>survival</code>, <code>knitr</code>; <code>brms</code> for the code that is shown but not run.</p>
+</div>
+</div>
+<p>The previous chapters supplied a toolkit: models, heterogeneity, sensitivity analyses and an honest reading of <em>P</em> values. This chapter applies it to two real problems. The first is a meta-analysis that passes every standard check and is probably wrong, because the trials share a bias that no checklist detects. The second compares frequentist and Bayesian analyses of the same data, which give almost the same numbers but answer different questions. Along the way the chapter introduces the first Bayesian models of the book; <a href="13-bayesian-meta-analysis.html" class="quarto-xref"><span>Chapter 13</span></a> develops them.</p>
+<section id="sec-bias-bayes-avr" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sec-bias-bayes-avr"><span class="header-section-number">12.1</span> A bias that the checklists miss</h2>
+<p>Should patients with severe but asymptomatic aortic stenosis have their valve replaced early, surgically (SAVR) or by catheter (TAVR), rather than under clinical surveillance until symptoms appear? Four randomised trials have compared the strategies <span class="citation" data-cites="kang2020recovery banovic2022avatar loganath2025evolved genereux2025earlytavr">(<a href="references.html#ref-kang2020recovery" role="doc-biblioref">1</a>–<a href="references.html#ref-genereux2025earlytavr" role="doc-biblioref">4</a>)</span>. Several meta-analyses published in 2025 pooled them, rated them at low risk of bias, and concluded that early replacement reduces a composite of death and unplanned hospitalisation, and calls to change guidelines followed. This section follows a re-analysis that asked whether that conclusion is credible <span class="citation" data-cites="brophy2026as">(<a href="references.html#ref-brophy2026as" role="doc-biblioref">5</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>avr <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>study,       <span class="sc">~</span>treat,              <span class="sc">~</span>n_int, <span class="sc">~</span>n_cs, <span class="sc">~</span>fu_yr, <span class="sc">~</span>xover12, <span class="sc">~</span>hr,  <span class="sc">~</span>lo,  <span class="sc">~</span>hi,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"RECOVERY"</span>,   <span class="st">"SAVR"</span>,                  <span class="dv">73</span>,    <span class="dv">72</span>,   <span class="fl">6.2</span>,      <span class="dv">9</span>,   <span class="fl">0.09</span>, <span class="fl">0.01</span>, <span class="fl">0.67</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AVATAR"</span>,     <span class="st">"SAVR"</span>,                  <span class="dv">78</span>,    <span class="dv">79</span>,   <span class="fl">5.2</span>,     <span class="dv">12</span>,   <span class="fl">0.46</span>, <span class="fl">0.23</span>, <span class="fl">0.90</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EVOLVED"</span>,    <span class="st">"SAVR 75%, TAVR 25%"</span>,   <span class="dv">113</span>,   <span class="dv">111</span>,   <span class="fl">3.5</span>,     <span class="dv">31</span>,   <span class="fl">0.79</span>, <span class="fl">0.44</span>, <span class="fl">1.43</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EARLY TAVR"</span>, <span class="st">"TAVR"</span>,                 <span class="dv">455</span>,   <span class="dv">446</span>,   <span class="fl">3.8</span>,    <span class="dv">208</span>,   <span class="fl">0.50</span>, <span class="fl">0.40</span>, <span class="fl">0.63</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yi =</span> <span class="fu">log</span>(hr), <span class="at">sei =</span> (<span class="fu">log</span>(hi) <span class="sc">-</span> <span class="fu">log</span>(lo)) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fl">1.96</span>))   <span class="co"># log HR and SE from the 95% CI</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>avr <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">Trial =</span> study, <span class="st">`</span><span class="at">Early replacement</span><span class="st">`</span> <span class="ot">=</span> treat, <span class="st">`</span><span class="at">n (early / surveillance)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">paste</span>(n_int, <span class="st">"/"</span>, n_cs),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Median follow-up (years)</span><span class="st">`</span> <span class="ot">=</span> fu_yr,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Surveillance patients replaced in year 1</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%d (%.0f%%)"</span>, xover12, <span class="dv">100</span> <span class="sc">*</span> xover12 <span class="sc">/</span> n_cs),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Published HR (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, hr, lo, hi)) <span class="sc">|&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"llcccc"</span>, <span class="at">caption =</span> <span class="st">"Four trials of early valve replacement versus surveillance in asymptomatic severe aortic stenosis."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Four trials of early valve replacement versus surveillance in asymptomatic severe aortic stenosis.</caption>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 28%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Trial</th>
+<th style="text-align: left;">Early replacement</th>
+<th style="text-align: center;">n (early / surveillance)</th>
+<th style="text-align: center;">Median follow-up (years)</th>
+<th style="text-align: center;">Surveillance patients replaced in year 1</th>
+<th style="text-align: center;">Published HR (95% CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">RECOVERY</td>
+<td style="text-align: left;">SAVR</td>
+<td style="text-align: center;">73 / 72</td>
+<td style="text-align: center;">6.2</td>
+<td style="text-align: center;">9 (12%)</td>
+<td style="text-align: center;">0.09 (0.01 to 0.67)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AVATAR</td>
+<td style="text-align: left;">SAVR</td>
+<td style="text-align: center;">78 / 79</td>
+<td style="text-align: center;">5.2</td>
+<td style="text-align: center;">12 (15%)</td>
+<td style="text-align: center;">0.46 (0.23 to 0.90)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EVOLVED</td>
+<td style="text-align: left;">SAVR 75%, TAVR 25%</td>
+<td style="text-align: center;">113 / 111</td>
+<td style="text-align: center;">3.5</td>
+<td style="text-align: center;">31 (28%)</td>
+<td style="text-align: center;">0.79 (0.44 to 1.43)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EARLY TAVR</td>
+<td style="text-align: left;">TAVR</td>
+<td style="text-align: center;">455 / 446</td>
+<td style="text-align: center;">3.8</td>
+<td style="text-align: center;">208 (47%)</td>
+<td style="text-align: center;">0.50 (0.40 to 0.63)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>All four trials were unblinded, and the primary outcomes included unplanned hospitalisation, an event that depends partly on the decisions of patients and physicians who know the allocation.</p>
+<section id="sec-bias-bayes-conventional" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="sec-bias-bayes-conventional"><span class="header-section-number">12.1.1</span> Step 1: the conventional meta-analysis</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>m_avr <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, <span class="at">sei =</span> sei, <span class="at">data =</span> avr, <span class="at">slab =</span> study, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">test =</span> <span class="st">"knha"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forest</span>(m_avr, <span class="at">atransf =</span> exp, <span class="at">at =</span> <span class="fu">log</span>(<span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>)), <span class="at">header =</span> <span class="fu">c</span>(<span class="st">"Trial"</span>, <span class="st">"HR [95% CI]"</span>),</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Hazard ratio, early replacement vs surveillance"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-avr-forest" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-avr-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-bias-bridge-bayes_files/figure-html/fig-avr-forest-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-avr-forest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: Conventional random-effects meta-analysis of the four trials (REML, Hartung-Knapp interval).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The pooled hazard ratio is 0.52 (0.34 to 0.78): early replacement roughly halves the risk of the composite outcome. τ² is estimated as zero, so there is no statistical heterogeneity, the effects all point the same way, and the trials were rated at low risk of bias with RoB 2. Every check in <a href="05-bias-grading.html" class="quarto-xref"><span>Chapter 5</span></a>, <a href="09-meta-analysis-models.html" class="quarto-xref"><span>Chapter 9</span></a> and <a href="10-heterogeneity-robustness.html" class="quarto-xref"><span>Chapter 10</span></a> is passed.</p>
+</section>
+<section id="sec-bias-bayes-crossover" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="sec-bias-bayes-crossover"><span class="header-section-number">12.1.2</span> Step 2: a signature of bias</h3>
+<p>The red flag is in the crossover column of the table. A surveillance patient “crosses over” by having the valve replaced, usually after an unplanned hospitalisation, which is itself a primary-outcome event.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>xo   <span class="ot">&lt;-</span> <span class="fu">escalc</span>(<span class="at">measure =</span> <span class="st">"PLO"</span>, <span class="at">xi =</span> xover12, <span class="at">ni =</span> n_cs, <span class="at">data =</span> avr, <span class="at">slab =</span> study)  <span class="co"># logit of a proportion</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>m_xo <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> xo, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">subset =</span> study <span class="sc">!=</span> <span class="st">"EARLY TAVR"</span>)      <span class="co"># the three surgical trials</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>xo_surg <span class="ot">&lt;-</span> <span class="fu">predict</span>(m_xo, <span class="at">transf =</span> transf.ilogit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>In the three surgical trials about 18% (95% CI 11% to 30%) of surveillance patients had their valve replaced within a year. In EARLY TAVR it was 47%, although every patient had been confirmed asymptomatic by an exercise test at entry. Why would half of them need a valve within a year?</p>
+<p>In an unblinded trial, four influences push in the same direction. Surveillance patients know they have severe, untreated disease and are more likely to report symptoms and seek care. Investigators know who is untreated and are more likely to attribute a symptom to the valve and admit the patient. Treated patients feel “fixed” and are less likely to consult, and their physicians less likely to blame the heart. Each increases unplanned hospitalisations in the surveillance arm relative to the treated arm: <strong>performance bias</strong> that manufactures a benefit. A less invasive procedure lowers the threshold to intervene, which fits the much higher crossover rate with TAVR. Meta-epidemiological studies confirm that unblinded trials with subjective outcomes exaggerate treatment effects <span class="citation" data-cites="wood2008 savovic2012">(<a href="references.html#ref-wood2008" role="doc-biblioref">6</a>,<a href="references.html#ref-savovic2012" role="doc-biblioref">7</a>)</span>.</p>
+<p>The point is subtle. The early-replacement arm receives its valve at randomisation, as the intervention. The surveillance arm receives the same valve a few weeks or months later, often preceded by a hospitalisation that counts as an outcome. The composite outcome thus partly measures how quickly patients and clinicians chose to intervene in the control arm, which is exactly what knowledge of the allocation influences.</p>
+</section>
+<section id="sec-bias-bayes-landmark" class="level3" data-number="12.1.3">
+<h3 data-number="12.1.3" class="anchored" data-anchor-id="sec-bias-bayes-landmark"><span class="header-section-number">12.1.3</span> Step 3: a landmark analysis on reconstructed data</h3>
+<p>If the benefit is real, it should persist, or grow, after the first year, as untreated disease progresses. If it is produced by early crossovers, it should be confined to the first year. A <strong>landmark analysis</strong> tests this by restarting the clock at one year among patients still event-free. That needs individual patient data, which the trialists did not share; they were <strong>reconstructed</strong> from the published Kaplan-Meier curves with the algorithm of <span class="citation" data-cites="guyot2012">(<a href="references.html#ref-guyot2012" role="doc-biblioref">8</a>)</span>, which recovers event and censoring times from the digitised curves and the numbers at risk.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ipd <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/ch12/dat_all_km.rds"</span>) <span class="sc">|&gt;</span>                <span class="co"># reconstructed IPD, 1427 patients</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">time  =</span> <span class="fu">if_else</span>(study <span class="sc">==</span> <span class="st">"AVATAR"</span>, time <span class="sc">/</span> <span class="dv">12</span>, time), <span class="co"># AVATAR digitised in months</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">trt   =</span> <span class="fu">as.integer</span>(group <span class="sc">!=</span> <span class="st">"Clinical Surveillance"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">study =</span> <span class="fu">recode</span>(study, <span class="at">EARLY =</span> <span class="st">"EARLY TAVR"</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>cox_hr <span class="ot">&lt;-</span> <span class="cf">function</span>(d) {                                      <span class="co"># log HR and its SE for one trial</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="fu">coxph</span>(<span class="fu">Surv</span>(time, event) <span class="sc">~</span> trt, <span class="at">data =</span> d)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">yi =</span> <span class="fu">unname</span>(<span class="fu">coef</span>(f)), <span class="at">sei =</span> <span class="fu">sqrt</span>(<span class="fu">vcov</span>(f)[<span class="dv">1</span>, <span class="dv">1</span>]))</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>yr1 <span class="ot">&lt;-</span> ipd <span class="sc">|&gt;</span>                                                <span class="co"># events in year 1 only</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">event =</span> <span class="fu">if_else</span>(time <span class="sc">&gt;</span> <span class="dv">1</span>, <span class="dv">0</span>, event), <span class="at">time =</span> <span class="fu">pmin</span>(time, <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(study <span class="sc">!=</span> <span class="st">"RECOVERY"</span>) <span class="sc">|&gt;</span>                             <span class="co"># 2 events in year 1: no estimate</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(study) <span class="sc">|&gt;</span> <span class="fu">group_modify</span>(\(d, k) <span class="fu">cox_hr</span>(d)) <span class="sc">|&gt;</span> <span class="fu">ungroup</span>()</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>lmk <span class="ot">&lt;-</span> ipd <span class="sc">|&gt;</span>                                                <span class="co"># landmark: from year 1 onwards</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(time <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">time =</span> time <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(study) <span class="sc">|&gt;</span> <span class="fu">group_modify</span>(\(d, k) <span class="fu">cox_hr</span>(d)) <span class="sc">|&gt;</span> <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>km <span class="ot">&lt;-</span> <span class="fu">survfit</span>(<span class="fu">Surv</span>(time, event) <span class="sc">~</span> trt, <span class="at">data =</span> <span class="fu">filter</span>(ipd, study <span class="sc">==</span> <span class="st">"EARLY TAVR"</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">time =</span> km<span class="sc">$</span>time, <span class="at">inc =</span> <span class="dv">1</span> <span class="sc">-</span> km<span class="sc">$</span>surv,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">arm =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Surveillance"</span>, <span class="st">"Early TAVR"</span>), km<span class="sc">$</span>strata)) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(time, inc, <span class="at">colour =</span> arm)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_step</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Early TAVR"</span> <span class="ot">=</span> <span class="st">"#041E42"</span>, <span class="at">Surveillance =</span> <span class="st">"#B22222"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Years from randomisation"</span>, <span class="at">y =</span> <span class="st">"Cumulative incidence"</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-early-tavr-km" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-early-tavr-km-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-bias-bridge-bayes_files/figure-html/fig-early-tavr-km-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-early-tavr-km-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: EARLY TAVR, reconstructed data: cumulative incidence of the primary outcome. The vertical line marks the one-year landmark.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>hr_txt <span class="ot">&lt;-</span> \(d) <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, <span class="fu">exp</span>(d<span class="sc">$</span>yi), <span class="fu">exp</span>(d<span class="sc">$</span>yi <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> d<span class="sc">$</span>sei), <span class="fu">exp</span>(d<span class="sc">$</span>yi <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> d<span class="sc">$</span>sei))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Trial =</span> avr<span class="sc">$</span>study) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Trial =</span> yr1<span class="sc">$</span>study, <span class="st">`</span><span class="at">Year 1</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">hr_txt</span>(yr1)), <span class="at">by =</span> <span class="st">"Trial"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Trial =</span> lmk<span class="sc">$</span>study, <span class="st">`</span><span class="at">After year 1 (landmark)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">hr_txt</span>(lmk)), <span class="at">by =</span> <span class="st">"Trial"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), \(x) tidyr<span class="sc">::</span><span class="fu">replace_na</span>(x, <span class="st">"too few events"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lcc"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>m_lmk <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, <span class="at">sei =</span> sei, <span class="at">data =</span> lmk, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">test =</span> <span class="st">"knha"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-avr-landmark" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-avr-landmark-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.1: Hazard ratios (95% CI), early replacement vs surveillance, from reconstructed individual patient data.
+</figcaption>
+<div aria-describedby="tbl-avr-landmark-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Trial</th>
+<th style="text-align: center;">Year 1</th>
+<th style="text-align: center;">After year 1 (landmark)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">RECOVERY</td>
+<td style="text-align: center;">too few events</td>
+<td style="text-align: center;">0.06 (0.01 to 0.46)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AVATAR</td>
+<td style="text-align: center;">0.46 (0.18 to 1.22)</td>
+<td style="text-align: center;">0.54 (0.24 to 1.21)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">EVOLVED</td>
+<td style="text-align: center;">1.20 (0.52 to 2.78)</td>
+<td style="text-align: center;">0.52 (0.27 to 1.00)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EARLY TAVR</td>
+<td style="text-align: center;">0.24 (0.17 to 0.35)</td>
+<td style="text-align: center;">1.03 (0.75 to 1.41)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>In EARLY TAVR, which dominates the pooled estimate, the whole benefit falls in the first year (HR 0.24 (0.17 to 0.35)), exactly when the crossovers happen; after the landmark the curves run in parallel (HR 1.03 (0.75 to 1.41)). The smaller surgical trials behave differently, with estimates after year 1 that still favour early surgery but are imprecise. Pooled after the landmark, the frequentist estimate is 0.55 (0.13 to 2.26), compatible with anything from a large benefit to substantial harm. Reconstructed data are approximations: they reproduce the published curves, not the original records, and small differences from the published estimates are expected.</p>
+</section>
+</section>
+<section id="sec-bias-bayes-first" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="sec-bias-bayes-first"><span class="header-section-number">12.2</span> A first Bayesian model</h2>
+<p>Before re-analysing these data, we need the simplest Bayesian model. Bayes’ theorem says that the <strong>posterior</strong> distribution of a parameter is proportional to the <strong>likelihood</strong> of the data times the <strong>prior</strong> distribution of the parameter:</p>
+<p><span class="math display">\[p(\theta \mid \text{data}) \propto p(\text{data} \mid \theta)\, p(\theta).\]</span></p>
+<p>If a trial’s estimate is normally distributed around the true effect, <span class="math inline">\(\hat\theta \sim N(\theta, SE^2)\)</span>, and the prior is also normal, <span class="math inline">\(\theta \sim N(m_0, s_0^2)\)</span>, the posterior is again normal, with</p>
+<p><span class="math display">\[\text{posterior precision} = \frac{1}{s_0^2} + \frac{1}{SE^2}, \qquad \text{posterior mean} = \frac{m_0/s_0^2 + \hat\theta/SE^2}{1/s_0^2 + 1/SE^2}.\]</span></p>
+<p>The posterior mean is a precision-weighted average of the prior mean and the estimate, exactly like the inverse-variance weighting of a fixed-effect meta-analysis (<a href="09-meta-analysis-models.html#sec-models-fixed" class="quarto-xref"><span>Section 9.2</span></a>), with the prior acting as one more “study”.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>update_normal <span class="ot">&lt;-</span> <span class="cf">function</span>(m0, s0, est, se) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  prec <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> s0<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span> <span class="sc">/</span> se<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">mean =</span> (m0 <span class="sc">/</span> s0<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> est <span class="sc">/</span> se<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> prec, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">/</span> prec))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">update_normal</span>(<span class="at">m0 =</span> <span class="dv">0</span>, <span class="at">s0 =</span> <span class="fl">1.5</span>, <span class="at">est =</span> <span class="fu">log</span>(<span class="fl">0.50</span>), <span class="at">se =</span> <span class="fl">0.20</span>)   <span class="co"># vague prior: the data dominate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mean         sd 
+-0.6810398  0.1982456 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update_normal</span>(<span class="at">m0 =</span> <span class="dv">0</span>, <span class="at">s0 =</span> <span class="fl">0.20</span>, <span class="at">est =</span> <span class="fu">log</span>(<span class="fl">0.50</span>), <span class="at">se =</span> <span class="fl">0.20</span>)  <span class="co"># sceptical prior as precise as the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>      mean         sd 
+-0.3465736  0.1414214 </code></pre>
+</div>
+</div>
+<p>With a vague prior, N(0, 1.5²) on the log hazard ratio, the posterior mean is almost the estimate. With a sceptical prior as precise as the data, the posterior lies halfway between the null and the estimate.</p>
+<section id="sec-bias-bayes-nn" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="sec-bias-bayes-nn"><span class="header-section-number">12.2.1</span> The Bayesian random-effects model</h3>
+<p>For several studies, the Bayesian version of the random-effects model of <a href="09-meta-analysis-models.html#sec-models-random" class="quarto-xref"><span>Section 9.3</span></a> has the same two levels, plus priors:</p>
+<p><span class="math display">\[\hat\theta_i \sim N(\theta_i, SE_i^2), \qquad \theta_i \sim N(\mu, \tau^2), \qquad \mu \sim p(\mu), \quad \tau \sim p(\tau).\]</span></p>
+<p>Integrating out the study effects gives <span class="math inline">\(\hat\theta_i \sim N(\mu, SE_i^2 + \tau^2)\)</span>, so the posterior depends on just two unknowns, μ and τ. With two unknowns, the posterior can be computed directly on a grid: evaluate prior × likelihood at every combination of μ and τ, normalise, and sample combinations in proportion to their posterior probability. Each sampled (μ, τ) pair also gives a draw of the true effect in a new study, <span class="math inline">\(\theta_{\text{new}} \sim N(\mu, \tau^2)\)</span>, the Bayesian prediction.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>bayes_nn <span class="ot">&lt;-</span> <span class="cf">function</span>(yi, sei, <span class="at">mu_mean =</span> <span class="dv">0</span>, <span class="at">mu_sd =</span> <span class="fl">1.5</span>,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">tau_prior =</span> \(t) <span class="dv">2</span> <span class="sc">*</span> <span class="fu">dt</span>(t, <span class="at">df =</span> <span class="dv">3</span>),      <span class="co"># half-t(3) on tau, scale 1</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mu_range =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">3</span>), <span class="at">tau_max =</span> <span class="dv">4</span>, <span class="at">grid =</span> <span class="dv">400</span>, <span class="at">n_draws =</span> <span class="dv">40000</span>) {</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  g  <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">mu =</span> <span class="fu">seq</span>(mu_range[<span class="dv">1</span>], mu_range[<span class="dv">2</span>], <span class="at">length.out =</span> grid),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">tau =</span> <span class="fu">seq</span>(<span class="dv">0</span>, tau_max, <span class="at">length.out =</span> grid))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  lp <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(g<span class="sc">$</span>mu, mu_mean, mu_sd, <span class="at">log =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">log</span>(<span class="fu">tau_prior</span>(g<span class="sc">$</span>tau))   <span class="co"># log prior</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(yi))                                                <span class="co"># + log likelihood</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    lp <span class="ot">&lt;-</span> lp <span class="sc">+</span> <span class="fu">dnorm</span>(yi[i], g<span class="sc">$</span>mu, <span class="fu">sqrt</span>(sei[i]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> g<span class="sc">$</span>tau<span class="sc">^</span><span class="dv">2</span>), <span class="at">log =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  s  <span class="ot">&lt;-</span> g[<span class="fu">sample</span>(<span class="fu">nrow</span>(g), n_draws, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">exp</span>(lp <span class="sc">-</span> <span class="fu">max</span>(lp))), ]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  dm <span class="ot">&lt;-</span> <span class="fu">diff</span>(mu_range) <span class="sc">/</span> (grid <span class="sc">-</span> <span class="dv">1</span>); dt_ <span class="ot">&lt;-</span> tau_max <span class="sc">/</span> (grid <span class="sc">-</span> <span class="dv">1</span>)          <span class="co"># jitter within a cell</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  s<span class="sc">$</span>mu  <span class="ot">&lt;-</span> s<span class="sc">$</span>mu <span class="sc">+</span> <span class="fu">runif</span>(n_draws, <span class="sc">-</span>dm <span class="sc">/</span> <span class="dv">2</span>, dm <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  s<span class="sc">$</span>tau <span class="ot">&lt;-</span> <span class="fu">abs</span>(s<span class="sc">$</span>tau <span class="sc">+</span> <span class="fu">runif</span>(n_draws, <span class="sc">-</span>dt_ <span class="sc">/</span> <span class="dv">2</span>, dt_ <span class="sc">/</span> <span class="dv">2</span>))</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">mu =</span> s<span class="sc">$</span>mu, <span class="at">tau =</span> s<span class="sc">$</span>tau, <span class="at">new =</span> <span class="fu">rnorm</span>(n_draws, s<span class="sc">$</span>mu, s<span class="sc">$</span>tau))</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>A grid is exact up to its resolution, transparent, and fast for two parameters. It does not scale: ten parameters on a grid of 400 values each would need 400<sup>10</sup> evaluations. General-purpose software therefore uses Markov chain Monte Carlo (MCMC). In R the most convenient interface is <code>brms</code>, which writes and runs a Stan model from one formula <span class="citation" data-cites="burkner2017">(<a href="references.html#ref-burkner2017" role="doc-biblioref">9</a>)</span>. The same model, with the priors used in the published re-analysis, is:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>pri <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">1.5</span>), <span class="at">class =</span> Intercept),     <span class="co"># mu, log HR</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> sd))        <span class="co"># tau; brms truncates sd priors at zero</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>fit_pub <span class="ot">&lt;-</span> <span class="fu">brm</span>(yi <span class="sc">|</span> <span class="fu">se</span>(sei) <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> study), <span class="at">data =</span> avr, <span class="at">prior =</span> pri,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">iter =</span> <span class="dv">6000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.99</span>), <span class="at">seed =</span> <span class="dv">2026</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>fit_lmk <span class="ot">&lt;-</span> <span class="fu">update</span>(fit_pub, <span class="at">newdata =</span> lmk, <span class="at">seed =</span> <span class="dv">2026</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The formula reads: <code>yi</code> is observed with known standard error <code>sei</code>; there is an overall mean (<code>1</code>) and study-specific deviations (<code>(1 | study)</code>) with standard deviation τ. Both approaches give the same posterior, to within simulation error; here we use the grid, and <a href="13-bayesian-meta-analysis.html" class="quarto-xref"><span>Chapter 13</span></a> uses <code>brms</code> for a model the grid cannot handle.</p>
+</section>
+<section id="sec-bias-bayes-reanalysis" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="sec-bias-bayes-reanalysis"><span class="header-section-number">12.2.2</span> Step 4: the Bayesian re-analysis</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>post_avr <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bayes_nn</span>(avr<span class="sc">$</span>yi, avr<span class="sc">$</span>sei) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">analysis =</span> <span class="st">"Published HRs"</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bayes_nn</span>(lmk<span class="sc">$</span>yi, lmk<span class="sc">$</span>sei) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">analysis =</span> <span class="st">"One-year landmark"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">analysis =</span> <span class="fu">factor</span>(analysis, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Published HRs"</span>, <span class="st">"One-year landmark"</span>)))</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>q_txt <span class="ot">&lt;-</span> \(x) <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, <span class="fu">exp</span>(<span class="fu">median</span>(x)), <span class="fu">exp</span>(<span class="fu">quantile</span>(x, <span class="fl">0.025</span>)), <span class="fu">exp</span>(<span class="fu">quantile</span>(x, <span class="fl">0.975</span>)))</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>avr_tab <span class="ot">&lt;-</span> post_avr <span class="sc">|&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">.by =</span> analysis, <span class="st">`</span><span class="at">HR, median (95% CrI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">q_txt</span>(mu),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">New trial (95%)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f to %.2f"</span>, <span class="fu">exp</span>(<span class="fu">quantile</span>(new, <span class="fl">0.025</span>)), <span class="fu">exp</span>(<span class="fu">quantile</span>(new, <span class="fl">0.975</span>))),</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">P(HR &lt; 1)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">mean</span>(mu <span class="sc">&lt;</span> <span class="dv">0</span>)), <span class="st">`</span><span class="at">P(HR &lt; 0.9)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">mean</span>(mu <span class="sc">&lt;</span> <span class="fu">log</span>(<span class="fl">0.9</span>))),</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">τ, median</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">median</span>(tau)))</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>avr_tab <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lccccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 23%">
+<col style="width: 18%">
+<col style="width: 11%">
+<col style="width: 14%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">analysis</th>
+<th style="text-align: center;">HR, median (95% CrI)</th>
+<th style="text-align: center;">New trial (95%)</th>
+<th style="text-align: center;">P(HR &lt; 1)</th>
+<th style="text-align: center;">P(HR &lt; 0.9)</th>
+<th style="text-align: center;">τ, median</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Published HRs</td>
+<td style="text-align: center;">0.52 (0.26 to 0.96)</td>
+<td style="text-align: center;">0.13 to 1.94</td>
+<td style="text-align: center;">0.98</td>
+<td style="text-align: center;">0.97</td>
+<td style="text-align: center;">0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">One-year landmark</td>
+<td style="text-align: center;">0.60 (0.21 to 1.34)</td>
+<td style="text-align: center;">0.06 to 4.15</td>
+<td style="text-align: center;">0.92</td>
+<td style="text-align: center;">0.87</td>
+<td style="text-align: center;">0.64</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(post_avr, <span class="fu">aes</span>(<span class="fu">exp</span>(mu), <span class="at">fill =</span> analysis)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.55</span>, <span class="at">colour =</span> <span class="cn">NA</span>, <span class="at">adjust =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.08</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#041E42"</span>, <span class="st">"#E69F00"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pooled hazard ratio (log scale)"</span>, <span class="at">y =</span> <span class="st">"Posterior density"</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-avr-posterior" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-avr-posterior-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-bias-bridge-bayes_files/figure-html/fig-avr-posterior-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-avr-posterior-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.3: Posterior distributions of the pooled hazard ratio, from the published hazard ratios and from the one-year landmark analysis.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>These results reproduce the published re-analysis, which reported 0.52 (0.25 to 0.97) for the published hazard ratios and 0.59 (0.20 to 1.40) for the landmark <span class="citation" data-cites="brophy2026as">(<a href="references.html#ref-brophy2026as" role="doc-biblioref">5</a>)</span>. Removing the early, unblinding-prone period moves the posterior towards 1 and widens it: the probability of a reduction of at least 10% falls from 0.97 to 0.87, and the next trial could show anything from a large benefit to harm. The evidence is compatible with benefit but is not conclusive: hypothesis-generating rather than guideline-changing.</p>
+</section>
+<section id="sec-bias-bayes-differ" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="sec-bias-bayes-differ"><span class="header-section-number">12.2.3</span> Why the frequentist and Bayesian results differ</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>f_z  <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, <span class="at">sei =</span> sei, <span class="at">data =</span> lmk, <span class="at">method =</span> <span class="st">"REML"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>f_hk <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, <span class="at">sei =</span> sei, <span class="at">data =</span> lmk, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">test =</span> <span class="st">"knha"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>pl   <span class="ot">&lt;-</span> <span class="fu">filter</span>(post_avr, analysis <span class="sc">==</span> <span class="st">"One-year landmark"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>fmt3 <span class="ot">&lt;-</span> \(m, l, u) <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, <span class="fu">exp</span>(m), <span class="fu">exp</span>(l), <span class="fu">exp</span>(u))</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Analysis =</span> <span class="fu">c</span>(<span class="st">"REML, Wald interval"</span>, <span class="st">"REML, Hartung-Knapp interval"</span>, <span class="st">"Bayesian, median and 95% credible interval"</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">τ</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">sprintf</span>(<span class="st">"%.2f (point estimate)"</span>, <span class="fu">sqrt</span>(f_z<span class="sc">$</span>tau2)), <span class="fu">sprintf</span>(<span class="st">"%.2f (point estimate)"</span>, <span class="fu">sqrt</span>(f_hk<span class="sc">$</span>tau2)),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>          <span class="fu">sprintf</span>(<span class="st">"posterior median %.2f"</span>, <span class="fu">median</span>(pl<span class="sc">$</span>tau))),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Pooled HR</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">fmt3</span>(f_z<span class="sc">$</span>b[<span class="dv">1</span>], f_z<span class="sc">$</span>ci.lb, f_z<span class="sc">$</span>ci.ub), <span class="fu">fmt3</span>(f_hk<span class="sc">$</span>b[<span class="dv">1</span>], f_hk<span class="sc">$</span>ci.lb, f_hk<span class="sc">$</span>ci.ub),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">fmt3</span>(<span class="fu">median</span>(pl<span class="sc">$</span>mu), <span class="fu">quantile</span>(pl<span class="sc">$</span>mu, <span class="fl">0.025</span>), <span class="fu">quantile</span>(pl<span class="sc">$</span>mu, <span class="fl">0.975</span>)))) <span class="sc">|&gt;</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"llc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-avr-compare" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-avr-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.2: Landmark analysis: frequentist and Bayesian summaries of the same four estimates.
+</figcaption>
+<div aria-describedby="tbl-avr-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Analysis</th>
+<th style="text-align: left;">τ</th>
+<th style="text-align: center;">Pooled HR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">REML, Wald interval</td>
+<td style="text-align: left;">0.58 (point estimate)</td>
+<td style="text-align: center;">0.55 (0.27 to 1.11)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">REML, Hartung-Knapp interval</td>
+<td style="text-align: left;">0.58 (point estimate)</td>
+<td style="text-align: center;">0.55 (0.13 to 2.26)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bayesian, median and 95% credible interval</td>
+<td style="text-align: left;">posterior median 0.64</td>
+<td style="text-align: center;">0.60 (0.21 to 1.34)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>With only four trials, three things drive the differences.</p>
+<ul>
+<li><strong>The width.</strong> The Wald interval plugs in <span class="math inline">\(\hat\tau\)</span> as if known and is the narrowest. The Hartung-Knapp interval multiplies by a <em>t</em> quantile with 3 degrees of freedom (3.18 rather than 1.96) and is very wide. The Bayesian interval, which averages over the uncertainty in τ, lies between them.</li>
+<li><strong>The priors carry information.</strong> Four trials barely identify τ (the REML Q-profile 95% interval is 0.15 to 4.52). The half-<em>t</em> prior on τ and the N(0, 1.5²) prior on μ rule out implausibly large values. With so few trials the prior matters: a strength if it is justified, a risk if it is not.</li>
+<li><strong>The point estimate.</strong> The frequentist estimate weights the trials with one value of τ. The Bayesian estimate averages over all plausible values of τ, each giving different weights, and reports the posterior median, pulled slightly towards no effect by a prior centred there.</li>
+</ul>
+</section>
+<section id="sec-bias-bayes-lessons" class="level3" data-number="12.2.4">
+<h3 data-number="12.2.4" class="anchored" data-anchor-id="sec-bias-bayes-lessons"><span class="header-section-number">12.2.4</span> Lessons</h3>
+<p>Every statistical step in this case was standard. What changed the conclusion was asking whether the pattern of events made clinical sense: patients confirmed asymptomatic at entry, half of whom needed a valve within a year; crossovers that began with an outcome event; curves that ran in parallel after the first year, when a real benefit of treating a progressive disease should persist or grow; and an unblinded design. No statistical test flagged the problem.</p>
+<ul>
+<li><strong>Risk-of-bias tools are necessary, not sufficient.</strong> They cannot codify every trial-specific mechanism of bias.</li>
+<li><strong>Look for the signature of a suspected bias in the data</strong>: here, the crossover rate and its timing.</li>
+<li><strong>Heterogeneity can hide in time.</strong> A hazard ratio over the whole follow-up averaged a large early effect with no late effect.</li>
+<li><strong>Unavailable data can sometimes be reconstructed</strong>, from published Kaplan-Meier curves.</li>
+<li><strong>Correct for bias with design-based analyses</strong> (landmark or time-varying effects, objective outcomes such as all-cause mortality, restriction to blinded trials), stratification or meta-regression on the bias marker, or explicit bias modelling with an empirical prior for the bias <span class="citation" data-cites="turner2009bias">(<a href="references.html#ref-turner2009bias" role="doc-biblioref">10</a>)</span>, always as sensitivity analyses reported alongside the naive estimate.</li>
+<li><strong>Report probabilities of meaningful benefit</strong>, not just significance.</li>
+</ul>
+<p>Meta-analysis is a scientific judgement supported by statistics, not a statistical procedure applied to whatever trials exist.</p>
+</section>
+</section>
+<section id="sec-bias-bayes-lead" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="sec-bias-bayes-lead"><span class="header-section-number">12.3</span> Do the two frameworks give the same answer?</h2>
+<p><span class="citation" data-cites="sell2026lead">(<a href="references.html#ref-sell2026lead" role="doc-biblioref">11</a>)</span> meta-analysed 12 epidemiological studies of blood lead and children’s IQ, once with a frequentist and once with a Bayesian random-effects model. The effect is the change in IQ points per unit increase in the natural logarithm of blood lead (µg/dL). Their pooled estimates were almost identical, which raises a fair question: why bother with Bayes?</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lead <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(        <span class="co"># harmonised regression coefficients and SEs, Sell et al., Table 2</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>study,                     <span class="sc">~</span>yi,   <span class="sc">~</span>sei,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Bauer 2020"</span>,              <span class="sc">-</span><span class="fl">0.10</span>,  <span class="fl">0.87</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Crump 2013"</span>,              <span class="sc">-</span><span class="fl">3.31</span>,  <span class="fl">0.63</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Dantzer 2020"</span>,            <span class="sc">-</span><span class="fl">5.71</span>,  <span class="fl">1.61</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Desrochers-Couture 2018"</span>,  <span class="fl">0.02</span>,  <span class="fl">0.06</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Earl 2016"</span>,               <span class="sc">-</span><span class="fl">5.86</span>,  <span class="fl">2.22</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hong 2015"</span>,               <span class="sc">-</span><span class="fl">3.14</span>,  <span class="fl">1.37</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Lee 2021"</span>,                <span class="sc">-</span><span class="fl">3.83</span>,  <span class="fl">2.25</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Lucchini 2019"</span>,           <span class="sc">-</span><span class="fl">1.10</span>,  <span class="fl">0.84</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Lucchini 2012"</span>,           <span class="sc">-</span><span class="fl">3.48</span>,  <span class="fl">1.48</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Menezes-Filho 2018"</span>,      <span class="sc">-</span><span class="fl">3.74</span>,  <span class="fl">1.29</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Roy 2013"</span>,                <span class="sc">-</span><span class="fl">4.70</span>,  <span class="fl">1.66</span>,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Schnaas 2006"</span>,             <span class="fl">0.17</span>,  <span class="fl">0.81</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>m_lead_ee <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, <span class="at">sei =</span> sei, <span class="at">data =</span> lead, <span class="at">method =</span> <span class="st">"EE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>One study, Desrochers-Couture 2018, is 15 to 40 times more precise than the others and reports essentially no effect; most of the rest show losses of 3 to 6 IQ points. A fixed-effect analysis would give it 97% of the weight and a pooled estimate of -0.05. How much the true effects vary, τ, is therefore the central question.</p>
+<section id="sec-bias-bayes-lead-fits" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="sec-bias-bayes-lead-fits"><span class="header-section-number">12.3.1</span> Frequentist and Bayesian fits</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>m_lead  <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, <span class="at">sei =</span> sei, <span class="at">data =</span> lead, <span class="at">slab =</span> study, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">test =</span> <span class="st">"knha"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>pr_lead <span class="ot">&lt;-</span> <span class="fu">predict</span>(m_lead)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>ci_lead <span class="ot">&lt;-</span> <span class="fu">confint</span>(m_lead)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>post_lead <span class="ot">&lt;-</span> <span class="fu">bayes_nn</span>(lead<span class="sc">$</span>yi, lead<span class="sc">$</span>sei, <span class="at">mu_mean =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">mu_sd =</span> <span class="dv">2</span>,    <span class="co"># the paper's priors</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tau_prior =</span> \(t) <span class="dv">2</span> <span class="sc">*</span> <span class="fu">dnorm</span>(t, <span class="dv">0</span>, <span class="dv">2</span>),          <span class="co"># half-normal(0, 2) on tau</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">mu_range =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">6</span>), <span class="at">tau_max =</span> <span class="dv">10</span>, <span class="at">grid =</span> <span class="dv">500</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fmt <span class="ot">&lt;-</span> \(m, l, u) <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, m, l, u)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Quantity =</span> <span class="fu">c</span>(<span class="st">"Pooled effect μ"</span>, <span class="st">"τ²"</span>, <span class="st">"95% prediction interval, new study"</span>),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Frequentist =</span> <span class="fu">c</span>(<span class="fu">fmt</span>(m_lead<span class="sc">$</span>b[<span class="dv">1</span>], m_lead<span class="sc">$</span>ci.lb, m_lead<span class="sc">$</span>ci.ub),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">fmt</span>(m_lead<span class="sc">$</span>tau2, ci_lead<span class="sc">$</span>random[<span class="st">"tau^2"</span>, <span class="st">"ci.lb"</span>], ci_lead<span class="sc">$</span>random[<span class="st">"tau^2"</span>, <span class="st">"ci.ub"</span>]),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">sprintf</span>(<span class="st">"%.2f to %.2f"</span>, pr_lead<span class="sc">$</span>pi.lb, pr_lead<span class="sc">$</span>pi.ub)),</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Bayesian =</span> <span class="fu">c</span>(<span class="fu">fmt</span>(<span class="fu">median</span>(post_lead<span class="sc">$</span>mu), <span class="fu">quantile</span>(post_lead<span class="sc">$</span>mu, <span class="fl">0.025</span>), <span class="fu">quantile</span>(post_lead<span class="sc">$</span>mu, <span class="fl">0.975</span>)),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>               <span class="fu">fmt</span>(<span class="fu">median</span>(post_lead<span class="sc">$</span>tau<span class="sc">^</span><span class="dv">2</span>), <span class="fu">quantile</span>(post_lead<span class="sc">$</span>tau<span class="sc">^</span><span class="dv">2</span>, <span class="fl">0.025</span>), <span class="fu">quantile</span>(post_lead<span class="sc">$</span>tau<span class="sc">^</span><span class="dv">2</span>, <span class="fl">0.975</span>)),</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sprintf</span>(<span class="st">"%.2f to %.2f"</span>, <span class="fu">quantile</span>(post_lead<span class="sc">$</span>new, <span class="fl">0.025</span>), <span class="fu">quantile</span>(post_lead<span class="sc">$</span>new, <span class="fl">0.975</span>)))) <span class="sc">|&gt;</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-lead-compare" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lead-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.3: Blood lead and IQ: frequentist (REML, Hartung-Knapp) and Bayesian (posterior median, 95% credible interval) results.
+</figcaption>
+<div aria-describedby="tbl-lead-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: center;">Frequentist</th>
+<th style="text-align: center;">Bayesian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Pooled effect μ</td>
+<td style="text-align: center;">-2.45 (-3.82 to -1.08)</td>
+<td style="text-align: center;">-2.26 (-3.57 to -1.07)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">τ²</td>
+<td style="text-align: center;">3.32 (0.99 to 11.66)</td>
+<td style="text-align: center;">3.26 (1.04 to 9.80)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">95% prediction interval, new study</td>
+<td style="text-align: center;">-6.68 to 1.79</td>
+<td style="text-align: center;">-6.42 to 1.81</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The numbers agree closely, and the grid reproduces the published results (frequentist −2.45, 95% CI −3.82 to −1.08; Bayesian −2.28, 95% CrI −3.54 to −1.04). That is expected: the likelihood is the same, the priors are weak, and 12 studies with I² of about 85% identify τ reasonably well. One difference in the τ² row deserves attention. The frequentist confidence interval for τ² is reported but not used: the weights, the interval for μ and the prediction interval are all computed as if τ² were known to equal <span class="math inline">\(\hat\tau^2\)</span>. In the Bayesian analysis every draw of μ comes with its own τ, so the uncertainty about heterogeneity flows into every interval.</p>
+</section>
+<section id="sec-bias-bayes-meaning" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="sec-bias-bayes-meaning"><span class="header-section-number">12.3.2</span> Same numbers, different meaning</h3>
+<p>The frequentist 95% confidence interval is a statement about a procedure: if the whole study-and-analysis process were repeated many times, 95% of the intervals would cover the fixed, unknown μ. This particular interval either covers μ or does not, and all values inside it are treated alike. The Bayesian 95% credible interval is a statement about μ: given the model, the priors and the data, there is a 95% probability that μ lies within it. The posterior also ranks values (those near the median are much more plausible than those at the edges), and any probability a decision-maker needs can be read from it directly.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Question =</span> <span class="fu">c</span>(<span class="st">"Is lead harmful at all?  P(μ &lt; 0)"</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Loss of more than 1 IQ point per log unit?  P(μ &lt; −1)"</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Loss of more than 2 IQ points?  P(μ &lt; −2)"</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Loss of more than 3 IQ points?  P(μ &lt; −3)"</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Would a new study's true effect be harmful?  P(θ_new &lt; 0)"</span>,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Is heterogeneity substantial?  P(τ &gt; 1)"</span>),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Posterior probability</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">c</span>(<span class="fu">mean</span>(post_lead<span class="sc">$</span>mu <span class="sc">&lt;</span> <span class="dv">0</span>), <span class="fu">mean</span>(post_lead<span class="sc">$</span>mu <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">1</span>),</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                                              <span class="fu">mean</span>(post_lead<span class="sc">$</span>mu <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">2</span>), <span class="fu">mean</span>(post_lead<span class="sc">$</span>mu <span class="sc">&lt;</span> <span class="sc">-</span><span class="dv">3</span>),</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                                              <span class="fu">mean</span>(post_lead<span class="sc">$</span>new <span class="sc">&lt;</span> <span class="dv">0</span>), <span class="fu">mean</span>(post_lead<span class="sc">$</span>tau <span class="sc">&gt;</span> <span class="dv">1</span>)))) <span class="sc">|&gt;</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-lead-probs" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lead-probs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.4: Posterior probabilities for questions a regulator might ask.
+</figcaption>
+<div aria-describedby="tbl-lead-probs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 71%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Question</th>
+<th style="text-align: center;">Posterior probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Is lead harmful at all? P(μ &lt; 0)</td>
+<td style="text-align: center;">1.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Loss of more than 1 IQ point per log unit? P(μ &lt; −1)</td>
+<td style="text-align: center;">0.98</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Loss of more than 2 IQ points? P(μ &lt; −2)</td>
+<td style="text-align: center;">0.67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Loss of more than 3 IQ points? P(μ &lt; −3)</td>
+<td style="text-align: center;">0.12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Would a new study’s true effect be harmful? P(θ_new &lt; 0)</td>
+<td style="text-align: center;">0.88</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Is heterogeneity substantial? P(τ &gt; 1)</td>
+<td style="text-align: center;">0.98</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>A regulator does not ask whether <em>P</em> &lt; 0.05 but how likely an effect larger than some amount is, or what loss to plan for in a new population. Note the fifth row: although the average effect is clearly harmful, there is a 12% chance that a new study’s true effect is zero or beneficial, because the heterogeneity is large.</p>
+</section>
+<section id="sec-bias-bayes-smallk" class="level3" data-number="12.3.3">
+<h3 data-number="12.3.3" class="anchored" data-anchor-id="sec-bias-bayes-smallk"><span class="header-section-number">12.3.3</span> With few studies, the frameworks diverge</h3>
+<p>The lead example agrees because τ is well identified. With few studies it is not, and REML often estimates τ² = 0 even when the true heterogeneity is large (as in the heparin example of <a href="09-meta-analysis-models.html#sec-models-heparin" class="quarto-xref"><span>Section 9.5</span></a>). <a href="#fig-smallk" class="quarto-xref">Figure&nbsp;<span>12.4</span></a> simulates meta-analyses of 4, 6 and 12 studies from a population like the lead studies (μ = −2.4, τ = 1.8), and asks how often each 95% prediction interval contains the true effect in a new study.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sei_pool <span class="ot">&lt;-</span> lead<span class="sc">$</span>sei[lead<span class="sc">$</span>sei <span class="sc">&gt;</span> <span class="fl">0.1</span>]                  <span class="co"># SEs of the real studies, minus the outlier</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>one_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(k, <span class="at">mu =</span> <span class="sc">-</span><span class="fl">2.4</span>, <span class="at">tau =</span> <span class="fl">1.8</span>) {</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  sei <span class="ot">&lt;-</span> <span class="fu">sample</span>(sei_pool, k, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  yi  <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(k, mu <span class="sc">+</span> <span class="fu">rnorm</span>(k, <span class="dv">0</span>, tau), sei)         <span class="co"># observed = true + sampling error</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  new <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, mu, tau)                            <span class="co"># true effect in a new study</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  m   <span class="ot">&lt;-</span> <span class="fu">tryCatch</span>(<span class="fu">rma</span>(yi, <span class="at">sei =</span> sei, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">test =</span> <span class="st">"knha"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">control =</span> <span class="fu">list</span>(<span class="at">stepadj =</span> <span class="fl">0.5</span>, <span class="at">maxiter =</span> <span class="dv">500</span>)), <span class="at">error =</span> \(e) <span class="cn">NULL</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(m)) <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  pz <span class="ot">&lt;-</span> <span class="fu">predict</span>(<span class="fu">update</span>(m, <span class="at">test =</span> <span class="st">"z"</span>)); pk <span class="ot">&lt;-</span> <span class="fu">predict</span>(m)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  pb <span class="ot">&lt;-</span> <span class="fu">quantile</span>(<span class="fu">bayes_nn</span>(yi, sei, <span class="at">mu_mean =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">mu_sd =</span> <span class="dv">2</span>, <span class="at">tau_prior =</span> \(t) <span class="dv">2</span> <span class="sc">*</span> <span class="fu">dnorm</span>(t, <span class="dv">0</span>, <span class="dv">2</span>),</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">mu_range =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">12</span>, <span class="dv">8</span>), <span class="at">tau_max =</span> <span class="dv">8</span>, <span class="at">grid =</span> <span class="dv">150</span>, <span class="at">n_draws =</span> <span class="dv">4000</span>)<span class="sc">$</span>new,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">k =</span> k, <span class="at">tau_zero =</span> m<span class="sc">$</span>tau2 <span class="sc">&lt;</span> <span class="fl">1e-4</span>,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">Frequentist (Wald)</span><span class="st">`</span> <span class="ot">=</span> new <span class="sc">&gt;</span> pz<span class="sc">$</span>pi.lb <span class="sc">&amp;</span> new <span class="sc">&lt;</span> pz<span class="sc">$</span>pi.ub,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">Frequentist (Hartung-Knapp)</span><span class="st">`</span> <span class="ot">=</span> new <span class="sc">&gt;</span> pk<span class="sc">$</span>pi.lb <span class="sc">&amp;</span> new <span class="sc">&lt;</span> pk<span class="sc">$</span>pi.ub,</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Bayesian =</span> new <span class="sc">&gt;</span> pb[<span class="dv">1</span>] <span class="sc">&amp;</span> new <span class="sc">&lt;</span> pb[<span class="dv">2</span>])</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">629</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>smallk <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">12</span>), <span class="at">each =</span> <span class="dv">600</span>), one_sim) <span class="sc">|&gt;</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">.by =</span> k, <span class="at">tau0 =</span> <span class="fu">mean</span>(tau_zero), <span class="fu">across</span>(<span class="fu">c</span>(<span class="fu">starts_with</span>(<span class="st">"Freq"</span>), Bayesian), mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>smallk <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span><span class="fu">c</span>(k, tau0), <span class="at">names_to =</span> <span class="st">"Method"</span>, <span class="at">values_to =</span> <span class="st">"coverage"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Method =</span> <span class="fu">factor</span>(Method, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Frequentist (Wald)"</span>, <span class="st">"Frequentist (Hartung-Knapp)"</span>, <span class="st">"Bayesian"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">factor</span>(k), coverage, <span class="at">fill =</span> Method)) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.75</span>), <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.95</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D55E00"</span>, <span class="st">"#E69F00"</span>, <span class="st">"#0072B2"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of studies"</span>, <span class="at">y =</span> <span class="st">"Coverage of 95% prediction interval"</span>) <span class="sc">+</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-smallk" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-smallk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="12-bias-bridge-bayes_files/figure-html/fig-smallk-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-smallk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.4: Coverage of 95% prediction intervals for the true effect in a new study, by number of studies (600 simulated meta-analyses at each size; true μ = −2.4, τ = 1.8).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>With four studies, REML set τ² to zero in 23% of the simulated meta-analyses, although the true τ is large. The Wald prediction interval then covered the next study’s true effect only 79% of the time. The Hartung-Knapp interval repaired much of this (86%), and the Bayesian interval, which averages over the uncertainty in τ, came closest to 95% (94%). As the number of studies grows, the three converge. The Bayesian result is helped here by a prior compatible with the true τ; a badly chosen prior would hurt.</p>
+</section>
+<section id="sec-bias-bayes-prior" class="level3" data-number="12.3.4">
+<h3 data-number="12.3.4" class="anchored" data-anchor-id="sec-bias-bayes-prior"><span class="header-section-number">12.3.4</span> Sensitivity to the prior on τ</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>tau_sds <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Strong shrinkage, half-normal(0, 0.67)"</span> <span class="ot">=</span> <span class="fl">0.67</span>, <span class="st">"Half-normal(0, 1)"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Default, half-normal(0, 2)"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">"Weak shrinkage, half-normal(0, 6)"</span> <span class="ot">=</span> <span class="dv">6</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dfr</span>(tau_sds, \(sd, nm) {</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">bayes_nn</span>(lead<span class="sc">$</span>yi, lead<span class="sc">$</span>sei, <span class="at">mu_mean =</span> <span class="dv">0</span>, <span class="at">mu_sd =</span> <span class="dv">100</span>, <span class="at">tau_prior =</span> \(t) <span class="dv">2</span> <span class="sc">*</span> <span class="fu">dnorm</span>(t, <span class="dv">0</span>, sd),</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu_range =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">6</span>), <span class="at">tau_max =</span> <span class="dv">10</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="st">`</span><span class="at">Prior on τ</span><span class="st">`</span> <span class="ot">=</span> nm,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">μ, median (95% CrI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt</span>(<span class="fu">median</span>(p<span class="sc">$</span>mu), <span class="fu">quantile</span>(p<span class="sc">$</span>mu, <span class="fl">0.025</span>), <span class="fu">quantile</span>(p<span class="sc">$</span>mu, <span class="fl">0.975</span>)),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">τ, median</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">median</span>(p<span class="sc">$</span>tau)),</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">95% prediction, new study</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.1f to %.1f"</span>, <span class="fu">quantile</span>(p<span class="sc">$</span>new, <span class="fl">0.025</span>), <span class="fu">quantile</span>(p<span class="sc">$</span>new, <span class="fl">0.975</span>)))</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-lead-prior" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lead-prior-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.5: Blood lead and IQ: sensitivity of the posterior to the prior on τ (the prior on μ is essentially flat, N(0, 100²)).
+</figcaption>
+<div aria-describedby="tbl-lead-prior-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 23%">
+<col style="width: 10%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prior on τ</th>
+<th style="text-align: center;">μ, median (95% CrI)</th>
+<th style="text-align: center;">τ, median</th>
+<th style="text-align: center;">95% prediction, new study</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Strong shrinkage, half-normal(0, 0.67)</td>
+<td style="text-align: center;">-2.23 (-3.37 to -1.22)</td>
+<td style="text-align: center;">1.35</td>
+<td style="text-align: center;">-5.4 to 0.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Half-normal(0, 1)</td>
+<td style="text-align: center;">-2.31 (-3.60 to -1.19)</td>
+<td style="text-align: center;">1.57</td>
+<td style="text-align: center;">-6.0 to 1.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Default, half-normal(0, 2)</td>
+<td style="text-align: center;">-2.41 (-3.89 to -1.15)</td>
+<td style="text-align: center;">1.84</td>
+<td style="text-align: center;">-6.8 to 1.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weak shrinkage, half-normal(0, 6)</td>
+<td style="text-align: center;">-2.45 (-4.04 to -1.10)</td>
+<td style="text-align: center;">1.98</td>
+<td style="text-align: center;">-7.2 to 2.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>With 12 studies the data dominate; only a prior that strongly shrinks τ changes μ noticeably, by pulling the imprecise studies, which report the largest losses, towards the mean. With three to five studies the prior on τ matters far more, which is exactly when it should be chosen carefully, for example from the empirical distributions of <span class="citation" data-cites="turner2015priors">(<a href="references.html#ref-turner2015priors" role="doc-biblioref">12</a>)</span>.</p>
+</section>
+<section id="sec-bias-bayes-why" class="level3" data-number="12.3.5">
+<h3 data-number="12.3.5" class="anchored" data-anchor-id="sec-bias-bayes-why"><span class="header-section-number">12.3.5</span> Why Bayes is worth the bother</h3>
+<ul>
+<li><strong>Interpretation.</strong> A credible interval is a probability statement about the effect; a confidence interval is a statement about a procedure.</li>
+<li><strong>Decisions.</strong> The probability that an effect exceeds a threshold, expected losses and burden-of-disease simulations follow directly from the posterior.</li>
+<li><strong>Uncertainty in τ is propagated</strong>, not plugged in. This matters most with few studies, where frequentist <span class="math inline">\(\hat\tau\)</span> is often zero and prediction intervals are overconfident.</li>
+<li><strong>Assumptions are explicit.</strong> Priors are stated, and their influence can be tested.</li>
+</ul>
+<p>When the frameworks agree numerically, as here, that is expected rather than evidence that they are equivalent. The Bayesian result answers the question decision-makers actually ask.</p>
+</section>
+</section>
+<section id="key-points" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-points">Key points</h2>
+<ol type="1">
+<li>A meta-analysis can pass every standard check and still be biased. Look for the mechanism of bias specific to the trials, and for its signature in the data.</li>
+<li>Unblinded trials with outcomes that depend on decisions, such as unplanned hospitalisation, are vulnerable to performance bias; crossovers that begin with an outcome event are a warning sign.</li>
+<li>Landmark analyses on reconstructed individual patient data can test whether an effect survives removal of the period most prone to bias.</li>
+<li>A normal prior and a normal likelihood give a normal posterior whose mean is a precision-weighted average; the Bayesian random-effects model adds priors on μ and τ.</li>
+<li>With two parameters, the posterior can be computed exactly on a grid; <code>brms</code> fits the same model, and more complex ones, by MCMC.</li>
+<li>Frequentist and Bayesian results agree when τ is well identified and priors are weak; they diverge with few studies, where the Bayesian prediction interval is better calibrated if the prior is reasonable.</li>
+<li>Report posterior probabilities of clinically meaningful effects, and check sensitivity to the prior on τ.</li>
+</ol>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Re-run the Bayesian analysis of the published AVR hazard ratios with a sceptical prior on μ, N(0, 0.35²). How much does P(HR &lt; 0.9) change?</li>
+<li>Fit a meta-regression of the published log hazard ratios on the year-1 crossover proportion. With four trials, what can and cannot be concluded?</li>
+<li>Using the reconstructed data, estimate a time-varying hazard ratio for EARLY TAVR with <code>coxph(Surv(time, event) ~ trt + tt(trt), tt = function(x, t, ...) x * log(t))</code>. Does it support the landmark analysis?</li>
+<li>In the lead example, omit Desrochers-Couture 2018. How do the frequentist and Bayesian estimates of μ and τ change?</li>
+<li>Extend <code>smallk-sim</code> to a true τ of 0.5. Which method’s prediction intervals now have the best coverage?</li>
+</ol>
+</section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><span class="citation" data-cites="brophy2026as">(<a href="references.html#ref-brophy2026as" role="doc-biblioref">5</a>)</span> for the aortic stenosis re-analysis; code and data are at github.com/brophyj/asx_as.</li>
+<li><span class="citation" data-cites="guyot2012">(<a href="references.html#ref-guyot2012" role="doc-biblioref">8</a>)</span> on reconstructing individual patient data from Kaplan-Meier curves.</li>
+<li><span class="citation" data-cites="turner2009bias">(<a href="references.html#ref-turner2009bias" role="doc-biblioref">10</a>)</span> on bias modelling in evidence synthesis.</li>
+<li><span class="citation" data-cites="sell2026lead">(<a href="references.html#ref-sell2026lead" role="doc-biblioref">11</a>)</span> for the frequentist and Bayesian comparison of lead and IQ.</li>
+<li><span class="citation" data-cites="burkner2017">(<a href="references.html#ref-burkner2017" role="doc-biblioref">9</a>)</span> for <code>brms</code>.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-kang2020recovery" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Kang DH, Park SJ, Lee SA, et al. <a href="https://doi.org/10.1056/NEJMoa1912846">Early surgery or conservative care for asymptomatic aortic stenosis</a>. New England Journal of Medicine. 2020;382(2):111–9. </div>
+</div>
+<div id="ref-banovic2022avatar" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Banovic M, Putnik S, Penicka M, et al. <a href="https://doi.org/10.1161/CIRCULATIONAHA.121.057639">Aortic valve replacement versus conservative treatment in asymptomatic severe aortic stenosis: The <span>AVATAR</span> trial</a>. Circulation. 2022;145(9):648–58. </div>
+</div>
+<div id="ref-loganath2025evolved" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Loganath K, Craig NJ, Everett RJ, et al. Early intervention in patients with asymptomatic severe aortic stenosis and myocardial fibrosis: The <span>EVOLVED</span> randomized clinical trial. JAMA. 2025;333(3):213–21. </div>
+</div>
+<div id="ref-genereux2025earlytavr" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Généreux P, Schwartz A, Oldemeyer JB, et al. <a href="https://doi.org/10.1056/NEJMoa2405880">Transcatheter aortic-valve replacement for asymptomatic severe aortic stenosis</a>. New England Journal of Medicine. 2025;392(3):217–27. </div>
+</div>
+<div id="ref-brophy2026as" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Brophy JM. <a href="https://doi.org/10.1016/j.cjca.2025.12.003">Aortic valve replacement for severe asymptomatic aortic stenosis: A systematic review and <span>Bayesian</span> meta-analysis</a>. Canadian Journal of Cardiology. 2026;42:1469–77. </div>
+</div>
+<div id="ref-wood2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Wood L, Egger M, Gluud LL, Schulz KF, Jüni P, Altman DG, et al. <a href="https://doi.org/10.1136/bmj.39465.451748.AD">Empirical evidence of bias in treatment effect estimates in controlled trials with different interventions and outcomes: Meta-epidemiological study</a>. BMJ. 2008;336:601–5. </div>
+</div>
+<div id="ref-savovic2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Savović J, Jones HE, Altman DG, Harris RJ, Jüni P, et al. <a href="https://doi.org/10.7326/0003-4819-157-6-201209180-00537">Influence of reported study design characteristics on intervention effect estimates from randomized, controlled trials</a>. Ann Intern Med. 2012;157:429–38. </div>
+</div>
+<div id="ref-guyot2012" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Guyot P, Ades AE, Ouwens MJNM, Welton NJ. Enhanced secondary analysis of survival data: Reconstructing the data from published <span>Kaplan-Meier</span> survival curves. BMC Medical Research Methodology [Internet]. 2012;12:9. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3313891/">https://pmc.ncbi.nlm.nih.gov/articles/PMC3313891/</a></div>
+</div>
+<div id="ref-burkner2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Bürkner PC. <a href="https://doi.org/10.18637/jss.v080.i01">Brms: An <span>R</span> package for <span>Bayesian</span> multilevel models using <span>Stan</span></a>. Journal of Statistical Software. 2017;80(1):1–28. </div>
+</div>
+<div id="ref-turner2009bias" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Turner RM, Spiegelhalter DJ, Smith GCS, Thompson SG. <a href="https://doi.org/10.1111/j.1467-985X.2008.00547.x">Bias modelling in evidence synthesis</a>. Journal of the Royal Statistical Society: Series A. 2009;172(1):21–47. </div>
+</div>
+<div id="ref-sell2026lead" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Sell P et al. Quantifying uncertainty: A practical comparison of <span>Bayesian</span> and frequentist meta-analytic frameworks applied to lead exposure and children’s <span>IQ</span>. BMC Medical Research Methodology [Internet]. 2026;26:209. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13602614/">https://pmc.ncbi.nlm.nih.gov/articles/PMC13602614/</a></div>
+</div>
+<div id="ref-turner2015priors" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Turner RM, Jackson D, Wei Y, Thompson SG, Higgins JPT. <a href="https://doi.org/10.1002/sim.6381">Predictive distributions for between-study heterogeneity and simple methods for their application in <span>Bayesian</span> meta-analysis</a>. Statistics in Medicine. 2015;34(6):984–98. </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./11-p-values.html" class="pagination-link" aria-label="*P* Values and Surprise">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./13-bayesian-meta-analysis.html" class="pagination-link" aria-label="Bayesian Meta-Analysis">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

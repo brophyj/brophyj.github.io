@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>20&nbsp; Diagnostic Accuracy and Prediction Models – Knowledge Synthesis in Health Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./21-cochrane-single-trial.html" rel="next">
+<link href="./19-observational-studies.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ef126021e9ff1ef5a96e4bd190a6c277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-missing-data.html">Threats and extensions</a></li><li class="breadcrumb-item"><a href="./20-diagnostic-accuracy.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Knowledge Synthesis in Health Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-finding-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-question-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualising-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualising Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appraisal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-bias-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk of Bias and GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-certainty-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rating Certainty with GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-appraising-reviews.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reporting and Appraising Systematic Reviews</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Meta-analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-effect-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-meta-analysis-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Meta-Analysis Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-heterogeneity-robustness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Heterogeneity and Robustness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-bias-bridge-bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bayesian-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Threats and extensions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-publication-bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-ipd-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-network-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-nma-in-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-observational-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-diagnostic-accuracy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">From evidence to decisions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-cochrane-single-trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-hta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-correcting-literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-agentic-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Agentic Systematic Reviews and Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-dta-threshold" id="toc-sec-dta-threshold" class="nav-link active" data-scroll-target="#sec-dta-threshold"><span class="header-section-number">20.1</span> The threshold problem</a></li>
+  <li><a href="#sec-dta-measures" id="toc-sec-dta-measures" class="nav-link" data-scroll-target="#sec-dta-measures"><span class="header-section-number">20.2</span> From the 2×2 table to clinical decisions</a></li>
+  <li><a href="#sec-dta-quadas" id="toc-sec-dta-quadas" class="nav-link" data-scroll-target="#sec-dta-quadas"><span class="header-section-number">20.3</span> Risk of bias: QUADAS-2</a></li>
+  <li><a href="#sec-dta-bivariate" id="toc-sec-dta-bivariate" class="nav-link" data-scroll-target="#sec-dta-bivariate"><span class="header-section-number">20.4</span> The bivariate model</a>
+  <ul class="collapse">
+  <li><a href="#sec-dta-sroc" id="toc-sec-dta-sroc" class="nav-link" data-scroll-target="#sec-dta-sroc"><span class="header-section-number">20.4.1</span> The summary ROC curve</a></li>
+  <li><a href="#sec-dta-hsroc" id="toc-sec-dta-hsroc" class="nav-link" data-scroll-target="#sec-dta-hsroc"><span class="header-section-number">20.4.2</span> HSROC parameters</a></li>
+  <li><a href="#sec-dta-clinical" id="toc-sec-dta-clinical" class="nav-link" data-scroll-target="#sec-dta-clinical"><span class="header-section-number">20.4.3</span> What the summary means clinically</a></li>
+  </ul></li>
+  <li><a href="#sec-dta-hetero" id="toc-sec-dta-hetero" class="nav-link" data-scroll-target="#sec-dta-hetero"><span class="header-section-number">20.5</span> Heterogeneity in diagnostic accuracy</a></li>
+  <li><a href="#sec-dta-grade" id="toc-sec-dta-grade" class="nav-link" data-scroll-target="#sec-dta-grade"><span class="header-section-number">20.6</span> GRADE for diagnostic evidence</a></li>
+  <li><a href="#sec-dta-prediction" id="toc-sec-dta-prediction" class="nav-link" data-scroll-target="#sec-dta-prediction"><span class="header-section-number">20.7</span> Reviews of prediction models</a>
+  <ul class="collapse">
+  <li><a href="#sec-dta-cstat" id="toc-sec-dta-cstat" class="nav-link" data-scroll-target="#sec-dta-cstat"><span class="header-section-number">20.7.1</span> Pooling C-statistics</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-missing-data.html">Threats and extensions</a></li><li class="breadcrumb-item"><a href="./20-diagnostic-accuracy.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-dta" class="quarto-section-identifier"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>explain why sensitivity and specificity must be analysed together, and how the threshold of a test trades one for the other;</li>
+<li>move from a pooled sensitivity and specificity to likelihood ratios and post-test probabilities, and explain why predictive values should not be pooled;</li>
+<li>assess diagnostic accuracy studies with QUADAS-2, and recognise threshold, spectrum and verification effects as sources of heterogeneity;</li>
+<li>fit the bivariate random-effects model, draw the summary ROC curve with its confidence and prediction regions, convert to HSROC parameters, and add a covariate;</li>
+<li>explain how GRADE treats diagnostic evidence, and why accuracy alone does not justify a recommendation;</li>
+<li>appraise and pool external validations of a prediction model, using CHARMS and PROBAST, and pool C-statistics on the logit scale.</li>
+</ul>
+<p><strong>R packages:</strong> <code>dplyr</code>, <code>tidyr</code>, <code>purrr</code>, <code>ggplot2</code>, <code>metafor</code>, <code>mada</code>, <code>ellipse</code>, <code>knitr</code>; <code>brms</code> for code shown but not run here.</p>
+</div>
+</div>
+<p>A review of an intervention asks whether a treatment works, and answers with one effect measure. A review of a <strong>diagnostic test</strong> asks how well the test separates people who have the target condition from those who do not. That needs two numbers, sensitivity and specificity, which are not independent: every test that produces a measurement must be turned into “positive” or “negative” at some threshold, and moving the threshold trades one for the other. This chapter develops the methods for diagnostic test accuracy (DTA) reviews, using high-sensitivity cardiac troponin (hs-cTn) to rule out acute myocardial infarction (MI) as the running example, and then turns to reviews of <strong>prediction models</strong>, which raise related problems.</p>
+<section id="sec-dta-threshold" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="sec-dta-threshold"><span class="header-section-number">20.1</span> The threshold problem</h2>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>trop_d  <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">1000</span>, <span class="fl">3.0</span>, <span class="fl">0.6</span>)          <span class="co"># MI</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>trop_nd <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">1000</span>, <span class="fl">1.8</span>, <span class="fl">0.5</span>)          <span class="co"># no MI</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ops <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">t =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">14</span>, <span class="dv">40</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sens =</span> <span class="fu">map_dbl</span>(t, \(x) <span class="fu">mean</span>(trop_d <span class="sc">&gt;=</span> x)), <span class="at">fpr =</span> <span class="fu">map_dbl</span>(t, \(x) <span class="fu">mean</span>(trop_nd <span class="sc">&gt;=</span> x)),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">lab =</span> <span class="fu">sprintf</span>(<span class="st">"%g ng/L</span><span class="sc">\n</span><span class="st">sens %.2f, spec %.2f"</span>, t, sens, <span class="dv">1</span> <span class="sc">-</span> fpr))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>roc <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">t =</span> <span class="fu">sort</span>(<span class="fu">unique</span>(<span class="fu">c</span>(<span class="dv">0</span>, trop_d, trop_nd, <span class="cn">Inf</span>)))) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sens =</span> <span class="fu">map_dbl</span>(t, \(x) <span class="fu">mean</span>(trop_d <span class="sc">&gt;=</span> x)), <span class="at">fpr =</span> <span class="fu">map_dbl</span>(t, \(x) <span class="fu">mean</span>(trop_nd <span class="sc">&gt;=</span> x)))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">trop =</span> <span class="fu">c</span>(trop_d, trop_nd), <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"MI"</span>, <span class="st">"No MI"</span>), <span class="at">each =</span> <span class="dv">1000</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(trop, <span class="at">fill =</span> group)) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">60</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">position =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> ops<span class="sc">$</span>t, <span class="at">linetype =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">120</span>)) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">MI =</span> <span class="st">"#B22222"</span>, <span class="st">`</span><span class="at">No MI</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#041E42"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Troponin (ng/L)"</span>, <span class="at">y =</span> <span class="st">"Patients"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(roc, <span class="fu">aes</span>(fpr, sens)) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">colour =</span> <span class="st">"#041E42"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> ops, <span class="at">colour =</span> <span class="fu">c</span>(<span class="st">"#2E7D32"</span>, <span class="st">"#E69F00"</span>, <span class="st">"#B22222"</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> ops, <span class="fu">aes</span>(<span class="at">label =</span> lab), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">lineheight =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"1 − specificity (false-positive rate)"</span>, <span class="at">y =</span> <span class="st">"Sensitivity"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(p1, p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-threshold" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-threshold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="20-diagnostic-accuracy_files/figure-html/fig-threshold-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-threshold-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;20.1: Simulated troponin concentrations in 1000 patients with MI and 1000 without (left), and the ROC curve traced by moving the threshold (right). Each marked point is one threshold.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A low threshold detects almost every MI but labels many patients without MI as positive; a high threshold does the reverse. Studies that use different thresholds report different pairs of sensitivity and specificity for the same test. A review that pools sensitivities and specificities separately averages operating points that no study used, and finds “heterogeneity” that is largely the threshold.</p>
+</section>
+<section id="sec-dta-measures" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="sec-dta-measures"><span class="header-section-number">20.2</span> From the 2×2 table to clinical decisions</h2>
+<p>Each study contributes a 2×2 table of test result against the reference standard: true positives (TP), false negatives (FN), false positives (FP) and true negatives (TN).</p>
+<div id="tbl-dta-measures" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dta-measures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;20.1: Measures of diagnostic accuracy.
+</figcaption>
+<div aria-describedby="tbl-dta-measures-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Formula</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sensitivity</td>
+<td>TP / (TP + FN)</td>
+<td>Probability of a positive test in people with the condition; high sensitivity rules out</td>
+</tr>
+<tr class="even">
+<td>Specificity</td>
+<td>TN / (TN + FP)</td>
+<td>Probability of a negative test in people without it; high specificity rules in</td>
+</tr>
+<tr class="odd">
+<td>Positive likelihood ratio, LR+</td>
+<td>sens / (1 − spec)</td>
+<td>Factor by which a positive test multiplies the odds of the condition</td>
+</tr>
+<tr class="even">
+<td>Negative likelihood ratio, LR−</td>
+<td>(1 − sens) / spec</td>
+<td>Factor by which a negative test multiplies the odds</td>
+</tr>
+<tr class="odd">
+<td>Diagnostic odds ratio, DOR</td>
+<td>(TP × TN) / (FP × FN) = LR+ / LR−</td>
+<td>A single measure of discrimination</td>
+</tr>
+<tr class="even">
+<td>Positive and negative predictive values</td>
+<td>TP / (TP + FP), TN / (TN + FN)</td>
+<td>Depend on prevalence; not to be pooled across populations</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Likelihood ratios link a test result to a patient. On the odds scale, Bayes’ theorem is a multiplication: post-test odds = pre-test odds × LR.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>post <span class="ot">&lt;-</span> \(p, lr) { o <span class="ot">&lt;-</span> p <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">*</span> lr; o <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> o) }</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>lr_pos <span class="ot">&lt;-</span> <span class="fl">0.98</span> <span class="sc">/</span> <span class="fl">0.25</span>; lr_neg <span class="ot">&lt;-</span> <span class="fl">0.02</span> <span class="sc">/</span> <span class="fl">0.75</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="st">`</span><span class="at">Pre-test probability</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.15</span>, <span class="fl">0.40</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">After a positive test</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">post</span>(<span class="st">`</span><span class="at">Pre-test probability</span><span class="st">`</span>, lr_pos),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">After a negative test</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">post</span>(<span class="st">`</span><span class="at">Pre-test probability</span><span class="st">`</span>, lr_neg),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="fu">across</span>(<span class="fu">everything</span>(), \(x) <span class="fu">sprintf</span>(<span class="st">"%.1f%%"</span>, <span class="dv">100</span> <span class="sc">*</span> x))) <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"ccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-posttest" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-posttest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;20.2: Post-test probabilities for a test with sensitivity 0.98 and specificity 0.75, at three pre-test probabilities.
+</figcaption>
+<div aria-describedby="tbl-posttest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Pre-test probability</th>
+<th style="text-align: center;">After a positive test</th>
+<th style="text-align: center;">After a negative test</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">5.0%</td>
+<td style="text-align: center;">17.1%</td>
+<td style="text-align: center;">0.1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">15.0%</td>
+<td style="text-align: center;">40.9%</td>
+<td style="text-align: center;">0.5%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">40.0%</td>
+<td style="text-align: center;">72.3%</td>
+<td style="text-align: center;">1.7%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>With LR− = 0.027, a negative test lowers a 15% pre-test probability to 0.5%, low enough for a rule-out strategy; with LR+ = 3.9, a positive test raises it only to 41%. A test can be excellent for ruling out and poor for ruling in. Predictive values change with prevalence, so a review should pool sensitivity and specificity (or likelihood ratios) and apply them to the prevalence of the target setting.</p>
+</section>
+<section id="sec-dta-quadas" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="sec-dta-quadas"><span class="header-section-number">20.3</span> Risk of bias: QUADAS-2</h2>
+<p>QUADAS-2 assesses diagnostic accuracy studies in four domains, each with signalling questions and a judgement of low, high or unclear risk of bias; the first three also have a judgement of applicability to the review question <span class="citation" data-cites="whiting2011quadas2">(<a href="references.html#ref-whiting2011quadas2" role="doc-biblioref">1</a>)</span>. The domains are not added into a score.</p>
+<div id="tbl-quadas2" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-quadas2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;20.3: QUADAS-2 domains.
+</figcaption>
+<div aria-describedby="tbl-quadas2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Risk-of-bias questions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Patient selection</td>
+<td>Consecutive or random sample? Case-control design avoided? Inappropriate exclusions avoided?</td>
+</tr>
+<tr class="even">
+<td>2. Index test</td>
+<td>Interpreted without knowledge of the reference standard? Threshold pre-specified?</td>
+</tr>
+<tr class="odd">
+<td>3. Reference standard</td>
+<td>Likely to classify the target condition correctly? Interpreted without knowledge of the index test?</td>
+</tr>
+<tr class="even">
+<td>4. Flow and timing</td>
+<td>Appropriate interval between tests? Same reference standard for everyone? All patients analysed?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Two designs are especially misleading. A <strong>case-control</strong> (“two-gate”) design compares clearly diseased patients with healthy volunteers and exaggerates accuracy (<a href="#sec-dta-hetero" class="quarto-xref"><span>Section 20.5</span></a>). <strong>Partial or differential verification</strong>, in which not everyone receives the same reference standard, biases sensitivity and specificity in predictable directions:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tp <span class="ot">&lt;-</span> <span class="dv">135</span>; fn <span class="ot">&lt;-</span> <span class="dv">15</span>; fp <span class="ot">&lt;-</span> <span class="dv">170</span>; tn <span class="ot">&lt;-</span> <span class="dv">680</span>; v <span class="ot">&lt;-</span> <span class="fl">0.25</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Verification =</span> <span class="fu">c</span>(<span class="st">"Full"</span>, <span class="st">"Partial: unverified patients excluded"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Differential: unverified negatives assumed MI-free"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">TP =</span> tp, <span class="at">FN =</span> <span class="fu">c</span>(fn, v <span class="sc">*</span> fn, v <span class="sc">*</span> fn), <span class="at">FP =</span> fp, <span class="at">TN =</span> <span class="fu">c</span>(tn, v <span class="sc">*</span> tn, tn <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> v) <span class="sc">*</span> fn)) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sensitivity =</span> TP <span class="sc">/</span> (TP <span class="sc">+</span> FN), <span class="at">Specificity =</span> TN <span class="sc">/</span> (TN <span class="sc">+</span> FP)) <span class="sc">|&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>, <span class="at">align =</span> <span class="st">"lcccccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-verification" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-verification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;20.4: One hypothetical study of 1000 patients (150 with MI; true sensitivity 0.90, specificity 0.80) under three verification schemes. Only 25% of test-negatives receive the full reference standard in the last two.
+</figcaption>
+<div aria-describedby="tbl-verification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Verification</th>
+<th style="text-align: center;">TP</th>
+<th style="text-align: center;">FN</th>
+<th style="text-align: center;">FP</th>
+<th style="text-align: center;">TN</th>
+<th style="text-align: center;">Sensitivity</th>
+<th style="text-align: center;">Specificity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Full</td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">15.00</td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">680.00</td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">0.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Partial: unverified patients excluded</td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">3.75</td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">170.00</td>
+<td style="text-align: center;">0.97</td>
+<td style="text-align: center;">0.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Differential: unverified negatives assumed MI-free</td>
+<td style="text-align: center;">135</td>
+<td style="text-align: center;">3.75</td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">691.25</td>
+<td style="text-align: center;">0.97</td>
+<td style="text-align: center;">0.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Both shortcuts inflate sensitivity; partial verification also deflates specificity. When verification depended only on the test result, the bias can be corrected <span class="citation" data-cites="begg1983verification">(<a href="references.html#ref-begg1983verification" role="doc-biblioref">2</a>)</span>.</p>
+</section>
+<section id="sec-dta-bivariate" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="sec-dta-bivariate"><span class="header-section-number">20.4</span> The bivariate model</h2>
+<p>Each study gives two correlated estimates. The <strong>bivariate random-effects model</strong> treats each study’s logit sensitivity and logit false-positive rate (FPR = 1 − specificity) as drawn from a bivariate normal distribution, with within-study binomial variation <span class="citation" data-cites="reitsma2005bivariate">(<a href="references.html#ref-reitsma2005bivariate" role="doc-biblioref">3</a>)</span>:</p>
+<p><span class="math display">\[\begin{pmatrix} \text{logit sens}_i \\ \text{logit FPR}_i \end{pmatrix} \sim N\left(\begin{pmatrix} \mu_{sens} \\ \mu_{FPR} \end{pmatrix}, \begin{pmatrix} \sigma_{sens}^2 &amp; \rho\,\sigma_{sens}\sigma_{FPR} \\ \rho\,\sigma_{sens}\sigma_{FPR} &amp; \sigma_{FPR}^2 \end{pmatrix}\right).\]</span></p>
+<p>Five parameters: two means (the summary operating point), two between-study SDs and a correlation. A positive correlation between logit sensitivity and logit FPR is the threshold effect: studies with a low threshold have high sensitivity <em>and</em> a high FPR.</p>
+<p>To see what the model recovers, we simulate 14 studies of hs-cTn, each with 400 to 2500 emergency department patients and an MI prevalence of 8% to 20%, using thresholds of 3, 5, 7 or 9 ng/L. At 5 ng/L the true sensitivity is 0.97 and the true FPR 0.21; each 1 ng/L increase in threshold lowers logit sensitivity by 0.30 and logit FPR by 0.18; and studies differ randomly beyond that.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">14</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>cut  <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>), k, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>n    <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">runif</span>(k, <span class="dv">400</span>, <span class="dv">2500</span>)); prev <span class="ot">&lt;-</span> <span class="fu">runif</span>(k, <span class="fl">0.08</span>, <span class="fl">0.20</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>u    <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(k, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.30</span>, <span class="fl">0.05</span>, <span class="fl">0.05</span>, <span class="fl">0.12</span>), <span class="dv">2</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>lsens <span class="ot">&lt;-</span> <span class="fu">qlogis</span>(<span class="fl">0.97</span>) <span class="sc">-</span> <span class="fl">0.30</span> <span class="sc">*</span> (cut <span class="sc">-</span> <span class="dv">5</span>) <span class="sc">+</span> u[, <span class="dv">1</span>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>lfpr  <span class="ot">&lt;-</span> <span class="fu">qlogis</span>(<span class="fl">0.21</span>) <span class="sc">-</span> <span class="fl">0.18</span> <span class="sc">*</span> (cut <span class="sc">-</span> <span class="dv">5</span>) <span class="sc">+</span> u[, <span class="dv">2</span>]</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>dis <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(k, n, prev)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>TP <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(k, dis, <span class="fu">plogis</span>(lsens)); FN <span class="ot">&lt;-</span> dis <span class="sc">-</span> TP</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>FP <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(k, n <span class="sc">-</span> dis, <span class="fu">plogis</span>(lfpr)); TN <span class="ot">&lt;-</span> n <span class="sc">-</span> dis <span class="sc">-</span> FP</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>dta <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">study =</span> <span class="fu">paste0</span>(<span class="st">"S"</span>, <span class="dv">1</span><span class="sc">:</span>k), cut, TP, FN, FP, TN)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">reitsma</span>(dta)                                    <span class="co"># bivariate model, REML</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>sm  <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit)<span class="sc">$</span>coefficients</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Parameter =</span> <span class="fu">c</span>(<span class="st">"Sensitivity"</span>, <span class="st">"Specificity"</span>, <span class="st">"SD logit sensitivity"</span>, <span class="st">"SD logit FPR"</span>, <span class="st">"Correlation ρ"</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">Estimate =</span> <span class="fu">c</span>(<span class="fu">sprintf</span>(<span class="st">"%.3f (%.3f to %.3f)"</span>, sm[<span class="dv">3</span>, <span class="dv">1</span>], sm[<span class="dv">3</span>, <span class="dv">5</span>], sm[<span class="dv">3</span>, <span class="dv">6</span>]),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">sprintf</span>(<span class="st">"%.3f (%.3f to %.3f)"</span>, <span class="dv">1</span> <span class="sc">-</span> sm[<span class="dv">4</span>, <span class="dv">1</span>], <span class="dv">1</span> <span class="sc">-</span> sm[<span class="dv">4</span>, <span class="dv">6</span>], <span class="dv">1</span> <span class="sc">-</span> sm[<span class="dv">4</span>, <span class="dv">5</span>]),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">sqrt</span>(fit<span class="sc">$</span>Psi[<span class="dv">1</span>, <span class="dv">1</span>])), <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">sqrt</span>(fit<span class="sc">$</span>Psi[<span class="dv">2</span>, <span class="dv">2</span>])),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">cov2cor</span>(fit<span class="sc">$</span>Psi)[<span class="dv">1</span>, <span class="dv">2</span>]))) <span class="sc">|&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: center;">Estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sensitivity</td>
+<td style="text-align: center;">0.949 (0.918 to 0.969)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Specificity</td>
+<td style="text-align: center;">0.822 (0.788 to 0.852)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SD logit sensitivity</td>
+<td style="text-align: center;">0.83</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SD logit FPR</td>
+<td style="text-align: center;">0.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Correlation ρ</td>
+<td style="text-align: center;">0.57</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The summary point averages studies that used thresholds from 3 to 9 ng/L, a threshold nobody uses. The positive correlation is the threshold effect; the between-study SDs include it.</p>
+<section id="sec-dta-sroc" class="level3" data-number="20.4.1">
+<h3 data-number="20.4.1" class="anchored" data-anchor-id="sec-dta-sroc"><span class="header-section-number">20.4.1</span> The summary ROC curve</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mu  <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit)[<span class="dv">1</span>, ]; V <span class="ot">&lt;-</span> <span class="fu">vcov</span>(fit); Psi <span class="ot">&lt;-</span> fit<span class="sc">$</span>Psi</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sw  <span class="ot">&lt;-</span> \(m) m[<span class="dv">2</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">2</span><span class="sc">:</span><span class="dv">1</span>]                                <span class="co"># order (FPR, sens)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>conf <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">plogis</span>(ellipse<span class="sc">::</span><span class="fu">ellipse</span>(<span class="fu">sw</span>(V), <span class="at">centre =</span> mu[<span class="dv">2</span><span class="sc">:</span><span class="dv">1</span>], <span class="at">level =</span> <span class="fl">0.95</span>)))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">plogis</span>(ellipse<span class="sc">::</span><span class="fu">ellipse</span>(<span class="fu">sw</span>(Psi <span class="sc">+</span> V), <span class="at">centre =</span> mu[<span class="dv">2</span><span class="sc">:</span><span class="dv">1</span>], <span class="at">level =</span> <span class="fl">0.95</span>)))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(conf) <span class="ot">&lt;-</span> <span class="fu">names</span>(pred) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"fpr"</span>, <span class="st">"sens"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>srocc <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">sroc</span>(fit, <span class="at">fpr =</span> <span class="fu">seq</span>(<span class="fl">0.01</span>, <span class="fl">0.6</span>, <span class="at">length.out =</span> <span class="dv">300</span>))); <span class="fu">names</span>(srocc) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"fpr"</span>, <span class="st">"sens"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> pred, <span class="fu">aes</span>(fpr, sens), <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">colour =</span> <span class="st">"#041E42"</span>, <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="at">data =</span> conf, <span class="fu">aes</span>(fpr, sens), <span class="at">fill =</span> <span class="st">"#041E42"</span>, <span class="at">alpha =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> srocc, <span class="fu">aes</span>(fpr, sens), <span class="at">colour =</span> <span class="st">"#B22222"</span>, <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> dta, <span class="fu">aes</span>(FP <span class="sc">/</span> (FP <span class="sc">+</span> TN), TP <span class="sc">/</span> (TP <span class="sc">+</span> FN), <span class="at">colour =</span> <span class="fu">factor</span>(cut)), <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="fu">plogis</span>(mu[<span class="dv">2</span>]), <span class="at">y =</span> <span class="fu">plogis</span>(mu[<span class="dv">1</span>]), <span class="at">shape =</span> <span class="dv">18</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">colour =</span> <span class="st">"#B22222"</span>) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#0072B2"</span>, <span class="st">"#009E73"</span>, <span class="st">"#E69F00"</span>, <span class="st">"#B22222"</span>), <span class="at">name =</span> <span class="st">"Threshold (ng/L)"</span>) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.6</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"1 − specificity"</span>, <span class="at">y =</span> <span class="st">"Sensitivity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-sroc" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sroc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="20-diagnostic-accuracy_files/figure-html/fig-sroc-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sroc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;20.2: The bivariate model for 14 simulated hs-cTn studies: study estimates (points, coloured by threshold), summary point (diamond), 95% confidence region (shaded), 95% prediction region (dashed) and summary ROC curve (red).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The <strong>summary ROC (SROC) curve</strong> shows the trade-off between sensitivity and FPR as the threshold changes; its area is 0.93. The <strong>confidence region</strong> shows how well the average operating point is known; the <strong>prediction region</strong>, which adds between-study variation, shows where a new study is likely to fall, and is much larger. Studies spread along the curve, ordered by their thresholds.</p>
+</section>
+<section id="sec-dta-hsroc" class="level3" data-number="20.4.2">
+<h3 data-number="20.4.2" class="anchored" data-anchor-id="sec-dta-hsroc"><span class="header-section-number">20.4.2</span> HSROC parameters</h3>
+<p>The <strong>hierarchical summary ROC (HSROC)</strong> model describes the same studies as points on one curve: each study has an accuracy (Λ, the log DOR in the middle of the curve), a threshold or positivity parameter (Θ), and the curve has a shape (β, which allows the DOR to change along the curve) <span class="citation" data-cites="rutter2001hsroc">(<a href="references.html#ref-rutter2001hsroc" role="doc-biblioref">4</a>)</span>. Without covariates, the bivariate and HSROC models are the same model in different parameterisations, and the HSROC parameters are functions of the bivariate ones <span class="citation" data-cites="harbord2007unification">(<a href="references.html#ref-harbord2007unification" role="doc-biblioref">5</a>)</span>:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sA <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(Psi[<span class="dv">1</span>, <span class="dv">1</span>]); sB <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(Psi[<span class="dv">2</span>, <span class="dv">2</span>]); sAB <span class="ot">&lt;-</span> <span class="sc">-</span>Psi[<span class="dv">1</span>, <span class="dv">2</span>]   <span class="co"># A = sensitivity, B = specificity</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>muA <span class="ot">&lt;-</span> mu[[<span class="dv">1</span>]]; muB <span class="ot">&lt;-</span> <span class="sc">-</span>mu[[<span class="dv">2</span>]]; r <span class="ot">&lt;-</span> sB <span class="sc">/</span> sA</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>hs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">beta =</span> <span class="fu">log</span>(r), <span class="at">Lambda =</span> <span class="fu">sqrt</span>(r) <span class="sc">*</span> muA <span class="sc">+</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">/</span> r) <span class="sc">*</span> muB,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">Theta =</span> (<span class="fu">sqrt</span>(r) <span class="sc">*</span> muA <span class="sc">-</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">/</span> r) <span class="sc">*</span> muB) <span class="sc">/</span> <span class="dv">2</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd_accuracy =</span> <span class="fu">sqrt</span>(<span class="dv">2</span> <span class="sc">*</span> (sA <span class="sc">*</span> sB <span class="sc">+</span> sAB)), <span class="at">sd_threshold =</span> <span class="fu">sqrt</span>((sA <span class="sc">*</span> sB <span class="sc">-</span> sAB) <span class="sc">/</span> <span class="dv">2</span>))</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(hs, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>        beta       Lambda        Theta  sd_accuracy sd_threshold 
+       -0.73         4.24        -0.08         0.54         0.51 </code></pre>
+</div>
+</div>
+<p>Λ = 4.24 corresponds to a DOR of about 69 in the middle of the curve. β = -0.73 is away from 0, so the DOR changes with the threshold, and the SD of accuracy is similar to the SD of threshold: not all of the heterogeneity is threshold variation.</p>
+</section>
+<section id="sec-dta-clinical" class="level3" data-number="20.4.3">
+<h3 data-number="20.4.3" class="anchored" data-anchor-id="sec-dta-clinical"><span class="header-section-number">20.4.3</span> What the summary means clinically</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>s_sum <span class="ot">&lt;-</span> <span class="fu">plogis</span>(mu[[<span class="dv">1</span>]]); f_sum <span class="ot">&lt;-</span> <span class="fu">plogis</span>(mu[[<span class="dv">2</span>]])</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lrn <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> s_sum) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> f_sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>At the summary point, LR− = 0.062, and a negative test lowers a 15% pre-test probability to 1.1%. Safe discharge after a rule-out test usually requires a miss rate below about 1%, so the average operating point is not good enough on its own. But the average is the wrong question: the rule-out decision needs accuracy at the low threshold actually used, which the next section estimates.</p>
+<p>In the real evidence, all studies used one rule. A collaborative meta-analysis of 11 cohorts and 9241 patients evaluated a single hs-cTnT below the limit of detection (5 ng/L) combined with a non-ischaemic ECG: 30.6% of patients were classified as low risk, 0.5% of them had an MI, and the pooled sensitivity was 98.7% (95% CI 96.6% to 99.5%) <span class="citation" data-cites="pickering2017troponin">(<a href="references.html#ref-pickering2017troponin" role="doc-biblioref">6</a>)</span>. With one threshold there is no threshold effect to model, which is why the simulation is used here to illustrate the bivariate model.</p>
+</section>
+</section>
+<section id="sec-dta-hetero" class="level2" data-number="20.5">
+<h2 data-number="20.5" class="anchored" data-anchor-id="sec-dta-hetero"><span class="header-section-number">20.5</span> Heterogeneity in diagnostic accuracy</h2>
+<p>Three sources of heterogeneity are specific to diagnostic studies.</p>
+<ul>
+<li><strong>Threshold variation</strong>, already seen. Report the SROC curve, and accuracy at clinically relevant thresholds.</li>
+<li><strong>Spectrum</strong>. Sensitivity is higher in patients with severe or established disease than in patients with early or mild disease; specificity is higher in healthy volunteers than in symptomatic patients without the disease. A case-control study that enrols both extremes overestimates both. The same assay at the same threshold has different accuracy in a tertiary centre and in an emergency department.</li>
+<li><strong>Verification</strong> (<a href="#sec-dta-quadas" class="quarto-xref"><span>Section 20.3</span></a>).</li>
+</ul>
+<p>Adding a covariate to the bivariate model gives a <strong>bivariate meta-regression</strong>. With the threshold as covariate:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fit_cut <span class="ot">&lt;-</span> <span class="fu">reitsma</span>(dta, <span class="at">formula =</span> <span class="fu">cbind</span>(tsens, tfpr) <span class="sc">~</span> cut)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit_cut)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="st">`</span><span class="at">Threshold (ng/L)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sensitivity =</span> <span class="fu">plogis</span>(b[<span class="dv">1</span>, <span class="dv">1</span>] <span class="sc">+</span> b[<span class="dv">2</span>, <span class="dv">1</span>] <span class="sc">*</span> <span class="st">`</span><span class="at">Threshold (ng/L)</span><span class="st">`</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">Specificity =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">plogis</span>(b[<span class="dv">1</span>, <span class="dv">2</span>] <span class="sc">+</span> b[<span class="dv">2</span>, <span class="dv">2</span>] <span class="sc">*</span> <span class="st">`</span><span class="at">Threshold (ng/L)</span><span class="st">`</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">align =</span> <span class="st">"ccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Threshold (ng/L)</th>
+<th style="text-align: center;">Sensitivity</th>
+<th style="text-align: center;">Specificity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.978</td>
+<td style="text-align: center;">0.764</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.962</td>
+<td style="text-align: center;">0.806</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0.934</td>
+<td style="text-align: center;">0.843</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0.889</td>
+<td style="text-align: center;">0.874</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The between-study SD of logit sensitivity falls from 0.83 to 0.54 once the threshold is in the model: much of the heterogeneity was the threshold. At 3 ng/L, sensitivity is about 0.978, which is what a rule-out decision needs. The usual cautions of meta-regression apply (<a href="10-heterogeneity-robustness.html#sec-hetero-metareg" class="quarto-xref"><span>Section 10.1</span></a>). Comparing two tests is best done with studies that applied both tests to the same patients; comparisons across separate sets of studies are confounded by everything else that differs <span class="citation" data-cites="takwoingi2013comparative">(<a href="references.html#ref-takwoingi2013comparative" role="doc-biblioref">7</a>)</span>.</p>
+</section>
+<section id="sec-dta-grade" class="level2" data-number="20.6">
+<h2 data-number="20.6" class="anchored" data-anchor-id="sec-dta-grade"><span class="header-section-number">20.6</span> GRADE for diagnostic evidence</h2>
+<p>GRADE rates the certainty of accuracy estimates with the usual domains (risk of bias judged with QUADAS-2, indirectness, inconsistency, imprecision and publication bias). Cross-sectional accuracy studies of consecutive patients with full verification start at high certainty for accuracy <span class="citation" data-cites="schunemann2020gradedta">(<a href="references.html#ref-schunemann2020gradedta" role="doc-biblioref">8</a>)</span>. Imprecision is judged against the decision: for rule-out, whether the lower limit of sensitivity still gives an acceptable miss rate.</p>
+<p>Accuracy is only the first link of a chain. A test improves outcomes only if its result changes management and the change helps patients. That needs evidence on <strong>test-and-treat strategies</strong>. In the High-STEACS stepped-wedge cluster trial, ten Scottish hospitals introduced a high-sensitivity troponin I assay in random order (48,282 patients). The assay reclassified 1771 patients as having myocardial injury or infarction, but among them MI or cardiovascular death at one year was not reduced, 15% before and 12% after implementation, adjusted OR 1.10 (95% CI 0.75 to 1.61) <span class="citation" data-cites="shah2018highsteacs">(<a href="references.html#ref-shah2018highsteacs" role="doc-biblioref">9</a>)</span>. More accurate diagnosis does not automatically mean better outcomes; its main value may lie elsewhere, for example in faster safe discharge, which needs its own evaluation.</p>
+</section>
+<section id="sec-dta-prediction" class="level2" data-number="20.7">
+<h2 data-number="20.7" class="anchored" data-anchor-id="sec-dta-prediction"><span class="header-section-number">20.7</span> Reviews of prediction models</h2>
+<p>A <strong>prediction model</strong> estimates an individual’s probability of a diagnosis or a future outcome from several predictors, for example the 10-year risk of a cardiovascular event from age, sex, smoking, blood pressure, cholesterol and diabetes. Reviews of prediction models face their own versions of the problems above.</p>
+<ul>
+<li><strong>CHARMS</strong> structures data extraction: data source, participants, outcome, predictors, sample size and events, missing data, model development, and performance measures <span class="citation" data-cites="moons2014charms">(<a href="references.html#ref-moons2014charms" role="doc-biblioref">10</a>)</span>.</li>
+<li><strong>PROBAST</strong> assesses risk of bias in four domains (participants, predictors, outcome, analysis); the analysis domain is the one most often at high risk, through too few events per predictor, no internal validation, or no assessment of calibration <span class="citation" data-cites="wolff2019probast">(<a href="references.html#ref-wolff2019probast" role="doc-biblioref">11</a>)</span>.</li>
+<li><strong>TRIPOD</strong> is a reporting guideline for primary studies, not a quality tool; reviews are reported with <strong>TRIPOD-SRMA</strong> <span class="citation" data-cites="snell2023tripodsrma">(<a href="references.html#ref-snell2023tripodsrma" role="doc-biblioref">12</a>)</span>.</li>
+</ul>
+<p>Performance has two parts. <strong>Discrimination</strong>, usually the C-statistic (the probability that a randomly chosen person with the outcome has a higher predicted risk than one without), measures ranking. <strong>Calibration</strong>, measured by the observed-to-expected (O:E) ratio and the calibration slope, measures whether predicted risks are right. A model can discriminate well and still predict risks that are systematically too high, which is what matters for decisions based on absolute risk <span class="citation" data-cites="vancalster2019calibration">(<a href="references.html#ref-vancalster2019calibration" role="doc-biblioref">13</a>)</span>.</p>
+<p>Apparent performance, measured in the data used to develop a model, is optimistic. Internal validation (bootstrapping or cross-validation) estimates the optimism; only <strong>external validation</strong> in new patients shows whether a model transports <span class="citation" data-cites="steyerberg2016validation">(<a href="references.html#ref-steyerberg2016validation" role="doc-biblioref">14</a>)</span>. A meta-analysis of performance should pool external validations of one model and never mix in apparent performance from development studies.</p>
+<section id="sec-dta-cstat" class="level3" data-number="20.7.1">
+<h3 data-number="20.7.1" class="anchored" data-anchor-id="sec-dta-cstat"><span class="header-section-number">20.7.1</span> Pooling C-statistics</h3>
+<p>Nine hypothetical external validations of one cardiovascular risk model report C-statistics in hospital clinics, community practices and primary care. The C-statistic is a bounded probability, so it is pooled on the logit scale, with its standard error converted by the delta method, and with random effects, because performance depends on case-mix and setting <span class="citation" data-cites="debray2019framework">(<a href="references.html#ref-debray2019framework" role="doc-biblioref">15</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>val <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(<span class="sc">~</span>study, <span class="sc">~</span>auc, <span class="sc">~</span>se, <span class="sc">~</span>setting,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cohort A"</span>, <span class="fl">0.77</span>, <span class="fl">0.02</span>, <span class="st">"Hospital"</span>, <span class="st">"Cohort B"</span>, <span class="fl">0.70</span>, <span class="fl">0.03</span>, <span class="st">"Community"</span>, <span class="st">"Cohort C"</span>, <span class="fl">0.80</span>, <span class="fl">0.02</span>, <span class="st">"Hospital"</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cohort D"</span>, <span class="fl">0.70</span>, <span class="fl">0.03</span>, <span class="st">"Primary care"</span>, <span class="st">"Cohort E"</span>, <span class="fl">0.67</span>, <span class="fl">0.03</span>, <span class="st">"Community"</span>, <span class="st">"Cohort F"</span>, <span class="fl">0.75</span>, <span class="fl">0.02</span>, <span class="st">"Hospital"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cohort G"</span>, <span class="fl">0.73</span>, <span class="fl">0.03</span>, <span class="st">"Community"</span>, <span class="st">"Cohort H"</span>, <span class="fl">0.68</span>, <span class="fl">0.02</span>, <span class="st">"Primary care"</span>, <span class="st">"Cohort I"</span>, <span class="fl">0.79</span>, <span class="fl">0.02</span>, <span class="st">"Hospital"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yi =</span> <span class="fu">qlogis</span>(auc), <span class="at">sei =</span> se <span class="sc">/</span> (auc <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> auc)))      <span class="co"># logit C and delta-method SE</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, <span class="at">sei =</span> sei, <span class="at">data =</span> val, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">test =</span> <span class="st">"knha"</span>, <span class="at">slab =</span> study)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>pr  <span class="ot">&lt;-</span> <span class="fu">predict</span>(res, <span class="at">transf =</span> plogis)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>set_col <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Hospital =</span> <span class="st">"#041E42"</span>, <span class="at">Community =</span> <span class="st">"#2E7D32"</span>, <span class="st">`</span><span class="at">Primary care</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#B22222"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>metafor<span class="sc">::</span><span class="fu">forest</span>(res, <span class="at">transf =</span> plogis, <span class="at">refline =</span> <span class="cn">NA</span>, <span class="at">addpred =</span> <span class="cn">TRUE</span>, <span class="at">at =</span> <span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="fl">0.9</span>, <span class="fl">0.1</span>),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">colout =</span> set_col[val<span class="sc">$</span>setting], <span class="at">ilab =</span> val<span class="sc">$</span>setting, <span class="at">ilab.lab =</span> <span class="st">"Setting"</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">header =</span> <span class="fu">c</span>(<span class="st">"Validation"</span>, <span class="st">"C [95% CI]"</span>), <span class="at">mlab =</span> <span class="st">"Random effects (REML, HKSJ)"</span>, <span class="at">xlab =</span> <span class="st">"C-statistic"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-cstat" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cstat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="20-diagnostic-accuracy_files/figure-html/fig-cstat-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cstat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;20.3: Nine simulated external validations of one risk model: C-statistics pooled on the logit scale (REML, Hartung-Knapp), with the 95% prediction interval. Colour: setting.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The pooled C-statistic is 0.74 (95% CI 0.70 to 0.77), adequate on average, but the prediction interval, 0.62 to 0.83, shows that in a new setting the model may discriminate well or barely adequately. Validations in hospitals do better than those in community and primary care, consistent with more heterogeneous case-mix in hospital populations (in these simulated data). Calibration is not shown because, as is common, it was not reported consistently; it usually varies far more between settings than discrimination, and a model should be recalibrated locally before use.</p>
+<p>With few validations, τ is poorly estimated, and a Bayesian random-effects model with a weakly informative prior on τ (for example half-Student-<em>t</em> with scale 0.5 on the logit C scale) gives more honest prediction intervals and direct probabilities such as P(C &gt; 0.70 in a new setting) <span class="citation" data-cites="debray2019framework">(<a href="references.html#ref-debray2019framework" role="doc-biblioref">15</a>)</span>:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fit_b <span class="ot">&lt;-</span> <span class="fu">brm</span>(yi <span class="sc">|</span> <span class="fu">se</span>(sei) <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> study), <span class="at">data =</span> val, <span class="at">seed =</span> <span class="dv">629</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="at">class =</span> Intercept), <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> sd)))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fit_b)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>c_new <span class="ot">&lt;-</span> <span class="fu">plogis</span>(d<span class="sc">$</span>b_Intercept <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(d), <span class="dv">0</span>, d<span class="sc">$</span>sd_study__Intercept))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(c_new, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)); <span class="fu">mean</span>(c_new <span class="sc">&gt;</span> <span class="fl">0.70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="key-points" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-points">Key points</h2>
+<ol type="1">
+<li>Sensitivity and specificity are paired and depend on the threshold; analyse them jointly with the bivariate (or equivalent HSROC) model.</li>
+<li>Pool sensitivity and specificity, not predictive values; translate them with likelihood ratios to the pre-test probability of the target setting.</li>
+<li>Assess studies with QUADAS-2; case-control designs and partial or differential verification bias accuracy.</li>
+<li>Report the summary point with its confidence and prediction regions and the SROC curve, and accuracy at the threshold used in practice.</li>
+<li>Threshold, spectrum and verification explain much diagnostic heterogeneity; bivariate meta-regression can quantify the threshold effect.</li>
+<li>Accuracy does not guarantee better outcomes; recommendations need evidence about test-and-treat strategies.</li>
+<li>For prediction models, pool external validations only, on the logit (C-statistic) or log (O:E) scale, with random effects and prediction intervals; calibration matters as much as discrimination.</li>
+</ol>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Re-run <code>dta-sim</code> with all 14 studies at 5 ng/L. What happens to the correlation ρ and to the SROC curve?</li>
+<li>Pool sensitivity and specificity separately with <code>rma()</code> on the logit scale and compare the result with <code>reitsma()</code>.</li>
+<li>Using the meta-regression, find the threshold at which the post-test probability after a negative test, at 15% pre-test probability, falls below 1%.</li>
+<li>Add <code>setting</code> as a moderator to the C-statistic meta-analysis. How much of τ² does it explain?</li>
+<li>Choose a published DTA review and check whether it reports a prediction region, accuracy at a specific threshold, and QUADAS-2 judgements by domain.</li>
+</ol>
+</section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><span class="citation" data-cites="reitsma2005bivariate">(<a href="references.html#ref-reitsma2005bivariate" role="doc-biblioref">3</a>)</span> and <span class="citation" data-cites="harbord2007unification">(<a href="references.html#ref-harbord2007unification" role="doc-biblioref">5</a>)</span> on the bivariate and HSROC models.</li>
+<li><span class="citation" data-cites="whiting2011quadas2">(<a href="references.html#ref-whiting2011quadas2" role="doc-biblioref">1</a>)</span> for QUADAS-2.</li>
+<li><span class="citation" data-cites="wolff2019probast">(<a href="references.html#ref-wolff2019probast" role="doc-biblioref">11</a>)</span> and <span class="citation" data-cites="debray2019framework">(<a href="references.html#ref-debray2019framework" role="doc-biblioref">15</a>)</span> for reviews of prediction models.</li>
+<li><span class="citation" data-cites="vancalster2019calibration">(<a href="references.html#ref-vancalster2019calibration" role="doc-biblioref">13</a>)</span> on calibration.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-whiting2011quadas2" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Whiting PF, Rutjes AWS, Westwood ME, Mallett S, Deeks JJ, Reitsma JB, et al. <a href="https://doi.org/10.7326/0003-4819-155-8-201110180-00009"><span>QUADAS-2</span>: A revised tool for the quality assessment of diagnostic accuracy studies</a>. Annals of Internal Medicine. 2011;155(8):529–36. </div>
+</div>
+<div id="ref-begg1983verification" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Begg CB, Greenes RA. <a href="https://doi.org/10.2307/2530820">Assessment of diagnostic tests when disease verification is subject to selection bias</a>. Biometrics. 1983;39(1):207–15. </div>
+</div>
+<div id="ref-reitsma2005bivariate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Reitsma JB, Glas AS, Rutjes AWS, Scholten RJPM, Bossuyt PM, Zwinderman AH. <a href="https://doi.org/10.1016/j.jclinepi.2005.02.022">Bivariate analysis of sensitivity and specificity produces informative summary measures in diagnostic reviews</a>. Journal of Clinical Epidemiology. 2005;58(10):982–90. </div>
+</div>
+<div id="ref-rutter2001hsroc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Rutter CM, Gatsonis CA. <a href="https://doi.org/10.1002/sim.942">A hierarchical regression approach to meta-analysis of diagnostic test accuracy evaluations</a>. Statistics in Medicine. 2001;20(19):2865–84. </div>
+</div>
+<div id="ref-harbord2007unification" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Harbord RM, Deeks JJ, Egger M, Whiting P, Sterne JAC. <a href="https://doi.org/10.1093/biostatistics/kxl004">A unification of models for meta-analysis of diagnostic accuracy studies</a>. Biostatistics. 2007;8(2):239–51. </div>
+</div>
+<div id="ref-pickering2017troponin" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Pickering JW, Than MP, Cullen L, et al. <a href="https://doi.org/10.7326/M16-2562">Rapid rule-out of acute myocardial infarction with a single high-sensitivity cardiac troponin <span>T</span> measurement below the limit of detection: A collaborative meta-analysis</a>. Annals of Internal Medicine. 2017;166(10):715–24. </div>
+</div>
+<div id="ref-takwoingi2013comparative" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Takwoingi Y, Leeflang MMG, Deeks JJ. <a href="https://doi.org/10.7326/0003-4819-158-7-201304020-00006">Empirical evidence of the importance of comparative studies of diagnostic test accuracy</a>. Annals of Internal Medicine. 2013;158(7):544–54. </div>
+</div>
+<div id="ref-schunemann2020gradedta" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Schünemann HJ, Mustafa RA, Brozek J, et al. <a href="https://doi.org/10.1016/j.jclinepi.2019.12.020"><span>GRADE</span> guidelines: 21 part 1. <span>Study</span> design, risk of bias, and indirectness in rating the certainty across a body of evidence for test accuracy</a>. Journal of Clinical Epidemiology. 2020;122:129–41. </div>
+</div>
+<div id="ref-shah2018highsteacs" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Shah ASV, Anand A, Strachan FE, et al. <a href="https://doi.org/10.1016/S0140-6736(18)31923-8">High-sensitivity troponin in the evaluation of patients with suspected acute coronary syndrome: A stepped-wedge, cluster-randomised controlled trial</a>. The Lancet. 2018;392(10151):919–28. </div>
+</div>
+<div id="ref-moons2014charms" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Moons KGM, Groot JAH de, Bouwmeester W, et al. <a href="https://doi.org/10.1371/journal.pmed.1001744">Critical appraisal and data extraction for systematic reviews of prediction modelling studies: The <span>CHARMS</span> checklist</a>. PLoS Medicine. 2014;11(10):e1001744. </div>
+</div>
+<div id="ref-wolff2019probast" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Wolff RF, Moons KGM, Riley RD, et al. <a href="https://doi.org/10.7326/M18-1376"><span>PROBAST</span>: A tool to assess the risk of bias and applicability of prediction model studies</a>. Ann Intern Med. 2019;170:51–8. </div>
+</div>
+<div id="ref-snell2023tripodsrma" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Snell KIE, Levis B, Damen JAA, et al. <a href="https://doi.org/10.1136/bmj-2022-073538">Transparent reporting of multivariable prediction models for individual prognosis or diagnosis: Checklist for systematic reviews and meta-analyses (<span>TRIPOD-SRMA</span>)</a>. BMJ. 2023;381:e073538. </div>
+</div>
+<div id="ref-vancalster2019calibration" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Van Calster B, McLernon DJ, Smeden M van, Wynants L, Steyerberg EW. Calibration: The <span>Achilles</span> heel of predictive analytics. BMC Medicine [Internet]. 2019;17:230. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6912996/">https://pmc.ncbi.nlm.nih.gov/articles/PMC6912996/</a></div>
+</div>
+<div id="ref-steyerberg2016validation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Steyerberg EW, Harrell FE. <a href="https://doi.org/10.1016/j.jclinepi.2015.04.005">Prediction models need appropriate internal, internal-external, and external validation</a>. Journal of Clinical Epidemiology. 2016;69:245–7. </div>
+</div>
+<div id="ref-debray2019framework" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Debray TPA, Damen JAAG, Riley RD, et al. <a href="https://doi.org/10.1177/0962280218785504">A framework for meta-analysis of prediction model studies with binary and time-to-event outcomes</a>. Statistical Methods in Medical Research. 2019;28(9):2768–86. </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./19-observational-studies.html" class="pagination-link" aria-label="Systematic Reviews of Observational Studies">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./21-cochrane-single-trial.html" class="pagination-link" aria-label="Cochrane Reviews, Living Reviews and the Single Trial">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

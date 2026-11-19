@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>21&nbsp; Cochrane Reviews, Living Reviews and the Single Trial – Knowledge Synthesis in Health Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./22-hta.html" rel="next">
+<link href="./20-diagnostic-accuracy.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ef126021e9ff1ef5a96e4bd190a6c277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./21-cochrane-single-trial.html">From evidence to decisions</a></li><li class="breadcrumb-item"><a href="./21-cochrane-single-trial.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Knowledge Synthesis in Health Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-finding-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-question-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualising-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualising Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appraisal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-bias-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk of Bias and GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-certainty-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rating Certainty with GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-appraising-reviews.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reporting and Appraising Systematic Reviews</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Meta-analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-effect-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-meta-analysis-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Meta-Analysis Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-heterogeneity-robustness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Heterogeneity and Robustness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-bias-bridge-bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bayesian-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Threats and extensions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-publication-bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-ipd-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-network-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-nma-in-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-observational-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-diagnostic-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">From evidence to decisions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-cochrane-single-trial.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-hta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-correcting-literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-agentic-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Agentic Systematic Reviews and Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-single-cochrane" id="toc-sec-single-cochrane" class="nav-link active" data-scroll-target="#sec-single-cochrane"><span class="header-section-number">21.1</span> Cochrane reviews</a></li>
+  <li><a href="#sec-single-living" id="toc-sec-single-living" class="nav-link" data-scroll-target="#sec-single-living"><span class="header-section-number">21.2</span> Living systematic reviews</a></li>
+  <li><a href="#sec-single-decaf" id="toc-sec-single-decaf" class="nav-link" data-scroll-target="#sec-single-decaf"><span class="header-section-number">21.3</span> Only one trial: the DECAF example</a></li>
+  <li><a href="#sec-single-typem" id="toc-sec-single-typem" class="nav-link" data-scroll-target="#sec-single-typem"><span class="header-section-number">21.4</span> Frequentist design critique: Type S and Type M errors</a></li>
+  <li><a href="#sec-single-prior" id="toc-sec-single-prior" class="nav-link" data-scroll-target="#sec-single-prior"><span class="header-section-number">21.5</span> Combining the trial with a prior</a>
+  <ul class="collapse">
+  <li><a href="#sec-single-normal" id="toc-sec-single-normal" class="nav-link" data-scroll-target="#sec-single-normal"><span class="header-section-number">21.5.1</span> Normal prior and normal likelihood: a two-study meta-analysis</a></li>
+  <li><a href="#sec-single-rd" id="toc-sec-single-rd" class="nav-link" data-scroll-target="#sec-single-rd"><span class="header-section-number">21.5.2</span> The absolute scale</a></li>
+  <li><a href="#sec-single-sensitivity" id="toc-sec-single-sensitivity" class="nav-link" data-scroll-target="#sec-single-sensitivity"><span class="header-section-number">21.5.3</span> How much does the prior matter?</a></li>
+  </ul></li>
+  <li><a href="#sec-single-eb" id="toc-sec-single-eb" class="nav-link" data-scroll-target="#sec-single-eb"><span class="header-section-number">21.6</span> An empirical Bayes prior from Cochrane trials</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./21-cochrane-single-trial.html">From evidence to decisions</a></li><li class="breadcrumb-item"><a href="./21-cochrane-single-trial.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-single" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>describe what distinguishes a Cochrane review, and explain why the label guarantees a process rather than a correct conclusion;</li>
+<li>explain why repeatedly updated (living) reviews need methods for repeated looks, and why Bayesian updating is a natural one;</li>
+<li>calculate the power, Type S and Type M errors of a completed trial, and explain the “winner’s curse”;</li>
+<li>combine a single trial with a prior as a two-study meta-analysis, on the relative and absolute scales, and report how the conclusion depends on the prior;</li>
+<li>use an empirical Bayes prior estimated from Cochrane trials to calibrate a surprising result.</li>
+</ul>
+<p><strong>R packages:</strong> <code>dplyr</code>, <code>tidyr</code>, <code>purrr</code>, <code>ggplot2</code>, <code>metafor</code>, <code>knitr</code>; <code>brms</code> for code shown but not run here (its posterior draws are read from a file).</p>
+</div>
+</div>
+<p>This chapter covers three evidence situations. In the first, many trials have been synthesised, often by Cochrane. In the second, trials keep arriving and the review must keep up. In the third, there is only <strong>one</strong> trial, and its result is surprising. The common thread is that every conclusion combines new data with what was already known, explicitly or not; the last part of the chapter shows how to do it explicitly.</p>
+<section id="sec-single-cochrane" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="sec-single-cochrane"><span class="header-section-number">21.1</span> Cochrane reviews</h2>
+<p>Cochrane, founded in 1993 and named after Archie Cochrane, publishes systematic reviews in the <em>Cochrane Database of Systematic Reviews</em> and maintains CENTRAL, the largest register of controlled trials (<a href="02-finding-evidence.html" class="quarto-xref"><span>Chapter 2</span></a>). A Cochrane review starts from a peer-reviewed, published protocol; searches extensively, including trial registries and unpublished sources; screens and extracts in duplicate; assesses risk of bias with RoB 2 or ROBINS-I and certainty with GRADE; accepts no commercial funding for individual reviews; and is meant to be updated. For 30 years reviews were produced by topic-based Cochrane Review Groups. UK government (NIHR) funding of those groups ended in March 2023, and Cochrane moved to a central editorial service.</p>
+<p>Does the label help? Jørgensen and colleagues matched 24 Cochrane reviews with other meta-analyses of the same two drugs <span class="citation" data-cites="jorgensen2006cochrane">(<a href="references.html#ref-jorgensen2006cochrane" role="doc-biblioref">1</a>)</span>. The Cochrane reviews had higher methodological quality (median score 7 vs 3 on a 7-point scale). All seven industry-supported reviews that stated conclusions recommended the experimental drug without reservation, and none of the matched Cochrane reviews did; yet the pooled effect estimates were similar on average. The difference lay in how the same numbers were turned into conclusions.</p>
+<p>The label is not a guarantee. Reviews go out of date: in a survival analysis of 100 reviews, the median time until new evidence changed, or should have changed, the conclusions was 5.5 years, and 7% were already out of date when published <span class="citation" data-cites="shojania2007outofdate">(<a href="references.html#ref-shojania2007outofdate" role="doc-biblioref">2</a>)</span>. And the appraisal tools of earlier chapters still apply, whoever wrote the review: AMSTAR 2 for the review (<a href="07-appraising-reviews.html#sec-appraise-obs" class="quarto-xref"><span>Section 7.2</span></a>), and the search date and GRADE certainty for each outcome <span class="citation" data-cites="shea2017amstar2">(<a href="references.html#ref-shea2017amstar2" role="doc-biblioref">3</a>)</span>. Three well-known cases show different ways a careful review can still mislead.</p>
+<ul>
+<li><strong>Oseltamivir (Tamiflu): incomplete data.</strong> Early reviews relied on manufacturers’ summaries of mostly unpublished trials. Once full clinical study reports were obtained, the 2014 review found no clear reduction in hospital admission or complications <span class="citation" data-cites="jefferson2014">(<a href="references.html#ref-jefferson2014" role="doc-biblioref">4</a>)</span> (<a href="15-publication-bias.html" class="quarto-xref"><span>Chapter 15</span></a>). A sound method applied to incomplete data still misleads.</li>
+<li><strong>Masks: misread conclusions.</strong> The 2023 review of physical interventions against respiratory viruses <span class="citation" data-cites="jefferson2023masks">(<a href="references.html#ref-jefferson2023masks" role="doc-biblioref">5</a>)</span> was widely reported as showing that “masks don’t work”. Cochrane’s Editor-in-Chief issued a statement calling that interpretation inaccurate: the review had found the effect of <em>promoting</em> mask wearing inconclusive. “No clear evidence of an effect” is not “evidence of no effect”.</li>
+<li><strong>Mammography: disputed judgements.</strong> The Cochrane review of screening judged several large trials inadequately randomised and concluded that benefits were smaller, and over-diagnosis larger, than generally believed <span class="citation" data-cites="gotzsche2013mammography">(<a href="references.html#ref-gotzsche2013mammography" role="doc-biblioref">6</a>)</span>. Screening experts disputed those risk-of-bias judgements. Inclusion and risk-of-bias decisions are judgements, and they can drive the conclusion.</li>
+</ul>
+</section>
+<section id="sec-single-living" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="sec-single-living"><span class="header-section-number">21.2</span> Living systematic reviews</h2>
+<p>A <strong>living systematic review</strong> is continually updated: searches run regularly and new trials are added as they appear <span class="citation" data-cites="elliott2017living">(<a href="references.html#ref-elliott2017living" role="doc-biblioref">7</a>)</span>. Many were published during the COVID-19 pandemic, some updated monthly. They are worth their cost when the question is a priority, new trials are appearing, and those trials could change the conclusion.</p>
+<p>Re-testing at <em>p</em> &lt; 0.05 after each new trial is repeated significance testing, and the chance of a false “significant” result somewhere along the way is well above 5%. Even with a treatment that works, the conclusion can flip back and forth:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>true_or  <span class="ot">&lt;-</span> <span class="fl">0.75</span>; n_trials <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>trial_n  <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">80</span><span class="sc">:</span><span class="dv">400</span>, n_trials)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>trial_se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">4</span> <span class="sc">/</span> trial_n)                       <span class="co"># approximate SE of a log OR</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>trial_y  <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_trials, <span class="fu">log</span>(true_or), <span class="fl">0.25</span>)     <span class="co"># observed log ORs</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>cumulative <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(<span class="dv">1</span><span class="sc">:</span>n_trials, <span class="cf">function</span>(k) {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">rma</span>(trial_y[<span class="dv">1</span><span class="sc">:</span>k], <span class="at">sei =</span> trial_se[<span class="dv">1</span><span class="sc">:</span>k], <span class="at">method =</span> <span class="st">"EE"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">update =</span> k, <span class="at">pooled =</span> <span class="fu">exp</span>(<span class="fu">coef</span>(m)), <span class="at">lo =</span> <span class="fu">exp</span>(m<span class="sc">$</span>ci.lb), <span class="at">hi =</span> <span class="fu">exp</span>(m<span class="sc">$</span>ci.ub),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sig =</span> m<span class="sc">$</span>ci.ub <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cumulative, <span class="fu">aes</span>(update, pooled, <span class="at">colour =</span> sig)) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> true_or, <span class="at">linetype =</span> <span class="dv">3</span>, <span class="at">colour =</span> <span class="st">"#041E42"</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lo, <span class="at">ymax =</span> hi), <span class="at">linewidth =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">12</span>, <span class="at">y =</span> true_or <span class="sc">-</span> <span class="fl">0.04</span>, <span class="at">label =</span> <span class="st">"true OR = 0.75"</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">"#041E42"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">FALSE</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#de2d26"</span>, <span class="st">`</span><span class="at">TRUE</span><span class="st">`</span> <span class="ot">=</span> clr_post),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"CI includes 1"</span>, <span class="st">"CI excludes 1"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Update (trials included so far)"</span>, <span class="at">y =</span> <span class="st">"Pooled OR (95% CI)"</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-living" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-living-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="21-cochrane-single-trial_files/figure-html/fig-living-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-living-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.1: A simulated living review: 12 trials of a treatment with a true OR of 0.75, pooled (common effect) after each new trial. Whether the 95% CI excludes 1 changes from one update to the next.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Stopping at the first update whose interval excludes 1, or declaring “no effect” while it includes 1, would both be premature. There are two remedies. <strong>Trial sequential analysis</strong>, borrowed from interim monitoring of trials, uses stricter significance boundaries until enough information has accumulated. <strong>Bayesian updating</strong> treats today’s posterior as tomorrow’s prior and reports at each update the probability of a meaningful effect, which is a statement about the strength of evidence rather than about crossing a threshold. The rest of this chapter applies the same logic, prior plus new data gives posterior, to a single trial.</p>
+</section>
+<section id="sec-single-decaf" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="sec-single-decaf"><span class="header-section-number">21.3</span> Only one trial: the DECAF example</h2>
+<p>Caffeine has long been regarded as proarrhythmic, and patients with atrial fibrillation (AF) are often told to avoid coffee. In the DECAF trial, 200 coffee drinkers with persistent AF or flutter who were having cardioversion were randomised to continue caffeinated coffee (about one cup a day) or to abstain from all caffeine for six months <span class="citation" data-cites="wong2025decaf">(<a href="references.html#ref-wong2025decaf" role="doc-biblioref">8</a>)</span>. The trial was open label. Recurrence of AF or flutter occurred in 47 of 100 patients who continued coffee and 64 of 100 who abstained: hazard ratio (HR) 0.61 (95% CI 0.42 to 0.89), <em>p</em> = 0.01. The result was widely reported as showing that coffee protects against AF.</p>
+<p>It was surprising for three reasons. It contradicted clinical belief. The prior evidence suggested no large effect either way: a crossover trial in 100 ambulatory adults found no increase in atrial ectopy on caffeinated days (rate ratio 1.09, 95% CI 0.98 to 1.20) <span class="citation" data-cites="marcus2023coffee">(<a href="references.html#ref-marcus2023coffee" role="doc-biblioref">9</a>)</span>, and a meta-analysis of observational studies found no association with incident AF (pooled RR 0.98, 95% CI 0.88 to 1.09) <span class="citation" data-cites="krittanawong2021caffeine">(<a href="references.html#ref-krittanawong2021caffeine" role="doc-biblioref">10</a>)</span>. And the trial was designed to detect the opposite: 80% power for a 41% relative reduction in recurrence with abstinence, from 50% to 29.5%. The paper does not state which arm was expected to do better, but the power calculation, the population (coffee drinkers randomised to abstinence) and the clinical tradition all point to abstinence. An undeclared direction is one of the researcher degrees of freedom that let a result be interpreted after the data are seen <span class="citation" data-cites="gelman2013forking">(<a href="references.html#ref-gelman2013forking" role="doc-biblioref">11</a>)</span>.</p>
+<p>How should a single surprising trial change what we believe? A meta-analysis combines several sources of evidence weighted by their precision. With one trial, the other source is external evidence, written as a prior distribution. We take three approaches: a frequentist critique of the design, a prior based on the trial’s own design, and an empirical prior based on thousands of trials.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>HR <span class="ot">&lt;-</span> <span class="fl">0.61</span>; CI_lo <span class="ot">&lt;-</span> <span class="fl">0.42</span>; CI_hi <span class="ot">&lt;-</span> <span class="fl">0.89</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y_obs <span class="ot">&lt;-</span> <span class="fu">log</span>(HR)                                        <span class="co"># observed log HR, coffee vs abstinence</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>se    <span class="ot">&lt;-</span> (<span class="fu">log</span>(CI_hi) <span class="sc">-</span> <span class="fu">log</span>(CI_lo)) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>))  <span class="co"># its standard error</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>z_obs <span class="ot">&lt;-</span> y_obs <span class="sc">/</span> se</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="at">log_HR =</span> y_obs, <span class="at">se =</span> se, <span class="at">se_from_events =</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="dv">47</span> <span class="sc">+</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">64</span>), <span class="at">z =</span> z_obs), <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>        log_HR             se se_from_events              z 
+        -0.494          0.192          0.192         -2.580 </code></pre>
+</div>
+</div>
+<p>The standard error from the confidence interval agrees with the approximation <span class="math inline">\(\text{Var}(\log HR) \approx 1/E_1 + 1/E_2\)</span> from the 47 and 64 events. With equal arms, <span class="math inline">\(s^2 \approx 4/E\)</span>, so the precision of a trial is set by its number of events, here about 109.</p>
+</section>
+<section id="sec-single-typem" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="sec-single-typem"><span class="header-section-number">21.4</span> Frequentist design critique: Type S and Type M errors</h2>
+<p>Suppose the truth is a realistic, still worthwhile 15% relative reduction (50% to 42.5%, a risk difference of 7.5 percentage points) and we run many DECAF-sized trials.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">629</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p0 <span class="ot">&lt;-</span> <span class="fl">0.50</span>; p1 <span class="ot">&lt;-</span> <span class="fl">0.425</span>; n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">e0 =</span> <span class="fu">rbinom</span>(<span class="fl">1e4</span>, n, p0), <span class="at">e1 =</span> <span class="fu">rbinom</span>(<span class="fl">1e4</span>, n, p1)) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">rd  =</span> (e1 <span class="sc">-</span> e0) <span class="sc">/</span> n,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">se  =</span> <span class="fu">sqrt</span>(e1 <span class="sc">/</span> n <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> e1 <span class="sc">/</span> n) <span class="sc">/</span> n <span class="sc">+</span> e0 <span class="sc">/</span> n <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> e0 <span class="sc">/</span> n) <span class="sc">/</span> n),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">sig =</span> <span class="fu">abs</span>(rd <span class="sc">/</span> se) <span class="sc">&gt;</span> <span class="fl">1.96</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sims, <span class="fu">aes</span>(rd, <span class="at">fill =</span> sig)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.01</span>, <span class="at">colour =</span> <span class="st">"white"</span>, <span class="at">boundary =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> p1 <span class="sc">-</span> p0, <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">colour =</span> clr_post) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="sc">-</span><span class="fl">0.17</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">colour =</span> clr_lik, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">FALSE</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"grey70"</span>, <span class="st">`</span><span class="at">TRUE</span><span class="st">`</span> <span class="ot">=</span> clr_sig),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"p &gt; 0.05"</span>, <span class="st">"p &lt; 0.05"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Observed risk difference"</span>, <span class="at">y =</span> <span class="st">"Simulated trials"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-sigfilter" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sigfilter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="21-cochrane-single-trial_files/figure-html/fig-sigfilter-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sigfilter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.2: Risk differences in 10,000 simulated trials with 100 patients per arm and a true difference of −7.5 percentage points (green line). Trials reaching p &lt; 0.05 are in purple; DECAF’s observed difference is the dashed line.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>With 100 patients per arm, the standard error of a risk difference is about 0.07, so the true effect is only about 1.1 standard errors from zero. A trial reaches significance only when chance adds almost another standard error in the right direction, which happens in 20% of trials: that is the power. The significant trials are, by construction, those in which chance exaggerated the effect; their average absolute difference is 17.3 percentage points, about 2.3 times the truth. This is the <strong>winner’s curse</strong> <span class="citation" data-cites="ioannidis2008winners">(<a href="references.html#ref-ioannidis2008winners" role="doc-biblioref">12</a>)</span>.</p>
+<p>Gelman and Carlin named the two errors that follow from low power <span class="citation" data-cites="gelman2014typesm">(<a href="references.html#ref-gelman2014typesm" role="doc-biblioref">13</a>)</span>. Among results that reach significance, a <strong>Type S</strong> (sign) error is an estimate in the wrong direction, and a <strong>Type M</strong> (magnitude) error, or exaggeration ratio, is the expected ratio of the estimate to the true effect. Both depend only on the ratio of the true effect to the standard error, and they can be calculated without simulation:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>retrodesign <span class="ot">&lt;-</span> <span class="cf">function</span>(A, s, <span class="at">alpha =</span> <span class="fl">0.05</span>, <span class="at">n.sims =</span> <span class="fl">1e5</span>) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  z     <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> alpha <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  p.hi  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(z <span class="sc">-</span> A <span class="sc">/</span> s)              <span class="co"># significant, correct sign</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  p.lo  <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="sc">-</span>z <span class="sc">-</span> A <span class="sc">/</span> s)                 <span class="co"># significant, wrong sign</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  power <span class="ot">&lt;-</span> p.hi <span class="sc">+</span> p.lo</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  est   <span class="ot">&lt;-</span> A <span class="sc">+</span> s <span class="sc">*</span> <span class="fu">rnorm</span>(n.sims)             <span class="co"># replicate estimates</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  sig   <span class="ot">&lt;-</span> <span class="fu">abs</span>(est) <span class="sc">&gt;</span> s <span class="sc">*</span> z</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">power =</span> power, <span class="at">type_s =</span> p.lo <span class="sc">/</span> power, <span class="at">type_m =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(est[sig])) <span class="sc">/</span> A)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>s_design <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> <span class="dv">100</span> <span class="sc">+</span> <span class="fl">0.425</span> <span class="sc">*</span> <span class="fl">0.575</span> <span class="sc">/</span> <span class="dv">100</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>retro <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="st">`</span><span class="at">Design: RD 20.5%</span><span class="st">`</span>    <span class="ot">=</span> <span class="fu">retrodesign</span>(<span class="fl">0.205</span>, s_design),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">Realistic: RD 7.5%</span><span class="st">`</span>  <span class="ot">=</span> <span class="fu">retrodesign</span>(<span class="fl">0.075</span>, s_design))</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(retro, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   power type_s type_m
+Design: RD 20.5%    0.83   0.00   1.11
+Realistic: RD 7.5%  0.19   0.01   2.35</code></pre>
+</div>
+</div>
+<p>DECAF had 80% power only for an absolute reduction of 20.5 percentage points, larger than almost any cardiovascular intervention achieves. For a realistic 7.5-point difference its power was about 19%, and a significant result would on average overstate the effect 2.3-fold. DECAF’s observed difference of 17 points is therefore quite compatible with a true effect less than half that size.</p>
+</section>
+<section id="sec-single-prior" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="sec-single-prior"><span class="header-section-number">21.5</span> Combining the trial with a prior</h2>
+<section id="sec-single-normal" class="level3" data-number="21.5.1">
+<h3 data-number="21.5.1" class="anchored" data-anchor-id="sec-single-normal"><span class="header-section-number">21.5.1</span> Normal prior and normal likelihood: a two-study meta-analysis</h3>
+<p>With the trial summarised as <span class="math inline">\(\hat\theta \sim N(\theta, s^2)\)</span> on the log-HR scale and a prior <span class="math inline">\(\theta \sim N(m_0, s_0^2)\)</span>, the posterior is normal with</p>
+<p><span class="math display">\[\frac{1}{s_1^2} = \frac{1}{s_0^2} + \frac{1}{s^2}, \qquad m_1 = s_1^2\left(\frac{m_0}{s_0^2} + \frac{\hat\theta}{s^2}\right),\]</span></p>
+<p>a precision-weighted average: exactly a common-effect meta-analysis with the prior as a second “study” (<a href="13-bayesian-meta-analysis.html" class="quarto-xref"><span>Chapter 13</span></a>).</p>
+<p>What prior? The investigators’ own design assumptions are a ready-made, pre-specified choice. They assumed 50% recurrence with coffee and 29.5% with abstinence. On the log odds ratio scale, coffee versus abstinence, that is <span class="math inline">\(\log\{(0.5/0.5)/(0.295/0.705)\} = 0.871\)</span>: centred on harm from coffee. The SD is a judgement. With <span class="math inline">\(s_0 = 0.5\)</span>, the prior’s 95% range for the ratio is 0.90 to 6.37, the prior probability that coffee is beneficial is 4.1%, and, inverting <span class="math inline">\(s^2 \approx 4/E\)</span>, the prior carries the information of a trial with about 16 events <span class="citation" data-cites="spiegelhalter2004">(<a href="references.html#ref-spiegelhalter2004" role="doc-biblioref">14</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> <span class="fl">0.871</span>; s0 <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>w0 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> s0<span class="sc">^</span><span class="dv">2</span>; w <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> se<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> (w0 <span class="sc">*</span> m0 <span class="sc">+</span> w <span class="sc">*</span> y_obs) <span class="sc">/</span> (w0 <span class="sc">+</span> w); s1 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">/</span> (w0 <span class="sc">+</span> w))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ma <span class="ot">&lt;-</span> <span class="fu">rma</span>(<span class="at">yi =</span> <span class="fu">c</span>(m0, y_obs), <span class="at">sei =</span> <span class="fu">c</span>(s0, se), <span class="at">method =</span> <span class="st">"EE"</span>)     <span class="co"># the same, as a meta-analysis</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(<span class="at">closed_form =</span> <span class="fu">exp</span>(<span class="fu">c</span>(m1, m1 <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> s1, m1 <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> s1)),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">rma         =</span> <span class="fu">exp</span>(<span class="fu">c</span>(ma<span class="sc">$</span>b, ma<span class="sc">$</span>ci.lb, ma<span class="sc">$</span>ci.ub))) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(<span class="fu">c</span>(<span class="st">"HR"</span>, <span class="st">"lower"</span>, <span class="st">"upper"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>              HR lower upper
+closed_form 0.73  0.51  1.03
+rma         0.73  0.51  1.03</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setNames</span>(<span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="fu">log</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.9</span>, <span class="fl">0.8</span>)), m1, s1), <span class="dv">2</span>), <span class="fu">c</span>(<span class="st">"P(HR&lt;1)"</span>, <span class="st">"P(HR&lt;0.9)"</span>, <span class="st">"P(HR&lt;0.8)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  P(HR&lt;1) P(HR&lt;0.9) P(HR&lt;0.8) 
+     0.96      0.88      0.70 </code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>th <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.3</span>, <span class="fl">2.4</span>, <span class="at">length.out =</span> <span class="dv">800</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>dd <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(th, <span class="at">d =</span> <span class="fu">dnorm</span>(th, m0, s0),    <span class="at">what =</span> <span class="st">"Prior (design: abstinence better)"</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(th, <span class="at">d =</span> <span class="fu">dnorm</span>(th, y_obs, se), <span class="at">what =</span> <span class="st">"Likelihood (DECAF)"</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(th, <span class="at">d =</span> <span class="fu">dnorm</span>(th, m1, s1),    <span class="at">what =</span> <span class="st">"Posterior"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">what =</span> <span class="fu">factor</span>(what, <span class="at">levels =</span> <span class="fu">unique</span>(what)))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dd, <span class="fu">aes</span>(th, d, <span class="at">colour =</span> what)) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> <span class="fu">filter</span>(dd, what <span class="sc">==</span> <span class="st">"Posterior"</span>, th <span class="sc">&lt;</span> <span class="fu">log</span>(<span class="fl">0.9</span>)), <span class="fu">aes</span>(th, d),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> clr_post, <span class="at">alpha =</span> <span class="fl">0.25</span>, <span class="at">colour =</span> <span class="cn">NA</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(clr_prior, clr_lik, clr_post), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">log</span>(<span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="dv">5</span>, <span class="dv">10</span>)),</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="dv">5</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"HR, coffee vs abstinence (log scale)"</span>, <span class="at">y =</span> <span class="st">"Density"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-decaf-hr" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-decaf-hr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="21-cochrane-single-trial_files/figure-html/fig-decaf-hr-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decaf-hr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.3: Design prior (centred on harm from coffee), DECAF likelihood, and posterior for the HR of coffee versus abstinence. Shaded: P(HR &lt; 0.9).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The trial is about 7 times as precise as the prior, so the posterior, HR 0.73 (95% CrI 0.51 to 1.03), lies close to the data. Benefit remains probable, P(HR &lt; 1) = 0.96, but the evidence is more modest than <em>p</em> = 0.01 suggests.</p>
+</section>
+<section id="sec-single-rd" class="level3" data-number="21.5.2">
+<h3 data-number="21.5.2" class="anchored" data-anchor-id="sec-single-rd"><span class="header-section-number">21.5.2</span> The absolute scale</h3>
+<p>Patients and clinicians think in absolute risks. A binomial model for the two arms puts a prior on the logit risk with coffee, <span class="math inline">\(a \sim N(0, 1.5^2)\)</span> (centred on the design’s 50%, with a 95% range of 5% to 95%), and the same design prior on the log odds ratio for abstinence versus coffee, <span class="math inline">\(b \sim N(-0.871, 0.5^2)\)</span>. The risk difference, coffee minus abstinence, is <span class="math inline">\(\text{plogis}(a) - \text{plogis}(a + b)\)</span>. With two parameters there is no closed form, so the model is fitted with <code>brms</code>:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>decaf <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">abst =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">events =</span> <span class="fu">c</span>(<span class="dv">47</span>, <span class="dv">64</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">100</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>pri_rd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">1.5</span>), <span class="at">class =</span> b, <span class="at">coef =</span> Intercept),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>            <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="sc">-</span><span class="fl">0.871</span>, <span class="fl">0.5</span>), <span class="at">class =</span> b, <span class="at">coef =</span> abst))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>fit_rd <span class="ot">&lt;-</span> <span class="fu">brm</span>(events <span class="sc">|</span> <span class="fu">trials</span>(n) <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> Intercept <span class="sc">+</span> abst, <span class="at">data =</span> decaf, <span class="at">family =</span> binomial,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">prior =</span> pri_rd, <span class="at">chains =</span> <span class="dv">4</span>, <span class="at">iter =</span> <span class="dv">6000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">seed =</span> <span class="dv">2026</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>draws <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fit_rd)[, <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"b_abst"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The 20,000 posterior draws from that fit are stored with the book:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>draws <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/ch21/decaf_rd_draws.csv"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>rd <span class="ot">&lt;-</span> <span class="fu">plogis</span>(draws<span class="sc">$</span>b_Intercept) <span class="sc">-</span> <span class="fu">plogis</span>(draws<span class="sc">$</span>b_Intercept <span class="sc">+</span> draws<span class="sc">$</span>b_abst)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> <span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(rd), <span class="fu">quantile</span>(rd, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))), <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> mean  2.5% 97.5% 
+ -7.7 -19.2   4.1 </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="st">`</span><span class="at">P(RD &lt; 0)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(rd <span class="sc">&lt;</span> <span class="dv">0</span>), <span class="st">`</span><span class="at">P(RD &lt; -2%)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(rd <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">0.02</span>)), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  P(RD &lt; 0) P(RD &lt; -2%) 
+       0.90        0.83 </code></pre>
+</div>
+</div>
+<p>The trial alone gives a risk difference of −17 percentage points (95% CI −31 to −3). With the design prior it is -7.7 points (95% CrI -19.2 to +4.1). The probability of any benefit from coffee is 0.90; of a benefit of at least 2 points (a number needed to treat of 50 or fewer), 0.83. As a frequentist cross-check, dividing −17 by the Type M ratio for a realistic effect gives about -7.2 points, similar to the Bayesian estimate. Both rest on an assumption about plausible effect sizes: the Type M correction states it as a true effect, the Bayesian analysis as a prior.</p>
+</section>
+<section id="sec-single-sensitivity" class="level3" data-number="21.5.3">
+<h3 data-number="21.5.3" class="anchored" data-anchor-id="sec-single-sensitivity"><span class="header-section-number">21.5.3</span> How much does the prior matter?</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>post_norm <span class="ot">&lt;-</span> <span class="cf">function</span>(m0, s0) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  w0 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> s0<span class="sc">^</span><span class="dv">2</span>; m <span class="ot">&lt;-</span> (w0 <span class="sc">*</span> m0 <span class="sc">+</span> w <span class="sc">*</span> y_obs) <span class="sc">/</span> (w0 <span class="sc">+</span> w); s <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">/</span> (w0 <span class="sc">+</span> w))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">post_hr =</span> <span class="fu">exp</span>(m), <span class="at">post_lo =</span> <span class="fu">exp</span>(m <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> s), <span class="at">post_hi =</span> <span class="fu">exp</span>(m <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> s),</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">p1 =</span> <span class="fu">pnorm</span>(<span class="dv">0</span>, m, s), <span class="at">p08 =</span> <span class="fu">pnorm</span>(<span class="fu">log</span>(<span class="fl">0.8</span>), m, s))</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>hr_design <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.295</span>) <span class="sc">/</span> <span class="fu">log</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.50</span>)        <span class="co"># abstinence vs coffee, proportional hazards</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>sens <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Prior =</span> <span class="fu">c</span>(<span class="st">"1. Vague: N(0, 10²)"</span>, <span class="st">"2. Sceptical: N(0, 0.5²)"</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">sprintf</span>(<span class="st">"3. Design as an HR: N(%.3f, 0.5²)"</span>, <span class="fu">log</span>(<span class="dv">1</span> <span class="sc">/</span> hr_design)),</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"4. Design as an OR: N(0.871, 0.5²)"</span>, <span class="st">"5. Design, held firmly: N(0.871, 0.25²)"</span>),</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">m0 =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="fu">log</span>(<span class="dv">1</span> <span class="sc">/</span> hr_design), <span class="fl">0.871</span>, <span class="fl">0.871</span>), <span class="at">s0 =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.25</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prior_p1 =</span> <span class="fu">pnorm</span>(<span class="dv">0</span>, m0, s0), <span class="at">post =</span> <span class="fu">map2</span>(m0, s0, post_norm)) <span class="sc">|&gt;</span> <span class="fu">unnest</span>(post)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>sens <span class="sc">|&gt;</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(Prior, <span class="st">`</span><span class="at">Prior P(HR &lt; 1)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, prior_p1),</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Posterior HR (95% CrI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, post_hr, post_lo, post_hi),</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">P(HR &lt; 1)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, p1), <span class="st">`</span><span class="at">P(HR &lt; 0.8)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, p08)) <span class="sc">|&gt;</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lcccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-decaf-sens" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-decaf-sens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;21.1: DECAF combined with five priors for the HR of coffee versus abstinence (normal approximation).
+</figcaption>
+<div aria-describedby="tbl-decaf-sens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 10%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prior</th>
+<th style="text-align: center;">Prior P(HR &lt; 1)</th>
+<th style="text-align: center;">Posterior HR (95% CrI)</th>
+<th style="text-align: center;">P(HR &lt; 1)</th>
+<th style="text-align: center;">P(HR &lt; 0.8)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1. Vague: N(0, 10²)</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">0.61 (0.42 to 0.89)</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">0.92</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. Sceptical: N(0, 0.5²)</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">0.65 (0.46 to 0.92)</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">0.88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3. Design as an HR: N(0.685, 0.5²)</td>
+<td style="text-align: center;">0.09</td>
+<td style="text-align: center;">0.71 (0.50 to 1.01)</td>
+<td style="text-align: center;">0.97</td>
+<td style="text-align: center;">0.75</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4. Design as an OR: N(0.871, 0.5²)</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">0.73 (0.51 to 1.03)</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">0.70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5. Design, held firmly: N(0.871, 0.25²)</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">1.01 (0.75 to 1.36)</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">0.06</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>A vague prior recovers the trial. A sceptical prior centred on no effect pulls the estimate to 0.65. The two versions of the design prior, which give coffee little prior chance of benefit, leave a posterior that still favours coffee; only a firmly held design prior removes the benefit (P(HR &lt; 1) = 0.47). The probability of a large benefit, P(HR &lt; 0.8), is the quantity most sensitive to the prior, ranging from 0.92 to 0.06. A single trial should be reported with its posterior under a range of defensible priors.</p>
+</section>
+</section>
+<section id="sec-single-eb" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="sec-single-eb"><span class="header-section-number">21.6</span> An empirical Bayes prior from Cochrane trials</h2>
+<p>A trial-specific prior needs subject-matter judgement. An alternative asks what effects trials usually find. To compare trials of different outcomes and sizes, work on the <strong>signal-to-noise ratio</strong> scale: SNR = θ/<em>s</em>, and the observed <span class="math inline">\(z = \hat\theta / s \sim N(\text{SNR}, 1)\)</span>. For DECAF, <em>z</em> = -2.58.</p>
+<p>Van Zwet and colleagues fitted the <em>z</em>-values of 23,551 RCTs from the Cochrane Database as a mixture of four normal distributions centred at 0 <span class="citation" data-cites="vanzwet2024pvalues">(<a href="references.html#ref-vanzwet2024pvalues" role="doc-biblioref">15</a>)</span>. Since each observed <em>z</em> is the true SNR plus noise with SD 1, the SD of the true SNRs in each component is <span class="math inline">\(\sqrt{\text{SD}_z^2 - 1}\)</span>. Most trials have small true effects; a few have large ones. One consequence is that the median power of a Cochrane trial against its own true effect is only about 13%, far below the 80% to 90% assumed at the design stage <span class="citation" data-cites="vanzwet2021shrinkage">(<a href="references.html#ref-vanzwet2021shrinkage" role="doc-biblioref">16</a>)</span>.</p>
+<p>The posterior for DECAF’s SNR reweights each mixture component by how well it predicts the observed <em>z</em>, and then shrinks <em>z</em> within each component by <span class="math inline">\(B_k = s_k^2/(s_k^2 + 1)\)</span>, the normal-normal shrinkage of <a href="#sec-single-normal" class="quarto-xref"><span>Section 21.5.1</span></a>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sd_z  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.17</span>, <span class="fl">1.74</span>, <span class="fl">2.38</span>, <span class="fl">5.73</span>); p_mix <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.32</span>, <span class="fl">0.31</span>, <span class="fl">0.30</span>, <span class="fl">0.07</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>sd_snr <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sd_z<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>)                         <span class="co"># remove the unit noise</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>post_w <span class="ot">&lt;-</span> p_mix <span class="sc">*</span> <span class="fu">dnorm</span>(z_obs, <span class="dv">0</span>, sd_z); post_w <span class="ot">&lt;-</span> post_w <span class="sc">/</span> <span class="fu">sum</span>(post_w)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>Bk <span class="ot">&lt;-</span> sd_snr<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> (sd_snr<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>); N <span class="ot">&lt;-</span> <span class="fl">2e5</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>comp   <span class="ot">&lt;-</span> <span class="fu">sample.int</span>(<span class="dv">4</span>, N, <span class="cn">TRUE</span>, post_w)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>snr_EB <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N, Bk[comp] <span class="sc">*</span> z_obs, <span class="fu">sqrt</span>(Bk[comp]))</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>hr_EB  <span class="ot">&lt;-</span> <span class="fu">exp</span>(snr_EB <span class="sc">*</span> se)                         <span class="co"># back to the HR scale</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(<span class="at">prior_weight =</span> p_mix, <span class="at">sd_true_snr =</span> sd_snr, <span class="at">posterior_weight =</span> post_w, <span class="at">shrinkage_B =</span> Bk) <span class="sc">|&gt;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="st">`</span><span class="at">colnames&lt;-</span><span class="st">`</span>(<span class="fu">paste0</span>(<span class="st">"k="</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  k=1  k=2  k=3  k=4
+prior_weight     0.32 0.31 0.30 0.07
+sd_true_snr      0.61 1.42 2.16 5.64
+posterior_weight 0.15 0.36 0.43 0.07
+shrinkage_B      0.27 0.67 0.82 0.97</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="at">HR =</span> <span class="fu">median</span>(hr_EB), <span class="fu">quantile</span>(hr_EB, <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)),</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">P(HR&lt;1)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(hr_EB <span class="sc">&lt;</span> <span class="dv">1</span>), <span class="st">`</span><span class="at">P(HR&lt;0.8)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(hr_EB <span class="sc">&lt;</span> <span class="fl">0.8</span>)), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>       HR      2.5%     97.5%   P(HR&lt;1) P(HR&lt;0.8) 
+     0.71      0.49      1.00      0.98      0.72 </code></pre>
+</div>
+</div>
+<p>The observed <em>z</em> of -2.58 is shrunk to -1.79, which corresponds to <em>p</em> ≈ 0.07. The HR becomes 0.71 (95% CrI 0.49 to 1.00): benefit is still probable, P(HR &lt; 1) = 0.98, but a large benefit is far from certain. This prior says nothing about coffee. Its posterior has a frequency interpretation: among trials like DECAF that observed this <em>z</em>, this is how their true effects are distributed. It assumes that DECAF is exchangeable with a typical Cochrane trial.</p>
+<p>The same machinery gives Type S, Type M and the chance that a same-size replication would be significant in the same direction, under each prior:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>normal_post_snr <span class="ot">&lt;-</span> <span class="cf">function</span>(mu0, tau) {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  B <span class="ot">&lt;-</span> tau<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> (tau<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span>); <span class="fu">rnorm</span>(N, B <span class="sc">*</span> z_obs <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> B) <span class="sc">*</span> mu0, <span class="fu">sqrt</span>(B))</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>snr <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">`</span><span class="at">Empirical Bayes (Cochrane)</span><span class="st">`</span> <span class="ot">=</span> snr_EB,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Vague N(0, 10²)</span><span class="st">`</span>            <span class="ot">=</span> <span class="fu">normal_post_snr</span>(<span class="dv">0</span>, <span class="dv">10</span>),</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Sceptical N(0, 1²)</span><span class="st">`</span>         <span class="ot">=</span> <span class="fu">normal_post_snr</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Design prior</span><span class="st">`</span>               <span class="ot">=</span> <span class="fu">normal_post_snr</span>(<span class="fl">0.871</span> <span class="sc">/</span> se, <span class="fl">0.5</span> <span class="sc">/</span> se))</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dfr</span>(snr, <span class="cf">function</span>(s, nm) {</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  z2 <span class="ot">&lt;-</span> s <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(s))</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="st">`</span><span class="at">Prior on SNR</span><span class="st">`</span> <span class="ot">=</span> nm,</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">Posterior HR (95% CrI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, <span class="fu">median</span>(<span class="fu">exp</span>(s <span class="sc">*</span> se)),</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>                                                    <span class="fu">quantile</span>(<span class="fu">exp</span>(s <span class="sc">*</span> se), .<span class="dv">025</span>), <span class="fu">quantile</span>(<span class="fu">exp</span>(s <span class="sc">*</span> se), .<span class="dv">975</span>)),</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">Type S</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(<span class="fu">sign</span>(s) <span class="sc">!=</span> <span class="fu">sign</span>(z_obs)), <span class="dv">3</span>),</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">Type M</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">median</span>(<span class="fu">abs</span>(z_obs <span class="sc">/</span> s)), <span class="dv">2</span>),</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Replication =</span> <span class="fu">round</span>(<span class="fu">mean</span>(z2 <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">1.96</span>), <span class="dv">2</span>))</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lcccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-four-priors" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-four-priors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;21.2: DECAF under four priors on the signal-to-noise scale. Type S: posterior probability that the true effect is on the other side of 1. Type M: median factor by which |z| overstates the true |SNR|. Replication: probability that a same-size repeat is significant in the same direction.
+</figcaption>
+<div aria-describedby="tbl-four-priors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 30%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Prior on SNR</th>
+<th style="text-align: center;">Posterior HR (95% CrI)</th>
+<th style="text-align: center;">Type S</th>
+<th style="text-align: center;">Type M</th>
+<th style="text-align: center;">Replication</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Empirical Bayes (Cochrane)</td>
+<td style="text-align: center;">0.71 (0.49 to 1.00)</td>
+<td style="text-align: center;">0.024</td>
+<td style="text-align: center;">1.45</td>
+<td style="text-align: center;">0.45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vague N(0, 10²)</td>
+<td style="text-align: center;">0.61 (0.42 to 0.89)</td>
+<td style="text-align: center;">0.005</td>
+<td style="text-align: center;">1.01</td>
+<td style="text-align: center;">0.66</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sceptical N(0, 1²)</td>
+<td style="text-align: center;">0.78 (0.60 to 1.02)</td>
+<td style="text-align: center;">0.034</td>
+<td style="text-align: center;">2.00</td>
+<td style="text-align: center;">0.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Design prior</td>
+<td style="text-align: center;">0.73 (0.51 to 1.03)</td>
+<td style="text-align: center;">0.037</td>
+<td style="text-align: center;">1.54</td>
+<td style="text-align: center;">0.41</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Two quite different priors, one built from the investigators’ expectation of harm and one from the record of 23,551 trials, lead to the same qualitative conclusion: probable but modest benefit, with an interval that includes no effect, and a replication of the same size would more often than not fail. Agreement across defensible priors is what makes a conclusion robust. Surprising single trials are not rare; several recent trials in major journals contradicted their own power calculations <span class="citation" data-cites="brophy2026unexpected">(<a href="references.html#ref-brophy2026unexpected" role="doc-biblioref">17</a>)</span>.</p>
+</section>
+<section id="key-points" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-points">Key points</h2>
+<ol type="1">
+<li>The Cochrane label signals a rigorous process, not a correct conclusion; check the search date, the completeness of the data and the GRADE certainty.</li>
+<li>Similar effect estimates can be turned into very different conclusions.</li>
+<li>Living reviews need methods for repeated looks; Bayesian updating, which reports the strength of evidence at each update, is a natural one.</li>
+<li>A single trial is still a meta-analysis problem: the trial plus a prior.</li>
+<li>With low power, significant results are exaggerated (Type M); retrospective design analysis quantifies by how much.</li>
+<li>Report probabilities of clinically meaningful effects, on the absolute scale, under several defensible priors.</li>
+<li>An empirical Bayes prior from many trials calibrates a surprising result without subject-matter judgement, assuming the trial is typical.</li>
+</ol>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Re-run <code>fig-sigfilter</code> with 400 patients per arm. What are the power and the Type M ratio now?</li>
+<li>Which prior SD for the design prior makes P(HR &lt; 1) equal 0.5? How many “events” would that prior represent?</li>
+<li>Using <code>retrodesign()</code>, find the smallest true risk difference DECAF had 50% power to detect.</li>
+<li>Apply the empirical Bayes calculation to a trial you know with <em>z</em> = 3. How much is it shrunk?</li>
+<li>Find a recent “surprising” trial in a major journal and repeat this chapter’s analysis with its published HR and CI.</li>
+</ol>
+</section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><span class="citation" data-cites="gelman2014typesm">(<a href="references.html#ref-gelman2014typesm" role="doc-biblioref">13</a>)</span> on Type S and Type M errors.</li>
+<li><span class="citation" data-cites="vanzwet2024pvalues">(<a href="references.html#ref-vanzwet2024pvalues" role="doc-biblioref">15</a>)</span> and <span class="citation" data-cites="vanzwet2021shrinkage">(<a href="references.html#ref-vanzwet2021shrinkage" role="doc-biblioref">16</a>)</span> on calibrating trials against the Cochrane database.</li>
+<li><span class="citation" data-cites="spiegelhalter2004">(<a href="references.html#ref-spiegelhalter2004" role="doc-biblioref">14</a>)</span> on priors for clinical trials, including sceptical and enthusiastic priors.</li>
+<li><span class="citation" data-cites="brophy2026unexpected">(<a href="references.html#ref-brophy2026unexpected" role="doc-biblioref">17</a>)</span> for the DECAF analysis and other unexpected trial results.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-jorgensen2006cochrane" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Jørgensen AW, Hilden J, Gøtzsche PC. <a href="https://doi.org/10.1136/bmj.38973.444699.0B">Cochrane reviews compared with industry supported meta-analyses and other meta-analyses of the same drugs: Systematic review</a>. BMJ. 2006;333(7572):782. </div>
+</div>
+<div id="ref-shojania2007outofdate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Shojania KG, Sampson M, Ansari MT, Ji J, Doucette S, Moher D. <a href="https://doi.org/10.7326/0003-4819-147-4-200708210-00179">How quickly do systematic reviews go out of date? <span>A</span> survival analysis</a>. Annals of Internal Medicine. 2007;147(4):224–33. </div>
+</div>
+<div id="ref-shea2017amstar2" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Shea BJ, Reeves BC, Wells G, Thuku M, Hamel C, Moran J, et al. <a href="https://doi.org/10.1136/bmj.j4008"><span>AMSTAR</span> 2: A critical appraisal tool for systematic reviews that include randomised or non-randomised studies of healthcare interventions, or both</a>. BMJ. 2017;358:j4008. </div>
+</div>
+<div id="ref-jefferson2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Jefferson T, Jones M, Doshi P, Spencer EA, Onakpoya I, Heneghan CJ. <a href="https://doi.org/10.1136/bmj.g2545">Oseltamivir for influenza in adults and children: Systematic review of clinical study reports and summary of regulatory comments</a>. BMJ. 2014;348:g2545. </div>
+</div>
+<div id="ref-jefferson2023masks" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Jefferson T, Dooley L, Ferroni E, et al. <a href="https://doi.org/10.1002/14651858.CD006207.pub6">Physical interventions to interrupt or reduce the spread of respiratory viruses</a>. Cochrane Database of Systematic Reviews. 2023;(1):CD006207. </div>
+</div>
+<div id="ref-gotzsche2013mammography" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Gøtzsche PC, Jørgensen KJ. <a href="https://doi.org/10.1002/14651858.CD001877.pub5">Screening for breast cancer with mammography</a>. Cochrane Database of Systematic Reviews. 2013;(6):CD001877. </div>
+</div>
+<div id="ref-elliott2017living" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Elliott JH, Synnot A, Turner T, Simmonds M, Akl EA, McDonald S, et al. <a href="https://doi.org/10.1016/j.jclinepi.2017.08.010">Living systematic review: 1. <span>Introduction</span>—the why, what, when, and how</a>. Journal of Clinical Epidemiology. 2017;91:23–30. </div>
+</div>
+<div id="ref-wong2025decaf" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Wong CX, Cheung CC, Montenegro G, et al. <a href="https://doi.org/10.1001/jama.2025.21056">Caffeinated coffee consumption or abstinence to reduce atrial fibrillation: The <span>DECAF</span> randomized clinical trial</a>. JAMA. 2026;335(4):317–25. </div>
+</div>
+<div id="ref-marcus2023coffee" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Marcus GM, Rosenthal DG, Nah G, et al. <a href="https://doi.org/10.1056/NEJMoa2204737">Acute effects of coffee consumption on health among ambulatory adults</a>. New England Journal of Medicine. 2023;388(12):1092–100. </div>
+</div>
+<div id="ref-krittanawong2021caffeine" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Krittanawong C, Tunhasiriwet A, Wang Z, et al. <a href="https://doi.org/10.1177/2047487320908385">Is caffeine or coffee consumption a risk for new-onset atrial fibrillation? <span>A</span> systematic review and meta-analysis</a>. European Journal of Preventive Cardiology. 2021;28(12):e13–5. </div>
+</div>
+<div id="ref-gelman2013forking" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Gelman A, Loken E. The garden of forking paths: Why multiple comparisons can be a problem, even when there is no <span>“fishing expedition”</span> or <span>“p-hacking”</span> and the research hypothesis was posited ahead of time [Internet]. Unpublished manuscript, Department of Statistics, Columbia University; 2013. Available from: <a href="http://www.stat.columbia.edu/~gelman/research/unpublished/forking.pdf">http://www.stat.columbia.edu/~gelman/research/unpublished/forking.pdf</a></div>
+</div>
+<div id="ref-ioannidis2008winners" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Ioannidis JPA. <a href="https://doi.org/10.1097/EDE.0b013e31818131e7">Why most discovered true associations are inflated</a>. Epidemiology. 2008;19(5):640–8. </div>
+</div>
+<div id="ref-gelman2014typesm" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Gelman A, Carlin J. <a href="https://doi.org/10.1177/1745691614551642">Beyond power calculations: Assessing <span>Type S</span> (sign) and <span>Type M</span> (magnitude) errors</a>. Perspectives on Psychological Science. 2014;9(6):641–51. </div>
+</div>
+<div id="ref-spiegelhalter2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Spiegelhalter DJ, Abrams KR, Myles JP. Bayesian approaches to clinical trials and health-care evaluation. Chichester: Wiley; 2004. </div>
+</div>
+<div id="ref-vanzwet2024pvalues" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Zwet E van, Gelman A, Greenland S, Imbens G, Schwab S, Goodman SN. <a href="https://doi.org/10.1056/EVIDoa2300003">A new look at <span>P</span> values for randomized clinical trials</a>. NEJM Evidence. 2024;3(1):EVIDoa2300003. </div>
+</div>
+<div id="ref-vanzwet2021shrinkage" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Zwet E van, Schwab S, Senn S. <a href="https://doi.org/10.1002/sim.9173">The statistical properties of <span>RCTs</span> and a proposal for shrinkage</a>. Statistics in Medicine. 2021;40(27):6107–17. </div>
+</div>
+<div id="ref-brophy2026unexpected" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Brophy JM. <a href="https://doi.org/10.1016/j.cct.2026.108403">Understanding unexpected results from randomized clinical trials: Does coffee reduce atrial fibrillation recurrences?</a> Contemporary Clinical Trials. 2026; </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./20-diagnostic-accuracy.html" class="pagination-link" aria-label="Diagnostic Accuracy and Prediction Models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./22-hta.html" class="pagination-link" aria-label="Health Technology Assessment and Decision-Making">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

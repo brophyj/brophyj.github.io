@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>18&nbsp; Network Meta-Analysis in Practice – Knowledge Synthesis in Health Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./19-observational-studies.html" rel="next">
+<link href="./17-network-meta-analysis.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ef126021e9ff1ef5a96e4bd190a6c277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-missing-data.html">Threats and extensions</a></li><li class="breadcrumb-item"><a href="./18-nma-in-practice.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Knowledge Synthesis in Health Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-finding-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-question-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualising-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualising Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appraisal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-bias-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk of Bias and GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-certainty-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rating Certainty with GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-appraising-reviews.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reporting and Appraising Systematic Reviews</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Meta-analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-effect-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-meta-analysis-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Meta-Analysis Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-heterogeneity-robustness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Heterogeneity and Robustness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-bias-bridge-bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bayesian-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Threats and extensions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-publication-bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-ipd-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-network-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-nma-in-practice.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-observational-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-diagnostic-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">From evidence to decisions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-cochrane-single-trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-hta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-correcting-literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-agentic-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Agentic Systematic Reviews and Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-nma-practice-paper" id="toc-sec-nma-practice-paper" class="nav-link active" data-scroll-target="#sec-nma-practice-paper"><span class="header-section-number">18.1</span> The paper</a></li>
+  <li><a href="#sec-nma-practice-repro" id="toc-sec-nma-practice-repro" class="nav-link" data-scroll-target="#sec-nma-practice-repro"><span class="header-section-number">18.2</span> Can it be reproduced?</a>
+  <ul class="collapse">
+  <li><a href="#sec-nma-practice-arm" id="toc-sec-nma-practice-arm" class="nav-link" data-scroll-target="#sec-nma-practice-arm"><span class="header-section-number">18.2.1</span> Arm-level or contrast-level?</a></li>
+  </ul></li>
+  <li><a href="#sec-nma-practice-checks" id="toc-sec-nma-practice-checks" class="nav-link" data-scroll-target="#sec-nma-practice-checks"><span class="header-section-number">18.3</span> Applying the checks</a>
+  <ul class="collapse">
+  <li><a href="#sec-nma-practice-pi" id="toc-sec-nma-practice-pi" class="nav-link" data-scroll-target="#sec-nma-practice-pi"><span class="header-section-number">18.3.1</span> Prediction intervals</a></li>
+  <li><a href="#sec-nma-practice-consistency" id="toc-sec-nma-practice-consistency" class="nav-link" data-scroll-target="#sec-nma-practice-consistency"><span class="header-section-number">18.3.2</span> Consistency</a></li>
+  <li><a href="#sec-nma-practice-outlier" id="toc-sec-nma-practice-outlier" class="nav-link" data-scroll-target="#sec-nma-practice-outlier"><span class="header-section-number">18.3.3</span> Finding the trial</a></li>
+  <li><a href="#sec-nma-practice-trust" id="toc-sec-nma-practice-trust" class="nav-link" data-scroll-target="#sec-nma-practice-trust"><span class="header-section-number">18.3.4</span> Is the trial trustworthy?</a></li>
+  <li><a href="#sec-nma-practice-sensitivity" id="toc-sec-nma-practice-sensitivity" class="nav-link" data-scroll-target="#sec-nma-practice-sensitivity"><span class="header-section-number">18.3.5</span> Sensitivity analysis</a></li>
+  <li><a href="#sec-nma-practice-important" id="toc-sec-nma-practice-important" class="nav-link" data-scroll-target="#sec-nma-practice-important"><span class="header-section-number">18.3.6</span> Is the effect clinically important?</a></li>
+  <li><a href="#sec-nma-practice-rank" id="toc-sec-nma-practice-rank" class="nav-link" data-scroll-target="#sec-nma-practice-rank"><span class="header-section-number">18.3.7</span> What rankings hide</a></li>
+  </ul></li>
+  <li><a href="#sec-nma-practice-lyus" id="toc-sec-nma-practice-lyus" class="nav-link" data-scroll-target="#sec-nma-practice-lyus"><span class="header-section-number">18.4</span> The re-appraisal</a></li>
+  <li><a href="#sec-nma-practice-guideline" id="toc-sec-nma-practice-guideline" class="nav-link" data-scroll-target="#sec-nma-practice-guideline"><span class="header-section-number">18.5</span> From NMA to guideline</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-missing-data.html">Threats and extensions</a></li><li class="breadcrumb-item"><a href="./18-nma-in-practice.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-nma-practice" class="quarto-section-identifier"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>attempt to reproduce a published network meta-analysis from its shared data, and recognise when the shared data cannot be right;</li>
+<li>fit an arm-level NMA of standardised mean differences with <code>metafor</code>, and explain why arm-level and contrast-level analyses can weight an outlying trial differently;</li>
+<li>apply, in sequence, the checks taught in earlier chapters: prediction intervals, node-splitting, outlier plots, leave-one-out analysis, trustworthiness, fragility, and sensitivity analysis;</li>
+<li>show how an implausible change-score SMD can arise from implausibly small standard deviations, and correct it with an ANCOVA-type estimate;</li>
+<li>report posterior probabilities of clinically important effects instead of rankings, and judge whether an NMA supports a guideline recommendation.</li>
+</ul>
+<p><strong>R packages:</strong> <code>dplyr</code>, <code>tidyr</code>, <code>purrr</code>, <code>readr</code>, <code>ggplot2</code>, <code>metafor</code>, <code>knitr</code>; <code>brms</code> for code shown but not run here.</p>
+</div>
+</div>
+<p><a href="17-network-meta-analysis.html" class="quarto-xref"><span>Chapter 17</span></a> introduced the tools of network meta-analysis. This chapter applies them, and the tools of earlier chapters, to one influential NMA. <span class="citation" data-cites="zhou2020nma">(<a href="references.html#ref-zhou2020nma" role="doc-biblioref">1</a>)</span> combined 71 trials (9,510 children and adolescents with depressive disorders) of 16 antidepressants, seven psychotherapies and five combinations, and concluded that “fluoxetine (alone or in combination with CBT) seems to be the best choice” for acute treatment. With an earlier NMA restricted to antidepressants <span class="citation" data-cites="cipriani2016nma">(<a href="references.html#ref-cipriani2016nma" role="doc-biblioref">2</a>)</span>, it underpins guideline recommendations of fluoxetine as first-line medication. In 2026 a re-appraisal traced a discrepancy between these NMAs and a Cochrane NMA <span class="citation" data-cites="hetrick2021cochrane">(<a href="references.html#ref-hetrick2021cochrane" role="doc-biblioref">3</a>)</span> to a single 40-patient trial <span class="citation" data-cites="lyus2026reappraisal">(<a href="references.html#ref-lyus2026reappraisal" role="doc-biblioref">4</a>)</span>. The question for this chapter is whether the checks in this book, all available in 2016, would have found the problem earlier.</p>
+<section id="sec-nma-practice-paper" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="sec-nma-practice-paper"><span class="header-section-number">18.1</span> The paper</h2>
+<p>Zhou and colleagues estimated, for each treatment, the standardised mean difference (SMD) in change of depressive symptoms against pill placebo, with a Bayesian random-effects NMA, a common heterogeneity variance across comparisons, rankings by SUCRA, and certainty rated with CINeMA <span class="citation" data-cites="nikolakopoulou2020cinema">(<a href="references.html#ref-nikolakopoulou2020cinema" role="doc-biblioref">5</a>)</span>. Every rating scale scores higher for more depression, so changes are negative and an SMD below zero favours the treatment. They reported significant global inconsistency in the efficacy network, rated most comparisons “very low” confidence, and noted that the loop formed by fluoxetine, nortriptyline and pill placebo was inconsistent; neither its cause nor an analysis without the trials that created it was reported.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>published <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(                         <span class="co"># Zhou et al., Figure 4A (SMD vs pill placebo)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>treat, <span class="sc">~</span>smd, <span class="sc">~</span>lo, <span class="sc">~</span>hi,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Fluoxetine+CBT"</span>, <span class="sc">-</span><span class="fl">0.73</span>, <span class="sc">-</span><span class="fl">1.39</span>, <span class="sc">-</span><span class="fl">0.07</span>, <span class="st">"Fluoxetine"</span>, <span class="sc">-</span><span class="fl">0.51</span>, <span class="sc">-</span><span class="fl">0.84</span>, <span class="sc">-</span><span class="fl">0.18</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nortriptyline"</span>, <span class="fl">1.14</span>, <span class="fl">0.46</span>, <span class="fl">1.81</span>, <span class="st">"WL"</span>, <span class="fl">0.99</span>, <span class="fl">0.18</span>, <span class="fl">1.79</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="sec-nma-practice-repro" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="sec-nma-practice-repro"><span class="header-section-number">18.2</span> Can it be reproduced?</h2>
+<p>The authors shared arm-level data (mean change, SD and number for each arm of 70 trials in the efficacy network), to their credit. The analysis model can be written as an <strong>arm-level</strong> NMA: each arm’s mean change is divided by its trial’s pooled SD, and the model fits every arm with a fixed trial intercept, so that treatment differences are formed within trials:</p>
+<p><span class="math display">\[y_{ik} = \mu_i + d_{t(ik)} + u_{ik}, \qquad u_{ik} \sim N(0, \tau^2/2),\]</span></p>
+<p>with arm-level variances <span class="math inline">\(1/n_{ik}\)</span>. This is the model behind the SMD link of the <code>gemtc</code> package used by both <em>Lancet</em> NMAs. In <code>metafor</code> it is a multilevel model with trial as a fixed factor and arm as a random effect. The helper functions below are adapted from the code that <span class="citation" data-cites="lyus2026reappraisal">(<a href="references.html#ref-lyus2026reappraisal" role="doc-biblioref">4</a>)</span> made public.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>arm_data <span class="ot">&lt;-</span> <span class="cf">function</span>(arms, ref) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  arms <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">.by =</span> study, <span class="at">sd_pool =</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((n <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> sd<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (<span class="fu">sum</span>(n) <span class="sc">-</span> <span class="fu">n</span>()))) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">y =</span> mean <span class="sc">/</span> sd_pool, <span class="at">v =</span> <span class="dv">1</span> <span class="sc">/</span> n, <span class="at">se =</span> <span class="fu">sqrt</span>(v),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">trt =</span> <span class="fu">gsub</span>(<span class="st">"[^A-Za-z0-9]"</span>, <span class="st">""</span>, treat),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">trt =</span> <span class="fu">relevel</span>(<span class="fu">factor</span>(trt), <span class="fu">gsub</span>(<span class="st">"[^A-Za-z0-9]"</span>, <span class="st">""</span>, ref)),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">study =</span> <span class="fu">factor</span>(study), <span class="at">arm =</span> <span class="fu">paste</span>(study, trt))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>nma_freq <span class="ot">&lt;-</span> \(ad) <span class="fu">rma.mv</span>(y, v, <span class="at">mods =</span> <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> study <span class="sc">+</span> trt, <span class="at">random =</span> <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> arm, <span class="at">data =</span> ad)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>nma_tau  <span class="ot">&lt;-</span> \(fit) <span class="fu">sqrt</span>(<span class="dv">2</span> <span class="sc">*</span> fit<span class="sc">$</span>sigma2)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>nma_effects <span class="ot">&lt;-</span> <span class="cf">function</span>(fit, ad) {                <span class="co"># each treatment vs the reference, with 95% PI</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  b <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit); keep <span class="ot">&lt;-</span> <span class="fu">startsWith</span>(<span class="fu">names</span>(b), <span class="st">"trt"</span>); tau2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> fit<span class="sc">$</span>sigma2</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">trt =</span> <span class="fu">sub</span>(<span class="st">"^trt"</span>, <span class="st">""</span>, <span class="fu">names</span>(b)[keep]), <span class="at">est =</span> b[keep],</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">se =</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcov</span>(fit)))[keep]) <span class="sc">|&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">lo =</span> est <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se, <span class="at">hi =</span> est <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">pi_lo =</span> est <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(se<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> tau2), <span class="at">pi_hi =</span> est <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(se<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> tau2)) <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(<span class="fu">distinct</span>(ad, <span class="at">trt =</span> <span class="fu">as.character</span>(trt), treat), <span class="at">by =</span> <span class="st">"trt"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>nma_contrast <span class="ot">&lt;-</span> <span class="cf">function</span>(fit, A, B) {             <span class="co"># network estimate of A vs B</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  b <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit); cv <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(b)), <span class="fu">names</span>(b))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">paste0</span>(<span class="st">"trt"</span>, A) <span class="sc">%in%</span> <span class="fu">names</span>(b)) cv[<span class="fu">paste0</span>(<span class="st">"trt"</span>, A)] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">paste0</span>(<span class="st">"trt"</span>, B) <span class="sc">%in%</span> <span class="fu">names</span>(b)) cv[<span class="fu">paste0</span>(<span class="st">"trt"</span>, B)] <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">est =</span> <span class="fu">sum</span>(cv <span class="sc">*</span> b), <span class="at">var =</span> <span class="fu">as.numeric</span>(<span class="fu">t</span>(cv) <span class="sc">%*%</span> <span class="fu">vcov</span>(fit) <span class="sc">%*%</span> cv))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>node_split <span class="ot">&lt;-</span> <span class="cf">function</span>(ad, fit, A, B) {           <span class="co"># direct vs back-calculated indirect evidence</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  A <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"[^A-Za-z0-9]"</span>, <span class="st">""</span>, A); B <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"[^A-Za-z0-9]"</span>, <span class="st">""</span>, B)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  dd <span class="ot">&lt;-</span> ad <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="at">.by =</span> study, <span class="fu">all</span>(<span class="fu">c</span>(A, B) <span class="sc">%in%</span> trt)) <span class="sc">|&gt;</span> <span class="fu">filter</span>(trt <span class="sc">%in%</span> <span class="fu">c</span>(A, B)) <span class="sc">|&gt;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">trt =</span> <span class="fu">relevel</span>(<span class="fu">droplevels</span>(trt), B), <span class="at">study =</span> <span class="fu">droplevels</span>(study))</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  form <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="fu">nlevels</span>(dd<span class="sc">$</span>study) <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> study <span class="sc">+</span> trt <span class="cf">else</span> <span class="sc">~</span> trt</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  fd   <span class="ot">&lt;-</span> <span class="fu">rma.mv</span>(y, v, <span class="at">mods =</span> form, <span class="at">random =</span> <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> arm, <span class="at">data =</span> dd, <span class="at">sigma2 =</span> fit<span class="sc">$</span>sigma2)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  dir  <span class="ot">&lt;-</span> <span class="fu">coef</span>(fd)[[<span class="fu">paste0</span>(<span class="st">"trt"</span>, A)]]; vdir <span class="ot">&lt;-</span> <span class="fu">vcov</span>(fd)[<span class="fu">paste0</span>(<span class="st">"trt"</span>, A), <span class="fu">paste0</span>(<span class="st">"trt"</span>, A)]</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  net  <span class="ot">&lt;-</span> <span class="fu">nma_contrast</span>(fit, A, B)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  vind <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">/</span> net[[<span class="st">"var"</span>]] <span class="sc">-</span> <span class="dv">1</span> <span class="sc">/</span> vdir)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  ind  <span class="ot">&lt;-</span> (net[[<span class="st">"est"</span>]] <span class="sc">/</span> net[[<span class="st">"var"</span>]] <span class="sc">-</span> dir <span class="sc">/</span> vdir) <span class="sc">*</span> vind</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">comparison =</span> <span class="fu">paste</span>(A, <span class="st">"vs"</span>, B), <span class="at">k_direct =</span> <span class="fu">n_distinct</span>(dd<span class="sc">$</span>study),</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>                 <span class="at">direct =</span> dir, <span class="at">se_dir =</span> <span class="fu">sqrt</span>(vdir), <span class="at">indirect =</span> ind, <span class="at">se_ind =</span> <span class="fu">sqrt</span>(vind),</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>                 <span class="at">network =</span> net[[<span class="st">"est"</span>]], <span class="at">p =</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fu">abs</span>((dir <span class="sc">-</span> ind) <span class="sc">/</span> <span class="fu">sqrt</span>(vdir <span class="sc">+</span> vind))))</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>arms_posted <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ch18/zhou_arms_posted.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)   <span class="co"># as posted</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>arms        <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ch18/zhou_arms.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)          <span class="co"># corrected</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ad_posted <span class="ot">&lt;-</span> <span class="fu">arm_data</span>(arms_posted, <span class="st">"Pill-PBO"</span>); f_posted <span class="ot">&lt;-</span> <span class="fu">nma_freq</span>(ad_posted)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ad1 <span class="ot">&lt;-</span> <span class="fu">arm_data</span>(arms, <span class="st">"Pill-PBO"</span>);              f1 <span class="ot">&lt;-</span> <span class="fu">nma_freq</span>(ad1)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fx <span class="ot">&lt;-</span> \(f, ad) <span class="fu">with</span>(<span class="fu">filter</span>(<span class="fu">nma_effects</span>(f, ad), treat <span class="sc">==</span> <span class="st">"Fluoxetine"</span>), <span class="fu">fmt_ci</span>(est, lo, hi))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>audit <span class="ot">&lt;-</span> <span class="fu">full_join</span>(<span class="fu">select</span>(arms_posted, study, treat, <span class="at">m_post =</span> mean, <span class="at">n_post =</span> n),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">select</span>(arms, study, treat, <span class="at">m_corr =</span> mean, <span class="at">n_corr =</span> n), <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"study"</span>, <span class="st">"treat"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">.by =</span> study, <span class="at">bad =</span> <span class="fu">any</span>(<span class="fu">abs</span>(m_post <span class="sc">-</span> m_corr) <span class="sc">&gt;</span> <span class="fl">0.01</span> <span class="sc">|</span> n_post <span class="sc">!=</span> n_corr, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">pbo =</span> <span class="fu">any</span>(treat <span class="sc">==</span> <span class="st">"Pill-PBO"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Analysed exactly as posted, the data give fluoxetine versus placebo an SMD of -0.08 (-0.42 to 0.27), not the published −0.51 (−0.84 to −0.18). Comparing the posted file with a version in which every arm assignment was checked against the trial reports <span class="citation" data-cites="lyus2026reappraisal">(<a href="references.html#ref-lyus2026reappraisal" role="doc-biblioref">4</a>)</span> shows why: 37 of 70 trials have results attached to the wrong arm, including 33 of the 33 trials with a pill-placebo arm. Means, SDs and numbers move together, a systematic ordering error in the shared file rather than random typing errors. With the corrected data the published estimates are reproduced.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>draws <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ch18/zhou_draws.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>d_full <span class="ot">&lt;-</span> <span class="fu">filter</span>(draws, fit <span class="sc">==</span> <span class="st">"zhou_full"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>bq <span class="ot">&lt;-</span> <span class="cf">function</span>(d, t, <span class="at">pred =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> d[[<span class="fu">paste0</span>(<span class="st">"b_trt"</span>, <span class="fu">gsub</span>(<span class="st">"[^A-Za-z0-9]"</span>, <span class="st">""</span>, t))]]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (pred) { <span class="fu">set.seed</span>(<span class="dv">629</span>); x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(x), <span class="dv">0</span>, <span class="fu">sqrt</span>(<span class="dv">2</span>) <span class="sc">*</span> d<span class="sc">$</span>sd_arm__Intercept) }</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_ci</span>(<span class="fu">median</span>(x), <span class="fu">quantile</span>(x, <span class="fl">0.025</span>), <span class="fu">quantile</span>(x, <span class="fl">0.975</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>e1 <span class="ot">&lt;-</span> <span class="fu">nma_effects</span>(f1, ad1)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>published <span class="sc">|&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">Treatment =</span> treat, <span class="at">Published =</span> <span class="fu">fmt_ci</span>(smd, lo, hi),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Frequentist (metafor)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">map_chr</span>(treat, \(t) <span class="fu">with</span>(<span class="fu">filter</span>(e1, treat <span class="sc">==</span> t), <span class="fu">fmt_ci</span>(est, lo, hi))),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Bayesian (brms)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">map_chr</span>(treat, \(t) <span class="fu">bq</span>(d_full, t)),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">95% prediction interval (brms)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">map_chr</span>(treat, \(t) <span class="fu">bq</span>(d_full, t, <span class="at">pred =</span> <span class="cn">TRUE</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lcccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-repro" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-repro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.1: Reproducing Zhou et al.: published estimates, the frequentist arm-level NMA (metafor), and the Bayesian version (brms posterior draws). SMD vs pill placebo; the prediction interval is for a new trial.
+</figcaption>
+<div aria-describedby="tbl-repro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Treatment</th>
+<th style="text-align: center;">Published</th>
+<th style="text-align: center;">Frequentist (metafor)</th>
+<th style="text-align: center;">Bayesian (brms)</th>
+<th style="text-align: center;">95% prediction interval (brms)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fluoxetine+CBT</td>
+<td style="text-align: center;">-0.73 (-1.39 to -0.07)</td>
+<td style="text-align: center;">-0.73 (-1.38 to -0.08)</td>
+<td style="text-align: center;">-0.75 (-1.42 to -0.06)</td>
+<td style="text-align: center;">-0.75 (-1.99 to 0.48)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fluoxetine</td>
+<td style="text-align: center;">-0.51 (-0.84 to -0.18)</td>
+<td style="text-align: center;">-0.50 (-0.82 to -0.18)</td>
+<td style="text-align: center;">-0.50 (-0.85 to -0.17)</td>
+<td style="text-align: center;">-0.50 (-1.57 to 0.59)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nortriptyline</td>
+<td style="text-align: center;">1.14 (0.46 to 1.81)</td>
+<td style="text-align: center;">1.19 (0.52 to 1.86)</td>
+<td style="text-align: center;">1.19 (0.48 to 1.84)</td>
+<td style="text-align: center;">1.20 (-0.06 to 2.41)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WL</td>
+<td style="text-align: center;">0.99 (0.18 to 1.79)</td>
+<td style="text-align: center;">1.03 (0.23 to 1.83)</td>
+<td style="text-align: center;">1.01 (0.13 to 1.79)</td>
+<td style="text-align: center;">1.00 (-0.33 to 2.30)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The Bayesian fits were run with <code>brms</code> on the course data; the chapter reads their saved posterior draws, so it does not need Stan to render. The model is:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>nma_priors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> b), <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> sd))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">brm</span>(y <span class="sc">|</span> <span class="fu">se</span>(se) <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> study <span class="sc">+</span> trt <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> arm), <span class="at">data =</span> ad1, <span class="at">prior =</span> nma_priors,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>, <span class="at">iter =</span> <span class="dv">3000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>, <span class="at">seed =</span> <span class="dv">629</span>, <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The estimated heterogeneity is large: τ = 0.49 SD units, about the size of fluoxetine’s whole effect. The paper reported credible intervals only; the prediction interval in <a href="#tbl-repro" class="quarto-xref">Table&nbsp;<span>18.1</span></a>, for the effect of fluoxetine in a new trial, runs from a large benefit to a moderate harm.</p>
+<p>So the problems that follow are not coding errors. The posting error did not affect the authors’ own analysis; it made the analysis irreproducible for everyone else, and nobody (authors, reviewers or editors) checked that the shared file reproduced the paper (<a href="01-introduction.html#sec-intro-replication" class="quarto-xref"><span>Section 1.1.3</span></a>).</p>
+<section id="sec-nma-practice-arm" class="level3" data-number="18.2.1">
+<h3 data-number="18.2.1" class="anchored" data-anchor-id="sec-nma-practice-arm"><span class="header-section-number">18.2.1</span> Arm-level or contrast-level?</h3>
+<p>The same data can be analysed at the <strong>contrast level</strong>: compute each trial’s SMD and its variance with <code>escalc()</code>, then pool the contrasts. The large-sample variance of an SMD is</p>
+<p><span class="math display">\[\text{Var}(d) \approx \frac{1}{n_1} + \frac{1}{n_2} + \frac{d^2}{2(n_1 + n_2)} .\]</span></p>
+<p>The last term is negligible for ordinary effects, but not for an extreme one. The arm-level model omits it, so a trial with an extreme SMD is treated as more precise than it is.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>make_contrasts <span class="ot">&lt;-</span> <span class="cf">function</span>(arms) {             <span class="co"># each arm vs its trial's first arm</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  arms <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">.by =</span> study, <span class="at">ref =</span> <span class="fu">first</span>(treat), <span class="at">mref =</span> <span class="fu">first</span>(mean), <span class="at">sref =</span> <span class="fu">first</span>(sd),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">nref =</span> <span class="fu">first</span>(n), <span class="at">N =</span> <span class="fu">sum</span>(n), <span class="at">k =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(k <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">escalc</span>(<span class="at">measure =</span> <span class="st">"SMD"</span>, <span class="at">m1i =</span> mean, <span class="at">sd1i =</span> sd, <span class="at">n1i =</span> n, <span class="at">m2i =</span> mref, <span class="at">sd2i =</span> sref, <span class="at">n2i =</span> nref, <span class="at">data =</span> _)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>contr <span class="ot">&lt;-</span> <span class="fu">make_contrasts</span>(arms)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>att_c <span class="ot">&lt;-</span> <span class="fu">filter</span>(contr, study <span class="sc">==</span> <span class="st">"Attari 2006"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>tau2_a <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> f1<span class="sc">$</span>sigma2</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">SMD =</span> att_c<span class="sc">$</span>yi, <span class="st">`</span><span class="at">variance, arm-level</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">20</span> <span class="sc">+</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">20</span>, <span class="st">`</span><span class="at">variance, contrast-level</span><span class="st">`</span> <span class="ot">=</span> att_c<span class="sc">$</span>vi,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">weight ratio, arm vs contrast</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">1</span> <span class="sc">/</span> (<span class="fl">0.10</span> <span class="sc">+</span> tau2_a)) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">/</span> (att_c<span class="sc">$</span>vi <span class="sc">+</span> tau2_a))) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                          SMD           variance, arm-level 
+                         4.24                          0.10 
+     variance, contrast-level weight ratio, arm vs contrast 
+                         0.32                          1.66 </code></pre>
+</div>
+</div>
+<p>One trial stands out: Attari 2006, a 40-patient trial of fluoxetine against nortriptyline <span class="citation" data-cites="attari2006">(<a href="references.html#ref-attari2006" role="doc-biblioref">6</a>)</span>, with an SMD of 4.24 in favour of fluoxetine. Its variance is three times larger than the arm-level model assumes, and even after adding between-trial heterogeneity, it receives 1.7 times more weight in the arm-level model. It is the only trial comparing fluoxetine with nortriptyline, so it alone forms that side of the inconsistent loop. When a result depends on a technical modelling detail, look for the observation that makes the detail matter.</p>
+</section>
+</section>
+<section id="sec-nma-practice-checks" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="sec-nma-practice-checks"><span class="header-section-number">18.3</span> Applying the checks</h2>
+<p>The checks below were each taught in an earlier chapter. Zhou et al.&nbsp;ran one of them (node-splitting) but did not follow up on what it showed.</p>
+<section id="sec-nma-practice-pi" class="level3" data-number="18.3.1">
+<h3 data-number="18.3.1" class="anchored" data-anchor-id="sec-nma-practice-pi"><span class="header-section-number">18.3.1</span> Prediction intervals</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pw <span class="ot">&lt;-</span> arms <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="at">.by =</span> study, <span class="fu">all</span>(<span class="fu">c</span>(<span class="st">"Fluoxetine"</span>, <span class="st">"Pill-PBO"</span>) <span class="sc">%in%</span> treat)) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(<span class="at">.by =</span> study,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">m1 =</span> mean[treat <span class="sc">==</span> <span class="st">"Fluoxetine"</span>], <span class="at">s1 =</span> sd[treat <span class="sc">==</span> <span class="st">"Fluoxetine"</span>], <span class="at">n1 =</span> n[treat <span class="sc">==</span> <span class="st">"Fluoxetine"</span>],</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">m2 =</span> mean[treat <span class="sc">==</span> <span class="st">"Pill-PBO"</span>], <span class="at">s2 =</span> sd[treat <span class="sc">==</span> <span class="st">"Pill-PBO"</span>], <span class="at">n2 =</span> n[treat <span class="sc">==</span> <span class="st">"Pill-PBO"</span>]) <span class="sc">|&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">escalc</span>(<span class="at">measure =</span> <span class="st">"SMD"</span>, <span class="at">m1i =</span> m1, <span class="at">sd1i =</span> s1, <span class="at">n1i =</span> n1, <span class="at">m2i =</span> m2, <span class="at">sd2i =</span> s2, <span class="at">n2i =</span> n2, <span class="at">data =</span> _)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>pw_fit <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> pw, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">test =</span> <span class="st">"knha"</span>); pw_pr <span class="ot">&lt;-</span> <span class="fu">predict</span>(pw_fit)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(pw) <span class="sc">|&gt;</span> <span class="fu">transmute</span>(<span class="at">label =</span> study, <span class="at">est =</span> yi, <span class="at">lo =</span> yi <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(vi), <span class="at">hi =</span> yi <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(vi), <span class="at">type =</span> <span class="st">"Trial"</span>),</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Pooled (95% CI)"</span>, <span class="st">"95% prediction interval"</span>), <span class="at">est =</span> pw_pr<span class="sc">$</span>pred,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">lo =</span> <span class="fu">c</span>(pw_pr<span class="sc">$</span>ci.lb, pw_pr<span class="sc">$</span>pi.lb), <span class="at">hi =</span> <span class="fu">c</span>(pw_pr<span class="sc">$</span>ci.ub, pw_pr<span class="sc">$</span>pi.ub), <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Pooled"</span>, <span class="st">"PI"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">factor</span>(label, <span class="at">levels =</span> <span class="fu">rev</span>(<span class="fu">unique</span>(label)))) <span class="sc">|&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(est, label, <span class="at">colour =</span> type)) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> <span class="sc">-</span><span class="fl">0.35</span>, <span class="at">xmax =</span> <span class="fl">0.35</span>, <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">fill =</span> <span class="st">"grey90"</span>) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> lo, <span class="at">xmax =</span> hi)) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Trial =</span> <span class="st">"#041E42"</span>, <span class="at">Pooled =</span> <span class="st">"#041E42"</span>, <span class="at">PI =</span> <span class="st">"#B22222"</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SMD, fluoxetine vs placebo (&lt; 0 favours fluoxetine)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-flx-pairwise" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-flx-pairwise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="18-nma-in-practice_files/figure-html/fig-flx-pairwise-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flx-pairwise-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18.1: Pairwise meta-analysis of the nine fluoxetine-placebo trials (direct evidence only; HKSJ confidence interval). Grey band: ±0.35 SD. Red: 95% prediction interval.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The direct evidence gives an SMD of -0.25 (-0.48 to -0.01), about half the network estimate, with a prediction interval of -0.83 to 0.34. The ±0.35 SD band is the margin of clinical equivalence pre-specified by <span class="citation" data-cites="hetrick2021cochrane">(<a href="references.html#ref-hetrick2021cochrane" role="doc-biblioref">3</a>)</span> (±5 points on the CDRS-R, whose SD is about 14.5).</p>
+</section>
+<section id="sec-nma-practice-consistency" class="level3" data-number="18.3.2">
+<h3 data-number="18.3.2" class="anchored" data-anchor-id="sec-nma-practice-consistency"><span class="header-section-number">18.3.2</span> Consistency</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>loop <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"Fluoxetine"</span>, <span class="st">"Pill-PBO"</span>), <span class="fu">c</span>(<span class="st">"Nortriptyline"</span>, <span class="st">"Pill-PBO"</span>), <span class="fu">c</span>(<span class="st">"Nortriptyline"</span>, <span class="st">"Fluoxetine"</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dfr</span>(loop, \(x) <span class="fu">node_split</span>(ad1, f1, x[<span class="dv">1</span>], x[<span class="dv">2</span>])) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">Comparison =</span> comparison, <span class="st">`</span><span class="at">Direct trials</span><span class="st">`</span> <span class="ot">=</span> k_direct,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Direct =</span> <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f)"</span>, direct, se_dir), <span class="at">Indirect =</span> <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f)"</span>, indirect, se_ind),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Network =</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, network), <span class="st">`</span><span class="at">P (direct = indirect)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt_p</span>(p)) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lccccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-nodesplit" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nodesplit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.2: Node-splitting in the fluoxetine-nortriptyline-placebo loop (frequentist back-calculation). SMD (SE); &lt; 0 favours the first-named treatment.
+</figcaption>
+<div aria-describedby="tbl-nodesplit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 8%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Comparison</th>
+<th style="text-align: center;">Direct trials</th>
+<th style="text-align: center;">Direct</th>
+<th style="text-align: center;">Indirect</th>
+<th style="text-align: center;">Network</th>
+<th style="text-align: center;">P (direct = indirect)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fluoxetine vs PillPBO</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">-0.23 (0.18)</td>
+<td style="text-align: center;">-1.82 (0.40)</td>
+<td style="text-align: center;">-0.50</td>
+<td style="text-align: center;">0.0003</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nortriptyline vs PillPBO</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">-0.15 (0.41)</td>
+<td style="text-align: center;">4.05 (0.61)</td>
+<td style="text-align: center;">1.19</td>
+<td style="text-align: center;">&lt; 0.0001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nortriptyline vs Fluoxetine</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4.33 (0.58)</td>
+<td style="text-align: center;">0.13 (0.45)</td>
+<td style="text-align: center;">1.69</td>
+<td style="text-align: center;">&lt; 0.0001</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The nine randomised fluoxetine-placebo trials say about −0.23; the rest of the network, routed largely through nortriptyline, says about −1.8. The network estimate of −0.50 is a blend of incompatible sources. The Bayesian node-split, in which fluoxetine’s arms in trials that also randomised placebo get their own “direct” parameter, tells the same story:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ch18/zhou_split_draws.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Analysis =</span> <span class="fu">recode</span>(fit, <span class="at">zhou_split =</span> <span class="st">"All trials"</span>, <span class="at">zhou_split_noatt =</span> <span class="st">"Attari 2006 excluded"</span>),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">Indirect =</span> b_trtFluoxetine, <span class="at">Direct =</span> b_trtFluoxetine <span class="sc">+</span> b_split)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>sp <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(Direct, Indirect), <span class="at">names_to =</span> <span class="st">"Evidence"</span>, <span class="at">values_to =</span> <span class="st">"smd"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(smd, <span class="at">fill =</span> Evidence, <span class="at">colour =</span> Evidence)) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Analysis) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Direct =</span> <span class="st">"#041E42"</span>, <span class="at">Indirect =</span> <span class="st">"#B22222"</span>)) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Direct =</span> <span class="st">"#041E42"</span>, <span class="at">Indirect =</span> <span class="st">"#B22222"</span>)) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SMD, fluoxetine vs placebo"</span>, <span class="at">y =</span> <span class="st">"Posterior density"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-bayes-split" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bayes-split-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="18-nma-in-practice_files/figure-html/fig-bayes-split-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bayes-split-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18.2: Bayesian node-split, fluoxetine vs placebo: posterior distributions of the direct and indirect SMDs, with all trials and without Attari 2006.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-nma-practice-outlier" class="level3" data-number="18.3.3">
+<h3 data-number="18.3.3" class="anchored" data-anchor-id="sec-nma-practice-outlier"><span class="header-section-number">18.3.3</span> Finding the trial</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(contr) <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">se =</span> <span class="fu">sqrt</span>(vi), <span class="at">attari =</span> study <span class="sc">==</span> <span class="st">"Attari 2006"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(yi, se, <span class="at">colour =</span> attari)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">4.1</span>, <span class="at">y =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">"#B22222"</span>, <span class="at">label =</span> <span class="st">"Attari 2006</span><span class="sc">\n</span><span class="st">(n = 40)"</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_reverse</span>() <span class="sc">+</span> <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">FALSE</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#041E42"</span>, <span class="st">`</span><span class="at">TRUE</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#B22222"</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Trial-level SMD"</span>, <span class="at">y =</span> <span class="st">"Standard error"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-outlier" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-outlier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="18-nma-in-practice_files/figure-html/fig-outlier-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-outlier-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18.3: Every within-trial comparison in the network (each arm vs its trial’s first arm), by SMD and standard error. The sign reflects only which arm is listed first.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Looking at the data would have found it. So would a leave-one-trial-out analysis (<a href="10-heterogeneity-robustness.html#sec-hetero-loo" class="quarto-xref"><span>Section 10.4.1</span></a>), which drops each trial in turn with no suspect in mind:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>loo <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(<span class="fu">levels</span>(ad1<span class="sc">$</span>study), \(s) {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  d <span class="ot">&lt;-</span> <span class="fu">filter</span>(ad1, study <span class="sc">!=</span> s) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">study =</span> <span class="fu">droplevels</span>(study), <span class="at">trt =</span> <span class="fu">droplevels</span>(trt))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">all</span>(<span class="fu">c</span>(<span class="st">"Fluoxetine"</span>, <span class="st">"PillPBO"</span>) <span class="sc">%in%</span> d<span class="sc">$</span>trt)) <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="fu">nma_freq</span>(d); e <span class="ot">&lt;-</span> <span class="fu">nma_contrast</span>(f, <span class="st">"Fluoxetine"</span>, <span class="st">"PillPBO"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">omitted =</span> s, <span class="at">est =</span> e[[<span class="st">"est"</span>]], <span class="at">tau =</span> <span class="fu">nma_tau</span>(f),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">p_incons =</span> <span class="fu">node_split</span>(d, f, <span class="st">"Fluoxetine"</span>, <span class="st">"Pill-PBO"</span>)<span class="sc">$</span>p)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>others <span class="ot">&lt;-</span> <span class="fu">filter</span>(loo, omitted <span class="sc">!=</span> <span class="st">"Attari 2006"</span>); att <span class="ot">&lt;-</span> <span class="fu">filter</span>(loo, omitted <span class="sc">==</span> <span class="st">"Attari 2006"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Omitting any of the other 69 trials leaves the fluoxetine estimate between -0.57 and -0.44, τ between 0.44 and 0.50, and the inconsistency <em>P</em> below 0.001. Omitting Attari 2006 moves fluoxetine to -0.29, halves τ to 0.26, and removes the inconsistency (<em>P</em> = 0.19).</p>
+</section>
+<section id="sec-nma-practice-trust" class="level3" data-number="18.3.4">
+<h3 data-number="18.3.4" class="anchored" data-anchor-id="sec-nma-practice-trust"><span class="header-section-number">18.3.4</span> Is the trial trustworthy?</h3>
+<p>An outlier this extreme should prompt a trustworthiness assessment before the trial enters a synthesis. Lyus and colleagues applied the INSPECT-SR tool and found serious concerns <span class="citation" data-cites="lyus2026reappraisal">(<a href="references.html#ref-lyus2026reappraisal" role="doc-biblioref">4</a>)</span>: a single site, no ethics approval statement, registration or protocol; dropouts “replaced by new cases”; a reported <em>P</em> value that does not match the reported data; and change scores whose standard deviations (2.6 and 0.8 points on a 54-point scale) are implausibly small for a trial in which half of the fluoxetine group still met criteria for major depression. The authors, journal and publisher did not respond to queries.</p>
+<p>The change-score SDs can be checked against the baseline and week-8 data that the trial reports, using the formula of <a href="14-missing-data.html#sec-missing-change" class="quarto-xref"><span>Section 14.4.1</span></a>:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>att <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">bF =</span> <span class="fl">28.9</span>, <span class="at">sbF =</span> <span class="fl">8.4</span>, <span class="at">eF =</span> <span class="fl">17.9</span>, <span class="at">seF =</span> <span class="fl">8.1</span>,      <span class="co"># CDI, mean (SD), 20 per arm</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">bN =</span> <span class="fl">28.4</span>, <span class="at">sbN =</span> <span class="fl">8.7</span>, <span class="at">eN =</span> <span class="fl">25.8</span>, <span class="at">seN =</span> <span class="fl">8.6</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>sd_change <span class="ot">&lt;-</span> \(sb, se, r) <span class="fu">sqrt</span>(sb<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> se<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> r <span class="sc">*</span> sb <span class="sc">*</span> se)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">r =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">0.99</span>, <span class="fl">0.01</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">smd =</span> ((att<span class="sc">$</span>bF <span class="sc">-</span> att<span class="sc">$</span>eF) <span class="sc">-</span> (att<span class="sc">$</span>bN <span class="sc">-</span> att<span class="sc">$</span>eN)) <span class="sc">/</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sqrt</span>((<span class="fu">sd_change</span>(att<span class="sc">$</span>sbF, att<span class="sc">$</span>seF, r)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">sd_change</span>(att<span class="sc">$</span>sbN, att<span class="sc">$</span>seN, r)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(r, smd)) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">"#041E42"</span>) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">4.24</span>, <span class="at">colour =</span> <span class="st">"#B22222"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.02</span>, <span class="at">y =</span> <span class="fl">4.45</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"#B22222"</span>, <span class="at">label =</span> <span class="st">"SMD used in the NMAs"</span>) <span class="sc">+</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Assumed pre-post correlation r"</span>, <span class="at">y =</span> <span class="st">"Implied change-score SMD"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-attari-r" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-attari-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="18-nma-in-practice_files/figure-html/fig-attari-r-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-attari-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18.4: Attari 2006: the change-score SMD implied by the reported baseline and week-8 means and SDs, for each assumed pre-post correlation r. Only r ≈ 0.97 reproduces the SMD that entered both Lancet NMAs.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>For depression scales, pre-post correlations are usually moderate, roughly 0.3 to 0.7, which gives an SMD around 1. An <strong>ANCOVA-type</strong> SMD, the week-8 difference adjusted for baseline and divided by the week-8 SD, barely depends on <em>r</em>:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>anc_attari <span class="ot">&lt;-</span> <span class="cf">function</span>(r) {                         <span class="co"># nortriptyline vs fluoxetine, ANCOVA-type SMD</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  sd_e <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((att<span class="sc">$</span>seF<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> att<span class="sc">$</span>seN<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">2</span>); sd_b <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((att<span class="sc">$</span>sbF<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> att<span class="sc">$</span>sbN<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  d <span class="ot">&lt;-</span> ((att<span class="sc">$</span>eN <span class="sc">-</span> att<span class="sc">$</span>eF) <span class="sc">-</span> r <span class="sc">*</span> sd_e <span class="sc">/</span> sd_b <span class="sc">*</span> (att<span class="sc">$</span>bN <span class="sc">-</span> att<span class="sc">$</span>bF)) <span class="sc">/</span> sd_e</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">d =</span> d, <span class="at">v =</span> (<span class="dv">2</span> <span class="sc">/</span> <span class="dv">20</span>) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> r<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> d<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">80</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(<span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>), anc_attari) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [,1] [,2] [,3]
+d 0.96 0.97 0.99
+v 0.10 0.09 0.06</code></pre>
+</div>
+</div>
+<p>Attari’s own binary outcome tells the same story. Response (no longer meeting criteria for major depression at week 8) was 10/20 on fluoxetine and 2/20 on nortriptyline. Converted to the SMD scale with <span class="math inline">\(d = \ln(OR)\sqrt 3/\pi\)</span> <span class="citation" data-cites="chinn2000">(<a href="references.html#ref-chinn2000" role="doc-biblioref">7</a>)</span>, that is about 1.2, a quarter of the 4.24 used in the NMAs, and its fragility index (<a href="10-heterogeneity-robustness.html#sec-hetero-fragility" class="quarto-xref"><span>Section 10.5</span></a>) is small:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fragility_index <span class="ot">&lt;-</span> <span class="cf">function</span>(e1, n1, e2, n2, <span class="at">alpha =</span> <span class="fl">0.05</span>) {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> \(a, c) <span class="fu">fisher.test</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(a, n1 <span class="sc">-</span> a, c, n2 <span class="sc">-</span> c), <span class="dv">2</span>))<span class="sc">$</span>p.value</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">p</span>(e1, e2) <span class="sc">&gt;=</span> alpha) <span class="fu">return</span>(<span class="cn">NA_integer_</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="fu">p</span>(e1, e2) <span class="sc">&lt;</span> alpha) { <span class="cf">if</span> (e1 <span class="sc">/</span> n1 <span class="sc">&lt;</span> e2 <span class="sc">/</span> n2) e1 <span class="ot">&lt;-</span> e1 <span class="sc">+</span> <span class="dv">1</span> <span class="cf">else</span> e2 <span class="ot">&lt;-</span> e2 <span class="sc">+</span> <span class="dv">1</span>; k <span class="ot">&lt;-</span> k <span class="sc">+</span> <span class="dv">1</span> }</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  k</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">fragility_index</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">2</span>, <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</section>
+<section id="sec-nma-practice-sensitivity" class="level3" data-number="18.3.5">
+<h3 data-number="18.3.5" class="anchored" data-anchor-id="sec-nma-practice-sensitivity"><span class="header-section-number">18.3.5</span> Sensitivity analysis</h3>
+<p>Having diagnosed the problem, we compare two reasonable responses: <strong>correcting</strong> the trial (ANCOVA-type SMD with <em>r</em> = 0.5) and <strong>excluding</strong> it.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ad2 <span class="ot">&lt;-</span> <span class="fu">arm_data</span>(<span class="fu">filter</span>(arms, study <span class="sc">!=</span> <span class="st">"Attari 2006"</span>), <span class="st">"Pill-PBO"</span>); f2 <span class="ot">&lt;-</span> <span class="fu">nma_freq</span>(ad2)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ad3 <span class="ot">&lt;-</span> ad1; a <span class="ot">&lt;-</span> <span class="fu">anc_attari</span>(<span class="fl">0.5</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>ad3<span class="sc">$</span>y[ad3<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Attari 2006 Fluoxetine"</span>] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>ad3<span class="sc">$</span>y[ad3<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Attari 2006 Nortriptyline"</span>] <span class="ot">&lt;-</span> a[[<span class="st">"d"</span>]]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>ad3<span class="sc">$</span>v[ad3<span class="sc">$</span>study <span class="sc">==</span> <span class="st">"Attari 2006"</span>] <span class="ot">&lt;-</span> a[[<span class="st">"v"</span>]] <span class="sc">/</span> <span class="dv">2</span>; ad3<span class="sc">$</span>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(ad3<span class="sc">$</span>v)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="fu">nma_freq</span>(ad3)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>sens <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">`</span><span class="at">All trials (as published)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="at">f =</span> f1, <span class="at">ad =</span> ad1), <span class="st">`</span><span class="at">Attari corrected (ANCOVA)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="at">f =</span> f3, <span class="at">ad =</span> ad3),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>             <span class="st">`</span><span class="at">Attari excluded</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="at">f =</span> f2, <span class="at">ad =</span> ad2))</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dfr</span>(sens, \(s, nm) {</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  e <span class="ot">&lt;-</span> <span class="fu">nma_effects</span>(s<span class="sc">$</span>f, s<span class="sc">$</span>ad); g <span class="ot">&lt;-</span> \(t) <span class="fu">with</span>(<span class="fu">filter</span>(e, treat <span class="sc">==</span> t), <span class="fu">fmt_ci</span>(est, lo, hi))</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  ef <span class="ot">&lt;-</span> <span class="fu">filter</span>(e, treat <span class="sc">==</span> <span class="st">"Fluoxetine"</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Analysis =</span> nm, <span class="at">Fluoxetine =</span> <span class="fu">g</span>(<span class="st">"Fluoxetine"</span>), <span class="st">`</span><span class="at">Fluoxetine 95% PI</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f to %.2f"</span>, ef<span class="sc">$</span>pi_lo, ef<span class="sc">$</span>pi_hi),</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Nortriptyline =</span> <span class="fu">g</span>(<span class="st">"Nortriptyline"</span>), τ <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">nma_tau</span>(s<span class="sc">$</span>f)),</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">Inconsistency P</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt_p</span>(<span class="fu">node_split</span>(s<span class="sc">$</span>ad, s<span class="sc">$</span>f, <span class="st">"Fluoxetine"</span>, <span class="st">"Pill-PBO"</span>)<span class="sc">$</span>p))</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lccccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-nma-sens" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nma-sens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.3: Zhou et al.&nbsp;NMA, with Attari 2006 as published, corrected and excluded (frequentist arm-level NMA). SMD vs pill placebo.
+</figcaption>
+<div aria-describedby="tbl-nma-sens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 5%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Analysis</th>
+<th style="text-align: center;">Fluoxetine</th>
+<th style="text-align: center;">Fluoxetine 95% PI</th>
+<th style="text-align: center;">Nortriptyline</th>
+<th style="text-align: center;">τ</th>
+<th style="text-align: center;">Inconsistency P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">All trials (as published)</td>
+<td style="text-align: center;">-0.50 (-0.82 to -0.18)</td>
+<td style="text-align: center;">-1.51 to 0.51</td>
+<td style="text-align: center;">1.19 (0.52 to 1.86)</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">0.0003</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Attari corrected (ANCOVA)</td>
+<td style="text-align: center;">-0.33 (-0.53 to -0.13)</td>
+<td style="text-align: center;">-0.89 to 0.23</td>
+<td style="text-align: center;">0.15 (-0.33 to 0.62)</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">0.0563</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Attari excluded</td>
+<td style="text-align: center;">-0.29 (-0.50 to -0.09)</td>
+<td style="text-align: center;">-0.85 to 0.26</td>
+<td style="text-align: center;">-0.13 (-0.71 to 0.45)</td>
+<td style="text-align: center;">0.26</td>
+<td style="text-align: center;">0.1928</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Correcting or removing one 40-patient trial, 0.4% of the patients in the network, shrinks fluoxetine’s effect by a third or more, halves the heterogeneity, largely resolves the inconsistency, and turns nortriptyline from “worse than placebo” into “no different from placebo”.</p>
+</section>
+<section id="sec-nma-practice-important" class="level3" data-number="18.3.6">
+<h3 data-number="18.3.6" class="anchored" data-anchor-id="sec-nma-practice-important"><span class="header-section-number">18.3.6</span> Is the effect clinically important?</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>lab <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">zhou_full =</span> <span class="st">"All trials (as published)"</span>, <span class="at">zhou_anc =</span> <span class="st">"Attari corrected (ANCOVA)"</span>, <span class="at">zhou_noatt =</span> <span class="st">"Attari excluded"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>draws <span class="sc">|&gt;</span> <span class="fu">group_by</span>(fit) <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">SMD (95% CrI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt_ci</span>(<span class="fu">median</span>(b_trtFluoxetine), <span class="fu">quantile</span>(b_trtFluoxetine, <span class="fl">0.025</span>), <span class="fu">quantile</span>(b_trtFluoxetine, <span class="fl">0.975</span>)),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">P(SMD &lt; 0)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.3f"</span>, <span class="fu">mean</span>(b_trtFluoxetine <span class="sc">&lt;</span> <span class="dv">0</span>)),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">P(SMD &lt; −0.35)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.2f"</span>, <span class="fu">mean</span>(b_trtFluoxetine <span class="sc">&lt;</span> <span class="sc">-</span><span class="fl">0.35</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fit =</span> lab[fit]) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">Analysis =</span> fit) <span class="sc">|&gt;</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">match</span>(Analysis, lab)) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-nma-probs" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nma-probs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.4: Bayesian NMA: fluoxetine vs pill placebo, with the posterior probabilities that the SMD is below 0 (any benefit) and below −0.35 (a clinically important benefit).
+</figcaption>
+<div aria-describedby="tbl-nma-probs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 30%">
+<col style="width: 15%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Analysis</th>
+<th style="text-align: center;">SMD (95% CrI)</th>
+<th style="text-align: center;">P(SMD &lt; 0)</th>
+<th style="text-align: center;">P(SMD &lt; −0.35)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">All trials (as published)</td>
+<td style="text-align: center;">-0.50 (-0.85 to -0.17)</td>
+<td style="text-align: center;">0.997</td>
+<td style="text-align: center;">0.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Attari corrected (ANCOVA)</td>
+<td style="text-align: center;">-0.33 (-0.55 to -0.12)</td>
+<td style="text-align: center;">1.000</td>
+<td style="text-align: center;">0.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Attari excluded</td>
+<td style="text-align: center;">-0.30 (-0.51 to -0.08)</td>
+<td style="text-align: center;">0.997</td>
+<td style="text-align: center;">0.31</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>A benefit of fluoxetine over placebo is nearly certain under every analysis; a clinically important benefit is likely only when Attari 2006 is analysed as published.</p>
+</section>
+<section id="sec-nma-practice-rank" class="level3" data-number="18.3.7">
+<h3 data-number="18.3.7" class="anchored" data-anchor-id="sec-nma-practice-rank"><span class="header-section-number">18.3.7</span> What rankings hide</h3>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sucra <span class="ot">&lt;-</span> <span class="cf">function</span>(d) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">select</span>(d, <span class="fu">starts_with</span>(<span class="st">"b_trt"</span>))); <span class="fu">colnames</span>(m) <span class="ot">&lt;-</span> <span class="fu">sub</span>(<span class="st">"^b_trt"</span>, <span class="st">""</span>, <span class="fu">colnames</span>(m))</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">PillPBO =</span> <span class="dv">0</span>, m); rk <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">apply</span>(m, <span class="dv">1</span>, rank))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">trt =</span> <span class="fu">colnames</span>(m), <span class="at">SUCRA =</span> (<span class="fu">ncol</span>(m) <span class="sc">-</span> <span class="fu">colMeans</span>(rk)) <span class="sc">/</span> (<span class="fu">ncol</span>(m) <span class="sc">-</span> <span class="dv">1</span>),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">rank_ci =</span> <span class="fu">apply</span>(rk, <span class="dv">2</span>, \(r) <span class="fu">sprintf</span>(<span class="st">"%d to %d"</span>, <span class="fu">as.integer</span>(<span class="fu">quantile</span>(r, <span class="fl">0.025</span>)), <span class="fu">as.integer</span>(<span class="fu">quantile</span>(r, <span class="fl">0.975</span>)))))</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>drugs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Fluoxetine"</span>, <span class="st">"Duloxetine"</span>, <span class="st">"Venlafaxine"</span>, <span class="st">"Mirtazapine"</span>, <span class="st">"Sertraline"</span>, <span class="st">"Paroxetine"</span>, <span class="st">"Escitalopram"</span>, <span class="st">"Citalopram"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(<span class="fu">sucra</span>(d_full) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">`</span><span class="at">SUCRA, all trials</span><span class="st">`</span> <span class="ot">=</span> SUCRA, <span class="st">`</span><span class="at">Rank, 95% interval</span><span class="st">`</span> <span class="ot">=</span> rank_ci),</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>          <span class="fu">sucra</span>(<span class="fu">filter</span>(draws, fit <span class="sc">==</span> <span class="st">"zhou_noatt"</span>)) <span class="sc">|&gt;</span> <span class="fu">select</span>(trt, <span class="st">`</span><span class="at">SUCRA, Attari excluded</span><span class="st">`</span> <span class="ot">=</span> SUCRA), <span class="at">by =</span> <span class="st">"trt"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(trt <span class="sc">%in%</span> drugs) <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="st">`</span><span class="at">SUCRA, all trials</span><span class="st">`</span>)) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">Antidepressant =</span> trt) <span class="sc">|&gt;</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-zhou-sucra" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-zhou-sucra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.5: SUCRA and 95% rank intervals (among 32 treatments, 1 = best) for antidepressants in the Bayesian NMA.
+</figcaption>
+<div aria-describedby="tbl-zhou-sucra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 24%">
+<col style="width: 25%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Antidepressant</th>
+<th style="text-align: right;">SUCRA, all trials</th>
+<th style="text-align: left;">Rank, 95% interval</th>
+<th style="text-align: right;">SUCRA, Attari excluded</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fluoxetine</td>
+<td style="text-align: right;">0.78</td>
+<td style="text-align: left;">3 to 16</td>
+<td style="text-align: right;">0.74</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Duloxetine</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: left;">2 to 26</td>
+<td style="text-align: right;">0.68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Venlafaxine</td>
+<td style="text-align: right;">0.61</td>
+<td style="text-align: left;">2 to 26</td>
+<td style="text-align: right;">0.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mirtazapine</td>
+<td style="text-align: right;">0.60</td>
+<td style="text-align: left;">2 to 28</td>
+<td style="text-align: right;">0.66</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Citalopram</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: left;">2 to 29</td>
+<td style="text-align: right;">0.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Escitalopram</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: left;">2 to 29</td>
+<td style="text-align: right;">0.61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Paroxetine</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: left;">4 to 27</td>
+<td style="text-align: right;">0.59</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sertraline</td>
+<td style="text-align: right;">0.53</td>
+<td style="text-align: left;">5 to 27</td>
+<td style="text-align: right;">0.54</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>SUCRA compresses a distribution of ranks into one number. The rank intervals show that fluoxetine could plausibly lie anywhere from near the top to the middle of 32 treatments, and a treatment can be the best of a weak field.</p>
+</section>
+</section>
+<section id="sec-nma-practice-lyus" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="sec-nma-practice-lyus"><span class="header-section-number">18.4</span> The re-appraisal</h2>
+<p>Lyus and colleagues re-analysed the datasets of all three NMAs <span class="citation" data-cites="lyus2026reappraisal">(<a href="references.html#ref-lyus2026reappraisal" role="doc-biblioref">4</a>)</span>. The two <em>Lancet</em> NMAs included Attari 2006; the Cochrane NMA, restricted to newer-generation antidepressants, excluded it by design.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>cip <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ch18/cipriani_arms.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>het <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/ch18/hetrick_arms.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>cip_arms <span class="ot">&lt;-</span> <span class="fu">filter</span>(cip, <span class="sc">!</span><span class="fu">is.na</span>(mean)) <span class="sc">|&gt;</span> <span class="fu">select</span>(study, treat, mean, sd, n)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>adc1 <span class="ot">&lt;-</span> <span class="fu">arm_data</span>(cip_arms, <span class="st">"Placebo"</span>); fc1 <span class="ot">&lt;-</span> <span class="fu">nma_freq</span>(adc1)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>adc2 <span class="ot">&lt;-</span> <span class="fu">arm_data</span>(<span class="fu">filter</span>(cip_arms, study <span class="sc">!=</span> <span class="st">"Attari 2006"</span>), <span class="st">"Placebo"</span>); fc2 <span class="ot">&lt;-</span> <span class="fu">nma_freq</span>(adc2)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>adh  <span class="ot">&lt;-</span> <span class="fu">arm_data</span>(het, <span class="st">"Placebo"</span>); fh <span class="ot">&lt;-</span> <span class="fu">nma_freq</span>(adh)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tribble</span>(<span class="sc">~</span>NMA, <span class="sc">~</span>Analysis, <span class="sc">~</span>fit, <span class="sc">~</span>ad,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cipriani 2016"</span>, <span class="st">"All trials"</span>, fc1, adc1, <span class="st">"Cipriani 2016"</span>, <span class="st">"Attari excluded"</span>, fc2, adc2,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Zhou 2020"</span>, <span class="st">"All trials"</span>, f1, ad1, <span class="st">"Zhou 2020"</span>, <span class="st">"Attari excluded"</span>, f2, ad2,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Hetrick 2021"</span>, <span class="st">"No Attari (by design)"</span>, fh, adh) <span class="sc">|&gt;</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Fluoxetine vs placebo</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">map2_chr</span>(fit, ad, fx),</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Inconsistency P</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">map2_chr</span>(fit, ad, \(f, a) {</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>           ref <span class="ot">&lt;-</span> <span class="fu">levels</span>(a<span class="sc">$</span>trt)[<span class="dv">1</span>]; <span class="fu">fmt_p</span>(<span class="fu">node_split</span>(a, f, <span class="st">"Fluoxetine"</span>, ref)<span class="sc">$</span>p) })) <span class="sc">|&gt;</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>fit, <span class="sc">-</span>ad) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"llcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-lyus" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lyus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;18.6: Fluoxetine vs placebo in three NMAs, with and without Attari 2006, re-analysed with the arm-level NMA of this chapter (SMD, 95% CI).
+</figcaption>
+<div aria-describedby="tbl-lyus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 28%">
+<col style="width: 31%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">NMA</th>
+<th style="text-align: left;">Analysis</th>
+<th style="text-align: center;">Fluoxetine vs placebo</th>
+<th style="text-align: center;">Inconsistency P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cipriani 2016</td>
+<td style="text-align: left;">All trials</td>
+<td style="text-align: center;">-0.51 (-0.97 to -0.06)</td>
+<td style="text-align: center;">0.0033</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cipriani 2016</td>
+<td style="text-align: left;">Attari excluded</td>
+<td style="text-align: center;">-0.27 (-0.43 to -0.10)</td>
+<td style="text-align: center;">0.7100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zhou 2020</td>
+<td style="text-align: left;">All trials</td>
+<td style="text-align: center;">-0.50 (-0.82 to -0.18)</td>
+<td style="text-align: center;">0.0003</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zhou 2020</td>
+<td style="text-align: left;">Attari excluded</td>
+<td style="text-align: center;">-0.29 (-0.50 to -0.09)</td>
+<td style="text-align: center;">0.1928</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hetrick 2021</td>
+<td style="text-align: left;">No Attari (by design)</td>
+<td style="text-align: center;">-0.27 (-0.38 to -0.15)</td>
+<td style="text-align: center;">0.6963</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>One trial explains the discrepancy. Without it, all three NMAs agree that fluoxetine’s advantage over placebo is about 0.2 to 0.3 SD, about 3 to 4 points on the CDRS-R, largely inside the pre-specified margin of clinical equivalence. The Cochrane NMA, independently, had reached the same conclusion in 2021 <span class="citation" data-cites="hetrick2021cochrane">(<a href="references.html#ref-hetrick2021cochrane" role="doc-biblioref">3</a>)</span>. The direct evidence on response, the outcome patients notice, tells the same story:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>resp <span class="ot">&lt;-</span> cip <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="at">.by =</span> study, <span class="fu">all</span>(<span class="fu">c</span>(<span class="st">"Fluoxetine"</span>, <span class="st">"Placebo"</span>) <span class="sc">%in%</span> treat)) <span class="sc">|&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(treat <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Fluoxetine"</span>, <span class="st">"Placebo"</span>), <span class="sc">!</span><span class="fu">is.na</span>(responders)) <span class="sc">|&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(<span class="at">.by =</span> study, <span class="at">ai =</span> responders[treat <span class="sc">==</span> <span class="st">"Fluoxetine"</span>], <span class="at">n1i =</span> responders_n[treat <span class="sc">==</span> <span class="st">"Fluoxetine"</span>],</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">ci =</span> responders[treat <span class="sc">==</span> <span class="st">"Placebo"</span>], <span class="at">n2i =</span> responders_n[treat <span class="sc">==</span> <span class="st">"Placebo"</span>])</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>rr <span class="ot">&lt;-</span> <span class="fu">rma</span>(<span class="at">measure =</span> <span class="st">"RR"</span>, <span class="at">ai =</span> ai, <span class="at">n1i =</span> n1i, <span class="at">ci =</span> ci, <span class="at">n2i =</span> n2i, <span class="at">data =</span> resp, <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">test =</span> <span class="st">"knha"</span>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(rr, <span class="at">transf =</span> exp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   pred  ci.lb  ci.ub  pi.lb  pi.ub 
+ 1.3107 0.9772 1.7580 0.6595 2.6050 </code></pre>
+</div>
+</div>
+<p>In the placebo-controlled fluoxetine trials, response was more frequent on fluoxetine, but the pooled risk ratio’s confidence interval (HKSJ) includes 1 and its prediction interval is wide.</p>
+</section>
+<section id="sec-nma-practice-guideline" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="sec-nma-practice-guideline"><span class="header-section-number">18.5</span> From NMA to guideline</h2>
+<p>Would the guideline recommendation of fluoxetine as first-line medication have survived these checks? The certainty of evidence was already “very low” for most comparisons in both <em>Lancet</em> NMAs, the efficacy network showed significant inconsistency, and the prediction interval for fluoxetine included harm. Every one of the checks applied here (reproduce the analysis, report prediction intervals, investigate inconsistency rather than average over it, plot the data, leave one trial out, assess the trustworthiness of influential trials, and ask whether an effect is clinically important rather than merely non-zero) was available when the first NMA was published. A modest benefit of fluoxetine remains plausible; a recommendation resting on its ranking as “the best choice” does not.</p>
+<p>The general lessons:</p>
+<ol type="1">
+<li><strong>Reproduce before you trust.</strong> Shared data are only useful if someone checks that they reproduce the paper.</li>
+<li><strong>Inconsistency is a signal to investigate.</strong> A network estimate that blends incompatible direct and indirect evidence summarises nothing.</li>
+<li><strong>One small trial can dominate a network</strong> when it closes a loop, when its effect is extreme, and when the model underweights its uncertainty.</li>
+<li><strong>Check trustworthiness, not only risk of bias.</strong> Risk-of-bias tools assume the data are genuine.</li>
+<li><strong>Correct where possible, and show both.</strong> Report analyses with the trial corrected and excluded, and examine every conclusion, not only the headline estimate.</li>
+</ol>
+</section>
+<section id="key-points" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-points">Key points</h2>
+<ol type="1">
+<li>The shared data of an influential NMA did not reproduce it; with corrected arm assignments, the published estimates were reproduced exactly.</li>
+<li>Arm-level SMD models omit the <span class="math inline">\(d^2/2N\)</span> term of the SMD variance and so overweight trials with extreme effects.</li>
+<li>A single 40-patient trial with an implausible SMD of 4.2, created by implausibly small change-score SDs, caused the network’s inconsistency, much of its heterogeneity and much of fluoxetine’s apparent effect.</li>
+<li>Prediction intervals, node-splitting, outlier plots, leave-one-out analysis, trustworthiness assessment and fragility would each have flagged the problem.</li>
+<li>Corrected or excluded, the trial’s removal brings three NMAs into agreement on a small effect, largely within the margin of clinical equivalence.</li>
+<li>Rankings and “significant” network estimates did not convey this; posterior probabilities of clinically important effects do.</li>
+</ol>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Re-run <code>tbl-nma-sens</code> with the ANCOVA correction at <em>r</em> = 0.3 and <em>r</em> = 0.7. Which conclusions change?</li>
+<li>Fit the contrast-level NMA (<code>escalc()</code> SMDs, then <code>rma.mv()</code> with the multi-arm covariance) and compare the fluoxetine estimate with the arm-level result, with and without Attari 2006.</li>
+<li>Use <code>node_split()</code> for every comparison in the network with at least two direct trials. Are there other inconsistent loops?</li>
+<li>From <code>zhou_draws.csv</code>, compute the probability that fluoxetine + CBT is better than fluoxetine alone by more than 0.2 SD, with and without Attari 2006.</li>
+<li>Draft a two-sentence recommendation on fluoxetine for adolescent depression, with a certainty rating, from the analysis without Attari 2006.</li>
+</ol>
+</section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><span class="citation" data-cites="lyus2026reappraisal">(<a href="references.html#ref-lyus2026reappraisal" role="doc-biblioref">4</a>)</span> for the full re-appraisal and its code.</li>
+<li><span class="citation" data-cites="zhou2020nma">(<a href="references.html#ref-zhou2020nma" role="doc-biblioref">1</a>)</span>, <span class="citation" data-cites="cipriani2016nma">(<a href="references.html#ref-cipriani2016nma" role="doc-biblioref">2</a>)</span> and <span class="citation" data-cites="hetrick2021cochrane">(<a href="references.html#ref-hetrick2021cochrane" role="doc-biblioref">3</a>)</span>, the three NMAs.</li>
+<li><span class="citation" data-cites="white2019armcontrast">(<a href="references.html#ref-white2019armcontrast" role="doc-biblioref">8</a>)</span> on arm-based and contrast-based models.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-zhou2020nma" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Zhou X, Teng T, Zhang Y, et al. <a href="https://doi.org/10.1016/S2215-0366(20)30137-1">Comparative efficacy and acceptability of antidepressants, psychotherapies, and their combination for acute treatment of children and adolescents with depressive disorder: A systematic review and network meta-analysis</a>. Lancet Psychiatry. 2020;7(7):581–601. </div>
+</div>
+<div id="ref-cipriani2016nma" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Cipriani A, Zhou X, Del Giovane C, et al. <a href="https://doi.org/10.1016/S0140-6736(16)30385-3">Comparative efficacy and tolerability of antidepressants for major depressive disorder in children and adolescents: A network meta-analysis</a>. Lancet. 2016;388:881–90. </div>
+</div>
+<div id="ref-hetrick2021cochrane" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Hetrick SE, McKenzie JE, Bailey AP, et al. <a href="https://doi.org/10.1002/14651858.CD013674.pub2">New generation antidepressants for depression in children and adolescents: A network meta-analysis</a>. Cochrane Database of Systematic Reviews. 2021;(5):CD013674. </div>
+</div>
+<div id="ref-lyus2026reappraisal" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Lyus R, Naudet F, Valkenhoef G van, Plöderl M. <a href="https://doi.org/10.1002/cesm.70108">A re-appraisal of three network meta-analyses to explain the discrepancy in findings for the efficacy of fluoxetine for the treatment of depression in children and adolescents</a>. Cochrane Evidence Synthesis and Methods. 2026; </div>
+</div>
+<div id="ref-nikolakopoulou2020cinema" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Nikolakopoulou A, Higgins JPT, Papakonstantinou T, et al. <a href="https://doi.org/10.1371/journal.pmed.1003082"><span>CINeMA</span>: An approach for assessing confidence in the results of a network meta-analysis</a>. PLoS Medicine. 2020;17(4):e1003082. </div>
+</div>
+<div id="ref-attari2006" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Attari A, Yadollah Moghaddam F, Hasanzadeh A, Soltani M, Mahmoodi M. Comparison of efficacy of fluoxetine with nortriptyline in treatment of major depression in children and adolescents: A double-blind study. Journal of Research in Medical Sciences. 2006;11(1):24–30. </div>
+</div>
+<div id="ref-chinn2000" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Chinn S. <a href="https://doi.org/10.1002/1097-0258(20001130)19:22<3127::AID-SIM784>3.0.CO;2-M">A simple method for converting an odds ratio to effect size for use in meta-analysis</a>. Statistics in Medicine. 2000;19(22):3127–31. </div>
+</div>
+<div id="ref-white2019armcontrast" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">White IR, Turner RM, Karahalios A, Salanti G. <a href="https://doi.org/10.1002/sim.8360">A comparison of arm-based and contrast-based models for network meta-analysis</a>. Statistics in Medicine. 2019;38(27):5197–213. </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./17-network-meta-analysis.html" class="pagination-link" aria-label="Network Meta-Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./19-observational-studies.html" class="pagination-link" aria-label="Systematic Reviews of Observational Studies">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

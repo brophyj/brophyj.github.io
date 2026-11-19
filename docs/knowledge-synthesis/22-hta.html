@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>22&nbsp; Health Technology Assessment and Decision-Making – Knowledge Synthesis in Health Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./23-correcting-literature.html" rel="next">
+<link href="./21-cochrane-single-trial.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ef126021e9ff1ef5a96e4bd190a6c277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./21-cochrane-single-trial.html">From evidence to decisions</a></li><li class="breadcrumb-item"><a href="./22-hta.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Knowledge Synthesis in Health Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-finding-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-question-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualising-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualising Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appraisal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-bias-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk of Bias and GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-certainty-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rating Certainty with GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-appraising-reviews.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reporting and Appraising Systematic Reviews</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Meta-analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-effect-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-meta-analysis-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Meta-Analysis Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-heterogeneity-robustness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Heterogeneity and Robustness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-bias-bridge-bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bayesian-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Threats and extensions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-publication-bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-ipd-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-network-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-nma-in-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-observational-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-diagnostic-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">From evidence to decisions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-cochrane-single-trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-hta.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-correcting-literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-agentic-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Agentic Systematic Reviews and Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-hta-why" id="toc-sec-hta-why" class="nav-link active" data-scroll-target="#sec-hta-why"><span class="header-section-number">22.1</span> Why HTA?</a></li>
+  <li><a href="#sec-hta-etd" id="toc-sec-hta-etd" class="nav-link" data-scroll-target="#sec-hta-etd"><span class="header-section-number">22.2</span> The Evidence-to-Decision framework</a></li>
+  <li><a href="#sec-hta-nma" id="toc-sec-hta-nma" class="nav-link" data-scroll-target="#sec-hta-nma"><span class="header-section-number">22.3</span> Network meta-analysis: alternatives and combinations</a></li>
+  <li><a href="#sec-hta-econ" id="toc-sec-hta-econ" class="nav-link" data-scroll-target="#sec-hta-econ"><span class="header-section-number">22.4</span> Economic evaluation</a>
+  <ul class="collapse">
+  <li><a href="#sec-hta-qaly" id="toc-sec-hta-qaly" class="nav-link" data-scroll-target="#sec-hta-qaly"><span class="header-section-number">22.4.1</span> QALYs</a></li>
+  <li><a href="#sec-hta-ceplane" id="toc-sec-hta-ceplane" class="nav-link" data-scroll-target="#sec-hta-ceplane"><span class="header-section-number">22.4.2</span> The cost-effectiveness plane</a></li>
+  <li><a href="#sec-hta-markov" id="toc-sec-hta-markov" class="nav-link" data-scroll-target="#sec-hta-markov"><span class="header-section-number">22.4.3</span> A Markov model with meta-analytic inputs</a></li>
+  <li><a href="#sec-hta-psa" id="toc-sec-hta-psa" class="nav-link" data-scroll-target="#sec-hta-psa"><span class="header-section-number">22.4.4</span> Probabilistic sensitivity analysis</a></li>
+  </ul></li>
+  <li><a href="#sec-hta-bayes" id="toc-sec-hta-bayes" class="nav-link" data-scroll-target="#sec-hta-bayes"><span class="header-section-number">22.5</span> The Bayesian character of HTA</a>
+  <ul class="collapse">
+  <li><a href="#sec-hta-magnesium" id="toc-sec-hta-magnesium" class="nav-link" data-scroll-target="#sec-hta-magnesium"><span class="header-section-number">22.5.1</span> Is another study needed? Magnesium after myocardial infarction</a></li>
+  </ul></li>
+  <li><a href="#sec-hta-voi" id="toc-sec-hta-voi" class="nav-link" data-scroll-target="#sec-hta-voi"><span class="header-section-number">22.6</span> Value of information</a>
+  <ul class="collapse">
+  <li><a href="#sec-hta-evpi" id="toc-sec-hta-evpi" class="nav-link" data-scroll-target="#sec-hta-evpi"><span class="header-section-number">22.6.1</span> Expected value of perfect information</a></li>
+  <li><a href="#sec-hta-evppi" id="toc-sec-hta-evppi" class="nav-link" data-scroll-target="#sec-hta-evppi"><span class="header-section-number">22.6.2</span> Which uncertainty matters? EVPPI</a></li>
+  </ul></li>
+  <li><a href="#sec-hta-bodies" id="toc-sec-hta-bodies" class="nav-link" data-scroll-target="#sec-hta-bodies"><span class="header-section-number">22.7</span> HTA bodies</a></li>
+  <li><a href="#sec-hta-dapa" id="toc-sec-hta-dapa" class="nav-link" data-scroll-target="#sec-hta-dapa"><span class="header-section-number">22.8</span> The complete chain: dapagliflozin and NICE TA679</a></li>
+  <li><a href="#sec-hta-failures" id="toc-sec-hta-failures" class="nav-link" data-scroll-target="#sec-hta-failures"><span class="header-section-number">22.9</span> When critical thinking is missing</a>
+  <ul class="collapse">
+  <li><a href="#sec-hta-xigris" id="toc-sec-hta-xigris" class="nav-link" data-scroll-target="#sec-hta-xigris"><span class="header-section-number">22.9.1</span> Drotrecogin alfa in sepsis</a></li>
+  <li><a href="#sec-hta-ipi" id="toc-sec-hta-ipi" class="nav-link" data-scroll-target="#sec-hta-ipi"><span class="header-section-number">22.9.2</span> Ipilimumab in melanoma: extrapolation drives the ICER</a></li>
+  <li><a href="#sec-hta-lessons" id="toc-sec-hta-lessons" class="nav-link" data-scroll-target="#sec-hta-lessons"><span class="header-section-number">22.9.3</span> Lessons</a></li>
+  </ul></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./21-cochrane-single-trial.html">From evidence to decisions</a></li><li class="breadcrumb-item"><a href="./22-hta.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-hta" class="quarto-section-identifier"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>distinguish the question answered by a systematic review from the question answered by a health technology assessment (HTA);</li>
+<li>use the GRADE Evidence-to-Decision (EtD) framework, and explain why decisions need absolute effects;</li>
+<li>carry out an adjusted indirect comparison, and explain why ranking add-on therapies as alternatives answers the wrong question;</li>
+<li>explain QALYs, ICERs and net monetary benefit, and build a simple Markov model whose inputs are meta-analytic estimates;</li>
+<li>propagate uncertainty by probabilistic sensitivity analysis, and summarise it with the cost-effectiveness acceptability curve;</li>
+<li>explain the Bayesian character of HTA, and use a predictive distribution to ask whether more research is needed;</li>
+<li>calculate the expected value of perfect and partial perfect information, and use them to judge whether research is worth funding;</li>
+<li>recognise failures of the HTA process in two historical cases.</li>
+</ul>
+<p><strong>R packages:</strong> <code>dplyr</code>, <code>tidyr</code>, <code>purrr</code>, <code>ggplot2</code>, <code>metafor</code>, <code>mgcv</code>, <code>patchwork</code>, <code>knitr</code>; <code>brms</code> for code shown but not run here (its posterior draws are read from a file).</p>
+</div>
+</div>
+<p>A systematic review answers the question “what is the effect of treatment X on outcome Y?”. A <strong>health technology assessment</strong> answers a different one: “should treatment X be funded for population Z at price P, compared with everything else we could do with the money?”. Bridging the two needs structured deliberation, comparisons against every relevant alternative, economic modelling, and a way to judge whether the current evidence is good enough to decide. The running example in this chapter is dapagliflozin for heart failure with reduced ejection fraction (HFrEF), appraised by England’s National Institute for Health and Care Excellence (NICE) in 2021.</p>
+<section id="sec-hta-why" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="sec-hta-why"><span class="header-section-number">22.1</span> Why HTA?</h2>
+<p>Technology assessment began in the 1960s and 1970s with the recognition that technologies have social, economic and ethical consequences as well as technical ones; the US Congress created an Office of Technology Assessment in 1972. In 1978, at McGill, McGregor and Pelletier argued in the <em>New England Journal of Medicine</em> that costly new services for common diseases, such as coronary bypass surgery, must be evaluated for cost and outcome before they spread, and asked not only <em>who</em> should be treated but <em>where</em>, and at what volume <span class="citation" data-cites="mcgregor1978planning">(<a href="references.html#ref-mcgregor1978planning" role="doc-biblioref">1</a>)</span>. Their cost model is simple enough to reproduce: with 1976 Montreal costs, each surgical unit carried fixed costs of $18,993 a year, duplicated for every block of 400 operations, plus $733 of variable cost per operation.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ops <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">1000</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cost_per_op <span class="ot">&lt;-</span> <span class="dv">18993</span> <span class="sc">*</span> <span class="fu">ceiling</span>(ops <span class="sc">/</span> <span class="dv">400</span>) <span class="sc">/</span> ops <span class="sc">+</span> <span class="dv">733</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tibble<span class="sc">::</span><span class="fu">tibble</span>(ops, cost_per_op), <span class="fu">aes</span>(ops, cost_per_op)) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">colour =</span> navy) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">200</span>), <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">colour =</span> red) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">55</span>, <span class="dv">205</span>), <span class="at">y =</span> <span class="dv">3800</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.3</span>, <span class="at">colour =</span> red,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"~50: cost levels off"</span>, <span class="st">"~200: suggested</span><span class="sc">\n</span><span class="st">for good outcomes"</span>)) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Operations per year"</span>, <span class="at">y =</span> <span class="st">"Extra cost per operation ($)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-mcgregor" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mcgregor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="22-hta_files/figure-html/fig-mcgregor-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mcgregor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.1: Extra cost per coronary bypass operation by annual volume, reproducing the cost model of McGregor and Pelletier (1978; 1976 Canadian dollars, physicians’ fees excluded).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Below about 50 operations a year the cost per operation is very high; above about 100 there is little further saving; and the outcome evidence suggested at least 200 a year. National HTA agencies followed: Sweden’s SBU in 1987, Québec’s CETS in 1988 (now INESSS), Canada’s CCOHTA in 1989 (now Canada’s Drug Agency, CDA-AMC) and NICE in 1999. McGregor also founded the first hospital-based HTA unit, at the McGill University Health Centre, a model later required for all Québec university health centres.</p>
+<p>HTA exists because evidence is often incomplete when decisions must be made, spending correlates poorly with outcomes across and within countries, proven interventions are under-used while costs keep rising, and health care competes for money with other determinants of health. Guidelines ask whether a treatment works; HTA adds the questions guidelines usually leave out. Compared with what, which means all relevant alternatives? At what cost and opportunity cost? How certain are we, and is more certainty worth buying? For whom, and with what effect on equity?</p>
+<div id="tbl-sr-hta" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sr-hta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.1: A systematic review and an HTA.
+</figcaption>
+<div aria-describedby="tbl-sr-hta-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Systematic review</th>
+<th>Health technology assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scope</td>
+<td>Efficacy and safety</td>
+<td>Efficacy, cost, equity, feasibility</td>
+</tr>
+<tr class="even">
+<td>Comparator</td>
+<td>Placebo or one active control</td>
+<td>All relevant alternatives, and combinations</td>
+</tr>
+<tr class="odd">
+<td>Audience</td>
+<td>Clinicians, researchers</td>
+<td>Payers, regulators, policy-makers</td>
+</tr>
+<tr class="even">
+<td>Output</td>
+<td>Pooled estimate with GRADE certainty</td>
+<td>Coverage recommendation with conditions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>An HTA proceeds through scoping (a PICO with several comparators and utility-weighted outcomes), a clinical systematic review, a network meta-analysis, an economic model, deliberation by a committee, and conditions such as price agreements or coverage with evidence development. A flawed review at the second step propagates through every later step: the model converts biased inputs into a precise-looking, biased ratio.</p>
+</section>
+<section id="sec-hta-etd" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="sec-hta-etd"><span class="header-section-number">22.2</span> The Evidence-to-Decision framework</h2>
+<p>The GRADE <strong>Evidence-to-Decision (EtD)</strong> frameworks, developed in the DECIDE project, make explicit the judgements a panel otherwise makes implicitly <span class="citation" data-cites="alonsocoello2016etd">(<a href="references.html#ref-alonsocoello2016etd" role="doc-biblioref">2</a>)</span>. The framework for population-level decisions, such as coverage, has 12 criteria <span class="citation" data-cites="moberg2018etd">(<a href="references.html#ref-moberg2018etd" role="doc-biblioref">3</a>)</span>.</p>
+<div id="tbl-etd" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-etd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.2: The 12 criteria of the GRADE EtD framework for population-level decisions.
+</figcaption>
+<div aria-describedby="tbl-etd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Question</th>
+<th>Main source of evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Priority of the problem</td>
+<td>Is the problem a priority?</td>
+<td>Burden-of-disease data</td>
+</tr>
+<tr class="even">
+<td>2. Desirable effects</td>
+<td>How large are the expected benefits?</td>
+<td>Systematic review, with baseline risk</td>
+</tr>
+<tr class="odd">
+<td>3. Undesirable effects</td>
+<td>How large are the expected harms?</td>
+<td>Systematic review, observational safety data</td>
+</tr>
+<tr class="even">
+<td>4. Certainty of evidence</td>
+<td>What is the overall certainty?</td>
+<td>GRADE assessment of the review</td>
+</tr>
+<tr class="odd">
+<td>5. Values</td>
+<td>Is there uncertainty or variability in how people value the outcomes?</td>
+<td>Preference and utility studies</td>
+</tr>
+<tr class="even">
+<td>6. Balance of effects</td>
+<td>Does the balance favour the intervention?</td>
+<td>Judgement integrating 2 to 5</td>
+</tr>
+<tr class="odd">
+<td>7. Resources required</td>
+<td>How large are the costs?</td>
+<td>Costing and budget-impact studies</td>
+</tr>
+<tr class="even">
+<td>8. Certainty of resource evidence</td>
+<td>How certain are the costs?</td>
+<td>Quality of cost data</td>
+</tr>
+<tr class="odd">
+<td>9. Cost-effectiveness</td>
+<td>Does cost-effectiveness favour the intervention?</td>
+<td>Economic model</td>
+</tr>
+<tr class="even">
+<td>10. Equity</td>
+<td>What is the effect on health equity?</td>
+<td>Subgroup and access data</td>
+</tr>
+<tr class="odd">
+<td>11. Acceptability</td>
+<td>Is it acceptable to stakeholders?</td>
+<td>Consultation</td>
+</tr>
+<tr class="even">
+<td>12. Feasibility</td>
+<td>Is it feasible to implement?</td>
+<td>Implementation studies</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>A systematic review informs criteria 2 to 4 directly; the rest need economic, preference and contextual evidence that a standard review does not collect. Certainty of evidence (<a href="06-certainty-reporting.html" class="quarto-xref"><span>Chapter 6</span></a>) is one criterion of twelve.</p>
+<p>Decisions need <strong>absolute</strong> effects, because the same relative effect means very different things in different populations:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="st">`</span><span class="at">Baseline risk per year</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.08</span>, <span class="fl">0.15</span>, <span class="fl">0.25</span>, <span class="fl">0.35</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Absolute risk reduction</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Baseline risk per year</span><span class="st">`</span> <span class="sc">*</span> <span class="fl">0.25</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">NNT =</span> <span class="fu">round</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="st">`</span><span class="at">Absolute risk reduction</span><span class="st">`</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">across</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, \(x) <span class="fu">sprintf</span>(<span class="st">"%.2f%%"</span>, <span class="dv">100</span> <span class="sc">*</span> x))) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"ccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-absolute" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-absolute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.3: The same relative risk, 0.75, at four baseline risks.
+</figcaption>
+<div aria-describedby="tbl-absolute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Baseline risk per year</th>
+<th style="text-align: center;">Absolute risk reduction</th>
+<th style="text-align: center;">NNT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">8.00%</td>
+<td style="text-align: center;">2.00%</td>
+<td style="text-align: center;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">15.00%</td>
+<td style="text-align: center;">3.75%</td>
+<td style="text-align: center;">27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">25.00%</td>
+<td style="text-align: center;">6.25%</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">35.00%</td>
+<td style="text-align: center;">8.75%</td>
+<td style="text-align: center;">11</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>An economic model needs the baseline risk of the target population and the relative effect, usually for each component outcome separately, because hospitalisation and death carry different costs and utilities. A review that reports only a composite relative effect leaves the modeller to guess.</p>
+</section>
+<section id="sec-hta-nma" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="sec-hta-nma"><span class="header-section-number">22.3</span> Network meta-analysis: alternatives and combinations</h2>
+<p>An HTA rarely asks whether drug A beats placebo; it asks whether A is worth funding given current care and the other options, and head-to-head trials rarely exist. Network meta-analysis (<a href="17-network-meta-analysis.html" class="quarto-xref"><span>Chapter 17</span></a>) supplies the missing comparisons, valid only under transitivity, which includes similar <strong>background therapy</strong>.</p>
+<p>In its appraisal of dapagliflozin for HFrEF, NICE needed a comparison with sacubitril/valsartan, for which no trial existed. The evidence was a star-shaped network of four trials, each comparing a new drug with the control arm of its own era <span class="citation" data-cites="zannad2011emphasis mcmurray2014paradigm mcmurray2019dapa packer2020emperor">(<a href="references.html#ref-zannad2011emphasis" role="doc-biblioref">4</a>–<a href="references.html#ref-packer2020emperor" role="doc-biblioref">7</a>)</span>. With a star network there is no closed loop, so consistency cannot be checked: transitivity is a pure assumption, the usual situation in HTA submissions. The <strong>Bucher</strong> adjusted indirect comparison <span class="citation" data-cites="bucher1997">(<a href="references.html#ref-bucher1997" role="doc-biblioref">8</a>)</span> takes the difference of two log hazard ratios against the common comparator and adds their variances. In <code>metafor</code>, each drug’s log HR is one coefficient of a meta-regression without intercept, and contrasts give the indirect comparisons:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>trials <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>trial,            <span class="sc">~</span>treat,          <span class="sc">~</span>hr,  <span class="sc">~</span>lo,  <span class="sc">~</span>hi,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EMPHASIS-HF"</span>,     <span class="st">"Eplerenone"</span>,    <span class="fl">0.63</span>, <span class="fl">0.54</span>, <span class="fl">0.74</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PARADIGM-HF"</span>,     <span class="st">"Sac/val"</span>,       <span class="fl">0.80</span>, <span class="fl">0.73</span>, <span class="fl">0.87</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DAPA-HF"</span>,         <span class="st">"Dapagliflozin"</span>, <span class="fl">0.74</span>, <span class="fl">0.65</span>, <span class="fl">0.85</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"EMPEROR-Reduced"</span>, <span class="st">"Empagliflozin"</span>, <span class="fl">0.75</span>, <span class="fl">0.65</span>, <span class="fl">0.86</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">loghr =</span> <span class="fu">log</span>(hr), <span class="at">se =</span> (<span class="fu">log</span>(hi) <span class="sc">-</span> <span class="fu">log</span>(lo)) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>)))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>nma <span class="ot">&lt;-</span> <span class="fu">rma</span>(<span class="at">yi =</span> loghr, <span class="at">sei =</span> se, <span class="at">mods =</span> <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> treat, <span class="at">data =</span> trials, <span class="at">method =</span> <span class="st">"EE"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">coef</span>(nma))                                    <span class="co"># Dapa, Empa, Eplerenone, Sac/val</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "treatDapagliflozin" "treatEmpagliflozin" "treatEplerenone"   
+[4] "treatSac/val"      </code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bd <span class="ot">&lt;-</span> <span class="fu">predict</span>(nma, <span class="at">newmods =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="at">transf =</span> exp)      <span class="co"># dapagliflozin vs sac/val</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="at">HR =</span> bd<span class="sc">$</span>pred, <span class="at">lower =</span> bd<span class="sc">$</span>ci.lb, <span class="at">upper =</span> bd<span class="sc">$</span>ci.ub), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   HR lower upper 
+ 0.92  0.79  1.09 </code></pre>
+</div>
+</div>
+<p>The indirect HR for dapagliflozin versus sacubitril/valsartan is 0.92 (95% CI 0.79 to 1.09). NICE’s committee preferred this Bucher comparison to a matching-adjusted indirect comparison and concluded that dapagliflozin may be more effective, but that the result was uncertain, with a range that included no benefit <span class="citation" data-cites="nice2021ta679">(<a href="references.html#ref-nice2021ta679" role="doc-biblioref">9</a>)</span>. Randomisation is preserved within each trial, but the comparison between trials is only as good as their similarity, and here the control arms differed: EMPHASIS-HF patients received no mineralocorticoid antagonist, PARADIGM-HF’s control <em>was</em> the ACE inhibitor enalapril, and DAPA-HF and EMPEROR-Reduced added a drug to whatever patients were taking.</p>
+<p>The more important point is that the question is rarely “A or B?”. With A as current care, B as dapagliflozin and C as sacubitril/valsartan, three different decisions are possible:</p>
+<ul>
+<li><strong>A + B versus A:</strong> add dapagliflozin to current therapy. DAPA-HF answers this directly, and NICE recommended dapagliflozin only as an add-on to optimised standard care.</li>
+<li><strong>B versus C:</strong> for a patient still symptomatic on an ACE inhibitor, switch to sacubitril/valsartan or add dapagliflozin. This is the Bucher comparison above.</li>
+<li><strong>A + B + C versus A:</strong> the value of the full regimen. Vaduganathan and colleagues estimated it by multiplying trial hazard ratios <span class="citation" data-cites="vaduganathan2020comprehensive">(<a href="references.html#ref-vaduganathan2020comprehensive" role="doc-biblioref">10</a>)</span>.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>combo_l  <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fl">0.80</span>) <span class="sc">+</span> <span class="fu">log</span>(<span class="fl">0.63</span>) <span class="sc">+</span> <span class="fu">log</span>(<span class="fl">0.75</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>combo_se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(trials<span class="sc">$</span>se[<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> trials<span class="sc">$</span>se[<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> ((<span class="fu">log</span>(<span class="fl">0.85</span>) <span class="sc">-</span> <span class="fu">log</span>(<span class="fl">0.65</span>)) <span class="sc">/</span> <span class="fl">3.92</span>)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(<span class="fu">mutate</span>(trials, <span class="at">type =</span> <span class="st">"Each drug vs its own control"</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>          tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">treat =</span> <span class="st">"ARNI + MRA + SGLT2i vs ACEi"</span>, <span class="at">hr =</span> <span class="fu">exp</span>(combo_l),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">lo =</span> <span class="fu">exp</span>(combo_l <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> combo_se), <span class="at">hi =</span> <span class="fu">exp</span>(combo_l <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> combo_se),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">type =</span> <span class="st">"Combination"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">treat =</span> forcats<span class="sc">::</span><span class="fu">fct_rev</span>(forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(treat))) <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(hr, treat, <span class="at">colour =</span> type)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> lo, <span class="at">xmax =</span> hi)) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Combination =</span> red, <span class="st">`</span><span class="at">Each drug vs its own control</span><span class="st">`</span> <span class="ot">=</span> navy), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Hazard ratio (log scale)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-combination" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-combination-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="22-hta_files/figure-html/fig-combination-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-combination-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.2: Each drug against its own trial’s control (navy), and the combination of sacubitril/valsartan, a mineralocorticoid antagonist and an SGLT2 inhibitor estimated by multiplying hazard ratios (red). Outcome: cardiovascular death or HF hospitalisation.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A ranking of the four single-drug estimates (<a href="18-nma-in-practice.html" class="quarto-xref"><span>Chapter 18</span></a>) would call eplerenone “best” and invite the reader to choose one drug. But the classes act on different pathways and are prescribed together; guidelines now recommend all four. Ranking add-on therapies as if they were mutually exclusive answers a question nobody is asking. The combination estimate, HR 0.38 (0.30 to 0.47), rests on strong assumptions of its own: that effects multiply (no interaction on the log scale), do not depend on background therapy, and transfer across eras; no trial randomised the full regimen. Component network meta-analysis models additive components explicitly <span class="citation" data-cites="rucker2020cnma">(<a href="references.html#ref-rucker2020cnma" role="doc-biblioref">11</a>)</span>.</p>
+</section>
+<section id="sec-hta-econ" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="sec-hta-econ"><span class="header-section-number">22.4</span> Economic evaluation</h2>
+<p>Economic evaluation compares the costs and consequences of alternatives. Its aim is not to save money but to get the most health from finite resources: every dollar spent on one programme is a dollar, and the health it could buy, not spent on another <span class="citation" data-cites="drummond2015methods">(<a href="references.html#ref-drummond2015methods" role="doc-biblioref">12</a>)</span>.</p>
+<div id="tbl-econ-types" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-econ-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.4: Types of economic evaluation.
+</figcaption>
+<div aria-describedby="tbl-econ-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Outcome measure</th>
+<th>When used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cost-minimisation</td>
+<td>None: outcomes assumed equal</td>
+<td>Equivalence established</td>
+</tr>
+<tr class="even">
+<td>Cost-effectiveness</td>
+<td>Natural units (life-years, events avoided)</td>
+<td>Interventions sharing one main outcome</td>
+</tr>
+<tr class="odd">
+<td>Cost-utility</td>
+<td>Quality-adjusted life-years (QALYs)</td>
+<td>Comparisons across diseases; the HTA standard</td>
+</tr>
+<tr class="even">
+<td>Cost-benefit</td>
+<td>Money</td>
+<td>Health versus non-health investments</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<section id="sec-hta-qaly" class="level3" data-number="22.4.1">
+<h3 data-number="22.4.1" class="anchored" data-anchor-id="sec-hta-qaly"><span class="header-section-number">22.4.1</span> QALYs</h3>
+<p>A <strong>QALY</strong> weights each year of life by a utility between 0 (dead) and 1 (full health). Utilities come from preference-based methods, such as the time trade-off and the standard gamble, usually through a generic instrument such as the EQ-5D, whose five dimensions are converted into a utility by a country-specific value set derived from the general public. The QALY gain from a treatment is the area between two utility-over-time curves: longer life plus better quality while alive. Future costs and QALYs are discounted (3.5% a year for NICE, 1.5% for CDA-AMC).</p>
+<p>QALYs have known limits. A QALY counts the same whoever gains it, unless modifiers are added (since 2022, NICE weights QALYs for severe conditions by 1.2 or 1.7). Instruments can be insensitive in some conditions, and carers’ burden and productivity mostly fall outside the reference case. These are reasons to interpret QALYs carefully, not to abandon a common metric.</p>
+</section>
+<section id="sec-hta-ceplane" class="level3" data-number="22.4.2">
+<h3 data-number="22.4.2" class="anchored" data-anchor-id="sec-hta-ceplane"><span class="header-section-number">22.4.2</span> The cost-effectiveness plane</h3>
+<p>For a new intervention against a comparator, the incremental cost Δ<em>C</em> and incremental effect Δ<em>E</em> place it on the <strong>cost-effectiveness plane</strong>. In the north-east quadrant (more effective, more costly) the question is whether the gain is worth the cost; in the south-east it is <strong>dominant</strong>; in the north-west it is <strong>dominated</strong>. Two equivalent rules apply at a willingness to pay of λ per QALY:</p>
+<p><span class="math display">\[\text{ICER} = \frac{\Delta C}{\Delta E} &lt; \lambda \quad\Longleftrightarrow\quad \text{NMB} = \lambda\,\Delta E - \Delta C &gt; 0 \quad (\Delta E &gt; 0).\]</span></p>
+<p>Net monetary benefit (NMB) avoids the awkward behaviour of ratios, such as negative ICERs that mean opposite things in different quadrants, and it is the quantity used in probabilistic analysis and value of information. NICE usually accepts ICERs below £20,000 to £30,000 per QALY. CDA-AMC has no official threshold, but its recent recommendations refer to CA$50,000 per QALY. Estimates of the health actually displaced by NHS spending suggest a lower opportunity-cost threshold, about £13,000 per QALY <span class="citation" data-cites="claxton2015threshold">(<a href="references.html#ref-claxton2015threshold" role="doc-biblioref">13</a>)</span>.</p>
+</section>
+<section id="sec-hta-markov" class="level3" data-number="22.4.3">
+<h3 data-number="22.4.3" class="anchored" data-anchor-id="sec-hta-markov"><span class="header-section-number">22.4.3</span> A Markov model with meta-analytic inputs</h3>
+<p>A <strong>Markov model</strong> divides a cohort among mutually exclusive health states. Time advances in cycles; in each cycle patients stay or move between states with fixed transition probabilities; and each state carries a utility and a cost. Our illustrative model has three states, Stable, Post-hospitalisation (after a first heart-failure hospitalisation, with worse prognosis and quality of life) and Dead, with annual cycles over 30 years. Baseline probabilities, utilities and costs are plausible but invented; the treatment effects are DAPA-HF’s component hazard ratios, HF hospitalisation 0.70 and cardiovascular death 0.82 <span class="citation" data-cites="mcmurray2019dapa">(<a href="references.html#ref-mcmurray2019dapa" role="doc-biblioref">6</a>)</span>, and the drug costs £477 a year at list price <span class="citation" data-cites="nice2021ta679">(<a href="references.html#ref-nice2021ta679" role="doc-biblioref">9</a>)</span>. This is where the meta-analysis enters the model. Hazard ratios multiply <strong>rates</strong>, not probabilities, so each annual probability is converted to a rate, multiplied by the HR, and converted back.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p2r <span class="ot">&lt;-</span> <span class="cf">function</span>(p) <span class="sc">-</span><span class="fu">log</span>(<span class="dv">1</span> <span class="sc">-</span> p); r2p <span class="ot">&lt;-</span> <span class="cf">function</span>(r) <span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>r)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>hf_model <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">hr_hosp =</span> <span class="dv">1</span>, <span class="at">hr_cvd =</span> <span class="dv">1</span>, <span class="at">p_hosp =</span> .<span class="dv">10</span>, <span class="at">p_cvd =</span> .<span class="dv">06</span>, <span class="at">p_cvd_post =</span> .<span class="dv">15</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">p_oth =</span> .<span class="dv">03</span>, <span class="at">u_stable =</span> .<span class="dv">78</span>, <span class="at">u_post =</span> .<span class="dv">65</span>, <span class="at">dis_hosp =</span> .<span class="dv">10</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">c_stable =</span> <span class="dv">1500</span>, <span class="at">c_post =</span> <span class="dv">2500</span>, <span class="at">c_hosp =</span> <span class="dv">4000</span>, <span class="at">c_drug =</span> <span class="dv">0</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">cycles =</span> <span class="dv">30</span>, <span class="at">disc =</span> .<span class="dv">035</span>) {</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  ph  <span class="ot">&lt;-</span> <span class="fu">r2p</span>(<span class="fu">p2r</span>(p_hosp) <span class="sc">*</span> hr_hosp)              <span class="co"># HRs act on rates</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  pc  <span class="ot">&lt;-</span> <span class="fu">r2p</span>(<span class="fu">p2r</span>(p_cvd) <span class="sc">*</span> hr_cvd)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  pcp <span class="ot">&lt;-</span> <span class="fu">r2p</span>(<span class="fu">p2r</span>(p_cvd_post) <span class="sc">*</span> hr_cvd)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  P <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span> <span class="sc">-</span> ph <span class="sc">-</span> pc <span class="sc">-</span> p_oth, ph,              pc <span class="sc">+</span> p_oth,     <span class="co"># from Stable</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                <span class="dv">0</span>,                   <span class="dv">1</span> <span class="sc">-</span> pcp <span class="sc">-</span> p_oth, pcp <span class="sc">+</span> p_oth,    <span class="co"># from Post-hosp</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                <span class="dv">0</span>,                   <span class="dv">0</span>,               <span class="dv">1</span>), <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>); cost <span class="ot">&lt;-</span> qaly <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (t <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>cycles) {</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    hosp  <span class="ot">&lt;-</span> s[<span class="dv">1</span>] <span class="sc">*</span> ph                           <span class="co"># hospitalised this cycle</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    s_new <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(s <span class="sc">%*%</span> P)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    d     <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> disc)<span class="sc">^</span>(t <span class="sc">-</span> <span class="dv">1</span>)              <span class="co"># discounting</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    alive <span class="ot">&lt;-</span> (s[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="sc">+</span> s_new[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]) <span class="sc">/</span> <span class="dv">2</span>           <span class="co"># half-cycle correction</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    qaly  <span class="ot">&lt;-</span> qaly <span class="sc">+</span> d <span class="sc">*</span> (<span class="fu">sum</span>(alive <span class="sc">*</span> <span class="fu">c</span>(u_stable, u_post)) <span class="sc">-</span> hosp <span class="sc">*</span> dis_hosp)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    cost  <span class="ot">&lt;-</span> cost <span class="sc">+</span> d <span class="sc">*</span> (<span class="fu">sum</span>(alive <span class="sc">*</span> (<span class="fu">c</span>(c_stable, c_post) <span class="sc">+</span> c_drug)) <span class="sc">+</span> hosp <span class="sc">*</span> c_hosp)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s_new</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">cost =</span> cost, <span class="at">qaly =</span> qaly)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>sc <span class="ot">&lt;-</span> <span class="fu">hf_model</span>(); tx <span class="ot">&lt;-</span> <span class="fu">hf_model</span>(<span class="at">hr_hosp =</span> .<span class="dv">70</span>, <span class="at">hr_cvd =</span> .<span class="dv">82</span>, <span class="at">c_drug =</span> <span class="dv">477</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(<span class="st">`</span><span class="at">Standard care</span><span class="st">`</span> <span class="ot">=</span> sc, <span class="at">Dapagliflozin =</span> tx, <span class="at">Difference =</span> tx <span class="sc">-</span> sc) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  cost qaly
+Standard care 13487.08 4.61
+Dapagliflozin 17970.62 5.33
+Difference     4483.54 0.73</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>icer_det <span class="ot">&lt;-</span> <span class="fu">unname</span>((tx <span class="sc">-</span> sc)[<span class="dv">1</span>] <span class="sc">/</span> (tx <span class="sc">-</span> sc)[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The deterministic ICER is £6,180 per QALY, of the same order as the £7,264 preferred by NICE’s committee, whose model had nine states (four symptom levels defined by quartiles of the Kansas City Cardiomyopathy Questionnaire, with and without diabetes, plus death) <span class="citation" data-cites="nice2021ta679">(<a href="references.html#ref-nice2021ta679" role="doc-biblioref">9</a>)</span>. Our model is a caricature, but it shows where each meta-analytic number goes.</p>
+</section>
+<section id="sec-hta-psa" class="level3" data-number="22.4.4">
+<h3 data-number="22.4.4" class="anchored" data-anchor-id="sec-hta-psa"><span class="header-section-number">22.4.4</span> Probabilistic sensitivity analysis</h3>
+<p>Every input is uncertain, so all are sampled together. The log hazard ratios are normal with the standard errors implied by their confidence intervals (the meta-analytic output), probabilities and utilities are beta, and costs are gamma. Each of 5000 draws is one possible world, in which the model is run for both arms.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>); n_psa <span class="ot">&lt;-</span> <span class="dv">5000</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>beta_ms  <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m, s) { a <span class="ot">&lt;-</span> m <span class="sc">*</span> (m <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> m) <span class="sc">/</span> s<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>); <span class="fu">rbeta</span>(n, a, a <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> m) <span class="sc">/</span> m) }</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>gamma_ms <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m, s) <span class="fu">rgamma</span>(n, <span class="at">shape =</span> (m <span class="sc">/</span> s)<span class="sc">^</span><span class="dv">2</span>, <span class="at">rate =</span> m <span class="sc">/</span> s<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pars <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">lhr_hosp =</span> <span class="fu">rnorm</span>(n_psa, <span class="fu">log</span>(.<span class="dv">70</span>), (<span class="fu">log</span>(.<span class="dv">83</span>) <span class="sc">-</span> <span class="fu">log</span>(.<span class="dv">59</span>)) <span class="sc">/</span> <span class="fl">3.92</span>),   <span class="co"># DAPA-HF, worsening HF</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">lhr_cvd  =</span> <span class="fu">rnorm</span>(n_psa, <span class="fu">log</span>(.<span class="dv">82</span>), (<span class="fu">log</span>(.<span class="dv">98</span>) <span class="sc">-</span> <span class="fu">log</span>(.<span class="dv">69</span>)) <span class="sc">/</span> <span class="fl">3.92</span>),   <span class="co"># DAPA-HF, CV death</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">p_hosp =</span> <span class="fu">rbeta</span>(n_psa, <span class="dv">50</span>, <span class="dv">450</span>), <span class="at">p_cvd =</span> <span class="fu">rbeta</span>(n_psa, <span class="dv">30</span>, <span class="dv">470</span>), <span class="at">p_cvd_post =</span> <span class="fu">rbeta</span>(n_psa, <span class="dv">30</span>, <span class="dv">170</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">u_stable =</span> <span class="fu">beta_ms</span>(n_psa, .<span class="dv">78</span>, .<span class="dv">03</span>), <span class="at">u_post =</span> <span class="fu">beta_ms</span>(n_psa, .<span class="dv">65</span>, .<span class="dv">05</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">c_hosp =</span> <span class="fu">gamma_ms</span>(n_psa, <span class="dv">4000</span>, <span class="dv">800</span>), <span class="at">c_post =</span> <span class="fu">gamma_ms</span>(n_psa, <span class="dv">2500</span>, <span class="dv">500</span>),</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">c_stable =</span> <span class="fu">gamma_ms</span>(n_psa, <span class="dv">1500</span>, <span class="dv">300</span>))</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>psa <span class="ot">&lt;-</span> <span class="fu">pmap_dfr</span>(pars, <span class="cf">function</span>(lhr_hosp, lhr_cvd, ...) {</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  a <span class="ot">&lt;-</span> <span class="fu">hf_model</span>(...)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  b <span class="ot">&lt;-</span> <span class="fu">hf_model</span>(<span class="at">hr_hosp =</span> <span class="fu">exp</span>(lhr_hosp), <span class="at">hr_cvd =</span> <span class="fu">exp</span>(lhr_cvd), <span class="at">c_drug =</span> <span class="dv">477</span>, ...)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">dC =</span> b[[<span class="st">"cost"</span>]] <span class="sc">-</span> a[[<span class="st">"cost"</span>]], <span class="at">dQ =</span> b[[<span class="st">"qaly"</span>]] <span class="sc">-</span> a[[<span class="st">"qaly"</span>]])</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>icer_psa <span class="ot">&lt;-</span> <span class="fu">mean</span>(psa<span class="sc">$</span>dC) <span class="sc">/</span> <span class="fu">mean</span>(psa<span class="sc">$</span>dQ)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>psa <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(dC, dQ), <span class="fu">list</span>(<span class="at">mean =</span> mean, <span class="at">lo =</span> \(x) <span class="fu">quantile</span>(x, .<span class="dv">025</span>),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">hi =</span> \(x) <span class="fu">quantile</span>(x, .<span class="dv">975</span>)))) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">dC_mean</th>
+<th style="text-align: right;">dC_lo</th>
+<th style="text-align: right;">dC_hi</th>
+<th style="text-align: right;">dQ_mean</th>
+<th style="text-align: right;">dQ_lo</th>
+<th style="text-align: right;">dQ_hi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">4471.77</td>
+<td style="text-align: right;">2795.36</td>
+<td style="text-align: right;">6204.6</td>
+<td style="text-align: right;">0.72</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: right;">1.13</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>wtp  <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">40000</span>, <span class="dv">500</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ceac <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(wtp, <span class="at">p =</span> <span class="fu">map_dbl</span>(wtp, \(w) <span class="fu">mean</span>(w <span class="sc">*</span> psa<span class="sc">$</span>dQ <span class="sc">-</span> psa<span class="sc">$</span>dC <span class="sc">&gt;</span> <span class="dv">0</span>)))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>p20 <span class="ot">&lt;-</span> ceac<span class="sc">$</span>p[ceac<span class="sc">$</span>wtp <span class="sc">==</span> <span class="dv">20000</span>]; p5 <span class="ot">&lt;-</span> ceac<span class="sc">$</span>p[ceac<span class="sc">$</span>wtp <span class="sc">==</span> <span class="dv">5000</span>]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(psa, <span class="fu">aes</span>(dQ, dC)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">15</span>, <span class="at">size =</span> .<span class="dv">6</span>, <span class="at">colour =</span> navy) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">20000</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> red) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="fu">mean</span>(psa<span class="sc">$</span>dQ), <span class="at">y =</span> <span class="fu">mean</span>(psa<span class="sc">$</span>dC), <span class="at">colour =</span> red, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Incremental QALYs"</span>, <span class="at">y =</span> <span class="st">"Incremental cost (£)"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ceac, <span class="fu">aes</span>(wtp <span class="sc">/</span> <span class="dv">1000</span>, p)) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.2</span>, <span class="at">colour =</span> navy) <span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">20</span>), <span class="at">linetype =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>), <span class="at">colour =</span> red) <span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">20</span>) <span class="sc">+</span> <span class="fl">0.8</span>, <span class="at">y =</span> <span class="fu">c</span>(p5, p20) <span class="sc">-</span> <span class="fl">0.06</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.3</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"%.0f%% at £%s"</span>, <span class="dv">100</span> <span class="sc">*</span> <span class="fu">c</span>(p5, p20), <span class="fu">c</span>(<span class="st">"5,000"</span>, <span class="st">"20,000"</span>))) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Willingness to pay (£000 per QALY)"</span>, <span class="at">y =</span> <span class="st">"P(cost-effective)"</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>patchwork<span class="sc">::</span><span class="fu">wrap_plots</span>(g1, g2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-ceac" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ceac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="22-hta_files/figure-html/fig-ceac-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ceac-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.3: Left: 5000 PSA draws on the cost-effectiveness plane, with the £20,000/QALY line and the mean (diamond). Right: the cost-effectiveness acceptability curve, the probability that dapagliflozin is cost-effective at each threshold.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The probabilistic ICER is about £6,240 per QALY. The probability that dapagliflozin is cost-effective is 99% at £20,000 per QALY but only 7% at £5,000. The ICER is a distribution, and the <strong>cost-effectiveness acceptability curve (CEAC)</strong> is its honest summary.</p>
+</section>
+</section>
+<section id="sec-hta-bayes" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="sec-hta-bayes"><span class="header-section-number">22.5</span> The Bayesian character of HTA</h2>
+<p>Probabilistic sensitivity analysis treats parameters as random variables with distributions and propagates them by simulation: it is <strong>implicitly Bayesian</strong>, and so are the CEAC and value of information, which are probabilities about parameters. In a review of 375 UK HTA reports from 1997 to 2011, 41% used some Bayesian method, almost always implicitly through PSA; explicit Bayesian evidence synthesis, such as Bayesian network meta-analysis, was much rarer <span class="citation" data-cites="cooper2013bayesian">(<a href="references.html#ref-cooper2013bayesian" role="doc-biblioref">14</a>)</span>. Decision-makers need what a Bayesian analysis provides: direct probability statements, coherent propagation of all uncertainties with their correlations, explicit use of external evidence, and <strong>prediction</strong> of what a new study or a new population would show <span class="citation" data-cites="spiegelhalter1999bayesianhta">(<a href="references.html#ref-spiegelhalter1999bayesianhta" role="doc-biblioref">15</a>)</span>. The “two halves” of an HTA, the evidence synthesis and the economic model, are often joined badly, for example when the review reports median survival but the model needs mean survival, or when correlations between parameters are lost.</p>
+<section id="sec-hta-magnesium" class="level3" data-number="22.5.1">
+<h3 data-number="22.5.1" class="anchored" data-anchor-id="sec-hta-magnesium"><span class="header-section-number">22.5.1</span> Is another study needed? Magnesium after myocardial infarction</h3>
+<p>By the early 1990s, 15 small to moderate trials of intravenous magnesium after acute myocardial infarction suggested a large reduction in mortality, and an influential review called magnesium an effective, safe, simple and inexpensive intervention <span class="citation" data-cites="yusuf1993magnesium">(<a href="references.html#ref-yusuf1993magnesium" role="doc-biblioref">16</a>)</span>. Was the ISIS-4 trial, with 58,000 patients, justified after a “significant” meta-analysis?</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mag <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(<span class="sc">~</span>study, <span class="sc">~</span>year, <span class="sc">~</span>Ee, <span class="sc">~</span>Ne, <span class="sc">~</span>Ec, <span class="sc">~</span>Nc,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Morton"</span>,<span class="dv">1984</span>,<span class="dv">1</span>,<span class="dv">40</span>,<span class="dv">2</span>,<span class="dv">36</span>,       <span class="st">"Rasmussen"</span>,<span class="dv">1986</span>,<span class="dv">9</span>,<span class="dv">135</span>,<span class="dv">23</span>,<span class="dv">135</span>, <span class="st">"Smith"</span>,<span class="dv">1986</span>,<span class="dv">2</span>,<span class="dv">200</span>,<span class="dv">7</span>,<span class="dv">200</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Abraham"</span>,<span class="dv">1987</span>,<span class="dv">1</span>,<span class="dv">48</span>,<span class="dv">1</span>,<span class="dv">46</span>,      <span class="st">"Feldstedt"</span>,<span class="dv">1988</span>,<span class="dv">10</span>,<span class="dv">150</span>,<span class="dv">8</span>,<span class="dv">148</span>, <span class="st">"Shechter"</span>,<span class="dv">1989</span>,<span class="dv">1</span>,<span class="dv">59</span>,<span class="dv">9</span>,<span class="dv">56</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Ceremuzynski"</span>,<span class="dv">1989</span>,<span class="dv">1</span>,<span class="dv">25</span>,<span class="dv">3</span>,<span class="dv">23</span>, <span class="st">"Bertschat"</span>,<span class="dv">1989</span>,<span class="dv">0</span>,<span class="dv">22</span>,<span class="dv">1</span>,<span class="dv">21</span>,    <span class="st">"Singh"</span>,<span class="dv">1990</span>,<span class="dv">6</span>,<span class="dv">76</span>,<span class="dv">11</span>,<span class="dv">75</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pereira"</span>,<span class="dv">1990</span>,<span class="dv">1</span>,<span class="dv">27</span>,<span class="dv">7</span>,<span class="dv">27</span>,      <span class="st">"Shechter"</span>,<span class="dv">1991</span>,<span class="dv">2</span>,<span class="dv">89</span>,<span class="dv">12</span>,<span class="dv">80</span>,    <span class="st">"Golf"</span>,<span class="dv">1991</span>,<span class="dv">5</span>,<span class="dv">23</span>,<span class="dv">13</span>,<span class="dv">33</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Thogersen"</span>,<span class="dv">1991</span>,<span class="dv">4</span>,<span class="dv">130</span>,<span class="dv">8</span>,<span class="dv">122</span>,  <span class="st">"LIMIT-2"</span>,<span class="dv">1992</span>,<span class="dv">90</span>,<span class="dv">1159</span>,<span class="dv">118</span>,<span class="dv">1157</span>, <span class="st">"Shechter"</span>,<span class="dv">1995</span>,<span class="dv">4</span>,<span class="dv">107</span>,<span class="dv">17</span>,<span class="dv">108</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">study =</span> <span class="fu">paste</span>(study, year))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>mag_es <span class="ot">&lt;-</span> <span class="fu">escalc</span>(<span class="at">measure =</span> <span class="st">"OR"</span>, <span class="at">ai =</span> Ee, <span class="at">n1i =</span> Ne, <span class="at">ci =</span> Ec, <span class="at">n2i =</span> Nc, <span class="at">data =</span> mag) <span class="sc">|&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sei =</span> <span class="fu">sqrt</span>(vi))</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>re_mag <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> mag_es, <span class="at">method =</span> <span class="st">"DL"</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>lim <span class="ot">&lt;-</span> mag<span class="sc">$</span>study <span class="sc">==</span> <span class="st">"LIMIT-2 1992"</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>re_small <span class="ot">&lt;-</span> <span class="fu">rma</span>(yi, vi, <span class="at">data =</span> mag_es[<span class="sc">!</span>lim, ], <span class="at">method =</span> <span class="st">"DL"</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>or_limit <span class="ot">&lt;-</span> <span class="fu">exp</span>(mag_es<span class="sc">$</span>yi[lim] <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="fl">1.96</span>, <span class="fl">1.96</span>) <span class="sc">*</span> mag_es<span class="sc">$</span>sei[lim])</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>pi_mag <span class="ot">&lt;-</span> <span class="fu">predict</span>(re_mag, <span class="at">transf =</span> exp)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="at">OR =</span> pi_mag<span class="sc">$</span>pred, <span class="at">lower =</span> pi_mag<span class="sc">$</span>ci.lb, <span class="at">upper =</span> pi_mag<span class="sc">$</span>ci.ub,</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">PI_lower =</span> pi_mag<span class="sc">$</span>pi.lb, <span class="at">PI_upper =</span> pi_mag<span class="sc">$</span>pi.ub, <span class="at">I2 =</span> re_mag<span class="sc">$</span>I2), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>      OR    lower    upper PI_lower PI_upper       I2 
+    0.43     0.29     0.63     0.18     1.01    33.07 </code></pre>
+</div>
+</div>
+<p>Five reasons justified a large trial. The evidence was thin: 4,557 patients but only 377 deaths. Bigger trials showed smaller effects: the 14 small trials together gave OR 0.38 (0.26 to 0.55), whereas LIMIT-2, the only large trial (2316 patients), gave 0.74 (0.56 to 0.99), a pattern of small-study effects (<a href="15-publication-bias.html" class="quarto-xref"><span>Chapter 15</span></a>). The effect was implausibly large for a 24-hour infusion and heterogeneous (I² = 33%), with a prediction interval for a new trial of 0.18 to 1.01. The stakes were enormous: millions of patients a year, so a small uncertainty per patient has a large total cost if the decision is wrong. And the trial was cheap at the margin, because ISIS-4 was a factorial trial that also tested captopril and oral nitrates in the same patients.</p>
+<p>A Bayesian random-effects model (<a href="13-bayesian-meta-analysis.html" class="quarto-xref"><span>Chapter 13</span></a>) gives the posterior predictive distribution for a new trial directly:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fit_mag <span class="ot">&lt;-</span> <span class="fu">brm</span>(yi <span class="sc">|</span> <span class="fu">se</span>(sei) <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> study), <span class="at">data =</span> mag_es,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">class =</span> Intercept), <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), <span class="at">class =</span> sd)),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.95</span>), <span class="at">seed =</span> <span class="dv">629</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>dr <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(fit_mag)[, <span class="fu">c</span>(<span class="st">"b_Intercept"</span>, <span class="st">"sd_study__Intercept"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dr <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/ch22/magnesium_draws.csv"</span>)          <span class="co"># 4000 posterior draws from fit_mag</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">629</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>theta_new <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fu">nrow</span>(dr), dr<span class="sc">$</span>b_Intercept, dr<span class="sc">$</span>sd_study)  <span class="co"># predictive: a new trial</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>isis <span class="ot">&lt;-</span> <span class="fu">escalc</span>(<span class="at">measure =</span> <span class="st">"OR"</span>, <span class="at">ai =</span> <span class="dv">2216</span>, <span class="at">n1i =</span> <span class="dv">29011</span>, <span class="at">ci =</span> <span class="dv">2103</span>, <span class="at">n2i =</span> <span class="dv">29039</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>isis_or <span class="ot">&lt;-</span> <span class="fu">exp</span>(isis<span class="sc">$</span>yi <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(isis<span class="sc">$</span>vi))</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="st">`</span><span class="at">Mean effect (posterior)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">exp</span>(dr<span class="sc">$</span>b_Intercept), <span class="st">`</span><span class="at">New trial (predictive)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">exp</span>(theta_new)) <span class="sc">|&gt;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, <span class="at">fill =</span> name)) <span class="sc">+</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">colour =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"rect"</span>, <span class="at">xmin =</span> isis_or[<span class="dv">2</span>], <span class="at">xmax =</span> isis_or[<span class="dv">3</span>], <span class="at">ymin =</span> <span class="dv">0</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">fill =</span> red, <span class="at">alpha =</span> .<span class="dv">35</span>) <span class="sc">+</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> isis_or[<span class="dv">1</span>], <span class="at">y =</span> <span class="fl">3.5</span>, <span class="at">label =</span> <span class="st">"ISIS-4"</span>, <span class="at">colour =</span> red, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">2.5</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(navy, orange), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Odds ratio for death (log scale)"</span>, <span class="at">y =</span> <span class="st">"Density"</span>) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-magnesium" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-magnesium-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="22-hta_files/figure-html/fig-magnesium-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-magnesium-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.4: Magnesium after myocardial infarction: posterior for the mean effect and posterior predictive distribution for a new trial (random-effects model of the 15 trials), and the result of ISIS-4 (red band, 95% CI).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The posterior median OR is 0.46 (95% CrI 0.28 to 0.68), but the predictive OR for a new trial is 0.48 (0.15 to 1.22), and the probability that a new trial would show harm is 0.05. ISIS-4 found OR 1.06 (1.00 to 1.13) <span class="citation" data-cites="isis4">(<a href="references.html#ref-isis4" role="doc-biblioref">17</a>)</span>. The pooled mean answered “is there an effect on average in these trials?”; the decision needed “what will happen in the next setting?”. Prediction, not pooled significance, should guide decisions.</p>
+</section>
+</section>
+<section id="sec-hta-voi" class="level2" data-number="22.6">
+<h2 data-number="22.6" class="anchored" data-anchor-id="sec-hta-voi"><span class="header-section-number">22.6</span> Value of information</h2>
+<section id="sec-hta-evpi" class="level3" data-number="22.6.1">
+<h3 data-number="22.6.1" class="anchored" data-anchor-id="sec-hta-evpi"><span class="header-section-number">22.6.1</span> Expected value of perfect information</h3>
+<p>Each PSA draw θ is one possible world. Let <span class="math inline">\(NB_d(\theta) = \lambda \times \text{QALYs}_d(\theta) - \text{Cost}_d(\theta)\)</span> be the net benefit of option <em>d</em> in that world. Deciding now, without knowing the world, we choose the option with the highest average net benefit, worth <span class="math inline">\(\max_d E_\theta[NB_d(\theta)]\)</span>. With perfect information we would choose the best option in each world, worth on average <span class="math inline">\(E_\theta[\max_d NB_d(\theta)]\)</span>. The difference is the <strong>expected value of perfect information</strong>:</p>
+<p><span class="math display">\[\text{EVPI} = E_\theta\big[\max_d NB_d(\theta)\big] - \max_d E_\theta\big[NB_d(\theta)\big] \ge 0.\]</span></p>
+<p>EVPI is the expected loss from deciding under current uncertainty: the average net benefit lost in the worlds where today’s best choice turns out to be wrong. It is the most that research of any kind could be worth, per patient. Multiplied by the number of patients the decision affects, it is a ceiling to compare with the cost of research <span class="citation" data-cites="claxton1999irrelevance">(<a href="references.html#ref-claxton1999irrelevance" role="doc-biblioref">18</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>evpi_at <span class="ot">&lt;-</span> <span class="cf">function</span>(lam) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  inb <span class="ot">&lt;-</span> lam <span class="sc">*</span> psa<span class="sc">$</span>dQ <span class="sc">-</span> psa<span class="sc">$</span>dC                      <span class="co"># incremental NB of dapagliflozin</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">pmax</span>(inb, <span class="dv">0</span>)) <span class="sc">-</span> <span class="fu">max</span>(<span class="fu">mean</span>(inb), <span class="dv">0</span>)            <span class="co"># perfect information - decide now</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>evpi_curve <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">wtp =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30000</span>, <span class="dv">250</span>)) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">evpi =</span> <span class="fu">map_dbl</span>(wtp, evpi_at))</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>pop <span class="ot">&lt;-</span> <span class="dv">75000</span> <span class="sc">*</span> <span class="fu">sum</span>(<span class="dv">1</span> <span class="sc">/</span> <span class="fl">1.035</span><span class="sc">^</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span>))   <span class="co"># illustrative: 75,000 new patients/yr for 10 years, discounted</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>ev6 <span class="ot">&lt;-</span> <span class="fu">evpi_at</span>(<span class="dv">6000</span>); ev20 <span class="ot">&lt;-</span> <span class="fu">evpi_at</span>(<span class="dv">20000</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="at">EVPI_6000 =</span> ev6, <span class="at">EVPI_20000 =</span> ev20, <span class="at">patients =</span> pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> EVPI_6000 EVPI_20000   patients 
+       225          8     645576 </code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(evpi_curve, <span class="fu">aes</span>(wtp <span class="sc">/</span> <span class="dv">1000</span>, evpi)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.2</span>, <span class="at">colour =</span> navy) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> icer_psa <span class="sc">/</span> <span class="dv">1000</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">colour =</span> red) <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">20</span>), <span class="at">y =</span> <span class="fu">c</span>(ev6, ev20), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">colour =</span> red) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">20</span>) <span class="sc">+</span> <span class="fl">0.5</span>, <span class="at">y =</span> <span class="fu">c</span>(ev6, ev20) <span class="sc">+</span> <span class="dv">12</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.4</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"£%s: £%.0f"</span>, <span class="fu">c</span>(<span class="st">"6,000"</span>, <span class="st">"20,000"</span>), <span class="fu">c</span>(ev6, ev20))) <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Willingness to pay (£000 per QALY)"</span>, <span class="at">y =</span> <span class="st">"EVPI per patient (£)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-evpi" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-evpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="22-hta_files/figure-html/fig-evpi-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-evpi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.5: Per-patient EVPI for the dapagliflozin model at each willingness to pay. EVPI peaks near the ICER (dashed), where the two options are closest.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>EVPI is highest near the ICER, where the options have nearly equal average net benefit and the best choice flips most often between worlds. At NICE’s £20,000 per QALY, EVPI is £8 per patient, or £5.0 million over the 646,000 patients affected: a trial the size of DAPA-HF (4744 patients) would have to cost less than £1,050 per participant, far below the cost of a large cardiovascular outcome trial. Decide now. At £6,000 per QALY, where the decision is close, EVPI is £225 per patient and £145 million in total; research could be justified.</p>
+</section>
+<section id="sec-hta-evppi" class="level3" data-number="22.6.2">
+<h3 data-number="22.6.2" class="anchored" data-anchor-id="sec-hta-evppi"><span class="header-section-number">22.6.2</span> Which uncertainty matters? EVPPI</h3>
+<p>Research is always about something specific: a trial reduces uncertainty about treatment effects, a cohort about baseline risks, a preference study about utilities. The <strong>expected value of partial perfect information</strong> (EVPPI) for a group of parameters φ is the value of learning φ exactly while the rest stay uncertain. It can be estimated directly from the PSA draws by regressing the incremental net benefit on φ with a smooth function: the fitted values estimate the expected net benefit if φ were known <span class="citation" data-cites="strong2014evppi">(<a href="references.html#ref-strong2014evppi" role="doc-biblioref">19</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>evppi <span class="ot">&lt;-</span> <span class="cf">function</span>(formula, <span class="at">lam =</span> <span class="dv">6000</span>) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(pars, <span class="at">inb =</span> lam <span class="sc">*</span> psa<span class="sc">$</span>dQ <span class="sc">-</span> psa<span class="sc">$</span>dC)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  g <span class="ot">&lt;-</span> <span class="fu">fitted</span>(<span class="fu">gam</span>(<span class="fu">update</span>(formula, inb <span class="sc">~</span> .), <span class="at">data =</span> dat))     <span class="co"># E[INB | phi]</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">pmax</span>(g, <span class="dv">0</span>)) <span class="sc">-</span> <span class="fu">max</span>(<span class="fu">mean</span>(g), <span class="dv">0</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">`</span><span class="at">Treatment effects (HRs)</span><span class="st">`</span> <span class="ot">=</span> <span class="er">~</span> <span class="fu">s</span>(lhr_hosp) <span class="sc">+</span> <span class="fu">s</span>(lhr_cvd),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">Baseline event risks</span><span class="st">`</span>    <span class="ot">=</span> <span class="er">~</span> <span class="fu">s</span>(p_hosp) <span class="sc">+</span> <span class="fu">s</span>(p_cvd) <span class="sc">+</span> <span class="fu">s</span>(p_cvd_post),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">Utilities</span><span class="st">`</span>               <span class="ot">=</span> <span class="er">~</span> <span class="fu">s</span>(u_stable) <span class="sc">+</span> <span class="fu">s</span>(u_post),</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">Costs</span><span class="st">`</span>                   <span class="ot">=</span> <span class="er">~</span> <span class="fu">s</span>(c_hosp) <span class="sc">+</span> <span class="fu">s</span>(c_post) <span class="sc">+</span> <span class="fu">s</span>(c_stable))</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>ev <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Group =</span> <span class="fu">names</span>(groups), <span class="at">evppi =</span> <span class="fu">map_dbl</span>(groups, evppi))</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>ev <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(evppi)) <span class="sc">|&gt;</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">£ per patient</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(evppi), <span class="st">`</span><span class="at">£ million</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(evppi <span class="sc">*</span> pop <span class="sc">/</span> <span class="fl">1e6</span>, <span class="dv">1</span>),</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">% of EVPI</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> evppi <span class="sc">/</span> ev6),</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Research it points to</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">Treatment effects (HRs)</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Trial or updated meta-analysis"</span>,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">Costs =</span> <span class="st">"Costing study"</span>, <span class="at">Utilities =</span> <span class="st">"Preference study"</span>,</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">`</span><span class="at">Baseline event risks</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"Cohort study"</span>)[Group]) <span class="sc">|&gt;</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>evppi) <span class="sc">|&gt;</span> <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lcccl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-evppi" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-evppi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.5: EVPPI by parameter group at £6,000 per QALY, estimated by GAM regression on the PSA draws.
+</figcaption>
+<div aria-describedby="tbl-evppi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 16%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Group</th>
+<th style="text-align: center;">£ per patient</th>
+<th style="text-align: center;">£ million</th>
+<th style="text-align: center;">% of EVPI</th>
+<th style="text-align: left;">Research it points to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Treatment effects (HRs)</td>
+<td style="text-align: center;">176</td>
+<td style="text-align: center;">113.3</td>
+<td style="text-align: center;">78</td>
+<td style="text-align: left;">Trial or updated meta-analysis</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Costs</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">26.0</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">Costing study</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Utilities</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">9.4</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Preference study</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Baseline event risks</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4.0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Cohort study</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>EVPPI is zero for a group whose resolution would never change the decision, however uncertain that group is, and equals EVPI for a group that accounts for all the decision uncertainty. Here the treatment effects dominate: research on them, a further trial or an updated meta-analysis, is where any research money should go. Baseline risks matter little, because their uncertainty affects both options almost equally.</p>
+<p>A real study only reduces uncertainty. The <strong>expected value of sample information</strong>, EVSI(<em>n</em>), is the expected improvement in the decision from a study of size <em>n</em>, never larger than EVPI; the <strong>expected net gain of sampling</strong> is population EVSI minus the cost of the study, and the best design maximises it <span class="citation" data-cites="ades2004evsi">(<a href="references.html#ref-ades2004evsi" role="doc-biblioref">20</a>)</span>. The R package <code>voi</code> computes EVPI, EVPPI and EVSI from PSA output. Value of information separates two questions that are often conflated: should we adopt now (expected net benefit), and should we buy more evidence (is the value of information larger than the cost of research)? Statistical significance answers neither. An HTA body can adopt, reject, adopt with a requirement for research, or approve only in research, when adoption would make the needed trial impossible.</p>
+</section>
+</section>
+<section id="sec-hta-bodies" class="level2" data-number="22.7">
+<h2 data-number="22.7" class="anchored" data-anchor-id="sec-hta-bodies"><span class="header-section-number">22.7</span> HTA bodies</h2>
+<p>Every HTA agency asks whether a technology should be paid for, but agencies differ in what evidence counts, what decision rule they apply, and whether their advice binds.</p>
+<div id="tbl-hta-bodies" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hta-bodies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;22.6: Three HTA agencies compared.
+</figcaption>
+<div aria-describedby="tbl-hta-bodies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Design choice</th>
+<th>NICE (England)</th>
+<th>CDA-AMC (Canada)</th>
+<th>HAS (France)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>How value is judged</td>
+<td>Cost per QALY, usually below £20,000 to £30,000; severity modifier</td>
+<td>Cost per QALY, with recent reference to about CA$50,000; most recommendations require a price reduction</td>
+<td>Rating of added clinical benefit (ASMR I to V) drives price; cost-effectiveness secondary</td>
+</tr>
+<tr class="even">
+<td>Indirect comparisons</td>
+<td>Expected when head-to-head trials are missing</td>
+<td>Accepted, with critical appraisal</td>
+<td>Accepted case by case</td>
+</tr>
+<tr class="odd">
+<td>Who must follow the advice</td>
+<td>Binding: NHS funding within 90 days</td>
+<td>Advisory: provinces decide (Québec through INESSS); prices negotiated by the pan-Canadian Pharmaceutical Alliance</td>
+<td>Binding for reimbursement listing</td>
+</tr>
+<tr class="even">
+<td>Access before full evidence</td>
+<td>Managed access (e.g.&nbsp;Cancer Drugs Fund)</td>
+<td>Limited; conditional recommendations</td>
+<td>Early access (<em>accès précoce</em>), since 2021</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The same drug can therefore receive different decisions. A drug slightly better than existing care at £25,000 per QALY may be recommended in England, rated as offering no meaningful improvement in France and priced no higher than the old drug, and recommended in Canada only with a price reduction.</p>
+</section>
+<section id="sec-hta-dapa" class="level2" data-number="22.8">
+<h2 data-number="22.8" class="anchored" data-anchor-id="sec-hta-dapa"><span class="header-section-number">22.8</span> The complete chain: dapagliflozin and NICE TA679</h2>
+<p>The appraisal of dapagliflozin shows every step <span class="citation" data-cites="nice2021ta679">(<a href="references.html#ref-nice2021ta679" role="doc-biblioref">9</a>)</span>:</p>
+<ol type="1">
+<li><strong>Trial.</strong> DAPA-HF randomised 4744 patients with ejection fraction 40% or less and NYHA class II to IV, on background therapy (11% on sacubitril/valsartan), to dapagliflozin or placebo added to standard care. Primary composite HR 0.74 (0.65 to 0.85) <span class="citation" data-cites="mcmurray2019dapa">(<a href="references.html#ref-mcmurray2019dapa" role="doc-biblioref">6</a>)</span>.</li>
+<li><strong>Synthesis.</strong> A meta-analysis of DAPA-HF and EMPEROR-Reduced found a consistent effect of SGLT2 inhibitors on cardiovascular death or first HF hospitalisation, HR 0.74 (0.68 to 0.82), with no difference by use of sacubitril/valsartan <span class="citation" data-cites="zannad2020sglt2">(<a href="references.html#ref-zannad2020sglt2" role="doc-biblioref">21</a>)</span>.</li>
+<li><strong>Indirect comparison.</strong> Bucher comparison with sacubitril/valsartan, preferred over a matching-adjusted comparison; a possible advantage for dapagliflozin, but uncertain (<a href="#sec-hta-nma" class="quarto-xref"><span>Section 22.3</span></a>).</li>
+<li><strong>Model.</strong> A nine-state Markov model; DAPA-HF EQ-5D-5L values mapped to EQ-5D-3L, with a published population value replacing the best state’s utility, which the committee judged implausibly high; Gompertz survival extrapolation.</li>
+<li><strong>Results.</strong> Company base case £6,939 per QALY against ACE-inhibitor or ARB-based care; the committee’s preferred ICER £7,264; below £10,000 against sacubitril/valsartan-based care; and dapagliflozin dominated sacubitril/valsartan when considered as an alternative to it.</li>
+<li><strong>Recommendation</strong> (February 2021). Recommended for symptomatic chronic HFrEF only as an add-on to optimised standard care, started on the advice of a heart-failure specialist.</li>
+</ol>
+<p>The final wording follows the trial: it tested an add-on, so the recommendation is for an add-on. A low ICER and low EVPI at the relevant threshold mean recommend now, without requiring further research.</p>
+</section>
+<section id="sec-hta-failures" class="level2" data-number="22.9">
+<h2 data-number="22.9" class="anchored" data-anchor-id="sec-hta-failures"><span class="header-section-number">22.9</span> When critical thinking is missing</h2>
+<section id="sec-hta-xigris" class="level3" data-number="22.9.1">
+<h3 data-number="22.9.1" class="anchored" data-anchor-id="sec-hta-xigris"><span class="header-section-number">22.9.1</span> Drotrecogin alfa in sepsis</h3>
+<p>In 2001 the PROWESS trial of drotrecogin alfa (activated protein C) in 1690 patients with severe sepsis reported 28-day mortality of 24.7% versus 30.8%; it was stopped early for benefit, after changes to the protocol and to the drug source during the trial <span class="citation" data-cites="bernard2001prowess">(<a href="references.html#ref-bernard2001prowess" role="doc-biblioref">22</a>)</span>. The FDA approved the drug after a split advisory committee vote, for high-risk patients only, a subgroup. Early economic models assumed that the 28-day benefit persisted for life. In 2005 the ADDRESS trial in lower-risk patients was stopped for futility, and in 2007 a hospital-based assessment by our group pooled the evidence, found an RR of 0.93 (0.69 to 1.26) and concluded that cost-effectiveness was uncertain and further research was needed <span class="citation" data-cites="costa2007drotrecogin">(<a href="references.html#ref-costa2007drotrecogin" role="doc-biblioref">23</a>)</span>. In 2011 PROWESS-SHOCK found 26.4% versus 24.2% mortality, and the drug was withdrawn worldwide <span class="citation" data-cites="ranieri2012prowessshock">(<a href="references.html#ref-ranieri2012prowessshock" role="doc-biblioref">24</a>)</span>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>xig <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">study =</span> <span class="fu">c</span>(<span class="st">"PROWESS 2001"</span>, <span class="st">"ADDRESS 2005"</span>, <span class="st">"PROWESS-SHOCK 2012"</span>),</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ai =</span> <span class="fu">c</span>(<span class="dv">210</span>, <span class="dv">247</span>, <span class="dv">223</span>), <span class="at">n1 =</span> <span class="fu">c</span>(<span class="dv">850</span>, <span class="dv">1333</span>, <span class="dv">846</span>),</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ci =</span> <span class="fu">c</span>(<span class="dv">259</span>, <span class="dv">222</span>, <span class="dv">202</span>), <span class="at">n2 =</span> <span class="fu">c</span>(<span class="dv">840</span>, <span class="dv">1307</span>, <span class="dv">834</span>))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>cum <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="cf">function</span>(k) {</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fu">rma</span>(<span class="at">measure =</span> <span class="st">"RR"</span>, <span class="at">ai =</span> ai, <span class="at">n1i =</span> n1, <span class="at">ci =</span> ci, <span class="at">n2i =</span> n2, <span class="at">data =</span> xig[<span class="dv">1</span><span class="sc">:</span>k, ],</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">method =</span> <span class="cf">if</span> (k <span class="sc">==</span> <span class="dv">1</span>) <span class="st">"EE"</span> <span class="cf">else</span> <span class="st">"DL"</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"+ "</span>, xig<span class="sc">$</span>study[k]), <span class="at">est =</span> <span class="fu">exp</span>(r<span class="sc">$</span>b[<span class="dv">1</span>]), <span class="at">lo =</span> <span class="fu">exp</span>(r<span class="sc">$</span>ci.lb), <span class="at">hi =</span> <span class="fu">exp</span>(r<span class="sc">$</span>ci.ub))</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">label =</span> forcats<span class="sc">::</span><span class="fu">fct_rev</span>(forcats<span class="sc">::</span><span class="fu">fct_inorder</span>(label)))</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cum, <span class="fu">aes</span>(est, label)) <span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> lo, <span class="at">xmax =</span> hi), <span class="at">colour =</span> navy) <span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="dv">1</span>, <span class="fl">1.25</span>, <span class="fl">1.5</span>)) <span class="sc">+</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Relative risk of death (log scale)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-xigris" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-xigris-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="22-hta_files/figure-html/fig-xigris-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-xigris-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.6: Cumulative meta-analysis of the three trials of drotrecogin alfa (28-day mortality, random effects after the first trial).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>After two trials the pooled RR was 0.93 (0.69 to 1.26): the decision-relevant uncertainty was visible a decade before withdrawal. A single trial stopped early with mid-trial changes, a split regulatory vote, benefit concentrated in a subgroup, short-term outcomes extrapolated to a lifetime, inconsistent later evidence and a high price: every element of an HTA could have flagged the problem.</p>
+</section>
+<section id="sec-hta-ipi" class="level3" data-number="22.9.2">
+<h3 data-number="22.9.2" class="anchored" data-anchor-id="sec-hta-ipi"><span class="header-section-number">22.9.2</span> Ipilimumab in melanoma: extrapolation drives the ICER</h3>
+<p>In metastatic melanoma, ipilimumab improved median survival from 6.4 to 10.0 months (HR 0.68), with two-year survival of about 22% versus 14% <span class="citation" data-cites="hodi2010ipilimumab">(<a href="references.html#ref-hodi2010ipilimumab" role="doc-biblioref">25</a>)</span>. An economic claim of acceptable cost per life-year depended on assuming about a year of extra survival. Most of that gain lies beyond the trial’s follow-up, in an extrapolated tail. The illustrative reconstruction below fits mixture-cure curves to the published medians and two-year survival and then extends them under two assumptions.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fit_cure <span class="ot">&lt;-</span> <span class="cf">function</span>(med, s24) {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="cf">function</span>(p) (p[<span class="dv">1</span>] <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> p[<span class="dv">1</span>]) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>p[<span class="dv">2</span>] <span class="sc">*</span> med) <span class="sc">-</span> <span class="fl">0.5</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                   (p[<span class="dv">1</span>] <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> p[<span class="dv">1</span>]) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>p[<span class="dv">2</span>] <span class="sc">*</span> <span class="dv">24</span>) <span class="sc">-</span> s24)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  o <span class="ot">&lt;-</span> <span class="fu">optim</span>(<span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>), f, <span class="at">method =</span> <span class="st">"L-BFGS-B"</span>, <span class="at">lower =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.001</span>), <span class="at">upper =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="dv">1</span>))<span class="sc">$</span>par</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">pi =</span> o[<span class="dv">1</span>], <span class="at">lam =</span> o[<span class="dv">2</span>])</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>ctl <span class="ot">&lt;-</span> <span class="fu">fit_cure</span>(<span class="fl">6.4</span>, <span class="fl">0.137</span>); trt <span class="ot">&lt;-</span> <span class="fu">fit_cure</span>(<span class="fl">10.0</span>, <span class="fl">0.216</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="cf">function</span>(t, p, h_late) {</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  s24 <span class="ot">&lt;-</span> p<span class="sc">$</span>pi <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> p<span class="sc">$</span>pi) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>p<span class="sc">$</span>lam <span class="sc">*</span> <span class="dv">24</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(t <span class="sc">&lt;=</span> <span class="dv">24</span>, p<span class="sc">$</span>pi <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> p<span class="sc">$</span>pi) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>p<span class="sc">$</span>lam <span class="sc">*</span> t), s24 <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>h_late <span class="sc">*</span> (t <span class="sc">-</span> <span class="dv">24</span>)))</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>tt <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">120</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>curves <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">t =</span> tt, <span class="at">arm =</span> <span class="st">"Ipilimumab"</span>, <span class="at">A =</span> <span class="fu">S</span>(tt, trt, <span class="fl">0.005</span>), <span class="at">B =</span> <span class="fu">S</span>(tt, trt, <span class="fl">0.06</span>)),</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">t =</span> tt, <span class="at">arm =</span> <span class="st">"Control"</span>,    <span class="at">A =</span> <span class="fu">S</span>(tt, ctl, <span class="fl">0.005</span>), <span class="at">B =</span> <span class="fu">S</span>(tt, ctl, <span class="fl">0.06</span>)))</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>gain <span class="ot">&lt;-</span> <span class="cf">function</span>(col, upto) <span class="fu">sum</span>(curves[[col]][curves<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Ipilimumab"</span> <span class="sc">&amp;</span> curves<span class="sc">$</span>t <span class="sc">&lt;=</span> upto] <span class="sc">-</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>                                curves[[col]][curves<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Control"</span> <span class="sc">&amp;</span> curves<span class="sc">$</span>t <span class="sc">&lt;=</span> upto])</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>g24 <span class="ot">&lt;-</span> <span class="fu">gain</span>(<span class="st">"A"</span>, <span class="dv">24</span>); gA <span class="ot">&lt;-</span> <span class="fu">gain</span>(<span class="st">"A"</span>, <span class="dv">120</span>); gB <span class="ot">&lt;-</span> <span class="fu">gain</span>(<span class="st">"B"</span>, <span class="dv">120</span>)</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>curves <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(A, B), <span class="at">names_to =</span> <span class="st">"extrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">extrap =</span> <span class="fu">recode</span>(extrap, <span class="at">A =</span> <span class="st">"2-year survivors cured (hazard 0.5%/month)"</span>,</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>                         <span class="at">B =</span> <span class="st">"Disease continues (hazard 6%/month)"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(t, value, <span class="at">colour =</span> arm, <span class="at">linetype =</span> extrap)) <span class="sc">+</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.9</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">24</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">26</span>, <span class="at">y =</span> <span class="fl">0.9</span>, <span class="at">label =</span> <span class="st">"end of</span><span class="sc">\n</span><span class="st">observed data"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Control =</span> <span class="st">"grey40"</span>, <span class="at">Ipilimumab =</span> red), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Months"</span>, <span class="at">y =</span> <span class="st">"Survival"</span>, <span class="at">linetype =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">linetype =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">2</span>)) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-ipi" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ipi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="22-hta_files/figure-html/fig-ipi-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ipi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;22.7: Illustrative survival curves calibrated to the published medians and 2-year survival of ipilimumab and control, extrapolated beyond 24 months under two assumptions about late mortality.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Within the observed 24 months the mean survival gain is 2.8 months. Over 10 years it becomes 8.8 months if two-year survivors are effectively cured, but only 4.0 months if the disease continues to kill them. The ICER is driven by an assumption the trial cannot test, which is why extrapolation should be varied in sensitivity analyses and, where possible, informed by external data.</p>
+</section>
+<section id="sec-hta-lessons" class="level3" data-number="22.9.3">
+<h3 data-number="22.9.3" class="anchored" data-anchor-id="sec-hta-lessons"><span class="header-section-number">22.9.3</span> Lessons</h3>
+<p>Guidelines and HTAs go wrong through conflicts of interest (63% of 95 organisations producing clinical practice guidelines reported industry funding <span class="citation" data-cites="campsall2016coi">(<a href="references.html#ref-campsall2016coi" role="doc-biblioref">26</a>)</span>); limited training in reasoning about uncertainty and cumulating evidence; uncritical acceptance of single, early-stopped or sponsor-written trials; neglect of patients’ preferences and of costs; cognitive biases such as overconfidence and group-think; and the habit of asking “does it work?” without “is it worth it?”. The consequences are marginal therapies becoming standard care and resources diverted from effective uses. The remedies are multidisciplinary committees, appraisal anchored in a systematic review rather than a pivotal trial, patient-relevant outcomes and economics, explicit quantified uncertainty (PSA, predictive distributions, value of information), transparent processes such as the EtD framework, and reassessment when new evidence arrives.</p>
+</section>
+</section>
+<section id="key-points" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-points">Key points</h2>
+<ol type="1">
+<li>HTA is not just a bigger systematic review, but a flawed review poisons every downstream step.</li>
+<li>Decisions need absolute effects for each component outcome, not only a composite relative effect.</li>
+<li>Transitivity is an assumption about background therapy as much as about patients; star-shaped networks cannot check it.</li>
+<li>Ranking add-on therapies as alternatives answers the wrong question; match the analysis to the decision (A + B vs A, B vs C, A + B + C vs A).</li>
+<li>The ICER is a distribution; report the CEAC from a probabilistic sensitivity analysis, not just a point estimate.</li>
+<li>PSA and value of information are implicitly Bayesian; explicit Bayesian synthesis adds prediction and prior information.</li>
+<li>Prediction, not pooled significance, should guide decisions (magnesium); extrapolation can dominate the result (ipilimumab).</li>
+<li>EVPI and EVPPI tell you whether more research is worth paying for, and which research.</li>
+</ol>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Repeat the Bucher comparison of eplerenone with dapagliflozin. Which assumptions make it doubtful?</li>
+<li>Change the annual drug cost in <code>hf_model()</code> to £1,500. What is the new deterministic ICER, and how does the CEAC change?</li>
+<li>Halve the standard errors of the two log hazard ratios in the PSA (as if a second trial had been done) and recompute EVPI at £6,000 per QALY.</li>
+<li>Add a fifth EVPPI group containing only <code>lhr_cvd</code>. How much of the treatment-effect EVPPI does cardiovascular death account for?</li>
+<li>In the magnesium example, compute the probability that a new trial shows OR &lt; 0.8, using the posterior predictive draws. How would you explain the difference from P(mean OR &lt; 0.8) to a decision-maker?</li>
+</ol>
+</section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><span class="citation" data-cites="drummond2015methods">(<a href="references.html#ref-drummond2015methods" role="doc-biblioref">12</a>)</span> and <span class="citation" data-cites="briggs2006decision">(<a href="references.html#ref-briggs2006decision" role="doc-biblioref">27</a>)</span> on economic evaluation and decision modelling.</li>
+<li><span class="citation" data-cites="alonsocoello2016etd">(<a href="references.html#ref-alonsocoello2016etd" role="doc-biblioref">2</a>)</span> on the EtD framework.</li>
+<li><span class="citation" data-cites="spiegelhalter1999bayesianhta">(<a href="references.html#ref-spiegelhalter1999bayesianhta" role="doc-biblioref">15</a>)</span> and <span class="citation" data-cites="cooper2013bayesian">(<a href="references.html#ref-cooper2013bayesian" role="doc-biblioref">14</a>)</span> on Bayesian methods in HTA.</li>
+<li><span class="citation" data-cites="strong2014evppi">(<a href="references.html#ref-strong2014evppi" role="doc-biblioref">19</a>)</span> and <span class="citation" data-cites="ades2004evsi">(<a href="references.html#ref-ades2004evsi" role="doc-biblioref">20</a>)</span> on value of information.</li>
+<li>NICE TA679 <span class="citation" data-cites="nice2021ta679">(<a href="references.html#ref-nice2021ta679" role="doc-biblioref">9</a>)</span>; read the committee discussion.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-mcgregor1978planning" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">McGregor M, Pelletier G. <a href="https://doi.org/10.1056/NEJM197807272990405">Planning of specialized health facilities. <span>Size</span> vs. Cost and effectiveness in heart surgery</a>. New England Journal of Medicine. 1978;299(4):179–81. </div>
+</div>
+<div id="ref-alonsocoello2016etd" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Alonso-Coello P, Schünemann HJ, Moberg J, et al. <a href="https://doi.org/10.1136/bmj.i2016"><span>GRADE</span> <span class="nocase">Evidence to Decision</span> (<span>EtD</span>) frameworks: A systematic and transparent approach to making well informed healthcare choices. 1: <span>Introduction</span></a>. BMJ. 2016;353:i2016. </div>
+</div>
+<div id="ref-moberg2018etd" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Moberg J, Oxman AD, Rosenbaum S, et al. The <span>GRADE</span> <span class="nocase">Evidence to Decision</span> (<span>EtD</span>) framework for health system and public health decisions. Health Research Policy and Systems [Internet]. 2018;16:45. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5975536/">https://pmc.ncbi.nlm.nih.gov/articles/PMC5975536/</a></div>
+</div>
+<div id="ref-zannad2011emphasis" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Zannad F, McMurray JJV, Krum H, et al. <a href="https://doi.org/10.1056/NEJMoa1009492">Eplerenone in patients with systolic heart failure and mild symptoms</a>. New England Journal of Medicine. 2011;364(1):11–21. </div>
+</div>
+<div id="ref-mcmurray2014paradigm" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">McMurray JJV, Packer M, Desai AS, et al. <a href="https://doi.org/10.1056/NEJMoa1409077">Angiotensin-neprilysin inhibition versus enalapril in heart failure</a>. New England Journal of Medicine. 2014;371(11):993–1004. </div>
+</div>
+<div id="ref-mcmurray2019dapa" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">McMurray JJV, Solomon SD, Inzucchi SE, et al. <a href="https://doi.org/10.1056/NEJMoa1911303">Dapagliflozin in patients with heart failure and reduced ejection fraction</a>. N Engl J Med. 2019;381:1995–2008. </div>
+</div>
+<div id="ref-packer2020emperor" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Packer M, Anker SD, Butler J, et al. <a href="https://doi.org/10.1056/NEJMoa2022190">Cardiovascular and renal outcomes with empagliflozin in heart failure</a>. New England Journal of Medicine. 2020;383(15):1413–24. </div>
+</div>
+<div id="ref-bucher1997" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Bucher HC, Guyatt GH, Griffith LE, Walter SD. <a href="https://doi.org/10.1016/S0895-4356(97)00049-8">The results of direct and indirect treatment comparisons in meta-analysis of randomized controlled trials</a>. Journal of Clinical Epidemiology. 1997;50(6):683–91. </div>
+</div>
+<div id="ref-nice2021ta679" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">National Institute for Health and Care Excellence. Dapagliflozin for treating chronic heart failure with reduced ejection fraction. <span>Technology</span> appraisal guidance <span>TA679</span> [Internet]. NICE, London; 2021. Available from: <a href="https://www.nice.org.uk/guidance/ta679">https://www.nice.org.uk/guidance/ta679</a></div>
+</div>
+<div id="ref-vaduganathan2020comprehensive" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Vaduganathan M, Claggett BL, Jhund PS, et al. <a href="https://doi.org/10.1016/S0140-6736(20)30748-0">Estimating lifetime benefits of comprehensive disease-modifying pharmacological therapies in patients with heart failure with reduced ejection fraction: A comparative analysis of three randomised controlled trials</a>. The Lancet. 2020;396(10244):121–8. </div>
+</div>
+<div id="ref-rucker2020cnma" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Rücker G, Petropoulou M, Schwarzer G. <a href="https://doi.org/10.1002/bimj.201800167">Network meta-analysis of multicomponent interventions</a>. Biometrical Journal. 2020;62(3):808–21. </div>
+</div>
+<div id="ref-drummond2015methods" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Drummond MF, Sculpher MJ, Claxton K, Stoddart GL, Torrance GW. Methods for the economic evaluation of health care programmes. 4th ed. Oxford: Oxford University Press; 2015. </div>
+</div>
+<div id="ref-claxton2015threshold" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Claxton K, Martin S, Soares M, et al. <a href="https://doi.org/10.3310/hta19140">Methods for the estimation of the <span class="nocase">National Institute for Health and Care Excellence</span> cost-effectiveness threshold</a>. Health Technology Assessment. 2015;19(14). </div>
+</div>
+<div id="ref-cooper2013bayesian" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Cooper NJ, Bujkiewicz S, Dequen P, Sutton AJ, Spiegelhalter D. <a href="https://doi.org/10.1017/S0266462313000354">Use of <span>Bayesian</span> methods for the health technology assessment of drugs: A review of <span>UK</span> <span class="nocase">National Institute for Health Research</span> health technology assessment reports</a>. International Journal of Technology Assessment in Health Care. 2013;29(3):336–42. </div>
+</div>
+<div id="ref-spiegelhalter1999bayesianhta" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Spiegelhalter DJ, Myles JP, Jones DR, Abrams KR. <a href="https://doi.org/10.1136/bmj.319.7208.508">An introduction to <span>Bayesian</span> methods in health technology assessment</a>. BMJ. 1999;319(7208):508–12. </div>
+</div>
+<div id="ref-yusuf1993magnesium" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Yusuf S, Teo K, Woods K. <a href="https://doi.org/10.1161/01.CIR.87.6.2043">Intravenous magnesium in acute myocardial infarction. <span>An</span> effective, safe, simple, and inexpensive intervention</a>. Circulation. 1993;87(6):2043–6. </div>
+</div>
+<div id="ref-isis4" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">ISIS-4 Collaborative Group. <a href="https://doi.org/10.1016/S0140-6736(95)90865-X"><span>ISIS-4</span>: A randomised factorial trial assessing early oral captopril, oral mononitrate, and intravenous magnesium sulphate in 58,050 patients with suspected acute myocardial infarction</a>. The Lancet. 1995;345(8951):669–85. </div>
+</div>
+<div id="ref-claxton1999irrelevance" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Claxton K. <a href="https://doi.org/10.1016/S0167-6296(98)00039-3">The irrelevance of inference: A decision-making approach to the stochastic evaluation of health care technologies</a>. Journal of Health Economics. 1999;18(3):341–64. </div>
+</div>
+<div id="ref-strong2014evppi" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Strong M, Oakley JE, Brennan A. <a href="https://doi.org/10.1177/0272989X13505910">Estimating multiparameter partial expected value of perfect information from a probabilistic sensitivity analysis sample: A nonparametric regression approach</a>. Medical Decision Making. 2014;34(3):311–26. </div>
+</div>
+<div id="ref-ades2004evsi" class="csl-entry" role="listitem">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Ades AE, Lu G, Claxton K. <a href="https://doi.org/10.1177/0272989X04263162">Expected value of sample information calculations in medical decision modeling</a>. Medical Decision Making. 2004;24(2):207–27. </div>
+</div>
+<div id="ref-zannad2020sglt2" class="csl-entry" role="listitem">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Zannad F, Ferreira JP, Pocock SJ, et al. <a href="https://doi.org/10.1016/S0140-6736(20)31824-9"><span>SGLT2</span> inhibitors in patients with heart failure with reduced ejection fraction: A meta-analysis of the <span>EMPEROR-Reduced</span> and <span>DAPA-HF</span> trials</a>. The Lancet. 2020;396(10254):819–29. </div>
+</div>
+<div id="ref-bernard2001prowess" class="csl-entry" role="listitem">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Bernard GR, Vincent JL, Laterre PF, et al. <a href="https://doi.org/10.1056/NEJM200103083441001">Efficacy and safety of recombinant human activated protein <span>C</span> for severe sepsis</a>. New England Journal of Medicine. 2001;344(10):699–709. </div>
+</div>
+<div id="ref-costa2007drotrecogin" class="csl-entry" role="listitem">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Costa V, Brophy JM. Drotrecogin alfa (activated) in severe sepsis: A systematic review and new cost-effectiveness analysis. BMC Anesthesiology [Internet]. 2007;7:5. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1929064/">https://pmc.ncbi.nlm.nih.gov/articles/PMC1929064/</a></div>
+</div>
+<div id="ref-ranieri2012prowessshock" class="csl-entry" role="listitem">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Ranieri VM, Thompson BT, Barie PS, et al. <a href="https://doi.org/10.1056/NEJMoa1202290">Drotrecogin alfa (activated) in adults with septic shock</a>. New England Journal of Medicine. 2012;366(22):2055–64. </div>
+</div>
+<div id="ref-hodi2010ipilimumab" class="csl-entry" role="listitem">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Hodi FS, O’Day SJ, McDermott DF, et al. <a href="https://doi.org/10.1056/NEJMoa1003466">Improved survival with ipilimumab in patients with metastatic melanoma</a>. New England Journal of Medicine. 2010;363(8):711–23. </div>
+</div>
+<div id="ref-campsall2016coi" class="csl-entry" role="listitem">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">Campsall P, Colizza K, Straus S, Stelfox HT. <a href="https://doi.org/10.1371/journal.pmed.1002029">Financial relationships between organizations that produce clinical practice guidelines and the biomedical industry: A cross-sectional study</a>. PLoS Medicine. 2016;13(5):e1002029. </div>
+</div>
+<div id="ref-briggs2006decision" class="csl-entry" role="listitem">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Briggs A, Claxton K, Sculpher M. Decision modelling for health economic evaluation. Oxford: Oxford University Press; 2006. </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./21-cochrane-single-trial.html" class="pagination-link" aria-label="Cochrane Reviews, Living Reviews and the Single Trial">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./23-correcting-literature.html" class="pagination-link" aria-label="Correcting the Published Literature: A Worked Audit">
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

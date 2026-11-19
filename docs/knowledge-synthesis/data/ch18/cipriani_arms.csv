@@ -1,0 +1,72 @@
+study,treat,mean,sd,n,responders,responders_n
+Organon 2002a,Mirtazapine,-15.85,12.54,82,NA,NA
+Organon 2002a,Placebo,-14.69,12.56,44,NA,NA
+Organon 2002b,Mirtazapine,-13.48,12.24,83,NA,NA
+Organon 2002b,Placebo,-8.81,12.22,41,NA,NA
+Almeida-Montes 2005,Fluoxetine,-9.14,4.02,7,4,7
+Almeida-Montes 2005,Placebo,-8.14,4.54,9,6,9
+Atkinson 2014,Duloxetine,-24.3,11.59,113,76,113
+Atkinson 2014,Fluoxetine,-23.7,11.27,113,71,113
+Atkinson 2014,Placebo,-24.3,11.27,103,64,103
+Attari 2006,Fluoxetine,-10.95,2.61,20,10,20
+Attari 2006,Nortriptyline,-2.6,0.8,20,2,20
+Eli Lilly 1986,Fluoxetine,-13.91,7.84,21,NA,NA
+Eli Lilly 1986,Placebo,-12.42,7.24,19,NA,NA
+Berard 2006,Paroxetine,-13.6,10.91,177,107,177
+Berard 2006,Placebo,-12.8,10.3,91,53,91
+Braconnier 2003,Clomipramine,-13.3,9.94,58,28,58
+Braconnier 2003,Paroxetine,-17.8,8.4,63,41,63
+Bristol-Myers Squibb 2002,Nefazodone,-21.9,14.31,180,NA,NA
+Bristol-Myers Squibb 2002,Placebo,-21.6,13.68,93,NA,NA
+Emslie 1997,Fluoxetine,-20.1,13.19,48,27,48
+Emslie 1997,Placebo,-10.5,14.84,48,16,48
+Emslie 2002a,Fluoxetine,-22,12.11,109,37,109
+Emslie 2002a,Placebo,-14.9,12.74,105,17,101
+Emslie 2002b,Nefazodone,-26.5,14.46,99,61,99
+Emslie 2002b,Placebo,-22.5,14.46,96,40,96
+Emslie 2006,Paroxetine,-22.58,14.77,101,49,101
+Emslie 2006,Placebo,-23.38,16,100,46,100
+Emslie 2007a,Venlafaxine,-18.1,12.86,68,26,65
+Emslie 2007a,Placebo,-16.1,12.9,73,28,70
+Emslie 2007b,Venlafaxine,-24.3,12.66,101,59,101
+Emslie 2007b,Placebo,-22.6,13.52,92,51,92
+Emslie 2009,Escitalopram,-22.1,15.14,154,99,154
+Emslie 2009,Placebo,-18.8,15.91,157,83,157
+Emslie 2014,Duloxetine,-24.26,13.53,219,151,219
+Emslie 2014,Fluoxetine,-22.6,13.44,112,68,112
+Emslie 2014,Placebo,-21.6,13.74,117,70,117
+Findling 2009,Fluoxetine,-18.4,12.47,18,9,18
+Findling 2009,Placebo,-22.63,12.48,16,6,16
+Geller 1990,Nortriptyline,-16.6,6.77,12,1,12
+Geller 1990,Placebo,-13.6,7.93,19,4,19
+Geller 1992,Nortriptyline,-17,9.99,26,8,26
+Geller 1992,Placebo,-17.6,8.49,24,4,24
+Hongfen 2009,Fluoxetine,-15,6,29,19,29
+Hongfen 2009,Venlafaxine,-15,6,30,21,30
+Hughes 1990,Imipramine,NA,NA,NA,6,13
+Hughes 1990,Placebo,NA,NA,NA,7,14
+Keller 2001,Imipramine,-8.91,6.8,94,49,94
+Keller 2001,Paroxetine,-10.74,6.66,90,59,90
+Keller 2001,Placebo,-9.09,6.71,87,42,87
+Klein 1998,Desipramine,-10.61,3.21,18,12,18
+Klein 1998,Placebo,-6.72,4.53,18,9,18
+Kutcher 1994,Desipramine,-9.95,7.56,17,8,17
+Kutcher 1994,Placebo,-10.35,7.38,25,9,25
+Kye 1996,Amitriptyline,-4,4.71,18,13,18
+Kye 1996,Placebo,-4.4,4.31,13,11,13
+March 2004,Fluoxetine,-22.64,7.08,109,66,109
+March 2004,Placebo,-19.41,6.93,112,39,112
+GlaxoSmithKline 2009,Paroxetine,-16.5,13.19,29,15,29
+GlaxoSmithKline 2009,Placebo,-11.9,13.2,27,11,27
+Puig-Antich 1987,Imipramine,-1.2,0.6,16,9,16
+Puig-Antich 1987,Placebo,-1.1,0.78,22,15,22
+von Knorring 2006,Citalopram,-12.09,16.36,96,48,121
+von Knorring 2006,Placebo,-11.91,15.93,91,44,112
+Wagner 2003a,Sertraline,-25.9,14.71,93,NA,NA
+Wagner 2003a,Placebo,-22.1,14.71,88,NA,NA
+Wagner 2003b,Sertraline,-28.8,15.71,92,NA,NA
+Wagner 2003b,Placebo,-25.6,15.71,91,NA,NA
+Wagner 2004,Citalopram,-21.7,15.09,89,42,89
+Wagner 2004,Placebo,-16.5,14.75,85,38,85
+Wagner 2006,Escitalopram,-21.9,13.5,129,81,129
+Wagner 2006,Placebo,-20.2,13.5,132,69,132

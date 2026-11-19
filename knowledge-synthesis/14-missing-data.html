@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; Missing Data – Knowledge Synthesis in Health Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./15-publication-bias.html" rel="next">
+<link href="./13-bayesian-meta-analysis.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ef126021e9ff1ef5a96e4bd190a6c277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-missing-data.html">Threats and extensions</a></li><li class="breadcrumb-item"><a href="./14-missing-data.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Knowledge Synthesis in Health Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-finding-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-question-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualising-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualising Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appraisal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-bias-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk of Bias and GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-certainty-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rating Certainty with GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-appraising-reviews.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reporting and Appraising Systematic Reviews</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Meta-analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-effect-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-meta-analysis-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Meta-Analysis Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-heterogeneity-robustness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Heterogeneity and Robustness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-bias-bridge-bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bayesian-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Threats and extensions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-missing-data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-publication-bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-ipd-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-network-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-nma-in-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-observational-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-diagnostic-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">From evidence to decisions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-cochrane-single-trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-hta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-correcting-literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-agentic-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Agentic Systematic Reviews and Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-missing-scale" id="toc-sec-missing-scale" class="nav-link active" data-scroll-target="#sec-missing-scale"><span class="header-section-number">14.1</span> The scale of the problem</a></li>
+  <li><a href="#sec-missing-mechanisms" id="toc-sec-missing-mechanisms" class="nav-link" data-scroll-target="#sec-missing-mechanisms"><span class="header-section-number">14.2</span> Mechanisms of missingness</a></li>
+  <li><a href="#sec-missing-methods" id="toc-sec-missing-methods" class="nav-link" data-scroll-target="#sec-missing-methods"><span class="header-section-number">14.3</span> Handling methods and their assumptions</a>
+  <ul class="collapse">
+  <li><a href="#sec-missing-sim" id="toc-sec-missing-sim" class="nav-link" data-scroll-target="#sec-missing-sim"><span class="header-section-number">14.3.1</span> One simulated trial, three mechanisms</a></li>
+  <li><a href="#sec-missing-bounds" id="toc-sec-missing-bounds" class="nav-link" data-scroll-target="#sec-missing-bounds"><span class="header-section-number">14.3.2</span> Worst and best cases</a></li>
+  </ul></li>
+  <li><a href="#sec-missing-sd" id="toc-sec-missing-sd" class="nav-link" data-scroll-target="#sec-missing-sd"><span class="header-section-number">14.4</span> Missing summary statistics</a>
+  <ul class="collapse">
+  <li><a href="#sec-missing-change" id="toc-sec-missing-change" class="nav-link" data-scroll-target="#sec-missing-change"><span class="header-section-number">14.4.1</span> Change scores and the unknown correlation</a></li>
+  <li><a href="#sec-missing-median" id="toc-sec-missing-median" class="nav-link" data-scroll-target="#sec-missing-median"><span class="header-section-number">14.4.2</span> Medians, quartiles and ranges</a></li>
+  </ul></li>
+  <li><a href="#sec-missing-imor" id="toc-sec-missing-imor" class="nav-link" data-scroll-target="#sec-missing-imor"><span class="header-section-number">14.5</span> Binary outcomes: the informative missingness odds ratio</a>
+  <ul class="collapse">
+  <li><a href="#sec-missing-haloperidol" id="toc-sec-missing-haloperidol" class="nav-link" data-scroll-target="#sec-missing-haloperidol"><span class="header-section-number">14.5.1</span> The haloperidol meta-analysis</a></li>
+  <li><a href="#sec-missing-imor-method" id="toc-sec-missing-imor-method" class="nav-link" data-scroll-target="#sec-missing-imor-method"><span class="header-section-number">14.5.2</span> Applying the IMOR</a></li>
+  <li><a href="#sec-missing-tipping" id="toc-sec-missing-tipping" class="nav-link" data-scroll-target="#sec-missing-tipping"><span class="header-section-number">14.5.3</span> Tipping points and uncertain IMORs</a></li>
+  </ul></li>
+  <li><a href="#sec-missing-report" id="toc-sec-missing-report" class="nav-link" data-scroll-target="#sec-missing-report"><span class="header-section-number">14.6</span> What reviewers should do</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./14-missing-data.html">Threats and extensions</a></li><li class="breadcrumb-item"><a href="./14-missing-data.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-missing" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>distinguish the kinds of data that can be missing in a meta-analysis, and the tools for each;</li>
+<li>define MCAR, MAR and MNAR, recognise which is plausible in a given trial, and explain why MAR cannot be verified;</li>
+<li>explain, with a simulation, what complete-case analysis, LOCF, BOCF, single and multiple imputation and mixed models each assume, and when each is biased;</li>
+<li>recover missing standard deviations from confidence intervals, <em>P</em> values, medians and quartiles, and explain why change-score SDs depend on an unknown correlation;</li>
+<li>apply the informative missingness odds ratio (IMOR) to a meta-analysis of binary outcomes, including different assumptions by arm, a tipping-point analysis and an uncertain IMOR;</li>
+<li>extract and report missing-data information, and carry it into risk of bias and GRADE.</li>
+</ul>
+<p><strong>R packages:</strong> <code>dplyr</code>, <code>tidyr</code>, <code>purrr</code>, <code>ggplot2</code>, <code>metafor</code>, <code>mice</code>, <code>nlme</code>, <code>knitr</code>; <code>metamedian</code> and <code>metasens</code> for code that runs where they are installed.</p>
+</div>
+</div>
+<p>Every meta-analysis has missing data. Whole studies may be unpublished, outcomes may be measured but not reported, summary statistics may be incomplete, and within each trial some participants’ outcomes are never observed. This chapter deals mainly with the last two: missing participants and missing summary statistics. Missing studies, the subject of publication bias, are taken up in <a href="15-publication-bias.html" class="quarto-xref"><span>Chapter 15</span></a>.</p>
+<section id="sec-missing-scale" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="sec-missing-scale"><span class="header-section-number">14.1</span> The scale of the problem</h2>
+<p>In a review of 77 trials published in the <em>BMJ</em>, <em>JAMA</em>, <em>Lancet</em> and <em>NEJM</em> in the second half of 2013, 95% reported some missing outcome data, with a median of 9% of participants missing (range 0% to 70%). The primary analysis used complete cases in 45%, simple imputation such as last observation carried forward in 27%, model-based methods in 19% and multiple imputation in 8%; only 35% reported a sensitivity analysis <span class="citation" data-cites="bell2014missing">(<a href="references.html#ref-bell2014missing" role="doc-biblioref">1</a>)</span>. In a review of 235 trials with a statistically significant binary outcome in five leading journals (median loss to follow-up 6%), 0% to 33% of results were no longer significant under plausible assumptions about the participants lost <span class="citation" data-cites="akl2012lostit">(<a href="references.html#ref-akl2012lostit" role="doc-biblioref">2</a>)</span>.</p>
+<p>For the meta-analyst the problem compounds. A trial reports a number analysed, rarely the mechanism of missingness, and sometimes not even the method used to handle it. Different trials use different methods, and pooling them combines estimates that may answer slightly different questions, weighted by size rather than by data quality.</p>
+<div id="tbl-missing-types" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-missing-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.1: What can be missing in a meta-analysis (after the <em>Cochrane Handbook</em>, Table 10.12.a).
+</figcaption>
+<div aria-describedby="tbl-missing-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What is missing</th>
+<th>Common reasons</th>
+<th>Main tools</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Whole studies</td>
+<td>Publication bias; incomplete searching</td>
+<td>Registers, funnel plots, selection models (<a href="15-publication-bias.html" class="quarto-xref"><span>Chapter 15</span></a>)</td>
+</tr>
+<tr class="even">
+<td>Outcomes within a study</td>
+<td>Not measured; selective outcome reporting</td>
+<td>Protocols and registers; RoB 2 domain 5; contact authors</td>
+</tr>
+<tr class="odd">
+<td>Summary statistics</td>
+<td>Medians, <em>P</em> values or intervals reported instead of means and SDs</td>
+<td>Back-calculation; Hozo, Wan and Luo formulas (<a href="#sec-missing-sd" class="quarto-xref"><span>Section 14.4</span></a>)</td>
+</tr>
+<tr class="even">
+<td>Individual participants</td>
+<td>Dropout, loss to follow-up, no intention-to-treat analysis</td>
+<td>RoB 2 domain 3; IMOR and sensitivity analyses (<a href="#sec-missing-imor" class="quarto-xref"><span>Section 14.5</span></a>)</td>
+</tr>
+<tr class="odd">
+<td>Study-level characteristics, subgroups</td>
+<td>Not measured or not reported</td>
+<td>Contact authors; individual participant data (<a href="16-ipd-meta-analysis.html" class="quarto-xref"><span>Chapter 16</span></a>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Missing study-level data mainly limit <em>which</em> questions can be asked; a subgroup analysis restricted to the trials that chose to report the subgroup is itself open to selective reporting. Missing participants bias the <em>answers</em>.</p>
+</section>
+<section id="sec-missing-mechanisms" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="sec-missing-mechanisms"><span class="header-section-number">14.2</span> Mechanisms of missingness</h2>
+<p>Three mechanisms, defined by Rubin, describe how the probability that an outcome is missing relates to the data.</p>
+<ul>
+<li><strong>Missing completely at random (MCAR).</strong> Missingness depends on neither observed nor unobserved data: <span class="math inline">\(P(\text{missing} \mid Y_{obs}, Y_{mis}) = P(\text{missing})\)</span>. The complete cases are a random subsample, and analysing them is unbiased, with some loss of precision. A dropped laboratory sample is the classic example; in trials, MCAR is rare.</li>
+<li><strong>Missing at random (MAR).</strong> Missingness depends only on observed data: <span class="math inline">\(P(\text{missing} \mid Y_{obs}, Y_{mis}) = P(\text{missing} \mid Y_{obs})\)</span>. Older or sicker patients may drop out more, but given their age and baseline severity, dropout is random. Analyses that condition on the variables that predict missingness (multiple imputation, mixed models) are valid.</li>
+<li><strong>Missing not at random (MNAR).</strong> Missingness depends on the unobserved outcome itself, even after conditioning on everything observed. Patients who are not improving stop attending; patients with adverse effects withdraw. No analysis of the observed data alone is guaranteed valid.</li>
+</ul>
+<p>The distinction between MAR and MNAR cannot be tested from the data, because it concerns values that were never observed. <a href="#fig-mechanisms" class="quarto-xref">Figure&nbsp;<span>14.1</span></a> simulates the same 2000 patients under each mechanism.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>baseline <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)                                        <span class="co"># observed for everyone</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> baseline <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.7</span><span class="sc">^</span><span class="dv">2</span>))          <span class="co"># final outcome (higher = worse)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>miss <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">MCAR =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.30</span>),                     <span class="co"># a coin flip</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">MAR  =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">1</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> baseline)),  <span class="co"># depends on observed baseline</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">MNAR =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">1</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> y)))         <span class="co"># depends on the outcome itself</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>est <span class="ot">&lt;-</span> <span class="fu">imap_dfr</span>(miss, \(m, nm) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  obs <span class="ot">&lt;-</span> m <span class="sc">==</span> <span class="dv">0</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> baseline, <span class="at">subset =</span> obs)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Mechanism =</span> nm, <span class="at">pct =</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fu">mean</span>(m),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">True mean (everyone)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(y), <span class="st">`</span><span class="at">Mean of observed only</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(y[obs]),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">Baseline-adjusted estimate</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(<span class="fu">predict</span>(fit, <span class="at">newdata =</span> <span class="fu">data.frame</span>(baseline))))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Mechanism =</span> <span class="fu">factor</span>(Mechanism, <span class="fu">c</span>(<span class="st">"MCAR"</span>, <span class="st">"MAR"</span>, <span class="st">"MNAR"</span>)))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>lines <span class="ot">&lt;-</span> est <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span>pct) <span class="sc">|&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>Mechanism, <span class="at">names_to =</span> <span class="st">"Estimate"</span>, <span class="at">values_to =</span> <span class="st">"x"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Estimate =</span> <span class="fu">factor</span>(Estimate, <span class="fu">c</span>(<span class="st">"True mean (everyone)"</span>, <span class="st">"Mean of observed only"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">"Baseline-adjusted estimate"</span>)))</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>lab <span class="ot">&lt;-</span> est <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"%.0f%% missing</span><span class="sc">\n</span><span class="st">bias, observed: %+.2f</span><span class="sc">\n</span><span class="st">bias, adjusted: %+.2f"</span>, pct,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">`</span><span class="at">Mean of observed only</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">True mean (everyone)</span><span class="st">`</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">`</span><span class="at">Baseline-adjusted estimate</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">True mean (everyone)</span><span class="st">`</span>))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dfr</span>(miss, \(m, nm) tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Mechanism =</span> nm, <span class="at">y =</span> y,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">Status =</span> <span class="fu">ifelse</span>(m <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Missing"</span>, <span class="st">"Observed"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Status =</span> <span class="fu">factor</span>(Status, <span class="fu">c</span>(<span class="st">"Observed"</span>, <span class="st">"Missing"</span>)),</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">Mechanism =</span> <span class="fu">factor</span>(Mechanism, <span class="fu">c</span>(<span class="st">"MCAR"</span>, <span class="st">"MAR"</span>, <span class="st">"MNAR"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Status), <span class="at">bins =</span> <span class="dv">35</span>, <span class="at">colour =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">data =</span> lines, <span class="fu">aes</span>(<span class="at">xintercept =</span> x, <span class="at">colour =</span> Estimate, <span class="at">linetype =</span> Estimate), <span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="at">data =</span> lab, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">-</span><span class="fl">2.5</span>, <span class="at">y =</span> <span class="cn">Inf</span>, <span class="at">label =</span> label), <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>             <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">1.1</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">label.size =</span> <span class="dv">0</span>, <span class="at">lineheight =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>))) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Mechanism) <span class="sc">+</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Observed =</span> <span class="st">"#041E42"</span>, <span class="at">Missing =</span> <span class="st">"#B22222"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"#E69F00"</span>, <span class="st">"#2E7D32"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"solid"</span>, <span class="st">"dotted"</span>, <span class="st">"dashed"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>, <span class="fl">2.5</span>)) <span class="sc">+</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Final outcome (higher = worse)"</span>, <span class="at">y =</span> <span class="st">"Patients"</span>) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.box =</span> <span class="st">"vertical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-mechanisms" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mechanisms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14-missing-data_files/figure-html/fig-mechanisms-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mechanisms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.1: The same 2000 simulated patients under three missingness mechanisms. Bars: observed (navy) and missing (red) outcomes, stacked. Lines: the true mean of everyone (black), the mean of the observed (orange, dotted) and an estimate adjusted for the observed baseline value (green, dashed).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Under MCAR the observed mean is unbiased. Under MAR the patients who were sicker at baseline drop out, so the observed mean looks too good; because baseline is observed, adjusting for it removes the bias. Under MNAR, dropout depends on the outcome itself, and adjustment for baseline helps only partly.</p>
+<p>In most drug trials MNAR is plausible: patients who are not improving stop treatment, patients with adverse effects withdraw, and deteriorating patients become too ill to attend. Yet trials’ primary analyses almost always assume MCAR or MAR. The recommended practice is a primary analysis under a plausible MAR assumption <em>plus</em> sensitivity analyses that explore departures towards MNAR <span class="citation" data-cites="little2012nrc">(<a href="references.html#ref-little2012nrc" role="doc-biblioref">3</a>)</span>. If dropout differs between arms for reasons related to the outcome, the comparison of completers is no longer randomised, and the bias can favour either arm. The STRIDE trial assessed in <a href="05-bias-grading.html" class="quarto-xref"><span>Chapter 5</span></a> is an example: about 15% of participants were missing at 52 weeks, more in the placebo arm, and placebo patients who were not improving plausibly left more often.</p>
+<p>No analysis can recover information that was never collected. Trial features that reduce missing data (follow-up continued after treatment is stopped, flexible dosing, rescue medication built into the protocol, outcomes less prone to missingness) point to a lower risk of bias in RoB 2 domain 3. Some designs reduce missing data at a price: run-in periods and randomised withdrawal designs exclude, before randomisation, patients who cannot tolerate or adhere to the drug, so that harms are underestimated and the results apply to a selected group, an issue of indirectness rather than risk of bias.</p>
+</section>
+<section id="sec-missing-methods" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="sec-missing-methods"><span class="header-section-number">14.3</span> Handling methods and their assumptions</h2>
+<p>Every method for handling missing outcomes is an assumption about what those outcomes would have been. Knowing which assumption each trial made tells the meta-analyst which trials may be biased, and in which direction.</p>
+<div id="tbl-missing-methods" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-missing-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.2: Methods for missing outcome data (adapted from Egger, Higgins and Davey Smith, <em>Systematic Reviews in Health Research</em>, 3rd ed., Table 11.1).
+</figcaption>
+<div aria-describedby="tbl-missing-methods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Assumption</th>
+<th>Consequence</th>
+<th>Use in meta-analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Complete case (available case)</td>
+<td>MCAR, or MAR given the covariates in the model</td>
+<td>Unbiased under MCAR; biased under MNAR</td>
+<td>The usual primary analysis; a starting point</td>
+</tr>
+<tr class="even">
+<td>Last observation carried forward (LOCF)</td>
+<td>Outcome frozen at dropout</td>
+<td>Biased, often towards the null; CIs too narrow</td>
+<td>Common in trials; accept with caution</td>
+</tr>
+<tr class="odd">
+<td>Baseline observation carried forward (BOCF)</td>
+<td>Dropouts return to baseline</td>
+<td>Erases any improvement among dropouts</td>
+<td>Some regulatory analyses</td>
+</tr>
+<tr class="even">
+<td>Worst or best case</td>
+<td>All missing had the worst (best) outcome</td>
+<td>Bounds, not estimates</td>
+<td>Extreme sensitivity check</td>
+</tr>
+<tr class="odd">
+<td>Single imputation (mean, regression)</td>
+<td>MAR</td>
+<td>SEs too small</td>
+<td>Not as primary analysis</td>
+</tr>
+<tr class="even">
+<td>Multiple imputation</td>
+<td>MAR</td>
+<td>Valid under MAR with a good imputation model</td>
+<td>Needs individual data; prefer the trial’s MI estimate</td>
+</tr>
+<tr class="odd">
+<td>Likelihood-based (mixed models)</td>
+<td>MAR</td>
+<td>Valid under MAR</td>
+<td>Needs individual data; prefer the trial’s estimate</td>
+</tr>
+<tr class="even">
+<td>IMOR, δ-adjustment (pattern mixture)</td>
+<td>Specified departure from MAR</td>
+<td>Quantifies sensitivity to MNAR</td>
+<td>Recommended sensitivity analysis with aggregate data</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<section id="sec-missing-sim" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="sec-missing-sim"><span class="header-section-number">14.3.1</span> One simulated trial, three mechanisms</h3>
+<p>To see these assumptions at work, we simulate a trial of a depression-type score (higher is worse), measured at baseline and three follow-up visits in 150 patients per arm. Both arms improve; by visit 3 the active arm has improved 6 points more (true effect −6). Patients drop out with the same rule in both arms: under MCAR, 10% of those remaining at each visit by chance; under MAR, with a probability that rises with lack of improvement at the <em>previous</em> (observed) visit; under MNAR, with lack of improvement at the <em>current</em> (unobserved) visit. Under MAR and MNAR the placebo arm, with more non-improvers, loses more patients. Each scenario is simulated 150 times, and each simulated trial is analysed six ways, all adjusting for baseline.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sim_trial <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">150</span>, <span class="at">mech =</span> <span class="st">"MCAR"</span>, <span class="at">effect =</span> <span class="sc">-</span><span class="dv">6</span>) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  trt <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">each =</span> n)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  u   <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">2</span> <span class="sc">*</span> n, <span class="dv">0</span>, <span class="dv">4</span>)                                   <span class="co"># patient level</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  s   <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">2</span> <span class="sc">*</span> n, <span class="dv">0</span>, <span class="dv">6</span>)                                   <span class="co"># patient response</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  Y   <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, \(t) <span class="dv">30</span> <span class="sc">+</span> u <span class="sc">+</span> (<span class="sc">-</span><span class="dv">3</span> <span class="sc">+</span> trt <span class="sc">*</span> effect <span class="sc">/</span> <span class="dv">3</span> <span class="sc">+</span> s <span class="sc">/</span> <span class="dv">3</span>) <span class="sc">*</span> t <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">2</span> <span class="sc">*</span> n, <span class="dv">0</span>, <span class="dv">4</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  R   <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">TRUE</span>, <span class="dv">2</span> <span class="sc">*</span> n, <span class="dv">4</span>)                               <span class="co"># TRUE = observed</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (t <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    worse_prev <span class="ot">&lt;-</span> Y[, t <span class="sc">-</span> <span class="dv">1</span>] <span class="sc">-</span> Y[, <span class="dv">1</span>] <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> (t <span class="sc">-</span> <span class="dv">2</span>)           <span class="co"># lack of improvement, previous visit</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    worse_now  <span class="ot">&lt;-</span> Y[, t]     <span class="sc">-</span> Y[, <span class="dv">1</span>] <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> (t <span class="sc">-</span> <span class="dv">1</span>)           <span class="co"># ... current visit (unseen if missing)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    lp <span class="ot">&lt;-</span> <span class="cf">switch</span>(mech, <span class="at">MCAR =</span> <span class="fu">rep</span>(<span class="sc">-</span><span class="fl">2.2</span>, <span class="dv">2</span> <span class="sc">*</span> n),               <span class="co"># plogis(-2.2) = 10% per visit</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">MAR =</span> <span class="sc">-</span><span class="fl">2.2</span> <span class="sc">+</span> <span class="fl">0.3</span> <span class="sc">*</span> worse_prev, <span class="at">MNAR =</span> <span class="sc">-</span><span class="fl">2.2</span> <span class="sc">+</span> <span class="fl">0.3</span> <span class="sc">*</span> worse_now)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    R[, t] <span class="ot">&lt;-</span> R[, t <span class="sc">-</span> <span class="dv">1</span>] <span class="sc">&amp;</span> <span class="fu">rbinom</span>(<span class="dv">2</span> <span class="sc">*</span> n, <span class="dv">1</span>, <span class="fu">plogis</span>(lp)) <span class="sc">==</span> <span class="dv">0</span>  <span class="co"># monotone dropout</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  Yobs <span class="ot">&lt;-</span> Y; Yobs[<span class="sc">!</span>R] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">Y =</span> Y, <span class="at">Yobs =</span> Yobs, <span class="at">trt =</span> trt)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>coefse <span class="ot">&lt;-</span> <span class="cf">function</span>(fit, <span class="at">term =</span> <span class="st">"trt"</span>) {</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="fu">inherits</span>(fit, <span class="st">"gls"</span>)) <span class="fu">summary</span>(fit)<span class="sc">$</span>tTable <span class="cf">else</span> <span class="fu">summary</span>(fit)<span class="sc">$</span>coefficients</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="at">est =</span> s[term, <span class="dv">1</span>], <span class="at">se =</span> s[term, <span class="dv">2</span>])</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>analyse <span class="ot">&lt;-</span> <span class="cf">function</span>(d) {</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  Yo <span class="ot">&lt;-</span> d<span class="sc">$</span>Yobs; trt <span class="ot">&lt;-</span> d<span class="sc">$</span>trt; y0 <span class="ot">&lt;-</span> Yo[, <span class="dv">1</span>]; y3 <span class="ot">&lt;-</span> Yo[, <span class="dv">4</span>]</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  last <span class="ot">&lt;-</span> <span class="fu">apply</span>(Yo, <span class="dv">1</span>, \(r) <span class="fu">tail</span>(<span class="fu">na.omit</span>(r), <span class="dv">1</span>))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">No missing data</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">coefse</span>(<span class="fu">lm</span>(d<span class="sc">$</span>Y[, <span class="dv">4</span>] <span class="sc">~</span> trt <span class="sc">+</span> y0)),     <span class="co"># benchmark, before dropout</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Complete case</span><span class="st">`</span>   <span class="ot">=</span> <span class="fu">coefse</span>(<span class="fu">lm</span>(y3 <span class="sc">~</span> trt <span class="sc">+</span> y0)),</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">LOCF              =</span> <span class="fu">coefse</span>(<span class="fu">lm</span>(last <span class="sc">~</span> trt <span class="sc">+</span> y0)),</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">BOCF              =</span> <span class="fu">coefse</span>(<span class="fu">lm</span>(<span class="fu">ifelse</span>(<span class="fu">is.na</span>(y3), y0, y3) <span class="sc">~</span> trt <span class="sc">+</span> y0)),</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Mean imputation</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">coefse</span>(<span class="fu">lm</span>(<span class="fu">ifelse</span>(<span class="fu">is.na</span>(y3), <span class="fu">ave</span>(y3, trt, <span class="at">FUN =</span> \(x) <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)), y3) <span class="sc">~</span> trt <span class="sc">+</span> y0)))</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  imp <span class="ot">&lt;-</span> <span class="fu">mice</span>(<span class="fu">data.frame</span>(trt, y0, <span class="at">y1 =</span> Yo[, <span class="dv">2</span>], <span class="at">y2 =</span> Yo[, <span class="dv">3</span>], y3), <span class="at">m =</span> <span class="dv">5</span>, <span class="at">method =</span> <span class="st">"norm"</span>, <span class="at">printFlag =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  pm  <span class="ot">&lt;-</span> <span class="fu">summary</span>(<span class="fu">pool</span>(<span class="fu">with</span>(imp, <span class="fu">lm</span>(y3 <span class="sc">~</span> trt <span class="sc">+</span> y0))))</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  out<span class="sc">$</span><span class="st">`</span><span class="at">Multiple imputation</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">est =</span> pm<span class="sc">$</span>estimate[<span class="dv">2</span>], <span class="at">se =</span> pm<span class="sc">$</span>std.error[<span class="dv">2</span>])</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  N    <span class="ot">&lt;-</span> <span class="fu">length</span>(trt)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  long <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="dv">3</span>), <span class="at">trt =</span> <span class="fu">rep</span>(trt, <span class="dv">3</span>), <span class="at">y0 =</span> <span class="fu">rep</span>(y0, <span class="dv">3</span>),</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>                         <span class="at">visit =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span> N)), <span class="at">y =</span> <span class="fu">c</span>(Yo[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>])) <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(y))</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  mm <span class="ot">&lt;-</span> <span class="fu">gls</span>(y <span class="sc">~</span> visit <span class="sc">*</span> trt <span class="sc">+</span> visit <span class="sc">*</span> y0, <span class="at">data =</span> long,           <span class="co"># mixed model for repeated measures</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>            <span class="at">correlation =</span> <span class="fu">corSymm</span>(<span class="at">form =</span> <span class="sc">~</span> <span class="fu">as.integer</span>(visit) <span class="sc">|</span> id),</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            <span class="at">weights =</span> <span class="fu">varIdent</span>(<span class="at">form =</span> <span class="sc">~</span> <span class="dv">1</span> <span class="sc">|</span> visit))</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  V  <span class="ot">&lt;-</span> <span class="fu">vcov</span>(mm)[<span class="fu">c</span>(<span class="st">"trt"</span>, <span class="st">"visit3:trt"</span>), <span class="fu">c</span>(<span class="st">"trt"</span>, <span class="st">"visit3:trt"</span>)]</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  out<span class="sc">$</span><span class="st">`</span><span class="at">Mixed model (MMRM)</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">est =</span> <span class="fu">sum</span>(<span class="fu">coef</span>(mm)[<span class="fu">c</span>(<span class="st">"trt"</span>, <span class="st">"visit3:trt"</span>)]), <span class="at">se =</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>(V)))</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(out, <span class="at">.id =</span> <span class="st">"method"</span>)</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">629</span>)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">map_dfr</span>(<span class="fu">c</span>(<span class="st">"MCAR"</span>, <span class="st">"MAR"</span>, <span class="st">"MNAR"</span>), \(m) <span class="fu">map_dfr</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">150</span>, \(r) {</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  d <span class="ot">&lt;-</span> <span class="fu">sim_trial</span>(<span class="at">mech =</span> m)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">analyse</span>(d) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">mech =</span> m, <span class="at">miss_pbo =</span> <span class="fu">mean</span>(<span class="fu">is.na</span>(d<span class="sc">$</span>Yobs[d<span class="sc">$</span>trt <span class="sc">==</span> <span class="dv">0</span>, <span class="dv">4</span>])),</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>                       <span class="at">miss_act =</span> <span class="fu">mean</span>(<span class="fu">is.na</span>(d<span class="sc">$</span>Yobs[d<span class="sc">$</span>trt <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">4</span>])))</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>}))</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>sim_summary <span class="ot">&lt;-</span> sims <span class="sc">|&gt;</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mech =</span> <span class="fu">factor</span>(mech, <span class="fu">c</span>(<span class="st">"MCAR"</span>, <span class="st">"MAR"</span>, <span class="st">"MNAR"</span>)),</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="fu">factor</span>(method, <span class="fu">c</span>(<span class="st">"No missing data"</span>, <span class="st">"Complete case"</span>, <span class="st">"LOCF"</span>, <span class="st">"BOCF"</span>,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Mean imputation"</span>, <span class="st">"Multiple imputation"</span>, <span class="st">"Mixed model (MMRM)"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(mech, method) <span class="sc">|&gt;</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">est_mean =</span> <span class="fu">mean</span>(est), <span class="at">lo =</span> <span class="fu">mean</span>(est <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se), <span class="at">hi =</span> <span class="fu">mean</span>(est <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se),</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>            <span class="at">coverage =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(est <span class="sc">+</span> <span class="dv">6</span>) <span class="sc">&lt;</span> <span class="fl">1.96</span> <span class="sc">*</span> se),</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>            <span class="at">miss_pbo =</span> <span class="fu">mean</span>(miss_pbo), <span class="at">miss_act =</span> <span class="fu">mean</span>(miss_act), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>miss_rates <span class="ot">&lt;-</span> sim_summary <span class="sc">|&gt;</span> <span class="fu">distinct</span>(mech, miss_pbo, miss_act)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sim_summary <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">method =</span> forcats<span class="sc">::</span><span class="fu">fct_rev</span>(method), <span class="at">cov_lab =</span> <span class="fu">sprintf</span>(<span class="st">"%.0f%%"</span>, <span class="dv">100</span> <span class="sc">*</span> coverage)) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(est_mean, method, <span class="at">colour =</span> mech)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="sc">-</span><span class="dv">6</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"grey30"</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"grey60"</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> lo, <span class="at">xmax =</span> hi, <span class="at">group =</span> forcats<span class="sc">::</span><span class="fu">fct_rev</span>(mech)),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.7</span>)) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.8</span>, <span class="at">label =</span> cov_lab, <span class="at">group =</span> forcats<span class="sc">::</span><span class="fu">fct_rev</span>(mech)), <span class="at">size =</span> <span class="fl">3.3</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.7</span>), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">9</span>, <span class="fl">2.3</span>)) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">MCAR =</span> <span class="st">"#2E7D32"</span>, <span class="at">MAR =</span> <span class="st">"#E69F00"</span>, <span class="at">MNAR =</span> <span class="st">"#B22222"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Estimated treatment effect (true = −6)"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-missing-sim" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-missing-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14-missing-data_files/figure-html/fig-missing-sim-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-missing-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.2: Six analyses of 150 simulated trials under each mechanism (true effect −6, dashed line). Point: average estimate; bar: a typical single trial’s 95% CI. Percentages at right: coverage, the proportion of trials whose 95% CI contains −6.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>At visit 3 the placebo arm lost about 43% of patients under MNAR, the active arm about 26%. Reading <a href="#fig-missing-sim" class="quarto-xref">Figure&nbsp;<span>14.2</span></a> method by method:</p>
+<ul>
+<li><strong>Complete case</strong> is unbiased under MCAR, at the cost of precision. Under MAR and MNAR the placebo arm loses more of its non-improvers, so its completers look better than the arm as a whole, and the benefit is understated. Complete-case analysis assumes that the missing patients in each arm would have done, on average, like the observed patients in that arm.</li>
+<li><strong>LOCF and BOCF</strong> are biased towards the null even under MCAR, not because patients improve, but because the gap between the arms widens over time and the dropouts are frozen at an earlier visit, or at baseline, when the arms had separated less. Under MAR and MNAR they land nearer the truth than complete case, because their pull towards the null happens to offset the placebo arm’s selective losses: luck, not validity. A “conservative” method is conservative only for one direction of one comparison; in a non-inferiority trial, bias towards the null favours the new drug.</li>
+<li><strong>Mean imputation</strong> has about the same bias as complete case, but treats imputed values as data, so its intervals are too narrow.</li>
+<li><strong>Multiple imputation and the mixed model (MMRM)</strong> are close to unbiased under MCAR and MAR, and give nearly the same answers. Under MNAR both are biased in the same way: the information that would correct them was never measured.</li>
+</ul>
+<p><a href="#fig-locf" class="quarto-xref">Figure&nbsp;<span>14.3</span></a> illustrates why LOCF misleads for a condition that changes over time.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">99</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>true_traj <span class="ot">&lt;-</span> <span class="cf">function</span>(t) <span class="dv">50</span> <span class="sc">+</span> <span class="dv">8</span> <span class="sc">*</span> t <span class="sc">-</span> <span class="fl">0.5</span> <span class="sc">*</span> t<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>obs4 <span class="ot">&lt;-</span> <span class="fu">true_traj</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">time =</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">4</span><span class="sc">:</span><span class="dv">12</span>, <span class="dv">0</span><span class="sc">:</span><span class="dv">12</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">value =</span> <span class="fu">c</span>(obs4, <span class="fu">rep</span>(<span class="fu">last</span>(obs4), <span class="dv">9</span>), <span class="fu">true_traj</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">12</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">13</span>, <span class="dv">0</span>, <span class="dv">4</span>)),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">type =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"Observed (dropout at week 4)"</span>, <span class="dv">5</span>), <span class="fu">rep</span>(<span class="st">"LOCF imputation"</span>, <span class="dv">9</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">rep</span>(<span class="st">"True trajectory (if followed)"</span>, <span class="dv">13</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(time, value, <span class="at">colour =</span> type, <span class="at">linetype =</span> type)) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">4</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">colour =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#B22222"</span>, <span class="st">"#041E42"</span>, <span class="st">"#E69F00"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"dashed"</span>, <span class="st">"solid"</span>, <span class="st">"solid"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Week"</span>, <span class="at">y =</span> <span class="st">"Outcome score"</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-locf" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-locf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14-missing-data_files/figure-html/fig-locf-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-locf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.3: A single patient who drops out at week 4. LOCF freezes the outcome at the last observed value; the true trajectory continues to change.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>For the meta-analyst the practical lessons are to prefer a trial’s multiple-imputation or mixed-model estimate to its LOCF estimate when both are reported; to avoid mixing LOCF, BOCF and MMRM estimates without at least a sensitivity analysis by method; and to remember that neither MI nor MMRM removes the need to examine departures from MAR.</p>
+</section>
+<section id="sec-missing-bounds" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="sec-missing-bounds"><span class="header-section-number">14.3.2</span> Worst and best cases</h3>
+<p>For a binary outcome the missing participants can be assigned the most extreme outcomes. Consider one trial in which the outcome is an adverse event (RR &lt; 1 favours treatment): 12 events among 55 analysed of 63 randomised to treatment, and 22 among 55 analysed of 60 controls. Because this is an illustration, we also know that 4 of the 8 treatment dropouts and 2 of the 5 control dropouts had the event.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rr <span class="ot">&lt;-</span> <span class="cf">function</span>(et, nt, ec, nc) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  e <span class="ot">&lt;-</span> <span class="fu">escalc</span>(<span class="st">"RR"</span>, <span class="at">ai =</span> et, <span class="at">n1i =</span> nt, <span class="at">ci =</span> ec, <span class="at">n2i =</span> nc)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">exp</span>(e<span class="sc">$</span>yi <span class="sc">+</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="fl">1.96</span>, <span class="fl">1.96</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(e<span class="sc">$</span>vi))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, x[<span class="dv">1</span>], x[<span class="dv">2</span>], x[<span class="dv">3</span>])</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Scenario =</span> <span class="fu">c</span>(<span class="st">"Truth: everyone counted"</span>, <span class="st">"Complete case"</span>, <span class="st">"Missing = no event"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Worst case for treatment"</span>, <span class="st">"Best case for treatment"</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">RR (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rr</span>(<span class="dv">12</span> <span class="sc">+</span> <span class="dv">4</span>, <span class="dv">63</span>, <span class="dv">22</span> <span class="sc">+</span> <span class="dv">2</span>, <span class="dv">60</span>), <span class="fu">rr</span>(<span class="dv">12</span>, <span class="dv">55</span>, <span class="dv">22</span>, <span class="dv">55</span>), <span class="fu">rr</span>(<span class="dv">12</span>, <span class="dv">63</span>, <span class="dv">22</span>, <span class="dv">60</span>),</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rr</span>(<span class="dv">12</span> <span class="sc">+</span> <span class="dv">8</span>, <span class="dv">63</span>, <span class="dv">22</span>, <span class="dv">60</span>), <span class="fu">rr</span>(<span class="dv">12</span>, <span class="dv">63</span>, <span class="dv">22</span> <span class="sc">+</span> <span class="dv">5</span>, <span class="dv">60</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Scenario</th>
+<th style="text-align: center;">RR (95% CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Truth: everyone counted</td>
+<td style="text-align: center;">0.63 (0.38 to 1.07)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Complete case</td>
+<td style="text-align: center;">0.55 (0.30 to 0.99)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Missing = no event</td>
+<td style="text-align: center;">0.52 (0.28 to 0.95)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Worst case for treatment</td>
+<td style="text-align: center;">0.87 (0.53 to 1.42)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Best case for treatment</td>
+<td style="text-align: center;">0.42 (0.24 to 0.76)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The truth lies between the bounds, as it must. Complete case overstates the benefit, because the treatment dropouts had the event more often (4 of 8) than the treatment completers (12 of 55). Bounds are usually too wide to be informative, which is why GRADE recommends <em>plausible</em> worst cases rather than extreme ones (<a href="#sec-missing-report" class="quarto-xref"><span>Section 14.6</span></a>).</p>
+</section>
+</section>
+<section id="sec-missing-sd" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="sec-missing-sd"><span class="header-section-number">14.4</span> Missing summary statistics</h2>
+<p>Continuous outcomes need a mean and an SD (or SE) for each arm, but papers often report only means with <em>P</em> values, confidence intervals, or medians and ranges. This is missing <em>summary</em> information, not missing participants, and much of it can be recovered <span class="citation" data-cites="higgins_ch6">(<a href="references.html#ref-higgins_ch6" role="doc-biblioref">4</a>)</span>.</p>
+<ul>
+<li><strong>From a 95% confidence interval for a mean</strong>: <span class="math inline">\(SE = (\text{upper} - \text{lower})/(2 \times 1.96)\)</span>, using <span class="math inline">\(t_{n-1}\)</span> in place of 1.96 for small samples, and <span class="math inline">\(SD = SE\sqrt{n}\)</span>.</li>
+<li><strong>From a <em>t</em> statistic or exact <em>P</em> value for a difference</strong>: <span class="math inline">\(SE_{\text{diff}} = |\bar X_1 - \bar X_2|/t\)</span>, and <span class="math inline">\(SD = SE_{\text{diff}}/\sqrt{1/n_1 + 1/n_2}\)</span>.</li>
+<li><strong>When nothing can be calculated</strong>: ask the authors; otherwise borrow an SD from other studies in the review, which performs reasonably well empirically <span class="citation" data-cites="furukawa2006">(<a href="references.html#ref-furukawa2006" role="doc-biblioref">5</a>)</span>. For a mean difference a larger imputed SD only down-weights the study; for a standardised mean difference it shrinks the effect towards zero. If most studies lack SDs, do not impute; and always show the effect of removing the imputed studies.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>md <span class="ot">&lt;-</span> <span class="fl">5.0</span>; p <span class="ot">&lt;-</span> <span class="fl">0.03</span>; n1 <span class="ot">&lt;-</span> n2 <span class="ot">&lt;-</span> <span class="dv">40</span>                    <span class="co"># "MD 5.0 points, p = 0.03, 40 per arm"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>t_val <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span> <span class="sc">-</span> p <span class="sc">/</span> <span class="dv">2</span>, <span class="at">df =</span> n1 <span class="sc">+</span> n2 <span class="sc">-</span> <span class="dv">2</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>se_md <span class="ot">&lt;-</span> md <span class="sc">/</span> t_val</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="at">t =</span> t_val, <span class="at">SE =</span> se_md, <span class="at">SD =</span> se_md <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">/</span> n1 <span class="sc">+</span> <span class="dv">1</span> <span class="sc">/</span> n2)), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>    t    SE    SD 
+ 2.21  2.26 10.12 </code></pre>
+</div>
+</div>
+<p>Only exact <em>P</em> values can be inverted; “<em>P</em> &lt; 0.05” cannot. <em>P</em> values are rounded (0.03 could be 0.025 to 0.035), so check the sensitivity of the recovered SD. If the trial used ANCOVA or a mixed model, the recovered SD is a residual SD, smaller than the raw SD, and should not be mixed with raw SDs in a standardised mean difference.</p>
+<section id="sec-missing-change" class="level3" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="sec-missing-change"><span class="header-section-number">14.4.1</span> Change scores and the unknown correlation</h3>
+<p>To pool change from baseline, each arm needs the SD of the change, which many trials do not report:</p>
+<p><span class="math display">\[SD_{\text{change}} = \sqrt{SD_{\text{base}}^2 + SD_{\text{final}}^2 - 2\,r\,SD_{\text{base}}\,SD_{\text{final}}},\]</span></p>
+<p>where <em>r</em> is the correlation between baseline and final values, almost never reported. It can be estimated from studies that report all three SDs and borrowed for those that do not, but it is an assumption about missing data and should be varied. Consider a small trial of fluoxetine and nortriptyline in children with depression (20 per arm), reporting the Children’s Depression Inventory as 28.9 (SD 8.4) → 17.9 (8.1) with fluoxetine and 28.4 (8.7) → 25.8 (8.6) with nortriptyline.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sd_change <span class="ot">&lt;-</span> \(sb, sf, r) <span class="fu">sqrt</span>(sb<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> sf<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> r <span class="sc">*</span> sb <span class="sc">*</span> sf)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>diff_change <span class="ot">&lt;-</span> (<span class="fl">28.9</span> <span class="sc">-</span> <span class="fl">17.9</span>) <span class="sc">-</span> (<span class="fl">28.4</span> <span class="sc">-</span> <span class="fl">25.8</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">r =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.9</span>, <span class="fl">0.97</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">SD change, fluoxetine</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sd_change</span>(<span class="fl">8.4</span>, <span class="fl">8.1</span>, r),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">SD change, nortriptyline</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sd_change</span>(<span class="fl">8.7</span>, <span class="fl">8.6</span>, r),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Pooled SD</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sqrt</span>((<span class="st">`</span><span class="at">SD change, fluoxetine</span><span class="st">`</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="st">`</span><span class="at">SD change, nortriptyline</span><span class="st">`</span><span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Change-score SMD</span><span class="st">`</span> <span class="ot">=</span> diff_change <span class="sc">/</span> <span class="st">`</span><span class="at">Pooled SD</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>, <span class="at">align =</span> <span class="st">"ccccc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-r-sensitivity" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-sensitivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.3: Change-score SMD for one trial, by the assumed baseline–final correlation r. The numerator (difference in mean change, 8.4 points) is the same in every row.
+</figcaption>
+<div aria-describedby="tbl-r-sensitivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 27%">
+<col style="width: 30%">
+<col style="width: 13%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">r</th>
+<th style="text-align: center;">SD change, fluoxetine</th>
+<th style="text-align: center;">SD change, nortriptyline</th>
+<th style="text-align: center;">Pooled SD</th>
+<th style="text-align: center;">Change-score SMD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">11.67</td>
+<td style="text-align: center;">12.23</td>
+<td style="text-align: center;">11.95</td>
+<td style="text-align: center;">0.70</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.25</td>
+<td style="text-align: center;">10.11</td>
+<td style="text-align: center;">10.59</td>
+<td style="text-align: center;">10.35</td>
+<td style="text-align: center;">0.81</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">8.25</td>
+<td style="text-align: center;">8.65</td>
+<td style="text-align: center;">8.45</td>
+<td style="text-align: center;">0.99</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">5.84</td>
+<td style="text-align: center;">6.12</td>
+<td style="text-align: center;">5.98</td>
+<td style="text-align: center;">1.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">3.70</td>
+<td style="text-align: center;">3.87</td>
+<td style="text-align: center;">3.79</td>
+<td style="text-align: center;">2.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.97</td>
+<td style="text-align: center;">2.04</td>
+<td style="text-align: center;">2.12</td>
+<td style="text-align: center;">2.08</td>
+<td style="text-align: center;">4.03</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>With a typical <em>r</em> of 0.3 to 0.7 the SMD is about 0.8 to 1.3; at <em>r</em> = 0.97 it is about 4. When the trial’s ANCOVA estimate is available, use it. For a mean difference, change scores and final values can be pooled together and final values need no <em>r</em>; for an SMD they should not be mixed, because change-score SDs are smaller and inflate the SMD.</p>
+</section>
+<section id="sec-missing-median" class="level3" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="sec-missing-median"><span class="header-section-number">14.4.2</span> Medians, quartiles and ranges</h3>
+<p>If the outcome is roughly normal, quartiles and extremes carry information about the mean and SD. In a normal distribution the interquartile range spans 1.35 SD, so <span class="math inline">\(SD \approx IQR/1.35\)</span> in large samples. The range depends on sample size: in a sample of 10 it spans about 3 SD, in a sample of 1000 about 6.5. <span class="citation" data-cites="hozo2005">(<a href="references.html#ref-hozo2005" role="doc-biblioref">6</a>)</span> proposed the first formulas; <span class="citation" data-cites="wan2014">(<a href="references.html#ref-wan2014" role="doc-biblioref">7</a>)</span> replaced fixed divisors with ones that change with <em>n</em>; <span class="citation" data-cites="luo2018">(<a href="references.html#ref-luo2018" role="doc-biblioref">8</a>)</span> improved the estimate of the mean.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>eta    <span class="ot">&lt;-</span> \(n) <span class="dv">2</span> <span class="sc">*</span> <span class="fu">qnorm</span>((<span class="fl">0.75</span> <span class="sc">*</span> n <span class="sc">-</span> <span class="fl">0.125</span>) <span class="sc">/</span> (n <span class="sc">+</span> <span class="fl">0.25</span>))     <span class="co"># expected IQR of n standard normals</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>wan_s2 <span class="ot">&lt;-</span> \(q1, m, q3, n) <span class="fu">c</span>(<span class="at">mean =</span> (q1 <span class="sc">+</span> m <span class="sc">+</span> q3) <span class="sc">/</span> <span class="dv">3</span>, <span class="at">sd =</span> (q3 <span class="sc">-</span> q1) <span class="sc">/</span> <span class="fu">eta</span>(n))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tribble</span>(<span class="sc">~</span>study, <span class="sc">~</span>n, <span class="sc">~</span>q1, <span class="sc">~</span>med, <span class="sc">~</span>q3,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Study 1"</span>, <span class="dv">45</span>, <span class="dv">285</span>, <span class="dv">320</span>, <span class="dv">360</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Study 2"</span>, <span class="dv">112</span>, <span class="dv">260</span>, <span class="dv">298</span>, <span class="dv">345</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Study 3"</span>, <span class="dv">28</span>, <span class="dv">300</span>, <span class="dv">335</span>, <span class="dv">375</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">η(n)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">eta</span>(n), <span class="at">est =</span> <span class="fu">pmap</span>(<span class="fu">list</span>(q1, med, q3, n), wan_s2),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Estimated mean</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">map_dbl</span>(est, <span class="st">"mean"</span>), <span class="st">`</span><span class="at">Estimated SD</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">map_dbl</span>(est, <span class="st">"sd"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>est) <span class="sc">|&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-wan" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-wan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.4: Mean and SD estimated from quartiles (Wan et al.) for three hypothetical studies of 6-minute walk distance (m).
+</figcaption>
+<div aria-describedby="tbl-wan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">study</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">q1</th>
+<th style="text-align: right;">med</th>
+<th style="text-align: right;">q3</th>
+<th style="text-align: right;">η(n)</th>
+<th style="text-align: right;">Estimated mean</th>
+<th style="text-align: right;">Estimated SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Study 1</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">285</td>
+<td style="text-align: right;">320</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">1.31</td>
+<td style="text-align: right;">321.67</td>
+<td style="text-align: right;">57.43</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Study 2</td>
+<td style="text-align: right;">112</td>
+<td style="text-align: right;">260</td>
+<td style="text-align: right;">298</td>
+<td style="text-align: right;">345</td>
+<td style="text-align: right;">1.33</td>
+<td style="text-align: right;">301.00</td>
+<td style="text-align: right;">63.84</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Study 3</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">375</td>
+<td style="text-align: right;">1.28</td>
+<td style="text-align: right;">336.67</td>
+<td style="text-align: right;">58.59</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The <em>Cochrane Handbook</em> adds cautions <span class="citation" data-cites="higgins_ch6">(<a href="references.html#ref-higgins_ch6" role="doc-biblioref">4</a>)</span>. A paper that reports a median and IQR is often signalling a skewed outcome (length of stay, costs, biomarkers), for which these formulas may mislead; ranges are unstable and should generally not be used to estimate SDs. Check skewness, for example with Bowley’s coefficient <span class="math inline">\((Q_1 + Q_3 - 2\,\text{median})/IQR\)</span>, use the conversions for a minority of studies, and show the effect of omitting them. The <code>metamedian</code> package implements these and more flexible quantile-based estimators and pools the result with <code>metafor</code> <span class="citation" data-cites="mcgrath2024metamedian">(<a href="references.html#ref-mcgrath2024metamedian" role="doc-biblioref">9</a>)</span>:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metamedian)     <span class="co"># dat.age: 51 COVID-19 studies, age of non-survivors vs survivors</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">629</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fits <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Means only (22 studies)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">rma</span>(<span class="at">measure =</span> <span class="st">"MD"</span>, <span class="at">data =</span> dat.age, <span class="at">m1i =</span> mean.g1, <span class="at">sd1i =</span> sd.g1, <span class="at">n1i =</span> n.g1,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">m2i =</span> mean.g2, <span class="at">sd2i =</span> sd.g2, <span class="at">n2i =</span> n.g2),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Hozo / Wan / Bland</span><span class="st">`</span>  <span class="ot">=</span> <span class="fu">metamean</span>(dat.age, <span class="at">mean_method =</span> <span class="st">"hozo/wan/bland"</span>),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Luo mean, Wan SD</span><span class="st">`</span>    <span class="ot">=</span> <span class="fu">metamean</span>(dat.age, <span class="at">mean_method =</span> <span class="st">"luo"</span>, <span class="at">sd_method =</span> <span class="st">"wan"</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Quantile estimation</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">metamean</span>(dat.age, <span class="at">mean_method =</span> <span class="st">"qe"</span>, <span class="at">nboot =</span> <span class="dv">100</span>))</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dfr</span>(fits, \(f, nm) tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Method =</span> nm, <span class="at">k =</span> f<span class="sc">$</span>k,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Age difference, years (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.1f (%.1f to %.1f)"</span>, f<span class="sc">$</span>b, f<span class="sc">$</span>ci.lb, f<span class="sc">$</span>ci.ub))) <span class="sc">|&gt;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: right;">k</th>
+<th style="text-align: left;">Age difference, years (95% CI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Means only (22 studies)</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: left;">13.7 (11.3 to 16.1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hozo / Wan / Bland</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: left;">13.3 (11.6 to 15.0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Luo mean, Wan SD</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: left;">13.3 (11.7 to 15.0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Quantile estimation</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: left;">13.2 (11.6 to 14.8)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>In this example, 29 of the 51 studies reported only medians and IQRs. Converting them lets all 51 be pooled; whether leaving them out matters cannot be known until they are converted.</p>
+</section>
+</section>
+<section id="sec-missing-imor" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="sec-missing-imor"><span class="header-section-number">14.5</span> Binary outcomes: the informative missingness odds ratio</h2>
+<p>For binary outcomes, a sensitivity analysis that works with aggregate data is the <strong>informative missingness odds ratio</strong> (IMOR) <span class="citation" data-cites="white2008imor higgins2008missing">(<a href="references.html#ref-white2008imor" role="doc-biblioref">10</a>,<a href="references.html#ref-higgins2008missing" role="doc-biblioref">11</a>)</span>. Within one arm, it compares the odds of the outcome among the missing with the odds among the observed:</p>
+<p><span class="math display">\[IMOR = \frac{\text{odds of success among the missing}}{\text{odds of success among the observed}} .\]</span></p>
+<p>IMOR = 1 is complete-case analysis; IMOR &lt; 1 means the missing did worse; IMOR = 0 means every missing participant failed; and IMOR → ∞ means every missing participant succeeded. IMOR cannot be estimated from the data; it is a sensitivity parameter chosen by clinical judgement. For example, if an arm has 40 improved, 20 not improved and 40 missing (odds 2), and a clinician thinks that 10 of the 40 missing would have improved (odds 1/3), the IMOR is 1/6.</p>
+<section id="sec-missing-haloperidol" class="level3" data-number="14.5.1">
+<h3 data-number="14.5.1" class="anchored" data-anchor-id="sec-missing-haloperidol"><span class="header-section-number">14.5.1</span> The haloperidol meta-analysis</h3>
+<p>Seventeen placebo-controlled trials of haloperidol in schizophrenia, with clinical improvement as the outcome (RR &gt; 1 favours haloperidol), are a standard worked example for missing binary outcomes <span class="citation" data-cites="higgins2008missing">(<a href="references.html#ref-higgins2008missing" role="doc-biblioref">11</a>)</span>. Two trials, Beasley 1996 and Selman 1976, lost many patients, more on placebo; and in schizophrenia trials, patients who leave are plausibly those not improving.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>haloperidol <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(   <span class="co"># improved, not improved, missing; haloperidol (H) and placebo (P)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>study, <span class="sc">~</span>rH, <span class="sc">~</span>fH, <span class="sc">~</span>mH, <span class="sc">~</span>rP, <span class="sc">~</span>fP, <span class="sc">~</span>mP,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Arvanitis 1997"</span>, <span class="dv">25</span>, <span class="dv">25</span>, <span class="dv">2</span>, <span class="dv">18</span>, <span class="dv">33</span>, <span class="dv">0</span>,   <span class="st">"Beasley 1996"</span>, <span class="dv">29</span>, <span class="dv">18</span>, <span class="dv">22</span>, <span class="dv">20</span>, <span class="dv">14</span>, <span class="dv">34</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Bechelli 1983"</span>, <span class="dv">12</span>, <span class="dv">17</span>, <span class="dv">1</span>,  <span class="dv">2</span>, <span class="dv">28</span>, <span class="dv">1</span>,    <span class="st">"Borison 1992"</span>,  <span class="dv">3</span>,  <span class="dv">9</span>,  <span class="dv">0</span>,  <span class="dv">0</span>, <span class="dv">12</span>,  <span class="dv">0</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Chouinard 1993"</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">19</span>, <span class="dv">0</span>,    <span class="st">"Durost 1964"</span>,  <span class="dv">11</span>,  <span class="dv">8</span>,  <span class="dv">0</span>,  <span class="dv">1</span>, <span class="dv">14</span>,  <span class="dv">0</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Garry 1962"</span>,  <span class="dv">7</span>, <span class="dv">18</span>, <span class="dv">1</span>,  <span class="dv">4</span>, <span class="dv">21</span>, <span class="dv">1</span>,       <span class="st">"Howard 1974"</span>,   <span class="dv">8</span>,  <span class="dv">9</span>,  <span class="dv">0</span>,  <span class="dv">3</span>, <span class="dv">10</span>,  <span class="dv">0</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Marder 1994"</span>, <span class="dv">19</span>, <span class="dv">45</span>, <span class="dv">2</span>, <span class="dv">14</span>, <span class="dv">50</span>, <span class="dv">2</span>,      <span class="st">"Nishikawa 1982"</span>, <span class="dv">1</span>, <span class="dv">9</span>,  <span class="dv">0</span>,  <span class="dv">0</span>, <span class="dv">10</span>,  <span class="dv">0</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nishikawa 1984"</span>, <span class="dv">11</span>, <span class="dv">23</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">13</span>, <span class="dv">0</span>,    <span class="st">"Reschke 1974"</span>, <span class="dv">20</span>,  <span class="dv">9</span>,  <span class="dv">0</span>,  <span class="dv">2</span>,  <span class="dv">9</span>,  <span class="dv">0</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Selman 1976"</span>, <span class="dv">17</span>,  <span class="dv">1</span>, <span class="dv">11</span>, <span class="dv">7</span>,  <span class="dv">4</span>, <span class="dv">18</span>,     <span class="st">"Serafetinides 1972"</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">13</span>, <span class="dv">1</span>,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Simpson 1967"</span>,  <span class="dv">2</span>, <span class="dv">14</span>, <span class="dv">0</span>, <span class="dv">0</span>,  <span class="dv">7</span>, <span class="dv">1</span>,      <span class="st">"Spencer 1992"</span>, <span class="dv">11</span>,  <span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">1</span>, <span class="dv">11</span>,  <span class="dv">0</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Vichaiya 1971"</span>, <span class="dv">9</span>, <span class="dv">20</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">29</span>, <span class="dv">1</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>aca <span class="ot">&lt;-</span> <span class="fu">rma</span>(<span class="at">measure =</span> <span class="st">"RR"</span>, <span class="at">ai =</span> rH, <span class="at">bi =</span> fH, <span class="at">ci =</span> rP, <span class="at">di =</span> fP, <span class="at">data =</span> haloperidol,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">method =</span> <span class="st">"EE"</span>, <span class="at">add =</span> <span class="fl">0.5</span>, <span class="at">to =</span> <span class="st">"only0"</span>)          <span class="co"># complete case, common effect</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>fmt_rr <span class="ot">&lt;-</span> \(f) <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, <span class="fu">exp</span>(f<span class="sc">$</span>b[<span class="dv">1</span>]), <span class="fu">exp</span>(f<span class="sc">$</span>ci.lb), <span class="fu">exp</span>(f<span class="sc">$</span>ci.ub))</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>haloperidol <span class="sc">|&gt;</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Haloperidol =</span> <span class="fu">sprintf</span>(<span class="st">"%d/%d (%d)"</span>, rH, rH <span class="sc">+</span> fH, mH),</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">Placebo =</span> <span class="fu">sprintf</span>(<span class="st">"%d/%d (%d)"</span>, rP, rP <span class="sc">+</span> fP, mP),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Complete-case weight</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.0f%%"</span>, <span class="fu">weights</span>(aca))) <span class="sc">|&gt;</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">Study =</span> study, Haloperidol, Placebo, <span class="st">`</span><span class="at">Complete-case weight</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lccc"</span>, <span class="at">caption =</span> <span class="st">"Haloperidol vs placebo: improved / analysed (missing), and each trial's weight in the complete-case meta-analysis."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Haloperidol vs placebo: improved / analysed (missing), and each trial’s weight in the complete-case meta-analysis.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Study</th>
+<th style="text-align: center;">Haloperidol</th>
+<th style="text-align: center;">Placebo</th>
+<th style="text-align: center;">Complete-case weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Arvanitis 1997</td>
+<td style="text-align: center;">25/50 (2)</td>
+<td style="text-align: center;">18/51 (0)</td>
+<td style="text-align: center;">19%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Beasley 1996</td>
+<td style="text-align: center;">29/47 (22)</td>
+<td style="text-align: center;">20/34 (34)</td>
+<td style="text-align: center;">31%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bechelli 1983</td>
+<td style="text-align: center;">12/29 (1)</td>
+<td style="text-align: center;">2/30 (1)</td>
+<td style="text-align: center;">2%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Borison 1992</td>
+<td style="text-align: center;">3/12 (0)</td>
+<td style="text-align: center;">0/12 (0)</td>
+<td style="text-align: center;">0%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chouinard 1993</td>
+<td style="text-align: center;">10/21 (0)</td>
+<td style="text-align: center;">3/22 (0)</td>
+<td style="text-align: center;">3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Durost 1964</td>
+<td style="text-align: center;">11/19 (0)</td>
+<td style="text-align: center;">1/15 (0)</td>
+<td style="text-align: center;">1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Garry 1962</td>
+<td style="text-align: center;">7/25 (1)</td>
+<td style="text-align: center;">4/25 (1)</td>
+<td style="text-align: center;">3%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Howard 1974</td>
+<td style="text-align: center;">8/17 (0)</td>
+<td style="text-align: center;">3/13 (0)</td>
+<td style="text-align: center;">3%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marder 1994</td>
+<td style="text-align: center;">19/64 (2)</td>
+<td style="text-align: center;">14/64 (2)</td>
+<td style="text-align: center;">11%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nishikawa 1982</td>
+<td style="text-align: center;">1/10 (0)</td>
+<td style="text-align: center;">0/10 (0)</td>
+<td style="text-align: center;">0%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nishikawa 1984</td>
+<td style="text-align: center;">11/34 (3)</td>
+<td style="text-align: center;">0/13 (0)</td>
+<td style="text-align: center;">1%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reschke 1974</td>
+<td style="text-align: center;">20/29 (0)</td>
+<td style="text-align: center;">2/11 (0)</td>
+<td style="text-align: center;">2%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Selman 1976</td>
+<td style="text-align: center;">17/18 (11)</td>
+<td style="text-align: center;">7/11 (18)</td>
+<td style="text-align: center;">19%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Serafetinides 1972</td>
+<td style="text-align: center;">4/14 (0)</td>
+<td style="text-align: center;">0/13 (1)</td>
+<td style="text-align: center;">1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Simpson 1967</td>
+<td style="text-align: center;">2/16 (0)</td>
+<td style="text-align: center;">0/7 (1)</td>
+<td style="text-align: center;">0%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spencer 1992</td>
+<td style="text-align: center;">11/12 (0)</td>
+<td style="text-align: center;">1/12 (0)</td>
+<td style="text-align: center;">1%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Vichaiya 1971</td>
+<td style="text-align: center;">9/29 (1)</td>
+<td style="text-align: center;">0/29 (1)</td>
+<td style="text-align: center;">1%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The complete-case pooled RR is 1.57 (1.28 to 1.92). Beasley and Selman together carry 50% of the weight.</p>
+</section>
+<section id="sec-missing-imor-method" class="level3" data-number="14.5.2">
+<h3 data-number="14.5.2" class="anchored" data-anchor-id="sec-missing-imor-method"><span class="header-section-number">14.5.2</span> Applying the IMOR</h3>
+<p>For each arm of each study: compute the observed risk <em>p</em> among the <em>n</em> analysed and the proportion missing π; convert the chosen IMOR into a risk among the missing, <span class="math inline">\(p_m = IMOR \cdot p/(IMOR \cdot p + 1 - p)\)</span>; and compute the risk for everyone randomised, <span class="math inline">\(p^* = (1-\pi)p + \pi p_m\)</span>. The variance of <span class="math inline">\(p^*\)</span>, by the delta method, has terms for sampling error in <em>p</em>, sampling error in π (zero when IMOR = 1), and, if the IMOR is uncertain, uncertainty in the IMOR itself. The adjusted log RRs are then pooled as usual. Adding guessed events to the 2×2 table and analysing them as if observed is wrong: trials with many missing participants would then look <em>more</em> precise, when they are less certain.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>adj_arm <span class="ot">&lt;-</span> <span class="cf">function</span>(r, f, m, imor, <span class="at">sd_log =</span> <span class="dv">0</span>, <span class="at">cc =</span> <span class="dv">0</span>) {    <span class="co"># one arm (Higgins, White &amp; Wood 2008)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  N  <span class="ot">&lt;-</span> r <span class="sc">+</span> f <span class="sc">+</span> m; pi <span class="ot">&lt;-</span> m <span class="sc">/</span> N                               <span class="co"># randomised; proportion missing</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  n  <span class="ot">&lt;-</span> r <span class="sc">+</span> f <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> cc; p <span class="ot">&lt;-</span> (r <span class="sc">+</span> cc) <span class="sc">/</span> n                    <span class="co"># analysed; observed risk</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  pm <span class="ot">&lt;-</span> imor <span class="sc">*</span> p <span class="sc">/</span> (imor <span class="sc">*</span> p <span class="sc">+</span> <span class="dv">1</span> <span class="sc">-</span> p)                        <span class="co"># risk among the missing</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  ps <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> pi) <span class="sc">*</span> p <span class="sc">+</span> pi <span class="sc">*</span> pm                               <span class="co"># risk among everyone randomised</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  dp <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> pi) <span class="sc">+</span> pi <span class="sc">*</span> imor <span class="sc">/</span> (imor <span class="sc">*</span> p <span class="sc">+</span> <span class="dv">1</span> <span class="sc">-</span> p)<span class="sc">^</span><span class="dv">2</span>          <span class="co"># d ps / d p</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  v  <span class="ot">&lt;-</span> dp<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> p <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p) <span class="sc">/</span> n <span class="sc">+</span>                             <span class="co"># 1. sampling error in p</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        (pm <span class="sc">-</span> p)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> pi) <span class="sc">/</span> N <span class="sc">+</span>                     <span class="co"># 2. sampling error in pi</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        (pi <span class="sc">*</span> pm <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> pm))<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sd_log<span class="sc">^</span><span class="dv">2</span>                    <span class="co"># 3. uncertainty in log IMOR</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">tibble</span>(ps, v)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>imor_ma <span class="ot">&lt;-</span> <span class="cf">function</span>(d, imorH, <span class="at">imorP =</span> imorH, <span class="at">sd_log =</span> <span class="dv">0</span>) {   <span class="co"># pooled log RR, common effect</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  cc <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">with</span>(d, rH <span class="sc">*</span> fH <span class="sc">*</span> rP <span class="sc">*</span> fP) <span class="sc">==</span> <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">0</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  h  <span class="ot">&lt;-</span> <span class="fu">with</span>(d, <span class="fu">adj_arm</span>(rH, fH, mH, imorH, sd_log, cc))</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  pl <span class="ot">&lt;-</span> <span class="fu">with</span>(d, <span class="fu">adj_arm</span>(rP, fP, mP, imorP, sd_log, cc))</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rma</span>(<span class="at">yi =</span> <span class="fu">log</span>(h<span class="sc">$</span>ps <span class="sc">/</span> pl<span class="sc">$</span>ps), <span class="at">vi =</span> h<span class="sc">$</span>v <span class="sc">/</span> h<span class="sc">$</span>ps<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> pl<span class="sc">$</span>v <span class="sc">/</span> pl<span class="sc">$</span>ps<span class="sc">^</span><span class="dv">2</span>, <span class="at">method =</span> <span class="st">"EE"</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>scen <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">`</span><span class="at">Complete case (IMOR = 1)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">imor_ma</span>(haloperidol, <span class="dv">1</span>),</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>             <span class="st">`</span><span class="at">Missing did worse (IMOR = 0.5)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">imor_ma</span>(haloperidol, <span class="fl">0.5</span>),</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>             <span class="st">`</span><span class="at">All missing failed (IMOR = 0)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">imor_ma</span>(haloperidol, <span class="dv">0</span>),</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>             <span class="st">`</span><span class="at">Missing did better (IMOR = 2)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">imor_ma</span>(haloperidol, <span class="dv">2</span>),</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>             <span class="st">`</span><span class="at">Worst case for haloperidol</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">imor_ma</span>(haloperidol, <span class="dv">0</span>, <span class="fl">1e6</span>),</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>             <span class="st">`</span><span class="at">Best case for haloperidol</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">imor_ma</span>(haloperidol, <span class="fl">1e6</span>, <span class="dv">0</span>))</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">imap_dfr</span>(scen, \(f, nm) tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Assumption =</span> nm, <span class="st">`</span><span class="at">RR (95% CI)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt_rr</span>(f),</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">`</span><span class="at">Weight: Beasley</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.0f%%"</span>, <span class="fu">weights</span>(f)[<span class="dv">2</span>]),</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">`</span><span class="at">Weight: Selman</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.0f%%"</span>, <span class="fu">weights</span>(f)[<span class="dv">13</span>]))) <span class="sc">|&gt;</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lccc"</span>, <span class="at">caption =</span> <span class="st">"IMOR-adjusted meta-analyses of haloperidol vs placebo."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>IMOR-adjusted meta-analyses of haloperidol vs placebo.</caption>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 24%">
+<col style="width: 20%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Assumption</th>
+<th style="text-align: center;">RR (95% CI)</th>
+<th style="text-align: center;">Weight: Beasley</th>
+<th style="text-align: center;">Weight: Selman</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Complete case (IMOR = 1)</td>
+<td style="text-align: center;">1.57 (1.28 to 1.92)</td>
+<td style="text-align: center;">31%</td>
+<td style="text-align: center;">19%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Missing did worse (IMOR = 0.5)</td>
+<td style="text-align: center;">1.70 (1.37 to 2.11)</td>
+<td style="text-align: center;">27%</td>
+<td style="text-align: center;">14%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">All missing failed (IMOR = 0)</td>
+<td style="text-align: center;">1.90 (1.51 to 2.39)</td>
+<td style="text-align: center;">25%</td>
+<td style="text-align: center;">10%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Missing did better (IMOR = 2)</td>
+<td style="text-align: center;">1.42 (1.19 to 1.69)</td>
+<td style="text-align: center;">35%</td>
+<td style="text-align: center;">26%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Worst case for haloperidol</td>
+<td style="text-align: center;">0.95 (0.80 to 1.13)</td>
+<td style="text-align: center;">33%</td>
+<td style="text-align: center;">26%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Best case for haloperidol</td>
+<td style="text-align: center;">2.42 (1.95 to 3.00)</td>
+<td style="text-align: center;">30%</td>
+<td style="text-align: center;">11%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Assuming the missing did <em>worse</em> makes haloperidol look better, not worse, because more patients were missing from the placebo arms of the two dominant trials. Adjustment changes each trial’s variance as well as its estimate, so the weights shift: when the missing are assumed to have done worse, the two trials with most missing data lose weight. Only the worst case for haloperidol, every missing haloperidol patient failing and every missing placebo patient improving, removes the benefit, and no clinician would find that credible. The <code>metamiss()</code> function of the <code>metasens</code> package gives the same results and IMOR-adjusted forest plots:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mb <span class="ot">&lt;-</span> meta<span class="sc">::</span><span class="fu">metabin</span>(rH, rH <span class="sc">+</span> fH, rP, rP <span class="sc">+</span> fP, <span class="at">data =</span> haloperidol, <span class="at">studlab =</span> study,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sm =</span> <span class="st">"RR"</span>, <span class="at">method =</span> <span class="st">"Inverse"</span>, <span class="at">common =</span> <span class="cn">TRUE</span>, <span class="at">random =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>mm <span class="ot">&lt;-</span> metasens<span class="sc">::</span><span class="fu">metamiss</span>(mb, <span class="at">miss.e =</span> mH, <span class="at">miss.c =</span> mP, <span class="at">IMOR.e =</span> <span class="fl">0.5</span>, <span class="at">IMOR.c =</span> <span class="fl">0.5</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, <span class="fu">exp</span>(mm<span class="sc">$</span>TE.common), <span class="fu">exp</span>(mm<span class="sc">$</span>lower.common), <span class="fu">exp</span>(mm<span class="sc">$</span>upper.common))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1.70 (1.36 to 2.11)"</code></pre>
+</div>
+</div>
+</section>
+<section id="sec-missing-tipping" class="level3" data-number="14.5.3">
+<h3 data-number="14.5.3" class="anchored" data-anchor-id="sec-missing-tipping"><span class="header-section-number">14.5.3</span> Tipping points and uncertain IMORs</h3>
+<p>Patients may leave the two arms for different reasons, so the IMOR can differ by arm. <a href="#fig-tipping" class="quarto-xref">Figure&nbsp;<span>14.4</span></a> maps the pooled RR over a grid of IMORs for each arm and marks where the 95% CI first includes 1: a <strong>tipping-point analysis</strong>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>imor_brk <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>grid_df <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">dH =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="at">by =</span> <span class="fl">0.2</span>), <span class="at">dP =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="at">by =</span> <span class="fl">0.2</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fit =</span> <span class="fu">map2</span>(dH, dP, \(a, b) <span class="fu">imor_ma</span>(haloperidol, <span class="fu">exp</span>(a), <span class="fu">exp</span>(b))),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">RR =</span> <span class="fu">map_dbl</span>(fit, \(f) <span class="fu">exp</span>(f<span class="sc">$</span>b[<span class="dv">1</span>])), <span class="at">lo =</span> <span class="fu">map_dbl</span>(fit, \(f) <span class="fu">exp</span>(f<span class="sc">$</span>ci.lb))) <span class="sc">|&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>fit)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(grid_df, <span class="fu">aes</span>(dH, dP)) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(<span class="fu">aes</span>(<span class="at">fill =</span> RR)) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_contour</span>(<span class="fu">aes</span>(<span class="at">z =</span> lo), <span class="at">breaks =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">shape =</span> <span class="dv">18</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">colour =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">"Pooled RR"</span>, <span class="at">trans =</span> <span class="st">"log"</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">1.25</span>, <span class="fl">1.5</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">log</span>(imor_brk), <span class="at">labels =</span> imor_brk) <span class="sc">+</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">log</span>(imor_brk), <span class="at">labels =</span> imor_brk) <span class="sc">+</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"IMOR, haloperidol arm (log scale)"</span>, <span class="at">y =</span> <span class="st">"IMOR, placebo arm (log scale)"</span>) <span class="sc">+</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-tipping" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tipping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14-missing-data_files/figure-html/fig-tipping-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tipping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.4: Pooled RR over IMORs from 0.05 to 20 in each arm. Inside the dashed contour (top left) the 95% CI includes 1. The diamond marks complete-case analysis.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Significance is lost only in the top-left corner, where missing haloperidol patients did much worse and missing placebo patients much better than the observed. Whether that is plausible is a clinical question, which is the point: the analysis converts a vague worry about missing data into a specific assumption that can be judged.</p>
+<p>Rather than a single IMOR, our belief can be described by a distribution. Suppose, for these trials, a log IMOR centred on log(0.7) with SD 0.35: missing patients probably did somewhat worse than those observed, but not all failed. The uncertainty can enter analytically, through the variance term above, or by simulation, drawing an IMOR for each arm, re-running the meta-analysis, and pooling the results.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">629</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>draws <span class="ot">&lt;-</span> <span class="fu">map_dbl</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2000</span>, \(i) {</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  f <span class="ot">&lt;-</span> <span class="fu">imor_ma</span>(haloperidol, <span class="fu">exp</span>(<span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="fl">0.35</span>, <span class="fl">0.35</span>)), <span class="fu">exp</span>(<span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="fl">0.35</span>, <span class="fl">0.35</span>)))</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">1</span>, f<span class="sc">$</span>b[<span class="dv">1</span>], f<span class="sc">$</span>se)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>an <span class="ot">&lt;-</span> <span class="fu">imor_ma</span>(haloperidol, <span class="fu">exp</span>(<span class="sc">-</span><span class="fl">0.35</span>), <span class="at">sd_log =</span> <span class="fl">0.35</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Analysis =</span> <span class="fu">c</span>(<span class="st">"Complete case"</span>, <span class="st">"Uncertain IMOR, analytic"</span>, <span class="st">"Uncertain IMOR, simulation"</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">Pooled RR (95% interval)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">fmt_rr</span>(aca), <span class="fu">fmt_rr</span>(an),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">sprintf</span>(<span class="st">"%.2f (%.2f to %.2f)"</span>, <span class="fu">exp</span>(<span class="fu">median</span>(draws)), <span class="fu">exp</span>(<span class="fu">quantile</span>(draws, <span class="fl">0.025</span>)),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">exp</span>(<span class="fu">quantile</span>(draws, <span class="fl">0.975</span>)))),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>               <span class="st">`</span><span class="at">Weight: Beasley</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"%.0f%%"</span>, <span class="fu">c</span>(<span class="fu">weights</span>(aca)[<span class="dv">2</span>], <span class="fu">weights</span>(an)[<span class="dv">2</span>], <span class="cn">NA</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Weight: Beasley</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">replace</span>(<span class="st">`</span><span class="at">Weight: Beasley</span><span class="st">`</span>, <span class="dv">3</span>, <span class="st">""</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">align =</span> <span class="st">"lcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-imor-uncertain" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-imor-uncertain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;14.5: Haloperidol vs placebo with an uncertain IMOR (log IMOR ~ N(−0.35, 0.35²) in each arm).
+</figcaption>
+<div aria-describedby="tbl-imor-uncertain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 37%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Analysis</th>
+<th style="text-align: center;">Pooled RR (95% interval)</th>
+<th style="text-align: center;">Weight: Beasley</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Complete case</td>
+<td style="text-align: center;">1.57 (1.28 to 1.92)</td>
+<td style="text-align: center;">31%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Uncertain IMOR, analytic</td>
+<td style="text-align: center;">1.68 (1.35 to 2.09)</td>
+<td style="text-align: center;">26%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Uncertain IMOR, simulation</td>
+<td style="text-align: center;">1.65 (1.30 to 2.07)</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Uncertainty about the missing data widens the interval; complete-case analysis pretends that uncertainty is zero.</p>
+</section>
+</section>
+<section id="sec-missing-report" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="sec-missing-report"><span class="header-section-number">14.6</span> What reviewers should do</h2>
+<p>The <em>Cochrane Handbook</em> recommends contacting investigators for missing data, stating the assumptions behind whatever method is used, assessing risk of bias due to missing outcome data, running sensitivity analyses over reasonable changes in those assumptions, and discussing the potential impact of missing data on the findings <span class="citation" data-cites="deeks_ch10">(<a href="references.html#ref-deeks_ch10" role="doc-biblioref">12</a>)</span>. Single imputation treated as observed data is not recommended; complete-case analysis is acceptable as a starting point; methods that allow for the uncertainty (multiple imputation, IMOR with its variance) are preferred.</p>
+<p>For each arm of each study, extract the number randomised, the number analysed and at what time, the number missing and the reasons, the method used to handle missing data, and whether the primary analysis was intention-to-treat. The CONSORT flow diagram is the primary source, and RoB 2 domain 3 is judged for each outcome.</p>
+<p><strong>GRADE guidance 17</strong> <span class="citation" data-cites="guyatt2017grade17">(<a href="references.html#ref-guyatt2017grade17" role="doc-biblioref">13</a>)</span> starts from the complete-case meta-analysis and re-analyses under plausible worst-case assumptions: for binary outcomes, that participants with missing data in the intervention arms had higher event rates than those followed, by factors such as 1.5 to 5; for continuous outcomes, imputed means taken from other studies in the review. If the conclusion is robust to the most extreme plausible assumptions, do not rate down for risk of bias; if it is not, rate down. Applied to 100 meta-analyses with a significant result, plausible assumptions of this kind moved 6% to 22% across the null <span class="citation" data-cites="kahale2020missing">(<a href="references.html#ref-kahale2020missing" role="doc-biblioref">14</a>)</span>.</p>
+<p>There is no sensible threshold for an acceptable proportion missing: the impact depends on the event rate and on how different the missing are, not only on how many there are. If 900 of 1000 patients are followed with 2% mortality and the 100 missing had 20% mortality, the true mortality is 3.8%, nearly double what was observed.</p>
+</section>
+<section id="key-points" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-points">Key points</h2>
+<ol type="1">
+<li>Missing data are the rule. Distinguish missing studies, outcomes, summary statistics, participants and study-level data; each has its own tools.</li>
+<li>MCAR, MAR and MNAR describe how missingness relates to the data; MAR cannot be verified, and MNAR is often plausible in clinical trials.</li>
+<li>Complete-case analysis assumes the missing resemble the observed in each arm; LOCF and BOCF make implausible assumptions and can bias in either direction; multiple imputation and mixed models are valid under MAR but not MNAR.</li>
+<li>Missing SDs can often be recovered from intervals, exact <em>P</em> values or quartiles; change-score SDs depend on an unknown correlation, which should be varied.</li>
+<li>The IMOR framework turns assumptions about missing participants into explicit sensitivity analyses, including different assumptions by arm, tipping points and uncertain IMORs.</li>
+<li>Extract numbers randomised, analysed and missing, with reasons, per arm; judge RoB 2 domain 3; and follow GRADE guidance 17.</li>
+</ol>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>In <code>missing-sim</code>, make dropout depend on improvement in the <em>active</em> arm only (for example, side effects among responders). How does the direction of the complete-case bias change?</li>
+<li>Recompute the change-score SMD of <a href="#tbl-r-sensitivity" class="quarto-xref">Table&nbsp;<span>14.3</span></a> with <em>r</em> = 0.6 for one arm and 0.9 for the other.</li>
+<li>Using <code>imor_ma()</code>, find the smallest common IMOR (the same in both arms) at which the haloperidol result loses significance, if any.</li>
+<li>Re-run the uncertain-IMOR analysis with SD 0.7 for log IMOR. What happens to the weight of Beasley 1996?</li>
+<li>For a meta-analysis you know, extract the numbers randomised, analysed and missing per arm, and apply the GRADE 17 plausible worst case with a relative event rate of 2 among the missing.</li>
+</ol>
+</section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><span class="citation" data-cites="little2012nrc">(<a href="references.html#ref-little2012nrc" role="doc-biblioref">3</a>)</span> on preventing and treating missing data in trials.</li>
+<li><span class="citation" data-cites="mavridis2020missing">(<a href="references.html#ref-mavridis2020missing" role="doc-biblioref">15</a>)</span> and <span class="citation" data-cites="white2008imor">(<a href="references.html#ref-white2008imor" role="doc-biblioref">10</a>)</span> on IMOR and related methods; <span class="citation" data-cites="higgins2008missing">(<a href="references.html#ref-higgins2008missing" role="doc-biblioref">11</a>)</span> for the haloperidol example.</li>
+<li><span class="citation" data-cites="guyatt2017grade17">(<a href="references.html#ref-guyatt2017grade17" role="doc-biblioref">13</a>)</span> for GRADE guidance on missing participant data.</li>
+<li><span class="citation" data-cites="higgins_ch6">(<a href="references.html#ref-higgins_ch6" role="doc-biblioref">4</a>)</span>, Section 6.5.2, on recovering summary statistics; <span class="citation" data-cites="wan2014">(<a href="references.html#ref-wan2014" role="doc-biblioref">7</a>)</span> and <span class="citation" data-cites="mcgrath2024metamedian">(<a href="references.html#ref-mcgrath2024metamedian" role="doc-biblioref">9</a>)</span> on medians and quartiles.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-bell2014missing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Bell ML, Fiero M, Horton NJ, Hsu CH. Handling missing data in <span>RCTs</span>; a review of the top medical journals. BMC Medical Research Methodology [Internet]. 2014;14:118. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4247714/">https://pmc.ncbi.nlm.nih.gov/articles/PMC4247714/</a></div>
+</div>
+<div id="ref-akl2012lostit" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Akl EA, Briel M, You JJ, et al. <a href="https://doi.org/10.1136/bmj.e2809">Potential impact on estimated treatment effects of information lost to follow-up in randomised controlled trials (<span>LOST-IT</span>): Systematic review</a>. BMJ. 2012;344:e2809. </div>
+</div>
+<div id="ref-little2012nrc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Little RJ, D’Agostino R, Cohen ML, et al. <a href="https://doi.org/10.1056/NEJMsr1203730">The prevention and treatment of missing data in clinical trials</a>. New England Journal of Medicine. 2012;367(14):1355–60. </div>
+</div>
+<div id="ref-higgins_ch6" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Higgins JPT, Li T, Deeks JJ. Chapter 6: Choosing effect measures and computing estimates of effect. In: Cochrane handbook for systematic reviews of interventions [Internet]. Cochrane; 2024. Available from: <a href="https://training.cochrane.org/handbook/current/chapter-06">https://training.cochrane.org/handbook/current/chapter-06</a></div>
+</div>
+<div id="ref-furukawa2006" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Furukawa TA, Barbui C, Cipriani A, Brambilla P, Watanabe N. <a href="https://doi.org/10.1016/j.jclinepi.2005.06.006">Imputing missing standard deviations in meta-analyses can provide accurate results</a>. Journal of Clinical Epidemiology. 2006;59(1):7–10. </div>
+</div>
+<div id="ref-hozo2005" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Hozo SP, Djulbegovic B, Hozo I. Estimating the mean and variance from the median, range, and the size of a sample. BMC Medical Research Methodology [Internet]. 2005;5:13. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1097734/">https://pmc.ncbi.nlm.nih.gov/articles/PMC1097734/</a></div>
+</div>
+<div id="ref-wan2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Wan X, Wang W, Liu J, Tong T. Estimating the sample mean and standard deviation from the sample size, median, range and/or interquartile range. BMC Medical Research Methodology [Internet]. 2014;14:135. Available from: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4383202/">https://pmc.ncbi.nlm.nih.gov/articles/PMC4383202/</a></div>
+</div>
+<div id="ref-luo2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Luo D, Wan X, Liu J, Tong T. <a href="https://doi.org/10.1177/0962280216669183">Optimally estimating the sample mean from the sample size, median, mid-range, and/or mid-quartile range</a>. Statistical Methods in Medical Research. 2018;27(6):1785–805. </div>
+</div>
+<div id="ref-mcgrath2024metamedian" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">McGrath S, Zhao X, Ozturk O, Katzenschlager S, Steele R, Benedetti A. <a href="https://doi.org/10.1002/jrsm.1686">Metamedian: An <span>R</span> package for meta-analyzing studies reporting medians</a>. Research Synthesis Methods. 2024; </div>
+</div>
+<div id="ref-white2008imor" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">White IR, Higgins JPT, Wood AM. <a href="https://doi.org/10.1002/sim.3008">Allowing for uncertainty due to missing data in meta-analysis, part 1: Two-stage methods</a>. Statistics in Medicine. 2008;27(5):711–27. </div>
+</div>
+<div id="ref-higgins2008missing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Higgins JPT, White IR, Wood AM. <a href="https://doi.org/10.1177/1740774508091600">Imputation methods for missing outcome data in meta-analysis of clinical trials</a>. Clin Trials. 2008;5:225–39. </div>
+</div>
+<div id="ref-deeks_ch10" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Deeks JJ, Higgins JPT, Altman DG. Chapter 10: Analysing data and undertaking meta-analyses. In: Cochrane handbook for systematic reviews of interventions [Internet]. Cochrane; 2024. Available from: <a href="https://training.cochrane.org/handbook/current/chapter-10">https://training.cochrane.org/handbook/current/chapter-10</a></div>
+</div>
+<div id="ref-guyatt2017grade17" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Guyatt GH, Ebrahim S, Alonso-Coello P, et al. <a href="https://doi.org/10.1016/j.jclinepi.2017.05.005"><span>GRADE</span> guidelines 17: Assessing the risk of bias associated with missing participant outcome data in a body of evidence</a>. Journal of Clinical Epidemiology. 2017;87:14–22. </div>
+</div>
+<div id="ref-kahale2020missing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Kahale LA, Khamis AM, Diab B, et al. <a href="https://doi.org/10.1136/bmj.m2898">Potential impact of missing outcome data on treatment effects in systematic reviews: Imputation study</a>. BMJ. 2020;370:m2898. </div>
+</div>
+<div id="ref-mavridis2020missing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Mavridis D, White IR. <a href="https://doi.org/10.1002/jrsm.1349">Dealing with missing outcome data in meta-analysis</a>. Research Synthesis Methods. 2020;11(1). </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./13-bayesian-meta-analysis.html" class="pagination-link" aria-label="Bayesian Meta-Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./15-publication-bias.html" class="pagination-link" aria-label="Publication Bias">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

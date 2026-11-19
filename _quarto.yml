@@ -3,6 +3,7 @@ project:
   output-dir: docs
   resources:
     - _headers
+    - knowledge-synthesis/**   # rendered ebook, copied from mcgill/629/2026/ebook/_book
 
 website:
   title: "James (Jay) Brophy"

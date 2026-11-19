@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Finding the Evidence – Knowledge Synthesis in Health Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-question-to-data.html" rel="next">
+<link href="./01-introduction.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ef126021e9ff1ef5a96e4bd190a6c277.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-introduction.html">Foundations</a></li><li class="breadcrumb-item"><a href="./02-finding-evidence.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Knowledge Synthesis in Health Research</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-finding-evidence.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-question-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-visualising-evidence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualising Evidence</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appraisal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-bias-grading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk of Bias and GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-certainty-reporting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rating Certainty with GRADE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-appraising-reviews.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reporting and Appraising Systematic Reviews</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Meta-analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-effect-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Effect Measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-meta-analysis-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Meta-Analysis Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-heterogeneity-robustness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Heterogeneity and Robustness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-p-values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title"><em>P</em> Values and Surprise</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-bias-bridge-bayes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bias and a Bridge to Bayes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-bayesian-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bayesian Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Threats and extensions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-missing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Missing Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-publication-bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publication Bias</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-ipd-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Individual Participant Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-network-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Network Meta-Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-nma-in-practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Network Meta-Analysis in Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-observational-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Systematic Reviews of Observational Studies</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-diagnostic-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Diagnostic Accuracy and Prediction Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">From evidence to decisions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-cochrane-single-trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Cochrane Reviews, Living Reviews and the Single Trial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22-hta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Health Technology Assessment and Decision-Making</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23-correcting-literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Correcting the Published Literature: A Worked Audit</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./24-agentic-meta-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Agentic Systematic Reviews and Meta-Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-search-start" id="toc-sec-search-start" class="nav-link active" data-scroll-target="#sec-search-start"><span class="header-section-number">2.1</span> Starting right</a>
+  <ul class="collapse">
+  <li><a href="#sec-search-team" id="toc-sec-search-team" class="nav-link" data-scroll-target="#sec-search-team"><span class="header-section-number">2.1.1</span> Why, and who</a></li>
+  <li><a href="#sec-search-protocol" id="toc-sec-search-protocol" class="nav-link" data-scroll-target="#sec-search-protocol"><span class="header-section-number">2.1.2</span> Protocol first, always</a></li>
+  </ul></li>
+  <li><a href="#sec-search-sources" id="toc-sec-search-sources" class="nav-link" data-scroll-target="#sec-search-sources"><span class="header-section-number">2.2</span> Where to search</a>
+  <ul class="collapse">
+  <li><a href="#sec-search-registers" id="toc-sec-search-registers" class="nav-link" data-scroll-target="#sec-search-registers"><span class="header-section-number">2.2.1</span> Why trial registers and regulatory documents matter</a></li>
+  </ul></li>
+  <li><a href="#sec-search-scope" id="toc-sec-search-scope" class="nav-link" data-scroll-target="#sec-search-scope"><span class="header-section-number">2.3</span> Scope: inclusion and exclusion criteria</a></li>
+  <li><a href="#sec-search-strategy" id="toc-sec-search-strategy" class="nav-link" data-scroll-target="#sec-search-strategy"><span class="header-section-number">2.4</span> Designing the search strategy</a>
+  <ul class="collapse">
+  <li><a href="#sec-search-google" id="toc-sec-search-google" class="nav-link" data-scroll-target="#sec-search-google"><span class="header-section-number">2.4.1</span> Why not just use Google?</a></li>
+  <li><a href="#sec-search-boolean" id="toc-sec-search-boolean" class="nav-link" data-scroll-target="#sec-search-boolean"><span class="header-section-number">2.4.2</span> Concepts, synonyms and Boolean logic</a></li>
+  <li><a href="#sec-search-sensitivity" id="toc-sec-search-sensitivity" class="nav-link" data-scroll-target="#sec-search-sensitivity"><span class="header-section-number">2.4.3</span> Sensitivity and precision</a></li>
+  <li><a href="#sec-search-filters" id="toc-sec-search-filters" class="nav-link" data-scroll-target="#sec-search-filters"><span class="header-section-number">2.4.4</span> Filters and restrictions</a></li>
+  <li><a href="#sec-search-press" id="toc-sec-search-press" class="nav-link" data-scroll-target="#sec-search-press"><span class="header-section-number">2.4.5</span> Peer review of the search</a></li>
+  <li><a href="#sec-search-document" id="toc-sec-search-document" class="nav-link" data-scroll-target="#sec-search-document"><span class="header-section-number">2.4.6</span> Documenting the search</a></li>
+  </ul></li>
+  <li><a href="#sec-search-select" id="toc-sec-search-select" class="nav-link" data-scroll-target="#sec-search-select"><span class="header-section-number">2.5</span> Selecting studies</a>
+  <ul class="collapse">
+  <li><a href="#sec-search-screening" id="toc-sec-search-screening" class="nav-link" data-scroll-target="#sec-search-screening"><span class="header-section-number">2.5.1</span> Two-stage screening</a></li>
+  <li><a href="#sec-search-reports" id="toc-sec-search-reports" class="nav-link" data-scroll-target="#sec-search-reports"><span class="header-section-number">2.5.2</span> Studies versus reports</a></li>
+  <li><a href="#sec-search-prisma" id="toc-sec-search-prisma" class="nav-link" data-scroll-target="#sec-search-prisma"><span class="header-section-number">2.5.3</span> The PRISMA flow diagram</a></li>
+  <li><a href="#sec-search-kappa" id="toc-sec-search-kappa" class="nav-link" data-scroll-target="#sec-search-kappa"><span class="header-section-number">2.5.4</span> Agreement between reviewers</a></li>
+  </ul></li>
+  <li><a href="#sec-search-r" id="toc-sec-search-r" class="nav-link" data-scroll-target="#sec-search-r"><span class="header-section-number">2.6</span> Searching from R</a>
+  <ul class="collapse">
+  <li><a href="#sec-search-why-code" id="toc-sec-search-why-code" class="nav-link" data-scroll-target="#sec-search-why-code"><span class="header-section-number">2.6.1</span> Why code a search?</a></li>
+  <li><a href="#sec-search-syntax" id="toc-sec-search-syntax" class="nav-link" data-scroll-target="#sec-search-syntax"><span class="header-section-number">2.6.2</span> PubMed query syntax</a></li>
+  <li><a href="#sec-search-rentrez" id="toc-sec-search-rentrez" class="nav-link" data-scroll-target="#sec-search-rentrez"><span class="header-section-number">2.6.3</span> Querying PubMed with <code>rentrez</code></a></li>
+  <li><a href="#sec-search-function" id="toc-sec-search-function" class="nav-link" data-scroll-target="#sec-search-function"><span class="header-section-number">2.6.4</span> A reusable search function</a></li>
+  <li><a href="#sec-search-epmc" id="toc-sec-search-epmc" class="nav-link" data-scroll-target="#sec-search-epmc"><span class="header-section-number">2.6.5</span> Europe PMC</a></li>
+  </ul></li>
+  <li><a href="#sec-search-ai" id="toc-sec-search-ai" class="nav-link" data-scroll-target="#sec-search-ai"><span class="header-section-number">2.7</span> AI-assisted screening</a></li>
+  <li><a href="#sec-search-loop" id="toc-sec-search-loop" class="nav-link" data-scroll-target="#sec-search-loop"><span class="header-section-number">2.8</span> Closing the loop: from search to flow diagram</a></li>
+  <li><a href="#sec-search-current" id="toc-sec-search-current" class="nav-link" data-scroll-target="#sec-search-current"><span class="header-section-number">2.9</span> Keeping the search current</a></li>
+  <li><a href="#sec-search-mistakes" id="toc-sec-search-mistakes" class="nav-link" data-scroll-target="#sec-search-mistakes"><span class="header-section-number">2.10</span> Common mistakes</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-introduction.html">Foundations</a></li><li class="breadcrumb-item"><a href="./02-finding-evidence.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span id="sec-search" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Finding the Evidence</span></span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>explain why the protocol, the team and the search are methodological safeguards against bias;</li>
+<li>list the sources a systematic review must search, and explain why trial registers and clinical study reports matter;</li>
+<li>build a search strategy from concepts, controlled vocabulary and free text, and explain the trade-off between sensitivity and precision;</li>
+<li>describe the screening process, distinguish studies from reports, and produce a PRISMA 2020 flow diagram;</li>
+<li>run a reproducible PubMed search from R and turn its results into a dataset;</li>
+<li>describe what AI-assisted screening can and cannot yet do.</li>
+</ul>
+<p><strong>R packages:</strong> <code>rentrez</code>, <code>xml2</code>, <code>europepmc</code>, <code>dplyr</code>, <code>ggplot2</code>, <code>irr</code>, <code>PRISMA2020</code>.</p>
+</div>
+</div>
+<p>Chapter 1 explained why synthesis is needed. This chapter covers its first methodological step: finding all the relevant evidence, without bias. It is harder than it looks. PubMed alone adds more than a million records a year; not all relevant evidence is indexed, or even published; and every choice in a search trades the risk of missing studies against the burden of screening irrelevant ones.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A biased search produces a biased review
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No statistical method can recover a study that was never found. Errors at this stage propagate through every later step.</p>
+</div>
+</div>
+<section id="sec-search-start" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-search-start"><span class="header-section-number">2.1</span> Starting right</h2>
+<section id="sec-search-team" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="sec-search-team"><span class="header-section-number">2.1.1</span> Why, and who</h3>
+<p>A systematic review is worth doing because individual decision-makers cannot process the volume of primary literature, and because pre-specified, transparent methods minimise bias. Ideally, new primary research should be commissioned only after a review has shown that a gap exists <span class="citation" data-cites="cochrane_handbook">(<a href="references.html#ref-cochrane_handbook" role="doc-biblioref">1</a>)</span>.</p>
+<p>A review needs a team. Cochrane will not publish a single-author review, for good reasons: independent duplicate screening reduces selection errors; content expertise and methodological expertise are both needed; involving patients and the public in framing the question improves its relevance; and conflicts of interest must be declared and managed. A diverse team is a methodological safeguard, not only an ethical one.</p>
+</section>
+<section id="sec-search-protocol" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-search-protocol"><span class="header-section-number">2.1.2</span> Protocol first, always</h3>
+<p>A registered protocol, written <strong>before</strong> searching begins, is the most important single safeguard against bias. It should specify:</p>
+<ul>
+<li>the question, as PICO and as an estimand (<a href="01-introduction.html#sec-intro-estimand" class="quarto-xref"><span>Section 1.3</span></a>);</li>
+<li>inclusion and exclusion criteria;</li>
+<li>the databases to be searched and a draft search strategy;</li>
+<li>the screening process: who screens, how many reviewers, how disagreements are resolved;</li>
+<li>the data extraction form and the risk-of-bias tools;</li>
+<li>the planned analyses, including how heterogeneity will be handled, and pre-specified subgroup and sensitivity analyses.</li>
+</ul>
+<p>Register it in <a href="https://www.crd.york.ac.uk/prospero/">PROSPERO</a>, the international register of systematic reviews, which is free, searchable (so it also helps avoid duplicate reviews) and time-stamped (so outcome switching becomes visible). The <a href="https://osf.io">Open Science Framework</a> is an alternative with a broader scope and version control. Many journals now require prospective registration.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A post-hoc protocol is not a protocol
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is a description of what was done. Without a prior protocol, outcome switching, post-hoc subgroups and selective reporting leave no trace in the final paper, yet each inflates the chance of a false-positive conclusion <span class="citation" data-cites="simmons2011">(<a href="references.html#ref-simmons2011" role="doc-biblioref">2</a>)</span>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-search-sources" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-search-sources"><span class="header-section-number">2.2</span> Where to search</h2>
+<p>The <em>Cochrane Handbook</em> sets a minimum standard <span class="citation" data-cites="lefebvre_ch4">(<a href="references.html#ref-lefebvre_ch4" role="doc-biblioref">3</a>)</span>. Searching PubMed alone is almost never sufficient.</p>
+<p><strong>Bibliographic databases.</strong></p>
+<ul>
+<li><strong>CENTRAL</strong>, the Cochrane Central Register of Controlled Trials: curated records of trials, many identified by hand-searching; the most precise source for randomised trials.</li>
+<li><strong>MEDLINE</strong>, via PubMed or Ovid: about 37 million citations, the broadest general coverage.</li>
+<li><strong>Embase</strong>: stronger on European literature, pharmacology and adverse effects.</li>
+<li><strong>CINAHL</strong>: nursing and allied health, important for interventions delivered by non-physicians.</li>
+</ul>
+<p><strong>Beyond databases.</strong></p>
+<ul>
+<li><strong>Trial registers</strong>, for unpublished and ongoing studies: <a href="https://clinicaltrials.gov">ClinicalTrials.gov</a>, the <a href="https://www.who.int/clinical-trials-registry-platform">WHO ICTRP</a> and <a href="https://www.isrctn.com">ISRCTN</a>.</li>
+<li><strong>Regulatory documents</strong>: FDA approval packages, European Public Assessment Reports, and clinical study reports.</li>
+<li><strong>Grey literature</strong>: conference abstracts, dissertations, government reports.</li>
+<li><strong>Reference lists</strong> of included studies and of relevant reviews.</li>
+</ul>
+<section id="sec-search-registers" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="sec-search-registers"><span class="header-section-number">2.2.1</span> Why trial registers and regulatory documents matter</h3>
+<p>Studies with positive results are more likely to be published than those with null results <span class="citation" data-cites="easterbrook1991 dwan2008">(<a href="references.html#ref-easterbrook1991" role="doc-biblioref">4</a>,<a href="references.html#ref-dwan2008" role="doc-biblioref">5</a>)</span>. Registers record the <em>intention</em> to do a study before its results are known, so they provide a denominator: how many trials were started, how many were published, and whether the primary outcomes in the publication match those registered. Outcome switching between registration and publication is detectable, and common.</p>
+<p><strong>Clinical study reports</strong>, the full documents submitted to regulators, often run to thousands of pages per trial. They contain what journal articles leave out: patient-level adverse event narratives, all pre-specified analyses, dated protocol amendments and full statistical analysis plans. The landmark example is oseltamivir (Tamiflu). A Cochrane team that obtained the clinical study reports found that earlier reviews, based on a fraction of the data, had overstated the drug’s benefits <span class="citation" data-cites="jefferson2014">(<a href="references.html#ref-jefferson2014" role="doc-biblioref">6</a>)</span>. Clinical study reports can be requested from the European Medicines Agency, through freedom-of-information requests to the FDA, or through initiatives such as AllTrials.</p>
+</section>
+</section>
+<section id="sec-search-scope" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-search-scope"><span class="header-section-number">2.3</span> Scope: inclusion and exclusion criteria</h2>
+<p>Before searching you must know what you are searching for. Inclusion criteria are the operational definition of the estimand; the two are two sides of the same coin.</p>
+<div id="tbl-scope" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-scope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Scoping errors in both directions.
+</figcaption>
+<div aria-describedby="tbl-scope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Too narrow</th>
+<th>Too broad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Population</td>
+<td>One country or centre</td>
+<td>Any adult</td>
+</tr>
+<tr class="even">
+<td>Intervention</td>
+<td>One exact dose</td>
+<td>Any drug in the class</td>
+</tr>
+<tr class="odd">
+<td>Comparator</td>
+<td>Placebo only</td>
+<td>Any comparator</td>
+</tr>
+<tr class="even">
+<td>Outcome</td>
+<td>A surrogate only</td>
+<td>Any reported outcome</td>
+</tr>
+<tr class="odd">
+<td>Study design</td>
+<td>Only double-blind trials</td>
+<td>Any design</td>
+</tr>
+<tr class="even">
+<td>Time</td>
+<td>The last five years</td>
+<td>No limit, even when the intervention has changed</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Criteria that are too narrow miss evidence and limit generalisability; criteria that are too broad make the pooled estimate clinically meaningless. Meta-analyses are not immune: when LeLorier and colleagues compared 19 meta-analyses with 12 large trials on the same questions, the meta-analyses failed to predict the trials’ results accurately about 35% of the time <span class="citation" data-cites="lelorier1997">(<a href="references.html#ref-lelorier1997" role="doc-biblioref">7</a>)</span>.</p>
+</section>
+<section id="sec-search-strategy" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-search-strategy"><span class="header-section-number">2.4</span> Designing the search strategy</h2>
+<section id="sec-search-google" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="sec-search-google"><span class="header-section-number">2.4.1</span> Why not just use Google?</h3>
+<p>Google and Google Scholar rank results by opaque, proprietary algorithms. They favour apparent relevance over completeness, return different results on different days, devices and accounts, lack field-specific indexing (no MeSH, no publication-type filters, no date-of-entry control), favour highly cited papers, and leave no audit trail. A systematic review must also find the inconvenient null result on page 12, and its methods must say exactly what was searched, where and when. That requires a bibliographic database with explicit, documented, date-stamped indexing.</p>
+</section>
+<section id="sec-search-boolean" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="sec-search-boolean"><span class="header-section-number">2.4.2</span> Concepts, synonyms and Boolean logic</h3>
+<p>Most searches combine three concepts:</p>
+<ol type="1">
+<li>the <strong>population</strong> (who);</li>
+<li>the <strong>intervention</strong> or exposure (what);</li>
+<li>a <strong>study design</strong> filter (randomised trials, cohort studies, and so on).</li>
+</ol>
+<p>Synonyms <em>within</em> a concept are joined with <strong>OR</strong>, which expands the search; concepts are joined with <strong>AND</strong>, which restricts it.</p>
+<p>Each concept should use both <strong>controlled vocabulary</strong> (MeSH in MEDLINE, Emtree in Embase: curated, hierarchical subject headings, which can be “exploded” to include narrower terms) and <strong>free text</strong> in titles and abstracts, which catches records not yet indexed, spelling variants and new terminology. For example:</p>
+<pre><code>"myocardial infarction"[MeSH Terms]
+  OR "heart attack"[Title/Abstract]
+  OR "myocardial infarction"[Title/Abstract]</code></pre>
+</section>
+<section id="sec-search-sensitivity" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="sec-search-sensitivity"><span class="header-section-number">2.4.3</span> Sensitivity and precision</h3>
+<p>Two measures describe a search:</p>
+<p><span class="math display">\[
+\text{Sensitivity (recall)} = \frac{\text{relevant records retrieved}}{\text{all relevant records}},
+\qquad
+\text{Precision} = \frac{\text{relevant records retrieved}}{\text{all records retrieved}}.
+\]</span></p>
+<p>The denominator of sensitivity is every relevant study, whether or not the search found it; the denominator of precision is everything the search returned. The two trade off: every restriction that improves precision risks missing studies. Systematic reviews aim for <strong>high sensitivity</strong>. Missing a study is worse than screening another thousand irrelevant records, and sensitive searches often return 5000 to 50 000 records <span class="citation" data-cites="lefebvre_ch4">(<a href="references.html#ref-lefebvre_ch4" role="doc-biblioref">3</a>)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key point
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When in doubt: retrieve more, screen more, miss less.</p>
+</div>
+</div>
+</section>
+<section id="sec-search-filters" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="sec-search-filters"><span class="header-section-number">2.4.4</span> Filters and restrictions</h3>
+<p><strong>Study design filters.</strong> Use validated filters, whose sensitivity and precision are known, rather than inventing your own. The Cochrane Highly Sensitive Search Strategy for randomised trials in MEDLINE comes in a sensitivity-maximising version and a version balancing sensitivity and precision <span class="citation" data-cites="lefebvre_ch4">(<a href="references.html#ref-lefebvre_ch4" role="doc-biblioref">3</a>)</span>; comparable filters exist for Embase and CINAHL. Do not apply a trial filter to CENTRAL, which already contains only trials.</p>
+<p><strong>Language.</strong> Avoid language restrictions if possible. Excluding studies not published in English can bias the results, the so-called <em>Tower of Babel</em> bias <span class="citation" data-cites="gregoire1995">(<a href="references.html#ref-gregoire1995" role="doc-biblioref">8</a>)</span>.</p>
+<p><strong>Date.</strong> Restrict dates only when the intervention did not exist before a certain date, or when updating an earlier review.</p>
+<p><strong>Journals.</strong> Restricting to particular journals is almost never justified; important trials appear in unexpected places.</p>
+</section>
+<section id="sec-search-press" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="sec-search-press"><span class="header-section-number">2.4.5</span> Peer review of the search</h3>
+<p>An information specialist should review the search strategy <strong>before</strong> it is run. The PRESS checklist covers the translation of the question, Boolean and proximity operators, subject headings, text words, spelling and syntax, and limits and filters <span class="citation" data-cites="mcgowan2016press">(<a href="references.html#ref-mcgowan2016press" role="doc-biblioref">9</a>)</span>. Peer-reviewed strategies contain fewer errors and retrieve more relevant records. Cochrane requires an information specialist’s involvement; university health sciences libraries usually offer consultations.</p>
+</section>
+<section id="sec-search-document" class="level3" data-number="2.4.6">
+<h3 data-number="2.4.6" class="anchored" data-anchor-id="sec-search-document"><span class="header-section-number">2.4.6</span> Documenting the search</h3>
+<p>Record, for every source:</p>
+<ul>
+<li>the database <strong>and</strong> its platform (PubMed and Ovid MEDLINE are not identical);</li>
+<li>the date the search was run;</li>
+<li>the complete strategy, every line and operator;</li>
+<li>the number of records retrieved.</li>
+</ul>
+<p>Then record the deduplication method and the numbers at every stage of the PRISMA flow diagram (<a href="#sec-search-prisma" class="quarto-xref"><span>Section 2.5.3</span></a>). This is not bureaucracy; it is what makes the search reproducible.</p>
+<p>The same article appears in several databases, so records must be <strong>deduplicated</strong> before screening; keep each database’s count <em>before</em> deduplication for the flow diagram. Reference managers such as EndNote and Zotero deduplicate well; <a href="https://www.rayyan.ai/">Rayyan</a> and <a href="https://www.covidence.org/">Covidence</a> are purpose-built for screening, and <a href="https://asreview.nl/">ASReview</a> uses active learning to prioritise records.</p>
+</section>
+</section>
+<section id="sec-search-select" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-search-select"><span class="header-section-number">2.5</span> Selecting studies</h2>
+<section id="sec-search-screening" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="sec-search-screening"><span class="header-section-number">2.5.1</span> Two-stage screening</h3>
+<p>Screening applies the pre-specified inclusion criteria to the search results, in two stages, each done independently by at least two reviewers.</p>
+<ol type="1">
+<li><strong>Titles and abstracts.</strong> When in doubt, include; the question is resolved at the next stage. Typically 5% to 20% of records pass.</li>
+<li><strong>Full texts.</strong> Each record is assessed against all inclusion criteria, and every exclusion is given a reason (wrong population, intervention, outcome or design; duplicate report). Typically 30% to 70% of full texts are included. Studies excluded at this stage are listed, with reasons, in an appendix.</li>
+</ol>
+<p>Disagreements are resolved by discussion or by a third reviewer, and agreement is reported (<a href="#sec-search-kappa" class="quarto-xref"><span>Section 2.5.4</span></a>).</p>
+</section>
+<section id="sec-search-reports" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="sec-search-reports"><span class="header-section-number">2.5.2</span> Studies versus reports</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The unit of synthesis is the study, not the report
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One trial may produce a main efficacy paper, a safety paper, subgroup papers, a cost-effectiveness paper, several conference abstracts and a register entry. These are all <em>reports</em> of the <em>same study</em>. Counting them separately inflates the number of studies and double-counts participants. Link reports to studies before extracting data, using the trial registration number, authors, numbers of participants and dates <span class="citation" data-cites="lefebvre_ch4">(<a href="references.html#ref-lefebvre_ch4" role="doc-biblioref">3</a>)</span>.</p>
+</div>
+</div>
+</section>
+<section id="sec-search-prisma" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="sec-search-prisma"><span class="header-section-number">2.5.3</span> The PRISMA flow diagram</h3>
+<p>PRISMA 2020 requires a flow diagram showing, at each stage, how many records were identified (per database, and from other sources), how many remained after deduplication, how many were excluded at title and abstract screening, how many full texts were assessed and excluded (with reasons), and how many studies were included in the review and in the meta-analysis <span class="citation" data-cites="page2021prisma">(<a href="references.html#ref-page2021prisma" role="doc-biblioref">10</a>)</span>.</p>
+<p>Quarto can draw the diagram directly with <a href="https://mermaid.js.org/">Mermaid</a>, without any R package. The numbers here are illustrative; <a href="#sec-search-loop" class="quarto-xref"><span>Section 2.8</span></a> shows how to generate them from the search itself.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-prisma-mermaid" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prisma-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-prisma-mermaid">flowchart TD
+  A["Records from databases&lt;br/&gt;CENTRAL = 841&lt;br/&gt;MEDLINE = 1923&lt;br/&gt;Embase = 2417"] --&gt; B
+  A2["Other sources&lt;br/&gt;Registers = 142&lt;br/&gt;Grey literature = 37"] --&gt; B
+  B["After deduplication&lt;br/&gt;n = 3961"] --&gt; C
+  C["Titles and abstracts screened&lt;br/&gt;n = 3961"] --&gt; D
+  C --&gt; E["Excluded&lt;br/&gt;n = 3541"]
+  D["Full texts assessed&lt;br/&gt;n = 420"] --&gt; F
+  D --&gt; G["Excluded, with reasons&lt;br/&gt;Wrong population: 189&lt;br/&gt;Wrong intervention: 97&lt;br/&gt;Wrong outcome: 62&lt;br/&gt;Duplicate study: 30&lt;br/&gt;n = 378"]
+  F["Studies included in the review&lt;br/&gt;n = 42"] --&gt; H
+  H["Studies included in the meta-analysis&lt;br/&gt;n = 38"]
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prisma-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: A PRISMA-style flow diagram drawn with Mermaid (illustrative numbers).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The <code>PRISMA2020</code> package draws the official PRISMA 2020 template <span class="citation" data-cites="haddaway2022prisma">(<a href="references.html#ref-haddaway2022prisma" role="doc-biblioref">11</a>)</span>. <code>PRISMA_data()</code> expects the package’s full template, so the simplest approach is to read the template and overwrite only the counts you have:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PRISMA2020)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Start from the package's template and overwrite the counts</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>csv_file   <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"PRISMA.csv"</span>, <span class="at">package =</span> <span class="st">"PRISMA2020"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>flow_input <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(csv_file)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>set_n <span class="ot">&lt;-</span> <span class="cf">function</span>(df, field, n) { df<span class="sc">$</span>n[df<span class="sc">$</span>data <span class="sc">==</span> field] <span class="ot">&lt;-</span> n; df }</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>flow_input <span class="ot">&lt;-</span> flow_input <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"database_results"</span>,         <span class="dv">4823</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"register_results"</span>,          <span class="dv">142</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"duplicates"</span>,               <span class="dv">1004</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"records_screened"</span>,         <span class="dv">3961</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"records_excluded"</span>,         <span class="dv">3541</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"dbr_sought_reports"</span>,        <span class="dv">420</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"dbr_notretrieved_reports"</span>,    <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"dbr_assessed"</span>,              <span class="dv">420</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"dbr_excluded"</span>,              <span class="dv">378</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"new_studies"</span>,                <span class="dv">42</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"new_reports"</span>,                <span class="dv">42</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"total_studies"</span>,              <span class="dv">42</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"total_reports"</span>,              <span class="dv">42</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"total_studies_ma"</span>,           <span class="dv">38</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_n</span>(<span class="st">"total_reports_ma"</span>,           <span class="dv">38</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>flow_data <span class="ot">&lt;-</span> <span class="fu">PRISMA_data</span>(flow_input)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">PRISMA_flowdiagram</span>(flow_data,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>                   <span class="at">interactive   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>                   <span class="at">previous      =</span> <span class="cn">FALSE</span>,   <span class="co"># not an update of an earlier review</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>                   <span class="at">other         =</span> <span class="cn">FALSE</span>,   <span class="co"># no separate "other methods" arm</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>                   <span class="at">meta_analysis =</span> <span class="cn">TRUE</span>)    <span class="co"># show the meta-analysis box</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="fig-prisma2020" class="quarto-float quarto-figure quarto-figure-center anchored" alt="PRISMA 2020 flow diagram with identification, screening and included boxes.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-prisma2020-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ch02/02_Rplot.png" class="img-fluid figure-img" style="width:85.0%" alt="PRISMA 2020 flow diagram with identification, screening and included boxes.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prisma2020-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: The resulting PRISMA 2020 flow diagram.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-search-kappa" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="sec-search-kappa"><span class="header-section-number">2.5.4</span> Agreement between reviewers</h3>
+<p>Agreement between two screeners is usually summarised by Cohen’s κ, which corrects the observed agreement <span class="math inline">\(P_o\)</span> for the agreement <span class="math inline">\(P_e\)</span> expected by chance:</p>
+<p><span class="math display">\[
+\kappa = \frac{P_o - P_e}{1 - P_e}.
+\]</span></p>
+<p>Values are conventionally described as slight (below 0.20), fair (0.21 to 0.40), moderate (0.41 to 0.60), substantial (0.61 to 0.80) and almost perfect (above 0.80) <span class="citation" data-cites="landis1977">(<a href="references.html#ref-landis1977" role="doc-biblioref">12</a>)</span>.</p>
+<p>The calculation is simple enough to do by hand. Suppose two reviewers screen 10 records (1 = include):</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>reviewer1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>reviewer2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>p_o <span class="ot">&lt;-</span> <span class="fu">mean</span>(reviewer1 <span class="sc">==</span> reviewer2)                  <span class="co"># observed agreement</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>p_e <span class="ot">&lt;-</span> <span class="fu">mean</span>(reviewer1) <span class="sc">*</span> <span class="fu">mean</span>(reviewer2) <span class="sc">+</span>           <span class="co"># both include by chance</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">mean</span>(reviewer1)) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">mean</span>(reviewer2)) <span class="co"># both exclude by chance</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>kappa <span class="ot">&lt;-</span> (p_o <span class="sc">-</span> p_e) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">-</span> p_e)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">c</span>(<span class="at">observed =</span> p_o, <span class="at">chance =</span> p_e, <span class="at">kappa =</span> kappa), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>observed   chance    kappa 
+    0.80     0.52     0.58 </code></pre>
+</div>
+</div>
+<p>The reviewers agree on 80% of records, but 52% agreement would be expected by chance alone, so κ = 0.58, “moderate”. The <code>irr</code> package gives the same result, with a test:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>irr<span class="sc">::</span><span class="fu">kappa2</span>(<span class="fu">cbind</span>(reviewer1, reviewer2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> Cohen's Kappa for 2 Raters (Weights: unweighted)
+
+ Subjects = 10 
+   Raters = 2 
+    Kappa = 0.583 
+
+        z = 1.84 
+  p-value = 0.0651 </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+κ depends on prevalence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When eligible records are rare, as they usually are in screening, κ can be low even when the reviewers agree on almost every record. Report the raw percentage agreement alongside κ, and resolve every disagreement.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-search-r" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sec-search-r"><span class="header-section-number">2.6</span> Searching from R</h2>
+<section id="sec-search-why-code" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="sec-search-why-code"><span class="header-section-number">2.6.1</span> Why code a search?</h3>
+<p>A search run through a web interface is reproducible only if the exact strategy is recorded. A search written as code is reproducible by construction, and it brings other advantages:</p>
+<ul>
+<li><strong>reproducibility</strong>: the script and its date are the exact record of what was done;</li>
+<li><strong>scale</strong>: the same search can be run across many journals or years at once;</li>
+<li><strong>automation</strong>: searches can be rerun on a schedule, which matters for living reviews (<a href="#sec-search-current" class="quarto-xref"><span>Section 2.9</span></a>);</li>
+<li><strong>integration</strong>: results arrive in R as data, ready for screening and for counting in the flow diagram.</li>
+</ul>
+<p>Several packages give access to bibliographic databases: <code>rentrez</code> (the NCBI Entrez API, used by PubMed), <code>xml2</code> (to parse the XML that PubMed returns), <code>easyPubMed</code> (a higher-level PubMed wrapper), <code>europepmc</code> (Europe PMC), and <code>wosr</code> and <code>rscopus</code> (Web of Science and Scopus, which require institutional access or an API key).</p>
+</section>
+<section id="sec-search-syntax" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="sec-search-syntax"><span class="header-section-number">2.6.2</span> PubMed query syntax</h3>
+<p>PubMed queries use field tags:</p>
+<div id="tbl-tags" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.2: PubMed field tags.
+</figcaption>
+<div aria-describedby="tbl-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<thead>
+<tr class="header">
+<th>Tag</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>[MeSH Terms]</code></td>
+<td>Controlled vocabulary</td>
+</tr>
+<tr class="even">
+<td><code>[Title/Abstract]</code></td>
+<td>Free text in the title or abstract</td>
+</tr>
+<tr class="odd">
+<td><code>[TA]</code></td>
+<td>Journal title abbreviation</td>
+</tr>
+<tr class="even">
+<td><code>[PDAT]</code></td>
+<td>Publication date</td>
+</tr>
+<tr class="odd">
+<td><code>[PT]</code></td>
+<td>Publication type</td>
+</tr>
+<tr class="even">
+<td><code>[AU]</code></td>
+<td>Author</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Boolean operators (<code>AND</code>, <code>OR</code>, <code>NOT</code>) must be in capitals; quotation marks enclose a phrase; an asterisk truncates (<code>cardio*</code>). Test every query in the PubMed web interface before using it in code. A typical query looks like this:</p>
+<pre><code>("cardiovascular diseases"[MeSH Terms]
+   OR "heart failure"[MeSH Terms]
+   OR cardiovascular[Title/Abstract])
+AND "randomized controlled trial"[PT]
+AND "humans"[MeSH Terms]
+AND (2020/01/01:3000/12/31[PDAT])
+NOT ("case reports"[PT] OR "letter"[PT])</code></pre>
+</section>
+<section id="sec-search-rentrez" class="level3" data-number="2.6.3">
+<h3 data-number="2.6.3" class="anchored" data-anchor-id="sec-search-rentrez"><span class="header-section-number">2.6.3</span> Querying PubMed with <code>rentrez</code></h3>
+<p>A search takes three steps: count the matching records, retrieve their PubMed identifiers (PMIDs), and fetch the records themselves. The code below queries a live database, so it is not run when the book is built; its results would change from day to day.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rentrez)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xml2)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>query <span class="ot">&lt;-</span> <span class="st">'("heart failure"[MeSH Terms] OR "atrial fibrillation"[MeSH Terms])</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="st">          AND "randomized controlled trial"[Publication Type]</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">          AND "humans"[MeSH Terms]</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">          AND (2022/01/01:2024/12/31[PDAT])'</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Count the matching records (retmax = 0 returns the count only)</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">entrez_search</span>(<span class="at">db =</span> <span class="st">"pubmed"</span>, <span class="at">term =</span> query, <span class="at">retmax =</span> <span class="dv">0</span>)<span class="sc">$</span>count</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Retrieve the PMIDs</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>pmids <span class="ot">&lt;-</span> <span class="fu">entrez_search</span>(<span class="at">db =</span> <span class="st">"pubmed"</span>, <span class="at">term =</span> query,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                       <span class="at">retmax =</span> <span class="dv">500</span>, <span class="at">sort =</span> <span class="st">"pub date"</span>)<span class="sc">$</span>ids</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Fetch the records as XML (at most 200 per request)</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>xml_raw <span class="ot">&lt;-</span> <span class="fu">entrez_fetch</span>(<span class="at">db =</span> <span class="st">"pubmed"</span>, <span class="at">id =</span> pmids[<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>],</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>                        <span class="at">rettype =</span> <span class="st">"xml"</span>, <span class="at">parsed =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>records <span class="ot">&lt;-</span> <span class="fu">xml_find_all</span>(<span class="fu">read_xml</span>(xml_raw), <span class="st">".//PubmedArticle"</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(records)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Each record is an XML document. Two small functions extract the fields we need into one row of a data frame:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the text of the first node matching an XPath, or NA if absent</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>extract_text <span class="ot">&lt;-</span> <span class="cf">function</span>(node, xpath) {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">xml_find_first</span>(node, xpath)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">inherits</span>(result, <span class="st">"xml_missing"</span>)) <span class="fu">return</span>(<span class="cn">NA_character_</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xml_text</span>(result)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># One PubMed record -&gt; one row</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>parse_article <span class="ot">&lt;-</span> <span class="cf">function</span>(node) {</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  year <span class="ot">&lt;-</span> <span class="fu">extract_text</span>(node, <span class="st">".//PubDate/Year"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.na</span>(year)) year <span class="ot">&lt;-</span> <span class="fu">extract_text</span>(node, <span class="st">".//PubDate/MedlineDate"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">PMID          =</span> <span class="fu">extract_text</span>(node, <span class="st">".//PMID"</span>),</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Title         =</span> <span class="fu">extract_text</span>(node, <span class="st">".//ArticleTitle"</span>),</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Journal       =</span> <span class="fu">extract_text</span>(node, <span class="st">".//Journal/Title"</span>),</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">JournalAbbrev =</span> <span class="fu">extract_text</span>(node, <span class="st">".//Journal/ISOAbbreviation"</span>),</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year          =</span> year,</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Abstract      =</span> <span class="fu">paste</span>(<span class="fu">xml_text</span>(<span class="fu">xml_find_all</span>(node, <span class="st">".//Abstract/AbstractText"</span>)),</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>                          <span class="at">collapse =</span> <span class="st">" "</span>),</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="sec-search-function" class="level3" data-number="2.6.4">
+<h3 data-number="2.6.4" class="anchored" data-anchor-id="sec-search-function"><span class="header-section-number">2.6.4</span> A reusable search function</h3>
+<p>The function below wraps these steps: it builds the query from MeSH terms, optional journals and dates; fetches the records in batches of 200, pausing between requests to respect NCBI’s limit of three requests per second; parses them; and saves the result to a CSV file.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fetch_rcts <span class="ot">&lt;-</span> <span class="cf">function</span>(mesh_terms, start, end, <span class="at">journals =</span> <span class="cn">NULL</span>,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">retmax =</span> <span class="dv">5000</span>, <span class="at">out_csv =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1. Build the query</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  pop_clause <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"("</span>, <span class="fu">paste</span>(<span class="fu">sprintf</span>(<span class="st">'"%s"[MeSH Terms]'</span>, mesh_terms),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">collapse =</span> <span class="st">" OR "</span>), <span class="st">")"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  journal_clause <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="fu">is.null</span>(journals)) <span class="st">""</span> <span class="cf">else</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">" AND ("</span>, <span class="fu">paste</span>(<span class="fu">sprintf</span>(<span class="st">'"%s"[TA]'</span>, journals), <span class="at">collapse =</span> <span class="st">" OR "</span>), <span class="st">")"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  query <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    pop_clause, journal_clause,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">' AND "randomized controlled trial"[Publication Type]'</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">' AND "humans"[MeSH Terms]'</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sprintf</span>(<span class="st">" AND (%s:%s[PDAT])"</span>, start, end),</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">' NOT ("case reports"[Publication Type] OR "letter"[Publication Type])'</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2. Retrieve the PMIDs</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  n_total <span class="ot">&lt;-</span> rentrez<span class="sc">::</span><span class="fu">entrez_search</span>(<span class="at">db =</span> <span class="st">"pubmed"</span>, <span class="at">term =</span> query, <span class="at">retmax =</span> <span class="dv">0</span>)<span class="sc">$</span>count</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  ids <span class="ot">&lt;-</span> rentrez<span class="sc">::</span><span class="fu">entrez_search</span>(<span class="at">db =</span> <span class="st">"pubmed"</span>, <span class="at">term =</span> query,</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>                                <span class="at">retmax =</span> <span class="fu">min</span>(n_total, retmax),</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                                <span class="at">sort =</span> <span class="st">"pub date"</span>)<span class="sc">$</span>ids</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 3. Fetch and parse in batches of 200</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  batches <span class="ot">&lt;-</span> <span class="fu">split</span>(ids, <span class="fu">ceiling</span>(<span class="fu">seq_along</span>(ids) <span class="sc">/</span> <span class="dv">200</span>))</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">lapply</span>(batches, <span class="cf">function</span>(batch) {</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    xml_raw <span class="ot">&lt;-</span> rentrez<span class="sc">::</span><span class="fu">entrez_fetch</span>(<span class="at">db =</span> <span class="st">"pubmed"</span>, <span class="at">id =</span> batch,</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">rettype =</span> <span class="st">"xml"</span>, <span class="at">parsed =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Sys.sleep</span>(<span class="fl">0.34</span>)                       <span class="co"># at most 3 requests per second</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    recs <span class="ot">&lt;-</span> <span class="fu">xml_find_all</span>(<span class="fu">read_xml</span>(xml_raw), <span class="st">".//PubmedArticle"</span>)</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(recs, parse_article))</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, results)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 4. Save a dated copy</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(out_csv)) {</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(<span class="fu">dirname</span>(out_csv), <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write.csv</span>(df, out_csv, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>  df</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We use it to find randomised trials in five cardiovascular conditions published in six general and cardiology journals in 2023 and 2024. The search was run once and saved; the book reads the saved copy, so its numbers do not change each time it is rebuilt. To rerun the search, delete <code>data/cv_rcts_demo.csv</code>.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(<span class="st">"data/cv_rcts_demo.csv"</span>)) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  cv_rcts <span class="ot">&lt;-</span> <span class="fu">fetch_rcts</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mesh_terms =</span> <span class="fu">c</span>(<span class="st">"heart failure"</span>, <span class="st">"atrial fibrillation"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"coronary artery disease"</span>, <span class="st">"hypertension"</span>, <span class="st">"stroke"</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">journals   =</span> <span class="fu">c</span>(<span class="st">"N Engl J Med"</span>, <span class="st">"Lancet"</span>, <span class="st">"JAMA"</span>, <span class="st">"BMJ"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"JAMA Cardiol"</span>, <span class="st">"Circulation"</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">start      =</span> <span class="st">"2023/01/01"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">end        =</span> <span class="st">"2024/12/31"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">out_csv    =</span> <span class="st">"data/cv_rcts_demo.csv"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>cv_rcts <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/cv_rcts_demo.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(cv_rcts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 221</code></pre>
+</div>
+</div>
+<p>The search retrieved 221 articles. <a href="#tbl-cv-rcts" class="quarto-xref">Table&nbsp;<span>2.3</span></a> shows the first few.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cv_rcts <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(PMID, Title, JournalAbbrev, Year) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">4</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Title =</span> <span class="fu">str_trunc</span>(Title, <span class="dv">70</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"PMID"</span>, <span class="st">"Title"</span>, <span class="st">"Journal"</span>, <span class="st">"Year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-cv-rcts" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cv-rcts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.3: The first four records retrieved.
+</figcaption>
+<div aria-describedby="tbl-cv-rcts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 72%">
+<col style="width: 13%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">PMID</th>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Journal</th>
+<th style="text-align: right;">Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">39644913</td>
+<td style="text-align: left;">TransCatheter aortic valve implantation and fractional flow reserve…</td>
+<td style="text-align: left;">Lancet</td>
+<td style="text-align: right;">2025</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">39555822</td>
+<td style="text-align: left;">Left Atrial Appendage Closure after Ablation for Atrial Fibrillation.</td>
+<td style="text-align: left;">N Engl J Med</td>
+<td style="text-align: right;">2025</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">39555827</td>
+<td style="text-align: left;">Intensive Blood-Pressure Control in Patients with Type 2 Diabetes.</td>
+<td style="text-align: left;">N Engl J Med</td>
+<td style="text-align: right;">2025</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">39556714</td>
+<td style="text-align: left;">Effects of Tirzepatide on the Clinical Trajectory of Patients With …</td>
+<td style="text-align: left;">Circulation</td>
+<td style="text-align: right;">2025</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Because the results are data, they can be summarised like any other data (<a href="#fig-cv-rcts" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>).</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>cv_rcts <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(JournalAbbrev, Year) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(Year), <span class="at">y =</span> n, <span class="at">fill =</span> JournalAbbrev)) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Number of trials"</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-cv-rcts" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cv-rcts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02-finding-evidence_files/figure-html/fig-cv-rcts-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cv-rcts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Randomised trials retrieved, by journal and year.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A sudden drop in the most recent period usually reflects publication lag rather than fewer trials; journals that dominate are worth prioritising for citation chasing.</p>
+</section>
+<section id="sec-search-epmc" class="level3" data-number="2.6.5">
+<h3 data-number="2.6.5" class="anchored" data-anchor-id="sec-search-epmc"><span class="header-section-number">2.6.5</span> Europe PMC</h3>
+<p><code>rentrez</code> queries the same database as the PubMed website. The <code>europepmc</code> package queries Europe PMC, which overlaps with PubMed but adds preprints (bioRxiv, medRxiv), full-text search of open-access articles, citation links and links to deposited datasets. As before, the search was run once and saved.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(<span class="st">"data/epmc_hf_trials.csv"</span>)) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  epmc_hf <span class="ot">&lt;-</span> europepmc<span class="sc">::</span><span class="fu">epmc_search</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">query  =</span> <span class="st">'MESH:"Heart Failure" AND PUB_TYPE:"Clinical Trial" AND FIRST_PDATE:[2022 TO 2024]'</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">limit  =</span> <span class="dv">500</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">output =</span> <span class="st">"parsed"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.csv</span>(epmc_hf, <span class="st">"data/epmc_hf_trials.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>epmc_hf <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/epmc_hf_trials.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>epmc_hf <span class="sc">|&gt;</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(title, journalTitle, pubYear, pmid) <span class="sc">|&gt;</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">title =</span> <span class="fu">str_trunc</span>(title, <span class="dv">70</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Title"</span>, <span class="st">"Journal"</span>, <span class="st">"Year"</span>, <span class="st">"PMID"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 75%">
+<col style="width: 9%">
+<col style="width: 5%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Journal</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">PMID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Effect of emerging digital technologies and methodologies combined …</td>
+<td style="text-align: left;">Trials</td>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">38303057</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Agonist antibody to guanylate cyclase receptor NPR1 regulates vascu…</td>
+<td style="text-align: left;">Nature</td>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">39261724</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Prospective randomised unblinded comparison of sputum viscosity for…</td>
+<td style="text-align: left;">PLoS One</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">37590203</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+API keys
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Without an NCBI API key you may make three requests per second; with one, ten. Register at <a href="https://www.ncbi.nlm.nih.gov/account/">ncbi.nlm.nih.gov/account</a>, then store the key in your <code>.Renviron</code> file (<code>ENTREZ_KEY=...</code>), where <code>rentrez</code> finds it automatically. Never put API keys in scripts or commit them to version control.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-search-ai" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="sec-search-ai"><span class="header-section-number">2.7</span> AI-assisted screening</h2>
+<p>Machine learning and large language models (LLMs) are increasingly used to help with screening.</p>
+<ul>
+<li><a href="https://asreview.nl">ASReview</a> is open source and runs locally: after you label a few dozen records, an active-learning model ranks the rest so that likely inclusions are seen first.</li>
+<li><a href="https://rayyan.ai">Rayyan</a> is web-based, with a free tier; it suggests decisions that reviewers confirm.</li>
+<li><a href="https://covidence.org">Covidence</a> covers the whole workflow, from import to screening, extraction and risk of bias.</li>
+<li>A custom LLM pipeline can send each abstract, with the inclusion criteria, to a model through its API and record a decision and reason for every record.</li>
+</ul>
+<p>These tools can classify abstracts quickly against well-defined criteria, prioritise records for human review, and draft data extraction for human checking. They cannot yet replace duplicate human review without validated error rates, apply ambiguous criteria consistently, assess risk of bias, or guarantee that no relevant study is missed.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Validate before you rely on it
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If an automated screener is to replace one of the two human reviewers, first measure its sensitivity against human decisions on a labelled sample of records from your own review, and report it. Methods guidance in this area is changing quickly; check the current Cochrane guidance before you start.</p>
+</div>
+</div>
+</section>
+<section id="sec-search-loop" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="sec-search-loop"><span class="header-section-number">2.8</span> Closing the loop: from search to flow diagram</h2>
+<p>The flow diagram in <a href="#sec-search-prisma" class="quarto-xref"><span>Section 2.5.3</span></a> used numbers typed by hand. In a scripted review, every number is a variable produced by the search and screening code, and is never retyped. Here the objects are stand-ins, with the same numbers as <a href="#fig-prisma-mermaid" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>; in your own review they would already exist, created by your database searches and screening.</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stand-ins for objects your own pipeline would create</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>central_search <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">841</span>)       <span class="co"># e.g. from a CENTRAL export</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>medline_search <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">1923</span>)      <span class="co"># e.g. rentrez::entrez_search()</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>embase_search  <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">count =</span> <span class="dv">2417</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>registers_n    <span class="ot">&lt;-</span> <span class="dv">142</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>greylit_n      <span class="ot">&lt;-</span> <span class="dv">37</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>deduped_df     <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3961</span>)  <span class="co"># after deduplication</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>passed_ta_df   <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">420</span>)   <span class="co"># passed title/abstract screening</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>included_df    <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">42</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                             <span class="at">in_meta_analysis =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">TRUE</span>, <span class="dv">38</span>), <span class="fu">rep</span>(<span class="cn">FALSE</span>, <span class="dv">4</span>)))</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># One object holding every number in the flow diagram</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">central      =</span> central_search<span class="sc">$</span>count,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">medline      =</span> medline_search<span class="sc">$</span>count,</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">embase       =</span> embase_search<span class="sc">$</span>count,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">other        =</span> registers_n <span class="sc">+</span> greylit_n,</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">no_dupes     =</span> <span class="fu">nrow</span>(deduped_df),</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">ta_excluded  =</span> <span class="fu">nrow</span>(deduped_df) <span class="sc">-</span> <span class="fu">nrow</span>(passed_ta_df),</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">full_text    =</span> <span class="fu">nrow</span>(passed_ta_df),</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">ft_excluded  =</span> <span class="fu">nrow</span>(passed_ta_df) <span class="sc">-</span> <span class="fu">nrow</span>(included_df),</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">qualitative  =</span> <span class="fu">nrow</span>(included_df),</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">quantitative =</span> <span class="fu">sum</span>(included_df<span class="sc">$</span>in_meta_analysis))</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 10
+ $ central     : num 841
+ $ medline     : num 1923
+ $ embase      : num 2417
+ $ other       : num 179
+ $ no_dupes    : int 3961
+ $ ta_excluded : int 3541
+ $ full_text   : int 420
+ $ ft_excluded : int 378
+ $ qualitative : int 42
+ $ quantitative: int 38</code></pre>
+</div>
+</div>
+<p>The same <code>counts</code> object can feed <code>PRISMA2020</code> (replace the typed numbers in <a href="#sec-search-prisma" class="quarto-xref"><span>Section 2.5.3</span></a> with <code>counts$...</code>) and a Mermaid diagram built with <code>glue()</code> and drawn by <code>DiagrammeR::mermaid()</code>. Change the search, rerun the script, and every diagram and number in the report updates together.</p>
+</section>
+<section id="sec-search-current" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="sec-search-current"><span class="header-section-number">2.9</span> Keeping the search current</h2>
+<p>A review starts to go out of date the day its search is run. There are three ways to keep it current:</p>
+<ol type="1">
+<li><strong>Search alerts.</strong> PubMed’s “Create alert” emails new records matching a saved search.</li>
+<li><strong>Scheduled reruns.</strong> A scripted search can be rerun automatically, for example with a scheduled job or GitHub Actions, and new records flagged.</li>
+<li><strong>Living systematic reviews</strong>, which are updated continuously as new evidence appears, with pre-specified rules for when the analysis is redone <span class="citation" data-cites="elliott2017living">(<a href="references.html#ref-elliott2017living" role="doc-biblioref">13</a>)</span>.</li>
+</ol>
+<p>With <code>fetch_rcts()</code>, an update is just a new date range:</p>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>last_run <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-12-01"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>today    <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>new_results <span class="ot">&lt;-</span> <span class="fu">fetch_rcts</span>(</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">mesh_terms =</span> <span class="st">"heart failure"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">start      =</span> <span class="fu">format</span>(last_run, <span class="st">"%Y/%m/%d"</span>),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">end        =</span> <span class="fu">format</span>(today, <span class="st">"%Y/%m/%d"</span>),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">out_csv    =</span> <span class="fu">paste0</span>(<span class="st">"data/update_"</span>, today, <span class="st">".csv"</span>))</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">nrow</span>(new_results), <span class="st">"new articles since"</span>, <span class="fu">format</span>(last_run), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Searches should be updated shortly before a review is submitted, and in any case no more than 12 months before publication <span class="citation" data-cites="lefebvre_ch4">(<a href="references.html#ref-lefebvre_ch4" role="doc-biblioref">3</a>)</span>.</p>
+</section>
+<section id="sec-search-mistakes" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="sec-search-mistakes"><span class="header-section-number">2.10</span> Common mistakes</h2>
+<div id="tbl-mistakes" class="striped quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mistakes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.4: Common search mistakes and their remedies.
+</figcaption>
+<div aria-describedby="tbl-mistakes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table-striped caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Remedy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Searching only PubMed</td>
+<td>Add CENTRAL, Embase and trial registers</td>
+</tr>
+<tr class="even">
+<td>Using MeSH only</td>
+<td>Add title and abstract synonyms</td>
+</tr>
+<tr class="odd">
+<td>Restricting language without justification</td>
+<td>Search all languages; translate when needed</td>
+</tr>
+<tr class="even">
+<td>Screening before deduplicating</td>
+<td>Deduplicate all exports first</td>
+</tr>
+<tr class="odd">
+<td>Not recording the date of each search</td>
+<td>Record it, or let the script do so with <code>Sys.Date()</code></td>
+</tr>
+<tr class="even">
+<td>Changing the strategy after seeing results</td>
+<td>Finalise the strategy before the first run; document amendments</td>
+</tr>
+<tr class="odd">
+<td>Not saving the complete strategy</td>
+<td>Export it and keep it under version control</td>
+</tr>
+<tr class="even">
+<td>Adding exclusion criteria after screening</td>
+<td>Pre-specify them in the registered protocol; document any deviations</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="key-points" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-points">Key points</h2>
+<ol type="1">
+<li>A biased search produces a biased review; no analysis can recover a missing study.</li>
+<li>Register the protocol before running the first search.</li>
+<li>Search several databases, trial registers and regulatory sources, not PubMed alone.</li>
+<li>Favour sensitivity over precision: screen more, miss less.</li>
+<li>The unit of synthesis is the study, not the report.</li>
+<li>Code the search: reproducibility is the point, not an option.</li>
+<li>Living reviews need living searches, and automation helps.</li>
+</ol>
+</section>
+<section id="exercises" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Choose a clinical question of your own and write it as an estimand (<a href="01-introduction.html#sec-intro-estimand" class="quarto-xref"><span>Section 1.3</span></a>). Translate it into a PubMed query with population, intervention and design concepts, using MeSH terms and free text for each.</li>
+<li>Run your query with <code>fetch_rcts()</code> (or the three <code>rentrez</code> steps). Record the date and the number of hits. Read 10 abstracts and note which would be genuinely difficult to classify against your inclusion criteria.</li>
+<li>Ask a colleague to screen the same 10 abstracts independently. Calculate your percentage agreement and κ. Why might κ be low even if you agree on most records?</li>
+<li>Look up the trial registration of one included trial on ClinicalTrials.gov. Do the registered primary outcomes match the published ones?</li>
+</ol>
+</section>
+<section id="further-reading" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><span class="citation" data-cites="lefebvre_ch4">(<a href="references.html#ref-lefebvre_ch4" role="doc-biblioref">3</a>)</span>, Chapter 4 of the <em>Cochrane Handbook</em>: the standard reference on searching and selecting studies.</li>
+<li><span class="citation" data-cites="mcgowan2016press">(<a href="references.html#ref-mcgowan2016press" role="doc-biblioref">9</a>)</span> for the PRESS checklist.</li>
+<li><span class="citation" data-cites="page2021prisma">(<a href="references.html#ref-page2021prisma" role="doc-biblioref">10</a>)</span> and <span class="citation" data-cites="haddaway2022prisma">(<a href="references.html#ref-haddaway2022prisma" role="doc-biblioref">11</a>)</span> for PRISMA 2020 and its R package.</li>
+<li>The documentation of <a href="https://cran.r-project.org/package=rentrez"><code>rentrez</code></a> and <a href="https://cran.r-project.org/package=europepmc"><code>europepmc</code></a>.</li>
+</ul>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-cochrane_handbook" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Higgins JPT, Thomas J, Chandler J, Cumpston M, Li T, Page MJ, et al., editors. Cochrane handbook for systematic reviews of interventions [Internet]. Version 6.5. Cochrane; 2024. Available from: <a href="https://training.cochrane.org/handbook">https://training.cochrane.org/handbook</a></div>
+</div>
+<div id="ref-simmons2011" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Simmons JP, Nelson LD, Simonsohn U. <a href="https://doi.org/10.1177/0956797611417632">False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant</a>. Psychological Science. 2011;22:1359–66. </div>
+</div>
+<div id="ref-lefebvre_ch4" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Lefebvre C, Glanville J, Briscoe S, Featherstone R, Littlewood A, Metzendorf MI, et al. Chapter 4: Searching for and selecting studies. In: Cochrane handbook for systematic reviews of interventions [Internet]. Cochrane; 2024. Available from: <a href="https://training.cochrane.org/handbook/current/chapter-04">https://training.cochrane.org/handbook/current/chapter-04</a></div>
+</div>
+<div id="ref-easterbrook1991" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Easterbrook PJ, Berlin JA, Gopalan R, Matthews DR. <a href="https://doi.org/10.1016/0140-6736(91)90201-Y">Publication bias in clinical research</a>. Lancet. 1991;337:867–72. </div>
+</div>
+<div id="ref-dwan2008" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Dwan K, Altman DG, Arnaiz JA, Bloom J, Chan AW, Cronin E, et al. <a href="https://doi.org/10.1371/journal.pone.0003081">Systematic review of the empirical evidence of study publication bias and outcome reporting bias</a>. PLoS ONE. 2008;3:e3081. </div>
+</div>
+<div id="ref-jefferson2014" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Jefferson T, Jones M, Doshi P, Spencer EA, Onakpoya I, Heneghan CJ. <a href="https://doi.org/10.1136/bmj.g2545">Oseltamivir for influenza in adults and children: Systematic review of clinical study reports and summary of regulatory comments</a>. BMJ. 2014;348:g2545. </div>
+</div>
+<div id="ref-lelorier1997" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">LeLorier J, Grégoire G, Benhaddad A, Lapierre J, Derderian F. <a href="https://doi.org/10.1056/NEJM199708213370806">Discrepancies between meta-analyses and subsequent large randomized, controlled trials</a>. New England Journal of Medicine. 1997;337:536–42. </div>
+</div>
+<div id="ref-gregoire1995" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Grégoire G, Derderian F, Le Lorier J. <a href="https://doi.org/10.1016/0895-4356(94)00098-B">Selecting the language of the publications included in a meta-analysis: Is there a <span class="nocase">Tower of Babel</span> bias?</a> Journal of Clinical Epidemiology. 1995;48:159–63. </div>
+</div>
+<div id="ref-mcgowan2016press" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">McGowan J, Sampson M, Salzwedel DM, Cogo E, Foerster V, Lefebvre C. <a href="https://doi.org/10.1016/j.jclinepi.2016.01.021"><span>PRESS</span> peer review of electronic search strategies: 2015 guideline statement</a>. Journal of Clinical Epidemiology. 2016;75:40–6. </div>
+</div>
+<div id="ref-page2021prisma" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Page MJ, McKenzie JE, Bossuyt PM, Boutron I, Hoffmann TC, Mulrow CD, et al. <a href="https://doi.org/10.1136/bmj.n71">The <span>PRISMA</span> 2020 statement: An updated guideline for reporting systematic reviews</a>. BMJ. 2021;372:n71. </div>
+</div>
+<div id="ref-haddaway2022prisma" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Haddaway NR, Page MJ, Pritchard CC, McGuinness LA. <a href="https://doi.org/10.1002/cl2.1230"><span>PRISMA2020</span>: An <span>R</span> package and <span>Shiny</span> app for producing <span>PRISMA</span> 2020-compliant flow diagrams, with interactivity for optimised digital transparency and open synthesis</a>. Campbell Systematic Reviews. 2022;18:e1230. </div>
+</div>
+<div id="ref-landis1977" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Landis JR, Koch GG. <a href="https://doi.org/10.2307/2529310">The measurement of observer agreement for categorical data</a>. Biometrics. 1977;33:159–74. </div>
+</div>
+<div id="ref-elliott2017living" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Elliott JH, Synnot A, Turner T, Simmonds M, Akl EA, McDonald S, et al. <a href="https://doi.org/10.1016/j.jclinepi.2017.08.010">Living systematic review: 1. <span>Introduction</span>—the why, what, when, and how</a>. Journal of Clinical Epidemiology. 2017;91:23–30. </div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-introduction.html" class="pagination-link" aria-label="Why Knowledge Synthesis?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Knowledge Synthesis?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-question-to-data.html" class="pagination-link" aria-label="From Question to Data">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">From Question to Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

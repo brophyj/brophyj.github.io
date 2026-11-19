@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
@@ -73,7 +93,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1f7fd168c3a2bd1f3385ec7b3b313676.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0bb832c8c54435e969c1d0c4d5849237.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
@@ -103,7 +123,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="../../custom.scss">
 <meta property="og:title" content="Misinformed conclusions – James (Jay) Brophy">
 <meta property="og:description" content="caveat lector">
 <meta property="og:image" content="https://brophyj.com/posts/2023-04-15-misinformed-conclusions/featured.jpg">
@@ -244,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     
 <!-- main -->
 <main class="content quarto-banner-title-block column-page" id="quarto-document-content"><section id="likely-unintentional-but-misinformation-nevertheless" class="level2"><h2 class="anchored" data-anchor-id="likely-unintentional-but-misinformation-nevertheless">Likely unintentional (but misinformation nevertheless)</h2>
-<p>In three papers that I read this week, I believe that each suffers from misinterpretations in their conclusions[<span class="citation" data-cites="RN6772">@RN6772</span>]<span class="citation" data-cites="RN6776">[@RN6776]</span><span class="citation" data-cites="RN6773">[@RN6773]</span>.</p>
+<p>In three papers that I read this week, I believe that each suffers from misinterpretations in their conclusions[<span class="citation" data-cites="RN6772">Mentias et al. (<a href="#ref-RN6772" role="doc-biblioref">2023</a>)</span>]<span class="citation" data-cites="RN6776">(<a href="#ref-RN6776" role="doc-biblioref">Pacheco et al. 2023</a>)</span><span class="citation" data-cites="RN6773">(<a href="#ref-RN6773" role="doc-biblioref">Murphy et al. 2022</a>)</span>.</p>
 </section><section id="example-1" class="level2"><h2 class="anchored" data-anchor-id="example-1">Example 1</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -254,12 +273,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>In the first paper<span class="citation" data-cites="RN6772">[@RN6772]</span>, the authors conclude</p>
+<p>In the first paper<span class="citation" data-cites="RN6772">(<a href="#ref-RN6772" role="doc-biblioref">Mentias et al. 2023</a>)</span>, the authors conclude</p>
 <blockquote class="blockquote">
 <p>“In Medicare patients with pure native AR, TAVR with the current commercially available transcatheter valves has comparable short-term outcomes. Although long-term outcomes were inferior to SAVR, the possibility of residual confounding, biasing long-term outcomes, given older and frailer TAVR patients, cannot be excluded.”</p>
 </blockquote>
 <p>While acknowledging that TAVR was associated with higher unadjusted (HR, 1.90; 95% CI, 1.59-2.26; P &lt; .001) and adjusted risk of all-cause mortality compared with SAVR (adjusted HR, 1.41; 95% CI, 1.03-1.93; P = .02) with long term follow-up (which may indeed be at least partially explained by residual confounding), the authors interpret the results as being comparable for the two techniques at one year. They report one year propensity score adjusted mortality as 5.7% and 6.9% mortality in the TAVR and SAVR patient, respectively (p=0.3).</p>
-<p>Drawing conclusions based on p values is known to be dangerous and a proposed, albeit perhaps minor, improvement is to use confidence intervals<span class="citation" data-cites="RN5420">[@RN5420]</span>. The following shows the risk difference with the 95% CI for the two mortality outcomes.</p>
+<p>Drawing conclusions based on p values is known to be dangerous and a proposed, albeit perhaps minor, improvement is to use confidence intervals<span class="citation" data-cites="RN5420">(<a href="#ref-RN5420" role="doc-biblioref">Wasserstein, Schirm, and Lazar 2019</a>)</span>. The following shows the risk difference with the 95% CI for the two mortality outcomes.</p>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/prop.test.html">prop.test</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.057</span><span class="op">*</span><span class="fl">9880</span>,<span class="fl">.069</span><span class="op">*</span><span class="fl">1147</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">9980</span>,<span class="fl">1147</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
@@ -267,18 +286,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     2-sample test for equality of proportions with continuity correction
 
 data:  c(round(c(0.057 * 9880, 0.069 * 1147))) out of c(9980, 1147)
-X-squared = 2.7, df = 1, p-value = 0.1
+X-squared = 2.7141, df = 1, p-value = 0.09946
 alternative hypothesis: two.sided
 95 percent confidence interval:
- -0.028287  0.003362
+ -0.028287178  0.003362175
 sample estimates:
- prop 1  prop 2 
-0.05641 0.06888 </code></pre>
+    prop 1     prop 2 
+0.05641283 0.06887533 </code></pre>
 </div>
 </div>
 <p>The implies that even ignoring any biases, concluding that the two approaches have similar short term outcomes is only reasonable if one believes that a possible 2.8% absolute mortality reduction with SAVR from sampling variation alone is not clinically important. Others might consider that the conclusion is another example of conflating <strong>absence of evidence with evidence of absence</strong> and that additional data is required before drawing firm conclusions. This underscores the problem with dichotomized p values and risk ratios (as opposed to risk differences) as decision making tools.</p>
 </section><section id="example-2" class="level2"><h2 class="anchored" data-anchor-id="example-2">Example 2</h2>
-<p>A NEJM article<span class="citation" data-cites="RN6776">[@RN6776]</span> reported P that</p>
+<p>A NEJM article<span class="citation" data-cites="RN6776">(<a href="#ref-RN6776" role="doc-biblioref">Pacheco et al. 2023</a>)</span> reported P that</p>
 <blockquote class="blockquote">
 <p>“the prophylactic use of tranexamic acid during cesarean delivery did not lead to a significantly lower risk of a composite outcome of maternal death or blood transfusion than placebo” (RR 0.89; 95% CI 0.74 to 1.07; P=0.19 for the primary outcome).”</p>
 </blockquote>
@@ -294,33 +313,34 @@ tranexamic acid       201      5328</code></pre>
 </div>
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">epiR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/epiR/man/epi.2by2.html">epi.2by2</a></span><span class="op">(</span><span class="va">mat1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
-<pre><code>             Outcome +    Outcome -      Total                 Inc risk *
-Exposed +          233         5238       5471        4.26 (3.74 to 4.83)
-Exposed -          201         5328       5529        3.64 (3.16 to 4.16)
-Total              434        10566      11000        3.95 (3.59 to 4.33)
+<pre><code>             Outcome+    Outcome-      Total                 Inc risk *
+Exposure+         233        5238       5471        4.26 (3.74 to 4.83)
+Exposure-         201        5328       5529        3.64 (3.16 to 4.16)
+Total             434       10566      11000        3.95 (3.59 to 4.33)
 
 Point estimates and 95% CIs:
 -------------------------------------------------------------------
 Inc risk ratio                                 1.17 (0.97, 1.41)
-Odds ratio                                     1.18 (0.97, 1.43)
+Inc odds ratio                                 1.18 (0.97, 1.43)
 Attrib risk in the exposed *                   0.62 (-0.10, 1.35)
-Attrib fraction in the exposed (%)            14.64 (-2.70, 29.05)
+Attrib fraction in the exposed (%)            14.64 (-2.67, 29.03)
 Attrib risk in the population *                0.31 (-0.30, 0.92)
-Attrib fraction in the population (%)         7.86 (-1.76, 16.57)
+Attrib fraction in the population (%)         7.86 (3.78, 12.03)
+E-value                                        1.62 (1.00, NA)
 -------------------------------------------------------------------
 Uncorrected chi2 test that OR = 1: chi2(1) = 2.820 Pr&gt;chi2 = 0.093
 Fisher exact test that OR = 1: Pr&gt;chi2 = 0.096
- Wald confidence limits
- CI: confidence interval
- * Outcomes per 100 population units </code></pre>
+Wald confidence limits
+CI: confidence interval
+* Outcomes per 100 population units </code></pre>
 </div>
 </div>
 <p>The risk difference is 6 fewer outcomes /1000 treated (95% CI-13.5, 1.0) and the attributable fraction is 14.6% (95% CI -2.70, 29.05) of outcomes being eliminated by treatment.&nbsp; While these measures do not reach statistical significance, they may provide some additional insights into the trial’s interpretation as the associated sampling variations suggest an effect size as large as 13 fewer outcomes / 1000 treated and an attributable fraction as large as 29% have not been eliminated. If one believes these potential measures are of clinical importance, then continuing research with this agent may be indicated.</p>
 </section><section id="example-3" class="level2"><h2 class="anchored" data-anchor-id="example-3">Example 3</h2>
-<p>The third paper is entitled ” Effect of a Run-In Period on Estimated Treatment Effects in Cardiovascular Randomized Clinical Trials: A Meta-Analytic Review”<span class="citation" data-cites="RN6773">[@RN6773]</span> and the authors concluded “The use of a run-in period was not associated with a difference in the magnitude of treatment effect among cardiovascular prevention trials”.</p>
+<p>The third paper is entitled ” Effect of a Run-In Period on Estimated Treatment Effects in Cardiovascular Randomized Clinical Trials: A Meta-Analytic Review”<span class="citation" data-cites="RN6773">(<a href="#ref-RN6773" role="doc-biblioref">Murphy et al. 2022</a>)</span> and the authors concluded “The use of a run-in period was not associated with a difference in the magnitude of treatment effect among cardiovascular prevention trials”.</p>
 <p>I found this result to be a priori very surprising. However without the raw data it is difficult to completely reproduce and assess what the authors have done. Nevertheless working with the aggregate data from the last column in Figure 1, I have performed a Bayesian analysis, with a vaguely informative prior such that the results are completely dominated by the published data.</p>
 <p>The posterior probability is displayed below.</p>
-<div class="cell" data-hash="index_cache/html/brms_e3c1063390843577f44816716b2c0165">
+<div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><a href="index_files/figure-html/brms-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/brms-1.png" class="img-fluid figure-img" style="width:60.0%"></a></p>
@@ -330,6 +350,9 @@ Fisher exact test that OR = 1: Pr&gt;chi2 = 0.096
 </div>
 <section id="ggplot-version" class="level3"><h3 class="anchored" data-anchor-id="ggplot-version">ggplot version</h3>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: `label` cannot be a &lt;ggplot2::element_blank&gt; object.</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><a href="index_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></a></p>
@@ -337,11 +360,25 @@ Fisher exact test that OR = 1: Pr&gt;chi2 = 0.096
 </div>
 </div>
 </div>
-<p>Based on this analysis, the probability that run-in trials has a larger treatment effect than non-run-in trials was 99 %. There was an 79 % probability that the effect size was at least 5% greater in the run-in trials. While this effect is not large, it is more in keeping with face validity that would suggest that run-in trials, by excluding non-compilers and those developing side effects, would be expected to yield a larger effect size than a comparable trial without a run-in period. </p>
-</section></section><section id="references" class="level2"><h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Based on this analysis, the probability that run-in trials has a larger treatment effect than non-run-in trials was 99 %. There was an 80 % probability that the effect size was at least 5% greater in the run-in trials. While this effect is not large, it is more in keeping with face validity that would suggest that run-in trials, by excluding non-compilers and those developing side effects, would be expected to yield a larger effect size than a comparable trial without a run-in period. </p>
+</section></section><section id="references" class="level2">
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brophy2023,
+
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-RN6772" class="csl-entry" role="listitem">
+Mentias, A., M. Saad, V. Menon, G. W. Reed, Z. Popovic, D. Johnston, L. Rodriguez, et al. 2023. <span>“Transcatheter Vs Surgical Aortic Valve Replacement in Pure Native Aortic Regurgitation.”</span> Journal Article. <em>Ann Thorac Surg</em> 115 (4): 870–76. <a href="https://doi.org/10.1016/j.athoracsur.2022.09.016">https://doi.org/10.1016/j.athoracsur.2022.09.016</a>.
+</div>
+<div id="ref-RN6773" class="csl-entry" role="listitem">
+Murphy, R. P., M. J. O’Donnell, A. Nolan, E. McGrath, A. O’Conghaile, J. Ferguson, A. Alvarez-Iglesias, et al. 2022. <span>“Effect of a Run-in Period on Estimated Treatment Effects in Cardiovascular Randomized Clinical Trials: A Meta-Analytic Review.”</span> Journal Article. <em>J Am Heart Assoc</em> 11 (20): e023061. <a href="https://doi.org/10.1161/JAHA.121.023061">https://doi.org/10.1161/JAHA.121.023061</a>.
+</div>
+<div id="ref-RN6776" class="csl-entry" role="listitem">
+Pacheco, L. D., R. G. Clifton, G. R. Saade, S. J. Weiner, S. Parry, Jr. Thorp J. M., M. Longo, et al. 2023. <span>“Tranexamic Acid to Prevent Obstetrical Hemorrhage After Cesarean Delivery.”</span> Journal Article. <em>N Engl J Med</em> 388 (15): 1365–75. <a href="https://doi.org/10.1056/NEJMoa2207419">https://doi.org/10.1056/NEJMoa2207419</a>.
+</div>
+<div id="ref-RN5420" class="csl-entry" role="listitem">
+Wasserstein, RL., AL. Schirm, and NA. Lazar. 2019. <span>“Moving to a World Beyond <span>‘p &lt; 0.05’</span>.”</span> Journal Article. <em>The American Statistician</em> 73: 1–19.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{brophy2023,
   author = {Brophy, Jay},
   title = {Misinformed Conclusions},
   date = {2023-04-15},

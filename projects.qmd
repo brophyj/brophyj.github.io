@@ -6,6 +6,15 @@ title: " "
 Selected projects <iconify-icon icon="fluent-mdl2:reading-mode"></iconify-icon>
 </p>
 
+# Knowledge Synthesis in Health Research
+
+*Systematic reviews and meta-analysis with R and Bayesian reasoning*
+
+A free online textbook, in 24 chapters, that takes a health research question from protocol and search to pooled estimate, critical appraisal and decision, with runnable R code throughout. It is based on the graduate course EPIB 629 (Systematic Reviews and Meta-Analysis) at McGill University.
+
+[**Read the book**](knowledge-synthesis/index.html)
+
+
 # Assessing clinical trial interpretability    
 
 ![Assessing clinical trial interpretability](photos/images/freq_bayes.png){fig-align="center"}

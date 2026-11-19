@@ -1,0 +1,152 @@
+study,treat,mean,sd,n
+Almeida-Montes 2005,Fluoxetine,-8.14,4.54,9
+Almeida-Montes 2005,Pill-PBO,-9.14,4.02,7
+Atkinson 2014,Duloxetine,-24.3,11.27,103
+Atkinson 2014,Fluoxetine,-23.7,11.27,113
+Atkinson 2014,Pill-PBO,-24.3,11.59,113
+Atkinson 2018,Desvenlafaxine,-22.9,11.69,113
+Atkinson 2018,Pill-PBO,-24.06,11.73,228
+Attari 2006,Fluoxetine,-10.95,2.61,20
+Attari 2006,Nortriptyline,-2.6,0.8,20
+Berard 2006,Paroxetine,-11.01,10.02,91
+Berard 2006,Pill-PBO,-12.38,10.64,177
+Bernstein 2000,Imipramine+CBT,-12.2,9.21,31
+Bernstein 2000,Pill-PBO+CBT,-6.8,14.52,32
+Braconnier 2003,Clomipramine,-13.3,9.94,58
+Braconnier 2003,Paroxetine,-17.8,8.4,63
+Brent 1997,CBT,-18.6,8.36,35
+Brent 1997,FT,-13.5,8.69,29
+Brent 1997,SUP,-15.9,10.09,33
+Bristol-Myers Squibb 2002,Nefazodone,-21.6,13.68,93
+Bristol-Myers Squibb 2002,Pill-PBO,-21.74,14.04,180
+Charkhandeh 2016,CBT,-9.52,5.53,65
+Charkhandeh 2016,WL,0.03,5.1,60
+Clarke 1999,CBT,-8.44,5.88,69
+Clarke 1999,WL,-6.8,6.52,27
+Clarke 2002,CBT,-6.5,5.25,41
+Clarke 2002,TAU,-5.4,5.05,47
+Cornelius 2009,Fluoxetine+CBT,-12.34,7.08,24
+Cornelius 2009,Pill-PBO+CBT,-14.57,8.88,26
+Curtis 1992,CBT,-18.1,10.25,10
+Curtis 1992,WL,-2.1,9.17,9
+Deas 2000,Sertraline+CBT,-10.4,4.81,5
+Deas 2000,Pill-PBO+CBT,-8.4,5.28,5
+Diamond 2002,FT,-9.8,7.64,16
+Diamond 2002,WL,-1.8,6.85,16
+Dietz 2015,IPT,-17.6,6.38,25
+Dietz 2015,Psy-PBO,-12.7,9.76,13
+Durgam 2018,Vilazodone,-22.5,11.73,170
+Durgam 2018,Pill-PBO,-23.56,11.97,354
+Eli Lilly 1986,Fluoxetine,-12.42,7.24,19
+Eli Lilly 1986,Pill-PBO,-13.91,7.84,21
+Emslie 1997,Fluoxetine,-10.5,14.84,48
+Emslie 1997,Pill-PBO,-20.1,13.19,48
+Emslie 2002a,Fluoxetine,-14.9,12.74,105
+Emslie 2002a,Pill-PBO,-22,12.11,109
+Emslie 2002b,Nefazodone,-22.5,14.46,96
+Emslie 2002b,Pill-PBO,-26.5,14.46,99
+Emslie 2006,Paroxetine,-23.38,16,100
+Emslie 2006,Pill-PBO,-22.58,14.77,101
+Emslie 2007a,Venlafaxine,-16.1,12.9,73
+Emslie 2007a,Pill-PBO,-18.1,12.86,68
+Emslie 2007b,Venlafaxine,-22.6,13.52,92
+Emslie 2007b,Pill-PBO,-24.3,12.66,101
+Emslie 2009,Escitalopram,-18.8,15.91,157
+Emslie 2009,Pill-PBO,-22.1,15.14,154
+Emslie 2014,Duloxetine,-21.6,13.74,117
+Emslie 2014,Fluoxetine,-22.6,13.44,112
+Emslie 2014,Pill-PBO,-24.5,13.86,219
+Eskin 2008,PST,-10,7.05,13
+Eskin 2008,WL,-2.1,4.31,10
+Findling 2009,Fluoxetine,-22.63,12.48,16
+Findling 2009,Pill-PBO,-18.4,12.47,18
+Fine 1991,BT,-1.9,7.8,20
+Fine 1991,SUP,-5.3,6.89,27
+Geller 1990,Nortriptyline,-13.6,7.93,19
+Geller 1990,Pill-PBO,-16.6,6.77,12
+Geller 1992,Nortriptyline,-17.6,8.49,24
+Geller 1992,Pill-PBO,-17,9.99,26
+GlaxoSmithKline 2009,Paroxetine,-11.9,13.2,27
+GlaxoSmithKline 2009,Pill-PBO,-16.5,13.19,29
+Goodyer 2008,Fluoxetine,-19,12.3,99
+Goodyer 2008,Fluoxetine+CBT,-16.4,14.7,100
+Goodyer IM 2017,CBT,-14.6,12.08,106
+Goodyer IM 2017,DYN,-12.3,12.84,108
+Goodyer IM 2017,Psy-PBO,-12.1,12.93,112
+Hongfen 2009,Fluoxetine,-15,6,30
+Hongfen 2009,Venlafaxine,-15,6,29
+Iftene F 2015,CBT,-2.48,6.29,28
+Iftene F 2015,Sertraline,-4.64,7.68,33
+Iftene F 2015,Sertraline+CBT,-1.73,6.86,27
+Israel 2013,FT,-8.1,6.32,11
+Israel 2013,TAU,-0.3,5.36,9
+Klein 1998,Desipramine,-6.72,4.53,18
+Klein 1998,Pill-PBO,-10.61,3.21,18
+Kobak 2015,CBT,-6.09,4.26,35
+Kobak 2015,TAU,-5.73,4.71,30
+Kutcher 1994,Desipramine,-10.35,4.32,25
+Kutcher 1994,Pill-PBO,-9.95,4.61,17
+Kye 1996,Amitriptyline,-4.4,4.31,13
+Kye 1996,Pill-PBO,-4,4.71,18
+Lewinsohn 1990,CBT,-13.16,10.86,40
+Lewinsohn 1990,WL,-3.37,10.9,19
+Luby 2012,FT,-2.7,8.56,25
+Luby 2012,Psy-PBO,-1.4,9.12,18
+Mandoki 1997,Venlafaxine+CBT,-11.74,2.54,20
+Mandoki 1997,Pill-PBO+CBT,-9.84,2.54,20
+March 2004,Fluoxetine,-19.41,6.93,112
+March 2004,Pill-PBO,-17.58,7.95,111
+March 2004,CBT,-22.64,7.08,109
+March 2004,Fluoxetine+CBT,-27,7.17,107
+Melvin 2006,Sertraline,-17.77,14.98,22
+Melvin 2006,CBT,-12,14.85,26
+Melvin 2006,Sertraline+CBT,-12.32,16.88,25
+Mufson 1999,IPT,-12.9,7.6,24
+Mufson 1999,Psy-PBO,-6.9,8.75,24
+Mufson 2004b,IPT,-10.2,7.18,34
+Mufson 2004b,TAU,-5.5,7.32,29
+Noury JL 2015,Paroxetine,-9.1,8.674,87
+Noury JL 2015,Imipramine,-9,7.853,94
+Noury JL 2015,Pill-PBO,-10.7,7.684,90
+Organon 2002a,Mirtazapine,-14.69,12.55,44
+Organon 2002a,Pill-PBO,-15.85,12.54,82
+Organon 2002b,Mirtazapine,-8.81,12.22,41
+Organon 2002b,Pill-PBO,-13.48,12.24,83
+Poole 2017,FT,-5.57,7.52,25
+Poole 2017,TAU,-4.17,7.56,26
+Puig-Antich 1987,Imipramine,-1.1,0.78,22
+Puig-Antich 1987,Pill-PBO,-1.2,0.6,16
+Riggs 2007,Fluoxetine+CBT,-20.94,9.91,63
+Riggs 2007,Pill-PBO+CBT,-18.89,9.91,63
+Rohde 2004,CBT,-8.2,5.83,44
+Rohde 2004,Psy-PBO,-5.5,5.3,47
+Rossello 1999,CBT,-6.84,7.3,21
+Rossello 1999,IPT,-10.42,7.08,19
+Rossello 1999,WL,-4.3,6.45,18
+Shirk 2014,CBT,-8.5,11.13,20
+Shirk 2014,TAU,-12.83,13.24,23
+Tang 2009,IPT,-12.69,13,35
+Tang 2009,TAU,-0.74,10.74,38
+Tompson 2017,FT,-22.22,10.89,54
+Tompson 2017,SUP,-19.68,12.4,62
+Trowell 2007,DYN,-7.77,8.67,35
+Trowell 2007,FT,-13.08,7.42,37
+von Knorring 2006,Citalopram,-11.91,15.93,91
+von Knorring 2006,Pill-PBO,-12.09,16.36,96
+Vostanis 1996,CBT,-15.8,13.94,28
+Vostanis 1996,Psy-PBO,-10.2,15.15,28
+Wagner 2003a,Sertraline,-22.1,14.71,88
+Wagner 2003a,Pill-PBO,-25.9,14.71,93
+Wagner 2003b,Sertraline,-25.6,15.71,91
+Wagner 2003b,Pill-PBO,-28.8,15.71,92
+Wagner 2004,Citalopram,-16.5,14.75,85
+Wagner 2004,Pill-PBO,-21.7,15.09,89
+Wagner 2006,Escitalopram,-20.2,13.5,132
+Wagner 2006,Pill-PBO,-21.9,13.5,129
+Weihs 2018,Fluoxetine,-23.1,12.49,112
+Weihs 2018,Desvenlafaxine,-22.6,12.55,115
+Weihs 2018,Pill-PBO,-24.8,12.27,110
+Weisz 2009,CBT,-2.88,7.25,25
+Weisz 2009,TAU,-2.82,8.2,19
+Wood 1996,CBT,-10.9,10.11,26
+Wood 1996,Psy-PBO,-8.9,12.54,27
