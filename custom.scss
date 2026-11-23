@@ -335,10 +335,3 @@ table.evidence tr:last-child td {
   border-left-color: #D50032;           // your $selection-bg red
   background: rgba(213, 0, 50, 0.05);
 }
-
-/* Hide PubPeer badge and link annotations */
-.pubpeer-badge,
-a[href*="pubpeer.com"],
-span[class*="pubpeer"] {
-  display: none !important;
-}
